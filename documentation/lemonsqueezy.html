@@ -35,7 +35,7 @@
 
 
 
-<header class="header navbar navbar-expand bg-light border-bottom border-light shadow" data-scroll-header>
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow position-sticky top-0" style="z-index: 40" data-scroll-header>
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
             <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
@@ -115,7 +115,7 @@
 </header>
 
 <aside class="bg-dark">
-    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
+    <div id="componentsNav" class="bg-dark offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100" style="width: 19rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/" class="navbar-brand d-none d-lg-flex py-0">
                 <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
@@ -166,13 +166,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Cloud setups</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Cloud setups</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/hosting-hetzner-cloud.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-hosting-hetzner-cloud">
+                            <a href="/documentation/hosting-hetzner-cloud.html" class="list-group-item list-group-item-action border-0 " id="docnavi-hosting-hetzner-cloud">
                                 
                                 Hetzner Cloud
                                 
@@ -182,7 +182,7 @@
                         
                             
                             
-                            <a href="/documentation/hosting-digital-ocean.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-hosting-digital-ocean">
+                            <a href="/documentation/hosting-digital-ocean.html" class="list-group-item list-group-item-action border-0 " id="docnavi-hosting-digital-ocean">
                                 
                                 DigitalOcean
                                 
@@ -193,13 +193,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Using Docker</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Using Docker</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/docker.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-docker">
+                            <a href="/documentation/docker.html" class="list-group-item list-group-item-action border-0 " id="docnavi-docker">
                                 
                                 Docker
                                 
@@ -209,7 +209,7 @@
                         
                             
                             
-                            <a href="/documentation/docker-compose.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-docker-compose">
+                            <a href="/documentation/docker-compose.html" class="list-group-item list-group-item-action border-0 " id="docnavi-docker-compose">
                                 
                                 Docker Compose
                                 
@@ -219,7 +219,7 @@
                         
                             
                             
-                            <a href="/documentation/kubernetes.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-kubernetes">
+                            <a href="/documentation/kubernetes.html" class="list-group-item list-group-item-action border-0 " id="docnavi-kubernetes">
                                 
                                 Kubernetes
                                 
@@ -229,7 +229,7 @@
                         
                             
                             
-                            <a href="/documentation/building-docker.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-building-docker">
+                            <a href="/documentation/building-docker.html" class="list-group-item list-group-item-action border-0 " id="docnavi-building-docker">
                                 
                                 Build your image
                                 
@@ -239,7 +239,7 @@
                         
                             
                             
-                            <a href="/documentation/docker-troubleshooting.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-docker-troubleshooting">
+                            <a href="/documentation/docker-troubleshooting.html" class="list-group-item list-group-item-action border-0 " id="docnavi-docker-troubleshooting">
                                 
                                 Troubleshooting
                                 
@@ -250,13 +250,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Setup with SSH</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Setup with SSH</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/installation.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-installation">
+                            <a href="/documentation/installation.html" class="list-group-item list-group-item-action border-0 " id="docnavi-installation">
                                 
                                 Installation
                                 
@@ -266,7 +266,7 @@
                         
                             
                             
-                            <a href="/documentation/updates.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-updates">
+                            <a href="/documentation/updates.html" class="list-group-item list-group-item-action border-0 " id="docnavi-updates">
                                 
                                 Updates
                                 
@@ -276,7 +276,7 @@
                         
                             
                             
-                            <a href="/documentation/cache.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-cache">
+                            <a href="/documentation/cache.html" class="list-group-item list-group-item-action border-0 " id="docnavi-cache">
                                 
                                 Reloading cache
                                 
@@ -286,7 +286,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-management">
+                            <a href="/documentation/plugin-management.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-management">
                                 
                                 Plugins
                                 
@@ -297,13 +297,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Other setups</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Other setups</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-fresh-ubuntu-22">
+                            <a href="/documentation/fresh-ubuntu-22.html" class="list-group-item list-group-item-action border-0 " id="docnavi-fresh-ubuntu-22">
                                 
                                 Ubuntu 22.04
                                 
@@ -313,7 +313,7 @@
                         
                             
                             
-                            <a href="/documentation/webserver-configuration.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-webserver-configuration">
+                            <a href="/documentation/webserver-configuration.html" class="list-group-item list-group-item-action border-0 " id="docnavi-webserver-configuration">
                                 
                                 Webserver & Proxy
                                 
@@ -323,7 +323,7 @@
                         
                             
                             
-                            <a href="/documentation/synology.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-synology">
+                            <a href="/documentation/synology.html" class="list-group-item list-group-item-action border-0 " id="docnavi-synology">
                                 
                                 Synology NAS
                                 
@@ -333,7 +333,7 @@
                         
                             
                             
-                            <a href="/documentation/shared-hosting.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-shared-hosting">
+                            <a href="/documentation/shared-hosting.html" class="list-group-item list-group-item-action border-0 " id="docnavi-shared-hosting">
                                 
                                 Shared hosting
                                 
@@ -343,7 +343,7 @@
                         
                             
                             
-                            <a href="/documentation/hosting-1-click.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-hosting-1-click">
+                            <a href="/documentation/hosting-1-click.html" class="list-group-item list-group-item-action border-0 " id="docnavi-hosting-1-click">
                                 
                                 1-click installations
                                 
@@ -354,13 +354,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">DevOps</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">DevOps</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/backups.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-backups">
+                            <a href="/documentation/backups.html" class="list-group-item list-group-item-action border-0 " id="docnavi-backups">
                                 
                                 Backups
                                 
@@ -370,7 +370,7 @@
                         
                             
                             
-                            <a href="/documentation/local-yaml.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-local-yaml">
+                            <a href="/documentation/local-yaml.html" class="list-group-item list-group-item-action border-0 " id="docnavi-local-yaml">
                                 
                                 Configuration files
                                 
@@ -380,7 +380,7 @@
                         
                             
                             
-                            <a href="/documentation/emails.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-emails">
+                            <a href="/documentation/emails.html" class="list-group-item list-group-item-action border-0 " id="docnavi-emails">
                                 
                                 Emails
                                 
@@ -390,7 +390,7 @@
                         
                             
                             
-                            <a href="/documentation/logging.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-logging">
+                            <a href="/documentation/logging.html" class="list-group-item list-group-item-action border-0 " id="docnavi-logging">
                                 
                                 Logging
                                 
@@ -400,7 +400,7 @@
                         
                             
                             
-                            <a href="/documentation/commands.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-commands">
+                            <a href="/documentation/commands.html" class="list-group-item list-group-item-action border-0 " id="docnavi-commands">
                                 
                                 Commands
                                 
@@ -410,7 +410,7 @@
                         
                             
                             
-                            <a href="/documentation/faq-onpremise.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-faq-onpremise">
+                            <a href="/documentation/faq-onpremise.html" class="list-group-item list-group-item-action border-0 " id="docnavi-faq-onpremise">
                                 
                                 FAQ
                                 
@@ -420,7 +420,7 @@
                         
                             
                             
-                            <a href="/documentation/migration-v1.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-migration-v1">
+                            <a href="/documentation/migration-v1.html" class="list-group-item list-group-item-action border-0 " id="docnavi-migration-v1">
                                 
                                 Migrate from Kimai v1
                                 
@@ -430,7 +430,7 @@
                         
                             
                             
-                            <a href="/documentation/versions.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-versions">
+                            <a href="/documentation/versions.html" class="list-group-item list-group-item-action border-0 " id="docnavi-versions">
                                 
                                 Kimai versions
                                 
@@ -441,13 +441,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Authenticator</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Authenticator</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/ldap.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-ldap">
+                            <a href="/documentation/ldap.html" class="list-group-item list-group-item-action border-0 " id="docnavi-ldap">
                                 
                                 LDAP
                                 
@@ -457,7 +457,7 @@
                         
                             
                             
-                            <a href="/documentation/saml.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-saml">
+                            <a href="/documentation/saml.html" class="list-group-item list-group-item-action border-0 " id="docnavi-saml">
                                 
                                 SAML
                                 
@@ -467,7 +467,7 @@
                         
                             
                             
-                            <a href="/documentation/saml-azure.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-saml-azure">
+                            <a href="/documentation/saml-azure.html" class="list-group-item list-group-item-action border-0 " id="docnavi-saml-azure">
                                 
                                 Azure SAML
                                 
@@ -477,7 +477,7 @@
                         
                             
                             
-                            <a href="/documentation/saml-google.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-saml-google">
+                            <a href="/documentation/saml-google.html" class="list-group-item list-group-item-action border-0 " id="docnavi-saml-google">
                                 
                                 Google SAML
                                 
@@ -487,7 +487,7 @@
                         
                             
                             
-                            <a href="/documentation/saml-keycloak.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-saml-keycloak">
+                            <a href="/documentation/saml-keycloak.html" class="list-group-item list-group-item-action border-0 " id="docnavi-saml-keycloak">
                                 
                                 Keycloak SAML
                                 
@@ -497,7 +497,7 @@
                         
                             
                             
-                            <a href="/documentation/saml-authentik.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-saml-authentik">
+                            <a href="/documentation/saml-authentik.html" class="list-group-item list-group-item-action border-0 " id="docnavi-saml-authentik">
                                 
                                 Authentik SAML
                                 
@@ -507,7 +507,7 @@
                         
                             
                             
-                            <a href="/documentation/saml-adfs.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-saml-adfs">
+                            <a href="/documentation/saml-adfs.html" class="list-group-item list-group-item-action border-0 " id="docnavi-saml-adfs">
                                 
                                 Microsoft ADFS
                                 
@@ -518,13 +518,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Plugins</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Plugins</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/plugin-faq.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-faq">
+                            <a href="/documentation/plugin-faq.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-faq">
                                 
                                 FAQ - Downloads, Subscriptions, and Refunds
                                 
@@ -534,7 +534,7 @@
                         
                             
                             
-                            <a href="/documentation/lemonsqueezy.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-lemonsqueezy">
+                            <a href="/documentation/lemonsqueezy.html" class="list-group-item list-group-item-action border-0  active" id="docnavi-lemonsqueezy">
                                 
                                 LemonSqueezy Invoices
                                 
@@ -544,7 +544,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-contract.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-contract">
+                            <a href="/documentation/plugin-contract.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-contract">
                                 
                                 Working contract
                                 

@@ -46,7 +46,8 @@
 
 
 
-<header class="header navbar navbar-expand-lg    bg-light navbar-sticky">
+
+<header class="header navbar navbar-expand-lg position-absolute    navbar-sticky">
     <div class="container px-3">
         <a href="/en/" class="navbar-brand pe-3">
         <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source time-tracker"> Kimai
@@ -61,14 +62,14 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Product</a>
                         <ul class="dropdown-menu">
-                            <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
-                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
-                            <li class="dropdown-divider"></li>
                             <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
                             <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
                             <li class="dropdown-divider"></li>
                             <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -259,10 +260,9 @@
 
 
     <section class="position-relative pt-5 overflow-hidden">
-        <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
-        <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-secondary"></span>
         <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
-            <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
+            <div class="row justify-content-md-start justify-content-center flex-md-nowrap">
                 <div class="col-xl-7 col-md-7 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
                     <div class="text-md-start text-center">
                         <h1 class="display-4 mb-lg-4 mb-3">
@@ -296,8 +296,7 @@
             </div>
         </div>
         <span class="position-absolute bottom-0 start-0 w-100">
-          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
-          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
+          <span class="d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
         </span>
     </section>
 
@@ -314,7 +313,7 @@
 
 
 <p>Kimai is the #1 open-source time-tracking solution designed for teams and businesses seeking flexibility and control over their time tracking infrastructure.
-Discover why <strong>more than 5000 companies worldwide trust Kimai</strong> for their time tracking needs and find out how it compares to Zeitguru’s offerings.
+Discover why <strong>more than 7000 companies worldwide trust Kimai</strong> for their time tracking needs and find out how it compares to Zeitguru’s offerings.
 Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing options, or planning a Zeitguru migration, Kimai provides a compelling alternative with superior features and cost savings.</p>
 
 <p>Choosing the right time tracking software can make a huge difference in productivity, transparency, and billing accuracy of a freelancer, an agency, or a business owner managing a big team.</p>
@@ -359,13 +358,14 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
             <a href="" class="btn btn-primary shadow-primary btn-lg">Features</a>
         </div>
         <div class="col-xl-7 col-lg-8 offset-xl-1">
-            <div class="row row-cols-1 row-cols-md-2">
-                <div class="col">
-                
-                    
-                    
-                        
+            
 
+<div class="row row-cols-1 row-cols-md-2">
+    <div class="col">
+    
+        
+        
+            
 
 
 
@@ -374,30 +374,31 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
 <div class="card card-hover bg-secondary border-0 mb-4">
     <div class="card-body d-flex align-items-start">
         <div class="flex-shrink-0 bg-light rounded-3 p-3">
-            <i class="bx bx-code-curly fs-2" title="JSON API"></i>
+            <i class="bx bx-code-curly fs-2 text-primary" title="JSON API"></i>
         </div>
         <div class="ps-4">
             <h3 class="h5 pb-2 mb-1">JSON API</h3>
             <p class="pb-2 mb-1">Featuring an extensive JSON API for reading and writing data, so external apps and custom tools can communicate with Kimai.</p>
+            
             <a href="/documentation/rest-api.html" class="btn btn-link stretched-link px-0">
                 Read more
                 <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
             </a>
+            
         </div>
     </div>
 </div>
 
-                    
-                    
-                    
-                </div>
-                <div class="col">
-                    
-                
-                    
-                    
-                        
-
+        
+        
+        
+    </div>
+    <div class="col">
+        
+    
+        
+        
+            
 
 
 
@@ -406,30 +407,31 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
 <div class="card card-hover bg-secondary border-0 mb-4">
     <div class="card-body d-flex align-items-start">
         <div class="flex-shrink-0 bg-light rounded-3 p-3">
-            <i class="bx bx-share-alt fs-2" title="Customer Portal"></i>
+            <i class="bx bx-share-alt fs-2 text-primary" title="Customer Portal"></i>
         </div>
         <div class="ps-4">
             <h3 class="h5 pb-2 mb-1">Customer Portal</h3>
             <p class="pb-2 mb-1">Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.</p>
+            
             <a href="/documentation/plugin-customer-portal.html" class="btn btn-link stretched-link px-0">
                 Read more
                 <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
             </a>
+            
         </div>
     </div>
 </div>
 
-                    
-                    
-                    
-                </div>
-                <div class="col">
-                    
-                
-                    
-                    
-                        
-
+        
+        
+        
+    </div>
+    <div class="col">
+        
+    
+        
+        
+            
 
 
 
@@ -438,30 +440,31 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
 <div class="card card-hover bg-secondary border-0 mb-4">
     <div class="card-body d-flex align-items-start">
         <div class="flex-shrink-0 bg-light rounded-3 p-3">
-            <i class="bx bx-select-multiple fs-2" title="Teams"></i>
+            <i class="bx bx-select-multiple fs-2 text-primary" title="Teams"></i>
         </div>
         <div class="ps-4">
             <h3 class="h5 pb-2 mb-1">Teams</h3>
             <p class="pb-2 mb-1">Teams connects users into logical groups, like departments. Limit access to data by assigning customers and projects to your teams.</p>
+            
             <a href="/documentation/teams.html" class="btn btn-link stretched-link px-0">
                 Read more
                 <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
             </a>
+            
         </div>
     </div>
 </div>
 
-                    
-                    
-                    
-                </div>
-                <div class="col">
-                    
-                
-                    
-                    
-                        
-
+        
+        
+        
+    </div>
+    <div class="col">
+        
+    
+        
+        
+            
 
 
 
@@ -470,30 +473,31 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
 <div class="card card-hover bg-secondary border-0 mb-4">
     <div class="card-body d-flex align-items-start">
         <div class="flex-shrink-0 bg-light rounded-3 p-3">
-            <i class="bx bx-key fs-2" title="SAML"></i>
+            <i class="bx bx-key fs-2 text-primary" title="SAML"></i>
         </div>
         <div class="ps-4">
             <h3 class="h5 pb-2 mb-1">SAML</h3>
             <p class="pb-2 mb-1">Log in and register users with SAML via your existing SSO identity provider, like Google Workspace, Authentik or Azure Active Directory.</p>
+            
             <a href="/documentation/saml.html" class="btn btn-link stretched-link px-0">
                 Read more
                 <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
             </a>
+            
         </div>
     </div>
 </div>
 
-                    
-                    
-                    
-                </div>
-                <div class="col">
-                    
-                
-                    
-                    
-                        
-
+        
+        
+        
+    </div>
+    <div class="col">
+        
+    
+        
+        
+            
 
 
 
@@ -502,30 +506,31 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
 <div class="card card-hover bg-secondary border-0 mb-4">
     <div class="card-body d-flex align-items-start">
         <div class="flex-shrink-0 bg-light rounded-3 p-3">
-            <i class="bx bxs-file-pdf fs-2" title="Invoicing"></i>
+            <i class="bx bxs-file-pdf fs-2 text-primary" title="Invoicing"></i>
         </div>
         <div class="ps-4">
             <h3 class="h5 pb-2 mb-1">Invoicing</h3>
             <p class="pb-2 mb-1">Configurable invoice templates, options for entry grouping, configurable invoice numbers, and multiple formats like PDF and DOCX.</p>
+            
             <a href="/documentation/invoices.html" class="btn btn-link stretched-link px-0">
                 Read more
                 <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
             </a>
+            
         </div>
     </div>
 </div>
 
-                    
-                    
-                    
-                </div>
-                <div class="col">
-                    
-                
-                    
-                    
-                        
-
+        
+        
+        
+    </div>
+    <div class="col">
+        
+    
+        
+        
+            
 
 
 
@@ -534,28 +539,31 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
 <div class="card card-hover bg-secondary border-0 mb-4">
     <div class="card-body d-flex align-items-start">
         <div class="flex-shrink-0 bg-light rounded-3 p-3">
-            <i class="bx bx-bar-chart fs-2" title="Reports and analyses"></i>
+            <i class="bx bx-bar-chart fs-2 text-primary" title="Reports and analyses"></i>
         </div>
         <div class="ps-4">
             <h3 class="h5 pb-2 mb-1">Reports and analyses</h3>
             <p class="pb-2 mb-1">Analysis of recorded times by users, customers, projects, activities, tags, time periods and more.</p>
+            
             <a href="/documentation/reporting.html" class="btn btn-link stretched-link px-0">
                 Read more
                 <i class="bx bx-right-arrow-alt fs-xl ms-2"></i>
             </a>
+            
         </div>
     </div>
 </div>
 
-                    
-                    
-                    
-                </div>
-                <div class="col">
-                    
-                
-                </div>
-            </div>
+        
+        
+        
+    </div>
+    <div class="col">
+        
+    
+    </div>
+</div>
+
         </div>
     </div>
 </section>
@@ -586,6 +594,7 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
     
     
     
+
 <section class="bg-secondary py-5 mb-2 mb-md-4 mb-lg-5">
     <div class="container pt-lg-4 mt-1">
         <h2 class="h1 text-center pb-2 pb-md-3 pb-xl-4">What users say about Kimai</h2>
@@ -626,12 +635,12 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>Kimai is an amazing Free software time tracking tool. I have used it for many years, to keep track of work for numerous clients and to produce timesheets, and it has been superb. Thank you!</p>
+                                    <p>Nice and easy tool, let’s you track your hours and export / create invoices easily. Also you can add expenses. <mark>Top notch support on questions you might have</mark>. Loving it</p>
 
 
                                     
@@ -656,11 +665,15 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Neil Brown</h6>
-                                <span class="fs-xs text-muted">Lawyer</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Matthias Schöpfer</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        Freelancer
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -672,12 +685,66 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>Kimai was my first foray into open-source software; my company tasked me with migrating an old Kimai plugin called Period Insert, which I eventually decided to publish. My experience has been very positive. I am impressed by Kimai’s ease of use and by how my small contribution to it has been used around the world. I am also grateful to Kevin for his open communication and assistance with publishing the plugin, which served as a warm introduction to the open-source community. Kimai is a model example of how open-source software can improve the lives of people, not just companies. I highly recommend it!</p>
+                                    <p>We have been using KIMAI for many years, previously self-hosted at an internet provider, and for some time now in the cloud. The data model fits our business field perfectly, in which we bill certain projects based on effort and others at a fixed price (budgeted). Both billing models are supported by KIMAI. For budgeted projects, we keep track of the respective consumption of time and costs in relation to the budget (burndown). For time-and-materials projects, we export all billable hours along with the stored hourly rates monthly or quarterly as a basis for the invoices, which we create with another invoicing/accounting software.</p>
+
+<p>In addition to what I consider a very practical data model and the logical structure, the cloud solution is al</p>
+
+
+                                    
+                                    
+                                        &hellip;
+                                    
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 text-nowrap pt-0">
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                <i class="bx bxs-star text-warning"></i>
+                                
+                                
+                                
+                            </div>
+                        </div>
+                        <figcaption class="d-flex align-items-center ps-4 pt-4">
+                            
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">J. Setzer</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        bizzworxx data expert
+                                    
+                                </span>
+                            </div>
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <div class="swiper-slide h-auto pt-4">
+                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                <i class="bx bxs-quote-left"></i>
+                            </span>
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
+                                <div class="mb-0">
+                                    
+                                    
+
+                                    <p>We started using self-hosted Kimai - and it works perfectly! We especially like integration with Google Workspace, which is very convenient.</p>
 
 
                                     
@@ -702,11 +769,15 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <img src="/images/testimonials/alan-nguyen.webp" width="48" class="rounded" alt="Alan Nguyen">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Alan Nguyen</h6>
-                                <span class="fs-xs text-muted">Software Developer</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Karol Antczak</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        Trusted Software Services
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -718,12 +789,14 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>We’ve been using the brilliant Kimai tool for a while now and have recommended it to many people. Recently, we came up with an idea internally that we’ve implemented and are currently expanding. It involves an order management system with a management portal built on the Kimai platform. By the way, it’s absolutely fantastic. It’s truly impressive how well the tool has been documented and how open it is to customizations.</p>
+                                    <p>We have been using Kimai for many years, initially as a standalone solution on our own server, but for the past three years now in the kimai.cloud. 
+With its structured layout, Kimai meets the time tracking requirements we have as an architecture firm and can flexibly map all of our processes, which is not possible with many time tracking systems. 
+We remain impressed by its reliability, constant maintenance and improvement, and direct, personal service, combined with absolutely fair pricing. <mark>We can (and already have) highly recommend kimai.cloud!</mark></p>
 
 
                                     
@@ -748,11 +821,15 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <img src="/images/testimonials/bela-schwier.webp" width="48" class="rounded" alt="Bela Schwier">
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Thomas Reutimann</h6>
-                                <span class="fs-xs text-muted">Inhaber</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Bela Schwier</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        BEHLESJOCHIMSEN&
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -764,7 +841,7 @@ Whether you’re evaluating a new time tracking app, analyzing Zeitguru pricing 
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
@@ -795,11 +872,15 @@ And now we have switched to KIMAI 2 with the help of the very friendly and compe
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                             
                             <div class="ps-3">
                                 <h6 class="fs-sm fw-semibold mb-0">Manfred Janisch</h6>
-                                <span class="fs-xs text-muted">Inhaber</span>
+                                <span class="fs-xs text-muted">
+                                    
+                                        LernParadies Düsseldorf
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -811,36 +892,12 @@ And now we have switched to KIMAI 2 with the help of the very friendly and compe
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>We are an IT service provider and need to record our times for documentation and billing purposes.</p>
-
-<p>We have already ‘struggled’ with various systems for recording and creating service reports / billing.</p>
-
-<p>We finally found a good solution 3 years ago with Kimai. 
-The highlights for us:</p>
-
-<ul>
-  <li>
-    <p>Speed 
-When recording, searching, invoicing</p>
-  </li>
-  <li>
-    <p>Flexibility
-We can customise Kimai, the data can be exported. Our own invoice layout etc. is easily possible.</p>
-  </li>
-  <li>
-    <p>Cost
-Unbeatable value for money compared to other solutions.</p>
-  </li>
-</ul>
-
-<p><mark>We are so convinced by the product that we also use it with customers to replace Excel nonsense etc.</mark></p>
-
-<p>Kimai is a software solution that is fun to use.</p>
+                                    <p>I’ve been a huge fan of the Kimai time-tracking tool since 2010. It’s easy to use yet so feature-rich that you’ll find absolutely no limitations. I’ve tried many tools, but none could convince me as much as Kimai, so I remain a loyal user. And on top of that, there’s excellent, personalized support: a migration from my self-hosted Kimai instance to the cloud was handled with a personal email response and completed within minutes. I was able to continue working seamlessly right away. Absolutely top-notch! Thank you so much for this great tool!</p>
 
 
                                     
@@ -865,11 +922,15 @@ Unbeatable value for money compared to other solutions.</p>
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Josef Wagner</h6>
-                                <span class="fs-xs text-muted">Geschäftsführer</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Oliver Tönse</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        GETIMA GmbH
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -881,12 +942,12 @@ Unbeatable value for money compared to other solutions.</p>
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>We have been using Kimai for two years now to track the time spent on each phase of our projects and to bill our clients for the hours worked. The software is comprehensive, intuitive, and fully meets our needs. In addition to this, Kevin has always been helpful and attentive to our needs!</p>
+                                    <p>the best time tracking tool i used :) (and still do)</p>
 
 
                                     
@@ -911,11 +972,15 @@ Unbeatable value for money compared to other solutions.</p>
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <img src="/images/testimonials/alessandro-pollastri.webp" width="48" class="rounded" alt="Alessandro Pollastri">
+                            <img src="/images/testimonials/paul-knulst.webp" width="48" class="rounded" alt="Paul Knulst">
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Alessandro Pollastri</h6>
-                                <span class="fs-xs text-muted">Developer</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Paul Knulst</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        Senior Software Engineer
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -927,19 +992,21 @@ Unbeatable value for money compared to other solutions.</p>
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>We have been using KIMAI for many years, previously self-hosted at an internet provider, and for some time now in the cloud. The data model fits our business field perfectly, in which we bill certain projects based on effort and others at a fixed price (budgeted). Both billing models are supported by KIMAI. For budgeted projects, we keep track of the respective consumption of time and costs in relation to the budget (burndown). For time-and-materials projects, we export all billable hours along with the stored hourly rates monthly or quarterly as a basis for the invoices, which we create with another invoicing/accounting software.</p>
+                                    <p>I’ve always preferred self-hosting services, but when I discovered Kimai, I saw the value in their free cloud plan. Wanting to support the developers (being a developer myself), I upgraded to the paid version, and it’s been worth every penny.</p>
 
-<p>In addition to what I consider a very practical data model and the logical structure, the cloud solution is al</p>
+<p>Recently, I made a mistake that almost wiped out all my data. Despite my plan not officially including support, Kimai’s team was there for me. <mark>They responded quickly and had my issue resolved within half an hour, saving me from a potential disaster.</mark></p>
+
+<p>As a freelancer, Kimai has become an essential tool for managing clients, projects, and tasks. It lets me track time accurately and create professional invoices effortlessly. For anyone looking to stay organized and efficient, I highly recomm</p>
 
 
                                     
                                     
-                                        ...
+                                        &hellip;
                                     
                                 </div>
                             </div>
@@ -961,11 +1028,15 @@ Unbeatable value for money compared to other solutions.</p>
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <img src="/images/testimonials/panagiotis-ntinis.webp" width="48" class="rounded" alt="Panagiotis Ntinis">
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">J. Setzer</h6>
-                                <span class="fs-xs text-muted"></span>
+                                <h6 class="fs-sm fw-semibold mb-0">Panagiotis Ntinis</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        Cyber Fortress
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -977,61 +1048,12 @@ Unbeatable value for money compared to other solutions.</p>
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>Kimai combines usability and high data protection standards - a rare find in project management tools. Easy to setup and use right away, with many options for adapting it to specific needs and processes. One tip for first-users: Projects have to be set up in Administration in order to be able to start time tracking - so far that’s the only thing that got me searching.</p>
-
-<p>Great work!</p>
-
-
-                                    
-                                    
-                                </div>
-                            </div>
-                            <div class="card-footer border-0 text-nowrap pt-0">
-                                
-                                <i class="bx bxs-star text-warning"></i>
-                                
-                                <i class="bx bxs-star text-warning"></i>
-                                
-                                <i class="bx bxs-star text-warning"></i>
-                                
-                                <i class="bx bxs-star text-warning"></i>
-                                
-                                <i class="bx bxs-star text-warning"></i>
-                                
-                                
-                                
-                            </div>
-                        </div>
-                        <figcaption class="d-flex align-items-center ps-4 pt-4">
-                            
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
-                            
-                            <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Meredith</h6>
-                                <span class="fs-xs text-muted">Project Manager</span>
-                            </div>
-                        </figcaption>
-                    </figure>
-                </div>
-                
-                <div class="swiper-slide h-auto pt-4">
-                    <figure class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
-                        <div class="card h-100 position-relative border-0 shadow-sm pt-4">
-                            <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
-                                <i class="bx bxs-quote-left"></i>
-                            </span>
-                            <div class="card-body pb-3 mb-0">
-                                <div class="mb-0">
-                                    
-                                    
-
-                                    <p>I don’t need to write much:
-Great software, friendly and fast support!</p>
+                                    <p>I really like Kimai, it’s free it is working really well and you can use API! 😍💖💖 You can deploy it just in minutes!!!</p>
 
 
                                     
@@ -1056,11 +1078,15 @@ Great software, friendly and fast support!</p>
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Ulrich Eckermann</h6>
-                                <span class="fs-xs text-muted">Leiter Technik</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Oskar</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -1072,14 +1098,14 @@ Great software, friendly and fast support!</p>
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0">
+                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
                                     
                                     
 
-                                    <p>Kimai has been a fantastic discovery. I reviewed several other time trackers, and frankly, none of them compared. Kimai just felt better right away. It’s easy to set up and use, with a clean design and just the right balance between features and simplicity, and the self-hosting option is a huge plus.</p>
-
-<p>Highly recommended and big thumbs up from me!</p>
+                                    <p>Kimai is a super web platform for keeping tracks of our daily work, the interface is clean and very useful, just easy, couple clicks and data, and that is done. 
+<mark>we have used since 5 years ago, and the reports are easy to run</mark>. only 1 time i have to support a ticket, because we forgot the password!. 
+thanks for all the work here!</p>
 
 
                                     
@@ -1104,11 +1130,15 @@ Great software, friendly and fast support!</p>
                         </div>
                         <figcaption class="d-flex align-items-center ps-4 pt-4">
                             
-                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                            <img src="/images/testimonials/mathias.webp" width="48" class="rounded" alt="Mathias">
                             
                             <div class="ps-3">
-                                <h6 class="fs-sm fw-semibold mb-0">Amir</h6>
-                                <span class="fs-xs text-muted">Developer</span>
+                                <h6 class="fs-sm fw-semibold mb-0">Mathias</h6>
+                                <span class="fs-xs text-muted">
+                                    
+                                        Cenas
+                                    
+                                </span>
                             </div>
                         </figcaption>
                     </figure>
@@ -3013,14 +3043,15 @@ Great software, friendly and fast support!</p>
                         </section>
 
                         
-<section class="container mb-5">
-    <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
-        <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
-        <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
-            <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
-            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Start your time-tracking now</h2>
-            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Start for free</a>
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
+                <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Start your time-tracking now</h2>
+                <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Start for free</a>
 
+            </div>
         </div>
     </div>
 </section>
@@ -3216,12 +3247,13 @@ Great software, friendly and fast support!</p>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Software Developers</a>
+                                    <a href="/en/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
                                 </li>
                                 
                                 <li class="nav-item">
-                                    <a href="/en/non-profit" class="nav-link fs-sm fw-medium px-0 py-1">Non-Profits</a>
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Software Developers</a>
                                 </li>
+                                
                                 <li class="nav-item">
                                     
                                     <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">More industries</a>
@@ -3291,14 +3323,6 @@ Great software, friendly and fast support!</p>
 
     <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
         <i class="bx bxl-linkedin"></i>
-    </a>
-
-    <a target="_blank" href="https://www.instagram.com/kimai_org" class="btn btn-icon btn-secondary btn-instagram rounded-circle me-3" aria-label="Instagram">
-        <i class="bx bxl-instagram"></i>
-    </a>
-
-    <a target="_blank" href="https://www.facebook.com/kimai.time.tracker" class="btn btn-icon btn-secondary btn-facebook rounded-circle me-3" aria-label="Facebook">
-        <i class="bx bxl-facebook"></i>
     </a>
 
     <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">

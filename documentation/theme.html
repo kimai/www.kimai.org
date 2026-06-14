@@ -36,7 +36,7 @@
 
 
 
-<header class="header navbar navbar-expand bg-light border-bottom border-light shadow" data-scroll-header>
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow position-sticky top-0" style="z-index: 40" data-scroll-header>
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
             <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
@@ -116,7 +116,7 @@
 </header>
 
 <aside class="bg-dark">
-    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
+    <div id="componentsNav" class="bg-dark offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100" style="width: 19rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/" class="navbar-brand d-none d-lg-flex py-0">
                 <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
@@ -167,13 +167,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">JSON API</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">JSON API</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/rest-api.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rest-api">
+                            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 " id="docnavi-rest-api">
                                 
                                 Kimai API
                                 
@@ -183,7 +183,7 @@
                         
                             
                             
-                            <a href="/documentation/api-pagination.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-pagination">
+                            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-pagination">
                                 
                                 Pagination
                                 
@@ -194,13 +194,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">API Examples</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">API Examples</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/rest-api-examples.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rest-api-examples">
+                            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 " id="docnavi-rest-api-examples">
                                 
                                 Importing a CSV file
                                 
@@ -210,7 +210,7 @@
                         
                             
                             
-                            <a href="/documentation/api-example-javascript.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-javascript">
+                            <a href="/documentation/api-example-javascript.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-example-javascript">
                                 
                                 jQuery Demo
                                 
@@ -220,7 +220,7 @@
                         
                             
                             
-                            <a href="/documentation/api-example-sync.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-sync">
+                            <a href="/documentation/api-example-sync.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-example-sync">
                                 
                                 Sync to a local DB
                                 
@@ -230,7 +230,7 @@
                         
                             
                             
-                            <a href="/documentation/api-example-user.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-api-example-user">
+                            <a href="/documentation/api-example-user.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-example-user">
                                 
                                 Onboarding users
                                 
@@ -241,13 +241,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Create plugins</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Create plugins</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/developers.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-developers">
+                            <a href="/documentation/developers.html" class="list-group-item list-group-item-action border-0 " id="docnavi-developers">
                                 
                                 Development environment
                                 
@@ -257,7 +257,7 @@
                         
                             
                             
-                            <a href="/documentation/extending-kimai.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-extending-kimai">
+                            <a href="/documentation/extending-kimai.html" class="list-group-item list-group-item-action border-0 " id="docnavi-extending-kimai">
                                 
                                 Extending Kimai
                                 
@@ -267,7 +267,7 @@
                         
                             
                             
-                            <a href="/documentation/plugins.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugins">
+                            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugins">
                                 
                                 Create plugins
                                 
@@ -277,7 +277,7 @@
                         
                             
                             
-                            <a href="/documentation/translations.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-translations">
+                            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 " id="docnavi-translations">
                                 
                                 Translations / i18n
                                 
@@ -287,7 +287,7 @@
                         
                             
                             
-                            <a href="/documentation/meta-fields.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-meta-fields">
+                            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 " id="docnavi-meta-fields">
                                 
                                 Custom fields
                                 
@@ -297,7 +297,7 @@
                         
                             
                             
-                            <a href="/documentation/theme.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-theme">
+                            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0  active" id="docnavi-theme">
                                 
                                 Theme
                                 
@@ -307,7 +307,7 @@
                         
                             
                             
-                            <a href="/documentation/store.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-store">
+                            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 " id="docnavi-store">
                                 
                                 Add to store
                                 
@@ -317,7 +317,7 @@
                         
                             
                             
-                            <a href="/documentation/migration-v2.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-migration-v2">
+                            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 " id="docnavi-migration-v2">
                                 
                                 Migrate plugins to v2
                                 
@@ -328,13 +328,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Security</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Security</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/security.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-security">
+                            <a href="/documentation/security.html" class="list-group-item list-group-item-action border-0 " id="docnavi-security">
                                 
                                 Security advisories
                                 
@@ -344,7 +344,7 @@
                         
                             
                             
-                            <a href="/documentation/bughunter.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-bughunter">
+                            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 " id="docnavi-bughunter">
                                 
                                 Reporting security issues
                                 
@@ -355,13 +355,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Technical background</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Technical background</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/permission-structure.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-permission-structure">
+                            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 " id="docnavi-permission-structure">
                                 
                                 Permission structure
                                 
@@ -371,7 +371,7 @@
                         
                             
                             
-                            <a href="/documentation/sql-examples.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-sql-examples">
+                            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 " id="docnavi-sql-examples">
                                 
                                 SQL Examples
                                 
@@ -381,7 +381,7 @@
                         
                             
                             
-                            <a href="/documentation/redis.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-redis">
+                            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 " id="docnavi-redis">
                                 
                                 Using Redis for caching
                                 

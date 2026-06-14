@@ -35,7 +35,7 @@
 
 
 
-<header class="header navbar navbar-expand bg-light border-bottom border-light shadow" data-scroll-header>
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow position-sticky top-0" style="z-index: 40" data-scroll-header>
     <div class="container-fluid pe-lg-4">
         <div class="d-flex align-items-center">
             <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
@@ -115,7 +115,7 @@
 </header>
 
 <aside class="bg-dark">
-    <div id="componentsNav" class="offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100 bg-dark border-end-lg" style="width: 19rem; z-index: 1045;">
+    <div id="componentsNav" class="bg-dark offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100" style="width: 19rem; z-index: 1045;">
         <div class="offcanvas-header d-none d-lg-flex justify-content-start">
             <a href="/" class="navbar-brand d-none d-lg-flex py-0">
                 <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
@@ -166,13 +166,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">User Guide</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">User Guide</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/timesheet.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-timesheet">
+                            <a href="/documentation/timesheet.html" class="list-group-item list-group-item-action border-0 " id="docnavi-timesheet">
                                 
                                 Timesheet
                                 
@@ -182,7 +182,7 @@
                         
                             
                             
-                            <a href="/documentation/weekly-times.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-weekly-times">
+                            <a href="/documentation/weekly-times.html" class="list-group-item list-group-item-action border-0 " id="docnavi-weekly-times">
                                 
                                 Weekly hours
                                 
@@ -192,7 +192,7 @@
                         
                             
                             
-                            <a href="/documentation/calendar.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-calendar">
+                            <a href="/documentation/calendar.html" class="list-group-item list-group-item-action border-0 " id="docnavi-calendar">
                                 
                                 Calendar
                                 
@@ -202,7 +202,7 @@
                         
                             
                             
-                            <a href="/documentation/invoices.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-invoices">
+                            <a href="/documentation/invoices.html" class="list-group-item list-group-item-action border-0 " id="docnavi-invoices">
                                 
                                 Invoices
                                 
@@ -212,7 +212,7 @@
                         
                             
                             
-                            <a href="/documentation/export.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-export">
+                            <a href="/documentation/export.html" class="list-group-item list-group-item-action border-0 " id="docnavi-export">
                                 
                                 Export
                                 
@@ -222,7 +222,7 @@
                         
                             
                             
-                            <a href="/documentation/reporting.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-reporting">
+                            <a href="/documentation/reporting.html" class="list-group-item list-group-item-action border-0 " id="docnavi-reporting">
                                 
                                 Reporting
                                 
@@ -232,7 +232,7 @@
                         
                             
                             
-                            <a href="/documentation/customer.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-customer">
+                            <a href="/documentation/customer.html" class="list-group-item list-group-item-action border-0 " id="docnavi-customer">
                                 
                                 Customer
                                 
@@ -242,7 +242,7 @@
                         
                             
                             
-                            <a href="/documentation/project.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-project">
+                            <a href="/documentation/project.html" class="list-group-item list-group-item-action border-0 " id="docnavi-project">
                                 
                                 Projects
                                 
@@ -252,7 +252,7 @@
                         
                             
                             
-                            <a href="/documentation/activity.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-activity">
+                            <a href="/documentation/activity.html" class="list-group-item list-group-item-action border-0 " id="docnavi-activity">
                                 
                                 Activities
                                 
@@ -262,7 +262,7 @@
                         
                             
                             
-                            <a href="/documentation/tags.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-tags">
+                            <a href="/documentation/tags.html" class="list-group-item list-group-item-action border-0 " id="docnavi-tags">
                                 
                                 Tags
                                 
@@ -272,7 +272,7 @@
                         
                             
                             
-                            <a href="/documentation/users.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-users">
+                            <a href="/documentation/users.html" class="list-group-item list-group-item-action border-0 " id="docnavi-users">
                                 
                                 Users
                                 
@@ -282,7 +282,7 @@
                         
                             
                             
-                            <a href="/documentation/user-preferences.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-user-preferences">
+                            <a href="/documentation/user-preferences.html" class="list-group-item list-group-item-action border-0 " id="docnavi-user-preferences">
                                 
                                 User preferences
                                 
@@ -292,7 +292,7 @@
                         
                             
                             
-                            <a href="/documentation/contract.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-contract">
+                            <a href="/documentation/contract.html" class="list-group-item list-group-item-action border-0 " id="docnavi-contract">
                                 
                                 Working times
                                 
@@ -302,7 +302,7 @@
                         
                             
                             
-                            <a href="/documentation/absence.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-absence">
+                            <a href="/documentation/absence.html" class="list-group-item list-group-item-action border-0 " id="docnavi-absence">
                                 
                                 Absence
                                 
@@ -312,7 +312,7 @@
                         
                             
                             
-                            <a href="/documentation/dashboard.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-dashboard">
+                            <a href="/documentation/dashboard.html" class="list-group-item list-group-item-action border-0 " id="docnavi-dashboard">
                                 
                                 Dashboard
                                 
@@ -322,7 +322,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-expenses.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-expenses">
+                            <a href="/documentation/plugin-expenses.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-expenses">
                                 
                                 Expenses
                                 
@@ -332,7 +332,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-task-management.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-task-management">
+                            <a href="/documentation/plugin-task-management.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-task-management">
                                 
                                 Tasks
                                 
@@ -342,7 +342,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-invoice.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-invoice">
+                            <a href="/documentation/plugin-invoice.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-invoice">
                                 
                                 Invoice+
                                 
@@ -352,7 +352,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-customer-portal.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-customer-portal">
+                            <a href="/documentation/plugin-customer-portal.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-customer-portal">
                                 
                                 Customer Portal
                                 
@@ -363,13 +363,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Admin Guide</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Admin Guide</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/permissions.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-permissions">
+                            <a href="/documentation/permissions.html" class="list-group-item list-group-item-action border-0 " id="docnavi-permissions">
                                 
                                 Roles & Permissions
                                 
@@ -379,7 +379,7 @@
                         
                             
                             
-                            <a href="/documentation/teams.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-teams">
+                            <a href="/documentation/teams.html" class="list-group-item list-group-item-action border-0 " id="docnavi-teams">
                                 
                                 Teams
                                 
@@ -389,7 +389,7 @@
                         
                             
                             
-                            <a href="/documentation/public-holiday.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-public-holiday">
+                            <a href="/documentation/public-holiday.html" class="list-group-item list-group-item-action border-0 " id="docnavi-public-holiday">
                                 
                                 Public holiday
                                 
@@ -399,7 +399,7 @@
                         
                             
                             
-                            <a href="/documentation/configurations.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-configurations">
+                            <a href="/documentation/configurations.html" class="list-group-item list-group-item-action border-0 " id="docnavi-configurations">
                                 
                                 Settings
                                 
@@ -409,7 +409,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-custom-fields.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-custom-fields">
+                            <a href="/documentation/plugin-custom-fields.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-custom-fields">
                                 
                                 Custom fields
                                 
@@ -419,7 +419,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-kiosk.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-kiosk">
+                            <a href="/documentation/plugin-kiosk.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-kiosk">
                                 
                                 Kiosk mode
                                 
@@ -429,7 +429,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-audit-trail.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-audit-trail">
+                            <a href="/documentation/plugin-audit-trail.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-audit-trail">
                                 
                                 Audit logs
                                 
@@ -439,7 +439,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-custom-css.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-custom-css">
+                            <a href="/documentation/plugin-custom-css.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-custom-css">
                                 
                                 Custom CSS
                                 
@@ -449,7 +449,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-custom-content.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-custom-content">
+                            <a href="/documentation/plugin-custom-content.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-custom-content">
                                 
                                 Custom content
                                 
@@ -459,7 +459,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-translation.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-translation">
+                            <a href="/documentation/plugin-translation.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-translation">
                                 
                                 Translation
                                 
@@ -469,7 +469,7 @@
                         
                             
                             
-                            <a href="/documentation/doctor.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-doctor">
+                            <a href="/documentation/doctor.html" class="list-group-item list-group-item-action border-0 " id="docnavi-doctor">
                                 
                                 Doctor
                                 
@@ -479,7 +479,7 @@
                         
                             
                             
-                            <a href="/documentation/plugin-import.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-plugin-import">
+                            <a href="/documentation/plugin-import.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugin-import">
                                 
                                 Importer
                                 
@@ -490,13 +490,13 @@
                     
                     
                     
-                    <p class="fs-lg mb-1 text-white fw-bold">Advanced Topics</p>
-                    <div class="list-group list-group-flush mb-4 me-n4 border-start">
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Advanced Topics</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
                         
                         
                             
                             
-                            <a href="/documentation/initial-setup.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-initial-setup">
+                            <a href="/documentation/initial-setup.html" class="list-group-item list-group-item-action border-0 " id="docnavi-initial-setup">
                                 
                                 Initial setup
                                 
@@ -506,7 +506,7 @@
                         
                             
                             
-                            <a href="/documentation/rates.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rates">
+                            <a href="/documentation/rates.html" class="list-group-item list-group-item-action border-0 " id="docnavi-rates">
                                 
                                 Prices (rates)
                                 
@@ -516,7 +516,7 @@
                         
                             
                             
-                            <a href="/documentation/rounding.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-rounding">
+                            <a href="/documentation/rounding.html" class="list-group-item list-group-item-action border-0 " id="docnavi-rounding">
                                 
                                 Rounding
                                 
@@ -526,7 +526,7 @@
                         
                             
                             
-                            <a href="/documentation/billable.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-billable">
+                            <a href="/documentation/billable.html" class="list-group-item list-group-item-action border-0 " id="docnavi-billable">
                                 
                                 Billable
                                 
@@ -536,7 +536,7 @@
                         
                             
                             
-                            <a href="/documentation/invoice-templates.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-invoice-templates">
+                            <a href="/documentation/invoice-templates.html" class="list-group-item list-group-item-action border-0 " id="docnavi-invoice-templates">
                                 
                                 Invoice templates
                                 
@@ -546,7 +546,7 @@
                         
                             
                             
-                            <a href="/documentation/pdf-templates.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-pdf-templates">
+                            <a href="/documentation/pdf-templates.html" class="list-group-item list-group-item-action border-0 " id="docnavi-pdf-templates">
                                 
                                 PDF templates
                                 
@@ -556,7 +556,7 @@
                         
                             
                             
-                            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-keyboard-shortcuts">
+                            <a href="/documentation/keyboard-shortcuts.html" class="list-group-item list-group-item-action border-0 " id="docnavi-keyboard-shortcuts">
                                 
                                 Keyboard shortcuts
                                 
@@ -566,7 +566,7 @@
                         
                             
                             
-                            <a href="/documentation/i18n-am-pm.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-i18n-am-pm">
+                            <a href="/documentation/i18n-am-pm.html" class="list-group-item list-group-item-action border-0 " id="docnavi-i18n-am-pm">
                                 
                                 Date and Time formats
                                 
@@ -576,7 +576,7 @@
                         
                             
                             
-                            <a href="/documentation/duration-format.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2  active" id="docnavi-duration-format">
+                            <a href="/documentation/duration-format.html" class="list-group-item list-group-item-action border-0  active" id="docnavi-duration-format">
                                 
                                 Duration format
                                 
@@ -588,7 +588,7 @@
                         
                             
                             
-                            <a href="/documentation/homescreen.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-homescreen">
+                            <a href="/documentation/homescreen.html" class="list-group-item list-group-item-action border-0 " id="docnavi-homescreen">
                                 
                                 Use Kimai as app
                                 
@@ -598,7 +598,7 @@
                         
                             
                             
-                            <a href="/documentation/user-api.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-user-api">
+                            <a href="/documentation/user-api.html" class="list-group-item list-group-item-action border-0 " id="docnavi-user-api">
                                 
                                 Connecting via API
                                 
@@ -608,7 +608,7 @@
                         
                             
                             
-                            <a href="/documentation/markdown.html" class="list-group-item ms-2 list-group-item-action border-0 ps-2 " id="docnavi-markdown">
+                            <a href="/documentation/markdown.html" class="list-group-item list-group-item-action border-0 " id="docnavi-markdown">
                                 
                                 Markdown
                                 
