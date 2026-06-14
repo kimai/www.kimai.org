@@ -3,7 +3,7 @@ title: "TECH-SUPPORT.KOELN"
 date: "2026-03-16 12:00:00 +0200"
 permalink: /en/stories/tech-support-koeln
 layout: story
-tags: [success-story]
+tags: [stories]
 author: nikita
 excerpt: How an IT company is scaling its customer base while cutting administrative time by 50%
 homepage: tech-support.koeln

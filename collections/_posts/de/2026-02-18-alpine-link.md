@@ -3,7 +3,7 @@ title: "AlpineLink GmbH"
 date: "2026-02-18 12:00:00 +0200"
 permalink: /de/stories/alpine-link
 layout: story
-tags: [success-story]
+tags: [stories]
 author: nikita
 excerpt: Wie ein Schweizer Webdesign-Anbieter 100% Kundenzufriedenheit erreicht
 homepage: www.alpinelink.ch

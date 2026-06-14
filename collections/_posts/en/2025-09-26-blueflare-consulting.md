@@ -3,7 +3,7 @@ title: "blueflare Consulting"
 date: "2025-09-26 12:00:00 +0200"
 permalink: /en/stories/blueflare-consulting
 layout: story
-tags: [success-story]
+tags: [stories]
 author: nikita
 excerpt: How a cybersecurity consultancy builds strong client relationships through strategic billing transparency
 homepage: blueflare.co.za

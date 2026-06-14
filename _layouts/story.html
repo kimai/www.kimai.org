@@ -1,15 +1,15 @@
 ---
 layout: base
 ---
-{% assign homepage = site.pages | where: 'lang', english_german | find: 'slug', 'index' %}
-{% assign features = site.pages | where: 'lang', english_german | find: 'slug', 'features' %}
+{% assign homepage = site.pages | where: 'lang', page.lang | find: 'slug', 'index' %}
+{% assign features = site.pages | where: 'lang', page.lang | find: 'slug', 'features' %}
 
 {% capture breadcrumb %}
 <li class="breadcrumb-item">
     <a href="{{ homepage.url }}"><i class="bx bx-home-alt fs-lg me-1"></i>{{ site.data[page.lang].translation.index.name }}</a>
 </li>
 <li class="breadcrumb-item">
-    {% include link-translated-menu.html item="success-story" type="blog_tags" language=english_german %}
+    {% include link-translated-menu.html item="stories" type="blog_tags" language=page.lang %}
 </li>
 <li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
 {% endcapture %}

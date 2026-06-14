@@ -3,7 +3,7 @@ title: "Waldorfschule Heilbronn"
 date: "2025-10-04 12:00:00 +0200"
 permalink: /de/stories/waldorfschule-heilbronn
 layout: story
-tags: [success-story]
+tags: [stories]
 author: nikita
 excerpt: Wie eine Freie Schule aus Deutschland ihre Mitarbeiterinnen und Mitarbeiter auf ein einfaches und schnelles Zeiterfassungssystem umgestellt hat
 homepage: www.waldorfschule-hn.de

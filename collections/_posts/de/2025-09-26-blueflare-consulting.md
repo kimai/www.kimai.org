@@ -3,7 +3,7 @@ title: "blueflare Consulting"
 date: "2025-09-26 12:00:00 +0200"
 permalink: /de/stories/blueflare-consulting
 layout: story
-tags: [success-story]
+tags: [stories]
 author: nikita
 excerpt: Wie eine Cybersecurity-Beratung durch strategische Abrechnungs-Transparenz starke Kundenbeziehungen aufbaut
 homepage: blueflare.co.za

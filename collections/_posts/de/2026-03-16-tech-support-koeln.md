@@ -3,7 +3,7 @@ title: "TECH-SUPPORT.KOELN"
 date: "2026-03-16 12:00:00 +0200"
 permalink: /de/stories/tech-support-koeln
 layout: story
-tags: [success-story]
+tags: [stories]
 author: nikita
 excerpt: Wie ein IT-Unternehmen seine Kundenbasis skaliert und dabei 50% Verwaltungszeit einspart
 homepage: tech-support.koeln

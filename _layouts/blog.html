@@ -21,7 +21,7 @@ layout: page
             {% assign tag_page = site.blog_tags | filter_slug_lang: tags[0] %}
             <li class="nav-item" role="presentation">
                 <a href="{{ tag_page.url }}" class="nav-link {% if page.slug == tag_page.slug %}active{% endif %}">
-                    {{ tag_page.display_tag }}
+                    {{ site.data[page.lang].translation[tag_page.slug].name | default: tag_page.title }}
                 </a>
             </li>
         {% endif %}
