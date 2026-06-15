@@ -2,56 +2,56 @@
 title: "Kimai is part of the Open-Source Community"
 layout: landingpage-images
 logos: 
-    logo1: /images/landinpages/open-source-community/github.png
-    logo2: /images/landinpages/open-source-community/php.png
-    logo3: /images/landinpages/open-source-community/open-source-initiative.png
-    logo4: /images/landinpages/open-source-community/symfony.png
+    logo1: /images/landingpages/open-source-community/github.png
+    logo2: /images/landingpages/open-source-community/php.png
+    logo3: /images/landingpages/open-source-community/open-source-initiative.png
+    logo4: /images/landingpages/open-source-community/symfony.png
 contributions:
     title: Contributed to these projects
     text: We contribute back to the open-source projects that are used in Kimai, both financially and with time, to create a vibrant open-source community.
     projects: 
         - 
             title: PHP Foundation
-            image: /images/landinpages/open-source-community/php-foundation.png
+            image: /images/landingpages/open-source-community/php-foundation.png
             url: https://opencollective.com/kimai
         - 
             title: Tabler
-            image: /images/landinpages/open-source-community/tabler.png
+            image: /images/landingpages/open-source-community/tabler.png
             url: https://opencollective.com/kimai
         - 
             title: Doctrine 
-            image: /images/landinpages/open-source-community/doctrine.png
+            image: /images/landingpages/open-source-community/doctrine.png
             url: https://opencollective.com/kimai
         - 
             title: Bootstrap
-            image: /images/landinpages/open-source-community/bootstrap.png
+            image: /images/landingpages/open-source-community/bootstrap.png
             url: https://opencollective.com/kimai
         - 
             title: Tom Select
-            image: /images/landinpages/open-source-community/tom-select.png
+            image: /images/landingpages/open-source-community/tom-select.png
             url: https://opencollective.com/kimai
         - 
             title: PHPC Social
-            image: /images/landinpages/open-source-community/phpc-social.png
+            image: /images/landingpages/open-source-community/phpc-social.png
             url: https://opencollective.com/kimai
         - 
             title: Contributions 
-            image: /images/landinpages/open-source-community/code.png
+            image: /images/landingpages/open-source-community/code.png
             url: https://github.com/kevinpapst
 review_tags: OpenSource
 features:
     - 
         title: Built As Open-source
         text: Kimai was designed and built as an open-source time tracker.
-        image: /images/layout/landingpage/idea.svg
+        image: /images/landingpages/open-source-community/git.svg
     - 
         title: Community Reviewed
         text: Kimai improves with the help of its community on GitHub. 
-        image: /images/layout/landingpage/award.svg
+        image: /images/landingpages/open-source-community/community.svg
     - 
         title: Supports Other Projects
         text: Kimai reinvests time and money into the open-source community.
-        image: /images/layout/landingpage/team.svg
+        image: /images/landingpages/open-source-community/money.svg
 ---
 
 Kimai is an open-source time-tracking solution built with the idea of collaboration in mind. 
