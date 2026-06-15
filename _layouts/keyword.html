@@ -5,9 +5,6 @@ layout: base
 <main class="page-wrapper">
     {% include header-navigation.html dark=true absolute=true %}
 
-    {% assign title=site.data[page.lang].translation.comparison.support %}
-    {% assign intro=site.data[page.lang].translation.support.intro %}
-
     {% assign subtitle = page.subtitle | default: 'Open Source' %}
     {% assign title = '<span class="small fs-4 d-block">%subtitle%</span> %title%' | replace: "%subtitle%", subtitle | replace: "%title%", page.keyword %}
     {% assign intro = page.intro | default: site.data[page.lang].translation.landing_oss.subtitle %}
