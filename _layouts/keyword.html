@@ -3,8 +3,6 @@ layout: base
 ---
 
 <main class="page-wrapper">
-    {% include header-navigation.html dark=true absolute=true %}
-
     {% assign subtitle = page.subtitle | default: 'Open Source' %}
     {% assign intro = page.intro | default: site.data[page.lang].translation.landing_oss.subtitle %}
     {% assign intro = intro | replace: "%title%", page.keyword | append: ' ✨' %}
