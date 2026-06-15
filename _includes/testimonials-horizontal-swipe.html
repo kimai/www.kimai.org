@@ -40,21 +40,9 @@
                             <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
                                 <i class="bx bxs-quote-left"></i>
                             </span>
-                            <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
+                            <div class="card-body pb-3 mb-0">
                                 <div class="mb-0">
-                                    {% assign testimonial_text = testimonial.text %}
-                                    {% if testimonial.translations[page.lang] %}
-                                        {% assign testimonial_text = testimonial.translations[page.lang] %}
-                                    {% elsif testimonial.translations[english_german] %}
-                                        {% assign testimonial_text = testimonial.translations[english_german] %}
-                                    {% endif %}
-
-                                    {{ testimonial_text | slice: 0, 750 | markdownify }}
-
-                                    {% assign title_length = testimonial_text | size %}
-                                    {% if title_length > 750 %}
-                                        &hellip;
-                                    {% endif %}
+                                    {% include testimonial-content.html testimonial=testimonial %}
                                 </div>
                             </div>
                             <div class="card-footer border-0 text-nowrap pt-0">

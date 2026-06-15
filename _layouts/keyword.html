@@ -3,19 +3,30 @@ layout: base
 ---
 
 <main class="page-wrapper">
-    {% include header-navigation.html dark=true absolute=true %}
-
-    {% assign title=site.data[page.lang].translation.comparison.support %}
-    {% assign intro=site.data[page.lang].translation.support.intro %}
-
     {% assign subtitle = page.subtitle | default: 'Open Source' %}
-    {% assign title = '<span class="small fs-4 d-block">%subtitle%</span> %title%' | replace: "%subtitle%", subtitle | replace: "%title%", page.keyword %}
     {% assign intro = page.intro | default: site.data[page.lang].translation.landing_oss.subtitle %}
     {% assign intro = intro | replace: "%title%", page.keyword | append: ' ✨' %}
 
-    {% include hero-text-round-dark.html title=title intro=intro %}
+    {% include header-navigation.html absolute=true light=false %}
 
-    <section class="container pt-5 mt-md-2 mt-lg-4 mt-xl-5">
+    <section class="position-relative pt-5 overflow-hidden">
+        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-secondary"></span>
+        <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
+            <div class="row justify-content-center flex-md-nowrap">
+                <div class="d-flex flex-column justify-content-between mb-3 text-center">
+                    <h1 class="display-4 mb-lg-4 mb-3">
+                        <small class="fs-3">{{ subtitle }}</small><br>
+                        <span class="fw-semibold">{{ page.keyword }}</span>
+                    </h1>
+                    <p id="claude" class="mb-4 pb-xl-3 pb-lg-2 fs-lg mx-auto" style="max-width: 30.5rem;">
+                        {{ intro }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
         <div class="row justify-content-center pt-5">
             <div class="col-xxl-10 col-xl-11 col-lg-12 pt-sm-2 pt-md-5">
                 <div class="d-sm-flex">

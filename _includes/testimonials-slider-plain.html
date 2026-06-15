@@ -1,10 +1,9 @@
 {% for testimonial in include.testimonials %}
 <div class="swiper-slide h-auto pt-4 pb-3 px-2">
     <div class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
-        {% assign testimonial_text = testimonial.text %}
         {% if testimonial.translations[page.lang] %}
             {% assign testimonial_text = testimonial.translations[page.lang] %}
-        {% elsif testimonial.translations[english_german] %}
+        {% else %}
             {% assign testimonial_text = testimonial.translations[english_german] %}
         {% endif %}
 

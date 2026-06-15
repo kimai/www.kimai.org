@@ -1,9 +1,7 @@
 ---
 title: "Press & Media"
-layout: default
+layout: page
 permalink: /pl/press-media
-navi_dark: true
-navi_absolute: true
 ---
  
 {% include pages/press-media.md %}

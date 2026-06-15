@@ -50,7 +50,7 @@ Allows reassigning of timesheet records from "delete user" dialog, so historical
 
 The action dropdown in long lists were partially hidden for the last items in the list, if the action menu was rather long. These menus now appear as "drop-ups" and all entries can be selected: 
 
-![List actions appear as drop-up]({% link images/news/1-13-dropup.png %})
+![List actions appear as drop-up]({% link images/news/1-13-dropup.webp %})
 
 ### Lockdown configuration
 
