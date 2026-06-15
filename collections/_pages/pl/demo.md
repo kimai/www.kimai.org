@@ -1,8 +1,6 @@
 ---
 title: Demo
-layout: default
-navi_dark: true
-navi_absolute: true
+layout: page
 permalink: /pl/demo.html
 cta: cloud
 ---
