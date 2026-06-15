@@ -122,9 +122,8 @@ Let’s explore the best time tracking tools for {{ site.this_year }} and see ho
         </div>
     </section>
 
-    {% assign testimonial_tag = page.testimonials.tag | default: "WallOfLove" %}
     {% assign testimonial_intro = "At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help companies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users." %}
-    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 10 %}
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'WallOfLove'" | sample: 10 %}
     {% include testimonials-horizontal-swipe.html testimonials=testimonials introduction=testimonial_intro %}
 
     <section class="container py-5 my-1 my-md-4 my-lg-5">
