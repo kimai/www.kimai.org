@@ -1,0 +1,26 @@
+/* Testimonial cards: scrollable text with fade indicator */
+
+.testimonial-text-wrapper {
+    position: relative;
+}
+
+.testimonial-text {
+    max-height: 200px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.testimonial-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--bs-body-bg, #fff));
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.testimonial-fade.is-hidden {
+    opacity: 0;
+}
