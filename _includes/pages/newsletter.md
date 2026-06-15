@@ -1,10 +1,3 @@
-{% assign title=site.data[page.lang].translation.newsletter.page_title %}
-{% assign intro=site.data[page.lang].translation.newsletter.page_intro %}
-
-{% include hero-text-round-dark.html title=title intro=intro %}
-
-<section class="pb-5 pt-md-1 pt-lg-4 pt-xl-5">
-</section>
 
 {% include section-newsletter.html %}
 

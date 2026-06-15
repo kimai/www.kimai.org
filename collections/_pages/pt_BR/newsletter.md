@@ -1,10 +1,7 @@
 ---
 title: "Newsletter"
-layout: default
-navi_dark: true
-navi_absolute: true
+layout: page
 permalink: /pt_BR/newsletter
 ---
  
-{% include pages/newsletter.md %}
-       
+{% include pages/newsletter.md %} 

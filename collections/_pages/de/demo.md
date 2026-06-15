@@ -5,4 +5,4 @@ permalink: /de/demo.html
 cta: cloud
 ---
 
-{% include pages/demo.md %} 
+{% include pages/demo.md %}
