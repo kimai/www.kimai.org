@@ -42,10 +42,9 @@
                             </span>
                             <div class="card-body pb-3 mb-0 overflow-scroll" style="height: 280px; ">
                                 <div class="mb-0">
-                                    {% assign testimonial_text = testimonial.text %}
                                     {% if testimonial.translations[page.lang] %}
                                         {% assign testimonial_text = testimonial.translations[page.lang] %}
-                                    {% elsif testimonial.translations[english_german] %}
+                                    {% else %}
                                         {% assign testimonial_text = testimonial.translations[english_german] %}
                                     {% endif %}
 
