@@ -1,13 +1,9 @@
-{% assign title=site.data[page.lang].translation.press-media.title %}
-{% assign intro=site.data[page.lang].translation.press-media.intro %}
 
-{% include hero-text-round-dark.html title=title intro=intro %}
-
-<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
+<section class="container pb-5 mb-md-2 mb-lg-4 mb-xl-5">
     <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
-        <div class="col-auto pt-sm-2 pt-md-5">
+        <div class="col-auto">
             <div class="d-sm-flex">
-                <div class="card border-0 bg-transparent text-center px-sm-1 px-md-3 mt-4">
+                <div class="card border-0 bg-faded-primary text-center p-4">
                     <div class="card-body p-0 pb-2 pb-sm-3 mb-3">
                         <div class="d-inline-block bg-secondary text-primary rounded-circle fs-3 lh-1 p-3 mb-3">
                             <i class="bx bx-video"></i>
