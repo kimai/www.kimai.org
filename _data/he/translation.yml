@@ -85,7 +85,7 @@ index:
 download:
     name: הורדה
     title: להוריד את Kimai
-    subtitle: הורדה - מעקב שעות Kimai
+    subtitle: אפשר לארח את Kimai על התשתית שלך - דרך SSH,‏ Docker או Kubernetes
     intro: אנו מציעים מגוון דרכים להתקין את Kimai. נא לבחור את האפשרות שהכי מתאימה לך.
 hosted:
     name: ענן
@@ -323,7 +323,7 @@ history:
     year-2018: השכתוב של Kimai מוצא את דרכו לקהילה, הסבת הנתונים עובדת, האימוץ הולך ומתרחב.
     current: "Kimai היא תוכנה למעקב שעות עם היסטוריה ענפה, הגרסה הראשונה ראתה אור ב־2006. למה חשוב לציין את זה? כיוון שראיתי תוכנות שקמו ונפלו מאז - כך שאפשר לומר בבטחה: Kimai כאן כדי להישאר. השקעתי שנים רבות בפיתוח Kimai בשביל הכיף, כיום Kimai זה העסק שלי ומעולם לא הייתי נחוש כל כך להמשיך ולשפר אותה.\n\nאני בונה את Kimai למטרה אחת: לתעד, לנהל, להעריך ולשקלל שעות עבודה. Kimai תומכת בכמות אינסופית של משתמשים, לקוחות, מיזמים ורשומות זמן, כך שניתן לנהל את כל הצוותים שלך דרך התקנה אחת פשוטה. Kimai מתורגמת לעשרות שפות ופועלת על כל מכשיר עם דפדפן וגישה לאינטרנט, אפילו במכשיר הנייד שלך בדרכים תודות לעיצוב המסתגל.\n\nאפשר ליצור חשבוניות מגיליונות השעות שלך ישירות מהדפדפן, עם תבניות חשבוניות שניתן לערוך. אפשר להרחיב את Kimai במגוון דרכים, במיוחד בזכות מגוון התוספים הענק שנוצר על ידי הקהילה החיה והפעילה.\n\nעצמאים, ארגונים קטנים או חברות עם מאות עובדים, בכולם Kimai יכולה לסייע בניהול העסק. אפשר להתלבט ולהחליט על ידי בדיקת Kimai בעזרת התקנות להתנסות.\n"
     past: "ל־Kimai יש היסטוריה ארוכה ומקדימה את זמנה עוד כשהצוות של טורסטן הלטגה החל לפתח אותה ב־2006. היה לה עיצוב מסתגל (בזכות כל מיני קסמי JavaScript) כאשר באותה תקופה עוד לא היה לזה שם.\nהשתלטתי על הפיתוח של Kimai ב־2009 כשטורסטן רצה לפרוש עקב מחסור בזמן ותחזק והרחיב את Kimai למשך מספר שנים בעזרת כמה חסידי קוד פתוח.\n\nבינתיים קהילת PHP עשתה צעדים משמעותיים, בעוד ש־Kimai הלכה אחורה ואחורה בעקבות ההיסטוריה שלה. בבסיס היו המון חולשות טכנולוגיות ולאחר שנות פיתוח רבות, תחזוקת הקוד הפכה להיות מורכב מאוד.\nהרעיון לשכתב את Kimai עם תשתיות מודרניות התגלגל לו מזה זמן מה, גם בעקבות כל מיני בקשות מהקהילה אך לאף אחד לא היה משאבים לדחוף את הרעיון הזה קדימה. בסוף 2017, מספר גורמים התכנסו ואני ניצלתי את התנופה כדי להתחיל לפתח את השלב ההתפתחותי הבא, „Kimai 2”.\n\nהתוכנית Kimai המקורית ראתה אור לראשונה ב־2006 ושימשה אנשים רבים מכל רחבי העולם, אני גאה בעובדה הזאת וגם בקהילה האדירה שמסביב. אני רוצה להודות מעומק הלב לכל מי שתרם בכל דרך שהיא ל־Kimai.\n"
-store-hero-counter: 'יותר מ־%number% לקוחות כבר סומכים על Kimai'
+store-hero-counter: 'יותר מ־%number% חברות כבר סומכות על Kimai'
 cta:
     tech-support:
         question: תמיכה טכנית ועסקית
@@ -338,7 +338,7 @@ cta:
         question: יכולות מעקב השעות הטובות ביותר בשבילך
         button: יכולות נוספות דרך תוסף
 highlight:
-    title: תומך בעסק שלך
+    title: תמיכה בעסק שלך
     subtitle: ל־Kimai יש את כל יכולות הליבה של העסק שנחוצות לך להקמת שגרות מעקב השעות שלך ושילוב עם התשתית הקיימת שלך.
     reasons:
         enterprise: תוספות לתאגידים
@@ -349,24 +349,26 @@ highlight:
 description: תיאור
 oss-cloud-compare:
     intro: Kimai היא תוכנה בקוד פתוח שזמינה לאירוח עצמי וגם לאירוח בענן SaaS.
-    title: תוכנה אחת, שתי גרסאות
+    title: |
+        ענן או אירוח עצמי.
+        החלטה שלך.
     on-premise:
-        badge: Free forever
-        reason_5: Plugin marketplace
-        reason_3: Docker & manual install
-        reason_2: Full data ownership
-        reason_1: 100% open source (AGPL 3)
-        reason_4: Community support
-        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+        badge: חינם לנצח
+        reason_5: חנות תוספים
+        reason_3: התקנה ידנית ודרך Docker
+        reason_2: בעלות מלאה על הנתונים
+        reason_1: 100% קוד פתוח (AGPL 3)
+        reason_4: תמיכה קהילתית
+        intro: שליטה מלאה על הנתונים והתשתית שלך. אפשר להטמיע שרת משלך עם Docker או ידנית.
     cloud:
-        reason_2: Automatic updates & backups
+        reason_2: עדכונים וגיבויים אוטומטיים
         reason_1: Instant setup, no server needed
         intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
-        reason_5: Plugins included
-        reason_4: Priority support
+        reason_5: תוספים כלולים
+        reason_4: תמיכה בעדיפות גבוהה
         badge: Recommended
-        reason_3: GDPR-compliant EU hosting
-    subtitle: Choose your path
+        reason_3: אירוח אירופי תואם GDPR
+    subtitle: בחירת הנתיב שלך
 section-features:
     subtitle: Kimai מציע הרבה יותר מסתם מעקב שעות, הנה רשימה של יכולות עסקיות חשובות שהוא יודע למלא.
     title: מה Kimai יכול לעשות בשבילי?
@@ -505,8 +507,8 @@ error:
     description: תחביר הבקשה שלך שגוי ולא ניתן למלא אותה, עמך הסליחה.
 cloud:
     status: מצב
-    subtitle: Announcements and news about the Kimai Cloud.
-    name: Cloud
+    subtitle: הכרזות וחדשות בנוגע לענן של Kimai.
+    name: ענן
 theme:
     dark: כהה
     light: בהיר
@@ -772,15 +774,16 @@ stories:
     location: מקום
     company: חברה
     employees: עובדים
-    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+    subtitle: מזמינים אותך לראות איך לקוחות חוסכים זמן וכסף בזכות פתרון הקוד הפתוח שלנו.
 title: כותרת
 date: תאריך
 press-media:
-    subtitle: We'd love to help. Find brand assets below, or reach out directly — we respond quickly.
-    contact_title: Covering Kimai?
-    contact_button: Email us
-    name: Press & Media
-    contact_text: Please feel free to ask your questions via email or schedule a chat.
+    subtitle: נשמח לעזור. אפשר למצוא את נכסי המיתוג להלן או לפנות אלינו ישירות - אנו מגיבים במהירות.
+    contact_title: סיקור עיתונאי ל־Kimai?
+    contact_button: לשלוח לנו דוא״ל
+    name: עיתונות ומדיה
+    title: עיתונות ומדיה
+    contact_text: אפשר לשאול שאלות דרך דוא״ל או לתאם זמן לשיחה מתי שנוח.
 per-month: לחודש
 version-1:
     subtitle: History of Kimai 1, which is not maintained since 2018.
