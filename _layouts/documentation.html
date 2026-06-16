@@ -44,7 +44,6 @@ layout: base
                     {% assign docs_page = site.documentation | where: "slug", docs_config.slug | first %}
                     <li class="nav-item">
                         <a href="{{ docs_page.url }}" class="nav-link {% if chapter_page.url == docs_page.url %} active{% endif %}">
-                            <i class="{{ docs_config.icon }} opacity-70 fs-lg me-1"></i>
                             {{ site.data[page.lang].translation[docs_config.translation].name | default: docs_page.title }}
                         </a>
                     </li>
