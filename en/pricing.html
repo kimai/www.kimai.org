@@ -48,27 +48,15 @@
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<header class="header navbar navbar-expand-lg  navbar-dark bg-dark  navbar-sticky">
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
     <div class="container px-3">
         <a href="/en/" class="navbar-brand pe-3">
         <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source time-tracker"> Kimai
         </a>
-        <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+        <div id="navbarNav" class="offcanvas offcanvas-end">
             <div class="offcanvas-header border-bottom">
                 <h5 class="offcanvas-title">Menu</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -89,7 +77,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
                         <ul class="dropdown-menu">
                             <li><a href="/en/pricing" class="dropdown-item">Pricing</a></li>
-                            <li><a href="/en/changelog" class="dropdown-item">Changelog</a></li>
+                            <li><a href="/en/changelog" class="dropdown-item">Updates</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -141,7 +129,7 @@
             
             
             <div class="dropdown language-dropdown d-inline-block">
-    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-light px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
             English
     </button>
@@ -268,22 +256,43 @@
 </header>
 
 
-    <section class="bg-dark py-4">
-    <div class="container pb-2 py-lg-3 text-center">
-        <h1 class="mb-4">Pricing</h1>
-        <p class="text-body fs-lg pb-3 mb-3">These plans are available for cloud customers</p>
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+
+<section class="hero container pt-md-1 pt-lg-4 pt-xl-5">
+    <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+        
+        <h1 class="page-title  mb-lg-4 mb-3">
+            Pricing
+        </h1>
+        
+        <p class="mb-4">Find the right plan for your team.</p>
+        
     </div>
-    <div style="height: 250px;"></div>
 </section>
 
+
+
+
 <div class="price-switch-wrapper">
-    <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5" style="margin-top: -300px;">
+    <section class="container mb-5">
         
 
 
 
 
-<div class="">
+<div>
     <div class="pb-2 pb-lg-3">
         <div class="form-check form-switch price-switch justify-content-center mt-2 mb-4" data-bs-toggle="price">
             <input type="checkbox" class="form-check-input" id="pricing" />
@@ -292,25 +301,25 @@
         </div>
     </div>
     <div class="table-responsive-lg">
-        <div class="d-flex align-items-center pb-4 flex-wrap">
-            <div class="border rounded-3 rounded-end-0 shadow-sm me-n1 w-100 w-sm-50">
-                <div class="card bg-light h-100 border-0 border-end rounded-end-0 py-3 py-sm-4 py-lg-5">
+        <div class="d-flex justify-content-center align-items-stretch pb-4 flex-wrap gap-3 gap-lg-4">
+            <div id="pricing-starter" class="border-primary rounded-3 shadow-sm w-50" style="flex: 1 1 20rem; max-width: 35rem;">
+                <div class="card bg-light h-100 rounded-3 py-3 py-sm-4">
                     <div class="card-body text-center">
                         <h3 class="mb-5">Standard</h3>
-                        <div class="display-5 text-dark mb-1" data-monthly-price="">
+                        <div class="display-6 text-dark mb-1" data-monthly-price="">
 
 
 
 <sup>€</sup> 2.99
 </div>
-                        <div class="d-none display-5 text-dark mb-1" data-annual-price="">
+                        <div class="d-none display-6 text-dark mb-1" data-annual-price="">
 
 
 
 <sup>€</sup> 3.99
 </div>
                         <div class="text-muted mb-5">Per user &amp; month</div>
-                        <div class="fs-lg opacity-70 pb-4 mb-3">
+                        <div class="fs-lg pb-4 mb-3">
                             <ul class="list-unstyled" data-monthly-price="">
                                 
                                 
@@ -367,24 +376,24 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-primary position-relative rounded-3 shadow-primary zindex-2 p-4 w-100 w-sm-50">
-                <div class="card bg-transparent border-light py-3 py-sm-4 py-lg-5">
+            <div id="pricing-pro" class="bg-primary rounded-3 shadow-primary w-50" style="flex: 1 1 20rem; max-width: 35rem;">
+                <div class="card bg-transparent h-100 border-0 rounded-3 py-3 py-sm-4">
                     <div class="card-body text-light text-center">
                         <h3 class="text-light mb-5">Professional</h3>
-                        <div class="display-5 mb-1" data-monthly-price="">
+                        <div class="display-6 mb-1" data-monthly-price="">
 
 
 
 <sup>€</sup> 3.99
 </div>
-                        <div class="d-none display-5 mb-1" data-annual-price="">
+                        <div class="d-none display-6 mb-1" data-annual-price="">
 
 
 
 <sup>€</sup> 4.99
 </div>
                         <div class="opacity-50 mb-5">Per user &amp; month</div>
-                        <div class="fs-lg opacity-70 pb-4 mb-3">
+                        <div class="fs-lg pb-4 mb-3">
                             <ul class="list-unstyled" data-monthly-price="">
                                 <li>All features from 'Standard'</li>
                                 
@@ -469,11 +478,11 @@
 <div class="row">
     
     <div class="col-12 col-md-4 text-center p-3">
-        <img src="/images/testimonials/armin-bittner.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Armin Bittner" />
+        <img src="/images/testimonials/panagiotis-ntinis.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Panagiotis Ntinis" />
         
 
         
-        <p>It works without any problems or interruptions.</p>
+        <p>They responded quickly and had my issue resolved within half an hour, saving me from a potential disaster.</p>
 
         <div class="text-nowrap">
             
@@ -489,17 +498,17 @@
             
         </div>
         <div class="mt-1">
-            <p class="fs-base mb-0">Armin Bittner</p>
-            <p class="fs-xs text-muted">Geschäftsführer</p>
+            <p class="fs-base mb-0">Panagiotis Ntinis</p>
+            <p class="fs-xs text-muted">Backend Developer</p>
         </div>
     </div>
     
     <div class="col-12 col-md-4 text-center p-3">
-        <img src="/images/testimonials/christoph-van-bracht.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Christoph van Bracht" />
+        <img src="/images/testimonials/jasmin.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Jasmin" />
         
 
         
-        <p>fast tracking, an overview of outstanding items, and lightning-fast billing with a clean timesheet</p>
+        <p>The team responds quickly and addresses all wishes and concerns</p>
 
         <div class="text-nowrap">
             
@@ -515,17 +524,17 @@
             
         </div>
         <div class="mt-1">
-            <p class="fs-base mb-0">Christoph van Bracht</p>
-            <p class="fs-xs text-muted">Geschäftsführer</p>
+            <p class="fs-base mb-0">Jasmin</p>
+            <p class="fs-xs text-muted">Software Developer</p>
         </div>
     </div>
     
     <div class="col-12 col-md-4 text-center p-3">
-        <img src="/images/testimonials/johannes-mertens.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Johannes Mertens" />
+        <img src="/images/testimonials/isaac-mailach.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Isaac Mailach" />
         
 
         
-        <p>We particularly appreciate its clarity, evaluability, and ease of use.</p>
+        <p>I love how I can combine time tracking, expense tracking, and invoicing into one app</p>
 
         <div class="text-nowrap">
             
@@ -541,8 +550,8 @@
             
         </div>
         <div class="mt-1">
-            <p class="fs-base mb-0">Johannes Mertens</p>
-            <p class="fs-xs text-muted">Entwickler</p>
+            <p class="fs-base mb-0">Isaac Mailach</p>
+            <p class="fs-xs text-muted">Media Composer, Studio Cellist</p>
         </div>
     </div>
     
@@ -2651,6 +2660,7 @@
 
 
 
+
     
         
 <section class="container pt-3 pb-4 pb-md-5">
@@ -2658,7 +2668,7 @@
         <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
             <div class="py-md-5 py-4 text-center">
                 <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
-                <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Start your time-tracking now</h2>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Start your time-tracking now</h2>
                 <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Start for free</a>
 
             </div>
@@ -2806,7 +2816,6 @@
 </div>
 
                     </div>
-                    
                 </div>
             </div>
             <div class="col-md-7 offset-xl-1">
@@ -2901,7 +2910,6 @@
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -2915,6 +2923,9 @@
         </li>
         <li class="nav-item">
             <a href="/en/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
         </li>
     </ul>
     <div class="nav order-md-2 mb-3 mb-md-0">
@@ -2937,12 +2948,6 @@
 
 
     </div>
-    <ul class="nav order-md-3">
-        <li class="nav-item">
-            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
-        </li>
-    </ul>
-    
 </div>
 
     </div>

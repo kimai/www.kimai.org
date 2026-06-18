@@ -33,19 +33,7 @@
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<header class="header navbar navbar-expand-lg position-absolute    navbar-sticky">
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
     <div class="container px-3">
         <a href="/de/" class="navbar-brand pe-3">
         <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
@@ -53,7 +41,7 @@
         <div id="navbarNav" class="offcanvas offcanvas-end">
             <div class="offcanvas-header border-bottom">
                 <h5 class="offcanvas-title">Menu</h5>
-                <button type="button" class="btn-close " data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -74,7 +62,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
                         <ul class="dropdown-menu">
                             <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
-                            <li><a href="/de/changelog" class="dropdown-item">Änderungen</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Updates</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -253,16 +241,16 @@
 </header>
 
 
-    <section class="position-relative pt-5 overflow-hidden">
-        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-secondary"></span>
+    <section class="hero border-bottom position-relative py-5 overflow-hidden">
+        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-hero"></span>
         <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
             <div class="row justify-content-center flex-md-nowrap">
                 <div class="d-flex flex-column justify-content-between mb-3 text-center">
-                    <h1 class="display-4 mb-lg-4 mb-3">
-                        <small class="fs-3">Open Source</small><br>
+                    <p class="eyebrow mb-1">Open Source</p>
+                    <h1 class="page-title mb-lg-4 mb-3">
                         <span class="fw-semibold">Online Zeiterfassung</span>
                     </h1>
-                    <p id="claude" class="mb-4 pb-xl-3 pb-lg-2 fs-lg mx-auto" style="max-width: 30.5rem;">
+                    <p class="mb-4 pb-xl-3 pb-lg-2 fs-lg mx-auto" style="max-width: 30.5rem;">
                         Die schnelle und kostengünstige Einführung eines skalierbaren Zeiterfassungssystems ist nicht nur für moderne Start-ups unerlässlich - Kimai bietet einen enormen Mehrwert gegen eine geringe Gebühr. Die in der Cloud gehostete Zeiterfassungssoftware Kimai ist sofort verfügbar und steht für Sie bereit, nur wenige Minuten nach der Anmeldung. ✨
                     </p>
                 </div>
@@ -302,7 +290,7 @@
     <section class="bg-secondary pb-5 mb-md-2 mb-lg-4 mb-xl-5">
         <div class="container">
             <div class="row pt-5 pb-1 pb-sm-2 pb-md-3">
-                <h2 class="h1 mt-3 mb-5 text-center">Entdecke Kimai</h2>
+                <h2 class="mt-3 mb-5 text-center">Entdecke Kimai</h2>
 
                 <div class="lp-content">
                     <p>Keine Installation, kein IT-Projekt, kein Wartungsvertrag. Online Zeiterfassung bedeutet: Browser öffnen, einloggen, loslegen. Und genau dieses Versprechen löst Kimai ein — als Open-Source-Lösung, die in der Cloud genauso stark ist wie auf dem eigenen Server.</p>
@@ -594,7 +582,7 @@ Du entscheidest.<br />
         <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
             <div class="py-md-5 py-4 text-center">
                 <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
-                <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
                 <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
 
             </div>
@@ -739,7 +727,6 @@ Du entscheidest.<br />
 </div>
 
                     </div>
-                    
                 </div>
             </div>
             <div class="col-md-7 offset-xl-1">
@@ -834,7 +821,6 @@ Du entscheidest.<br />
                             </ul>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -848,6 +834,9 @@ Du entscheidest.<br />
         </li>
         <li class="nav-item">
             <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
         </li>
     </ul>
     <div class="nav order-md-2 mb-3 mb-md-0">
@@ -870,12 +859,6 @@ Du entscheidest.<br />
 
 
     </div>
-    <ul class="nav order-md-3">
-        <li class="nav-item">
-            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">Status</a>
-        </li>
-    </ul>
-    
 </div>
 
     </div>
