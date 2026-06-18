@@ -15,7 +15,7 @@ Does your team's absence management still live in your inbox? For most managers,
 
 The good news: this is a solved problem. The right digital tool like Kimai’s Absence Management helps you manage the team’s absences easier.
 
-# How Digital Tools Solve the Absence Management Problem
+## How Digital Tools Solve the Absence Management Problem
 
 If you're a business owner or team manager searching for a better way to handle absence approvals, leave requests, or sick leave tracking, your frustration is well-founded. Here's what email-based absence management actually looks like in practice:
 
@@ -30,7 +30,7 @@ If you've been searching for an absence management tool, a team leave tracker, o
 
 Kimai's approach is all about time in the heart of your business. The teams track actual work and their planned absences live in the same platform. As a result, no duplicate data entry and no switches between the tools.
 
-# Kimai Absence Management: A Complete Overview
+## Kimai Absence Management: A Complete Overview
 
 Kimai is an open-source time tracking platform used by thousands of businesses worldwide. Absence management is available in Kimai Cloud and as a plugin for self-hosted / on-premise solutions.
 
@@ -44,7 +44,7 @@ Here's what the Absence Management feature covers:
 - Reporting and export: Generate absence reports by user, team, time period, or absence type, ready for payroll, HR audits, or planning
 - Absence Calendar: The newest addition: a visual, team-wide calendar showing all absences at a glance (see below)
 
-# The New Feature: Kimai's Absence Calendar
+## The New Feature: Kimai's Absence Calendar
 
 The Absence Calendar answers the most common question in team management: "Who is actually in next week?"
 
@@ -62,10 +62,10 @@ Take a look at this example.
 
 {% include image.html src="/images/documentation/absence-calendar.webp" title="Absence calendar" %}
 
-# Frequently Asked Questions About Team Absence Management
+## Frequently Asked Questions About Team Absence Management
 
 {% include faq.html type="absence_management" %}
 
-# Ready to start with pain-free absence management?
+## Ready to start with pain-free absence management?
 
 Try all the features of Kimai Absence Management including [Absence Calendar]({% link _documentation/absence.md %}) in [our Demo]({% link _pages/{{ page.lang }}/demo.md %}) or during your free 30-days trial.

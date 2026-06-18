@@ -4,35 +4,13 @@ layout: base
 
 <main class="page-wrapper">
 
-    {% include header-navigation.html absolute=true light=false %}
+    {% include header-navigation.html %}
 
-    <section class="position-relative pt-5">
-        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-secondary"></span>
-        <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5 pt-3">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column">
-                    <h1 class="display-4 fw-semibold mb-4">
-                        {{ page.title }}
-                    </h1>
-                    <p class="fs-lg mb-5">
-                        {{ content }}
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row row-cols-2 gx-3 gx-lg-4">
-                        <div class="col pt-lg-5 mt-lg-1">
-                            <img src="{{ page.logos.logo1 }}" class="d-block rounded-3 mb-3 mb-lg-4" alt="Image">
-                            <img src="{{ page.logos.logo2 }}" class="d-block rounded-3" alt="Image">
-                        </div>
-                        <div class="col">
-                            <img src="{{ page.logos.logo3 }}" class="d-block rounded-3 mb-3 mb-lg-4" alt="Image">
-                            <img src="{{ page.logos.logo4 }}" class="d-block rounded-3" alt="Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% assign pagetitle = page.title %}
+    {% assign subtitle = '' %}
+    {% assign eyebrow = site.slogan %}
+
+    {% include hero-plain-text.html %}
 
     <section class="container mt-3 mb-5 pt-lg-5" id="benefits">
         <div class="row align-items-center pt-4">
@@ -46,6 +24,14 @@ layout: base
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </section>
+
+    <section class="container mt-3 mb-5 pt-lg-5" id="benefits">
+        <div class="row align-items-center pt-4">
+
+            {{ content }}
+
         </div>
     </section>
 

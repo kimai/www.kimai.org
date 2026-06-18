@@ -37,7 +37,7 @@ A lot of the website content is translatable. We use the great service [Weblate]
 
 Please click the image to help with the translations:
 <a href="https://hosted.weblate.org/engage/kimai/">
-<img src="https://hosted.weblate.org/widgets/kimai/-/open-graph.png" alt="Übersetzungsstatus" />
+<img src="https://hosted.weblate.org/widgets/kimai/-/open-graph.png" alt="Translation status" />
 </a>    
 
 ## Build it locally

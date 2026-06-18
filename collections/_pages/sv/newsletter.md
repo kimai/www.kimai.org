@@ -4,4 +4,5 @@ layout: page
 permalink: /sv/newsletter
 ---
  
-{% include pages/newsletter.md %} 
+{% include pages/newsletter.md %}
+ 

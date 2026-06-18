@@ -1,5 +1,5 @@
 ---
-title: "Kimai Rabatt und Gutschein Codes"
+title: "Rabatt und Gutschein Codes"
 centered: true
 cta: cloud
 ---

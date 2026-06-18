@@ -84,7 +84,7 @@ They're the ones where time data flows seamlessly through the systems they alrea
 Where logging hours takes seconds, not minutes. 
 Where invoicing is automatic, not manual.
 
-# What's Next?
+## What's Next?
 
 If you're evaluating time tracking for your team, ask yourself: Does this tool connect to the systems I already use? 
 If the answer is "sort of" or "with manual work," keep looking.

@@ -1,11 +1,6 @@
 ---
 title: "Kimai ist Teil der Open-Source Community"
 layout: landingpage-images
-logos:
-    logo1: /images/landingpages/open-source-community/github.png
-    logo2: /images/landingpages/open-source-community/php.png
-    logo3: /images/landingpages/open-source-community/open-source-initiative.png
-    logo4: /images/landingpages/open-source-community/symfony.png
 contributions:
     title: Mit Beiträgen zu diesen Projekten
     text: Wir unterstützen die Open-Source-Projekte, die in Kimai verwendet werden, sowohl finanziell als auch mit Zeit, um eine lebendige Open-Source Gemeinschaft zu schaffen.

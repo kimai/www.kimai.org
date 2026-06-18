@@ -1,5 +1,5 @@
 ---
-title: "Kimai Discount and Coupon Codes"
+title: "Discount and Coupon Codes"
 centered: true
 cta: cloud
 ---

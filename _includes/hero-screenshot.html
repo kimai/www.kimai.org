@@ -1,16 +1,22 @@
 {% assign features = include.features | default: page.hero_features | default: '' %}
 {% assign image = include.image | default: page.image %}
-<section class="position-relative pt-5 overflow-hidden">
-    <span class="position-absolute top-0 start-0 d-block w-100 h-100 {% if features contains 'gradient' %}bg-gradient-primary opacity-10{% else %}bg-secondary{% endif %}"></span>
+{% assign bg_color = 'bg-hero' %}
+{% if features contains 'on-premise' %}
+    {% assign bg_color = 'bg-hero' %}
+{% elsif features contains 'cloud' %}
+    {% assign bg_color = 'bg-hero' %}
+{% endif %}
+<section class="hero position-relative pt-4 overflow-hidden">
+    <span class="position-absolute top-0 start-0 d-block w-100 h-100 {{ bg_color }}"></span>
     <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5 pt-3">
         <div class="row justify-content-md-start justify-content-center flex-md-nowrap">
             <div class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3">
                 <div class="text-md-start text-center">
                     {% if features contains 'austria' %}
-                    <p class="text-muted text-uppercase mb-1 opacity-70">Open Source · Made in Austria</p>
+                    <p class="eyebrow text-muted mb-1 opacity-70">{{ site.slogan }}</p>
                     {% endif %}
 
-                    <h1 class="display-4 fw-semibold mb-lg-4 mb-3">
+                    <h1 class="page-title mb-lg-4 mb-3">
                         {{ include.title | default: pagetitle }}
                     </h1>
 

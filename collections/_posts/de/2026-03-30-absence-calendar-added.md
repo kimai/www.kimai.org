@@ -15,7 +15,7 @@ Lebt das Abwesenheitsmanagement deines Teams noch immer in deinem Posteingang? F
 
 Die gute Nachricht: Dieses Problem ist lösbar. Das richtige digitale Werkzeug wie Kimais Abwesenheitsverwaltung hilft dir, die Abwesenheiten deines Teams einfacher zu verwalten.
 
-# Wie digitale Tools das Abwesenheitsmanagement-Problem lösen
+## Wie digitale Tools das Abwesenheitsmanagement-Problem lösen
 
 Wenn du Geschäftsinhaber oder Teammanager bist und nach einem besseren Weg suchst, Abwesenheitsgenehmigungen, Urlaubsanträge oder Krankheitsnachverfolgung zu verwalten, ist deine Frustration berechtigt. So sieht E-Mail-basiertes Abwesenheitsmanagement in der Praxis aus:
 
@@ -30,7 +30,7 @@ Wenn du nach einem Abwesenheitsverwaltungstool, einem Team-Urlaubstracker oder e
 
 Kimais Ansatz dreht sich alles um die Zeit im Mittelpunkt deines Unternehmens. Die Teams erfassen tatsächliche Arbeit und ihre geplanten Abwesenheiten in derselben Plattform. Das Ergebnis: keine doppelte Dateneingabe und kein Wechsel zwischen den Tools.
 
-# Kimai Abwesenheitsverwaltung: Ein vollständiger Überblick
+## Kimai Abwesenheitsverwaltung: Ein vollständiger Überblick
 
 Kimai ist eine Open-Source-Zeiterfassungsplattform, die von Tausenden von Unternehmen weltweit genutzt wird. Die Abwesenheitsverwaltung ist in Kimai Cloud und als Plugin für selbst gehostete / On-Premise-Lösungen verfügbar.
 
@@ -44,7 +44,7 @@ Das bietet die Abwesenheitsverwaltungsfunktion:
 - Berichte und Export: Erstelle Abwesenheitsberichte nach Benutzer, Team, Zeitraum oder Abwesenheitstyp, bereit für Lohnabrechnung, HR-Audits oder Planung
 - Abwesenheitskalender: Die neueste Ergänzung: ein visueller, teamweiter Kalender, der alle Abwesenheiten auf einen Blick zeigt (siehe unten)
 
-# Das neue Feature: Kimais Abwesenheitskalender
+## Das neue Feature: Kimais Abwesenheitskalender
 
 Der Abwesenheitskalender beantwortet die häufigste Frage im Teammanagement: „Wer ist nächste Woche eigentlich da?"
 
@@ -62,10 +62,10 @@ Sieh dir dieses Beispiel an.
 
 {% include image.html src="/images/documentation/absence-calendar.webp" title="Abwesenheitskalender" %}
 
-# Häufig gestellte Fragen zur Abwesenheitsverwaltung im Team
+## Häufig gestellte Fragen zur Abwesenheitsverwaltung im Team
 
 {% include faq.html type="absence_management" %}
 
-# Bereit für ein reibungsloses Abwesenheitsmanagement?
+## Bereit für ein reibungsloses Abwesenheitsmanagement?
 
 Teste alle Funktionen der Kimai Abwesenheitsverwaltung einschließlich [Abwesenheitskalender]({% link _documentation/absence.md %}) in [unserer Demo]({% link _pages/{{ page.lang }}/demo.md %}) oder während deiner kostenlosen 30-Tage-Testphase.

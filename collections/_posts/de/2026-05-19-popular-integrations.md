@@ -84,7 +84,7 @@ Es sind die, bei denen Zeitdaten nahtlos durch die Systeme fließen, auf die sie
 Wo das Erfassen von Stunden Sekunden dauert, nicht Minuten.
 Wo die Rechnungsstellung automatisch erfolgt, nicht manuell.
 
-# Wie geht es weiter?
+## Wie geht es weiter?
 
 Wenn du eine Zeiterfassung für dein Team evaluierst, frage dich: Lässt sich dieses Tool mit den Systemen verbinden, die ich bereits nutze?
 Wenn die Antwort „so halb" oder „mit manuellem Aufwand" lautet, suche weiter.

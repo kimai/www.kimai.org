@@ -1,11 +1,6 @@
 ---
 title: "Kimai is part of the Open-Source Community"
 layout: landingpage-images
-logos: 
-    logo1: /images/landingpages/open-source-community/github.png
-    logo2: /images/landingpages/open-source-community/php.png
-    logo3: /images/landingpages/open-source-community/open-source-initiative.png
-    logo4: /images/landingpages/open-source-community/symfony.png
 contributions:
     title: Contributed to these projects
     text: We contribute back to the open-source projects that are used in Kimai, both financially and with time, to create a vibrant open-source community.
@@ -65,4 +60,3 @@ Contributors have the opportunity to collaborate with like-minded peers on GitHu
 Whether you're tracking billable hours, managing team productivity, or analysing project timelines, you're supported by an international network of experts.
 
 Join us and be part of this journey!
- 

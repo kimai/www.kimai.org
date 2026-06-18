@@ -16,11 +16,6 @@
                     <div class="position-relative">
                         {% include language-dropdown.html language=page.lang display="full" button="btn btn-sm fs-sm btn-secondary" %}
                     </div>
-                    {% comment %}
-                    <div class="d-flex pt-4 pt-sm-0 pt-lg-4 mt-lg-3">
-                        {% include section-social-links.html %}
-                    </div>
-                    {% endcomment %}
                 </div>
             </div>
             <div class="col-md-7 offset-xl-1">
@@ -76,7 +71,7 @@
                                 {% assign alternativeTo = site.data[page.lang].translation.comparison.alternative %}
                                 {% for tool in tools %}
                                     <li class="nav-item">
-                                        <a href="{{ tool.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ compareWith | replace: "%name%", tool.name }}">{{ alternativeTo | replace: "%product%", tool.name }}</a>
+                                        <a href="{{ tool.url }}" class="nav-link fs-sm fw-medium px-0 py-1" title="{{ compareWith | replace: '%name%', tool.name }}">{{ alternativeTo | replace: "%product%", tool.name }}</a>
                                     </li>
                                 {% endfor %}
                                 {% if page.lang == 'de' or page.lang == 'en' %}
@@ -87,11 +82,6 @@
                             </ul>
                         </div>
                     </div>
-                    {% comment %}
-                    <div class="d-none d-lg-block col-lg-3 text-end">
-                        <img src="/images/kimai_logo.webp" style="max-height:148px" alt="Kimai">
-                    </div>
-                    {% endcomment %}
                 </div>
             </div>
         </div>

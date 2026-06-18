@@ -25,7 +25,7 @@ All of you guys rock ❤️ thanks for being part of the Kimai community!
 
 > Want to upgrade? [Click here to find out how]({%link _documentation/updates.md %}).
 
-# Changelog
+## Changelog
 
 [Full Changelog]({{ site.kimai_v2_repo }}/compare/1.10.2...1.11)
 

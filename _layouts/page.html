@@ -12,10 +12,12 @@ layout: default
 {% if site.data[page.lang].translation[pageTranslationKey].subtitle != nil %}
     {% assign subtitle = site.data[page.lang].translation[pageTranslationKey].subtitle %}
 {% endif %}
+{% assign eyebrow = nil %}
+{% if site.data[page.lang].translation[pageTranslationKey].eyebrow != nil %}
+    {% assign eyebrow = site.data[page.lang].translation[pageTranslationKey].eyebrow %}
+{% endif %}
 
-{% if page.hero == 'image' %}
-    {% include hero-image.html %}
-{% elsif page.hero == 'screenshot' %}
+{% if page.hero == 'screenshot' %}
     {% include hero-screenshot.html %}
 {% else %}
     {% include hero-plain-text.html %}
