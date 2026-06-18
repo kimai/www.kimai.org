@@ -59,7 +59,7 @@
 {%- endfor %}
 {%- endif %}
 {%- endif %}
-<link href="/assets/build/main{% if site.rtl contains page.lang %}.rtl{% endif %}.css?v9" rel="stylesheet" />
+<link href="/assets/build/main{% if site.rtl contains page.lang %}.rtl{% endif %}.css?v10" rel="stylesheet" />
 {% if layout.shopping != nil -%}
 {% include shopping/{{ layout.shopping }}.html %}
 {%- endif %}
@@ -73,7 +73,7 @@
     <i class="btn-scroll-top-icon {{ 'up' | icon }}"></i>
 </a>
 
-<script src="/assets/build/main.js?v1"></script>
+<script src="/assets/build/main.js?v2"></script>
 {% if jekyll.environment == "production" %}
 <script defer src="https://u.kimai.org/script.js" data-website-id="{{ site.website_id[page.lang] }}"></script>
 {% endif %}
