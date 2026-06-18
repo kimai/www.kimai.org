@@ -1,8 +1,8 @@
 {% assign features = include.features | default: page.hero_features | default: '' %}
 {% assign bg_color = '' %}
-{% if include.color == 'onpremise' %}
+{% if features contains 'on-premise' %}
     {% assign bg_color = 'bg-hero' %}
-{% elsif include.color == 'cloud' %}
+{% elsif features contains 'cloud' %}
     {% assign bg_color = 'bg-hero' %}
 {% endif %}
 
@@ -23,9 +23,9 @@
     </div>
 </section>
 {% else %}
-<section class="hero position-relative pt-5">
+<section class="hero border-bottom position-relative pt-5">
     <div  class="position-absolute top-0 start-0 w-100 h-100 {{ bg_color }}"></div>
-    <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5 pt-3">
+    <div class="container position-relative py-lg-4 pt-xxl-5 pt-3">
         <div class="row justify-content-center flex-md-nowrap">
             <div class="d-flex flex-column justify-content-between mb-3 text-center">
                 {% if eyebrow %}
@@ -41,7 +41,9 @@
                     {{ subtitle|newline_to_br }}
                 </p>
                 {% endif %}
-
+                {% if features contains 'pricing-switch' %}
+                    {% include pricing-switch.html %}
+                {% endif %}
             </div>
         </div>
     </div>

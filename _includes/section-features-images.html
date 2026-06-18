@@ -23,7 +23,7 @@
                 </p>
                 {% if site.data[page.lang].translation.feature[name].points != nil %}
                     {% for point in site.data[page.lang].translation.feature[name].points %}
-                        <i class="{{ 'check-yes' | icon }}"></i> {{ point[1] }}<br/>
+                        <i class="{{ 'check-yes' | icon }} text-success"></i> {{ point[1] }}<br/>
                     {% endfor %}
                 {% endif %}
             </div>

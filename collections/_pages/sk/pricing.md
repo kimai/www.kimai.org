@@ -2,6 +2,7 @@
 title: Pricing
 permalink: /sk/pricing
 cta: cloud
+hero_features: cloud, pricing-switch
 ---
 
 {% include pages/pricing.md %}

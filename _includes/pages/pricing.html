@@ -1,4 +1,4 @@
-<div class="price-switch-wrapper">
+<div class="price-switch-wrapper" style="margin-top: -50px">
     <section class="container mb-5">
         {% include pricing-plans.html %}
         <p class="my-3 text-muted text-center">
@@ -17,3 +17,26 @@
         {% include plan-compare-features.html %}
     </section>
 </div>
+<script>
+document.querySelector('[data-bs-toggle="price"]').addEventListener('change', (e) => {
+    let checkbox = e.currentTarget.querySelector('input[type="checkbox"]'),
+        monthlyPrice = document.querySelectorAll('[data-monthly-price]'),
+        annualPrice = document.querySelectorAll('[data-annual-price]');
+
+    for (let n = 0; n < monthlyPrice.length; n++) {
+        if (checkbox.checked) {
+            monthlyPrice[n].classList.add('d-none');
+        } else {
+            monthlyPrice[n].classList.remove('d-none');
+        }
+    }
+
+    for (let m = 0; m < monthlyPrice.length; m++) {
+        if (checkbox.checked) {
+            annualPrice[m].classList.remove('d-none');
+        } else {
+            annualPrice[m].classList.add('d-none');
+        }
+    }
+})
+</script>
