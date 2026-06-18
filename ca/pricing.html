@@ -270,194 +270,304 @@
 
 
 
-<section class="hero container pt-md-1 pt-lg-4 pt-xl-5">
-    <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
-        
-        <h1 class="page-title  mb-lg-4 mb-3">
-            Tarifes
-        </h1>
-        
-        <p class="mb-4">Aquests plans estan disponibles per als clients del núvol</p>
-        
+<section class="hero border-bottom position-relative pt-5">
+    <div  class="position-absolute top-0 start-0 w-100 h-100 bg-hero"></div>
+    <div class="container position-relative py-lg-4 pt-xxl-5 pt-3">
+        <div class="row justify-content-center flex-md-nowrap">
+            <div class="d-flex flex-column justify-content-between mb-3 text-center">
+                
+                <h1 class="page-title mb-lg-4 mb-3">
+                    Tarifes
+                </h1>
+                
+                <p class="mb-4 pb-xl-3 pb-lg-2 fs-lg mx-auto" style="max-width: 30.5rem;">
+                    Aquests plans estan disponibles per als clients del núvol
+                </p>
+                
+                
+                    <div class="pb-3 pb-lg-4 mb-4">
+    <div class="form-check form-switch price-switch justify-content-center mt-2 mb-2" data-bs-toggle="price">
+        <input type="checkbox" class="form-check-input" id="pricing">
+        <label class="form-check-label d-flex align-items-start" for="pricing">Anual <span class="text-danger fs-xs fw-semibold mt-n2 ms-2">-20%</span></label>
+        <label class="form-check-label" for="pricing">Mensual</label>
+    </div>
+    <p data-monthly-price="" class="text-muted fs-sm"></p>
+    <p data-annual-price="" class="d-none text-muted fs-sm"></p>
+</div>
+
+                
+            </div>
+        </div>
     </div>
 </section>
 
 
 
 
-<div class="price-switch-wrapper">
+<div class="price-switch-wrapper" style="margin-top: -50px">
     <section class="container mb-5">
         
 
 
 
 
-<div>
-    <div class="pb-2 pb-lg-3">
-        <div class="form-check form-switch price-switch justify-content-center mt-2 mb-4" data-bs-toggle="price">
-            <input type="checkbox" class="form-check-input" id="pricing" />
-            <label class="form-check-label d-flex align-items-start" for="pricing">Anual <span class="text-danger fs-xs fw-semibold mt-n2 ms-2">-20%</span></label>
-            <label class="form-check-label" for="pricing">Mensual</label>
-        </div>
-    </div>
-    <div class="table-responsive-lg">
-        <div class="d-flex justify-content-center align-items-stretch pb-4 flex-wrap gap-3 gap-lg-4">
-            <div id="pricing-starter" class="border-primary rounded-3 shadow-sm w-50" style="flex: 1 1 20rem; max-width: 35rem;">
-                <div class="card bg-light h-100 rounded-3 py-3 py-sm-4">
-                    <div class="card-body text-center">
-                        <h3 class="mb-5">Standard</h3>
-                        <div class="display-6 text-dark mb-1" data-monthly-price="">
+<div class="table-responsive-lg">
+    <div class="d-flex justify-content-center align-items-stretch pb-4 flex-wrap gap-3 gap-lg-4">
+        <div id="pricing-starter" class="zindex-2 border-primary rounded-5 shadow-sm w-50" style="flex: 1 1 20rem; max-width: 30rem;">
+            <div class="card bg-light h-100 py-3 py-sm-4 rounded-5">
+                <div class="card-body text-center px-4 px-lg-5">
+                    <h3 class="mb-5">Standard</h3>
+                    <div class="display-6 text-dark mb-1" data-monthly-price="">
 
 
 
-<sup>€</sup> 2.99
+<sub>€</sub> 2.99
 </div>
-                        <div class="d-none display-6 text-dark mb-1" data-annual-price="">
+                    <div class="d-none display-6 text-dark mb-1" data-annual-price="">
 
 
 
-<sup>€</sup> 3.99
+<sub>€</sub> 3.99
 </div>
-                        <div class="text-muted mb-5">Per usuari i mes</div>
-                        <div class="fs-lg pb-4 mb-3">
-                            <ul class="list-unstyled" data-monthly-price="">
-                                
-                                
-                                <li>Seguiment del temps de projecte</li>
-                                
-                                
-                                <li>Hores facturables i no facturables</li>
-                                
-                                
-                                <li>Facturació</li>
-                                
-                                
-                                <li>Exportació de dades</li>
-                                
-                                
-                                <li>Registres d'auditoria</li>
-                                
-                                
-                                <li>Traduccions específiques del sector</li>
-                                
-                                
-                                <li>Suport per correu electrònic</li>
-                                
-                            </ul>
-                            <ul class="list-unstyled d-none" data-annual-price="">
-                                
-                                
-                                <li>Seguiment del temps de projecte</li>
-                                
-                                
-                                <li>Hores facturables i no facturables</li>
-                                
-                                
-                                <li>Facturació</li>
-                                
-                                
-                                <li>Exportació de dades</li>
-                                
-                                
-                                <li>Registres d'auditoria</li>
-                                
-                                
-                                <li>Traduccions específiques del sector</li>
-                                
-                                
-                                <li>Suport per correu electrònic</li>
-                                
-                            </ul>
-                        </div>
+                    <div class="text-muted mb-5">Per usuari i mes</div>
+                    <div class="mb-5">
+                        <a href="https://www.kimai.cloud/auth/registration" class="btn btn-outline-primary btn-lg w-100">Comença gratuïtament</a>
+
                     </div>
-                    <div class="card-footer border-0 text-center pt-0 pb-4">
-                        <a href="https://www.kimai.cloud/auth/registration" class="btn btn-outline-primary btn-lg">Comença gratuïtament</a>
-
+                    <div class="fs-lg text-start">
+                        <ul class="list-unstyled" data-monthly-price="">
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Seguiment del temps de projecte
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Hores facturables i no facturables
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Facturació
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Exportació de dades
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Registres d'auditoria
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Traduccions específiques del sector
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Suport per correu electrònic
+                            </li>
+                            
+                        </ul>
+                        <ul class="list-unstyled d-none" data-annual-price="">
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Seguiment del temps de projecte
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Hores facturables i no facturables
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Facturació
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Exportació de dades
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Registres d'auditoria
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Traduccions específiques del sector
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-success fs-6 me-2"></i>
+                                Suport per correu electrònic
+                            </li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div id="pricing-pro" class="bg-primary rounded-3 shadow-primary w-50" style="flex: 1 1 20rem; max-width: 35rem;">
-                <div class="card bg-transparent h-100 border-0 rounded-3 py-3 py-sm-4">
-                    <div class="card-body text-light text-center">
-                        <h3 class="text-light mb-5">Professional</h3>
-                        <div class="display-6 mb-1" data-monthly-price="">
+        </div>
+        <div id="pricing-pro" class="zindex-2 bg-primary rounded-5 shadow-primary w-50" style="flex: 1 1 20rem; max-width: 30rem;">
+            <div class="card bg-transparent h-100 border-0 py-3 py-sm-4 rounded-5">
+                <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-white text-primary p-2 px-3 fw-bold text-uppercase" data-monthly-price="">★ </span>
+                <div class="card-body text-light text-center px-4 px-lg-5">
+                    <h3 class="text-light mb-5">Professional</h3>
+                    <div class="display-6 mb-1" data-monthly-price="">
 
 
 
-<sup>€</sup> 3.99
+<sub>€</sub> 3.99
 </div>
-                        <div class="d-none display-6 mb-1" data-annual-price="">
+                    <div class="d-none display-6 mb-1" data-annual-price="">
 
 
 
-<sup>€</sup> 4.99
+<sub>€</sub> 4.99
 </div>
-                        <div class="opacity-50 mb-5">Per usuari i mes</div>
-                        <div class="fs-lg pb-4 mb-3">
-                            <ul class="list-unstyled" data-monthly-price="">
-                                <li>Totes les funcions de 'Standard'</li>
-                                
-                                
-                                <li>Compte d'hores de treball</li>
-                                
-                                
-                                <li>Festius, vacances, baixa per malaltia</li>
-                                
-                                
-                                <li>Seguiment de despeses</li>
-                                
-                                
-                                <li>Camps personalitzats</li>
-                                
-                                
-                                <li>Gestió de tasques</li>
-                                
-                                
-                                <li>Àrea de client</li>
-                                
-                                
-                                <li>Mode Quiosc</li>
-                                
-                                
-                                <li>Còpies de seguretat diàries per descarregar</li>
-                                
-                                
-                                <li>Inici de sessió únic (SSO) amb SAML</li>
-                                
-                                
-                                <li>Domini personalitzat amb SSL</li>
-                                
-                            </ul>
-                            <ul class="list-unstyled d-none" data-annual-price="">
-                                <li>Totes les funcions de 'Standard'</li>
-                                
-                                
-                                <li>Compte d'hores de treball</li>
-                                
-                                
-                                <li>Festius, vacances, baixa per malaltia</li>
-                                
-                                
-                                <li>Seguiment de despeses</li>
-                                
-                                
-                                <li>Camps personalitzats</li>
-                                
-                                
-                                <li>Gestió de tasques</li>
-                                
-                                
-                                <li>Àrea de client</li>
-                                
-                                
-                                <li>Còpies de seguretat diàries per descarregar</li>
-                                
-                            </ul>
-                        </div>
+                    <div class="opacity-50 mb-5">Per usuari i mes</div>
+                    <div class="mb-5">
+                        <a href="https://www.kimai.cloud/auth/registration" class="btn btn-light btn-lg w-100 shadow-secondary">Comença gratuïtament</a>
+
                     </div>
-                    <div class="card-footer border-0 text-center pt-0 pb-4">
-                        <a href="https://www.kimai.cloud/auth/registration" class="btn btn-light btn-lg shadow-secondary">Comença gratuïtament</a>
-
+                    <div class="fs-lg text-start">
+                        <ul class="list-unstyled" data-monthly-price="">
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Totes les funcions de 'Standard'
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Compte d'hores de treball
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Festius, vacances, baixa per malaltia
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Seguiment de despeses
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Camps personalitzats
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Gestió de tasques
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Àrea de client
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Mode Quiosc
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Còpies de seguretat diàries per descarregar
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Inici de sessió únic (SSO) amb SAML
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Domini personalitzat amb SSL
+                            </li>
+                            
+                        </ul>
+                        <ul class="list-unstyled d-none" data-annual-price="">
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Totes les funcions de 'Standard'
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Compte d'hores de treball
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Festius, vacances, baixa per malaltia
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Seguiment de despeses
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Camps personalitzats
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Gestió de tasques
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Àrea de client
+                            </li>
+                            
+                            
+                            <li>
+                                <i class="bx bxs-check-circle text-white fs-6 me-2"></i>
+                                Còpies de seguretat diàries per descarregar
+                            </li>
+                            
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -478,37 +588,11 @@
 <div class="row">
     
     <div class="col-12 col-md-4 text-center p-3">
-        <img src="/images/testimonials/isaac-mailach.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Isaac Mailach" />
+        <img src="/images/testimonials/armin-bittner.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Armin Bittner" />
         
 
         
-        <p>I love how I can combine time tracking, expense tracking, and invoicing into one app</p>
-
-        <div class="text-nowrap">
-            
-            <i class="bx bxs-star text-warning"></i>
-            
-            <i class="bx bxs-star text-warning"></i>
-            
-            <i class="bx bxs-star text-warning"></i>
-            
-            <i class="bx bxs-star text-warning"></i>
-            
-            <i class="bx bxs-star text-warning"></i>
-            
-        </div>
-        <div class="mt-1">
-            <p class="fs-base mb-0">Isaac Mailach</p>
-            <p class="fs-xs text-muted">Media Composer, Studio Cellist</p>
-        </div>
-    </div>
-    
-    <div class="col-12 col-md-4 text-center p-3">
-        <img src="/images/testimonials/jeremy-white.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Jeremy White" />
-        
-
-        
-        <p>None of the proprietary solutions had the functionality and simplicity of Kimai.</p>
+        <p>It works without any problems or interruptions.</p>
 
         <div class="text-nowrap">
             
@@ -524,8 +608,8 @@
             
         </div>
         <div class="mt-1">
-            <p class="fs-base mb-0">Jeremy White</p>
-            <p class="fs-xs text-muted">Founder</p>
+            <p class="fs-base mb-0">Armin Bittner</p>
+            <p class="fs-xs text-muted">Geschäftsführer</p>
         </div>
     </div>
     
@@ -552,6 +636,32 @@
         <div class="mt-1">
             <p class="fs-base mb-0">Brian Osborn</p>
             <p class="fs-xs text-muted">Executive Director</p>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-4 text-center p-3">
+        <img src="/images/testimonials/jeremy-white.webp" class="d-inline-block rounded-circle mb-2" width="60" alt="Jeremy White" />
+        
+
+        
+        <p>None of the proprietary solutions had the functionality and simplicity of Kimai.</p>
+
+        <div class="text-nowrap">
+            
+            <i class="bx bxs-star text-warning"></i>
+            
+            <i class="bx bxs-star text-warning"></i>
+            
+            <i class="bx bxs-star text-warning"></i>
+            
+            <i class="bx bxs-star text-warning"></i>
+            
+            <i class="bx bxs-star text-warning"></i>
+            
+        </div>
+        <div class="mt-1">
+            <p class="fs-base mb-0">Jeremy White</p>
+            <p class="fs-xs text-muted">Founder</p>
         </div>
     </div>
     
@@ -2657,6 +2767,29 @@
 
     </section>
 </div>
+<script>
+document.querySelector('[data-bs-toggle="price"]').addEventListener('change', (e) => {
+    let checkbox = e.currentTarget.querySelector('input[type="checkbox"]'),
+        monthlyPrice = document.querySelectorAll('[data-monthly-price]'),
+        annualPrice = document.querySelectorAll('[data-annual-price]');
+
+    for (let n = 0; n < monthlyPrice.length; n++) {
+        if (checkbox.checked) {
+            monthlyPrice[n].classList.add('d-none');
+        } else {
+            monthlyPrice[n].classList.remove('d-none');
+        }
+    }
+
+    for (let m = 0; m < monthlyPrice.length; m++) {
+        if (checkbox.checked) {
+            annualPrice[m].classList.remove('d-none');
+        } else {
+            annualPrice[m].classList.add('d-none');
+        }
+    }
+})
+</script>
 
 
 
