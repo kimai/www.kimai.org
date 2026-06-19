@@ -1,5 +1,5 @@
 <div class="price-switch-wrapper" style="margin-top: -50px">
-    <section class="container mb-5">
+    <section class="container mb-5 pb-5">
         {% include pricing-plans.html %}
         <p class="my-3 text-muted text-center">
             {{ site.data[page.lang].translation.pricing.tax_exclusive }}
@@ -22,6 +22,10 @@
     </section>
 
     <section class="container mb-5 pt-md-1 pt-lg-2 pt-xl-3">
+        <div class="text-center mb-5">
+            <p class="eyebrow mb-1">{{ site.data[page.lang].translation.testimonials.title }}</p>
+            <h3>{{ site.data[page.lang].translation.store-hero-counter | replace: '%number%', site.kimai_customers }}</h3>
+        </div>
         {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'FeaturedShort'" %}
         {% assign testimonials = testimonials | sample: 3 %}
         {% include testimonials-horizontal.html testimonials=testimonials %}
