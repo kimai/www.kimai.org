@@ -485,6 +485,12 @@ shopping: article
                         GitHub
                     </a>
                     {% endif %}
+                    {% if developer.linkedin %}
+                    <a href="{{ developer.linkedin }}" class="btn btn-linkedin me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-linkedin fs-xl me-2"></i>
+                        LinkedIn
+                    </a>
+                    {% endif %}
                     <br>
                     {% if developer.twitter %}
                     <a href="{{ developer.twitter }}" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
