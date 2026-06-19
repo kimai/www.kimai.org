@@ -466,10 +466,11 @@
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Schermopnames</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -477,16 +478,12 @@
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -495,12 +492,12 @@
                 
 
                 
-                <div class="swiper-slide">
-                    <img src="https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-argos-active.png" alt="Screenshot" class="rounded-3">
+                <div class="swiper-slide store-screenshot-slide pb-3">
+                    <img src="https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-argos-active.png" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
                 </div>
                 
-                <div class="swiper-slide">
-                    <img src="https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-bitbar-active.png" alt="Screenshot" class="rounded-3">
+                <div class="swiper-slide store-screenshot-slide pb-3">
+                    <img src="https://raw.githubusercontent.com/infeeeee/kimai2-cmd-argos/master/img/screenshot-bitbar-active.png" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
                 </div>
                 
             </div>

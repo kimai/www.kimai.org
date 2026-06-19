@@ -609,10 +609,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">使用截圖</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -620,16 +621,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -638,9 +635,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_UserApprovalForWeek.png" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">顯示週份細節，例如工作時數與預定時數，以及送出以供審核等操作</figcaption>
                             
@@ -649,9 +646,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadOverviewOfTeam.png" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadOverviewOfTeam.png" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">團隊個別成員與其核可狀態的總覽畫面，依已核可與已完結待核可的週次列出</figcaption>
                             
@@ -660,9 +657,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadSeeHistory.png" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadSeeHistory.png" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">核可歷史，包含組長與使用者有足夠權限閱讀的所有備註</figcaption>
                             
@@ -671,9 +668,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadApproveDeny.png" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_TeamleadApproveDeny.png" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">組長可核可或否定週份審核</figcaption>
                             
@@ -682,9 +679,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/Approval
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_AdminRollbackOption.png" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="https://raw.githubusercontent.com/KatjaGlassConsulting/ApprovalBundle/0.9.1/_documentation/Screenshot_AdminRollbackOption.png" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">管理員除了具有組長的權限外，還可在總覽頁面中瀏覽所有的共事者名單並能夠撤除核可</figcaption>
                             

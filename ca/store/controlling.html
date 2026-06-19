@@ -1129,10 +1129,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Preses de pantalla</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -1140,16 +1141,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -1158,9 +1155,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/public-holidays-list.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/public-holidays-list.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Llista de totes les vacances i grups, amb la possibilitat d'importar i editar les vacances</figcaption>
                             
@@ -1169,9 +1166,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/public-holidays-import.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/public-holidays-import.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Hi ha una gran llista de països i regions per als quals podeu importar vacances per any</figcaption>
                             
@@ -1180,9 +1177,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/contract-settings.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/contract-settings.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Per a cada usuari, es pot emmagatzemar un objectiu horari per dia de la setmana. A més, podeu configurar el grup de vacances, el primer dia de treball i el nombre de vacances.</figcaption>
                             
@@ -1191,9 +1188,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-summary.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-summary.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">El resum mostra les hores objectiu i reals per mes i any, inclosa una altra línia per a les reserves manuals</figcaption>
                             
@@ -1202,9 +1199,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-manual-bookings.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-manual-bookings.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Les reserves manuals permeten l'ajust del compte d'hores, p. ex., per transferir hores de l'any anterior o per amortitzar hores pagades</figcaption>
                             
@@ -1213,9 +1210,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-year.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-year.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Avaluació diària de les hores treballades i degudes, inclosa la visualització de totes les absències (vacances, malaltia, etc.), amb l'opció de tancament de final de mes</figcaption>
                             
@@ -1224,9 +1221,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-contractless.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-contractless.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">L'usuari seleccionat no té configuració de contracte desada al perfil i Kimai només pot mostrar, per tant, les hores treballades</figcaption>
                             

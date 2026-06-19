@@ -1129,10 +1129,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Snímky obrazovky</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -1140,16 +1141,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -1158,9 +1155,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/public-holidays-list.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/public-holidays-list.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Zoznam všetkých sviatkov a skupín, s možnosťou importu a úpravy sviatkov</figcaption>
                             
@@ -1169,9 +1166,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/public-holidays-import.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/public-holidays-import.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Existuje veľký zoznam krajín a regiónov, pre ktoré môžete importovať sviatky ročne</figcaption>
                             
@@ -1180,9 +1177,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/contract-settings.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/contract-settings.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Pre každého používateľa môže byť uložený jednotkový cieľ na pracovný deň. Okrem toho môžete nakonfigurovať skupinu sviatkov, prvý pracovný deň a počet sviatkov.</figcaption>
                             
@@ -1191,9 +1188,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-summary.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-summary.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Súhrn zobrazuje cieľové a skutočné hodiny mesačne a ročne, vrátane ďalšieho riadku pre manuálne rezervácie</figcaption>
                             
@@ -1202,9 +1199,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-manual-bookings.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-manual-bookings.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Manuálne rezervácie umožňujú upraviť účet hodín, napríklad prenesenie hodín z minulého roku alebo odepsanie platených hodín</figcaption>
                             
@@ -1213,9 +1210,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-year.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-year.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Denné vyhodnotenie odpracovaných hodín a dlžných hodín, vrátane zobrazenia všetkých neprítomností (dovolenka, choroba atď.), s možnosťou uzávierky na konci mesiaca</figcaption>
                             
@@ -1224,9 +1221,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-contractless.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-contractless.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Vybraný používateľ nemá uložené nastavenia zmluvy na svojom profile a Kimai preto môže zobrazovať len odpracované hodiny</figcaption>
                             

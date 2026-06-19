@@ -919,10 +919,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Bilder</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -930,16 +931,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -948,9 +945,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-listing.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-listing.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Übersicht der Liste aller Benutzer mit deren hinterlegten Anmelde-Codes</figcaption>
                             
@@ -959,9 +956,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-preferences.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-preferences.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Einstellungen des Kiosk-Plugins, der Anmeldemodus und das Code-Format sind voneinander abhängig</figcaption>
                             
@@ -970,9 +967,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-user-profile.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-user-profile.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Dieser neue Barcode kann nun gedruckt und den Benutzern ausgehändigt werden</figcaption>
                             
@@ -981,9 +978,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-scanner.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-scanner.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Der „Barcode mit USB Scanner“-Modus zeigt einen Bildschirm mit Eingabefeld, welches durch den Scanner nach Auslesen des Codes abgesendet wird</figcaption>
                             
@@ -992,9 +989,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-scanner-users.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-scanner-users.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Die Anmeldemaske mit optionaler Benutzerübersicht (Anwesend, Abwesend)</figcaption>
                             
@@ -1003,9 +1000,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-webcam.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-webcam.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Der Anmeldemodus „Barcode mit Gerätekamera“ zeigt das Webcam-Videobild und sucht darin nach Barcodes</figcaption>
                             
@@ -1014,9 +1011,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-login.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-login.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Der Scan eines existierenden Codes startet eine neue Zeitmessung</figcaption>
                             
@@ -1025,9 +1022,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-logout.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-logout.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Oder wenn ein laufende Zeitmessung existiert, wird diese gestoppt</figcaption>
                             

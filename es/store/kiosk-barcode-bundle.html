@@ -929,10 +929,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Capturas de pantalla</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -940,16 +941,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -958,9 +955,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-listing.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-listing.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Muestra la lista de todos los usuarios con sus tipos de códigos de inicio de sesión configurados</figcaption>
                             
@@ -969,9 +966,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-preferences.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-preferences.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Configura tu plugin Kiosk según tus necesidades, el modo de inicio de sesión y el formato del código dependen entre sí</figcaption>
                             
@@ -980,9 +977,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-user-profile.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-user-profile.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Este nuevo código de barras ahora se puede imprimir y entregar al usuario</figcaption>
                             
@@ -991,9 +988,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-scanner.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-scanner.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">El modo de inicio de sesión 'Código de barras con escáner USB' muestra una pantalla como esta, el campo de entrada está preseleccionado y el escáner lo enviará después de encontrar un código</figcaption>
                             
@@ -1002,9 +999,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-scanner-users.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-scanner-users.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">La pantalla de inicio de sesión con la lista de usuarios opcional activada</figcaption>
                             
@@ -1013,9 +1010,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-webcam.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-webcam.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">El modo de inicio de sesión 'Código de barras con cámara de dispositivo' mostrará el video de la cámara y escaneará constantemente los códigos de barras</figcaption>
                             
@@ -1024,9 +1021,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-login.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-login.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Escanear un código existente para un usuario inicia una nueva hoja de tiempo</figcaption>
                             
@@ -1035,9 +1032,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-logout.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-logout.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">O cuando ya está en ejecución una hoja de tiempo, se detendrá</figcaption>
                             

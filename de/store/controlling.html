@@ -1119,10 +1119,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">Bilder</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -1130,16 +1131,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -1148,9 +1145,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/public-holidays-list.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/public-holidays-list.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Liste aller Feiertage und Gruppen, mit der Möglichkeit die Feiertage zu importieren und zu bearbeiten</figcaption>
                             
@@ -1159,9 +1156,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/public-holidays-import.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/public-holidays-import.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Es gibt eine große Liste an Ländern und Regionen, für die man pro Jahr Feiertage importieren kann</figcaption>
                             
@@ -1170,9 +1167,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/contract-settings.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/contract-settings.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Für jeden Benutzer kann man pro Wochentag ein Stundenziel hinterlegen. Dazu die genutzte Feiertagsgruppe, den ersten Arbeitstag und die Anzahl der Urlaubstage konfigurieren.</figcaption>
                             
@@ -1181,9 +1178,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-summary.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-summary.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Die Zusammenfassung zeigt die Soll- und Ist-Stunden pro Monat und Jahr an, inklusive einer weiteren Zeil für manuelle Buchungen</figcaption>
                             
@@ -1192,9 +1189,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-manual-bookings.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-manual-bookings.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Manuelle Buchungen erlauben die Anpassung des Stundenkontos, z.B. um Stunden aus dem letzten Jahr zu übertragen oder ausgezahlte Stunden auszubuchen</figcaption>
                             
@@ -1203,9 +1200,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-year.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-year.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Tagesgenaue Auswertung der geleisteten und geschuldeten Stunden, inklusive Anzeige aller Abwesenheiten (Urlaub, Krankheit etc), mit der Möglichkeit des Monatsabschluss</figcaption>
                             
@@ -1214,9 +1211,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/workcontract/working-times-contractless.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/workcontract/working-times-contractless.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">Der ausgewählte Benutzer hat keine Vertragseinstellungen am Profil gespeichert und Kimai kann daher nur die geleisteten Stunden anzeigen</figcaption>
                             

@@ -929,10 +929,11 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">使用截圖</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -940,16 +941,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -958,9 +955,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-listing.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-listing.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">顯示了所有使用者所各別設定的登入代碼格式設定的清單</figcaption>
                             
@@ -969,9 +966,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-preferences.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-preferences.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">請依您的需求設定 Kiosk 外掛程式，注意僅會列出登入模式與代碼格式相配的選項</figcaption>
                             
@@ -980,9 +977,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-user-profile.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-user-profile.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">新產生的條碼，可列印並交給該使用者</figcaption>
                             
@@ -991,9 +988,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-scanner.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-scanner.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">「Barcode with USB scanner」登入模式的畫面範例，輸入欄會被自動選擇，而掃描器解讀出代碼後會自動送出</figcaption>
                             
@@ -1002,9 +999,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-scanner-users.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-scanner-users.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">啟用了使用者名單功能的登入畫面</figcaption>
                             
@@ -1013,9 +1010,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-webcam.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-webcam.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">「Barcode with device cam」登入模式會顯示攝影機畫面並持續偵測是否有條碼與進行掃描</figcaption>
                             
@@ -1024,9 +1021,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-login.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-login.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">掃描到已存在的使用者的代碼時，將開始新的工時單紀錄</figcaption>
                             
@@ -1035,9 +1032,9 @@ then either the directory has a wrong name (must be <strong>var/plugins/KioskBun
                 
                     
                     
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="/images/marketplace/kiosk-logout.webp" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="/images/marketplace/kiosk-logout.webp" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             
                             <figcaption class="figure-caption text-center">或結束已在進行中的工時單紀錄</figcaption>
                             
