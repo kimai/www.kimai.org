@@ -1,6 +1,8 @@
-KimaiTray is a system tray companion for Kimai time tracking. Start, stop, pause, resume, and switch timers without leaving your desktop.
+KimaiTray is a system tray companion for Kimai time tracking. 
+Start, stop, pause, resume, and switch timers without leaving your desktop.
 
-The app is built with Tauri, React, and TypeScript. It connects to your Kimai installation through the API and stores your access token on your device.
+The app is built with Tauri, React, and TypeScript. 
+It connects to your Kimai installation through the API and stores your access token on your device.
 
 ## Key Features
 
@@ -17,11 +19,12 @@ The app is built with Tauri, React, and TypeScript. It connects to your Kimai in
 ## Requirements
 
 - A running Kimai installation
-- A personal Kimai API token
+- Your Kimai API token
 - macOS, Windows, or Linux
 
 ## Setup
 
 Download the latest release from [GitHub](https://github.com/Engazan/KimaiTray/releases), install the app for your operating system, and open it from your system tray or menu bar.
 
-In Kimai, create an API token in your profile under **API Access**. Then open KimaiTray settings, enter your Kimai URL, paste the token, and save the connection.
+In Kimai, [create an API token in your profile]({% link _documentation/user-api.md %}) under **API Access**. 
+Then open KimaiTray settings, enter your Kimai URL, paste the token, and save the connection.
