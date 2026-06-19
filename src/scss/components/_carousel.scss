@@ -90,6 +90,42 @@
   }
 }
 
+.store-screenshots-swiper {
+  .swiper-wrapper {
+    align-items: center;
+  }
+
+  .store-screenshot-slide {
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .store-screenshot-figure {
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .store-screenshot-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: contain;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .store-screenshots-swiper .store-screenshot-image {
+    max-height: 360px;
+  }
+}
+
 
 // Pagination
 
@@ -336,4 +372,3 @@
     }
   }
 }
-

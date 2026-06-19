@@ -134,8 +134,6 @@ Routing and domain rules matter:
 
 ## Frontend
 
-- Do not touch anything inside `src/scss/`
-- The directory `src/scss/` contains files which cannot be committed and must never be changed by agents
 - Apply all styling changes in the top-level `src/*.scss` files
 - Use `src/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
 - If a change appears to require editing `src/scss/`, stop and find a solution through `src/*.scss` instead
