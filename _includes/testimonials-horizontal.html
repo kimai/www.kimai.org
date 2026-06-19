@@ -1,24 +1,34 @@
 
-<div class="row">
+<div class="row gx-5">
     {% for testimonial in testimonials %}
-    <div class="col-12 col-md-4 text-center p-3">
-        <img src="/images/testimonials/{{ testimonial.avatar }}" class="d-inline-block rounded-circle mb-2" width="60" alt="{{ testimonial.name }}">
-        {% if testimonial.translations[page.lang] %}
-            {% assign testimonial_text = testimonial.translations[page.lang] %}
-        {% else %}
-            {% assign testimonial_text = testimonial.translations[english_german] %}
-        {% endif %}
+    <div class="col-12 col-md-4">
+        <div class="card border rounded-5 p-3 h-100">
+            <div class="d-flex text-nowrap mb-3">
+                {% for i in (1..testimonial.rating) %}
+                <i class="bx bxs-star text-warning"></i>
+                {% endfor %}
+            </div>
+            {% if testimonial.translations[page.lang] %}
+                {% assign testimonial_text = testimonial.translations[page.lang] %}
+            {% else %}
+                {% assign testimonial_text = testimonial.translations[english_german] %}
+            {% endif %}
 
-        {% assign highlight = testimonial_text | split: '<mark>' | slice: 1 | first | split: '</mark>' | slice: 0 | first %}
-        {{ highlight | markdownify }}
-        <div class="text-nowrap">
-            {% for i in (1..testimonial.rating) %}
-            <i class="bx bxs-star text-warning"></i>
-            {% endfor %}
-        </div>
-        <div class="mt-1">
-            <p class="fs-base mb-0">{{ testimonial.name }}</p>
-            <p class="fs-xs text-muted">{{ testimonial.position }}</p>
+            {% assign highlight = testimonial_text | split: '<mark>' | slice: 1 | first | split: '</mark>' | slice: 0 | first %}
+            <p class="">{{ highlight }}</p>
+
+            <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="/images/testimonials/{{ testimonial.avatar }}" class="rounded-circle flex-shrink-0" width="60" alt="{{ testimonial.name }}">
+                <div>
+                    <p class="fs-base fw-bold mb-0">{{ testimonial.name }}</p>
+                    <p class="fs-xs text-muted mb-0">
+                        {{ testimonial.position }}
+                        {% if testimonial.company != nil %},
+                            {{ testimonial.company }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}
