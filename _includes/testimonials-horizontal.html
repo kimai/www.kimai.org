@@ -18,7 +18,7 @@
             <p class="">{{ highlight }}</p>
 
             <div class="d-flex align-items-center gap-3 mt-auto">
-                <img src="/images/testimonials/{{ testimonial.avatar }}" class="rounded-circle flex-shrink-0" width="60" alt="{{ testimonial.name }}">
+                <img src="/images/testimonials/{{ testimonial.avatar | default: testimonial.logo }}" class="rounded-circle flex-shrink-0" width="60" alt="{{ testimonial.name }}">
                 <div>
                     <p class="fs-base fw-bold mb-0">{{ testimonial.name }}</p>
                     <p class="fs-xs text-muted mb-0">
