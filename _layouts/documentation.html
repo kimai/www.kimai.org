@@ -151,15 +151,31 @@ layout: base
     <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
         <div class="docs-layout">
             <div class="docs-article"{% if page.collection == 'documentation' and page.search != false %} data-pagefind-body{% endif %}>
-                <div class="d-sm-flex align-items-end justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
-                    <div class="me-4">
-                        <h1 class="pb-1" data-pagefind-meta="title" data-pagefind-weight="10.0">{{ page.title }}</h1>
+                <div class="d-sm-flex align-items-baseline justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="w-100">
+                        <div class="d-flex align-items-baseline justify-content-between gap-3 pb-1">
+                            <div class="d-flex align-items-baseline flex-wrap gap-2">
+                                <h1 class="mb-0" data-pagefind-meta="title" data-pagefind-weight="10.0">
+                                    {{ page.title }}
+                                </h1>
+                                <div id="availability-pills" class="d-flex flex-shrink-0 gap-2">
+                                    {% if page.cloud == "all" %}
+                                        <span class="badge bg-faded-primary text-primary rounded-pill" data-bs-html="true" title="Available in Kimai-Cloud:<br> All plans" data-bs-toggle="tooltip">Cloud</span>
+                                    {% elsif page.cloud == "pro" %}
+                                        <span class="badge bg-faded-primary text-primary rounded-pill" data-bs-html="true" title="Available in Kimai-Cloud:<br> Pro and Non-Profit" data-bs-toggle="tooltip">Cloud</span>
+                                    {% endif %}
+                                    {% if page.plugin != nil %}
+                                    <span class="badge bg-faded-warning text-warning rounded-pill" title="Available as Plugin" data-bs-toggle="tooltip"><a href="{% link _store/en/{{ page.plugin }}.md %}" class="text-decoration-none text-warning">Plugin</a></span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-flex">
+                            {% include docs-version-chooser.html %}
+                            </div>
+                        </div>
                         {% if page.description != nil %}
                         <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">{{ page.description }}</p>
                         {% endif %}
-                    </div>
-                    <div class="d-none d-lg-flex">
-                    {% include docs-version-chooser.html %}
                     </div>
                 </div>
 
