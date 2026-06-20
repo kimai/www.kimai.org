@@ -165,7 +165,7 @@ layout: base
                                         <span class="badge bg-faded-primary text-primary rounded-pill" data-bs-html="true" title="Available in Kimai-Cloud:<br> Pro and Non-Profit" data-bs-toggle="tooltip">Cloud</span>
                                     {% endif %}
                                     {% if page.plugin != nil %}
-                                    <span class="badge bg-faded-warning text-warning rounded-pill" title="Available as Plugin" data-bs-toggle="tooltip"><a href="{% link _store/en/{{ page.plugin }}.md %}" class="text-decoration-none text-warning">Plugin</a></span>
+                                    <span class="badge bg-faded-warning text-warning rounded-pill" title="Available as Plugin" data-bs-toggle="tooltip"><a href="{% link _store/{{ page.lang }}/{{ page.plugin }}.md %}" class="text-decoration-none text-warning">Plugin</a></span>
                                     {% endif %}
                                 </div>
                             </div>
