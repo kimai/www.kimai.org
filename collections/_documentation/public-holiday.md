@@ -4,6 +4,8 @@ description: Configure public holidays for your employees with working contracts
 related:
 - absence
 - contract
+plugin: controlling
+cloud: pro
 ---
 
 {% include youtube-video.html id="public_holiday" %}

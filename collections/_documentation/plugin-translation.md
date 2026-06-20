@@ -1,6 +1,8 @@
 ---
 title: Translation
 description: Replace translations in Kimai with your own wording
+plugin: translation-bundle
+cloud: all
 ---
 
 {% include plugins/translation.md %}  

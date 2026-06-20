@@ -2,6 +2,8 @@
 title: Expenses
 description: Keep track of your expenses and include them in your invoices
 canonical: /documentation/plugin-expenses.html
+plugin: expenses-bundle
+cloud: pro
 ---
 
 {% include plugins/expenses.md %}  

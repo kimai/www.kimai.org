@@ -2,6 +2,8 @@
 title: Working contract
 description: Better contract management and working times
 toc: false
+plugin: controlling
+cloud: pro
 ---
 
 The "Working hours, vacation, sickness (controlling)" plugin bundles the following features:

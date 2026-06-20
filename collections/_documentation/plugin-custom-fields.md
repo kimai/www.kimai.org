@@ -1,6 +1,8 @@
 ---
 title: Custom fields
 description: Add free configurable custom fields to your Kimai installation
+plugin: custom-fields-bundle
+cloud: pro
 ---
 
 {% include plugins/custom-fields.md %}  

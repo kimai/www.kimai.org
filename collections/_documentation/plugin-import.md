@@ -1,6 +1,8 @@
 ---
 title: Importer
-description: Import CSV and JSON data into Kimai 
+description: Import CSV and JSON data into Kimai
+plugin: keleo-importer-bundle
+cloud: all
 ---
 
 {% include plugins/importer.md %}

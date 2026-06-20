@@ -4,6 +4,8 @@ description: Contract management and working times
 related:
 - absence
 - public-holiday
+plugin: controlling
+cloud: pro
 ---
 
 This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).

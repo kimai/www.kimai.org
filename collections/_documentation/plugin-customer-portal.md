@@ -1,6 +1,8 @@
 ---
 title: Customer Portal
 description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
+plugin: customer-portal
+cloud: pro
 ---
 
 ## Sharing customer data

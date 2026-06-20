@@ -1,6 +1,8 @@
 ---
 title: Kiosk mode
 description: Kiosk mode with support for Barcode, RFID, Web NFC
+plugin: kiosk-barcode-bundle
+cloud: pro
 ---
 
 {% include plugins/kiosk.md %}  
