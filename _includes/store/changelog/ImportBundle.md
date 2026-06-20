@@ -1,3 +1,9 @@
+**Version 2.27.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Fix user were not properly validated in timesheet import
+
 **Version 2.26.0**
 
 Compatibility: requires minimum Kimai 2.41.0

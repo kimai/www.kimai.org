@@ -1,3 +1,10 @@
+**Version 1.35.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Removed invalid API endpoint `DELETE /api/lock/{user}/{month}`
+- Setup default work-contract preferences for new users via API
+
 **Version 1.34.0**
 
 Compatibility: requires minimum Kimai 2.49.0
