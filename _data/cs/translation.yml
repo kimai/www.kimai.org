@@ -19,7 +19,6 @@ homepage-alert-title: 'Sledování času zdarma pro všechny'
 homepage-alert-intro: 'Kimai je open-source program na sledování času. Sleduje pracovní dobu a na žádost vytiskne přehled vašich činností. Ročně, měsíčně, denně, podle zákazníků, podle projektů... V jeho jednoduchosti Kimai je síla. Díky rozhraní založeném na prohlížeči funguje Kimai na více platformách, dokonce i na vašem telefonu.'
 homepage-alert-button-download: 'Stáhnout'
 homepage-alert-button-demo: 'Vyzkoušet'
-cloud-title: 'Kimai Cloud (SaaS)'
 cloud-feature-ssl: 'Certifikát TLS (SSL) zdarma'
 cloud-feature-hosting: 'Hosting a Aktualizace'
 cloud-feature-backups: 'Zálohy'
@@ -56,7 +55,7 @@ create-database: 'Vytvořit databázi'
 install-assets: 'Instalovat aktiva'
 ask-question: 'Zeptat se'
 newsletter:
-    title: 'Nechcete o nic přijít?'
+    teaser: 'Nechcete o nic přijít?'
     introduction: 'Odebírejte naše novinky a zůstaňte v obraze ohledně Kimai a aktualizací pluginů.'
     email-title: 'Váš e-mail'
     email-help: 'Poskytněte nám svou e-mailovou adresu, abyste mohli odebírat novinky.'
@@ -66,6 +65,9 @@ newsletter:
     sendinblue: 'Brevo používáme jako naši marketingovou platformu. Odesláním tohoto formuláře berete na vědomí, že vámi poskytnuté informace budou přeneseny do společnosti Brevo ke zpracování v souladu s jejich %terms%.'
     terms: 'podmínky používání'
     button: 'ODEBÍRAT'
+    archive: Archiv
+    name: Newsletter
+    subtitle: Pokud si Kimai hostujete sami (nebo ho právě zkoušíte), neuteče vám náš newsletter. Sdílíme novinky a postřehy s komunitou lidí, kteří chtějí mít plnou kontrolu nad svými daty.
 photos:
     dashboard:
         title: 'Panel'
@@ -81,8 +83,7 @@ demo:
     name: 'Demo'
     description: 'Vyzkoušejte a ohodnoťte náš nástroj pro sledování času Kimai online, přímo na naší demo stránce.'
     title: 'Vyzkoušejte Kimai na jedné z demo verzí'
-    introduction: "Vyzkoušejte demo sledování času Kimai, a slibujeme, že ho pak budete chtít dál používat!"
-    choose: 'Vyberte si prosím jednu z našich demo instalací, abyste získali pojem o tom, jak Kimai funguje a jaké funkce poskytuje.'
+    subtitle: 'Vyberte si prosím jednu z našich demo instalací, abyste získali pojem o tom, jak Kimai funguje a jaké funkce poskytuje.'
     reinstall: 'Dejte pozor na to, že demoverze budou pravidelně přeinstalovávány a všechna zadaná data budou odstraněna.'
     user: 'Demo uživatel'
     accounts: "Tyto účty jsou určené pro vaše testování. Můžete si vytvořit i vlastní testovací účet v přihlašování do každého dema."
@@ -93,8 +94,6 @@ demo:
     empty-description: Aktuální verze s doporučenými pluginy, bez dat.
     plugins-description: Aktuální verze s doporučenými pluginy a ukázkovými daty.
     plugins-title: Doporučené
-    stable-title: Základní
-    empty-title: Pluginy
     stable-description: Nejnovější verze, bez pluginů, bez ukázkových dat.
 index:
     name: 'Domů'
@@ -103,14 +102,14 @@ index:
 download:
     name: 'Stáhnout'
     title: 'Stáhnout Kimai'
-    description: 'Stáhnout - Kimai sledování času'
-    intro: Nabízíme několik způsobů instalace Kimai. Vyberte možnost, která vám vyhovuje.
-    subtitle: Stáhnout a instalovat
+    subtitle: 'Stáhnout - Kimai sledování času'
+    eyebrow: Self-Host Kimai
 hosted:
     name: 'Cloud'
     title: 'Kimai-Cloud — Používejte Kimai rovnou, bez stahování. Bezstarostný Kimai hosting zdarma!'
 about:
     name: 'Informace o Kimai'
+    subtitle: To, co začalo jako hobby projekt, je nyní přední open-source aplikací pro sledování času na světě. Pojďme se podívat na jeho historii.
     description: 'Zjistěte více o historii Kimai a jeho vývojáři.'
     collaboration:
         title: Spolupráce
@@ -124,15 +123,18 @@ about:
     kevin: Kimai a Cloud jsou vyvíjeny a provozovány Kevinem, nezávislým softwarovým vývojářem z Vídně (Rakousko).
 store:
     name: 'Doplňky'
-    description: 'Rozšíření a komerční podpora pro Kimai'
     subtitle: Pomocí široké škály zásuvných modulů, aplikací a rozšíření z ekosystému Kimai můžete své samoobslužné řešení pro záznam času vybavit dalšími funkcemi.
-    title: Plugins for Kimai
+    title: Pluginy pro Kimai
+    eyebrow: Extend Your Time-Tracker
 blog:
     name: 'Blog'
     description: 'Novinky o Kimai, open-source programu na sledování času'
     subtitle: 'Novinky od týmu vývojářů Kimai'
     title: Novinky z Kimai
     archive-link: Archiv starších zpráv %topic% naleznete zde
+    archive-tags: Zobrazit vše
+    category-pages: Pomocí stránek kategorií najdete všechny naše příspěvky
+    categories: Kategorie
 documentation:
     name: 'Dokumenty'
     description: 'Informace o podpoře, uživatelská příručka a další dokumentace pro Kimai sledování času'
@@ -145,12 +147,11 @@ features:
     name: Funkce
 docu-developer:
     name: Vývojář
-docu-onpremise:
-    name: Místní instalace
 docu-manual:
     name: Uživatelský manuál
 alternatives:
-    name: Kimai alternatives
+    subtitle: Každý případ použití, každá firma a každý pracovní postup jsou odlišné a vaše požadavky musí být zhodnoceny, než se rozhodnete pro řešení sledování času. Zde jsou některé populární alternativy k Kimai, které budeme detailně porovnávat, abychom našli nejlepší možnost pro vás.
+    name: Porovnat nástroje pro sledování času
     description: Kimai je nejlepší dostupnou open source aplikací pro sledování času, a to nejen pro týmy pracující na projektech. Podívejte se, jak Kimai porovnává s alternativními řešeními sledování času, abyste mohli vybrat to správné pro vaši organizaci.
 feature:
     mobile-ready:
@@ -228,9 +229,6 @@ feature:
     user-profile:
         name: "Uživatelský profil"
         description: "Osobní statistiky a nastavení pro jednotlivé uživatele pro hodinovou sazbu, vzhled Kimai, heslo a avatara."
-    user-registration:
-        name: "Registrace uživatelů"
-        description: "Kimai podporuje samoregistraci uživatelů s aktivací pomocí e-mailu."
     password-reset:
         name: "Obnovení hesla"
         description: "Zapomněli jste heslo? Kimai vám ho pomůže obnovit e-mailem."
@@ -244,37 +242,43 @@ feature:
         description: Analýza zaznamenaných časů, zákazníků, projektů a aktivit. Hodnocení podle uživatelů, zákazníků, projektů, aktivit, značek, časových období a mnoho dalšího.
         name: Zprávy a analýzy
     dark-mode:
-        name: Dark mode
-        description: Because every app needs a dark-mode, which helps to reduce eye strain in the evening or in dark environments.
+        name: Tmavý režim
+        description: Protože každá aplikace potřebuje tmavý režim, který pomáhá snížit únavu očí večer nebo v tmavém prostředí.
     customer-portal:
-        description: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
-        name: Customer Portal
+        description: Sdílejte statistiky klientů a projektů a výkazy práce s kýmkoli pomocí tajné URL adresy, volitelně chráněné heslem.
+        name: Zákaznický portál
     no-limits:
-        description: "Your SaaS software always includes limits? Not Kimai: there are no limits. You only pay for the amount of active users. I don't limit you, and I do not charge for inactive users. You can create an unlimited amount of users, customers, projects, activities, timesheets and more."
-        name: Knows no limits
+        description: "Váš SaaS software vždy obsahuje omezení? Kimai ne: nejsou tu žádné limity. Platíte pouze za počet aktivních uživatelů. Neomezuji vás a neúčtuji za neaktivní uživatele. Můžete vytvořit neomezený počet uživatelů, zákazníků, projektů, aktivit, výkazů práce a dalších."
+        name: Nezná hranice
     privacy:
-        name: Privacy comes first
-        description: I respect your and your users privacy and data. No, this is not yet another boring introduction into a Privacy policy - that's how I run this business. I don't sell data. I follow the GDPR and will answer any question about involved sub-processors.
+        name: Soukromí na prvním místě
+        description: Respektuji vaše soukromí i soukromí vašich uživatelů a vaše data. Ne, tohle není další nudný úvod do zásad ochrany soukromí — takhle prostě svůj podnik vedu. Neprodávám data. Dodržuji GDPR a rád zodpovím jakoukoli otázku ohledně zapojených zpracovatelů.
     security:
-        name: Security in Kimai
+        name: Bezpečnost v Kimai
         points:
-            security_6: Automated code test with a code coverage above 90%
-            security_4: Continuous integration with thousands of checks
-            security_5: In-depth code reviews
-            security_1: Secure password hashing with Argon2 or Sodium
-            security_2: Granular user-roles restricting access
-            security_3: CSRF and XSS protection
+            security_6: Automatizované testy kódu s pokrytím nad 90 %
+            security_4: Continuous integration s tisíci kontrolami
+            security_5: Důkladné code review
+            security_1: Bezpečné hašování hesel pomocí Argon2 nebo Sodium
+            security_2: Granulární uživatelské role omezující přístup
+            security_3: Ochrana proti CSRF a XSS
         description: Kimai implements best-practices in application design to prevent common attacks. Automated security controls are critical to any software development workflow to reduce the amount of time from defect creation to defect detection. These scans run on every code change, every time.
     security-cloud:
-        name: Security in the platform
+        name: Bezpečnost platformy
         points:
-            security_1: All connections secured via TLS (SSL)
-            security_2: Best-practice security, firewalls and brute-force prevention
-            security_6: Code runs in tightly restricted domain environments
-            security_3: No multi-tenancy, each customer has their own database
-            security_4: Servers are hosted in a data center in the EU
-            security_5: Critical services are not accessible to the outside world
-        description: Software is only as secure as the system it runs on. I take a defense-in-depth approach with server and network infrastructure. Customers on the hosted platform are secured through multiple layers of protection.
+            security_1: Všechna spojení jsou zabezpečena pomocí TLS (SSL)
+            security_2: Osvědčené bezpečnostní postupy, firewally a ochrana proti útokům hrubou silou
+            security_6: Kód běží v přísně omezených doménových prostředích
+            security_3: Žádná multi-tenancy — každý zákazník má vlastní databázi
+            security_4: Servery jsou hostovány v datovém centru v EU
+            security_5: Kritické služby nejsou přístupné z internetu
+        description: Software je jen tak bezpečný jako systém, na kterém běží. K serverové a síťové infrastruktuře přistupuji metodou defense-in-depth. Zákazníci hostované platformy jsou chráněni více vrstvami zabezpečení.
+    electronic-invoicing:
+        name: E-faktury
+        description: Vytvářejte e-faktury ve formátech XML i PDF/A, v souladu s EN 16931, XRechnung 3.0, Zugferd/Factur-X a se syntaxí CII a UBL
+    eu-hosting:
+        description: Nezávislé a evropské 🇪🇺 – vyvinuté v Rakousku 🇦🇹 a hostované v Německu 🇩🇪
+        name: Hosting v EU
 install:
     alert-vps: V této fázi není možné nainstalovat Kimai stažením souboru ZIP a nahráním souborů na webový server. Je to proto, že program Composer musí být spuštěn z příkazového řádku. To nutně neznamená, že potřebujete VPS. Někteří hostitelé poskytují přístup SSH, přes který byste měli být schopni nainstalovat Composer a Kimai v pořádku.
     ssh: Tato metoda nainstaluje Kimai přímo na váš server.
@@ -292,7 +296,7 @@ full-documentation: Celá dokumentace v angličtině
 contact-developer: V případě dotazů se obraťte přímo na vývojáře pomocí těchto kontaktních údajů.
 homepage:
     title: Sledování času pro týmy orientované na projekty
-    intro: Naše open-source platforma je navržena pro sledování a analýzu časových dat vaší společnosti, což ji činí ideální pro firmy všech velikostí. Kimai vám pomáhá udržovat kontrolu nad časem a penězi.
+    subtitle: Naše open-source platforma je navržena pro sledování a analýzu časových dat vaší společnosti, což ji činí ideální pro firmy všech velikostí. Kimai vám pomáhá udržovat kontrolu nad časem a penězi.
 section-teaser:
     report:
         title: Zprávy
@@ -319,7 +323,6 @@ history:
     year-2023: Tvrdá práce se konečně vyplácí a Kimai je nyní mou 100% práci na plný úvazek. Děkuji!
     year-2014: Poslední vydání Kimai 1 je vytvořeno, vývoj stagnoval a nebyla zaznamenána žádná další aktivita.
     year-2006: První verze Kimai je vydána a postupně získává rostoucí uživatelskou a vývojářskou základnu.
-    intro: To, co začalo jako hobby projekt, je nyní přední open-source aplikací pro sledování času na světě. Pojďme se podívat na jeho historii.
     year-2018: Přepis Kimai si najde cestu do komunity, migrace dat funguje, adopce je na vzestupu.
     current: |
         Kimai je aplikace pro sledování času s dlouhou historií. První verze byla vydána v roce 2006. Proč to zmiňuji? Protože jsem od té doby viděl přijít a odjít tolik služeb - věřte mi, když říkám: Zůstanu. Neživil jsem se Kimai mnoho let, byla to zábava, která mě motivovala vylepšovat Kimai. Věřím, že zábava je jedním z hlavních důvodů úspěchu Kimai.
@@ -341,10 +344,6 @@ history:
         Původní Kimai byl poprvé vydán v roce 2006 a byl používán mnoha lidmi po celém světě. Na to jsem pyšný a na skvělou komunitu. Nyní, po 5 letech, se většina lidí přesunula na novou verzi Kimai a počet uživatelů roste každý den. Proto bych chtěl poděkovat všem, kteří přispěli k Kimai.
 store-hero-counter: '%number% zákazníků je s námi již teď'
 cta:
-    tech-support:
-        question: Technická a obchodní podpora
-        button: Pojďme spolupracovat
-        answer: Zajišťuji podporu pro všechny aplikace, které jsem vyvinul, a budu vám a vašemu týmu asistovat.
     get-started:
         answer: Začněte nyní svou cestu sledování času
         button: Získejte podporu
@@ -361,13 +360,28 @@ highlight:
         oss: Otevřený zdrojový kód
         versions: Cloud a On-Premise
         gdpr: V souladu s GDPR
-        european: Independent and European 🇪🇺 – built in Austria 🇦🇹 and hosted in Germany 🇩🇪 with a strong commitment to data protection, transparency and open-source quality.
+        european: Nezávislé a evropské 🇪🇺 – vyvinuté v Rakousku 🇦🇹 a hostované v Německu 🇩🇪 se silným důrazem na ochranu dat, transparentnost a kvalitu open source.
 description: Popis
 oss-cloud-compare:
-    saas: Hostováno pro vás
-    onpremise: Hostováno u vás
     intro: Kimai je open source software, který je k dispozici pro samostatné hostování stejně jako SaaS.
     title: Jedno softwarové řešení, dvě verze
+    on-premise:
+        badge: Free forever
+        reason_5: Plugin marketplace
+        reason_3: Docker & manual install
+        reason_2: Full data ownership
+        reason_1: 100% open source (AGPL 3)
+        reason_4: Community support
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+    cloud:
+        reason_2: Automatic updates & backups
+        reason_1: Instant setup, no server needed
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_5: Plugins included
+        reason_4: Priority support
+        badge: Recommended
+        reason_3: GDPR-compliant EU hosting
+    subtitle: Choose your path
 section-features:
     subtitle: Kimai nabízí mnohem více než jen sledování času, zde je seznam dalších důležitých obchodních funkcí.
     title: Co může Kimai udělat pro vás?
@@ -378,9 +392,8 @@ testimonials:
 footer: Snadné sledování času. Open-source řešení pro týmy všech velikostí - samostatné hostování nebo jako SaaS.
 slogan: Číslo 1 ve sledování času s otevřeným zdrojovým kódem
 comparison:
-    footer-title: Porovnat
-    is_oss: Open source software
-    location: Data na serveru v EU
+    is_oss: Open-source software
+    location: Umístění serveru
     invoices: Fakturace
     backup_frequency: Zálohování
     custom_domain: Vlastní doména
@@ -397,14 +410,13 @@ comparison:
     server_maintenance: Údržba serveru
     saml: SAML
     ip_restriction: Omezení přístupu pomocí IP
-    alternatives: Alternativy k Kimai
     finding: Najití správného řešení pro sledování času
-    use_case: Každý případ použití, každá firma a každý pracovní postup jsou odlišné a vaše požadavky musí být zhodnoceny, než se rozhodnete pro řešení sledování času. Zde jsou některé populární alternativy k Kimai, které budeme detailně porovnávat, abychom našli nejlepší možnost pro vás.
-    compare_with: Compare Kimai with %name%
+    compare_with: Porovnejte Kimai s %name%
+    alternative: 'Alternativa k %product%'
 support:
     name: "Podpora"
     description: "Potřebujete podporu? Najděte pomoc při používání, instalaci nebo aktualizaci Kimai."
-    intro: "Někteří zákazníci dávají přednost provozování Kimai interně, ale nechtějí zmeškat profesionální podporu. Mám radost vám pomoci a nabídnout podporu pro samo-hostované instalace."
+    subtitle: "Někteří zákazníci dávají přednost provozování Kimai interně, ale nechtějí zmeškat profesionální podporu. Mám radost vám pomoci a nabídnout podporu pro samo-hostované instalace."
     community: "Komunita"
     community_cta: "Navštívit GitHub"
     community_intro: |
@@ -427,24 +439,25 @@ support:
     calendar_intro: |
         Pokud si přejete seznámení s Kimai nebo podporu s aktualizacemi atd., můžete si objednat placenou relaci sdílení obrazovky s vývojářem Kevinem Papstem.
     calendar_refund: "Pokud se nemůžete zúčastnit své schůzky, musíte ji zrušit nejméně 24 hodin předem, aby mohla být znovu naplánována. Žádné vrácení peněz nebude provedeno."
+    get_in_touch: Kontaktujte nás
 docu-cloud:
     name: Cloud
 landing_oss:
     version_cloud: Get up and running in seconds, leave the hosting and update to me, you take care of your core business. Make sure your team is ready for the future, with a modern time tracking solution.
-    transparency_intro: With closed source software, you have only the vendor's claims that they're keeping the software secure and adhering to standards. The visibility of the code behind open source software means you can see for yourself. You can always see my responses to the community, the release schedule and milestones, and every commit and pull request review.
-    version_choose: Which Kimai is right for you?
-    vendor_title: No vendor lock-in
-    vendor_intro: Vendor lock-in can cost a lot, not just in cash but also in hours. With Kimai, you can host it yourself, have me host it for you, or fork it and change it. You're never locked into a hosted product, and all of your data is easy to export so that if you ever decide Kimai isn't for you anymore, your data is still yours (the same applies to the paid plans, I offer data export upon cancellation).
-    transparency_title: Always transparent
+    transparency_intro: U closed-source softwaru máte pouze tvrzení dodavatele, že software udržuje bezpečný a soukromý. U open source si to můžete ověřit — kód je dostupný k nahlédnutí.
+    version_choose: Které Kimai je pro vás to pravé?
+    vendor_title: Žádné vendor lock-in
+    vendor_intro: Vendor lock-in vás může vyjít draho — nejen v penězích, ale i v čase. S Kimai si můžete software hostovat sami a vždy máte plnou kontrolu nad svými daty.
+    transparency_title: Vždy transparentní
     subtitle: Kimai is the open source %title% software you were looking for 🎉
     version_onpremise: I take care of the software, you take care about the hosting, updates and security. And if you don't want to do it yourself, there is always support available at your fingertips.
-    discover: Discover Kimai
+    discover: Objevte Kimai
 plans:
     tls_included: SSL certifikát zdarma
     ip_whitelist: Omezení přístupu z IP adresy
     billable_hours: Fakturovatelné a nefakturovatelné hodiny
-    max_users: Users
-    work_contract: "Working hour account"
+    max_users: Uživatelé
+    work_contract: "Pracovní úvazek"
     all_from_plan: Všechny funkce z '%plan%'
     backup_frequency: Frekvence zálohování
     priority_features: Prioritizované požadavky na funkce
@@ -455,7 +468,7 @@ plans:
     custom_css: Vlastní CSS pravidla
     task_management: Správa úkolů
     ip_restriction: Omezení přístupu prostřednictvím IP adresy
-    expense: Expense tracking
+    expense: Sledování výdajů
     timetracking: Sledování času projektu
     email_support: E-mailová podpora
     absences: Státní svátky, dovolená, nemocenská
@@ -470,10 +483,13 @@ plans:
     rest_api: JSON API
     custom_fields: Vlastní pole
     daily_backups: Denní zálohy ke stažení
-    export_templates: Export PDF-Templates
+    export_templates: Exportní šablony PDF
     kiosk: Kiosk Modus
     backup_weekly: Týdně
     backup_daily: Denně
+    customer_portal: Zákaznický portál
+    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
+    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
 pricing:
     short_monthly: Na uživatele a měsíc
     short_annual: Na uživatele a rok
@@ -483,19 +499,28 @@ pricing:
     included: Co je zahrnuto?
     not_available: Není k dispozici
     subtitle: Tyto plány jsou k dispozici pro zákazníky cloudu
-    cancellation: You can cancel your subscription at any time up to one day before the end of the subscription period.
-    tax_exclusive: All prices are exclusive of taxes.
+    cancellation: Předplatné můžete zrušit kdykoli, nejpozději jeden den před koncem aktuálního období předplatného.
+    tax_exclusive: Všechny ceny jsou uvedeny bez daně.
+    favorite: Most popular
+    annual_cta: You save 20% compared to monthly billing.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
+    monthly_cta: Switch to annual and save 20%.
+    trust_hosting: Hosted in Germany · GDPR compliant
+    trust_trial: 30-day free trial
+    trust_no_fee: No setup fee
 non-profit:
-    name: Non-Profits
-    eligible: Learn more
-    testimonial-title: Non-profits trust on Kimai
-    testimonial-intro: And I look forward to be able to support your organisation too.
-    intro: Time-tracking for Non-Profit Organizations, cheap and reliable
+    name: Neziskové organizace
+    eligible: Zjistit více
+    testimonial-title: Neziskové organizace věří Kimai
+    testimonial-intro: A těším se, že budu moci podpořit i vaši organizaci.
+    intro: Sledování času pro neziskové organizace — levně a spolehlivě
 discount-codes:
-    name: Discount codes
+    name: Slevové kódy
 faq:
     title: Často kladené otázky
     intro: Tyto nejčastější dotazy poskytuje vývojář této nabídky.
+    subtitle: Často kladené otázky
 login: Přihlášení
 store-payment-methods: Dostupné platební metody
 500:
@@ -514,7 +539,9 @@ error:
     name: Dočasně nedostupné (503)
     description: Omlouváme se, ale náš server je v současné době v údržbě a není dostupný. Brzy se vrátíme!
 cloud:
-    status: Status
+    status: Stav
+    subtitle: Announcements and news about the Kimai Cloud.
+    name: Cloud
 theme:
     dark: Tmavé
     light: Světlé
@@ -524,7 +551,7 @@ purchase-power-parity: Nemůžete zaplatit? Obraťte se na PPP a získejte slevu
 reviews:
     subtitle: "Tisíce firem používají Kimai každý den ke sledování času.\nZde je vyjádření některých z nich…"
     leave: Zanechte svůj názor
-    name: Reviews
+    name: Recenze
 store-plugins-onpremise: Doplňky jsou pro zákazníky s místní instalací, uživatelé cloudového řešení mají přístup k doplňkům označených jako %cloud%.
 community:
     name: Komunita
@@ -537,16 +564,206 @@ terms-cloud:
     title: Podmínky používání služby
     name: Podmínky
 terms-gdpr:
-    name: Data Processing
+    name: Zpracování údajů
 industries:
     name: Průmysl
+    agency:
+        features:
+            introduction: Ne všechny nástroje pro sledování času jsou stejné. Nejlepší řešení pro agentury nabízejí specializovanou sadu funkcí pro zefektivnění vašich workflow.
+            title: Funkce Kimai, které agentury používají nejčastěji
+        testimonials:
+            tag: Agentura
+            introduction: V Kimai jsme naši platformu pro sledování času navrhli tak, aby splňovala potřeby agentur, týmů a freelancerů. Naše intuitivní rozhraní a výkonné funkce pomáhají agenturám, jako je ta vaše, pracovat chytřeji a ziskověji. Nyní si můžete „poslechnout" recenze skutečných uživatelů.
+            title: Co o sledování času říkají agentury
+        about:
+            title: První kroky k lepšímu sledování času
+            introduction: |
+                První kroky už máte za sebou a jsme si jistí, že dokážete učinit informované rozhodnutí. Co dalšího byste měli zvážit při výběru nejlepšího softwaru pro sledování času? Někteří dodavatelé nabízejí bezplatné verze, které mohou mít omezení, jiní zase bezplatná dema, zkušební období nebo ceny podle velikosti firmy či počtu uživatelů.
+
+                V Kimai nabízíme bezplatné zkušební období, abyste si naše řešení mohli vyzkoušet, než se rozhodnete, jestli potřebujete další uživatele, funkce nebo pluginy. Vyzkoušejte ho dnes zdarma a mějte organizovanější pracovní den!
+        title: Sledování času pro agentury
+        cta:
+            title: Ready to start tracking time in your agency?
+        name: Agentury
+        introduction: |
+            Vedete agenturu — ať už marketingovou, PR, design, poradenství, HR nebo architekturu? Pak víte, jak důležité je pro vaše podnikání sledování času. Evidence hodin zaměstnanců a času stráveného na projektech klientů je zásadní pro přesnou fakturaci, pochopení ziskovosti a řízení rostoucího týmu.
+
+            Ale spravovat sledování času pomocí tabulek a nepropojených nástrojů se může rychle stát chaosem, zvlášť když vaše agentura roste. A právě tady může udělat zásadní rozdíl specializované řešení pro sledování času.
+
+            Pojďme se podívat, proč úspěšné agentury spoléhají na software pro sledování času a jaké klíčové funkce hledat. Jako příklad uživatelsky přívětivého řešení navrženého pro agentury použijeme Kimai.
+        intro: Uvolněte potenciál ziskovosti v rychle rostoucích agenturách díky škálovatelnému systému sledování času
+        subtitle: Klíč k ziskovosti
+    lawyer:
+        about:
+            title: První kroky k lepšímu sledování času ve vaší právní praxi
+            introduction: |
+                Chápeme, že vyzkoušet nový software v právní oblasti může být skličující. Proto nabízíme bezplatné zkušební období bez závazků, jednoduché zaškolení, flexibilní sadu funkcí, která roste spolu s vaší praxí nebo týmem, a dedikovanou podporu.
+
+                Věříme, že i v rámci bezplatné zkušební verze si můžete najít způsob, jak přestat zápolit s výkazy práce. Vyzkoušejte Kimai dnes a mějte pěkně organizovaný den!
+        features:
+            title: Funkce Kimai oblíbené v advokátních kancelářích
+            introduction: Kimai je navrženo speciálně s ohledem na právní profesionály. Vytvořili jsme nástroj pro sledování času, který mluví vaším jazykem — jednoduchý, spolehlivý, v souladu s GDPR a navržený tak, aby vám zpříjemnil pracovní den.
+        testimonials:
+            introduction: V Kimai jsou právní profesionálové a konzultanti odjakživa naším zaměřením. Nyní si můžete přečíst, jak naši uživatelé skutečně Kimai používají.
+            title: Pohled našich zákazníků na sledování času
+        title: Sledování času pro právníky
+        intro: Odhoďte složité výkazy práce a soustřeďte se na poskytování výjimečných právních služeb díky moderním řešením pro sledování času
+        subtitle: Soustřeďte se na fakturovatelné hodiny, ne na složité výkazy
+        name: Právníci
+        introduction: |
+            V rychlém světě právních služeb je čas vaším nejcennějším aktivem. Advokátní kanceláře, samostatní advokáti i právní týmy potřebují řešení pro sledování času, které je přizpůsobené specifickým nárokům jejich profese. V Kimai chápeme, že vaše pozornost by měla patřit poskytování výjimečných právních služeb — a ne souboji se složitými výkazy.
+
+            Ruční zaznamenávání hodin, nekonečné tabulky a složité exporty berou cenný čas, který by se dal věnovat odbornému právnímu poradenství. Zjistěte, jak vám efektivní sledování času pomůže soustředit se na to, na čem skutečně záleží.
+        cta:
+            title: Ready to revolutionize time tracking in your practice?
+    software-developers:
+        features:
+            title: Funkce Kimai používané softwarovými inženýry
+            introduction: Objevte perfektní sadu funkcí přizpůsobenou vašim úkolům a cílům. Co když váš IT tým nepotřebuje jen jednoduché sledování času, ale robustní řešení s různými možnostmi integrace a pokročilými funkcemi fakturace a analytiky?
+        title: Sledování času pro vývojáře softwaru
+        about:
+            introduction: |
+                Volba správného nástroje pro sledování času často začíná rozhodnutím mezi bezplatnou verzí a demem. Cena je také klíčovým faktorem, takže hledejte možnosti, které rostou spolu s vaším týmem.
+
+                V Kimai nabízíme bezplatné zkušební období, abyste si naše řešení mohli prozkoumat, než se rozhodnete, jestli potřebujete další funkce nebo pluginy. S cenami již od 0,99 € za uživatele v některých odvětvích jde o dostupnou volbu. Vyzkoušejte ji dnes zdarma a vneste do svého pracovního dne víc pořádku!
+            title: První kroky k lepšímu sledování času
+        subtitle: Maximalizujte svou produktivitu
+        cta:
+            title: |
+                Připraveni vyzkoušet nový způsob
+                sledování času ve vašem IT týmu?
+        testimonials:
+            title: IT profesionálové o sledování času
+            introduction: V Kimai jsme naši platformu pro sledování času navrhli s ohledem na potřeby jednotlivých vývojářů, vývojářských týmů a IT oddělení. Zaměřujeme se na budování open-source řešení pro technické týmy všech velikostí a v různých odvětvích. Můžete se podívat, jakou zpětnou vazbu dostáváme od našich uživatelů z technického prostředí.
+        name: Vývojáři softwaru
+        intro: Maximalizujte produktivitu týmu a dosáhněte rovnováhy mezi prací a životem díky chytrému sledování času
+        introduction: |
+            Tu bolest známe až moc dobře — nekonečné přesčasy, stresující termíny, časově náročné bugy a neustálý boj o to, aby projektoví manažeři a klienti ocenili skutečné úsilí za vaším kódem. Je to bludný kruh, který může rychle vést k vyhoření a narušit vaši rovnováhu mezi prací a životem. Tomuto výzvě čelí vývojáři softwaru, programátoři, inženýři a další profesionálové z technologického sektoru.
+
+            Ale existuje způsob, jak se z tohoto kruhu vymanit a získat zpět kontrolu nad svým časem a úkoly. Se správnými nástroji můžete maximalizovat svou produktivitu a získat cenné informace o svých projektech. Ať jste freelance programátor, součást startupového týmu, nebo řídíte celé IT oddělení, najít škálovatelné řešení se správnými funkcemi je zásadní. Podívejme se na Kimai — uživatelsky přívětivý a výkonný software pro sledování času — jako na příklad.
+    consultants:
+        features:
+            title: Funkce Kimai, které konzultanti používají nejčastěji
+            introduction: Ať už jste freelancer, nebo součástí velkého poradenského oddělení, Kimai nabízí nástroje, které rostou spolu s vaším podnikáním.
+        about:
+            title: První kroky k lepšímu sledování času v poradenství
+            introduction: |
+                Abyste ze softwaru pro sledování času vytěžili maximum, začněte tím, že si všechny funkce projdete v demu nebo bezplatném zkušebním období. Jako konzultant si pravděpodobně budete chtít pečlivě promyslet cenové možnosti a předem zvážit, jaké funkce byste mohli potřebovat, jak vaše podnikání poroste.
+
+                V Kimai této cestě rozumíme. Proto nabízíme bezplatné zkušební období, ve kterém si naše řešení můžete vyzkoušet, než se rozhodnete, které další funkce nebo pluginy vám vyhovují nejlépe. Naše all-in-one aplikace roste s vaším podnikáním — kdykoli můžete snadno přidat rozšíření. Vyzkoušejte ji dnes zdarma a mějte pěkně organizovaný den!
+        subtitle: Maximalizujte fakturovatelné hodiny a efektivitu
+        name: Konzultanti
+        title: Sledování času pro konzultanty
+        testimonials:
+            introduction: V Kimai jsme naši platformu vybudovali tak, aby vyhovovala jak jednotlivým konzultantům, tak velkým týmům. Jako all-in-one řešení Kimai využívají firmy všech velikostí napříč sektory. Tady je, co o tom říkají naši uživatelé z poradenství.
+            title: Pohled na sledování času od profesionálů z poradenství
+        intro: Zvyšte ziskovost a dodávejte klientům větší hodnotu díky strategickému sledování času pro špičkové poradenství
+        introduction: |
+            V dynamickém světě dnešního poradenství — ať jde o strategické poradenství, finanční poradenství, IT služby, data science, právní poradenství, psychologické služby nebo HR poradenství — zůstává jedna pravda neměnná: čas je váš nejcennější aktivum. Přesné sledování času není jen o zaznamenávání hodin. Jde o maximalizaci ziskovosti a dodávání hodnoty klientům.
+
+            Buďme upřímní — řízení poradenských projektů není snadné. Členové vašeho týmu mohou pracovat z New Yorku, Londýna i Singapuru zároveň. To je hodně na sledování! Navíc musíte přesně vědět, kdo na čem pracoval, abyste mohli klientům správně fakturovat. Bez kvalitního sledování času se vše může rychle zamotat. Musíte mít pod kontrolou náklady projektů, dodržovat předpisy a zajistit, aby byl čas vašeho týmu využíván smysluplně.
+
+            Proto se all-in-one nástroje pro sledování času staly pro konzultanty nezbytností. Mění potenciální chaos v jasná, uspořádaná data, která pomáhají vašemu podnikání prosperovat. Pojďme se podívat, jak může komplexní řešení jako Kimai změnit vaše poradenské podnikání.
+        cta:
+            title: |
+                Připraveni vyzkoušet nový způsob
+                sledování času ve vaší praxi?
+    freelancers:
+        name: Freelancer
+        testimonials:
+            introduction: "Nevěřte jen nám. Tady je, co říkají ostatní freelanceři:"
+            title: Co o sledování času s Kimai sdílejí ostatní profesionálové
+        features:
+            title: 'Features loved by freelancers '
+            introduction: Kimai je navrženo tak, aby solopreneurům pomohlo zefektivnit jejich workflow. Ať už žonglujete s více klienty, nebo spravujete různé projekty, Kimai vám poskytuje nástroje, které potřebujete, abyste zůstali organizovaní a ziskoví.
+        introduction: |
+            Když je freelancing novou kapitolou ve vašem životě, musíte na sebe vzít nové role a čelit novým výzvám. Jednou z nich je správa času a rovnováha mezi odpracovanými hodinami a ziskovostí projektů. Žonglování s více projekty vyžaduje analýzu — jak pro vás, tak pro vaše klienty.
+
+            Naštěstí existují nástroje, které freelancerům, smluvním partnerům, digital nomadům a solopreneurům pomáhají sledovat fakturovatelné hodiny, fakturovat klientům bez vytrhávání vlasů, spravovat hodinové sazby a výdaje, a podobně.
+
+            Umožní vám soustředit se na to, co milujete — a dostat zaplaceno tolik, kolik si skutečně zasloužíte. Pojďme se podívat, jak na to s Kimai jako nástrojem pro sledování času pro freelancery.
+        cta:
+            title: Ready to get the most of your time as a freelancer?
+        title: Sledování času pro úspěšné freelancery
+        about:
+            title: První kroky k lepší správě času
+            introduction: |
+                Jste připraveni okusit výhody Kimai? Nabízíme bezplatné zkušební období, abyste si mohli prozkoumat všechny funkce, než se rozhodnete, který software pro sledování času je pro vás jako nezávislého profesionála nejlepší.
+
+                Zaregistrujte se ještě dnes, začněte svůj čas sledovat doslova jedním kliknutím a mějte organizovanější den!
+        intro: Maximalizujte své příjmy jako solopreneur
+    universities:
+        cta:
+            title: Ready to transform time management at your institution?
+        subtitle: ' '
+        testimonials:
+            introduction: |
+                V Kimai jsme naši platformu pro sledování času navrhli tak, aby splňovala potřeby agentur, týmů a freelancerů.
+                Naše intuitivní rozhraní a výkonné funkce pomáhají agenturám, jako je ta vaše, pracovat chytřeji a ziskověji.
+                Nyní si můžete „poslechnout" recenze skutečných uživatelů.
+            title: Co říkají naši zákazníci
+        name: Univerzity
+        introduction: |
+            Správa času ve vysokoškolském vzdělávání přináší jedinečné výzvy včetně plánování přednášek a hodin, sledování výzkumných projektů, alokace času studentů a akademických pracovníků a časově náročných administrativních úkolů.
+
+            Efektivní řešení pro sledování času pomáhají tyto procesy zefektivnit a umožňují pedagogům a výzkumníkům soustředit se na jejich hlavní povinnosti.
+        features:
+            title: Funkce pro správu času v celé instituci
+            introduction: |
+                Naše řešení pro sledování času bylo dolaďováno ve spolupráci s řadou univerzit. Skutečná zpětná vazba uživatelů řídí náš vývoj a zajišťuje funkce, které skutečně odpovídají akademickým potřebám.
+
+                Abychom uvedli alespoň některé akademické instituce, které Kimai používají: `Universität Hamburg`, `Universität Bonn`, `Universität Wien`, `Universität Stuttgart`, `Universität Frankfurt`, `University of Fribourg`, `TU Dresden` a `University of Moscow`.
+        about:
+            title: Začněte svou cestu k lepší správě času
+            introduction: |
+                Chápeme, že zavedení nového systému sledování času v akademickém prostředí vyžaduje pečlivé zvážení.
+                Proto nabízíme bezplatné zkušební období a ukázkové sezení.
+                Vyzkoušejte Kimai nyní zdarma a mějte organizovanější den!
+        intro: Zvyšte efektivitu své instituce díky výkonnému sledování času
+        title: Sledování času pro akademický sektor
+    non-profit:
+        about:
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+            title: Our affordable non-profit plan for you
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        subtitle: Less administrative burden, so your mission stays in focus
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking
+        title: Time Tracking for Non-Profit Organizations ✨
+        features:
+            title: Features that NPOs appreciate
+            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+        testimonials:
+            title: What other NPOs say about Kimai
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        intro: We put your work and vision center stage while simplifying administration and billing
+        name: Non-Profits
 industry:
-    name: Time tracking for every business
-    subtitle: Keep your projects on track with Kimai
-    intro: You can improve the productivity of your employees with the Kimai time recording software.
-    title: Time tracking for every industry
-    office: For office workers
-    more: More industries
+    name: Sledování času pro každou firmu
+    subtitle: Udržte své projekty pod kontrolou s Kimai
+    intro: Můžete zvýšit produktivitu svých zaměstnanců pomocí softwaru pro sledování času Kimai.
+    title: Sledování času pro každé odvětví
+    more: Další odvětví
 terms-plugins:
     name: Licence zásuvného modulu
 cloud-cta:
@@ -560,35 +777,52 @@ start-trial:
     step_3_title: Spustit sledování času
     video_subtitle: 'Tak jednoduché: V 45 sekundách na vlastní time-tracking!'
     step_1_text: Vytvořte si svůj účet s Google účtem nebo e-mailem a heslem, to druhé je třeba ověřit pomocí e-mailového odkazu.
-    step_3_text: After a short moment your Kimai-Cloud is ready for use, you can now login and start time-tracking.
+    step_3_text: Za chvíli bude vaše instance Kimai-Cloud připravena k použití — můžete se přihlásit a začít sledovat čas.
     title: Začít zkušební verzi zdarma
 time-tracking-terms:
-    title: Time Tracking Terms
-    subtitle: Explanations of common terms
-    intro: Take a look behind the scenes of time recording and learn more about the frequently used terms in Kimai
-    name: Time Tracking Terms
-changelogs:
+    title: Pojmy sledování času
+    subtitle: Vysvětlení běžně používaných pojmů
+    intro: Nahlédněte do zákulisí sledování času a poznejte pojmy, které se v Kimai často používají
+    name: Pojmy sledování času
+changelog:
     name: Seznam změn
     title: 'Historie změn: Kimai Cloud'
-    intro: Přehled všech Kimai cloud aktualizací a kdy byly nainstalovány.
+    subtitle: Přehled všech Kimai cloud aktualizací a kdy byly nainstalovány.
 open-source-community:
     name: Open Source
 integrations:
-    subtitle: Connect Kimai with your favorite tools — from desktop apps to mobile clients, CLI tools, and more — and track time wherever you work.
-    title: Apps and integrations for Kimai
-    name: Apps & Integrations
-onpremise:
-    name: Self hosting
+    subtitle: Propojte Kimai s vašimi oblíbenými nástroji — od desktopových aplikací po mobilní klienty, CLI nástroje a další — a sledujte čas všude, kde pracujete.
+    title: Aplikace a integrace pro Kimai
+    name: Aplikace a integrace
 product:
-    name: Product
-store-category-desktop: Desktop applications
+    name: Produkt
+store-category-desktop: Desktopové aplikace
 stories:
-    title: Our customers success stories
-    intro: Discover how our customers utilise our powerful open-source solution and save time and money with Kimai.
-    since: Using Kimai since
-    name: Success Stories
-    wins: Savings with Kimai
-    industry: Industry
-    location: Location
-    company: Company
-    employees: Employees
+    title: Příběhy úspěchu našich zákazníků
+    intro: Zjistěte, jak naši zákazníci využívají naše výkonné open-source řešení a šetří čas a peníze s Kimai.
+    since: Používá Kimai od
+    name: Příběhy úspěchu
+    wins: Úspory s Kimai
+    industry: Odvětví
+    location: Lokalita
+    company: Společnost
+    employees: Zaměstnanci
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+title: Název
+date: Datum
+press-media:
+    subtitle: Rádi pomůžeme. Níže najdete materiály značky, případně se ozvěte přímo — odpovídáme rychle.
+    contact_title: Píšete o Kimai?
+    contact_button: Napište nám
+    name: Tisk a média
+    contact_text: Své otázky nám neváhejte poslat e-mailem nebo si domluvte schůzku.
+per-month: měsíčně
+version-1:
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+    name: Kimai 1
+on-premise:
+    name: Self hosting
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.

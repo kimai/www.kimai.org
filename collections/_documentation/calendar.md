@@ -10,18 +10,46 @@ related:
 Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
 can choose between a monthly, weekly and daily view.
 
+{% include youtube-video.html id="timesheets" chapter="calendar" %}
+
 ## Context-menu
 
-All calendar entries offer a context-menu with several options (like `Duplicate` or `Delete`), right at your fingertip. 
+All calendar entries offer a context-menu with several options (like `Duplicate` or `Delete`), _right at your fingertip_. 
+
+### Delete a timesheet
+
+You can right-click every entry and delete it from the context-menu.
 
 ## Drag & Drop
 
 The calendar allows managing entries by using drag & drop: 
-- for creating entries (can be deactivated by System Admins)
+- for creating entries (can be deactivated by System Admins) from your recent activities
 - for moving entries across times and days 
 
-Drag & Drop is globally deactivated if the time-tracking mode (see [System > Settings]({% link _documentation/configurations.md %})) 
+Drag & Drop is globally deactivated if the time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
 does not allow to edit the start-time (e.g. punch in-out mode deactivates drag & drop).
+
+**Why doesn't drag & drop in the calendar copy all fields?**
+
+When you drag and drop a timesheet entry in the calendar, only the **project** and **activity** are carried over — not custom fields or other details. This is intentional and differs from the **Restart** feature.
+
+|                          | Drag & Drop                        | Restart Timesheet            |
+|--------------------------|------------------------------------|------------------------------|
+| **Use case**             | Start working on an activity again | Continue the exact same task |
+| **Copies project**       | ✓                                  | ✓                            |
+| **Copies activity**      | ✓                                  | ✓                            |
+| **Copies custom fields** | ✗                                  | ✓                            |
+| **Copies other fields**  | ✗                                  | ✓                            |
+{: .table}
+
+When to use each feature:
+
+- **Use drag & drop** when you want to log time against a project and activity you've worked on before, but it's a fresh entry — for example, picking up a recurring task at the start of a new day.
+- **Use Restart** when you're genuinely continuing the same piece of work and need all the original details (including custom fields) preserved exactly as they were.
+
+{% alert info %}
+Your system administrator can change this behavior, see `Configurations` below. 
+{% endalert %}
 
 ## Editing timesheets
 
@@ -37,10 +65,6 @@ There are a couple of ways you can create a new timesheet record in the calendar
 - When you click and drag the selection, you open a "create timesheet" form for a completed timesheet (week and day view)
 - Drag & drop existing entries (like recent activities) from the left side into the calendar (month, week and day view)
 
-## Delete a timesheet
-
-You can right-click every entry and delete it from the context-menu.
-
 ## Switching user
 
 You can switch the account whose data is displayed, if your user owns the permission `view_other_timesheet`.
@@ -52,10 +76,13 @@ If you are able to switch the account, if depends on the following permissions i
 
 The recent activities drag & drop is also switched to the account currently displayed.
 
-## Calendar configurations
+If you cannot see the dropdown despite having the `view_other_timesheet` permission, it is likely that you cannot see any other users.
+Whether or not you can see another user depends on your team assignments: you need to be the [team lead to see your team members]({% link _documentation/teams.md %}).
 
-The look and feel of the calendar can be customized via [System > Settings]({% link _documentation/configurations.md %}).
+## Configurations
 
-## Initial view (user preference)
+{% include documentation/configurations.md id="calendar" howto=true %}
+
+### User preference
 
 A user can change the initial view for the calendar, see [user preferences]({% link _documentation/user-preferences.md %}).

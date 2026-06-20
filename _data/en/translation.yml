@@ -2,7 +2,7 @@ made-with-love: Developed by
 developed-at: Developed at
 access-demo: Access demo
 docu-alert-english: Content is only available in English
-store-hero-counter: "More than %number% customers trust Kimai"
+store-hero-counter: "Trusted by over %number% companies"
 store-contribute-title: Contribute
 store-contribute-subtitle: Are you a developer? Read how to
 store-contribute-plugin: create a new plugin
@@ -22,7 +22,6 @@ homepage-alert-title: Free time-tracking for everyone
 homepage-alert-intro: Kimai is an open-source time tracking solution. It tracks work time and prints out a summary of your activities on demand. Yearly, monthly, daily, by customer, by project … Its simplicity is its strength. Due to Kimai’s browser based interface it runs cross-platform, even on your mobile device.
 homepage-alert-button-download: Download
 homepage-alert-button-demo: Try first
-cloud-title: 'Kimai Cloud (SaaS)'
 cloud-feature-ssl: Free TLS (SSL) certificate
 cloud-feature-hosting: Hosting and Updates
 cloud-feature-backups: Backups
@@ -69,20 +68,22 @@ contact-developer: If you have any question, please use the following contact in
 about-who: Who is building Kimai?
 description: Description
 per-year: per year
+per-month: per month
 roadmap: Roadmap
 licenses: Licenses
 purchase-power-parity: Can't pay? Reach out for a PPP discount.
-changelogs:
-    name: Changelog
-    title: Changelog Kimai Cloud
-    intro: Overview of all Kimai cloud updates and when they were installed.
+date: Date
+title: Title
+changelog:
+    name: Updates
+    title: What's new
+    subtitle: Latest features, fixes and improvements for your Kimai Cloud.
 cloud-cta:
     days_30: 'Sign up for your 30-days free trial'
-industries:
-    name: Industries
 stories:
     name: Success Stories
     title: Our customers success stories
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
     intro: "Discover how our customers utilise our powerful open-source solution and save time and money with Kimai."
     company: Company
     industry: Industry
@@ -90,6 +91,12 @@ stories:
     employees: Employees
     location: Location
     wins: Savings with Kimai
+press-media:
+    name: Press & Media
+    subtitle: We'd love to help. Find brand assets below, or reach out directly — we respond quickly.
+    contact_title: Covering Kimai?
+    contact_text: Please feel free to ask your questions via email or schedule a chat.
+    contact_button: Email us
 community:
     name: Community
 forum:
@@ -101,15 +108,35 @@ reviews:
         Thousands of companies use Kimai everyday to track their times.
         Here's what some of them have to say …
 cloud:
-    status: Status
+    status: System-Status
+    name: Cloud
+    subtitle: Announcements and news about the Kimai Cloud.
 faq:
     title: FAQ
+    subtitle: Frequently asked questions
     intro: These FAQs are provided by the developer of this offer.
 oss-cloud-compare:
-    title: One software, two versions
-    intro: Kimai is an open source software that is available for self-hosting as well as SaaS.
-    saas: Hosted for you
-    onpremise: Hosted by you
+    title: |
+        Cloud or self-hosted.
+        You decide.
+    subtitle: Choose your path
+    intro: Same powerful features, different deployment. Pick what fits your team.
+    cloud:
+        badge: Recommended
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_1: Instant setup, no server needed
+        reason_2: Automatic updates & backups
+        reason_3: GDPR-compliant EU hosting
+        reason_4: Priority support
+        reason_5: Plugins included
+    on-premise:
+        badge: Free forever
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+        reason_1: 100% open source (AGPL 3)
+        reason_2: Full data ownership
+        reason_3: Docker & manual install
+        reason_4: Community support
+        reason_5: Plugin marketplace
 highlight:
     title: Supports your business
     subtitle: Kimai has all the business core features you need to setup your time-tracking workflows and integrate it with your existing infrastructure.
@@ -142,12 +169,14 @@ section-features:
     subtitle: Kimai offers much more than just time-tracking, here is a list of other important business functions.
 homepage:
     title: Time tracking for project-driven teams
-    intro: Our open-source platform is designed to keep track of and analyze your company's time-data, making it perfect for businesses of all sizes. Kimai helps you keep an eye on time and money.
+    subtitle: Our open-source platform is designed to keep track of and analyze your company's time-data, making it perfect for businesses of all sizes. Kimai helps you keep an eye on time and money.
 open-source-community:
     name: Open Source
 newsletter:
-    title: Don't Want to Miss Anything?
+    name: Newsletter
+    teaser: Don't Want to Miss Anything?
     introduction: Subscribe to our newsletter and stay updated about Kimai and Plugin updates.
+    subtitle: "Self-hosting Kimai or just exploring it? We share product news, tips, and the occasional behind-the-scenes look with a community that prefers full control over their tools and data."
     email-title: Your email address
     email-help: Provide your email address to subscribe.
     field-invalid: The information provided is invalid. Please review the format and try again.
@@ -156,6 +185,7 @@ newsletter:
     sendinblue: We use Brevo as our marketing platform. By submitting this form, you acknowledge that the information you provided will be transferred to Brevo for processing in accordance with their %terms%.
     terms: terms of use
     button: SUBSCRIBE
+    archive: Archive
 photos:
     dashboard:
         title: Dashboard
@@ -170,9 +200,8 @@ donate: Donate
 demo:
     name: Demo
     description: Test and evaluate our time-tracker Kimai online, directly from our demo page.
-    title: Test Kimai in one of the demos
-    introduction: "Try out the Kimai time-tracking demo, and we promise: you'll keep on using it!"
-    choose: Please choose one of our demo installations, to get a first impression on how Kimai feels and which functionality it provides.
+    title: Try Before You Track
+    subtitle: Jump into a live demo and see how Kimai feels — no account needed.
     reinstall: Be aware that the demos will be reinstalled on a regular schedule and all entered data will be removed.
     user: Demo user
     accounts: "These accounts are available for your tests. Or you create your own test user in the login form of each demo."
@@ -180,11 +209,9 @@ demo:
     role_teamlead: Teamlead
     role_admin: Administrator
     role_super: Super-Admin
-    stable-title: Core
     stable-description: "The latest release, without plugins, without demo data."
     plugins-title: Featured
     plugins-description: Development version with plugins and demo data.
-    empty-title: Plugins
     empty-description: The current version with featured plugins, without data.
 index:
     name: Home
@@ -192,10 +219,9 @@ index:
     description: Kimai - free and easy time-tracking for freelancer, agencies and companies with user and invoice handling.
 download:
     name: Installation
-    title: Kimai Installation
-    description: Download and Installation with SSH, Docker and Kubernetes - Kimai time-tracking
-    subtitle: Download and Installation
-    intro: We offer several ways to install Kimai. Choose the option that suits you.
+    title: Install Kimai
+    eyebrow: Self-Host Kimai
+    subtitle: Run Kimai on your own infrastructure — with Docker or a manual server setup. Pick the path that fits your stack.
 trademark:
     name: Trademark
 terms-cloud:
@@ -207,8 +233,6 @@ terms-plugins:
     name: Plugin license
 product:
     name: Product
-onpremise:
-    name: Self hosting
 hosted:
     name: Cloud
     title: Kimai-Cloud — Use Kimai directly without setup. Hassle-free Kimai hosting!
@@ -225,6 +249,7 @@ start-trial:
     step_3_text: After a short moment your Kimai-Cloud is ready for use, you can now login and start time-tracking.
 about:
     name: About Kimai
+    subtitle: "What started as a hobby project is now the world's leading open source time tracking application. Let's take a look at its history."
     description: Find out about the history of the time-tracker Kimai and its developer.
     kevin: Kimai and the Cloud are developed and operated by Kevin, an independent software-developer from Vienna (Austria).
     collaboration:
@@ -243,14 +268,26 @@ integrations:
 store:
     name: Plugins
     title: Plugins for Kimai
+    eyebrow: Extend Your Time-Tracker
     subtitle: "Use the wide range of plugins from the Kimai ecosystem to equip your self-hosted time recording solution with additional functions."
-    description: Plugins for Kimai extend your time-tracking experience with additional features
 blog:
     name: Blog
     title: News from Kimai
     description: News about Kimai, the time-tracking software
     subtitle: News from the Kimai development team
     archive-link: Find older %topic% news here
+    archive-tags: View all
+    categories: Categories
+    category-pages: Use the category pages to find all of our posts
+on-premise:
+    name: Self hosting
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+version-1:
+    name: Kimai 1
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.
 documentation:
     name: Documentation
     description: Support information, user manual and other documentation for Kimai time-tracking
@@ -265,12 +302,11 @@ docu-manual:
     name: User manual
 docu-developer:
     name: Developer
-docu-onpremise:
-    name: On-Premise
 features:
     name: Features
 alternatives:
-    name: Kimai alternatives
+    subtitle: Looking for an alternative to your current time tracking solution? Here’s why we think you should make the switch
+    name: Compare time tracker
     description: Kimai is the best open source time tracking application available, not only for project-based teams. See how Kimai compares to alternative time tracking solutions so you can choose the right one for your organisation.
 industry:
     more: More industries
@@ -278,10 +314,9 @@ industry:
     name: Time tracking for every business
     subtitle: Keep your projects on track with Kimai
     intro: You can improve the productivity of your employees with the Kimai time recording software.
-    office: For office workers
 time-tracking-terms:
     title: Time Tracking Terms
-    name: Time Tracking Terms
+    name: Glossary
     subtitle: Explanations of common terms
     intro: Take a look behind the scenes of time recording and learn more about the frequently used terms in Kimai
 feature:
@@ -369,9 +404,6 @@ feature:
     user-profile:
         name: "User profile"
         description: "Personal statistics and per user settings for hourly rate, Kimai theme, password and avatar."
-    user-registration:
-        name: "User registration"
-        description: "Kimai supports user self-registration with e-mail activation."
     password-reset:
         name: "Password reset"
         description: "Forgot your password? Kimai helps you reset it via e-mail."
@@ -407,6 +439,12 @@ feature:
             security_4: Servers are hosted in a data center in the EU
             security_5: Critical services are not accessible to the outside world
             security_6: Code runs in tightly restricted domain environments
+    electronic-invoicing:
+        name: "E-Invoices"
+        description: "Create e-invoices in both XML and PDF/A formats, compliant with EN 16931, XRechnung 3.0, Zugferd/Factur-X, and using CII and UBL syntax"
+    eu-hosting:
+        name: "EU Hosting"
+        description: "Independent and European 🇪🇺 – built in Austria 🇦🇹 and hosted in Germany 🇩🇪"
 install:
     ssh: This method installs Kimai directly on your server.
     docker: Use our Docker image to install and update Kimai container easily.
@@ -421,7 +459,6 @@ developer:
 
             My special thanks to the great community for their loyalty over the years, I'm looking forward to the next 10 years of Kimai 🚀
 history:
-    intro: "What started as a hobby project is now the world's leading open source time tracking application. Let's take a look at its history."
     early-days-subtitle: "Kimai has a long history and has been around since 2006, here is a brief overview of how it all started."
     early-days-title: "How it all began"
     year-2006: "The first version of Kimai is released and slowly gains a growing user and developer base."
@@ -452,21 +489,17 @@ cta:
         question: "Ready to get started?"
         answer: "Start your time-tracking now"
         button: "Get support"
-    tech-support:
-        question: "Tech &amp; Business Support"
-        answer: "I ensure support for all applications I've built and I will assist you and your team."
-        button: "Let's work together"
     best-features:
         question: "The best time-tracking features for you"
         answer: "Kimai provides a wide range of features that build around your project time-tracking needs and best practices solutions to our customers making their bookkeeping easier."
         button: "More features via plugin"
 comparison:
-    compare_with: Compare Kimai with %name%
-    footer-title: Compare
+    compare_with: "Compare Kimai with %name%"
+    alternative: "%product% alternative"
     is_oss: Open source software
     on_premise: Available on-premises
     cloud: Available in the cloud
-    location: Data server in EU
+    location: Server location
     max_customers: Max. customers
     max_projects: Max. projects
     max_activities: Max. activities
@@ -481,13 +514,11 @@ comparison:
     automatic_upgrades: Automatic upgrades
     server_maintenance: Server maintenance
     ip_restriction: IP access restriction
-    alternatives: Kimai alternatives
     finding: Finding the right time-tracking solution
-    use_case: Every use case, every company and every workflow is different and your requirements need to be evaluated before deciding on a time tracker. Here are some alternatives to Kimai that we will compare in detail.
 support:
     name: "Support"
     description: "Need support? Find help with using, installing or updating Kimai."
-    intro: "Some customers prefer to run Kimai internally but don't want to miss out on professional support. I'm pleased to assist you and offer a support plan for self-hosted installations."
+    subtitle: "Some customers prefer to run Kimai internally but don't want to miss out on professional support. I'm pleased to assist you and offer a support plan for self-hosted installations."
     community: "Community"
     community_cta: "Visit GitHub"
     community_intro: |
@@ -502,6 +533,7 @@ support:
         Cloud customers can expect responses within 24 hours, Monday to Friday between 10am and 4pm CET (excluding public holidays).
     premium: "Direct Contact"
     premium_cta: "Learn more"
+    get_in_touch: "Get in touch"
     premium_intro: |
         Email support and video calls are available for paying customers.
 
@@ -529,20 +561,30 @@ non-profit:
 discount-codes:
     name: "Discount codes"
 pricing:
+    trust_trial: "30-day free trial"
+    trust_hosting: "Hosted in Germany · GDPR compliant"
+    trust_no_fee: "No setup fee"
     name: Pricing
-    subtitle: These plans are available for cloud customers
+    subtitle: Full feature set from day one. Start for free, pay per user and cancel anytime.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
     short_monthly: "Per user & month"
     short_annual: "Per user & year"
     monthly: "Monthly"
-    annual: "Annually"
+    monthly_cta: "Switch to annual and save 20%."
+    annual: "Annual"
+    annual_cta: "You save 20% compared to monthly billing."
+    favorite: Most popular
     not_available: Not available
     included: What's included?
     tax_exclusive: All prices are exclusive of taxes.
     cancellation: You can cancel your subscription at any time up to one day before the end of the subscription period.
 plans:
+    standard_intro: "For freelancers and small teams who want to keep their time tracking and invoicing under control."
+    pro_intro: "For growing teams and companies that need working time accounts, expenses and SSO."
     max_users: "Users"
     timetracking: "Project time-tracking"
-    billable_hours: "Billable and non-billable hours"
+    billable_hours: "Billable hours"
     translation: "Industry-specific translations"
     invoices: "Invoicing"
     all_from_plan: "All features from '%plan%'"
@@ -554,7 +596,7 @@ plans:
     absences: "Public Holidays, vacation, sick leave"
     ip_whitelist: "IP Access Restriction"
     daily_backups: "Daily backups for download"
-    rest_api: JSON API
+    rest_api: "JSON API"
     github_support: "Community Forum"
     custom_domain: "Custom Domain with SSL"
     automatic_upgrades: "Automatic Updates"
@@ -572,8 +614,9 @@ plans:
     work_contract: "Working hour account"
     export_templates: "Export PDF-Templates"
     kiosk: "Kiosk Mode"
-    backup_weekly: Weekly
-    backup_daily: Daily
+    backup_weekly: "Weekly"
+    backup_daily: "Daily"
+    customer_portal: "Customer Portal"
 error:
     back: Back to homepage
     title: Ooops!
@@ -592,3 +635,204 @@ error:
 theme:
     light: Light
     dark: Dark
+industries:
+    name: Industries
+    agency:
+        name: Agencies
+        title: "Time Tracking For Agencies"
+        subtitle: "The key to profitability"
+        intro: "Unlock profitability potential in fast-growing agencies with scalable time tracking system"
+        introduction: |
+            Are you running an agency - whether it's in marketing, PR, design, consulting, HR, or architecture? Then you know how critical time tracking is to your business. Tracking employee hours and client project time is essential for billing accurately, understanding profitability, and managing your growing team.
+
+            But managing time tracking through spreadsheets and disconnected tools can quickly become a mess, especially as your agency scales. That's where a dedicated time tracking solution can be a game-changer.
+
+            Let's explore why successful agencies rely on time tracking software and what essential features to look for. We’ll use Kimai as an example of a user-friendly solution built with agencies in mind.
+        features:
+            title: "Kimai features most used by agencies"
+            introduction: "Not all time tracking tools are created equal. The best solutions for agencies offer a specialized set of features to streamline your workflows."
+        testimonials:
+            tag: Agency
+            title: "What agencies say about time tracking"
+            introduction: At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help agencies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users.
+        about:
+            title: "First steps for a better time tracking"
+            introduction: |
+                You've already taken your first steps and we're sure you can make an informed choice. What else should you consider to choose the best time tracking software? Some solution providers offer free versions, which may have limitations, while others provide free demos, trials, or pricing options based on business size or number of users.
+
+                At Kimai, we offer a free trial so you can explore our solution before deciding if additional users, features, or plugins are needed. Try it for free today, and have a more organized workday!
+        cta:
+            title: |
+                Ready to start
+                tracking time in your agency?
+    consultants:
+        name: Consultants
+        title: "Time Tracking For Consultants"
+        subtitle: "Maximize billable hours & efficiency"
+        intro: "Boost profitability and client value delivery through strategic time tracking for consultancy excellence"
+        introduction: |
+            In today's dynamic consulting landscape, whether you're in management consulting, financial advisory, IT services, data science, legal counsel, psychological services, or HR consulting - one truth remains constant: time is your most valuable asset. Accurate time tracking isn't just about logging hours. It's about maximizing profitability and delivering value to your clients.
+
+            Let's be honest - managing consulting projects isn't easy. Your team members might be working from New York, London, and Singapore all at once. That's a lot to keep track of! Plus, you need to know exactly who worked on what to bill your clients correctly. Without proper time tracking, things can get messy fast. You need to control your project costs, stay compliant with regulations, and make sure your team's time is used wisely.
+
+            That's why all-in-one time tracking tools have become a must-have for consultants. They turn all this potential chaos into clear, organized data that helps your business thrive. Let's explore how a comprehensive solution like Kimai can transform your consulting business.
+        features:
+            title: "Kimai features most used by consultants"
+            introduction: "Whether you are a freelancer or part of a large consulting department, Kimai offers tools to help you scale as your business grows."
+        testimonials:
+            title: "Insights on time tracking from consulting professionals"
+            introduction: At Kimai, we’ve built our platform to cater to the needs of individual consultants and large teams alike. As an all-in-one solution, Kimai is trusted by companies of all sizes across various sectors. Here’s what our users in the consulting field have to say.
+        about:
+            title: "First steps for better time tracking in consulting"
+            introduction: |
+                To get the most out of your time tracking software, start with exploring all the features through a demo or free trial. As a consultant, you will probably want to carefully consider the pricing options and think ahead about what features you might need as your business expands.
+
+                At Kimai, we understand this journey. That's why we offer a free trial that lets you test-drive our solution before deciding which additional features or plugins would work best for you. Our all-in-one app grows with your business - you can easily add extensions whenever needed. Try it for free today and have a nice organized day!
+        cta:
+            title: |
+                Ready to try a new way
+                to track time in your practice?
+    freelancers:
+        name: Freelancer
+        title: "Time tracking for successful freelancers"
+        intro: "Never loose track of your billable hours, write invoices with ease and maximise your income as a solopreneur"
+        introduction: |
+            When freelancing is a new chapter in your life, you have to try out new roles and face new challenges. One of these is time management and balancing the hours you work with the profitability of your projects. Balancing multiple projects requires analysis, both for you and your clients.
+
+            But there are tools out there to help freelancers, contractors, digital nomads and solopreneurs track their billable hours, bill clients without pulling your hair out, manage your hourly rates and expenses, etc.
+
+            It lets you focus on what you love - and get paid what you really deserve. Let's see how with Kimai as a time tracking tool for freelancers.
+        features:
+            title: "Features loved by freelancers"
+            introduction: "Kimai is designed to help solopreneurs streamline their workflow. Whether you're juggling multiple clients or managing a variety of projects, Kimai provides the tools you need to stay organised and profitable."
+        testimonials:
+            title: "What other professionals share about time tracking with Kimai"
+            introduction: "Don't just take our word for it. Here's what other freelancers say:"
+        about:
+            title: "First steps to better time management"
+            introduction: |
+                Are you ready to experience the benefits of Kimai? We offer a free trial so you can explore all the features before you decide which time tracking software is best for you as an independent professional.
+
+                Sign up today, start tracking your time with literally one click and have a more organised day!
+        cta:
+            title: |
+                Ready to get the most
+                of your time as a freelancer?
+    lawyer:
+        name: Lawyers
+        title: "Time Tracking for Lawyer"
+        subtitle: "Focus on billable hours, not complicated timesheets"
+        intro: "Ditch complex timesheets and focus on delivering exceptional legal services with modern time tracking solutions"
+        introduction: |
+            In the fast-paced world of legal services, time is your most valuable asset. Law firms, independent attorneys, and legal teams need a time tracking solution tailored to the unique demands of their profession. At Kimai, we understand that your focus should be on delivering exceptional legal services — not on battling complex timesheets.
+
+            Manual hour logging, endless spreadsheets, and complicated export processes take valuable time away from providing expert legal counsel. Discover how efficient time tracking can help you focus on what truly matters.
+        features:
+            title: "Kimai features loved by law firms"
+            introduction: "Kimai is designed specifically with legal professionals in mind. We've created a time tracking tool that speaks your language – simple, reliable, GDPR compliant, and focused on making your workday smoother."
+        testimonials:
+            title: "Insights on time tracking from our customers"
+            introduction: At Kimai, legal professionals and consultants have always been our focus. Now you can read about the real experience of our users.
+        about:
+            title: "First steps for a better time tracking in your law practice"
+            introduction: |
+                We understand that trying new software in law business can feel daunting. That's why we offer a free, no-obligation trial, easy onboarding, flexible set of features that grow with your practice or team, and dedicated support.
+
+                We believe that even during a free trial you can try a way to stop wrestling with timesheets. Try Kimai for today and have a nice organized day!
+        cta:
+            title: |
+                Ready to revolutionize
+                time tracking in your practice?
+    software-developers:
+        name: Software Developers
+        title: "Time Tracking For Software Developers"
+        subtitle: "Maximize Your Productivity"
+        intro: "Maximize team productivity and achieve work-life balance with smart time tracking"
+        introduction: |
+            We understand the pain all too well -  endless overtime, stressful deadlines, time-consuming bugs, and the constant struggle to make project managers and clients appreciate the true effort behind your code. It's a vicious cycle that can quickly lead to burnout and disrupt your work-life balance. This is a common challenge faced by software developers, programmers, engineers, and other tech professionals.
+
+            But there's a way to break free from this cycle and regain control over your time and tasks. By using the right tools, you can maximize your productivity and gain valuable insights into your projects. Whether you're a freelance programmer, part of a startup team, or managing an entire IT department, finding a scalable solution with the right features is essential. Let’s explore Kimai - a user-friendly and powerful time tracking software - as an example.
+        features:
+            title: "Kimai features used by software engineers"
+            introduction: "Discover the perfect set of features tailored to your tasks and goals. What if your IT team needs not just a simple time tracker but a robust solution with different integration options and advanced invoicing and analytics features?"
+        testimonials:
+            title: "IT pros speak about time tracking"
+            introduction: At Kimai, we designed our time tracking platform with the needs of individual developers, dev teams, and IT departments in mind. Our approach focuses on building open-source solutions for tech teams of all sizes and across various sectors. You can see what kind of feedback we receive from our users from the tech.
+        about:
+            title: "First steps for a better time tracking"
+            introduction: |
+                Choosing the right time tracker often starts with deciding between a free version or a demo. Pricing is also a key factor, so look for options that scale with your team’s growth.
+
+                At Kimai, we offer a free trial so you can explore our solution before deciding if additional features or plugins are needed. With pricing starting at just €0.99 per user for some industries, it’s an affordable choice. Try it for free today and bring more organization to your workday!
+        cta:
+            title: |
+                Ready to try a new way
+                to track time in your IT team?
+    universities:
+        name: Universities
+        title: "Time tracking for the academic sector"
+        subtitle: "Focus on reporting, not complicated administrative workflows"
+        intro: "Transform your institution's efficiency with powerful time tracking"
+        introduction: |
+            Managing time in higher education brings unique challenges, including lecture and class scheduling, research project tracking, student and faculty time allocation, and time consuming administrative tasks.
+
+            Effective time tracking solutions can help streamline these processes, allowing educators and researchers to focus on their core responsibilities.
+        features:
+            title: "Features for institution-wide time management"
+            introduction: |
+                Our time tracking solution has been refined through collaboration with multiple universities. Real user feedback drives our development, ensuring features that truly serve academic needs.
+
+                Just to name a few of the academic institutes using Kimai: `Universität Hamburg`, `Universität Bonn`, `Universität Wien`, `Universität Stuttgart`, `Universität Frankfurt`, `University of Fribourg`, `TU Dresden` and the `University of Moscow`.
+        testimonials:
+            title: "What our customers say"
+            introduction: |
+                At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers.
+                Our intuitive interface and powerful features help agencies like yours work smarter and more profitably.
+                You can now “listen” to the reviews of the real users.
+        about:
+            title: "Start your journey to better time management"
+            introduction: |
+                We understand that implementing a new time-tracking system in an academic setting requires careful consideration.
+                That’s why we offer a free trial period and demo sessions.
+                Try Kimai for free now and have a more organized day!
+        cta:
+            title: |
+                Ready to transform
+                time management at your institution?
+    non-profit:
+        name: Non-Profits
+        title: "Time Tracking for Non-Profit Organizations ✨"
+        subtitle: "Less administrative burden, so your mission stays in focus"
+        intro: "We put your work and vision center stage while simplifying administration and billing"
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        features:
+            title: "Features that NPOs appreciate"
+            introduction: "Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly."
+        testimonials:
+            title: "What other NPOs say about Kimai"
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        about:
+            title: "Our affordable non-profit plan for you"
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking

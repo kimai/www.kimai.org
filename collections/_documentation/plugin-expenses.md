@@ -42,23 +42,39 @@ In that case the `quantity` represents the amount on the receipt.
 ### Example
 
 The following example illustrates this process:  
-{% include docs-image.html src="/images/documentation/expenses/expense-category.webp" title="One expense category" width="750px" %}
+{% include docs-image.html src="/images/documentation/expenses/expense-category.webp" title="One expense category" %}
 
 The category `Driving distance` is designed to track travel routes between the office and a client location. The cost is set at `0.30` per kilometer.
 
 Now, let’s assume a user creates an expense using the new `Driving distance` category and enters a quantity of `74`, as shown in the screenshot below:  
-{% include docs-image.html src="/images/documentation/expenses/expense.webp" title="The expense is using the previously created category" width="750px" %}
+{% include docs-image.html src="/images/documentation/expenses/expense.webp" title="The expense is using the previously created category" %}
 
 In this case, the entered quantity of `74` kilometers is multiplied by the cost of `0.30`, resulting in a total amount of `22.20 €`.
 
-{% include docs-image.html src="/images/documentation/expenses/listing.webp" title="The expense with costs" width="750px" %}
+{% include docs-image.html src="/images/documentation/expenses/listing.webp" title="The expense with costs" %}
 
 ## Invoices
 
 Expenses are automatically included in your invoices, so it may be helpful to differentiate between expenses and timesheets.
 
-- The invoice template variable `${entry.type}` indicates the type of entry. Its value will be `expense`. This can be used in tools like Excel with `IF` formulas or conditional formatting.
+- The invoice template variable `${entry.type}` indicates the type of entry, which will be `expense`. This can be used in tools like Excel with `IF` formulas or conditional formatting.
 - The variable `${entry.category}` contains the expense category name.
+
+Twig example:
+
+```twig
+{% raw %}{% set amount_total = 0 %}
+
+{% for entry in entries %}
+    {% if entry.type == 'expense' %}
+        {% if entry.category == 'Gas' %}
+            {% set amount_total = amount_total + entry.amount %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+You spent a total of {{ amount_total }} for driving around.{% endraw %} 
+```
 
 ## Budgets
 

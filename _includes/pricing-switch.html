@@ -1,0 +1,9 @@
+<div class="pb-3 pb-lg-4 mb-4">
+    <div class="form-check form-switch price-switch justify-content-center mt-2 mb-2" data-bs-toggle="price">
+        <input type="checkbox" class="form-check-input" id="pricing">
+        <label class="form-check-label d-flex align-items-start" for="pricing">{{ site.data[page.lang].translation.pricing.annual }} <span class="text-danger fs-xs fw-semibold mt-n2 ms-2">-20%</span></label>
+        <label class="form-check-label" for="pricing">{{ site.data[page.lang].translation.pricing.monthly }}</label>
+    </div>
+    <p data-monthly-price="" class="text-muted fs-sm">{{ site.data[page.lang].translation.pricing.annual_cta }}</p>
+    <p data-annual-price="" class="d-none text-muted fs-sm">{{ site.data[page.lang].translation.pricing.monthly_cta }}</p>
+</div>

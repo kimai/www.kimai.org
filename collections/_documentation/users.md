@@ -1,6 +1,6 @@
 ---
 title: Users
-description: User, roles and the authentication, registration and security system in Kimai
+description: User, roles and the authentication system in Kimai
 canonical: /documentation/users.html
 related:
 - user-preferences
@@ -9,12 +9,16 @@ related:
 A user can be part of a [team]({% link _documentation/teams.md %}), which can limit/extend the visibility of data.
 Access to certain features within Kimai are handled by the [permission system]({% link _documentation/permissions.md %}), which is configurable through user roles.
 
+## Create users
+
+{% include youtube-video.html id="create_users" %}
+
 ## Avatars
 
 There are two types of user avatars:
 
 - `Auto generated avatar` - a circle with colored background and username initials inside
-- `Image URL` - a user can configure an avatar URL in their profile (feature needs to be activated in [System > Settings]({% link _documentation/configurations.md %}))
+- `Image URL` - a user can configure an avatar URL in their profile (feature needs to be activated in [System → Settings]({% link _documentation/configurations.md %}))
 
 ## Deactivated users
 
@@ -49,15 +53,19 @@ The username is a system-wide unique identifier which can be used for logging in
 It shouldn't be changed without strong reasoning, but if you want to e.g. activate LDAP or SAML and see that you have to, 
 then a System-Administrator can do so by editing the user profile (editing your own username is not possible).
 
-The field is hidden by default, you have to double-click the user header to show it.  
+The field is hidden by default, you have to double-click the username in the header to show it.
+
+Be aware: you cannot change the username of your own account, it is technically impossible and you need a second account for that.
 
 {% include youtube-video.html id="change_username" %}
-
-You should have a strong reasoning to change the username, e.g. think about API integrations and App logins.
 
 ## Supervisor
 
 The supervisor setting is used notifications, e.g. work-contract related features, approval workflows and such.
+
+Any user role can be configured as supervisor, while normally it is advised that this is at least a Teamlead.
+
+It is not possible for a `System account` (see above) to become supervisor.
 
 ## Staff number
 
@@ -77,22 +85,12 @@ Besides these filters, you can query for a free search term, which will be searc
 
 {% include snippets/search-custom-field.md %}
 
-## User registration
-
-User registration is disabled by default, as most Kimai installations are available through the public internet.
-
-If your Kimai installation is protected otherwise (e.g. internal network or other authentication mechanism) you can
-activate it through [System > Settings]({% link _documentation/configurations.md %}). The self-registration is then available via a link in the login screen.
-
-If someone registers a new account with email, username and password an confirmation email will be sent, including a link that needs to be clicked before the account will be activated.
-As this feature requires an email to work, you have to enable [email support]({% link _documentation/emails.md %}) to use it.
-
 ## Password reset
 
-The reset password function is enabled by default, you can deactivate it through [System > Settings]({% link _documentation/configurations.md %}).
+The reset password function is enabled by default, you can deactivate it through [System → Settings]({% link _documentation/configurations.md %}).
 
 A user can reach it via a link from the login screen. After entering username or email-address, an email with a confirmation link will be sent.
-This link needs to be clicked, afterwards the user can enter a new password.
+This link needs to be clicked, afterward the user can enter a new password.
 
 You can configure two settings to influence the security:
 

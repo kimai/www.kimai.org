@@ -1,7 +1,7 @@
 ---
-title: "Kimai Rabatt und Gutschein Codes"
-permalink: /de/kimai-rabatt-codes
+title: "Rabatt und Gutschein Codes"
 centered: true
+cta: cloud
 ---
 
 Diese Seite erklärt meine Rabattrichtlinien, mit denen ich eine faire Preispolitik für alle Kunden gewährleisten möchte.
@@ -12,7 +12,7 @@ Die einzige Ausnahme von dieser Regel wird unter "Kaufkraftparität" aufgeführt
 
 ### Gemeinnützig
 
-Für gemeinnützige Organisationen, welche die Kimai-Cloud nutzen möchten, biete ich einen [großzügigen Rabatt in Form eines jährlichen Tarifs]({% link _landingpage/de/non-profit.md %}) an.   
+Für gemeinnützige Organisationen, welche die Kimai-Cloud nutzen möchten, biete ich einen [großzügigen Rabatt in Form eines jährlichen Tarifs]({% link _industries/de/non-profit.md %}) an.   
 
 ### Cloud
 
@@ -43,8 +43,7 @@ und vergleichen Sie das Pro-Kopf-BIP Ihres Landes (IMF Estimate) mit der unten s
 | < 45.000       | 5 %      |
 {: .table }
 
-Der Rabatt gilt dauerhaft auf die Erstbestellung. 
-Sollten Sie kündigen und nach einer Pause wieder neu bestellen wollen, dann wird hierfür kein neuer Rabatt gewährt. 
+Der Rabatt gilt dauerhaft. Dieses Angebot gilt nur für Unternehmen mit weniger als 100 Mitarbeitern.
 
 Wenn Du [Kontakt aufnimmst](mailto:{{ site.support_email }}), vergiss nicht Nachweise (wie der Unternehmensregistrierung) beizufügen.
 Die Email muss zudem von der Unternehmens-Domain gesendet werden. Rabatte von Gmail Konten in Kombination mit anonymen 

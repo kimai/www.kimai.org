@@ -4,7 +4,8 @@ This WebApplication is designed to allow the tracking of working hours in Excel 
 
 ![Screenshot of login screen](https://raw.githubusercontent.com/KatjaGlassConsulting/TimeKex/main/docs/img/timesheet_to_kimai_01.gif)
 
-[Kimai](https://www.kimai.org/) is an open-source free time-tracking application which comes with a lot of functionality and capabilities. There might be situations where the times should be tracked in Excel and finally be uploaded to Kimai. TimeKex is designed to support this process.
+Kimai is an open-source free time-tracking application which comes with a lot of functionality and capabilities. There might be situations where the times should be tracked in Excel and finally be uploaded to Kimai. 
+TimeKex is designed to support this process.
 
 The documentation of TimeKex as well as a running demonstration instance is available [here](https://katjaglassconsulting.github.io/TimeKex/).
 
@@ -49,7 +50,7 @@ To be able to run the demonstration which is accessing a different server, you n
 
 The build and deployed homepage is available via GitHub pages in the `gh-pages` branch. The TimeKex application is there available in the `app` folder ([https://github.com/KatjaGlassConsulting/TimeKex/tree/gh-pages/app](https://github.com/KatjaGlassConsulting/TimeKex/tree/gh-pages/app)). You can download and copy all files from the app for example into kimai/public/timekex. Then you can start TimeKex on this web server using your kimai URL, but inlcude kimekex/index.html in the URL, for example: https://example.kimai.de/timekex/index.html. You must update the configuration to fit your needs. It is very important to update the kimaiAPI. If you host kimai under https://example.kimai.de, then the api would be located at  https://example.kimai.de/api/.
 
-```JS
+```javascript
 var config = {
     "kimaiAPI" : "https://demo-stable.kimai.org/api/",
     "ignoreActivities" : ["Vacation","Public Holiday"],

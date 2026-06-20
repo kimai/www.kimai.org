@@ -1,8 +1,8 @@
 ---
 title: Download
-lang: nl
 permalink: /nl/download.html
-layout: download
+newsletter: true
 ---
 
 {% include pages/download.md %}
+

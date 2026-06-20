@@ -43,7 +43,7 @@ The recent activities drag & drop is also switched to the account currently disp
 
 ## Calendar configurations
 
-The look and feel of the calendar can be customized via [System > Settings]({% link _documentation/configurations.md %}).
+The look and feel of the calendar can be customized via [System → Settings]({% link _documentation/configurations.md %}).
 
 ## User preferences
 

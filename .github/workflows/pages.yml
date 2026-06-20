@@ -24,13 +24,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # Not needed with a .ruby-version file
+          ruby-version: '3.1'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          cache-version: 0 # Increment this number if you need to re-download cached gems
+          cache-version: 1 # Increment this number if you need to re-download cached gems
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Build with Jekyll
         run: bundle exec jekyll build
         env:
@@ -48,15 +52,17 @@ jobs:
       - name: Fix locale Hebrew
         run: |
           find _site/he -type f -exec sed -i'' 's/\/he\//\//g' {} +
+          find _site/he -type f -exec sed -i'' 's/href="https:\/\/www.kimai.co.il\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
           find _site/he -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
-          find _site/he -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
           find _site/he -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
       - name: Fix locale zh_Hant
         run: |
           find _site/zh_Hant -type f -exec sed -i'' 's/\/zh_Hant\//\//g' {} +
+          find _site/zh_Hant -type f -exec sed -i'' 's/href="https:\/\/www.kimai.tw\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
           find _site/zh_Hant -type f -exec sed -i'' 's/href="\/documentation\//href="https:\/\/www.kimai.org\/documentation\//g' {} +
-          find _site/zh_Hant -type f -exec sed -i'' 's/href="\/blog\/2/href="https:\/\/www.kimai.org\/blog\/2/g' {} +
           find _site/zh_Hant -type f -exec sed -i'' 's/href="\/en\//href="https:\/\/www.kimai.org\/en\//g' {} +
+      - name: Build documentation search index
+        run: bash scripts/build-search-index.sh _site
       - name: Commit to branch
         uses: JamesIves/github-pages-deploy-action@v4
         with:

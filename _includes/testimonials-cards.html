@@ -3,15 +3,15 @@
 <div class="card border-0 p-0 p-sm-0 p-md-2 col-12 col-md-6 col-xl-4 mb-2 mb-md-0" data-filter="{% for filter in testimonial.tags %}{{ filter }},{% endfor %}">
     <div class="h-100 border border-secondary rounded">
         <div class="card-body pt-1 mt-3">
-            <figcaption class="d-flex align-items-center border-0 pt-0 mt-n2 mt-lg-0">
+            <figcaption class="d-flex align-items-center border-0 pt-0 mt-lg-0">
                 {% if testimonial.avatar == '' %}
                     {% if testimonial.logo == '' %}
                         {{ site.avatar_fallback }}
                     {% else %}
-                        <img src="/images/testimonials/{{ testimonial.logo }}" width="60" class="rounded-circle" alt="{{ testimonial.name }}">
+                        <img src="/images/testimonials/{{ testimonial.logo }}" width="48" class="rounded-circle" alt="{{ testimonial.name }}">
                     {% endif %}
                 {% else %}
-                    <img src="/images/testimonials/{{ testimonial.avatar }}" width="60" class="rounded-circle" alt="{{ testimonial.name }}">
+                    <img src="/images/testimonials/{{ testimonial.avatar }}" width="48" class="rounded-circle" alt="{{ testimonial.name }}">
                 {% endif %}
                 <div class="ps-3">
                     <h6 class="fw-semibold lh-base mb-0">{{ testimonial.name }}</h6>
@@ -34,10 +34,8 @@
                 <i class="bx bxs-star fs-3 text-warning"></i>
                 {% endfor %}
             </div>
-            <div class="test-start">
-                {{ testimonial.text | markdownify }}
-            </div>
-            <p class="text-muted fs-xs">{{ testimonial.date | date: "%B %-d, %Y" }}</p>
+            {% include testimonial-content.html testimonial=testimonial %}
+            <p class="text-muted fs-xs">{{ testimonial.date | date: site.date_format[page.lang] }}</p>
         </div>
     </div>
 </div>

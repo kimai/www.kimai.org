@@ -9,19 +9,11 @@
         <li class="nav-item">
             {% include link-translated-menu.html language=page.lang item="terms-cloud" class="nav-link fs-sm fw-medium" %}
         </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">{{ site.data[page.lang].translation.cloud.status }}</a>
+        </li>
     </ul>
     <div class="nav order-md-2 mb-3 mb-md-0">
         {% include section-social-links.html %}
     </div>
-    <ul class="nav order-md-3">
-        <li class="nav-item">
-            <a href="https://uptime.kimai.cloud/" target="_blank" class="nav-link fs-sm fw-medium">{{ site.data[page.lang].translation.cloud.status }}</a>
-        </li>
-    </ul>
-    {% comment %}
-    <p class="nav d-block fs-sm mb-0 order-md-3">
-        <span class="text-body">{{ site.data[page.lang].translation.made-with-love }} </span>
-        <a class="nav-link d-inline-block p-0" href="https://www.kevinpapst.de/" target="_blank" rel="noopener">Kevin Papst</a>
-    </p>
-    {% endcomment %}
 </div>

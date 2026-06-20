@@ -1,6 +1,5 @@
 ---
 title: Data processing
-lang: de
 permalink: /de/terms-gdpr.html
 layout: terms
 ---

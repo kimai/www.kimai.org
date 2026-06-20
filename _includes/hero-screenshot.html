@@ -1,0 +1,71 @@
+{% assign features = include.features | default: page.hero_features | default: '' %}
+{% assign image = include.image | default: page.image %}
+{% assign bg_color = 'bg-hero' %}
+{% if features contains 'on-premise' %}
+    {% assign bg_color = 'bg-hero' %}
+{% elsif features contains 'cloud' %}
+    {% assign bg_color = 'bg-hero' %}
+{% endif %}
+<section class="hero position-relative pt-4 overflow-hidden">
+    <span class="position-absolute top-0 start-0 d-block w-100 h-100 {{ bg_color }}"></span>
+    <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5 pt-3">
+        <div class="row justify-content-md-start justify-content-center flex-md-nowrap">
+            <div class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3">
+                <div class="text-md-start text-center">
+                    {% if features contains 'austria' %}
+                    <p class="eyebrow text-muted mb-1 opacity-70">{{ site.slogan }}</p>
+                    {% endif %}
+
+                    <h1 class="page-title mb-lg-4 mb-3">
+                        {{ include.title | default: pagetitle }}
+                    </h1>
+
+                    <p class="mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
+                        {{ include.subtitle | default: subtitle }}
+                    </p>
+
+                    {% if features contains 'reviews' %}
+                    <div class="ps-3">
+                        {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'Faces'" | where_exp: "item", "item.avatar != ''" | sample: 5 %}
+                        {% include testimonials-avatars.html testimonials=testimonials %}
+                    </div>
+                    {% endif %}
+
+                    {% if features contains 'start-free' %}
+                    <a href="{{ page.lang | url_cloud_register }}" class="btn btn-primary rounded-pill py-1 px-3 mt-5">
+                        <span class="lh-lg">{{ site.data[page.lang].translation.cloud-call-to-action }}</span>
+                        <i class="bx bx-right-arrow-alt fs-lg ms-2 me-n1"></i>
+                    </a>
+                    {% endif %}
+                </div>
+
+                {% if features contains 'europe' %}
+                <p class="text-muted my-4 py-lg-4 py-xl-5">
+                    {{ site.data[page.lang].translation.highlight.reasons.european }}
+                </p>
+                {% endif %}
+
+                {% if features contains 'highlights' %}
+                    {% include section-list-highlights.html %}
+                {% endif %}
+            </div>
+            <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
+                <div class="align-self-end ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                    {% if page.image_swap %}
+                    <div class="swap-image">
+                        <img src="{{ image }}" alt="Screenshot" class="rounded-4 swap-from" style="max-height: 600px; width: 100%; box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        <div class="swap-to">
+                            <img src="{{ page.image_swap }}" alt="Screenshot" class="rounded-4" style="max-height: 600px; width: 100%; box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        </div>
+                    </div>
+                    {% else %}
+                    <img src="{{ image }}" alt="Screenshot" class="rounded-4" style="max-height: 600px; width: 100%; box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="position-absolute bottom-0 start-0 w-100">
+        <span class="d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+    </span>
+</section>

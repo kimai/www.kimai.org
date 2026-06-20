@@ -6,9 +6,11 @@ canonical: /documentation/docker-compose.html
 
 Several docker-compose example files that use the latest Kimai version.
 
-## Apache (prod)
+## Installation
 
-```dockerfile
+For security reasons, it is crucial that you use unique values for your environment variables. 
+
+```yaml
 services:
 
   sqldb:
@@ -23,21 +25,27 @@ services:
     command: --default-storage-engine innodb
     restart: unless-stopped
     healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
+      test: mysqladmin -uroot -p$$MYSQL_ROOT_PASSWORD ping -h 127.0.0.1 --silent
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
 
   kimai:
-    image: kimai/kimai2:apache
+    image: kimai/kimai2:stable
+    depends_on:
+      sqldb:
+        condition: service_healthy
+        restart: true
     volumes:
       - data:/opt/kimai/var/data
       - plugins:/opt/kimai/var/plugins
     ports:
       - 8001:8001
     environment:
-      - ADMINMAIL=admin@kimai.local
+      - APP_SECRET= # IT IS IMPORTANT THAT YOU CHANGE THIS TO A LONG RANDOM STRING
+      - TRUSTED_HOSTS=kimai.example.com # set this to the domain name you use to access Kimai
+      - ADMINMAIL=admin@example.com
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
     restart: unless-stopped
@@ -46,6 +54,19 @@ volumes:
   data:
   mysql:
   plugins:
+```
+
+## Updating Kimai
+
+The usual update step is simple: stop, pull latest version, restart.
+
+```bash
+# Pull latest version
+docker compose pull
+# Stop and remove older version
+docker compose down
+# Start the container
+docker compose up -d
 ```
 
 ## Environment variables
@@ -57,13 +78,15 @@ DATABASE_NAME=kimai
 DATABASE_USER=kimaiuser
 DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
-ADMIN_EMAIL=admin@kimai.local
+ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
+TRUSTED_HOSTS=kimai.example.com
+APP_SECRET=your-fantastic-long-random-and-ultra-secure-secret
 ```
 
 And then reference those from your `docker-compose.yaml`:
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -86,12 +109,18 @@ services:
 
   kimai:
     image: kimai/kimai2:apache
+    depends_on:
+      sqldb:
+        condition: service_healthy
+        restart: true
     volumes:
       - data:/opt/kimai/var/data
       - plugins:/opt/kimai/var/plugins
     ports:
       - 8001:8001
     environment:
+      - APP_SECRET=${APP_SECRET}
+      - TRUSTED_HOSTS=${TRUSTED_HOSTS}
       - ADMINMAIL=${ADMIN_EMAIL}
       - ADMINPASS=${ADMIN_PASSWORD}
       - "DATABASE_URL=mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@sqldb/${DATABASE_NAME}?charset=utf8mb4&serverVersion=8.3.0"
@@ -116,7 +145,7 @@ As plugin are accessed read-only by Kimai, you can use both methods.
 
 Using a volume:
 
-```dockerfile
+```yaml
 services:
     [...]
 
@@ -134,7 +163,7 @@ volumes:
 
 Or using a bind mount, pointing to the local filesystem at `/home/kimai/plugins`:
 
-```dockerfile
+```yaml
 services:
 
   sqldb:
@@ -162,7 +191,7 @@ docker exec -ti kimai /opt/kimai/bin/console kimai:bundle:workcontract:install
 
 This requires a new mount, e.g. mounting the local file `/home/kimai/local.yaml` into the correct location inside the image.  
 
-```dockerfile
+```yaml
 services:
     [...]
 
@@ -180,90 +209,11 @@ volumes:
   plugins:
 ```
 
-## FPM and nginx
-
-Listed here are example setups for running the image(s).
-If you'd like to contribute a new one them please [raise a PR for this page](https://github.com/kimai/www.kimai.org/edit/main/_documentation/docker/docker-compose.md).
+## FPM (deprecated)
 
 {% alert danger %}
-Be aware that the below image [tobybatch/nginx-fpm-reverse-proxy](https://github.com/tobybatch/nginx-fpm-reverse-proxy) is only meant as example.
-It is not made for production usage. Use your existing reverse proxy instead! 
+Be aware: the FPM image with a reverse proxy for serving the `public` assets is [not supported any longer]({% link _posts/en/2026-01-16-sunset-fpm-docker-images.md %}).  
 {% endalert %}
-
-```dockerfile
-services:
-
-  sqldb:
-    image: mysql:8.3
-    volumes:
-      - mysql:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  nginx:
-    image: tobybatch/nginx-fpm-reverse-proxy
-    ports:
-      - 8001:80
-    volumes:
-      - public:/opt/kimai/public:ro
-    restart: unless-stopped
-    depends_on:
-      - kimai
-    healthcheck:
-      test:  wget --spider http://nginx/health || exit 1
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:latest
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-    volumes:
-      - public:/opt/kimai/public
-      - plugins:/opt/kimai/var/plugins
-      # - data:/opt/kimai/var/data
-      # - ./ldap.conf:/etc/openldap/ldap.conf:z
-      # - ./ROOT-CA.pem:/etc/ssl/certs/ROOT-CA.pem:z
-    restart: unless-stopped
-
-volumes:
-    data:
-    public:
-    mysql:
-    plugins:
-```
-
-## Updating Kimai
-
-The usual update step is simple: stop, pull latest version, restart.
-
-This example is based on the `Apache` image used with the `Docker compose` plugin:
-
-```bash
-# Pull latest version
-docker compose pull
-# Stop and remove older version
-docker compose down
-# Start the container
-docker compose up -d
-```
-
-### FPM image
 
 The FPM image will need to be upgraded with a manual step.
 Because the FPM image will have a HTTP proxy (e.g. caddy or nginx) serving the static assets the `public` directory is mounted into that container. This is done via volumes:
@@ -301,34 +251,6 @@ Now you'll need to tell the running kimai to update its assets:
 docker-compose exec kimai /opt/kimai/bin/console assets:install
 ```
 
-## Apache (dev)
+## Development
 
-```dockerfile
-services:
-
-  sqldb:
-    image: mysql:8.3
-    environment:
-      - MYSQL_DATABASE=kimai
-      - MYSQL_USER=kimaiuser
-      - MYSQL_PASSWORD=kimaipassword
-      - MYSQL_ROOT_PASSWORD=changemeplease
-    command: --default-storage-engine innodb
-    restart: unless-stopped
-    healthcheck:
-      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
-      interval: 20s
-      start_period: 10s
-      timeout: 10s
-      retries: 3
-
-  kimai:
-    image: kimai/kimai2:apache-dev
-    ports:
-      - 8001:8001
-    environment:
-      - ADMINMAIL=admin@kimai.local
-      - ADMINPASS=changemeplease
-      - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
-    restart: unless-stopped
-```
+If you want to start a development image, please switch to the [developer docs]({% link _documentation/developer/developers.md %})

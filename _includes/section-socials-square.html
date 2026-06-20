@@ -1,0 +1,30 @@
+{% comment %}TODO translate once used outside the blog{% endcomment %}
+{% if page.lang == 'de' %}
+    {% assign title = 'Folgen Sie Kimai' %}
+    {% assign subtitle = 'Bleiben Sie auf dem Laufenden mit den neuesten Nachrichten!' %}
+{% else %}
+    {% assign title = 'Follow Kimai' %}
+    {% assign subtitle = 'Stay up to date with the latest news!' %}
+{% endif %}
+
+<section class="container text-center py-5 my-2 my-md-4 my-lg-5 w-100 w-md-75 w-lg-50">
+    <h2 class="h1 mb-4">{{ title }}</h2>
+    <p class="fs-lg text-muted pb-2 mb-5">{{ subtitle }}</p>
+
+        <div class="row justify-content-center">
+
+            {% for social in site.data.socials %}
+            <div class="col" style="width: 185px;" aria-label="{{ forloop.index }} / {{ forloop.length }}">
+                <div class="position-relative text-center mx-n1">
+                    <a target="_blank" href="{{ social.url }}" class="btn btn-icon btn-secondary btn-{{ social.button }} btn-lg stretched-link" aria-label="{{ social.name }}">
+                        <i class="bx bxl-{{ social.icon }}"></i>
+                    </a>
+                    <div class="pt-4">
+                        <h6 class="mb-1">{{ social.name }}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+</section>

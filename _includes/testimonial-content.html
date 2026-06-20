@@ -1,0 +1,12 @@
+{% assign testimonial = include.testimonial %}
+<div class="testimonial-text-wrapper">
+    <div class="testimonial-text">
+        {% if testimonial.translations[page.lang] %}
+            {% assign testimonial_text = testimonial.translations[page.lang] %}
+        {% else %}
+            {% assign testimonial_text = testimonial.translations[english_german] %}
+        {% endif %}
+        {{ testimonial_text | markdownify }}
+    </div>
+    <div class="testimonial-fade"></div>
+</div>

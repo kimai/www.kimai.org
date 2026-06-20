@@ -11,6 +11,9 @@ module Jekyll
                 if style == 'warning'
                     @icon = 'alarm-exclamation'
                     @style = style
+                elsif style == 'secondary'
+                    @icon = 'alarm-exclamation'
+                    @style = style
                 elsif style == 'danger'
                     @icon = 'info-circle'
                     @style = style

@@ -6,9 +6,9 @@ related:
 - public-holiday
 ---
 
-{% include youtube-video.html id="workcontract" %}
-
 This screen and the `Contract` menu can be seen by any user that has active contract settings and the ones that own the `contract_other_profile` permission (see `Permissions` below).
+
+{% include youtube-video.html id="working_contracts_setup_and_absences" %}
 
 ## User interface
 
@@ -16,6 +16,8 @@ This screen and the `Contract` menu can be seen by any user that has active cont
 - Target-hours: the list of the expected working hours for each day of the week
 - Working times: the entire working year
 - Manual bookings
+
+{% include youtube-video.html id="working_contract_overview" %}
 
 ## Summary
  
@@ -41,7 +43,7 @@ After a month is over and the employee working-times were verified for correctne
 
 You can right-click the row or use the action menu at the end of the monthly row to lock the selected month:
 
-{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" width="700px" %}
+{% include docs-image.html src="/images/documentation/contract-lock-month.webp" title="Lock a month by choosing from the context menu" %}
 
 Whether a month is locked (closed black lock) or not (open orange lock) is indicated by the icon in front of the row.
 
@@ -66,11 +68,20 @@ After you locked all previous months, you can safely change the expected working
 
 As you can only lock complete months, it is currently only possible to change the employment contract at the beginning of a month.
 
+**But the contract changes mid-month**
+
+In that case you ca use this workaround: close all previous months first to protect historical data. 
+Leave the current month calculated under the old contract — any difference in hours will appear as overtime or missing hours. 
+Use the Manual Booking feature to correct these discrepancies for the affected period, and add a note referencing the contract change as the reason. 
+Once the new month begins, lock the transition month and update the contract. 
+The new hours will then apply going forward without affecting past records. 
+Keep old months locked — reopening them will cause hours to recalculate under the new contract, corrupting historical data.
+
 ## Manual bookings
 
-Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/demo.md %})).
+Attention: perform tests on a separate test account (or the [demo environment]({% link _pages/{{ page.lang }}/demo.md %})).
 
-You cannot delete manual bookings, so if you accidentally added wrong values, simply create an opposite booking and add something like "compensation for test booking" in the description.
+You cannot delete manual bookings, so if you accidentally added wrong values, simply create an opposite booking and add a note like "compensation for test booking" in the description.
 
 ### Account working times
 
@@ -84,50 +95,64 @@ Popular examples are:
 
 Manual bookings can be used to increase or reduce the users available holidays.
 
-Popular examples are:
+Examples are:
 - adding a positive amount of days => taking over holiday from the last year
 - removing a negative amount of days => old holidays which were not taken on time expired
 
 ## How calculations work
 
-All calculations are only done up until NOW.
-That means adding a holiday tomorrow will not change your hour account.
+Kimai only calculates working time up to the current moment.
+This means that adding a holiday for tomorrow, or any other future absence, will not affect your hour balance yet.
 
-### Public holidays
+Please read the chapter ["How absences affect expected working time"]({% link _documentation/absence.md %}) to understand why the `Working times` view may show different totals than `My times` for the same year.
 
-Adds the amount of configured working time as working time.
-If you add a timesheet on the same day, it calculates as overtime.
+In short: depending on the configured absence calculation mode, the reported annual working time can be significantly higher than the hours recorded in timesheets.
 
-### Holidays
+### Absences compensate expected working time
 
-Adds the amount of configured working time as working time.
-If you add a timesheet on the same day, it calculates as overtime.
+- **Public holidays** — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.
+- **Vacation** — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.
+- **Sickness** — Fills up the remaining working time for the day until the expected duration is reached. For example, if the expected time is 8 hours and 2 hours have already been recorded, the sickness absence adds 6 hours.
+- **Other** — The configured absence duration is added as worked time.
+- **Time-Off** — Does not affect working time calculations. This entry is for informational purposes only.
 
-### Sickness
+### Absences reduce expected working time
 
-Fills up the working day to match the expected working time.
-
-Examples:
-- 8 hours are expected and you already logged 2 hours, then 6 hours will be filled-up
-- 8 hours are expected and no time is logged, then 8 hours will be added
-
-### Other
-
-Adds the amount of configured hours as working time.
-
-### Time-Off
-
-Will not influence the working time in any way.
-This booking is only there for information purposes.
+- **Public holidays** — Reduces the expected working time for that day to 0. If you create a timesheet on the same day, it is counted as overtime.
+- **Vacation** — Reduces the expected working time by the duration of the absence. A full-day vacation reduces it to 0. A half-day vacation reduces it accordingly. If you create a timesheet on the same day, it is counted as overtime.
+- **Sickness** — Reduces the remaining expected working time for that day. Either to 0 or for example, if the expected time is 8 hours and 2 hours have already been recorded, the remaining 6 hours are removed from the expected time.
+- **Other** — Reduces the expected working time by the configured absence duration.
+- **Time-Off** — Does not affect working time calculations. This entry is for informational purposes only.
 
 ## Limit timesheets to working days
 
-There is a validation that can be activated in [System > Settings], which helps to restrict timesheets to contractual working days.
+There is a validation that can be activated in [System → Settings]({% link _documentation/configurations.md %}), which helps to restrict timesheets to contractual working days.
 Once activated, users cannot create timesheets for days without active contract setting.
 So a user who works Monday to Thursday cannot create timesheets for Fridays.
 
 In order to help with exceptions, there is a permission called `workdays_override_timesheet`, which allows to override this validation.
 This permission should be granted to employees e.g. from HR department.
+
+## Carry over your time balance to the next year
+
+{% include youtube-video.html id="roll_over_work_balance" %}
+
+At the end of the current year (or begin of the new year) and once you figured out the final balance of an employees time account, 
+you have to roll over the hours to the next year:
+
+- Go `Employment contract > Working Times`
+- Click on the year dropdown and select the correct entry or click on the {% include demo-action-button.html icon="next" %} button to move to the next year
+- Scroll down and create a `Manual booking` (see above)
+
+## Video
+
+There is older video available, explaining more details, but be warned: it also has a few outdated information bits.
+
+{% include youtube-video.html id="workcontract" %}
+
+## Settings
+
+{% include documentation/configurations.md id="controlling" howto=true %}
 
 ## Permissions
 

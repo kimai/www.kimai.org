@@ -204,7 +204,7 @@ Kimai does not store the user password when logged-in via LDAP. There is no fall
 if your LDAP is not available (only one LDAP server can be configured).
 
 When using LDAP you should:
-- Disable the "[Password reset]({% link _documentation/users.md %})" function via [System > Settings]({% link _documentation/configurations.md %})
+- Disable the "[Password reset]({% link _documentation/users.md %})" function via [System → Settings]({% link _documentation/configurations.md %})
 - Disable the `password_own_profile` and `password_other_profile` [permissions]({% link _documentation/permissions.md %}) for LDAP user (at least the normal user role) 
 
 There is no auto-cleanup available:

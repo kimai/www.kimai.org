@@ -3,13 +3,16 @@ layout: default
 ---
 {% assign author = site.data.developer[page.author] %}
 
-<section class="container mt-4 pt-lg-2 pb-3">
-    <h1 class="pb-3" style="max-width: 970px;">{{ page.title }}</h1>
+<section class="hero container mt-4 py-5">
+    <h1 class="page-title pb-3" style="max-width: 970px;">{{ page.title }}</h1>
     <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
         <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
             <div class="fs-xs border-end pe-3 me-3 mb-2">
                 {% for tag in page.tags %}
-                    <span class="badge bg-faded-primary text-primary fs-base">{{ tag }}</span>
+                    {% assign tag_page = site.blog_tags | filter_slug_lang: tag %}
+                    <span class="badge bg-faded-primary text-primary fs-base">
+                        {{ site.data[page.lang].translation[tag_page.slug].name | default: tag_page.title }}
+                    </span>
                 {% endfor %}
             </div>
             <div class="fs-sm pe-3 me-3 mb-2">{{ page.date | date_to_string }}</div>
@@ -25,14 +28,6 @@ layout: default
         </div>
     </div>
 </section>
-
-{% comment %}
-{% if page.image != nil %}
-<div class="jarallax mb-lg-5 mb-4 pb-4" data-jarallax data-speed="0.35" style="height: 36.45vw; min-height: 300px;">
-    <div class="jarallax-img" style="background-image: url({{ page.image}});"></div>
-</div>
-{% endif %}
-{% endcomment %}
 
 <section class="container mb-5 pb-2 py-mg-4">
     <div class="row gy-4">
@@ -58,10 +53,6 @@ layout: default
     </div>
 </section>
 
-{% if page.cta == 'cloud' %}
-    {% include cta-begin-journey.html %}
-{% elsif page.cta == 'support' %}
-    {% include cta-support.html %}
-{% else %}
+{% if page.cta == nil %}
     {% include cta-socials.html %}
 {% endif %}

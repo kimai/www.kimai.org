@@ -1,44 +1,45 @@
 ---
 title: User licenses
-description: How the seat-based licensing works in Kimai-Cloud
+description: How the seat-based licensing works in Kimai Cloud
 ---
 
-Kimai uses a **per-seat licensing model**, where each active user account consumes one license. 
-However, the system is designed with fairness in mind, so deactivated accounts do not consume licenses. 
+Kimai uses a **per-seat licensing model**, where each active user account consumes one license.
+Deactivated accounts do not consume licenses, which keeps the model flexible and fair.
 
-Here's a breakdown of how the licensing works:
+## Licensing rules
 
-## Licensing Rules
+- **Active users** each consume one license.
+- **Deactivated users** do not consume a license, so the seat can be reassigned to another user.
 
-- **Active users**: Each active user consumes one license.
-- **Deactivated users**: Do not consume a license. This allows the license to be reassigned to another user.
+### Managing user accounts
 
-### Managing User Accounts
+- When a user leaves the company, deactivate their account to free up the license for someone else.
+- Reactivating a deactivated user will consume a license again. Reactivation is only possible if a free license is available.
+- New user accounts can only be created if at least one license is available.
 
-- When a user leaves the company, you can deactivate their account, freeing up the license for another user.
-- If a deactivated user is reactivated, they will once again consume a license. Reactivation is only possible if there are available licenses.
-- New user accounts can only be created if there are free licenses available.
+### Before starting a subscription
 
-### Before Subscription Purchase
+When registering for a plan, the system shows the minimum number of licenses you need based on your current active users.
+If the count is higher than expected, deactivate any unused accounts and reload the page to update the displayed number.
 
-- When registering for a plan, the system displays the minimum number of licenses you need to purchase based on your current number of active users.
-- If you see more licenses than necessary, you can deactivate any extra accounts and reload the page to adjust the displayed license count.
+### Purchasing additional licenses
 
-### Purchasing Additional Licenses
+If your subscription doesn't include enough licenses, you can purchase additional ones at any time through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
 
-If your subscription does not include enough licenses, you can purchase additional ones at any time through the [My Cloud](https://www.kimai.cloud/my-cloud/) portal.
+Additional licenses are billed immediately, but only for the remaining time in your current billing period. New licenses are always aligned with your existing subscription period.
 
-The additional licenses will be billed immediately, but only for the remaining time of your current payment period:
-- New licenses are always aligned with your existing subscription period.
-- For example, if you add a license to an annual subscription that is already 6 months old, you will only be charged for the remaining 6 months.
+For example: if you add a license to an annual subscription that is already 6 months in, you'll only be charged for the remaining 6 months.
 
-## Deprecated Metered Plans
+### Reducing licenses
 
-For users still on the deprecated **metered plans** (`Plus` and `Premium`), which are no longer available to new customers, billing is based on usage:
-- **Active users incur charges**.
-- **Deactivated users incur charges** if they were active within the last month. This includes:
-    - Users who registered within the last month.
-    - Users who logged in within the last month.
-    - Users who made time bookings within the last month (or later).
+To reduce the number of licenses, first deactivate the corresponding user accounts in your cloud.
+Then adjust the license count through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
 
-This system ensures flexibility in managing user accounts while maintaining fairness in licensing costs.
+The reduced count takes effect at the start of the next billing period.
+
+## Deprecated metered plans
+
+For customers still on the deprecated **Plus** and **Premium** plans (no longer available to new customers), billing is usage-based:
+
+- **Active users** incur charges.
+- **Deactivated users** also incur charges if they were active within the last month — meaning they registered, logged in, or created a time entry within that period.

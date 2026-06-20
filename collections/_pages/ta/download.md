@@ -1,8 +1,8 @@
 ---
 title: Download
-lang: ta
 permalink: /ta/download.html
-layout: download
+newsletter: true
 ---
 
 {% include pages/download.md %}
+

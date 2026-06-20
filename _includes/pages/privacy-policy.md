@@ -27,7 +27,17 @@ Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
 **Welche Rechte haben Sie bezüglich Ihrer Daten?**
 
 Sie haben jederzeit das Recht unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten.
-Sie haben außerdem ein Recht, die Berichtigung, Sperrung oder Löschung dieser Daten zu verlangen.
+
+Ihnen stehen gemäß DSGVO folgende Rechte zu:
+- Recht auf Auskunft (Art. 15 DSGVO)
+- Recht auf Berichtigung (Art. 16 DSGVO)
+- Recht auf Löschung („Recht auf Vergessenwerden“) (Art. 17 DSGVO)
+- Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
+- Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
+- Recht auf Widerspruch (Art. 21 DSGVO)
+
+Wir nutzen keine Verfahren zur automatisierten Entscheidungsfindung oder zum Profiling.
+
 Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
 Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
 
@@ -78,6 +88,8 @@ Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Si
 
 Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
 Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
+
+Personenbezogene Daten werden gelöscht, wenn sie für die Zwecke der Verarbeitung nicht mehr erforderlich sind, insbesondere wenn während einer Testphase keine Nutzung des Dienstes erfolgt.
 
 ## Datenerfassung auf unserer Website
 
@@ -158,18 +170,10 @@ Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung uns
 Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der [Datenschutzerklärung von YouTube](https://www.google.de/intl/de/policies/privacy).
 Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
 
-**Simple Analytics**
+**Webseiten Analyse**
 
-Um wichtige Informationen über das Verhalten unserer Besucher zu erhalten, verwenden wir Simple Analytics.
+Um Informationen über besuchte Seiten zu erhalten, verwenden wir ein selbst gehostetes [Umami](https://umami.is/).
 Diese Analysesoftware gibt uns nur einen Einblick in unsere Besucher im Allgemeinen, aber nicht in einzelne Personen, da sie keine Besucher verfolgt und keine personenbezogenen Daten speichert.
-In der [Dokumentation](https://docs.simpleanalytics.com/what-we-collect) erfahren Sie, was Simple Analytics sammelt (und vor allem, was nicht).
-
-**Google Fonts**
-
-Für die einheitliche Darstellung von Schriftarten verwendet diese Seite die von Google bereitgestellten Webfonts.
-Wenn Sie eine Seite öffnen, lädt Ihr Browser die benötigten Webfonts in Ihren Browser-Cache, um Texte und Schriften korrekt darzustellen.
-Die Verwendung von Google Webfonts erfolgt im Interesse einer einheitlichen und ansprechenden Darstellung unserer Website.
-Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f) DSGVO dar.
 
 **Gumroad**
 
@@ -201,8 +205,11 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
+- **07.05.2026**: Google Fonts entfernt
+- **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
+- **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
-- **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aus Transparenzgründen aufgenommen
+- **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aufgenommen
 - **14.11.2023**: Recaptcha Verifizierung via Subprozessor "Google" wieder hinzugefügt
 - **25.04.2021**: Recaptcha Verifizierung via Subprozessor "Google" entfernt
 - **01.01.2021**: Änderung der Kontaktdaten nach Umzug von Deutschland nach Österreich
@@ -238,8 +245,18 @@ Other data can is used to analyze how visitors use the site.
 
 **What rights do you have regarding your data?**
 
-You always have the right to request information about your stored data, its origin, its recipients, and the purpose of its collection at no charge. 
-You also have the right to request that it be corrected, blocked, or deleted. 
+You always have the right to request information about your stored data, its origin, its recipients, and the purpose of its collection at no charge.
+
+You have the following rights under the GDPR:
+- Right to access (Art. 15 GDPR)
+- Right to rectification (Art. 16 GDPR)
+- Right to erasure ("Right to be forgotten") (Art. 17 GDPR)
+- Right to restriction of processing (Art. 18 GDPR)
+- Right to data portability (Art. 20 GDPR)
+- Right to object (Art. 21 GDPR)
+
+We do not use automated decision-making or profiling processes.
+
 You can contact us at any time using the address given in the legal notice if you have further questions about the issue of privacy and data protection. 
 You may also, of course, file a complaint with the competent regulatory authorities.
 
@@ -290,6 +307,8 @@ If SSL or TLS encryption is activated, the data you transfer to us cannot be rea
 
 As permitted by law, you have the right to be provided at any time with information free of charge about any of your personal data that is stored as well as its origin, the recipient and the purpose for which it has been processed. 
 You also have the right to have this data corrected, blocked or deleted. You can contact us at any time using the address given in our legal notice if you have further questions on the topic of personal data.
+
+Personal data will be deleted when it is no longer necessary for the purposes of processing, particularly if the service is not used during a trial period.
 
 ## Data collection 
 
@@ -372,18 +391,10 @@ YouTube is used to help make the website appealing and transfer knowledge about 
 Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
 This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
 
-**Simple Analytics**
+**Website Analytics**
 
-To get critical information about the behavior of our visitors, we use Simple Analytics.
-This analytics software gives us insight about our visitors only in general, but not about individuals per say, as it does not track visitors and does not store any personal identifiable information.
-[Go to their documentation](https://docs.simpleanalytics.com/what-we-collect) to find out what Simple Analytics collects (and most importantly what they don't).
-
-**Google Fonts**
-
-For uniform representation of fonts, this page uses web fonts provided by Google. 
-When you open a page, your browser loads the required web fonts into your browser cache to display texts and fonts correctly.
-The use of Google Web fonts is done in the interest of a uniform and attractive presentation of our website. 
-This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
+To gather important information about our visitors’ behavior, we use a self-hosted [Umami](https://umami.is/).
+This analytics software provides us with insights into our visitors in general, but not into individual users, as it does not track visitors or store any personal data.
 
 **Gumroad**
 
@@ -414,8 +425,11 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
+- **07.05.2026**: Removed Google Fonts
+- **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
+- **06.01.2026**: Mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
-- **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics for transparency reasons
+- **18.03.2024**: Replaced "Sendinblue France" with "Brevo Germany", added Simple Analytics
 - **14.11.2023**: Recaptcha verification via Subprocessor "Google" re-added
 - **25.04.2021**: Recaptcha verification via Subprocessor "Google" removed
 - **01.01.2021**: Change of contact details after moving from Germany to Austria

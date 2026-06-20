@@ -7,7 +7,7 @@ related:
   - local-yaml
 ---
 
-Many features of your Kimai installation can be changed by editing the `System > Settings`. This screen is only visible to 
+Many features of your Kimai installation can be changed by editing the `System → Settings`. This screen is only visible to 
 users with the permission `system_configuration` (by default [ROLE_SUPER_ADMIN]({% link _documentation/permissions.md %})).
 
 ## Timesheet

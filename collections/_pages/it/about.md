@@ -1,8 +1,8 @@
 ---
 title: "About Kimai"
-lang: it
-layout: default
 permalink: /it/about.html
+cta: cloud
 ---
 
 {% include pages/about.md %}
+ 

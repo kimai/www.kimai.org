@@ -8,7 +8,7 @@ permalink: /cloud-changelog.json
     {% for changelog in changes limit: 5 %}
     {
         "title": "{{ changelog.title }}",
-        "content": {{ changelog.content | trim | jsonify }},
+        "content": {{ changelog.content | strip | jsonify }},
         "url": "{{ changelog.url | absolute_url }}",
         "date": "{{ changelog.date|date_to_xmlschema }}"
     }{% unless forloop.last %},{% endunless %}

@@ -20,9 +20,27 @@ You can customize many [mPDF options](https://mpdf.github.io/reference/mpdf-func
 ```twig
 {% raw %}{%- set option = pdfContext.setOption('name', 'value') -%}{% endraw %}
 ```
+ 
+## Page setup
+
+Supported options:
+
+- `orientation` with the value `P` = Portrait, `L` = Landscape
+- [Auto Top Margin](https://mpdf.github.io/reference/mpdf-variables/setautotopmargin.html)
+- [Auto Bottom Margin](https://mpdf.github.io/reference/mpdf-variables/setautobottommargin.html)
+
+**Page margins in millimetres**
+
+- `margin_left` 
+- `margin_right`
+- `margin_top`
+- `margin_bottom`
+- `margin_header`
+- `margin_footer`
 
 ## Changing the filename
 
+Option name: `filename`
 
 ```twig
 {% raw %}{%- set customer = query.customers|length == 1 ? query.customers.0 : null -%}
@@ -32,6 +50,8 @@ You can customize many [mPDF options](https://mpdf.github.io/reference/mpdf-func
 
 ## PDF/A compliance
 
+Option names: `PDFA` and `PDFAauto`
+
 You can create a [PDF/A1-b compliant](https://mpdf.github.io/what-else-can-i-do/pdf-a1-b-compliance.html) document by setting
 these configurations in your template:
 
@@ -40,9 +60,66 @@ these configurations in your template:
 {%- set option = pdfContext.setOption('PDFAauto', true) -%}{% endraw %} 
 ```
 
+## Page size
+
+Want to display the PDF in a different size, e.g. because your customer expects `US-Letter` and not the standard size `DIN-A4`?
+
+You can set the page-size with the `format` option:
+```twig
+{% raw %}{%- set option = pdfContext.setOption('format', 'A4-L') -%}{% endraw %}
+```
+
+Available sizes are:
+- `A4`, `A3`, `Letter`, `Legal`, `Executive`, `Folio`, `Demy`, `Royal`, `A`, `B`, `Ledger`, `Tabloid` ...
+- `A4-L`, `A3-L`, `Letter-L`, `Legal-L`, `Executive-L`, `Folio-L` ... for landscape
+
+More information available in the [MDPF documentation](https://mpdf.github.io/paging/different-page-sizes.html) and the
+full list of available sizes [can be found here](https://mpdf.github.io/reference/mpdf-functions/construct.html).
+
+## Embedding images
+
+The best way to embed an image is a base64 encoded PNG image:
+
+- Convert your image to PNG
+- Encode the image file with `base64`, e.g. with the bash command `base64 -i image-file.png` or some [online](https://www.base64-image.de/) [tool](https://base64.guru/converter/encode/image)
+- Save the base64 string as Twig variable
+- Add the img tag to your template
+
+```twig
+{% raw %}{% set logo = 'A-VERY-LONG-STRING-HERE==' %}
+<img style="height: 150px;margin: 10px;" src="data:image/png;base64,{{ logo }}" />{% endraw %}
+```
+
+It is also possible to include images via absolute URLs:
+```twig
+<img style="height: 150px;margin: 10px;" src="https://www.kimai.org/images/kimai_logo.png" />
+```
+
+This method has a few limitations, which are in place to prevent SSRF attacks.
+
+The following URLs are blocked:
+
+- the host that runs Kimai
+    - e.g. Kimai runs at `https://kimai.example.com/` then the image src cannot be `https://kimai.example.com/logo.png`
+- any resource that is considered internal, e.g.
+    - `127.0.0.0/8` -  RFC1700 (Loopback)
+    - `10.0.0.0/8` -  RFC1918
+    - `192.168.0.0/16` -  RFC1918
+    - `172.16.0.0/12` -  RFC1918
+    - `169.254.0.0/16` -  RFC3927
+    - `0.0.0.0/8` -  RFC5735
+    - `240.0.0.0/4` -  RFC1112
+    - `::1/128` -  Loopback
+    - `fc00::/7` -  Unique Local Address
+    - `fe80::/10` -  Link Local Address
+    - `::ffff:0:0/96` -  IPv4 translations
+    - `::/128` - Unspecified address
+
 ## Fonts
 
 You can change the used font for your PDF templates. 
+
+Supported options: `default_font`, `default_font_size`, `fonts'`
 
 ### Available fonts
 
@@ -131,40 +208,16 @@ You can use the following template to debug fonts. Replace the sentence `The qui
 </html>{% endraw %}
 ```
 
-## Page size
+## Watermarks
 
-Want to display the PDF in a different size, e.g. because your customer expects `US-Letter` and not the standard size `DIN-A4`?
-Xou can add a CSS rule to your twig template:
-```twig
-{% raw %}<style>
-@page { 
-    sheet-size: LETTER-L;
-}
-</style>{% endraw %} 
-```
+Read the [mPDF documentation](https://mpdf.github.io/what-else-can-i-do/watermarks.html) to understand how to use these options:
 
-You could also try to set the page-size via `options`:
-```twig
-{% raw %}{%- set option = pdfContext.setOption('format', 'A4-L') -%}{% endraw %}
-```
-
-Available sizes are:
-- `A4`, `A3`, `Letter`, `Legal`, `Executive`, `Folio`, `Demy`, `Royal`, `A`, `B`, `Ledger`, `Tabloid` ...
-- `A4-L`, `A3-L`, `Letter-L`, `Legal-L`, `Executive-L`, `Folio-L` ... for landscape
-
-More information available in the [MDPF documentation](https://mpdf.github.io/paging/different-page-sizes.html) and the
-full list of available sizes [can be found here](https://mpdf.github.io/reference/mpdf-functions/construct.html) (check `format`).
-
-## Embedding images
-
-The best way to embed an image is abase64 encoded PNG image:
-
-- Convert your image to PNG
-- Encode the image file with `base64`, e.g. with the bash command `base64 -i image-file.png` or some [online](https://www.base64-image.de/) [tool](https://base64.guru/converter/encode/image)
-- Save the base64 string as Twig variable
-- Add the img tag to your template
-
-```twig
-{% raw %}{% set logo = 'A-VERY-LONG-STRING-HERE==' %}
-<img style="height: 150px;margin: 10px;" src="data:image/png;base64,{{ logo }}" />{% endraw %}
-```
+- `watermarkImgBehind`
+- `showWatermarkText`
+- `showWatermarkImage`
+- `watermarkText`
+- `watermarkAngle`
+- `watermarkImage`
+- `watermark_font`
+- `watermarkTextAlpha`
+- `watermarkImageAlpha`

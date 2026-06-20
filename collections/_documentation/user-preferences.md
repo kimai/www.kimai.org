@@ -5,11 +5,9 @@ related:
   - users
 ---
 
-The user preferences can be accessed via any user profile (eg. in the upper right corner for your own user) and from `System > Users` (needs `view_user` permission) for every user.
+The user preferences can be accessed via any user profile (e.g. in the upper right corner for your own user) and from `System > Users` (needs `view_user` permission) for every user.
 
-These settings can be edited by:
-- the user itself, when owning the `preferences_own_profile` permission 
-- every users owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %})
+## Preferences
 
 ### Hourly rate
 
@@ -40,7 +38,7 @@ Kimai saves times in UTC, including the timezone information, so it can calculat
 
 Which language should be used as the primary source for translations (if a specific translation for your language is missing, the fallback will always be English).
 
-### Format for time, date and currency
+### Time, date and currency format
 
 The format that is used to render dates, time, money, numbers and currencies.
 
@@ -55,6 +53,7 @@ Allows you to change the theme used for Kimai; switching to dark can reduce eye 
 
 - Bright: Default bright background and dark menu background
 - Dark: Dark background and dark menu background
+- Automatic: 
 
 ### Update browser title
 
@@ -91,6 +90,8 @@ Allows to store preferred menus as favorites, which then can be quickly accessed
 
 If activated, the personal timesheet visually groups and shows statistics for all records within one day.
 
-### Use decimal duration in export
+## Permissions
 
-If activated, the export templates render durations as decimal number instead of the human-readable clock format (e.g. `1.5` instead of `01:30 h`).
+The user preferences can be edited by:
+- the user itself, when owning the `preferences_own_profile` permission
+- every user owning the `preferences_other_profile` [permission]({% link _documentation/permissions.md %})

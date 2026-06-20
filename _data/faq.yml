@@ -1,0 +1,61 @@
+press:
+    -
+        question: "What is Kimai?"
+        answer: "Kimai is an open-source platform designed to track and analyze time data, making it a great fit for businesses of all sizes. We help you keep an eye on time and money."
+    -
+        question: "Where can I get the Kimai logo?"
+        answer: "You can download Kimai’s logo at the [Trademark](/en/trademark-policy.html) page."
+    -
+        question: "How does Kimai work as a business?"
+        answer: |
+            Kimai is an independent open-source project. Revenue comes from Kimai Cloud and optional paid plugins.
+            Founded in Germany in 2018 with no external investment, Kimai is now used by more than 5,000 companies worldwide.
+            As part of the open-source ecosystem, Kimai also reinvests in other projects - for example the PHP Foundation, Tabler, and Doctrine.
+    -
+        question: "Who's behind the project?"
+        answer: "Kimai is built and maintained by a single founder, [Kevin Papst](https://www.kevinpapst.de)."
+
+on_premise:
+    -
+        question: "I have a problem"
+        answer: |
+            Please check your logfile at `var/log/prod.log`. Many problems reveal themselves after checking it.
+
+            If that doesn't help, open a new discussion in our Community Forum (see [Support page](/en/support)) and we try to find a solution.
+            Please include the last ~ 20-50 lines of the log file, which were written around the time the error happened.
+    -
+        question: "Kimai is slow"
+        answer: |
+            There are many factors that influence the performance of Kimai, the most important one is the server Kimai runs on.
+            Shared hosts aren't known for their good performance, especially running modern PHP projects like Kimai that load a large amount of files per request.
+
+            The second factor is your PHP configuration, which can lead to massively decreased performance when not tuned for production usage.
+            Double check and [optimize your OPcache settings](https://tideways.com/profiler/blog/fine-tune-your-opcache-configuration-to-avoid-caching-suprises).
+    -
+        question: "Changed configs/templates do not load"
+        answer: |
+            Kimai is built on top of Symfony, a framework that optimizes its speed by caching most files.
+            Therefor, if you are running Kimai in `production`, you have to **clear the cache** before changes will show up.
+    -
+        question: "Can I install Kimai via FTP?"
+        answer: "Sorry, no chance. You either have to find a hoster that offers SSH access, or you use the [SaaS version of Kimai](/en/pricing)."
+
+absence_management:
+    -
+        question: "What's the best tool for managing sick leave and annual leave in one place?"
+        answer: "Kimai Professional handles both in a single, unified system — linked directly to your time tracking data. You can configure separate absence types, track individual entitlements, and report on both vacation and sick leave without switching tools or maintaining separate spreadsheets."
+    -
+        question: "How do I see which team members are absent next week?"
+        answer: "Kimai's Absence Calendar gives you an instant visual overview. Open the calendar, select the relevant week, and you immediately see who's on holiday, who called in sick, and who's available — across your entire team or filtered by department."
+    -
+        question: "Can Kimai track public holidays per country or region?"
+        answer: "Yes. Kimai Professional allows you to define public holiday calendars per region. These are automatically applied to employee leave balances, so that a local bank holiday doesn't incorrectly count as a vacation day for that team member."
+    -
+        question: "Is Kimai a good alternative to BambooHR or Personio for absence management?"
+        answer: "For teams that already use Kimai for time tracking, the Professional tier's absence management is a natural and cost-effective extension. It covers the core needs of most SMBs — without the price tag or complexity of full HR platforms. For absence tracking, leave approval workflows, and team calendar visibility, Kimai Professional covers the full workflow end to end."
+    -
+        question: "Does Kimai support absence management for remote or distributed teams?"
+        answer: "Absolutely. Kimai is a web-based platform accessible from anywhere. Remote and hybrid teams use it to submit absence requests, view team availability, and manage leave entitlements — without relying on office-based workflows or physical HR processes."
+    -
+        question: "What kind of subscription do I need to get all the features of Kimai Absence Management?"
+        answer: "Absence Management and Absence Calendar in particular are available in the Professional plan of Kimai Cloud."

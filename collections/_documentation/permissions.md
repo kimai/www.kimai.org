@@ -31,24 +31,28 @@ Every user is automatically member of the `ROLE_USER` (this cannot be changed), 
 
 ### Creating roles
 
-If the pre-defined roles are not enough for your use-case and you need more roles, you can create new ones.
+If the pre-defined roles are not enough for your use-case, and you need more roles, you can create new ones.
 
 Every user with the permission `role_permissions` can create new user roles. 
 There is a button that will open a new modal, to enter a role name. This new role will show up in the table after saving.
 
-{% alert warning %}Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.{% endalert %}
-
 Custom role names must start with `ROLE_` and need to be written in uppercase letters, so instead of using `Manager` you have to create `ROLE_MANAGER`. 
 This is required if you want to test for role permissions programmatically.
 
+{% alert warning %}Allowed character are: `A-Z` and `_`. If you use different character, you might experience strange bugs.{% endalert %}
+
 ## Permissions 
 
-By turning permissions `on` and `off` for specific roles, you widen or limit the access to certain features.
-Clicking the `Yes` and `No` labels in the table toggles the selected permission (row title) for the respective role (column title).
+By turning permissions **on** and **off** for specific roles, you widen or limit the access to certain features.
+Clicking the {% include badge.html class="success" badge="Yes" %} and {% include badge.html class="secondary" badge="No" %} buttons 
+in the table toggles the selected permission for the respective role (column).
 
 If a user has multiple roles, then access is granted as soon as one of these roles own the permission.
 
-**Be aware**: tother business rules might limit access to certain functions, permissions are not the only checks in place.
+A few permissions for system-admins cannot be changed, as they are critical to manage the system. 
+Those appear in a warning color as {% include badge.html class="warning" badge="Yes" %}. 
+
+**Be aware**: other business rules might limit access to certain functions, permissions are not the only checks in place.
 For example, exported timesheet records cannot be edited, even if a user owns the `edit_own_timesheet` or `edit_other_timesheet` permission.
 
 ### Activity

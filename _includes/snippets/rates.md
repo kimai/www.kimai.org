@@ -5,7 +5,7 @@ Please read the [price documentation]({% link _documentation/configurations.md %
 On the detail page of the selected item (which you find by clicking a row in the listing table or select `Show` from the dropdown menu) 
 you find the `Hourly price` section. By default, you see the message `No prices have been configured`.
 
-{% include docs-image.html src="/images/documentation/rates-section.webp" title="Price section table" width="700px" %}
+{% include docs-image.html src="/images/documentation/rates-section.webp" title="Price section table" width="800px" %}
 
 You configure new price rules by clicking the `+` button in the upper-right of the `Prices` table.
 
@@ -17,7 +17,7 @@ A user needs the two permissions to be able to see and edit prices:
 
 The `edit price` screen has four settings:
 
-{% include docs-image.html src="/images/documentation/rates-edit.webp" title="Edit price screen" width="700px" %}
+{% include docs-image.html src="/images/documentation/rates-edit.webp" title="Edit price screen" width="800px" %}
 
 - `User` - the user this price applies to - if no user is chosen it applies to everyone without explicit personal rule  
 - `Price` - the price to be charged (per hour)
@@ -36,7 +36,7 @@ Every rule the defines a user is a `user specific price` and those always win ov
 
 The following example contains two price rules:
 
-{% include docs-image.html src="/images/documentation/rates-example.webp" title="A sample rates configuration" width="900px" %}
+{% include docs-image.html src="/images/documentation/rates-example.webp" title="Sample rates configuration" width="800px" %}
 
 The first one is a `Catch-all price` that applies to everyone who is recording times for this {{include.permission}}. 
 So every hour counts with 50 € towards the budget of this {{include.permission}} and has internal costs of 25 €.

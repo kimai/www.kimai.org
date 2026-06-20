@@ -9,8 +9,10 @@ related:
   - user-preferences
 ---
 
-Be aware: Prices (also called rates, both are used as synonyms in this article) are always calculated from the duration of a record. 
-The duration is often a rounded value and not the real difference between `end` and `begin`.
+{% include youtube-video.html id="rates" %}
+ 
+Be aware: Prices (also called rates in this article) are calculated from the duration of a record. 
+The duration is often a rounded value and not the raw difference between `end` and `begin`.
 
 There are two price types:
 

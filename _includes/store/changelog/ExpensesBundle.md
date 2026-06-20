@@ -1,3 +1,30 @@
+**Version 2.27.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Added "export" as batch action
+- Remove `escape` filter from description
+
+**Version 2.26.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Invoice queries using tags will not return any result 
+- Internal widget refactoring
+
+**Version 2.25.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Fix exporter names in dropdown for latest Kimai releases 
+- Fix deprecation
+
+**Version 2.24.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Use improved invoice calculator logic
+
 **Version 2.23.0**
 
 Compatibility: requires minimum Kimai 2.40.0

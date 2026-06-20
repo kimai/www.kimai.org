@@ -1,0 +1,33 @@
+//
+// Typography
+// --------------------------------------------------
+
+/* stylelint-disable stylistic/selector-list-comma-newline-after */
+
+// Headings line height
+
+h4, .h4, .fs-4,
+h5, .h5, .fs-5,
+h6, .h6, .fs-6 { line-height: $line-height-sm; }
+
+
+// Link inside headings
+
+h1, .h1, h2, .h2, h3, .h3,
+h4, .h4, h5, .h5, h6, .h6 {
+  > a {
+    color: var(--#{$prefix}heading-link-color);
+    text-decoration: none;
+    &:hover {
+      color: var(--#{$prefix}heading-link-hover-color);
+    }
+  }
+}
+
+
+// Description lists
+
+dt {
+  color: var(--#{$prefix}heading-color);
+}
+

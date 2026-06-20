@@ -2,4 +2,8 @@
 {% assign price = 100 | divided_by: price %}
 {% assign price = 1 | divided_by: price %}
 {% assign price = price | round: 2 %}
-€ {{ price | round: 2 }}
+{% if page.lang == 'de' %}
+<sub>€</sub> {{ price | replace: '.', ',' }}
+{% else %}
+<sub>€</sub> {{ price }}
+{% endif %}

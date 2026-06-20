@@ -1,0 +1,214 @@
+// Dark color mode variables
+//
+// Custom variables for the `[data-bs-theme="dark"]` theme.
+
+// Global colors
+
+$primary-text-emphasis-dark:        darken($primary, 5%) !default;
+$secondary-text-emphasis-dark:      $gray-200 !default;
+$success-text-emphasis-dark:        darken($success, 5%) !default;
+$info-text-emphasis-dark:           darken($info, 5%) !default;
+$warning-text-emphasis-dark:        darken($warning, 5%) !default;
+$danger-text-emphasis-dark:         darken($danger, 5%) !default;
+$light-text-emphasis-dark:          $gray-200 !default;
+$dark-text-emphasis-dark:           $white !default;
+
+$primary-bg-subtle-dark:            shade-color($primary, 85%) !default;
+$secondary-bg-subtle-dark:          $gray-800 !default;
+$success-bg-subtle-dark:            shade-color($success, 85%) !default;
+$info-bg-subtle-dark:               shade-color($info, 85%) !default;
+$warning-bg-subtle-dark:            shade-color($warning, 85%) !default;
+$danger-bg-subtle-dark:             shade-color($danger, 85%) !default;
+$light-bg-subtle-dark:              $gray-900 !default;
+$dark-bg-subtle-dark:               shade-color($dark, 85%) !default;
+
+$primary-border-subtle-dark:        shade-color($primary, 70%) !default;
+$secondary-border-subtle-dark:      $gray-700 !default;
+$success-border-subtle-dark:        shade-color($success, 70%) !default;
+$info-border-subtle-dark:           shade-color($info, 70%) !default;
+$warning-border-subtle-dark:        shade-color($warning, 70%) !default;
+$danger-border-subtle-dark:         shade-color($danger, 70%) !default;
+$light-border-subtle-dark:          $gray-700 !default;
+$dark-border-subtle-dark:           $gray-900 !default;
+
+$body-color-dark:                   rgba($white, .7) !default;
+$body-bg-dark:                      $gray-900 !default;
+$border-color-dark:                 $border-light-color !default;
+$headings-color-dark:               $white !default;
+$link-color-dark:                   $primary !default;
+$link-hover-color-dark:             darken($link-color, 8%) !default;
+
+
+// Image thumbnails
+
+$thumbnail-bg-dark:                 rgba($white, .1) !default;
+
+
+// Video button
+
+$btn-video-bg-dark:                 rgba($white, .05) !default;
+$btn-video-color-dark:              $white !default;
+$btn-video-box-shadow-dark:         none !default;
+$btn-video-hover-bg-dark:           $primary !default;
+$btn-video-hover-color-dark:        $white !default;
+$btn-video-hover-box-shadow-dark:   $box-shadow-primary !default;
+
+
+// Scroll to top button
+
+$btn-scroll-top-bg-dark:            rgba($white, .15) !default;
+$btn-scroll-top-hover-bg-dark:      rgba($white, .3) !default;
+$btn-scroll-top-color-dark:         $white !default;
+$btn-scroll-top-hover-color-dark:   $white !default;
+
+
+// Forms
+
+$form-text-color-dark:              rgba($white, .5) !default;
+$form-label-color-dark:             $white !default;
+$form-label-focus-color-dark:       $body-color-dark !default;
+
+$input-color-dark:                  $body-color-dark !default;
+$input-border-color-dark:           rgba($white, .18) !default;
+$input-bg-dark:                     rgba($white, .02) !default;
+$input-placeholder-color-dark:      rgba($white, .4) !default;
+$input-disabled-bg-dark:            rgba($white, .01) !default;
+$input-disabled-border-color-dark:  rgba($white, .1) !default;
+$input-focus-border-color-dark:     rgba($white, .35) !default;
+
+$form-range-track-bg-dark:          rgba($white, .09) !default;
+
+$form-select-indicator-color-dark:  $input-color-dark !default;
+$form-select-indicator-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$input-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>") !default;
+
+$form-check-input-bg-dark:           transparent !default;
+$form-check-input-border-color-dark: rgba($white, .5) !default;
+
+$form-switch-bg-dark:               rgba($white, .25) !default;
+$form-switch-checked-bg-dark:       $primary !default;
+
+$form-valid-color-dark:             $success !default;
+$form-invalid-color-dark:           $danger !default;
+
+
+// Input group
+
+$input-group-addon-bg-dark:         $input-bg-dark !default;
+$input-group-addon-color-dark:      $input-color-dark !default;
+$input-group-addon-border-color-dark:  $input-border-color-dark !default;
+
+
+// File
+
+$form-file-button-color-dark:       $input-color-dark !default;
+$form-file-button-bg-dark:          $input-group-addon-bg-dark !default;
+$form-file-button-hover-bg-dark:    shade-color($form-file-button-bg-dark, 5%) !default;
+
+
+// Range slider
+
+$range-slider-bg-dark:              rgba($white, .12) !default;
+
+
+// Navs
+
+$nav-link-color-dark:               rgba($white, .85) !default;
+$nav-link-hover-color-dark:         $primary !default;
+$nav-link-active-color-dark:        $primary !default;
+$nav-link-disabled-color-dark:      rgba($white, .4) !default;
+
+$nav-tabs-link-bg-dark:             rgba($white, .05) !default;
+$nav-tabs-link-color-dark:          rgba($white, .85) !default;
+$nav-tabs-link-hover-bg-dark:       map-get($theme-faded-colors, "primary") !default;
+$nav-tabs-link-hover-color-dark:    $primary !default;
+$nav-tabs-link-active-bg-dark:      $primary !default;
+$nav-tabs-link-active-color-dark:   $white !default;
+$nav-tabs-link-disabled-bg-dark:    rgba($white, .04) !default;
+$nav-tabs-link-disabled-color-dark: $nav-link-disabled-color-dark !default;
+
+$side-nav-border-color-dark:        $border-light-color !default;
+
+
+// Pagination
+
+$pagination-color-dark:             $nav-link-color-dark !default;
+$pagination-hover-color-dark:       $nav-link-hover-color-dark !default;
+$pagination-hover-bg-dark:          rgba($white, .05) !default;
+$pagination-disabled-color-dark:    rgba($white, .5) !default;
+
+
+// Placeholders
+
+$placeholder-opacity-max-dark:      .25 !default;
+$placeholder-opacity-min-dark:      .1 !default;
+
+
+// Accordion
+
+$accordion-icon-color-dark:         $white !default;
+$accordion-icon-active-color-dark:  $white !default;
+$accordion-icon-box-bg-dark:        rgba($white, .05) !default;
+$accordion-icon-box-active-bg-dark: $primary !default;
+$accordion-button-icon-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='#{$accordion-icon-color-dark}'><path d='M225.813 48.907L128 146.72 30.187 48.907 0 79.093l128 128 128-128z'/></svg>") !default;
+$accordion-button-active-icon-dark: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='#{$accordion-icon-active-color-dark}'><path d='M225.813 48.907L128 146.72 30.187 48.907 0 79.093l128 128 128-128z'/></svg>") !default;
+
+
+// Popover
+
+$popover-bg-dark:                  #14171f !default;
+
+
+// Toasts
+
+$toast-background-color-dark:       linear-gradient(0deg, rgba($white, .04), rgba($white, .04)), $dark !default;
+$toast-border-color-dark:           $border-light-color !default;
+
+
+// Modal
+
+$modal-content-border-width-dark:   $border-width !default;
+$modal-content-bg-dark:             $dark !default;
+
+
+// Progress
+
+$progress-bg-dark:                  rgba($white, .08) !default;
+
+
+// List group
+
+$list-group-action-color-dark:      $nav-link-color-dark !default;
+$list-group-disabled-color-dark:    rgba($white, .5) !default;
+
+
+// Breadcrumb
+
+$breadcrumb-active-color-dark:      $white !default;
+
+
+// Code
+
+$pre-color-dark:                    $white !default;
+$pre-border-color-dark:             $border-light-color !default;
+$pre-bg-dark:                       rgba($white, .04) !default;
+$pre-line-numbers-border-color-dark: $border-light-color !default;
+$pre-line-numbers-color-dark:       rgba($white, .5) !default;
+$kbd-color-dark:                    $white !default;
+$kbd-bg-dark:                       darken($gray-900, 8%) !default;
+
+
+// Carousel
+
+$carousel-nav-btn-bg-dark:          rgba($white, .05) !default;
+$carousel-nav-btn-color-dark:       $white !default;
+
+$carousel-bullet-bg-dark:           rgba($white, .5) !default;
+$carousel-bullet-active-bg-dark:    $white !default;
+
+$carousel-scrollbar-drag-bg-dark:   $white !default;
+
+
+// Steps
+
+$steps-number-bg-dark:              #181b24 !default;
+$steps-number-inner-bg-dark:        rgba($white, .04) !default;

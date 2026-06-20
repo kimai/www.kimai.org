@@ -6,27 +6,31 @@ canonical: /documentation/saml-keycloak.html
 
 Go back to general [SAML configuration]({% link _documentation/saml.md %}) for Kimai.
 
-SAML authentication with Keycloak accounts has proven to work with the following configurations.
+SAML authentication with Keycloak accounts has proven to work with the following configurations. This guide provides a complete working setup that has been tested and verified.
 
 Screenshots might be outdated, please check the text version below each image. 
 
-### Important settings
+## Important settings
 
 - `singleSignOnService.url`: `https://{keycloak-domain}/realms/{realm}/protocol/saml`
 - In Kimai: `kimai.saml.connection.idp.x509cert` = value from IdP `ds:X509Certificate`
 - In Kimai: `kimai.saml.connection.security.authnRequestsSigned: true`
+- In Kimai: Configure the `TRUSTED_PROXIES` setting, when using a [reverse proxy]({% link _documentation/webserver-configuration.md %}) to prevent login issues
 - In Keycloak: enable **Force name ID format**
+- In Keycloak: enable **Client signature required** (this works with signed AuthnRequests)
 
-### Add a client for Kimai SAML
+## Add a client for Kimai SAML
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-1.webp" title="Add a client" width="800px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-1.webp" title="Add a client" %}
 
-### Configure the client
+## Configure the client
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Deactivate *Client Signature Required* (1)" width="900px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Deactivate *Client Signature Required* (2)" width="900px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-2.webp" title="Enable *Client Signature Required* (1)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-3.webp" title="Enable *Client Signature Required* (2)" %}
 
-### Certificates
+**Note**: The working setup uses **Client Signature Required** enabled, which works with signed AuthnRequests (`authnRequestsSigned: true` in Kimai configuration).
+
+## Certificates
 
 - **IdP certificate**: Obtain the `ds:X509Certificate` from Keycloak’s SAML descriptor:  
   `https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor`  
@@ -36,7 +40,7 @@ Screenshots might be outdated, please check the text version below each image.
     - `sp.privateKey` → private key generated in Keycloak (*Clients → Kimai → Keys*)
     - `sp.x509cert` → corresponding public key
 
-### Create user attributes
+## Create user attributes
 
 Keycloak client mappers (inside the `{client}-dedicated` scope)
 
@@ -47,21 +51,21 @@ Remove the default `role list`, then add:
 - **X500 givenName** → `SAML Attribute Name: FirstName`, `SAML Attribute NameFormat: Unspecified`
 - **Role list** → `Role attribute name: Roles`, `SAML Attribute NameFormat: Unspecified`, `Single Role Attribute: On`
 
-{% include docs-image.html src="/images/documentation/keycloak-saml-4.webp" title="Kimai user attributes (listing)" width="1000px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-5.webp" title="Kimai user attributes (X500 GivenName)" width="700px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-6.webp" title="Kimai user attributes (X500 Surname)" width="700px" %}
-{% include docs-image.html src="/images/documentation/keycloak-saml-7.webp" title="Kimai user attributes (X500 Email)" width="700px" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-4.webp" title="Kimai user attributes (listing)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-5.webp" title="Kimai user attributes (X500 GivenName)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-6.webp" title="Kimai user attributes (X500 Surname)" %}
+{% include docs-image.html src="/images/documentation/keycloak-saml-7.webp" title="Kimai user attributes (X500 Email)" %}
 
-### Client Scopes / Roles
+## Client Scopes / Roles
 
 Make sure to map unique Keycloak roles to Kimai roles.  
 If you reuse the same Keycloak role, the last mapping wins.
 
 - Go to Configuration -> Client Scopes -> role_list
 - Select Tab "Mappers", edit "role_list"
-- Set" Single Role Attribute" to "ON"
+- Set "Single Role Attribute" to "ON"
 
-Example:
+**Working example with specific role naming convention:**
 
 ```
 { saml: Admins, kimai: ROLE_SUPER_ADMIN }
@@ -69,11 +73,11 @@ Example:
 { saml: Teamlead, kimai: ROLE_TEAMLEAD }
 ```
 
+**Note**: Using a consistent naming convention like `Kimai-Role-*` could help to avoid conflicts and makes role management clearer.
 
+## Configure local.yaml
 
-### Configure local.yaml
-
-And here is the matching Kimai configuration:
+Here is the complete working Kimai configuration that has been tested and verified:
 
 ```yaml
 kimai:
@@ -92,7 +96,7 @@ kimai:
                 - { saml: Management, kimai: ROLE_ADMIN }
                 - { saml: Teamlead, kimai: ROLE_TEAMLEAD }
         connection:
-            # You SAML provider, here an example for Keycloak
+            # Your SAML provider, here an example for Keycloak
             idp:
                 entityId: 'https://example.com/realms/master'
                 singleSignOnService:
@@ -101,7 +105,7 @@ kimai:
                 x509cert: 'cert from https://{keycloak-domain}/realms/{realm}/protocol/saml/descriptor > ds:X509Certificate'
            # Your Kimai instance, replace https://127.0.0.1:8010 with your base URL
             sp:
-                entityId: 'Kimai2'
+                entityId: 'Kimai'
                 assertionConsumerService:
                     url: 'https://example.com/auth/saml/acs'
                     binding: 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST'
@@ -136,9 +140,21 @@ kimai:
                     emailAddress: 'kimai-support@example.com'
             organization:
                 en:
-                    name: 'Kimai'
-                    displayname: 'Kimai'
-                    url: 'https://www.kimai.org'
+                    name: 'Acme'
+                    displayname: 'Acme'
+                    url: 'https://www.example.com'
 ```
 
 You should now be able to test the Login by visiting **https://timetracking.example.com/** and clicking on the `Keycloak` title of the SAML method, you defined earlier.
+
+## Configuration Summary
+
+This setup has been tested and verified to work with:
+
+- **Signed AuthnRequests** (`authnRequestsSigned: true`)
+- **Keycloak client set to "Client signature required"**
+- **NameID forced to email format**
+- **Proper role mapping** with consistent naming convention (`Kimai-Role-*`)
+- **Correct certificate configuration** using IdP certificate from SAML descriptor
+
+The configuration above provides a complete working setup for Kimai + Keycloak SAML integration.

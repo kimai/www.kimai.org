@@ -1,11 +1,8 @@
 ---
 title: Pricing
-lang: ru
-layout: default
-bg_dark: true
-navi_dark: true
-navi_absolute: false
 permalink: /ru/pricing
+cta: cloud
+hero_features: cloud, pricing-switch
 ---
 
-{% include pages/pricing.md %} 
+{% include pages/pricing.md %}

@@ -1,11 +1,8 @@
 ---
 title: Pricing
-lang: zh_Hans
-layout: default
-bg_dark: true
-navi_dark: true
-navi_absolute: false
 permalink: /zh_Hans/pricing
+cta: cloud
+hero_features: cloud, pricing-switch
 ---
 
-{% include pages/pricing.md %} 
+{% include pages/pricing.md %}

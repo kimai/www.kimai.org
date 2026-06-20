@@ -19,7 +19,6 @@ homepage-alert-title: Besplatno evidentiranje vremena za svakoga
 homepage-alert-intro: Kimai je besplatan program otvorenog koda za evidentiranje vremena. Evindentira radno vrijeme i na zahtjev ispisuje sažetak o aktivnostima. Godišnje, mjesečno, dnevno, po kupcu, po projektu … Njegova jednostavnost je njegova snaga. Zahvaljujući sučelju temeljenog na pregledniku, Kimai radi na raznim platformama, čak i na tvom mobilnom uređaju.
 homepage-alert-button-download: Preuzmi
 homepage-alert-button-demo: Isprobaj
-cloud-title: Kimai oblak (SaaS)
 cloud-feature-ssl: Besplatan TLS (SSL) certifikat
 cloud-feature-hosting: Hosting i aktualiziranja
 cloud-feature-backups: Sigurnosne kopije
@@ -69,8 +68,7 @@ demo:
     name: Demo
     description: Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izravno s naše demo stranice.
     title: Testiraj Kimai u jednoj od demo verzija
-    introduction: "Isprobaj Kimai demo verziju za evidentiranje vremena i obećavamo ti: tvoj sljedeći korak bit će preuzimanje programa!"
-    choose: Odaberi jednu od naših demo instalacija za dobivanje dojma o tome kako se Kimai osjeća i koju funkcionalnost pruža.
+    subtitle: Odaberi jednu od naših demo instalacija za dobivanje dojma o tome kako se Kimai osjeća i koju funkcionalnost pruža.
     reinstall: Imaj na umu da će se demo verzije redovito ponovo instalirati i da će se svi uneseni podaci ukloniti.
     user: Korisnik demo verzija
     accounts: "Ovi su računi dostupni za tvoje testove. Vlastitog testnog korisnika možeš stvoriti i u obrascu za prijavu svake demo verzije."
@@ -81,8 +79,6 @@ demo:
     empty-description: Aktualna verzija s istaknutim dodacima, bez podataka.
     plugins-description: Razvojna verzija s dodacima i demo podacima.
     plugins-title: Istaknuto
-    stable-title: Osnovno
-    empty-title: Dodaci
     stable-description: Najnovije izdanje, bez dodataka, bez demo podataka.
 index:
     name: Početna
@@ -91,21 +87,21 @@ index:
 download:
     name: Instalacija
     title: Kimai instalacija
-    description: Preuzimanje i instalacija sa SSH, Docker i Kubernetes – Kimai program za evidentiranje vremena
-    intro: Nudimo nekoliko načina za instaliranje Kimaija. Odaberi opciju koja ti odgovara.
-    subtitle: Preuzimanje i instalacija
+    subtitle: Preuzimanje i instaliranje sa SSH, Docker i Kubernetes – Kimai program za evidentiranje vremena
+    eyebrow: Self-Host Kimai
 hosted:
     name: Oblak
     title: Kimai oblak – Koristi Kimai izravno bez postavljanja. Bezbrižni Kimai hosting!
 about:
     name: Kimai informacije
+    subtitle: Što je počelo kao hobij, projekt je sada vodeći program otvorenog koda za evidentiranje vremena. Pogledaj povijest.
     description: Saznaj više o programu za evidentiranje vremena Kimai, njegovoj povijesti i programeru.
     collaboration:
         title: Suradnja
         content: Korisnici cijene komfor besplatne podrške, a razmjena je bitan dio mog rada. Volim angažman zajednice na GitHubu, suradnju i agilni rad. Kontinuirano unaprjeđenje temelji se na povratnim informacijama i čini ovu suradnju izvanrednim iskustvom.
     technology:
         title: Tehnologija
-        content: Kao razvijatelj, volim testirati nove tehnologije. Ako to poboljšava način na koji interagiraš s Kimaijem, nazvao bih to win-win situacijom. Korisničko sučelje i korisnički doživljaj su mi ključni jer se softver mora moći jednostavno koristiti. Sigurnost je osnovni zahtjev, a softver otvorenog kod je važan čimbenik uspjeha za mnoge tvrtke.
+        content: Kao razvijatelj, volim testirati nove tehnologije. Ako to poboljšava način na koji komuniciraš s Kimaijem, nazvao bih to win-win situacijom. Korisničko sučelje i korisnički doživljaj su mi ključni jer se softver mora moći jednostavno koristiti. Sigurnost je osnovni zahtjev, a softver otvorenog kod je važan čimbenik za uspjeh mnogih tvrtki.
     joy:
         title: Radost u poslu
         content: Razvoj Kimaija idealna je kombinacija struke koju volim, s beskrajnim mogućnostima obrazovanja i potrebom da zarađujem novac kako bih podržao svoju obitelj. Zahvaljujući Kimaiju, mogu provesti više vremena sa svojom suprugom i djetetom, što je vjerojatno najbolja motivacija koja se može zamisliti.
@@ -114,13 +110,16 @@ store:
     name: Dodaci
     title: Dodaci za Kimai
     subtitle: Koristi veliki izbor dodataka, aplikacija i proširenja Kimai ekosustava za dodavanje dodatnih funkcija tvom evidentiranju vremena.
-    description: Dodaci za Kimai proširuju tvoje evidentiranje vremena s dodatnim funkcijama
+    eyebrow: Extend Your Time-Tracker
 blog:
     name: Blog
     description: "Novosti o programu Kimai, softveru za evidentiranje vremena"
     subtitle: Novosti o programu Kimai, softveru otvorenog koda za evidentiranje vremena
     title: Kimai novosti
     archive-link: Pronađi starije vijesti za %topic% ovdje
+    archive-tags: Prikaži sve
+    category-pages: Pronađi sve naše objave na stranicama kategorija
+    categories: Kategorije
 documentation:
     name: Dokumentacija
     description: Informacije o podršci, korisnički priručnik i druga dokumentacija za evidentiranje vremena pomoću programa Kimai
@@ -133,12 +132,11 @@ features:
     name: Funkcije
 docu-developer:
     name: Programer
-docu-onpremise:
-    name: Interni hosting
 docu-manual:
     name: Korisnički priručnik
 alternatives:
-    name: Kimai alternative
+    subtitle: Tražiš alternativu za svoje trenutačno rješenje za evidentiranje vremena? Evo zašto mislimo da imamo bolje rješenje
+    name: Usporedi programe za evidentiranje vremena
     description: Kimai je najbolji program za evidentiranje vremena s otvorenim izvornim kodom, ne samo za timske projekte. Pogledaj uspoređivanje Kimaia s alternativnim rješenjima za evidentiranje vremena kako bi odabrao/la pravo rješenje za tvoju organizaciju.
 feature:
     mobile-ready:
@@ -216,9 +214,6 @@ feature:
     user-profile:
         name: "Korisnički profil"
         description: "Osobna statistika i postavke korisnika za satnicu, Kimai izgeld, lozinku i avatar."
-    user-registration:
-        name: "Registracija korisnika"
-        description: "Kimai podržava samo-registraciju korisnika s aktiviranjem e-mail adrese."
     password-reset:
         name: "Resetiranje lozinke"
         description: "Zaboravio/la si lozinku? Kimai ti pomaže resetirati lozinku putem e-maila."
@@ -235,7 +230,7 @@ feature:
         name: Tamni modus
         description: Jer svaka aplikacija treba tamni način rada, koji pomaže smanjiti naprezanje očiju navečer ili u tamnom okruženju.
     customer-portal:
-        description: Dijeli statistiku klijenata i projekata te vremenske tablice sa svima koji koriste tajni URL, opcionalno zaštićen lozinkom.
+        description: Dijeli statistiku mušterija i projekata te vremenske tablice sa svima koji koriste tajni URL, opcionalno zaštićen lozinkom.
         name: Portal za kupce
     security:
         points:
@@ -263,6 +258,12 @@ feature:
     no-limits:
         description: "Tvoj SaaS softver uvijek uključuje ograničenja? Kimai nema ograničenja. Plaćaš samo za broj aktivnih korisnika. Ne ograničujem i ne naplaćujem neaktivne korisnike. Možeš stvoriti neograničen broj korisnika, kupaca, projekata, aktivnosti, vremenskih tablica i više."
         name: Bez ograničenja
+    electronic-invoicing:
+        name: E-računi
+        description: Stvori e-račune u XML i PDF/A formatima, u skladu s EN 16931, XRechnung 3.0, Zugferd/Factur-X, koristeći CII i UBL sintaksu
+    eu-hosting:
+        description: Neovisno i europsko 🇪🇺 – izgrađeno u Austriji 🇦🇹 i održavano u Njemačkoj 🇩🇪
+        name: EU hosting
 install:
     alert-vps: U ovom trenutku nije moguće instalirati Kimai preuzimanjem ZIP datoteke i učitavanjem datoteka na web server. Moraš imati SSH pristup za tvoj server. To ne znači nužno da trebaš VPS (virtualan privatni server). Neki dijeljeni hostovi pružaju SSH pristup putem kojeg se Composer i Kimai mogu instalirati bez problema.
     ssh: Ovaj način instalira Kimaija izravno na tvoj server.
@@ -279,8 +280,11 @@ newsletter:
     sendinblue: Koristimo Brevo kao našu marketinšku platformu. Pritiskom gumba za slanje ovog obrasca, prihvaćaš da se tvoje navedene informacije šalju na Brevo platformu za obradu podataka u skladu s njihovim %terms%.
     button: PRETPLATI SE
     terms: uvjetima korištenja
-    title: Ne želiš propustiti nijednu novost?
+    teaser: Ne želiš propustiti nijednu novost?
     introduction: Pretplati se na naš bilten i primaj obavijesti o novim verzijama Kimaija i dodataka.
+    archive: Arhiva
+    name: Bilten
+    subtitle: Ako koristiš vlastiti hosing za Kimai (ili ga samo istražuješ), ne propusti naš bilten. Dijelimo novosti i uvide sa zajednicom ljudi koji preferiraju potpunu kontrolu nad svojim podacima.
 developer:
     kevinpapst:
         intro: "Oduvijek sam sanjao o zarađivanju novca s proizvodom otvorenog koda. S programom Kimai sam uspio razviti softver koji pruža veliku vrijednost mojim kupcima i čiji me razvoj pokreće svaki dan.\n\nPosebno se zahvaljujem velikoj zajednici na njihovoj odanosti prijektu tijekom godina i radujem se sljedećim 10 godinama Kimaija 🚀"
@@ -289,7 +293,7 @@ full-documentation: Potpuna dokumentacija na engleskom jeziku
 contact-developer: Ako imaš pitanja koristi sljedeće podatke za izravno kontaktiranje programera.
 homepage:
     title: Evidentiranje vremena za timske projekte
-    intro: Naša platforma otvorenog koda omogućuje evidentiranje i analiziranje vremenskih podataka u tvom poduzeću. Prikladna je za poduzeća svih veličina. Kimai pomaže pri praćenju vremena i novca.
+    subtitle: Naša platforma otvorenog koda omogućuje evidentiranje i analiziranje vremenskih podataka u tvom poduzeću. Prikladna je za poduzeća svih veličina. Kimai pomaže pri praćenju vremena i novca.
 section-teaser:
     report:
         title: Izvještaji
@@ -316,12 +320,11 @@ history:
     year-2023: Naporan rad se konačno isplatio i Kimai je sada moj redovni posao. Hvala svima!
     year-2014: Nakon zadnjeg Kimai 1 izdanja razvoj je zastao i nema mnogih aktivnosti.
     year-2006: Prva verzija Kimaija je objavljena i polako raste baza korisnika i programera.
-    intro: Što je počelo kao hobij, projekt je sada vodeći program otvorenog koda za evidentiranje vremena. Pogledaj povijest.
     year-2018: Nova verzija Kimaija nalazi svoj put u zajednicu, migracija podataka radi, prihvaćanje raste.
     current: |
         Kimai je softver za evidentiranje vremena s dugom poviješću. Prva verzija je izdana 2006. Zašto ovo spominjem? Budući da sam od tada vidio mnoge programe koji dolaze i odlaze – vjeruj mi kad kažem: Kimai je ovdje da ostane. Proveo sam mnogo godina razvijajući Kimai iz zabave, danas je Kimai moj posao i nikada nisam bio motiviraniji kako bih ga stalno poboljšao.
 
-        Svrha programa Kimai je evidentiranje, upravljanje, evaluiranje i obračun radnih sati. Kimai podržava neograničen broj korisnika, klijenata, projekata i unosa vremena te omogućuje upravljanje svim tvojim timovima u jednoj jednostavnoj instalaciji. Kimai je preveden na desetke jezika i radi na bilo kojem uređaju s pristupom internetu i preglednikom, čak i na tvom mobilnom uređaju.
+        Svrha programa Kimai je evidentiranje, upravljanje, evaluiranje i obračun radnih sati. Kimai podržava neograničen broj korisnika, mušterija, projekata i unosa vremena te omogućuje upravljanje svim tvojim timovima u jednoj jednostavnoj instalaciji. Kimai je preveden na desetke jezika i radi na bilo kojem uređaju s pristupom internetu i preglednikom, čak i na tvom mobilnom uređaju.
 
         Račune možeš izraditi iz vremenskih tablica izravno u pregledniku s prilagodljivim predlošcima računa. Kimai se također može proširiti na mnoge načine pomoću dodataka aktivne zajednice.
 
@@ -336,10 +339,6 @@ history:
         Izvorni Kimai je prvi put objavljen 2006. godine i koristili su ga mnogi ljudi diljem svijeta, ponosan sam na to, kao i na njegovu veliku zajednicu. Hvala svima koji su doprinijeli Kimaiju.
 store-hero-counter: 'Više od %number% kupaca vjeruju Kimaiu'
 cta:
-    tech-support:
-        question: Tehnička i poslovna podrška
-        button: Radimo zajedno
-        answer: Osiguravam podršku za sve moje programe i pomoći ću tebi i tvom timu.
     get-started:
         answer: Započni evidentiranje vremena
         button: Podrška
@@ -359,23 +358,37 @@ highlight:
         european: Neovisno i europsko 🇪🇺 – izgrađeno u Austriji 🇦🇹 i smješteno u Njemačkoj 🇩🇪 s naglaskom na zaštitu podataka, transparentnost i kvalitetu otvorenog koda.
 description: Opis
 oss-cloud-compare:
-    saas: Eksterni hosting
-    onpremise: Vlastiti hosting
     intro: Kimai je softver otvorenog koda koji je dostupan za vlastiti hosting kao i za SaaS.
     title: Jedan softver, dvije verzije
+    on-premise:
+        badge: Free forever
+        reason_5: Plugin marketplace
+        reason_3: Docker & manual install
+        reason_2: Full data ownership
+        reason_1: 100% open source (AGPL 3)
+        reason_4: Community support
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+    cloud:
+        reason_2: Automatic updates & backups
+        reason_1: Instant setup, no server needed
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_5: Plugins included
+        reason_4: Priority support
+        badge: Recommended
+        reason_3: GDPR-compliant EU hosting
+    subtitle: Choose your path
 section-features:
     subtitle: Kimai nudi puno više od pukog evidentiranja vremena. Pregledaj popis drugih važnih poslovnih funkcija.
     title: Kako ti Kimai može pomoći?
-share-post: Dijeli ovu obavijest
+share-post: Dijeli ovu objavu
 about-who: Tko gradi Kimai?
 testimonials:
     title: Komentari Kimai korisnika
 footer: Jednostavno evidentiranje vremena. Softver otvorenog koda za timove svih veličina – samostalni hosting ili SaaS.
-slogan: 'Najbolja aplikacija za evidentiranje vremena otvorenog koda'
+slogan: 'Najbolja aplikacija otvorenog koda za evidentiranje vremena'
 comparison:
-    footer-title: Usporedi
     is_oss: Softver otvorenog koda
-    location: Server podataka u EU
+    location: Lokacija servera
     invoices: Fakturiranje
     backup_frequency: Sigurnosne kopije
     custom_domain: Prilagođena domena
@@ -383,7 +396,7 @@ comparison:
     automatic_upgrades: Automatska nadogradnja
     max_projects: Maks. broj projekata
     rest_api: JSON API
-    on_premise: Dostupno kao lokalna instalacija
+    on_premise: Dostupno za lokalni hosting
     export: Izvoz podataka
     support: Podrška
     max_customers: Maks. broj kupaca
@@ -392,14 +405,13 @@ comparison:
     server_maintenance: Održavanje servera
     saml: SAML
     ip_restriction: Ograničenje pristupa putem IP adrese
-    alternatives: Alternative za Kimai
     finding: Pronalaženje pravog rješenja za evidentiranje vremena
-    use_case: Svaki slučaj upotrebe, svako poduzeće i svaki radni tok su različiti te se tvoje potrebe moraju procijeniti prije nego što se odlučiš za rješenje za evidentiranje vremena. Evo nekih alternativa za Kimai koje ćemo detaljno usporediti.
     compare_with: Usporedi Kimai sa %name%
+    alternative: '%product% alternativa'
 support:
     name: "Podrška"
     description: "Trebaš podršku? Ovdje pronađi pomoć za korištenje, instaliranje ili aktualiziranje Kimaija."
-    intro: "Neki kupci preferiraju internu upotrebu Kimaija, ali ne žele propustiti profesionalnu podršku. Rado ću ti pomoći i ponuditi tarifu podrške za instalacije za vlastiti hosting."
+    subtitle: "Neki kupci preferiraju internu upotrebu Kimaija, ali ne žele propustiti profesionalnu podršku. Rado ću ti pomoći i ponuditi tarifu podrške za instalacije za vlastiti hosting."
     community: "Zajednica"
     community_cta: "Posjeti GitHub"
     community_intro: |
@@ -422,6 +434,7 @@ support:
     calendar_intro: |
         Ako želiš upoznati Kimai ili podršku s aktualiziranjima itd., možeš rezervirati plaćeni online sastanak s programerom, Kevinom Papstom.
     calendar_refund: "Ako nisi u mogućnosti prisustvovati događaju, moraš ga otkazati barem 24 sata prije, kako bi se događaj mogao ponovo zakazati. Nema povrata novca."
+    get_in_touch: Kontaktiraj nas
 docu-cloud:
     name: Oblak
 landing_oss:
@@ -469,6 +482,9 @@ plans:
     kiosk: Modus kioska
     backup_weekly: Tjedno
     backup_daily: Dnevno
+    customer_portal: Portal za kupce
+    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
+    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
 pricing:
     short_monthly: Po korisniku i mjesecu
     short_annual: Po korisniku i godini
@@ -477,9 +493,17 @@ pricing:
     annual: Godišnje
     included: Što je uključeno?
     not_available: Nije dostupno
-    subtitle: Ove su tarfe dostupne korisnicima oblaka
+    subtitle: Ove su tarife dostupne kupcima oblaka
     cancellation: Pretplatu možeš otkazati u bilo kojem trenutku do jedan dan prije isteka razdoblja pretplate.
     tax_exclusive: Sve cijene su bez poreza.
+    favorite: Most popular
+    annual_cta: You save 20% compared to monthly billing.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
+    monthly_cta: Switch to annual and save 20%.
+    trust_hosting: Hosted in Germany · GDPR compliant
+    trust_trial: 30-day free trial
+    trust_no_fee: No setup fee
 non-profit:
     name: Neprofitne organizacije
     eligible: Saznaj više
@@ -491,6 +515,7 @@ discount-codes:
 faq:
     intro: Ova često postavljana pitanja pruža programer ove ponude.
     title: ČPP
+    subtitle: Često postavljena pitanja
 login: Prijava
 store-payment-methods: Dostupni načini plaćanja
 404:
@@ -504,7 +529,7 @@ store-payment-methods: Dostupni načini plaćanja
     description: Žao nam je, ali zahtjev sadrži krivu sintaksu i ne može se ispuniti.
 error:
     title: Ups!
-    back: Natrag na početnu web stranicu
+    back: Natrag na početnu web-stranicu
 503:
     name: Privremeno nedostupna stranica (503)
     description: Žao nam je, ali naš se server trenutačno održava te stoga nije dostupan. Uskoro će ponovo raditi!
@@ -513,6 +538,8 @@ theme:
     light: Svijetla
 cloud:
     status: Stanje
+    subtitle: Announcements and news about the Kimai Cloud.
+    name: Cloud
 licenses: Licence
 roadmap: Plan razvoja verzija
 purchase-power-parity: Ne možeš platiti? Zatraži popust za paritet kupovne moći (PPP).
@@ -535,8 +562,206 @@ terms-gdpr:
     name: Obrada podataka
 industries:
     name: Branše
+    agency:
+        features:
+            introduction: Svi alati za evidentiranje vremena nisu jednaki. Najbolja rješenja za agencije nude specijalizirani skup funkcija za eficijente radne tokove.
+            title: Kimai funkcije koje agencije najčešće koriste
+        testimonials:
+            tag: Agencija
+            introduction: U Kimaiu smo dizajnirali našu platformu za evidentiranje vremena kako bi odgovarala potrebama agencija, timova i freelancera. Naše intuitivno sučelje i snažne funkcije pomažu agencijama poput tvoje da rade pametnije i profitabilnije. Sada možeš „poslušati” recenzije stvarnih korisnika.
+            title: Što agencije kažu o evidentiranju vremena
+        about:
+            title: Prvi koraci za bolje evidentiranje vremena
+            introduction: |
+                Već si napravio/la prve korake i sigurni smo da možeš donijeti informiranu odluku. Što bi se još trebalo uzeti u obzir pri odabiru najboljeg softvera za evidentiranje vremena? Neki pružatelji rješenja nude besplatne verzije koje mogu imati ograničenja, dok drugi nude besplatne demo verzije, probna razdoblja ili tarife koje ovise o veličini poduzeća ili broju korisnika.
+
+                U Kimaiu nudimo besplatno probno razdoblje za istraživanje našeg rješenja prije nego što odlučiš je li trebaš dodatne korisnike, funkcije ili dodatke. Isprobaj ga besplatno već danas i uvedi više reda u svoj radni dan.
+        title: Evidentiranje vremena za agencije
+        cta:
+            title: |
+                Jesi li spreman/na
+                evidentirati vrijeme u svojoj agenciji?
+        name: Agencije
+        introduction: |
+            Vodiš agenciju – bilo da se radi o marketingu, odnosima s javnošću, dizajnu, savjetovanju, ljudskim resursima ili arhitekturi? Onda znaš koliko je evidentiranje vremena ključno za tvoje poslovanje. Praćenje radnih sati zaposlenika i vremena utrošenog na projekte mušterija nužno je za točno fakturiranje, razumijevanje profitabilnosti i upravljanje rastućim timom.
+
+            No upravljanje evidentiranja vremena putem proračunskih tablica i nepovezanih alata brzo može postati kaotično, posebno kako tvoja agencija raste. U takvim slučajevima može rješenje za evidentiranje vremena biti prava prekretnica.
+
+            Pogledajmo zašto se uspješne agencije oslanjaju na softver za evidentiranje vremena i koje su ključne funkcije na koje treba obratiti pozornost. Kao primjer ćemo koristit Kimai – jednostavno rješenje razvijeno imajući na umu potrebe agencija.
+        intro: Otključaj potencijal profitabilnosti u brzorastućim agencijama uz skalabilni sustav evidentiranja vremena
+        subtitle: Ključ za profitabilnost
+    lawyer:
+        about:
+            title: Prvi koraci za bolje evidentiranje vremena u odvjetničkom uredu
+            introduction: |
+                Razumijemo da isprobavanje novog softvera u odvjetništvu može biti izazovno. Zato nudimo besplatno probno razdoblje bez obveza, jednostavno uključivanje, fleksibilan skup funkcija koje rastu kako ured ili tim raste te osobnu podršku.
+
+                Vjerujemo da čak i tijekom besplatnog probnog razdoblja možeš isprobati način da se prestaneš boriti s evidencijom radnog vremena. Isprobaj Kimai već danas i provedi ugodan organiziran dan!
+        features:
+            title: Kimai funkcije koje odvjetnički uredi vole
+            introduction: Kimai je posebno dizajniran imajući na umu pravne stručnjake. Izradili smo alat za evidentiranje vremena koji govori tvojim jezikom – jednostavan, pouzdan, usklađen s GDPR-om i usmjeren na to da ti radni dan učini ugodnijim.
+        testimonials:
+            introduction: U Kimaiu su pravni stručnjaci i savjetnici oduvijek su bili naš fokus. Sada možeš pročitati o stvarnom iskustvu naših korisnika.
+            title: Uvidi u evidentiranje vremena naših kupaca
+        title: Evidentiranje vremena za odvjetnike
+        intro: Riješi se kompleksnih vremenskih tablica i usredotoči se na pružanje iznimnih pravnih usluga uz moderna rješenja za evidentiranje vremena
+        subtitle: Usredotoči se na naplative sate, a ne na komplicirane vremenske tablice
+        name: Odvjetnici
+        introduction: |
+            U brzom svijetu pravnih usluga, vrijeme je tvoja najvrjednija imovina. Odvjetnička društva, samostalni odvjetnici i pravni timovi trebaju rješenje za evidentiranje vremena prilagođeno jedinstvenim zahtjevima njihove profesije. U Kimaiu smatramo da bi tvoj fokus trebao biti pružati vrhunske pravne usluge – a ne boriti se s kompliciranim evidencijama radnog vremena.
+
+            Ručno evidentiranje sati, beskrajne proračunske tablice i složeni procesi izvoza oduzimaju dragocjeno vrijeme koje bi se bolje utrošilo na pružanje stručnih pravnih savjetovanja. Otkrij kako učinkovito evidentiranje vremena može pomoći da se usredotočiš na ono što je doista važno.
+        cta:
+            title: |
+                Jesi li spreman/na za
+                revoluciju u evidentiranju vremena u svom uredu?
+    software-developers:
+        features:
+            title: Kimai funkcije koje koriste softverski inženjeri
+            introduction: Otkrij savršen skup funkcija prilagođenih tvojim zadacima i ciljevima. Što ako tvom IT timu nije potreban samo jednostavan alat za evidentiranje vremena, već robusno rješenje s različitim mogućnostima integracije i naprednim funkcijama za fakturiranje i analizu?
+        title: Evidentiranje vremena za programere softvera
+        about:
+            introduction: |
+                Biranje pravog alata za evidentiranje vremena često počinje odlukom između besplatne ili demo verzije. Cijena je također ključan faktor, stoga traži opcije koje mogu rasti zajedno s tvojim timom.
+
+                U Kimaiu nudimo besplatno probno razdoblje kako biste mogli istražiti naše rješenje prije nego što odlučite trebaju li vam dodatne značajke ili dodaci. S cijenama koje počinju već od samo 0,99 € po korisniku za neke industrije, riječ je o pristupačnom rješenju. Isprobajte ga besplatno već danas i unesite više organizacije u svoj radni dan!
+            title: Prvi koraci za bolje evidentiranje vremena
+        subtitle: Maksimiraj svoju produktivnost
+        cta:
+            title: |
+                Jesi li spreman/na isprobati novi način
+                evidentiranja vremena u tvojem IT timu?
+        testimonials:
+            title: IT stručnjaci razgovaraju o evidentiranju vremena
+            introduction: U Kimaiu smo dizajnirali našu platformu za evidentiranje vremena imajući na umu potrebe pojedinačnih programera, razvojnih timova i IT odjela. Naš pristup je usmjeren na izgradnju rješenja otvorenog koda za tehnološke timove svih veličina i u različitim sektorima. Pogledaj povratne informacije koje smo dobili od naših korisnika iz tehnologije.
+        name: Programeri softvera
+        intro: Maksimiraj produktivnost tima i postigni ravnotežu između poslovnog i privatnog života uz pametno evidentiranje vremena
+        introduction: |
+            Itekako dobro poznajemo te izazove – beskrajni prekovremeni sati, stresni rokovi, dugotrajne greške i stalna borba da projektni menadžeri i mušterije prepoznaju stvarni trud uložen u tvoj kod. To je začarani krug koji brzo može dovesti do izgaranja (burnouta) i narušiti ravnotežu između poslovnog i privatnog života. Ovo je čest izazov s kojim se suočavaju razvijatelji softvera, programeri, inženjeri i drugi IT stručnjaci.
+
+            No postoji način da se oslobodi tog kruga i ponovo preuzmeš kontrolu nad svojim vremenom i zadacima. Korištenjem pravih alata možeš povećati svoju produktivnost i dobiti vrijedne uvide u svoje projekte. Bilo da si freelance programer, dio startup tima ili upravljaš cijelim IT odjelom, pronalaženje skalabilnog rješenja s pravim funkcijama je ključan. Istražimo Kimai – jednostavan, ali moćan softver za evidentiranje vremena – kao primjer.
+    consultants:
+        features:
+            title: Kimai funkcije koje savjetnici najčešće koriste
+            introduction: Bez obzira jesi li freelancer ili dio velikog odjela za konzalting, Kimai nudi alate koji pomažu pri skaliranju ovisno o rastu poslovanja.
+        about:
+            title: Prvi koraci za bolje evidentiranje vremena u konzaltingu
+            introduction: |
+                Izvuci najviše iz svog softvera za evidentiranje vremena. Započni istraživanjem svih njegovih funkcionalnosti putem demo verzije ili besplatnog probnog razdoblja. Kao savjetnik, vjerojatno ćeš htjeti pažljivo razmotriti opcije cijena i unaprijed razmisliti o tome koje bi daljnje funkcionalnosti mogle biti potrebne kako tvoje poslovanje raste.
+
+                U Kimaiu razumijemo taj put. Zato nudimo besplatno probno razdoblje koje omogućuje da isprobaš naše rješenje prije nego što odlučiš koje bi dodatne funkcionalnosti ili dodaci tebi najbolje odgovarali. Naša sveobuhvatna aplikacija raste zajedno s tvojim poslovanjem – jednostavno dodaj proširenja kad god ti zatrebaju. Isprobaj aplikaciju besplatno već danas i uživaj u dobro organiziranom danu!
+        subtitle: Maksimiraj naplative sate i učinkovitost
+        name: Savjetnici
+        title: Evidentiranje vremena za savjetnike
+        testimonials:
+            introduction: U Kimaiu smo izgradili našu platformu kako bismo zadovoljili potrebe pojedinačnih savjetnika kao i velikih timova. Kao sveobuhvatno rješenje, Kimai uživa povjerenje tvrtki svih veličina u raznim sektorima. Evo što kažu naši korisnici iz područja konzaltinga.
+            title: Uvidi u evidentiranje vremena od stručnjaka za konzalting
+        intro: Povećaj profitabilnost i vrijednost za mušterije strateškim evidentiranjem vremena za savjetničke usluge
+        introduction: |
+            U današnjem dinamičnom okruženju konzaltinga, bilo da se radi o savjetovanju za menadžment, financijskim savjetovanjem, IT uslugama, znanošću o podacima, pravnim savjetovanjem, psihološkim uslugama ili konzaltingom za ljudske resurse – jedna istina ostaje stalna: vrijeme je vaš najvrjedniji resurs. Precizno evidentiranje vremena nije samo bilježenje sati. Radi se o maksimiziranju profitabilnosti i pružanju vrijednosti tvojim mušterijama.
+
+            Budimo iskreni – upravljanje konzultantskim projektima nije lako. Članovi timova mogu istovremeno raditi iz New Yorka, Londona i Singapura. To je puno stvari koje treba pratiti! Osim toga je potrebno točno znati tko je radio na čemu za ispravno naplaćivanje usluga mušterijama. Bez pravilnog evidentiranja vremena stvari brzo mogu postati kaotične. Potrebno je kontrolirati troškove projekata, ostati usklađen s propisima i osigurati da se vrijeme timova koristi na najbolji mogući način.
+
+            Zato su sveobuhvatni alati za evidentiranje vremena postali neophodni za savjetnike. Oni pretvaraju sav taj potencijalni kaos u jasne, organizirane podatke koji pomažu u napredovanju poslovanja. Pogledajmo kako sveobuhvatno rješenje poput Kimai može transformirati tvoje savjetničko poslovanje.
+        cta:
+            title: |
+                Jesi li spreman/na isprobati novi način
+                evidentiranja vremena u tvojoj praksi?
+    freelancers:
+        name: Freelancer
+        testimonials:
+            introduction: "Nemoj samo nama vjerovati. Evo što kažu drugi freelanceri:"
+            title: Što drugi profesionalci dijele o evidentiranju vremena s Kimaijem
+        features:
+            title: 'Funkcije koje freelanceri vole'
+            introduction: Kimai je osmišljen kako bi pomogao samostalnim poduzetnicima da pojednostave svoj tijek rada. Bez obzira radiš li s više mušterija ili upravljaš raznim projektima, Kimai pruža alate koji su potrebni za organizaciju i profitabilnost.
+        introduction: |
+            Kada je freelancing novo poglavlje u tvom životu, moraš isprobati nove uloge i suočiti se s novim izazovima. Jedan od njih je upravljanje vremenom i usklađivanje radnih sati s profitabilnošću tvojih projekata. Balansiranje više projekata zahtijeva analizu, kako za tebe tako i za tvoje mušterije.
+
+            No postoje alati koji pomažu freelancerima, ugovornim suradnicima, digitalnim nomadima i samostalnim poduzetnicima da prate svoje naplative sate, izdaju račune klijentima bez stresa, upravljaju satnicama i troškovima itd.
+
+            To omogućuje da se usredotočiš na ono što voliš – i da budeš plaćen/a onoliko koliko zaista zaslužuješ. Pogledajmo kako to postići uz Kimai kao alat za evidentiranje vremena za freelancere.
+        cta:
+            title: |
+                Jesi li spreman/na
+                maksimalno iskoristiti svoje vrijeme kao freelancer?
+        title: Evidentiranje vremena za uspješne freelancere
+        about:
+            title: Prvi koraci za bolje upravljanje vremenom
+            introduction: |
+                Jesi li spreman/na iskusiti prednosti Kimai-a? Nudimo besplatno probno razdoblje za istaživanje svih funkcija prije nego što odlučiš koji je softver za evidentiranje vremena najbolji za tebe kao samostalnog profesionalca.
+
+                Prijavi se već danas, počni evidentirati svoje vrijeme doslovno jednim klikom i uvedi više reda u svoj radni dan!
+        intro: Maksimiraj svoj prihod kao samostalni poduzetnik
+    universities:
+        cta:
+            title: |
+                Jesi li spreman/na
+                transformirati upravljanje vremenom u tvojoj instituciji?
+        subtitle: 'Usredotoči se na izvještavanje, a ne na komplicirane administrativne tijekove rada'
+        testimonials:
+            introduction: |
+                U Kimaiu smo dizajnirali našu platformu za evidentiranje vremena kako bismo zadovoljili potrebe agencija, timova i freelancera.
+                Naše intuitivno sučelje i moćne funkcije pomažu agencijama poput tvoje da rade pametnije i profitabilnije.
+                Sada možeš „poslušati” recenzije stvarnih korisnika.
+            title: Što kažu naši kupci
+        name: Sveučilišta
+        introduction: |
+            Upravljanje vremenom u visokom obrazovanju donosi jedinstvene izazove, uključujući raspoređivanje predavanja i nastave, praćenje istraživačkih projekata, raspodjelu vremena studentima i nastavnicima te dugotrajne administrativne zadatke.
+
+            Učinkovita rješenja za evidentiranje vremena mogu pomoći pojednostaviti te procese, omogućujući nastavnicima i istraživačima da se usredotoče na svoje temeljne odgovornosti
+        features:
+            title: Funkcije za upravljanje vremenom na razini institucije
+            introduction: |
+                Naše rješenje za evidentiranje vremena usavršeno je suradnjom s više sveučilišta. Povratne informacije korisnika pokreću naš razvoj, osiguravajući funkcije koje istinski služe akademskim potrebama.
+
+                Evo par akademskih instituta koji koriste Kimai: `Universität Hamburg`, `Universität Bonn`, `Universität Wien`, `Universität Stuttgart`, `Universität Frankfurt`, `University of Fribourg`, `TU Dresden` i `Sveučilište u Moskvi`.
+        about:
+            title: Započni svoje putovanje prema boljem upravljanju vremenom
+            introduction: |
+                Svijesni smo da uvođenje novog sustava za evidentiranje vremena u akademskom okruženju zahtijeva pažljivo razmatranje.
+                Zato nudimo besplatno probno razdoblje i demo sesije.
+                Isprobaj Kimai besplatno sada i organiziraj svoj svakodnevni život!!
+        intro: Povećaj učinkovitost svoje institucije pomoću snažnog evidentiranja vremena
+        title: Evidentiranje vremena za akademski sektor
+    non-profit:
+        about:
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+            title: Our affordable non-profit plan for you
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        subtitle: Less administrative burden, so your mission stays in focus
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking
+        title: Time Tracking for Non-Profit Organizations ✨
+        features:
+            title: Features that NPOs appreciate
+            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+        testimonials:
+            title: What other NPOs say about Kimai
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        intro: We put your work and vision center stage while simplifying administration and billing
+        name: Non-Profits
 industry:
-    office: Za uredske radnike
     name: Evidentiranje vremena za svako poduzeće
     intro: Pomoću Kimai softvera za evidentiranje vremena možeš poboljšati produktivnost tvojih zaposlenika.
     title: Evidentiranje vremena za svaku branšu
@@ -562,18 +787,16 @@ time-tracking-terms:
     title: Pojmovi evidentiranja vremena
     intro: Zaviri iza kulisa evidentiranja vremena i saznaj više o često korištenim pojmovima u Kimaiju
     name: Pojmovi evidentiranja vremena
-changelogs:
+changelog:
     name: Dnevnik promjena
     title: Kimai Cloud dnevnik promjena
-    intro: Pregled svih aktualiziranja Kimai oblaka i kada su instalirana.
+    subtitle: Pregled svih aktualiziranja Kimai oblaka i kada su instalirana.
 open-source-community:
     name: Otvoreni kod
 integrations:
     subtitle: Poveži Kimai sa svojim omiljenim alatima – od desktop aplikacija do mobilnih klijenata, CLI alata i još mnogo toga – i evidentiraj vrijeme gdje god radiš.
     name: Aplikacije i integracije
     title: Aplikacije i integracije za Kimai
-onpremise:
-    name: Vlastiti hosting
 product:
     name: Proizvod
 store-category-desktop: Desktop aplikacije
@@ -587,3 +810,22 @@ stories:
     location: Lokacija
     company: Poduzeće
     employees: Zaposlenici
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+title: Naslov
+date: Datum
+press-media:
+    subtitle: Rado bismo pomogli. Pronađi materijale robne marke u nastavku ili nas kontaktiraj izravno – odgovaramo brzo.
+    contact_title: Pokriva Kimai?
+    contact_button: Pošalji nam e-mail
+    name: Mediji
+    contact_text: Slobodno postavi pitanja putem e-pošte ili zakaži razgovor.
+per-month: po mjesecu
+version-1:
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+    name: Kimai 1
+on-premise:
+    name: Vlastiti hosting
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.

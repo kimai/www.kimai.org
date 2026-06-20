@@ -1,6 +1,6 @@
 {% if page.lang == 'de' %}
 
-**Der Vertrag zur Auftragsverarbeitung gemäss (EU) 2016/679 steht Ihnen in ihrem Account zur Verfügung**
+**Der Vertrag zur Auftragsverarbeitung für Cloud-Kunden gemäss (EU) 2016/679 steht Ihnen in ihrem Account zur Verfügung**
 
 Der Vertragsabschluss kann nach der DSGVO in elektronischer Form erfolgen. 
 
@@ -10,7 +10,7 @@ Den Vertrag finden Sie unter dem Menüpunkt "Auftragsverarbeitung".
 
 {% else %}
 
-**The data processing agreement according to (EU) 2016/679 is available online in your account**
+**The data processing agreement for cloud-customer according to (EU) 2016/679 is available online in your account**
 
 According to the GDPR, the agreement can be concluded in electronic form. 
 

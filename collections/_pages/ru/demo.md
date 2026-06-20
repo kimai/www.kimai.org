@@ -1,10 +1,8 @@
 ---
 title: Demo
-lang: ru
-layout: default
-navi_dark: true
-navi_absolute: true
+layout: page
 permalink: /ru/demo.html
+cta: cloud
 ---
 
 {% include pages/demo.md %}

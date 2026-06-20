@@ -101,9 +101,6 @@ items:
     pcsg-recurring-budget-bundle:
         title: 'Cykliczne budżety'
         intro: 'Automatycznie dodaje pieniądze lub czas do budżetów projektów w określonych okresach za pomocą niestandardowego interwału.'
-    umws-applewatch-app:
-        title: 'Aplikacja Apple Watch'
-        intro: 'Śledź swoje czasy Kimai bezpośrednio na swoim nadgarstku!'
     cloudrizon-kimai-mobile-app-ios:
         title: Kimai Mobile (iOS)
         intro: 'Zdobądź dostęp do Kimai z urządzenia iOS dzięki aplikacji Kimai Mobile.'
@@ -121,7 +118,7 @@ items:
         intro: "Zarządzanie pracownikami: Godziny pracy i nadgodziny. Urlopy, choroby i dni wolne. Zarządzanie świętami i integracja kalendarza. Miesięczne zatwierdzenia z plikiem PDF."
     helsinkisystems-lexoffice:
         title: Synchronizacja faktur Lexoffice
-        intro: Whenever an invoice is created in Kimai this plugin automatically creates a Lexoffice invoice.
+        intro: Za każdym razem, gdy w Kimai tworzona jest faktura, ta wtyczka automatycznie tworzy fakturę w Lexoffice.
     simonschaufi-customer-email-report-bundle:
         title: Raport e-mailowy klienta
         intro: Wysyłanie klientom raportów e-mail o godzinach pracy
@@ -129,30 +126,45 @@ items:
         title: Period Insert
         intro: Generuj wpisy za zadany okres czasu.
     customer-portal:
-        intro: Share client and project statistics and timesheets with anyone using a secret URL, optionally password protected.
-        title: Customer Portal
+        intro: Udostępniaj statystyki klientów i projektów oraz karty czasu pracy dowolnym osobom za pomocą sekretnego adresu URL, opcjonalnie chronionego hasłem.
+        title: Portal klienta
     owlysk-codetimer-mobile:
         intro: Android client for Kimai
         title: CodeTimer-Mobile
     eon-timer:
         title: Eon Timer
-        intro: Time tracking for Mac, seamlessly integrated with Kimai – both On-Premise and Cloud.
+        intro: Śledzenie czasu na Maca, w pełni zintegrowane z Kimai – zarówno w wersji On-Premise, jak i Cloud.
     playmoweb-kimtrack:
         title: KimTrack
-        intro: Desktop client for macOS, Windows, and Linux to track time from your menu bar.
+        intro: Klient desktopowy na macOS, Windows i Linux do śledzenia czasu z poziomu paska menu.
     potx8o-kimai-vscode:
         title: VSCode / VSCodium
-        intro: VSCode extension to start and stop your timers
+        intro: Rozszerzenie VSCode do uruchamiania i zatrzymywania timerów
     foraum-kimai-clock:
-        intro: macOS menu bar app to track time with Kimai
+        intro: Aplikacja na pasku menu macOS do śledzenia czasu z Kimai
         title: KimaiClock
+    dolux-swiss-qr-bundle:
+        intro: Szwajcarskie kody QR na Twoich fakturach QR.
+        title: Faktury z kodem QR dla Szwajcarii
+    drthomasentner-timai:
+        intro: Klient Kimai na iOS, śledzenie czasu na iPhonie i iPadzie
+        title: Timai
+    kleinitsolutions-teams-integration:
+        intro: Pomaga porządkować pliki związane z projektami w Microsoft Teams
+        title: Integracja z Microsoft Teams
+    simple-accounting-bundle:
+        intro: Śledź pracę rozliczeniową w porównaniu z zafakturowanymi kwotami i ręcznymi korektami na poziomie projektu.
+        title: Proste rozliczenia
+    mte90-plasmoid-kimai:
+        title: KDE Plasmoid
+        intro: Rejestruj swoje aktywności w środowisku KDE
+    kloudshift-klockshift:
+        title: KlockShift - integracja z Bexio dla firm w Szwajcarii
+        intro: KlockShift łączy Kimai z Bexio, automatycznie synchronizując Twoje wpisy czasu z danymi faktur Bexio. Stworzony specjalnie dla szwajcarskich freelancerów oraz małych i średnich firm.
+    engazan-kimaitray:
+        title: KimaiTray
+        intro: System tray companion app for Kimai on macOS, Windows, and Linux
 screenshots:
-    cloudrizon-kimai-mobile-app-android0:
-        description: 'Ekran startowy aplikacji'
-    cloudrizon-kimai-mobile-app-android1:
-        description: 'Prosty widok listy wszystkich wpisów w kartotece czasowej'
-    cloudrizon-kimai-mobile-app-android2:
-        description: 'Pozwala konfigurować i przełączać się między wieloma instancjami Kimai'
     katjaglass-approval-bundle0:
         description: 'Wyświetla szczegóły tygodnia, takie jak czas pracy, oczekiwany czas i działania, takie jak przesłanie do zatwierdzenia'
     katjaglass-approval-bundle1:
@@ -280,9 +292,9 @@ screenshots:
     controlling-bundle6:
         description: Wybrany użytkownik nie ma zapisanych ustawień kontraktu w profilu, dlatego Kimai może wyświetlać tylko przepracowane godziny.
     simonschaufi-customer-email-report-bundle0:
-        description: Customer administration with the display of the new setting for the plugin
+        description: Panel administracyjny klienta z wyświetlaniem nowego ustawienia wtyczki
     simonschaufi-customer-email-report-bundle1:
-        description: Daily report as a responsive e-mail for the customer
+        description: Dzienny raport jako responsywna wiadomość e-mail dla klienta
     lnngyn-period-insert-bundle0:
         description: Period insert page to generate timesheet entries
     owlysk-codetimer-mobile-screen1:
@@ -290,26 +302,64 @@ screenshots:
     owlysk-codetimer-mobile-screen2:
         description: Android client for Kimai.
     eon-timer-screen3:
-        description: Project selection
+        description: Wybór projektu
     eon-timer-screen2:
-        description: A running timer
+        description: Działający timer
     eon-timer-screen1:
-        description: Timer actions
+        description: Akcje timera
     playmoweb-kimtrack-3:
-        description: Access your timesheets from your menu bar
+        description: Dostęp do kart czasu pracy z poziomu paska menu
     playmoweb-kimtrack-4:
-        description: Real-time API integration, your timesheets are always up to date
+        description: Integracja API w czasie rzeczywistym — karty czasu są zawsze aktualne
     playmoweb-kimtrack-7:
-        description: Dark & light themes for your comfort
+        description: Motyw jasny i ciemny dla Twojego komfortu
     playmoweb-kimtrack-6:
-        description: Decide what to do with your idle time
+        description: Zdecyduj, co zrobić z czasem bezczynności
     playmoweb-kimtrack-8:
-        description: Customizable preferences
+        description: Konfigurowalne preferencje
     playmoweb-kimtrack-2:
-        description: Connect with any Kimai instance
+        description: Połącz się z dowolną instancją Kimai
     playmoweb-kimtrack-1:
-        description: Overview of all your timesheets
+        description: Przegląd wszystkich Twoich kart czasu pracy
     playmoweb-kimtrack-5:
-        description: Smart idle reminders, never forget to pause your timer
+        description: Inteligentne przypomnienia o bezczynności — nigdy nie zapomnij wstrzymać timera
     foraum-kimai-clock-hero-image:
-        description: KimaiClock in the macOS menu bar
+        description: KimaiClock na pasku menu macOS
+    timai-screen3:
+        description: Ustawienia i połączenie z serwerem
+    timai-screen2:
+        description: Wybór projektu i wpisy czasu
+    timai-screen1:
+        description: Główny widok Timai ze śledzeniem czasu
+    timai-screen9:
+        description: Integracja Timai z Dynamic Island
+    timai-screen7:
+        description: Szybka zmiana użytkownika w Timai
+    timai-screen4:
+        description: Uruchomienie Timai Live Timer
+    timai-screen5:
+        description: Zatrzymanie Timai Live Timer
+    timai-screen6:
+        description: Przegląd projektu z widokiem budżetu godzinowego
+    timai-screen8:
+        description: Widget Live Activity dla Timai
+    kleinitsolutions-teams-integration-0:
+        description: Ekran konfiguracji wtyczki integracji z Teams
+    kleinitsolutions-teams-integration-1:
+        description: Przykład utworzonych folderów w Microsoft Teams
+    mte90-plasmoid-kimai-1:
+        description: Przykład dwóch aktywności w panelu KDE
+    kloudshift-klockshift-3:
+        description: Wpisz opis nowej pozycji faktury lub pozwól, by AI go zaproponowała
+    kloudshift-klockshift-5:
+        description: Skonfiguruj wartości domyślne dla faktury Bexio
+    kloudshift-klockshift-2:
+        description: Użyj filtrów, aby zawęzić wpisy czasu
+    kloudshift-klockshift-4:
+        description: Skonfiguruj i przetestuj połączenie z Kimai
+    kloudshift-klockshift-1:
+        description: Utwórz pozycję faktury w Bexio
+    engazan-kimaitray-preview:
+        description: KimaiTray popup and settings on macOS
+    engazan-kimaitray-popup:
+        description: Active timer and recent tasks in the tray popup

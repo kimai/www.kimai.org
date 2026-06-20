@@ -19,7 +19,6 @@ homepage-alert-title: 'Controle de tempo gratuito para todos'
 homepage-alert-intro: 'O Kimai é uma solução de código aberto para controle de tempo. Ele rastreia o tempo de trabalho e imprime um resumo das suas atividades sob demanda. Anualmente, mensalmente, diariamente, por cliente, por projeto… A sua simplicidade é a sua força. Pelo fato da interface do Kimai ter com base qualquer navegador da internet, ele roda em várias plataformas, mesmo no seu dispositivo móvel.'
 homepage-alert-button-download: 'Baixar'
 homepage-alert-button-demo: 'Experimente antes'
-cloud-title: 'Nuvem do Kimai (SaaS)'
 cloud-feature-ssl: 'Certificado TLS (SSL) gratuito'
 cloud-feature-hosting: 'Hospedagem e atualizações'
 cloud-feature-backups: 'Cópias de segurança'
@@ -32,7 +31,7 @@ store-features: 'Características'
 store-purchase: 'Comprar'
 store-buy-button: 'Compre agora'
 store-offered-by: 'Oferecido por'
-price-without-vat: 'excl. VAT'
+price-without-vat: 'sem impostos'
 screenshots-title: 'Captura da tela'
 installation: 'Instalação'
 updates: 'Atualizações'
@@ -61,10 +60,13 @@ newsletter:
     sendinblue: Nós usamos o Brevo como a nossa plataforma de marketing. Ao enviar este formulário, você reconhece que as informações que você forneceu serão enviadas ao Brevo para processamento de acordo com os %terms%.
     terms: Termos de uso
     field-invalid: A informação é inválida Revise o formato e tente novamente.
-    title: Não quer perder nada?
+    teaser: Não quer perder nada?
     introduction: Assine o nosso boletim e fique informado sobre as atualizações do Kimai e seus Plug-ins.
     email-title: O seu endereço de e-mail
     button: ASSINE
+    archive: Arquivo
+    name: Boletim
+    subtitle: Se você hospeda o seu próprio Kimai (ou está apenas conhecendo o software), não perca o nosso boletim. Compartilhamos notícias e informações com uma comunidade de pessoas que preferem ter o controle total dos seus dados.
 photos:
     dashboard:
         title: 'Painel principal'
@@ -80,8 +82,7 @@ demo:
     name: 'Demonstração'
     description: Teste e avalie o nosso rastreador de tempo Kimai online, diretamente de nossa página de demonstração.
     title: Teste o Kimai numa das demos
-    introduction: "Experimente a demonstração do Kimai e prometemos: você continuará a usá-la!"
-    choose: Escolha uma das nossas opções de demonstração para ter uma primeira impressão de como o Kimai funciona e quais as funcionalidades que ele oferece.
+    subtitle: Escolha uma das nossas opções de demonstração para ter uma primeira impressão de como o Kimai funciona e quais as funcionalidades que ele oferece.
     reinstall: Esteja ciente de que as demonstrações serão reinstaladas regularmente e todos os dados inseridos serão removidos.
     user: Usuário de teste
     accounts: "Essas contas estão disponíveis para os seus testes. Ou você pode criar o seu próprio usuário de teste no formulário de login de cada demonstração."
@@ -92,8 +93,6 @@ demo:
     empty-description: A versão atual com plugins em destaque, sem dados.
     plugins-description: A versão atual com plugins em destaque e dados de demonstração.
     plugins-title: Em destaque
-    stable-title: Núcleo
-    empty-title: Plug-ins
     stable-description: A última versão, sem plugins, sem dados de demonstração.
 index:
     name: 'Início'
@@ -102,14 +101,14 @@ index:
 download:
     name: 'Instalação'
     title: 'Instalação do Kimai'
-    description: Baixe e instale com o SSH, Docker e o Kubernetes - Kimai controle de tempo
-    intro: Oferecemos várias maneiras de instalar o Kimai. Escolha a opção que mais lhe convém.
-    subtitle: Download e Instalação
+    subtitle: Baixe e instale com o SSH, Docker e o Kubernetes - Kimai controle de tempo
+    eyebrow: Self-Host Kimai
 hosted:
     name: 'Nuvem'
     title: 'Kimai-Cloud — Use o Kimai sem precisar de configuração. Hospedagem grátis do Kimai sem complicações!'
 about:
     name: 'Sobre o Kimai'
+    subtitle: O que começou como um hobby é hoje o principal aplicativo de código aberto para controle de tempo no mundo. Vamos dar uma olhada em sua história.
     description: Conheça a história do rastreador de tempo Kimai e o seu desenvolvedor.
     collaboration:
         title: Colaboração
@@ -122,16 +121,19 @@ about:
         content: O desenvolvimento do Kimai é a combinação ideal da profissão que amo, com suas infinitas possibilidades de aprendizado, e a necessidade de ganhar dinheiro para sustentar minha família. Graças ao Kimai, posso passar mais tempo com minha esposa e meu filho, o que é provavelmente a melhor motivação que se pode imaginar.
     kevin: O Kimai e a nuvem são desenvolvidos e operados por Kevin, um desenvolvedor de software independente de Viena (Áustria).
 store:
-    name: 'Plugins'
-    title: Plugins for Kimai
+    name: 'Plug-ins'
+    title: Plug-ins para o Kimai
     subtitle: Use a ampla variedade de plug-ins, aplicativos e extensões do ecossistema Kimai para equipar a sua solução de registro de horas auto-hospedada com funções adicionais.
-    description: Encontre extensões e suporte comercial para o Kimai
+    eyebrow: Extend Your Time-Tracker
 blog:
     name: 'Blog'
     description: Notícias sobre o Kimai, o programa de rastreamento de tempo
     subtitle: Notícias sobre a equipe de desenvolvimento do Kimai
     title: Notícias do Kimai
     archive-link: Encontre notícias mais antigas sobre %topic% aqui
+    archive-tags: Ver todos
+    category-pages: Use as páginas de categoria para encontrar todas as nossas publicações
+    categories: Categorias
 documentation:
     name: 'Documentação'
     description: Informações de suporte, manual do usuário e outra documentação para rastreamento de tempo Kimai
@@ -144,12 +146,11 @@ features:
     name: Recursos
 docu-developer:
     name: Desenvolvedor
-docu-onpremise:
-    name: No local
 docu-manual:
     name: Manual do usuário
 alternatives:
-    name: Kimai alternatives
+    subtitle: Cada caso de uso, cada empresa e cada fluxo de trabalho é diferente, e seus requisitos precisam ser avaliados antes de se decidir por um rastreador de tempo. Aqui estão algumas alternativas ao Kimai, que serão comparadas em detalhes.
+    name: Comparar controle de tempo
     description: Kimai é a melhor aplicação de rastreamento de tempo de código aberto disponível, não apenas para equipes baseadas em projetos. Veja como o Kimai se compara às soluções alternativas de rastreamento de tempo para que você possa escolher a certa para a sua organização.
 feature:
     mobile-ready:
@@ -227,9 +228,6 @@ feature:
     user-profile:
         name: "Perfil do usuário"
         description: "Estatísticas pessoais e configurações individuais para a taxa horária, para o tema do Kimai, para a senha e o avatar."
-    user-registration:
-        name: "Registro de usuário"
-        description: "O Kimai suporta o auto-registro do usuário com ativação por e-mail."
     password-reset:
         name: "Redefinir a senha"
         description: "Esqueceu a sua senha? O Kimai ajuda você a redefini-la via e-mail."
@@ -274,6 +272,12 @@ feature:
             security_3: Sem multilocação, cada cliente tem o seu próprio banco de dados
             security_4: Os servidores são hospedados em um data center na UE
         description: O software é tão seguro quanto o sistema onde é executado. Adoto uma abordagem de defesa completa com infraestrutura de servidor e rede. Os clientes hospedados na plataforma são protegidos por várias camadas de segurança.
+    electronic-invoicing:
+        name: Faturas eletrônicas
+        description: Crie faturas eletrônicas nos formatos XML e PDF/A, em conformidade com EN 16931, XRechnung 3.0, Zugferd/Factur-X, e usando a sintaxe CII e UBL
+    eu-hosting:
+        description: Independente e europeu 🇪🇺 – desenvolvido na Áustria 🇦🇹 e hospedado na Alemanha 🇩🇪
+        name: Hospedagem na UE
 install:
     alert-vps: Nesta fase, não é possível instalar o Kimai baixando um arquivo ZIP e enviando os arquivos para o seu servidor web. Isso ocorre porque o Composer precisa ser executado via linha de comando. Isso não significa necessariamente que você precisa de um VPS. Alguns hosts compartilhados fornecem acesso SSH, por meio do qual você poderá instalar o Composer e o Kimai sem maiores problemas.
     ssh: Este método instala o Kimai diretamente no seu servidor.
@@ -288,8 +292,8 @@ price-contract: Mediante solicitação
 full-documentation: Documentação completa em inglês
 contact-developer: Caso tenha alguma dúvida, use as seguintes informações de contato para entrar em contato diretamente com o desenvolvedor.
 homepage:
-    title: Controle de tempo para equipes orientadas por projetos
-    intro: Nossa plataforma de código aberto foi projetada para acompanhar e analisar os dados de tempo da sua empresa, o que a torna perfeita para empresas de todos os tamanhos. O Kimai ajuda você a ficar de olho no tempo e no dinheiro.
+    title: Controle de tempo para equipes de projeto
+    subtitle: Nossa plataforma de código aberto foi projetada para acompanhar e analisar os dados de tempo da sua empresa, o que a torna perfeita para empresas de todos os tamanhos. O Kimai ajuda você a ficar de olho no tempo e no dinheiro.
 section-teaser:
     report:
         title: Relatórios
@@ -316,16 +320,11 @@ history:
     year-2023: Todo o trabalho árduo finalmente valeu a pena e o Kimai agora é 100% o meu trabalho em tempo integral. Muito obrigado!
     year-2014: A última versão do Kimai 1 é criada, o desenvolvimento é interrompido e não há muito mais atividade.
     year-2006: A primeira versão do Kimai foi lançada e, aos poucos, ganhou uma base crescente de usuários e de desenvolvedores.
-    intro: O que começou como um hobby é hoje o principal aplicativo de código aberto para controle de tempo no mundo. Vamos dar uma olhada em sua história.
     year-2018: A reescrita do Kimai chega à comunidade, a migração de dados funciona e a adoção está crescendo.
     current: "O Kimai é um software de controle de tempo com uma longa história, a primeira versão foi lançada em 2006. Por que menciono isso? Porque já vi muitos programas surgirem e desaparecerem desde então - acredite em mim quando digo isso: O Kimai veio para ficar. Passei muitos anos desenvolvendo o Kimai por diversão, hoje o Kimai é o meu negócio e nunca estive tão motivado para continuar a aprimorá-lo.\n\nCriei o Kimai com um único objetivo: registrar, gerenciar, avaliar e contabilizar as horas de trabalho. O Kimai suporta um número ilimitado de usuários, clientes, projetos e registros de horas, para que você possa gerenciar todas as suas equipes em uma instalação fácil de usar. O Kimai está traduzido em dezenas de idiomas e funciona em qualquer dispositivo com acesso à Internet e um navegador, até mesmo em seu dispositivo móvel quando você estiver em movimento, graças ao design responsivo.\n\nVocê pode criar faturas a partir de suas planilhas de horas diretamente no navegador, com modelos de faturas personalizáveis. O Kimai também pode ser ampliado de várias maneiras, especialmente por meio dos vários plug-ins criados por uma comunidade ativa.\n\nSeja você um freelancer, uma pequena organização ou uma empresa com centenas de funcionários, o Kimai pode ajudá-lo a gerenciar seus negócios. Decida por si mesmo e teste o Kimai com a ajuda das instalações de demonstração.\n"
     past: "O Kimai tem uma longa história e estava muito à frente de seu tempo quando a equipe de Torsten Höltge começou a desenvolvê-lo em 2006. Ele tinha um design responsivo (graças a muita mágica do Javascript) em uma época em que essa palavra ainda não havia sido oficialmente inventada.\nAssumi o desenvolvimento do Kimai em 2009, quando Torsten quis interrompê-lo por falta de tempo, e mantive e ampliei o Kimai por vários anos com a ajuda de outros entusiastas do código aberto.\n\nNesse meio tempo, a comunidade PHP estava fazendo grandes avanços, enquanto o Kimai estava ficando cada vez mais para trás devido à sua história. A base tinha muitos pontos fracos técnicos e, após muitos anos de desenvolvimento, a base de código estava se tornando cada vez mais difícil de manter.\nA ideia de reescrever o Kimai com estruturas modernas já existia há algum tempo, também impulsionada por solicitações da comunidade, mas ninguém tinha os recursos para levar essa ideia adiante. No final de 2017, vários fatores se juntaram e aproveitei o momento para começar a desenvolver a próxima etapa evolutiva, o \"Kimai 2\".\n\nO Kimai original foi lançado pela primeira vez em 2006 e tem sido usado por muitas pessoas em todo o mundo, tenho orgulho disso e também de sua grande comunidade. Gostaria de agradecer a todos que contribuíram para o Kimai.\n"
 store-hero-counter: '%number% de clientes que já estão conosco'
 cta:
-    tech-support:
-        question: Suporte técnico &amp; e comercial
-        button: Vamos trabalhar juntos
-        answer: Garanto suporte para todos os aplicativos que criei e ajudarei você e a sua equipe.
     get-started:
         answer: Inicie o seu controle de tempo agora
         button: Obtenha ajuda
@@ -342,13 +341,28 @@ highlight:
         oss: Código Aberto
         versions: Nas nuvens e no local
         gdpr: Em conformidade com o GDPR
-        european: Independent and European 🇪🇺 – built in Austria 🇦🇹 and hosted in Germany 🇩🇪 with a strong commitment to data protection, transparency and open-source quality.
+        european: Independente e europeu 🇪🇺 – desenvolvido na Áustria 🇦🇹 e hospedado na Alemanha 🇩🇪 com um forte compromisso com a proteção de dados, transparência e qualidade do código aberto.
 description: Descrição
 oss-cloud-compare:
-    saas: Hospedado para você
-    onpremise: Hospedado por você
     intro: O Kimai é um programa de código aberto que está disponível para hospedagem própria e SaaS.
     title: Um programa, duas versões
+    on-premise:
+        badge: Free forever
+        reason_5: Plugin marketplace
+        reason_3: Docker & manual install
+        reason_2: Full data ownership
+        reason_1: 100% open source (AGPL 3)
+        reason_4: Community support
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+    cloud:
+        reason_2: Automatic updates & backups
+        reason_1: Instant setup, no server needed
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_5: Plugins included
+        reason_4: Priority support
+        badge: Recommended
+        reason_3: GDPR-compliant EU hosting
+    subtitle: Choose your path
 section-features:
     subtitle: O Kimai oferece muito mais do que apenas o controle de horas. Aqui está uma lista de outras funções comerciais importantes.
     title: O que o Kimai pode fazer por você?
@@ -359,9 +373,8 @@ testimonials:
 footer: Controle de tempo gratuito e fácil de usar para freelancers, agências e empresas. O Kimai é um software de código aberto disponível para hospedagem própria e como o SaaS.
 slogan: '#1 Controle de tempo de código aberto'
 comparison:
-    footer-title: Comparar
     is_oss: Software de código aberto
-    location: Servidor de dados na União Europeia
+    location: Localização do servidor
     invoices: Faturamento
     backup_frequency: Cópias de segurança
     custom_domain: Domínio personalizado
@@ -378,14 +391,13 @@ comparison:
     server_maintenance: Manutenção do servidor
     saml: SAML
     ip_restriction: Restrição de acesso IP
-    alternatives: Alternativas ao Kimai
     finding: Encontrando a solução certa de rastreamento de tempo
-    use_case: Cada caso de uso, cada empresa e cada fluxo de trabalho é diferente, e seus requisitos precisam ser avaliados antes de se decidir por um rastreador de tempo. Aqui estão algumas alternativas ao Kimai, que serão comparadas em detalhes.
-    compare_with: Compare Kimai with %name%
+    compare_with: Compare o Kimai com %name%
+    alternative: 'Alternativa ao %product%'
 support:
     name: "Suporte"
     description: "Precisa de suporte? Encontre ajuda para usar, instalar ou atualizar o Kimai."
-    intro: "Alguns clientes preferem executar o Kimai internamente, mas não querem abrir mão do suporte profissional. Estou feliz em ajudar e oferecer um plano de suporte para instalações auto-hospedadas."
+    subtitle: "Alguns clientes preferem executar o Kimai internamente, mas não querem abrir mão do suporte profissional. Estou feliz em ajudar e oferecer um plano de suporte para instalações auto-hospedadas."
     community: "Comunidade"
     community_cta: "Visite o GitHub"
     community_intro: |
@@ -408,6 +420,7 @@ support:
     calendar_intro: |
         Se você deseja uma introdução ao Kimai ou suporte com atualizações, etc., você pode agendar uma sessão paga de compartilhamento de tela com o desenvolvedor, Kevin Papst.
     calendar_refund: "Se você não puder comparecer à sua consulta, você deve cancelar com pelo menos 24 horas de antecedência para que ela possa ser reagendada. Não serão feitos reembolsos."
+    get_in_touch: Entre em contato
 docu-cloud:
     name: Nuvem
 landing_oss:
@@ -455,6 +468,9 @@ plans:
     kiosk: Modo quiosque
     backup_weekly: Semanalmente
     backup_daily: Diariamente
+    customer_portal: Portal do cliente
+    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
+    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
 pricing:
     short_monthly: Por usuário e mês
     short_annual: Por usuário e ano
@@ -466,6 +482,14 @@ pricing:
     subtitle: Estes planos estão disponíveis para clientes da nuvem
     cancellation: Você pode cancelar sua assinatura a qualquer momento, até um dia antes do final do período de assinatura.
     tax_exclusive: Todos os preços não incluem impostos.
+    favorite: Most popular
+    annual_cta: You save 20% compared to monthly billing.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
+    monthly_cta: Switch to annual and save 20%.
+    trust_hosting: Hosted in Germany · GDPR compliant
+    trust_trial: 30-day free trial
+    trust_no_fee: No setup fee
 non-profit:
     name: Sem fins lucrativos
     eligible: Saiba mais
@@ -477,7 +501,8 @@ discount-codes:
 faq:
     intro: Estas perguntas frequentes são fornecidas pelo desenvolvedor desta oferta.
     title: Perguntas frequentes
-login: Login
+    subtitle: Perguntas frequentes
+login: Entrar
 store-payment-methods: Formas de pagamento disponíveis
 500:
     name: Erro do servidor (500)
@@ -496,6 +521,8 @@ error:
     description: Lamentamos, mas nosso servidor está em manutenção e não está disponível no momento. Voltaremos em breve!
 cloud:
     status: Condição geral
+    subtitle: Announcements and news about the Kimai Cloud.
+    name: Cloud
 theme:
     dark: Escuro
     light: Claro
@@ -521,12 +548,202 @@ terms-gdpr:
     name: Processamento de dados
 industries:
     name: Indústria
+    agency:
+        features:
+            introduction: Nem todas as ferramentas de controle de tempo são iguais. As melhores soluções para agências oferecem um conjunto especializado de recursos para agilizar os seus fluxos de trabalho.
+            title: Recursos do Kimai mais usados por agências
+        testimonials:
+            tag: Agência
+            introduction: No Kimai, desenvolvemos a nossa plataforma de controle de tempo para atender às necessidades de agências, equipes e profissionais autônomos. A nossa interface intuitiva e os seus recursos poderosos ajudam agências como a sua a trabalhar de forma mais inteligente e lucrativa. Agora você pode "ouvir" as opiniões dos usuários reais.
+            title: O que as agências dizem sobre o controle de tempo
+        about:
+            title: Primeiros passos para um melhor controle de tempo
+            introduction: |
+                Você já deu os seus primeiros passos e temos certeza de que pode fazer uma escolha bem informada. O que mais considerar para escolher o melhor software de controle de tempo? Alguns fornecedores oferecem versões gratuitas, que podem ter limitações, enquanto outros oferecem demonstrações gratuitas, períodos de teste ou opções de preço com base no tamanho do negócio ou no número de usuários.
+
+                No Kimai, oferecemos um período de teste gratuito para que você possa explorar a nossa solução antes de decidir se precisa de mais usuários, recursos ou plug-ins. Experimente gratuitamente hoje e tenha um dia de trabalho mais organizado!
+        title: Controle de tempo para agências
+        cta:
+            title: Ready to start tracking time in your agency?
+        name: Agências
+        introduction: |
+            Você dirige uma agência — seja de marketing, RP, design, consultoria, RH ou arquitetura? Então sabe o quanto o controle de tempo é importante para o seu negócio. Registrar as horas dos funcionários e o tempo dedicado aos projetos dos clientes é essencial para faturar com precisão, entender a lucratividade e gerenciar a sua equipe em crescimento.
+
+            Mas gerenciar o controle de tempo com planilhas e ferramentas desconectadas pode rapidamente virar uma bagunça, especialmente conforme a sua agência cresce. É aí que uma solução dedicada de controle de tempo pode fazer toda a diferença.
+
+            Vamos explorar por que agências bem-sucedidas confiam em softwares de controle de tempo e quais são os recursos essenciais a procurar. Usaremos o Kimai como exemplo de uma solução intuitiva pensada para agências.
+        intro: Libere o potencial de lucratividade em agências em crescimento com um sistema escalável de controle de tempo
+        subtitle: A chave para a lucratividade
+    lawyer:
+        about:
+            title: Primeiros passos para um melhor controle de tempo no seu escritório
+            introduction: |
+                Sabemos que testar um software novo na área jurídica pode parecer assustador. Por isso oferecemos um período de teste gratuito e sem compromisso, um processo de integração simples, um conjunto flexível de recursos que cresce com o seu escritório ou a sua equipe, e suporte dedicado.
+
+                Acreditamos que mesmo durante um período de teste gratuito é possível encontrar uma forma de parar de brigar com planilhas. Experimente o Kimai hoje e tenha um dia bem organizado!
+        features:
+            title: Recursos do Kimai preferidos por escritórios de advocacia
+            introduction: O Kimai foi pensado especificamente para profissionais do direito. Criamos uma ferramenta de controle de tempo que fala a sua língua – simples, confiável, em conformidade com a LGPD/GDPR e focada em tornar o seu dia de trabalho mais leve.
+        testimonials:
+            introduction: No Kimai, profissionais do direito e consultores sempre foram o nosso foco. Agora você pode conferir a experiência real dos nossos usuários.
+            title: Opiniões sobre controle de tempo dos nossos clientes
+        title: Controle de tempo para advogados
+        intro: Esqueça as planilhas complexas e foque em entregar serviços jurídicos excepcionais com soluções modernas de controle de tempo
+        subtitle: Foque nas horas faturáveis, não em planilhas complicadas
+        name: Advogados
+        introduction: |
+            No mundo acelerado dos serviços jurídicos, o tempo é o seu ativo mais valioso. Escritórios de advocacia, advogados independentes e equipes jurídicas precisam de uma solução de controle de tempo adaptada às demandas específicas da sua profissão. No Kimai, entendemos que o seu foco deve estar em entregar serviços jurídicos excepcionais — e não em lutar com planilhas complicadas.
+
+            Registrar horas manualmente, manter planilhas intermináveis e lidar com processos de exportação complexos toma um tempo valioso que poderia ser dedicado à sua assessoria jurídica. Descubra como um controle de tempo eficiente pode ajudar você a focar no que realmente importa.
+        cta:
+            title: Ready to revolutionize time tracking in your practice?
+    software-developers:
+        features:
+            title: Recursos do Kimai usados por engenheiros de software
+            introduction: Descubra o conjunto perfeito de recursos adaptado às suas tarefas e objetivos. E se a sua equipe de TI precisar não só de um controle de tempo simples, mas de uma solução robusta com diferentes opções de integração e recursos avançados de faturamento e análise?
+        title: Controle de tempo para desenvolvedores de software
+        about:
+            introduction: |
+                Escolher o controle de tempo certo geralmente começa pela decisão entre uma versão gratuita ou uma demonstração. O preço também é um fator importante, então busque opções que cresçam com a sua equipe.
+
+                No Kimai, oferecemos um período de teste gratuito para você explorar a nossa solução antes de decidir se precisa de recursos ou plug-ins adicionais. Com preços a partir de apenas € 0,99 por usuário em alguns setores, é uma opção acessível. Experimente gratuitamente hoje e traga mais organização para o seu dia de trabalho!
+            title: Primeiros passos para um melhor controle de tempo
+        subtitle: Maximize a sua produtividade
+        cta:
+            title: |
+                Pronto para experimentar uma nova forma
+                de controlar o tempo na sua equipe de TI?
+        testimonials:
+            title: Profissionais de TI falam sobre controle de tempo
+            introduction: No Kimai, desenvolvemos a nossa plataforma de controle de tempo pensando nas necessidades de desenvolvedores individuais, equipes de desenvolvimento e departamentos de TI. A nossa abordagem é focada em construir soluções de código aberto para equipes técnicas de todos os tamanhos e em diferentes setores. Você pode conferir o tipo de feedback que recebemos dos nossos usuários da área de tecnologia.
+        name: Desenvolvedores de software
+        intro: Maximize a produtividade da equipe e alcance o equilíbrio entre trabalho e vida pessoal com um controle de tempo inteligente
+        introduction: |
+            Conhecemos bem essa dor — horas extras intermináveis, prazos estressantes, bugs que consomem horas e a constante luta para que gerentes de projeto e clientes valorizem o esforço real por trás do seu código. É um ciclo vicioso que pode rapidamente levar ao burnout e prejudicar o seu equilíbrio entre trabalho e vida pessoal. Esse é um desafio comum para desenvolvedores, programadores, engenheiros e outros profissionais da área de tecnologia.
+
+            Mas existe uma forma de quebrar esse ciclo e retomar o controle do seu tempo e das suas tarefas. Com as ferramentas certas, você pode maximizar a sua produtividade e obter insights valiosos sobre os seus projetos. Seja você um programador autônomo, parte de uma startup ou responsável por um departamento de TI inteiro, encontrar uma solução escalável com os recursos certos é essencial. Vamos explorar o Kimai — um software de controle de tempo intuitivo e poderoso — como exemplo.
+    consultants:
+        features:
+            title: Recursos do Kimai mais usados por consultores
+            introduction: Seja você um profissional autônomo ou parte de um grande departamento de consultoria, o Kimai oferece ferramentas para escalar conforme o seu negócio cresce.
+        about:
+            title: Primeiros passos para um melhor controle de tempo na consultoria
+            introduction: |
+                Para aproveitar ao máximo o seu software de controle de tempo, comece explorando todos os recursos por meio de uma demonstração ou de um período de teste gratuito. Como consultor, você provavelmente vai querer avaliar com cuidado as opções de preço e pensar com antecedência nos recursos que poderá precisar conforme o seu negócio crescer.
+
+                No Kimai, entendemos essa jornada. Por isso oferecemos um período de teste gratuito que permite experimentar a nossa solução antes de decidir quais recursos ou plug-ins adicionais funcionam melhor para você. O nosso aplicativo tudo-em-um cresce junto com o seu negócio — você pode adicionar extensões facilmente sempre que precisar. Experimente gratuitamente hoje e tenha um dia bem organizado!
+        subtitle: Maximize as horas faturáveis e a eficiência
+        name: Consultores
+        title: Controle de tempo para consultores
+        testimonials:
+            introduction: No Kimai, construímos a nossa plataforma para atender tanto consultores individuais quanto grandes equipes. Como solução tudo-em-um, o Kimai conta com a confiança de empresas de todos os tamanhos em vários setores. Confira o que os nossos usuários da área de consultoria têm a dizer.
+            title: Insights sobre controle de tempo por profissionais de consultoria
+        intro: Aumente a lucratividade e entregue mais valor aos clientes com um controle de tempo estratégico para a excelência em consultoria
+        introduction: |
+            No dinâmico cenário atual da consultoria — seja consultoria de gestão, assessoria financeira, serviços de TI, ciência de dados, consultoria jurídica, serviços psicológicos ou consultoria de RH — uma verdade permanece constante: o tempo é o seu ativo mais valioso. O controle preciso do tempo não se trata apenas de registrar horas. Trata-se de maximizar a lucratividade e entregar valor aos seus clientes.
+
+            Sejamos sinceros — gerenciar projetos de consultoria não é fácil. Os membros da sua equipe podem estar trabalhando em Nova York, Londres e Singapura ao mesmo tempo. É muita coisa para acompanhar! Além disso, você precisa saber exatamente quem trabalhou em quê para faturar corretamente os seus clientes. Sem um bom controle de tempo, as coisas podem ficar confusas rapidamente. Você precisa controlar os custos dos projetos, manter-se em conformidade com as regulamentações e garantir que o tempo da sua equipe seja bem aproveitado.
+
+            Por isso, as ferramentas tudo-em-um de controle de tempo tornaram-se indispensáveis para consultores. Elas transformam todo esse possível caos em dados claros e organizados que ajudam o seu negócio a prosperar. Vamos explorar como uma solução completa como o Kimai pode transformar a sua consultoria.
+        cta:
+            title: |
+                Pronto para experimentar uma nova forma
+                de controlar o tempo na sua consultoria?
+    freelancers:
+        name: Profissionais autônomos
+        testimonials:
+            introduction: "Não confie só na nossa palavra. Veja o que outros profissionais autônomos dizem:"
+            title: O que outros profissionais contam sobre controlar o tempo com o Kimai
+        features:
+            title: 'Features loved by freelancers '
+            introduction: O Kimai foi pensado para ajudar solopreneurs a otimizar o seu fluxo de trabalho. Seja gerenciando vários clientes ou lidando com diferentes projetos, o Kimai oferece as ferramentas necessárias para se manter organizado e lucrativo.
+        introduction: |
+            Quando ser autônomo é um capítulo novo na sua vida, você precisa assumir novos papéis e enfrentar novos desafios. Um deles é a gestão do tempo e o equilíbrio entre as horas trabalhadas e a lucratividade dos seus projetos. Equilibrar vários projetos exige análise, tanto para você quanto para os seus clientes.
+
+            Mas existem ferramentas que ajudam profissionais autônomos, prestadores de serviço, nômades digitais e solopreneurs a registrar as horas faturáveis, faturar para os clientes sem dor de cabeça, gerenciar tarifas por hora e despesas, entre outros.
+
+            Isso permite que você se concentre no que ama — e receba o que realmente merece. Vamos ver como fazer isso com o Kimai como ferramenta de controle de tempo para profissionais autônomos.
+        cta:
+            title: Ready to get the most of your time as a freelancer?
+        title: Controle de tempo para profissionais autônomos de sucesso
+        about:
+            title: Primeiros passos para uma melhor gestão de tempo
+            introduction: |
+                Está pronto para aproveitar os benefícios do Kimai? Oferecemos um período de teste gratuito para você explorar todos os recursos antes de decidir qual software de controle de tempo é o melhor para você como profissional independente.
+
+                Cadastre-se hoje, comece a controlar o seu tempo literalmente com um clique e tenha um dia mais organizado!
+        intro: Maximize a sua renda como solopreneur
+    universities:
+        cta:
+            title: Ready to transform time management at your institution?
+        subtitle: ' '
+        testimonials:
+            introduction: |
+                No Kimai, desenvolvemos a nossa plataforma de controle de tempo para atender às necessidades de agências, equipes e profissionais autônomos.
+                A nossa interface intuitiva e os seus recursos poderosos ajudam agências como a sua a trabalhar de forma mais inteligente e lucrativa.
+                Agora você pode "ouvir" as opiniões dos usuários reais.
+            title: O que os nossos clientes dizem
+        name: Universidades
+        introduction: |
+            Gerenciar o tempo no ensino superior traz desafios únicos, incluindo a organização de aulas e palestras, o acompanhamento de projetos de pesquisa, a alocação de tempo de alunos e docentes e tarefas administrativas que consomem muito tempo.
+
+            Soluções eficazes de controle de tempo ajudam a agilizar esses processos, permitindo que educadores e pesquisadores se concentrem nas suas responsabilidades principais.
+        features:
+            title: Recursos para a gestão do tempo em toda a instituição
+            introduction: |
+                A nossa solução de controle de tempo foi aprimorada com a colaboração de várias universidades. O feedback real dos usuários orienta o nosso desenvolvimento e garante recursos que realmente atendem às necessidades acadêmicas.
+
+                Apenas para citar algumas das instituições acadêmicas que usam o Kimai: `Universität Hamburg`, `Universität Bonn`, `Universität Wien`, `Universität Stuttgart`, `Universität Frankfurt`, `University of Fribourg`, `TU Dresden` e a `University of Moscow`.
+        about:
+            title: Comece a sua jornada rumo a uma melhor gestão do tempo
+            introduction: |
+                Sabemos que implementar um novo sistema de controle de tempo em um ambiente acadêmico exige uma análise cuidadosa.
+                Por isso oferecemos um período de teste gratuito e sessões de demonstração.
+                Experimente o Kimai gratuitamente agora e tenha um dia mais organizado!
+        intro: Transforme a eficiência da sua instituição com um controle de tempo poderoso
+        title: Controle de tempo para o setor acadêmico
+    non-profit:
+        about:
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+            title: Our affordable non-profit plan for you
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        subtitle: Less administrative burden, so your mission stays in focus
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking
+        title: Time Tracking for Non-Profit Organizations ✨
+        features:
+            title: Features that NPOs appreciate
+            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+        testimonials:
+            title: What other NPOs say about Kimai
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        intro: We put your work and vision center stage while simplifying administration and billing
+        name: Non-Profits
 industry:
     name: Controle de tempo para todas as empresas
     intro: Você pode aumentar a produtividade de seus funcionários com o software de registro de horas Kimai.
     title: Controle de tempo para todos os setores
     subtitle: Mantenha seus projetos sob controle com o Kimai
-    office: Para funcionários de escritório
     more: Mais setores
 terms-plugins:
     name: Licença do plug-in
@@ -548,28 +765,45 @@ time-tracking-terms:
     title: Termos do controle de tempo
     intro: Dê uma olhada nos bastidores da gravação de tempo e saiba mais sobre os termos usados com frequência no Kimai
     name: Termos do controle de tempo
-changelogs:
+changelog:
     name: Registro de alterações
     title: Registro de alterações do Kimai Cloud
-    intro: Visão geral de todas as atualizações de nuvem do Kimai e quando elas foram instaladas.
+    subtitle: Visão geral de todas as atualizações de nuvem do Kimai e quando elas foram instaladas.
 open-source-community:
     name: Código Aberto
-onpremise:
-    name: Hospedagem própria (self-hosting)
 integrations:
-    name: Apps & Integrations
-    subtitle: Connect Kimai with your favorite tools — from desktop apps to mobile clients, CLI tools, and more — and track time wherever you work.
-    title: Apps and integrations for Kimai
+    name: Aplicativos & Integrações
+    subtitle: Conecte o Kimai com as suas ferramentas favoritas — de aplicativos para desktop a clientes móveis, ferramentas de linha de comando e mais — e controle o seu tempo onde quer que você trabalhe.
+    title: Aplicativos e integrações para o Kimai
 product:
     name: Produto
-store-category-desktop: Desktop applications
+store-category-desktop: Aplicativos para desktop
 stories:
-    title: Our customers success stories
-    intro: Discover how our customers utilise our powerful open-source solution and save time and money with Kimai.
-    since: Using Kimai since
-    name: Success Stories
-    wins: Savings with Kimai
-    industry: Industry
-    location: Location
-    company: Company
-    employees: Employees
+    title: Histórias de sucesso dos nossos clientes
+    intro: Descubra como os nossos clientes usam a nossa poderosa solução de código aberto e economizam tempo e dinheiro com o Kimai.
+    since: Usa o Kimai desde
+    name: Histórias de sucesso
+    wins: Economias com o Kimai
+    industry: Setor
+    location: Localização
+    company: Empresa
+    employees: Funcionários
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+title: Título
+date: Data
+press-media:
+    subtitle: Ficaremos felizes em ajudar. Veja abaixo os materiais da nossa marca ou entre em contato diretamente — respondemos rapidamente.
+    contact_title: Vai falar sobre o Kimai?
+    contact_button: Envie um e-mail
+    name: Imprensa & Mídia
+    contact_text: Fique à vontade para enviar as suas perguntas por e-mail ou agendar uma conversa.
+per-month: por mês
+version-1:
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+    name: Kimai 1
+on-premise:
+    name: Hospedagem própria
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.

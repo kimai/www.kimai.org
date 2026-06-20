@@ -1,9 +1,10 @@
 {% assign title = include.title | default: site.data[page.lang].translation.testimonials.title %}
+{% assign type = include.type | default: "position" %}
 <section class="bg-secondary py-5 mb-2 mb-md-4 mb-lg-5">
     <div class="container pt-lg-4 mt-1">
         <h2 class="h1 text-center pb-2 pb-md-3 pb-xl-4">{{ title }}</h2>
         {% if include.introduction %}
-            <p class="mb-5">{{ include.introduction }}</p>
+            <p class="mb-5 text-center">{{ include.introduction }}</p>
         {% endif %}
     </div>
     <div class="pb-lg-3 px-2 px-sm-0">
@@ -41,11 +42,7 @@
                             </span>
                             <div class="card-body pb-3 mb-0">
                                 <div class="mb-0">
-                                    {% if include.language and testimonial.translations[include.language] %}
-                                        {{ testimonial.translations[include.language] | markdownify }}
-                                    {% else %}
-                                        {{ testimonial.text | markdownify }}
-                                    {% endif %}
+                                    {% include testimonial-content.html testimonial=testimonial %}
                                 </div>
                             </div>
                             <div class="card-footer border-0 text-nowrap pt-0">
@@ -66,7 +63,13 @@
                             {% endif %}
                             <div class="ps-3">
                                 <h6 class="fs-sm fw-semibold mb-0">{{ testimonial.name }}</h6>
-                                <span class="fs-xs text-muted">{{ testimonial.position }}</span>
+                                <span class="fs-xs text-muted">
+                                    {% if testimonial.company != '' %}
+                                        {{ testimonial.company }}
+                                    {% else %}
+                                        {{ testimonial.position }}
+                                    {% endif %}
+                                </span>
                             </div>
                         </figcaption>
                     </figure>

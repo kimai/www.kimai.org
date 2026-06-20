@@ -97,7 +97,7 @@ This will import timesheets and create these elements on the fly:
 
 ### User handling
 
-If Kimai creates new users on the fly, make sure that you configured the default timezone for new users at [System > Settings]({% link _documentation/configurations.md %}) before the import.
+If Kimai creates new users on the fly, make sure that you configured the default timezone for new users at [System → Settings]({% link _documentation/configurations.md %}) before the import.
 The user timezone is used when importing the timesheets. 
 If you import users from different timezones, you need to create the users upfront manually.
 
@@ -162,11 +162,11 @@ The following CSV structure is expected, each column is ✅ mandatory. Import wi
 Failed to parse time string (14/04/2023 9:00) at position 0 (1): Unexpected character
 ```
 
-{% include docs-image.html src="/images/documentation/toggl-export.webp" title="Exporting timesheet with toggl track" width="800px" %}
+{% include docs-image.html src="/images/alternatives/toggl-export.webp" title="Exporting timesheet with toggl track" %}
 
 ## Grandtotal (Customer)
 
-There is a [plugin for Mac invoicing software Grandtotal]({% link _store/keleo-grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
+There is a [plugin for Mac invoicing software Grandtotal]({% link _store/{{ page.lang }}/grandtotal-plugin-for-kimai.md %}), which adds support for Kimai.
 
 In case your leading system for customers is Grandtotal, you can import customers from a Grandtotal CSV export into Kimai.
 Grandtotal calls CSV exports `Numbers` in the export screen.

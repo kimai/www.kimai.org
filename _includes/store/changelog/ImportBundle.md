@@ -1,3 +1,41 @@
+**Version 2.26.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Better customer CSV example
+- Removed customer and project JSON examples
+
+**Version 2.25.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Show better validation messages
+
+**Version 2.24.0**
+
+Compatibility: requires minimum Kimai 2.41.0
+
+- Use the core validations on all import objects before persisting them
+- Removed preview mode
+- Show errors on their respective fields
+- Kimai 1: fix broken global activity imports, fix invalid URLs in customer homepage
+- Support for the new structured customer address and more field variations in customer importer: budget_type, time_budget, customer_number, number, address_line1, address_line2, address_line3, postcode, city, buyerreference, buyer_reference
+
+**Version 2.23.0**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Normalize tags during timesheet import
+- Fix importer command
+- Added .gitattributes file to exclude a few files from release ZIP
+
+**Version 2.22.1**
+
+Compatibility: requires minimum Kimai 2.36.0
+
+- Better theme support with Kimai 2.49
+- Fix deprecations
+
 **Version 2.22.0**
 
 Compatibility: requires minimum Kimai 2.36.0

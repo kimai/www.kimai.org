@@ -9,14 +9,14 @@ description: Add custom content to your Kimai installation
 
 You can edit two fields: 
 - The news title is the name of the menu entry
-- The content for the page (markdown is supported for formatting)
+- The content for the page ([markdown]({% link _documentation/markdown.md %}) is supported for formatting)
 
 Deactivate the news: if the title is empty, the menu will be hidden.
 
 ## Alert
 
 ```markdown
-That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](/en/custom-content-news) !
+That's how the **alert / warning message** looks like. You can even include _markdown_ and [links](https://www.example.com) !
 ```
 
 ## Javascript

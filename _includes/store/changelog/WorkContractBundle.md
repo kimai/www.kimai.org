@@ -1,3 +1,64 @@
+**Version 1.34.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+Absence calendar:
+- Show public holidays
+- New permission `view_team_absence` to show all team member to regular user
+- Mark non-working days (light grey background)
+
+**Version 1.33.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Added monthly absence report
+
+**Version 1.32.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Fix: Month could not be approved if rejected absences existed for that period
+
+**Version 1.31.0**
+
+Compatibility: requires minimum Kimai 2.49.0
+
+- Fix: "half public holiday and half-day absences" caused to reduce only by 75%
+- Fix: calculations between absences with and without duration could mis-calculate depending on creation order
+- Added missing icons for annual listing page
+
+**Version 1.30.1**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Fix "monthly timesheet PDF" has a closing parenthesis after the personnel number
+
+**Version 1.30.0**
+
+Compatibility: requires minimum Kimai 2.48.0
+
+- Configure if absences/sickness/vacation/public holidays count toward or reduce the expected working-time
+- Use new styles and icons from core
+- New API endpoint: check if a date is locked
+
+**Version 1.29.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- New configuration to deactivate half-day vacation bookings
+- New API endpoint to lock months
+- Absence form: remove all fields except comment when editing an existing entry
+- Fix: editing a vacation comment failed, if all holidays were taken
+- Use HttpClient to read public holidays from Google (fixes calls behind proxies)
+
+**Version 1.28.0**
+
+Compatibility: requires minimum Kimai 2.32.0
+
+- Allow to request an absence again for the same day, if it was rejected before
+- Count planned/future time-offs, to show the correct amount in the overtime account
+- Do not count rejected entries for any absence type statistic
+
 **Version 1.27.0**
 
 Compatibility: requires minimum Kimai 2.32.0

@@ -14,13 +14,15 @@ If you have multiple entries for the same day, there will be multiple rows for t
 The nature of this form is simple and fast "duration tracking". That means start and end time do not matter and therefor 
 all entries start at the same time. 
 
+{% include youtube-video.html id="timesheets" chapter="weekly_hours" %}
+ 
 ## Managing records 
 
 New users, without any previous timesheet, will see 3 empty rows. 
 Existing users will have up to 5 rows with the last recent activities pre-filled.
 
 The amount of `recent activities` can be configured since 1.16.10 as a global configuration, see the `Weekly working hours` 
-section in [System > Settings]({% link _documentation/configurations.md %}).
+section in [System → Settings]({% link _documentation/configurations.md %}).
 
 ### Create further rows
 
@@ -38,7 +40,7 @@ You can delete records from the view, by emptying the duration field. The record
 
 ## Configuration
 
-The start time of each new record is configured by the `Default start-time` from [System > Settings]({% link _documentation/configurations.md %}).
+The start time of each new record is configured by the `Default start-time` from [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Permissions
 
@@ -47,7 +49,7 @@ You can disable this feature by toggling the [System > Role permission]({% link 
 
 Users require additionally the permissions `view_own_timesheet` and `edit_own_timesheet`.
 
-The last check is if the current time-tracking mode (see [System > Settings]({% link _documentation/configurations.md %})) 
+The last check is if the current time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
 allows `editing the duration` or `editing the end` (which is not true for the punch-mode).
 
 If you own the permission `view_other_timesheet` you can switch the user.

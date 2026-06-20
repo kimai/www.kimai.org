@@ -1,0 +1,26 @@
+{% assign changelogs = site.changelogs | reverse %}
+
+<section class="container">
+    <div class="row justify-content-center">
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th style="min-width: 140px; max-width: 200px">Date</th>
+                <th>Title</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for changelog in changelogs %}
+            <tr>
+                <td style="max-width: 200px">{{ changelog.date | date_to_string }}</td>
+                <td>
+                    <a href="{{ changelog.url }}" class="text-decoration-none">{{ changelog.title }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</section>

@@ -56,7 +56,7 @@ You have to adjust more keys, please read the main SAML configuration!
 
 - Go to [https://admin.google.com/ac/apps/unified](https://admin.google.com/ac/apps/unified)
 - Choose "Add app" followed by "Add custom SAML app"
-- Choose your app name (e.g. "Kimai") and [add this image](http://www.kimai.org/images/apple-touch-icon.png)
+- Choose your app name (e.g. "Kimai") and [add this image]({% link images/apple-touch-icon.png %})
 - Copy & paste the values from the Google Step-by-Step (page 2) guide into your Kimai configuration:
     - `SSO-URL` into `Single Sign-On URL`
     - `Entity-ID` into `Entity ID`
@@ -96,7 +96,7 @@ You have to adjust more keys, please read the main SAML configuration!
 You can use other names for your groups, the mapping happens in the next step in your Cloud configuration.
 
 This screenshot is a showcase of the attribute mapping including groups:
-{% include docs-image.html src="/images/documentation/google-saml-attributes.webp" title="SAML attribute mapping" width="1000px" %}
+{% include docs-image.html src="/images/documentation/google-saml-attributes.webp" title="SAML attribute mapping" %}
 
 ## Single Logout
 

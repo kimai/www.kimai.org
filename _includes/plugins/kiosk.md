@@ -1,3 +1,4 @@
+{% include youtube-video.html id="kiosk_mode" %}
 
 - Start/Stop work with
     - Barcode scanner (via device camera, only works via HTTPS)

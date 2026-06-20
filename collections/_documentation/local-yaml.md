@@ -30,6 +30,7 @@ Adjust settings from any configuration file by adding them in your own configura
 These "environment specific settings" are required so Kimai can boot. They are stored in the `.env` file:
 
 - `DATABASE_URL` - database connection for storing all application data
+- `TRUSTED_HOSTS` - a regexp to match the domain names Kimai is accessible at (e.g. `demo.kimai.org|demo-empty.kimai.org`)
 - `APP_ENV` - environment for the runtime (always use `prod`, other option is `dev` if you want to developfor Kimai)
 - `MAILER_URL` - SMTP connection for emails
 - `MAILER_FROM` - application specific "from" address for all emails
@@ -59,10 +60,6 @@ kimai:
             default:
                 begin: 15
                 end: 15
-
-admin_lte:
-    options:
-        default_avatar: build/apple-touch-icon.png
 ```
 
 The `local.yaml` file will be imported as last configuration file, so you can overwrite any setting from the `config/packages/` directory.
@@ -79,7 +76,7 @@ You have to reload the configurations by [rebuilding the cache]({% link _documen
 
 ## Available configurations
 
-Many of the available configurations can be configured through [System > Settings]({% link _documentation/configurations.md %}),
+Many of the available configurations can be configured through [System → Settings]({% link _documentation/configurations.md %}),
 all configuration which can be set through the UI will not be described here.
 
 Examples for all available configuration can be found in `config/packages/kimai.yaml`. 
@@ -164,7 +161,7 @@ kimai:
 
 ### Multiple time-rounding rules
 
-At [System > Settings]({% link _documentation/configurations.md %}) you can configure one rounding rule. 
+At [System → Settings]({% link _documentation/configurations.md %}) you can configure one rounding rule. 
 The local.yaml allows adding multiple rules (e.g. weekend has different rounding rules).
 You can define as many rules as you want ("default" is only an example) and every matching rule will be applied (be careful with overlapping rules).
 

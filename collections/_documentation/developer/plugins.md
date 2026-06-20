@@ -119,7 +119,7 @@ A minimal `composer.json` could look like this:
 {
     "name": "foo/your-bundle",
     "description": "A simple demo plugin for Kimai, which actually does nothing",
-    "homepage": "https://www.kimai.org/",
+    "homepage": "https://www.example.com/",
     "type": "kimai-plugin",
     "version": "0.1",
     "license": "MIT",
@@ -127,7 +127,7 @@ A minimal `composer.json` could look like this:
         {
             "name": "Kevin Papst",
             "email": "kpapst@gmx.net",
-            "homepage": "https://www.kimai.org"
+            "homepage": "https://www.kevinpapst.de"
         }
     ],
     "extra": {
@@ -175,6 +175,6 @@ to the [documentation]({% link _documentation/developer/store.md %}) to find out
 
 ## Links
 
-- Check out the [Store]({% link _pages/store.html %}) to find out more free plugins for code demonstrations
+- Check out the [Store]({% link _pages/{{ page.lang }}/store.html %}) to find out more free plugins for code demonstrations
 - Read the [Symfony bundle documentation](https://symfony.com/doc/current/bundles.html) if this is your first time writing a Symfony bundle
  

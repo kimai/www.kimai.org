@@ -19,7 +19,6 @@ homepage-alert-title: 'Monitoraggio del tempo gratuito per tutti'
 homepage-alert-intro: 'Kimai è una soluzione di monitoraggio del tempo open source. Tiene traccia del tempo di lavoro e stampa un riepilogo delle tue attività su richiesta. Annuale, mensile, giornaliero, per cliente, per progetto… La sua semplicità è la sua forza. Grazie all''interfaccia basata su browser, Kimai funziona su più piattaforme, anche sul tuo dispositivo mobile.'
 homepage-alert-button-download: 'Download'
 homepage-alert-button-demo: 'Prova prima'
-cloud-title: 'Kimai Cloud (SaaS)'
 cloud-feature-ssl: 'Certificato TLS (SSL) gratuito'
 cloud-feature-hosting: 'Hosting e aggiornamenti'
 cloud-feature-backups: 'Backup'
@@ -56,7 +55,7 @@ create-database: 'Crea database'
 install-assets: 'Installa risorse'
 ask-question: 'Fai una domanda'
 newsletter:
-    title: 'Non vuoi perderti nulla?'
+    teaser: 'Non vuoi perderti nulla?'
     introduction: 'Iscriviti alla nostra newsletter e rimani aggiornato sugli aggiornamenti di Kimai e dei plugin.'
     email-title: 'Il tuo indirizzo e-mail'
     email-help: 'Inserisci il tuo indirizzo e-mail per iscriverti.'
@@ -66,6 +65,9 @@ newsletter:
     sendinblue: 'Usiamo Brevo come nostra piattaforma di marketing. Inviando questo modulo, riconosci che le informazioni fornite verranno trasferite a Brevo per l''elaborazione in conformità con i loro %terms%.'
     terms: 'termini di uso'
     button: 'ISCRIVITI'
+    archive: Archivio
+    name: Newsletter
+    subtitle: Se utilizzi Kimai in modalità self-hosting (o lo stai semplicemente esplorando), non perderti la nostra newsletter. Condividiamo notizie e approfondimenti con una community di persone che preferiscono avere il pieno controllo dei propri dati.
 photos:
     dashboard:
         title: 'Pannello di controllo'
@@ -81,8 +83,7 @@ demo:
     name: 'Demo'
     description: 'Prova e valuta il nostro Kimai online time-tracker, direttamente dalla nostra pagina demo.'
     title: 'Prova Kimai in una delle demo'
-    introduction: "Prova la demo di Kimai monitoraggio del tempo: ti promettiamo che continuerai a usarla!"
-    choose: 'Scegli una delle nostre installazioni demo per avere una prima impressione su Kimai e sulle funzionalità che fornisce.'
+    subtitle: 'Scegli una delle nostre installazioni demo per avere una prima impressione su Kimai e sulle funzionalità che fornisce.'
     reinstall: 'Tieni presente che le demo verranno reinstallate regolarmente e tutti i dati inseriti verranno rimossi.'
     user: 'Utente demo'
     accounts: "Questi account sono disponibili per i tuoi test. Oppure crea il tuo utente di prova nel modulo di accesso di ogni demo."
@@ -93,8 +94,6 @@ demo:
     empty-description: La versione attuale con plugin in evidenza, senza dati.
     plugins-description: Versione di sviluppo con plugin e dati demo.
     plugins-title: In evidenza
-    stable-title: Core
-    empty-title: Plugin
     stable-description: L'ultima versione, senza plugin, senza dati dimostrativi.
 index:
     name: 'Pagina iniziale'
@@ -103,14 +102,14 @@ index:
 download:
     name: 'Installazione'
     title: 'Installazione di Kimai'
-    description: 'Download e installazione con SSH, Docker e Kubernetes - Monitoraggio del tempo Kimai'
-    intro: Offriamo diverse modalità per installare Kimai. Scegli l'opzione che fa al caso tuo.
-    subtitle: Download e Installazione
+    subtitle: 'Download e installazione con SSH, Docker e Kubernetes - Monitoraggio del tempo Kimai'
+    eyebrow: Self-Host Kimai
 hosted:
     name: 'Cloud'
     title: 'Kimai-Cloud: usa Kimai direttamente senza configurazione. Hosting Kimai senza problemi!'
 about:
     name: 'Informazioni su Kimai'
+    subtitle: Quello che era iniziato come un progetto per hobby è ora l'applicazione di monitoraggio del tempo open source leader a livello mondiale. Diamo uno sguardo alla sua storia.
     description: 'Scopri la storia di Kimai time-tracker e del suo sviluppatore.'
     collaboration:
         title: Collaborazione
@@ -125,14 +124,17 @@ about:
 store:
     name: 'Plugin'
     title: Plugin per Kimai
-    description: 'I plugin per Kimai estendono la tua esperienza di monitoraggio del tempo con funzionalità aggiuntive'
     subtitle: Utilizza l'ampia gamma di plugin, app ed estensioni dell'ecosistema Kimai per dotare la tua soluzione di monitoraggio del tempo self-hosted con funzioni aggiuntive.
+    eyebrow: Extend Your Time-Tracker
 blog:
     name: 'Blog'
     description: 'Notizie su Kimai, il software per il monitoraggio del tempo'
     subtitle: 'Notizie dal team di sviluppo di Kimai'
     title: Notizie da Kimai
     archive-link: Trova qui le notizie più vecchie su %topic%
+    archive-tags: Visualizza tutto
+    category-pages: Utilizza le pagine delle categorie per trovare tutti i nostri post
+    categories: Categorie
 documentation:
     name: 'Documentazione'
     description: 'Informazioni di supporto, manuale dell''utente e altra documentazione per Kimai monitoraggio del tempo'
@@ -145,12 +147,11 @@ features:
     name: Caratteristiche
 docu-developer:
     name: Sviluppatore
-docu-onpremise:
-    name: In sede
 docu-manual:
     name: Manuale utente
 alternatives:
-    name: Alternative a Kimai
+    subtitle: Cerchi un'alternativa alla tua attuale soluzione di monitoraggio del tempo? Ecco perché pensiamo che dovresti cambiare
+    name: Confronta il time-tracker
     description: Kimai è la migliore applicazione di monitoraggio del tempo open source disponibile, non solo per i team basati su progetti. Scopri come Kimai si confronta con soluzioni alternative di monitoraggio del tempo in modo da poter scegliere quella giusta per la tua organizzazione.
 feature:
     mobile-ready:
@@ -228,9 +229,6 @@ feature:
     user-profile:
         name: "Profilo utente"
         description: "Statistiche personali e impostazioni per utente di tariffa oraria, tema Kimai, password e avatar."
-    user-registration:
-        name: "Registrazione utente"
-        description: "Kimai supporta l'autoregistrazione dell'utente con attivazione via e-mail."
     password-reset:
         name: "Reimposta password"
         description: "Hai dimenticato la password? Kimai ti aiuta a reimpostarla via e-mail."
@@ -275,6 +273,12 @@ feature:
             security_5: I servizi critici non sono accessibili al mondo esterno
         description: Il software è sicuro tanto quanto il sistema su cui viene eseguito. Adotto un approccio di difesa approfondita con server e infrastruttura di rete. I clienti sulla piattaforma ospitata sono protetti tramite più livelli di protezione.
         name: Sicurezza nella piattaforma
+    electronic-invoicing:
+        name: Fatture elettroniche
+        description: Crea fatture elettroniche in formato XML e PDF/A, conformi alle norme EN 16931, XRechnung 3.0, Zugferd/Factur-X e utilizzando la sintassi CII e UBL
+    eu-hosting:
+        description: Indipendente ed europeo 🇪🇺 – creato in Austria 🇦🇹 e ospitato in Germania 🇩🇪
+        name: Hosting in Europa
 install:
     alert-vps: In questa fase non è possibile installare Kimai scaricando un file ZIP e caricando i file sul tuo server web. Devi avere accesso SSH al tuo server. Questo non significa necessariamente che hai bisogno di un VPS. Alcuni host condivisi ti danno accesso SSH, attraverso il quale dovresti essere in grado di installare Composer e Kimai senza problemi.
     ssh: Questo metodo installa Kimai direttamente sul tuo server.
@@ -284,15 +288,15 @@ install:
     caddy-docker: Utilizzo di Docker-Compose e Caddy come proxy inverso con supporto SSL.
 developer:
     kevinpapst:
-        intro: 'È sempre stato il mio sogno guadagnarmi da vivere con un prodotto open source. Con Kimai ho potuto sviluppare un software che offre un grande valore ai miei clienti e il cui sviluppo mi guida ogni giorno.
+        intro: |
+            È sempre stato il mio sogno guadagnarmi da vivere con un prodotto open source. Con Kimai ho potuto sviluppare un software che offre un grande valore ai miei clienti e il cui sviluppo mi guida ogni giorno.
 
-
-            I miei ringraziamenti speciali vanno alla grande community per la loro fedeltà nel corso degli anni, non vedo l''ora che arrivino i prossimi 10 anni di Kimai 🚀'
+            I miei ringraziamenti speciali vanno alla grande community per la loro fedeltà nel corso degli anni, non vedo l''ora che arrivino i prossimi 10 anni di Kimai 🚀
 full-documentation: Documentazione completa in inglese
 contact-developer: Se hai qualche domanda usa i seguenti recapiti per contattare direttamente lo sviluppatore.
 homepage:
-    title: Monitoraggio del tempo per team orientati alla realizzazione di progetti
-    intro: "La nostra piattaforma open source è stata progettata per tenere traccia e analizzare i dati temporali della tua azienda: è quindi l'ideale per imprese di qualsiasi dimensione. Kimai ti aiuta a gestire tempo e denaro in modo efficace."
+    title: Time tracking per team di progetto
+    subtitle: "La nostra piattaforma open source è stata progettata per tenere traccia e analizzare i dati temporali della tua azienda: è quindi l'ideale per imprese di qualsiasi dimensione. Kimai ti aiuta a gestire tempo e denaro in modo efficace."
 section-teaser:
     report:
         title: Rapporti
@@ -319,7 +323,6 @@ history:
     year-2023: Tutto il duro lavoro ha finalmente dato i suoi frutti e Kimai ora è il mio lavoro a tempo pieno al 100%. Grazie mille!
     year-2014: Viene creata l'ultima versione di Kimai 1, lo sviluppo è in stallo e non c'è più molta attività.
     year-2006: Viene rilasciata la prima versione di Kimai e lentamente guadagna una base di utenti e sviluppatori in crescita.
-    intro: Quello che era iniziato come un progetto per hobby è ora l'applicazione di monitoraggio del tempo open source leader a livello mondiale. Diamo uno sguardo alla sua storia.
     year-2018: La riscrittura di Kimai si fa strada nella comunità, la migrazione dei dati funziona e la diffusione è in aumento.
     current: |
         Kimai è un software di monitoraggio del tempo con una lunga storia, la prima versione è stata rilasciata nel 2006. Perché ne parlo? Perché da allora ho visto molti programmi andare e venire, credetemi quando dico: Kimai è qui per restare. Ho passato molti anni a sviluppare Kimai per divertimento, oggi Kimai è il mio business e non sono mai stato così motivato a continuare a migliorarlo.
@@ -339,10 +342,6 @@ history:
         Il Kimai originale è stato rilasciato per la prima volta nel 2006 ed è stato usato da molte persone in tutto il mondo, sono orgoglioso di questo e anche della sua grande comunità. Vorrei ringraziare tutti coloro che hanno contribuito a Kimai.
 store-hero-counter: 'Più di %number% clienti si fidano di Kimai'
 cta:
-    tech-support:
-        question: Supporto tecnico e aziendale
-        button: Lavoriamo insieme
-        answer: Garantisco supporto per tutte le applicazioni che ho creato e assisterò te e il tuo team.
     get-started:
         answer: Inizia subito a monitorare il tempo
         button: Ottieni supporto
@@ -362,10 +361,25 @@ highlight:
         european: 'Indipendente ed europeo 🇪🇺: creato in Austria 🇦🇹 e ospitato in Germania 🇩🇪 con un forte impegno per la protezione dei dati, la trasparenza e la qualità open source.'
 description: Descrizione
 oss-cloud-compare:
-    saas: Sul nostro server
-    onpremise: Sul tuo server
     intro: Kimai è un software open source disponibile sia per il self-hosting che per SaaS.
     title: Un software, due versioni
+    on-premise:
+        badge: Free forever
+        reason_5: Plugin marketplace
+        reason_3: Docker & manual install
+        reason_2: Full data ownership
+        reason_1: 100% open source (AGPL 3)
+        reason_4: Community support
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+    cloud:
+        reason_2: Automatic updates & backups
+        reason_1: Instant setup, no server needed
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_5: Plugins included
+        reason_4: Priority support
+        badge: Recommended
+        reason_3: GDPR-compliant EU hosting
+    subtitle: Choose your path
 section-features:
     subtitle: Kimai offre molto di più del semplice monitoraggio del tempo, ecco un elenco di altre importanti funzioni aziendali.
     title: Cosa può fare Kimai per te?
@@ -376,9 +390,8 @@ testimonials:
 footer: Monitoraggio del tempo semplificato. Una soluzione open source per team di tutte le dimensioni, self-hosted o SaaS.
 slogan: N. 1 Monitoraggio del tempo open source
 comparison:
-    footer-title: Confronta
     is_oss: Software open source
-    location: Server dati nell'UE
+    location: Posizione del server
     invoices: Fatturazione
     backup_frequency: Backup
     custom_domain: Dominio personalizzato
@@ -395,14 +408,13 @@ comparison:
     server_maintenance: Manutenzione del server
     saml: SAML
     ip_restriction: Restrizione dell'accesso IP
-    alternatives: Alternative a Kimai
     finding: Trovare la giusta soluzione di monitoraggio del tempo
-    use_case: Ogni caso d'uso, ogni azienda e ogni flusso di lavoro è diverso e le tue esigenze devono essere valutate prima di decidere su quale time-tracker usare. Ecco alcune alternative a Kimai che confronteremo in dettaglio.
     compare_with: Confronta Kimai con %name%
+    alternative: 'Alternativa %product%'
 support:
     name: "Supporto"
     description: "Hai bisogno di supporto? Trova assistenza per l'uso, l'installazione o l'aggiornamento di Kimai."
-    intro: "Alcuni clienti preferiscono eseguire Kimai internamente ma non vogliono rinunciare a un supporto professionale. Sarò lieto di assisterti e offrirti un piano di supporto per le installazioni self-hosted."
+    subtitle: "Alcuni clienti preferiscono eseguire Kimai internamente ma non vogliono rinunciare a un supporto professionale. Sarò lieto di assisterti e offrirti un piano di supporto per le installazioni self-hosted."
     community: "Comunità"
     community_cta: "Visita GitHub"
     community_intro: |
@@ -425,6 +437,7 @@ support:
     calendar_intro: |
         Se desideri una presentazione di Kimai o supporto con gli aggiornamenti, puoi prenotare una sessione a pagamento di condivisione dello schermo con lo sviluppatore, Kevin Papst.
     calendar_refund: "Se non puoi partecipare al tuo appuntamento, devi annullarlo almeno 24 ore prima in modo che possa essere riprogrammato. Non saranno effettuati rimborsi."
+    get_in_touch: Contattaci subito
 docu-cloud:
     name: Cloud
 landing_oss:
@@ -472,6 +485,9 @@ plans:
     kiosk: Modalità Kiosk
     backup_weekly: Settimanale
     backup_daily: Quotidiano
+    customer_portal: Portale clienti
+    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
+    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
 pricing:
     short_monthly: Per utente e mese
     short_annual: Per utente e anno
@@ -483,6 +499,14 @@ pricing:
     subtitle: Questi piani sono disponibili per i clienti cloud
     cancellation: Puoi annullare l'abbonamento in qualsiasi momento fino a un giorno prima della scadenza del periodo di abbonamento.
     tax_exclusive: Tutti i prezzi sono tasse escluse.
+    favorite: Most popular
+    annual_cta: You save 20% compared to monthly billing.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
+    monthly_cta: Switch to annual and save 20%.
+    trust_hosting: Hosted in Germany · GDPR compliant
+    trust_trial: 30-day free trial
+    trust_no_fee: No setup fee
 non-profit:
     name: Non-profit
     eligible: Saperne di più
@@ -494,6 +518,7 @@ discount-codes:
 faq:
     intro: Queste FAQ sono fornite dallo sviluppatore di questa offerta.
     title: FAQ
+    subtitle: Domande frequenti
 login: Login
 store-payment-methods: Metodi di pagamento disponibili
 500:
@@ -516,6 +541,8 @@ theme:
     light: Chiaro
 cloud:
     status: Stato
+    subtitle: Announcements and news about the Kimai Cloud.
+    name: Cloud
 licenses: Licenze
 roadmap: Roadmap
 purchase-power-parity: Non puoi pagare? Richiedi uno sconto PPP.
@@ -538,12 +565,210 @@ terms-gdpr:
     name: Elaborazione dati
 industries:
     name: Industrie
+    agency:
+        features:
+            introduction: Non tutti gli strumenti di monitoraggio del tempo sono uguali. Le migliori soluzioni per le agenzie offrono una serie di funzionalità specializzate per ottimizzare i flussi di lavoro.
+            title: Funzionalità Kimai più utilizzate dalle agenzie
+        testimonials:
+            tag: Agenzia
+            introduction: In Kimai, abbiamo progettato la nostra piattaforma di monitoraggio del tempo per rispondere alle esigenze di agenzie, team e freelance. La nostra interfaccia intuitiva e le potenti funzionalità integrate aiutano le realtà come la tua a lavorare in modo più intelligente e redditizio. Da oggi, puoi anche "ascoltare" le recensioni dei nostri utenti reali.
+            title: Cosa dicono le agenzie sul monitoraggio del tempo
+        about:
+            title: Primi passi per un migliore monitoraggio del tempo
+            introduction: |
+                Hai già mosso i primi passi e siamo certi che sarai in grado di fare una scelta informata. Cos'altro dovresti considerare per scegliere il miglior software di monitoraggio del tempo? Alcuni fornitori offrono versioni gratuite, che potrebbero però presentare delle limitazioni, mentre altri mettono a disposizione demo gratuite, periodi di prova o opzioni di prezzo basate sulle dimensioni dell'azienda o sul numero di utenti.
+
+                In Kimai, offriamo una prova gratuita per permetterti di esplorare la nostra soluzione prima di decidere se siano necessari utenti aggiuntivi, funzionalità extra o plugin. Provalo gratuitamente oggi stesso e regala al tuo team una giornata di lavoro più organizzata!
+        title: Monitoraggio del tempo per le agenzie
+        cta:
+            title: |
+                Pronti ad iniziare a
+                monitorare il tempo nella vostra agenzia?
+        name: Agenzie
+        introduction: |
+            Stai gestendo un'agenzia - se si tratta di marketing, PR, design, consulenza, HR o architettura? Allora sai quanto sia importante il monitoraggio del tempo per i tuoi affari. Monitorare le ore dei dipendenti e il tempo del progetto del cliente è essenziale per la fatturazione con precisione, la comprensione della redditività e la gestione del vostro team in crescita.
+
+            Gestire il monitoraggio del tempo tramite fogli di calcolo e strumenti scollegati tra loro può però diventare rapidamente un caos, soprattutto man mano che la tua agenzia cresce. È qui che una soluzione dedicata al monitoraggio del tempo può fare la differenza.
+
+            Scopriamo perché le agenzie di successo si affidano a software specifici per il monitoraggio del tempo e quali sono le funzionalità essenziali da ricercare. Utilizzeremo Kimai come esempio di soluzione intuitiva, progettata proprio pensando alle esigenze delle agenzie.
+        intro: Sblocca il potenziale di redditività nelle agenzie in rapida crescita con il sistema di monitoraggio del tempo scalabile
+        subtitle: La chiave della redditività
+    lawyer:
+        about:
+            title: Primi passi per una migliore gestione del tempo nel tuo studio legale
+            introduction: |
+                Sappiamo che provare un nuovo software nel settore legale può sembrare un passo impegnativo. Per questo motivo offriamo una prova gratuita e senza impegno, una configurazione iniziale semplice, un set di funzionalità flessibili che crescono insieme al tuo studio o al tuo team e un supporto dedicato.
+
+                Siamo convinti che, già durante la prova gratuita, potrai scoprire un modo per smettere di combattere con i fogli di presenza. Prova Kimai oggi stesso e ti auguriamo una giornata ben organizzata!
+        features:
+            title: Le funzionalità di Kimai più apprezzate dagli studi legali
+            introduction: 'Kimai è progettato specificamente per i professionisti del settore legale. Abbiamo creato uno strumento per il monitoraggio del tempo che parla la tua stessa lingua: semplice, affidabile, conforme al GDPR e focalizzato nel rendere più fluido il tuo lavoro quotidiano.'
+        testimonials:
+            introduction: In Kimai, i professionisti del settore legale e i consulenti sono da sempre al centro della nostra attenzione. Ora puoi scoprire le esperienze reali dei nostri utenti.
+            title: Le opinioni dei nostri clienti sul monitoraggio del tempo
+        title: Monitoraggio del tempo per avvocati
+        intro: Dimenticatevi dei complessi fogli di presenza e concentratevi sull'erogazione di servizi legali eccezionali grazie alle moderne soluzioni di monitoraggio del tempo
+        subtitle: Concentrati sulle ore fatturabili, non sui fogli di presenza complicati
+        name: Avvocati
+        introduction: |
+            Nel frenetico mondo dei servizi legali, il tempo è la tua risorsa più preziosa. Studi legali, avvocati indipendenti e uffici legali necessitano di una soluzione per il monitoraggio del tempo su misura per le esigenze specifiche della loro professione. In Kimai, sappiamo che la tua priorità deve essere offrire una consulenza legale d'eccellenza, non lottare con fogli di presenza complessi.
+
+            La registrazione manuale delle ore, gli infiniti fogli di calcolo e i complicati processi di esportazione sottraggono tempo prezioso alla tua attività di esperto legale. Scopri come un monitoraggio del tempo efficiente può aiutarti a concentrarti su ciò che conta davvero.
+        cta:
+            title: |
+                Pronti a rivoluzionare la
+                gestione del tempo nel vostro studio?
+    software-developers:
+        features:
+            title: Le funzionalità di Kimai scelte dagli ingegneri del software
+            introduction: Scopri il set di funzionalità perfetto per le tue attività e i tuoi obiettivi. E se il tuo team IT avesse bisogno non solo di un semplice time-tracker, ma di una soluzione robusta con diverse opzioni di integrazione e funzionalità avanzate di fatturazione e analisi?
+        title: Monitoraggio del tempo per gli sviluppatori di software
+        about:
+            introduction: |
+                La scelta del giusto time-tracker passa spesso decidendo tra una versione gratuita o una demo. Anche il prezzo è un fattore chiave, quindi cerca opzioni che siano scalabili in base alla crescita del tuo team.
+
+                In Kimai, offriamo una prova gratuita per permetterti di esplorare la nostra soluzione prima di decidere se siano necessari plugin o funzionalità aggiuntive. Con tariffe che partono da soli 0,99 € per utente per alcuni settori, è una scelta accessibile. Provalo gratuitamente oggi stesso e porta più organizzazione nella tua giornata lavorativa!
+            title: Primi passi per una migliore gestione del tempo
+        subtitle: Massimizza la tua produttività
+        cta:
+            title: |
+                Pronti a provare un nuovo metodo
+                per monitorare il tempo del vostro team IT?
+        testimonials:
+            title: Gli esperti IT parlano del monitoraggio del tempo
+            introduction: In Kimai, abbiamo progettato la nostra piattaforma per il monitoraggio del tempo pensando alle esigenze dei singoli sviluppatori, dei team di sviluppo e dei dipartimenti IT. Il nostro approccio si concentra sulla creazione di soluzioni open source per team tecnici di ogni dimensione e operanti in diversi settori. Puoi scoprire qui quali feedback riceviamo dai nostri utenti che lavorano nel mondo della tecnologia.
+        name: Sviluppatori software
+        intro: Massimizza la produttività del team e raggiungi un equilibrio tra vita professionale e privata grazie a un sistema di monitoraggio del tempo intelligente
+        introduction: |
+            Conosciamo fin troppo bene queste difficoltà: straordinari infiniti, scadenze stressanti, bug che richiedono ore di lavoro e la lotta costante per far sì che project manager e clienti apprezzino il vero impegno che si cela dietro il tuo codice. È un circolo vizioso che può portare rapidamente al burnout e compromettere l'equilibrio tra vita privata e professionale. Si tratta di una sfida comune per sviluppatori software, programmatori, ingegneri e altri professionisti del settore tech.
+
+            Esiste però un modo per spezzare questo ciclo e riprendere il controllo sul tuo tempo e sulle tue compiti. Utilizzando gli strumenti giusti, puoi massimizzare la tua produttività e ottenere informazioni preziose sui tuoi progetti. Che tu sia un programmatore libero professionista, faccia parte del team di una startup o gestisca un intero dipartimento IT, trovare una soluzione scalabile con le giuste funzionalità è essenziale. Scopriamo insieme Kimai, un software per il monitoraggio del tempo potente e intuitivo.
+    consultants:
+        features:
+            title: Funzionalità Kimai più utilizzate dai consulenti
+            introduction: Che tu sia un libero professionista o faccia parte di un grande dipartimento di consulenza, Kimai offre strumenti che ti aiutano a crescere insieme alla tua attività.
+        about:
+            title: Primi passi per un migliore monitoraggio del tempo nella consulenza
+            introduction: |
+                Per ottenere il massimo dal tuo software di monitoraggio del tempo, inizia esplorando tutte le funzionalità tramite una demo o una prova gratuita. Come consulente, vorrai probabilmente valutare attentamente le opzioni di prezzo e prevedere quali funzioni potrebbero servirti man mano che la tua attività si espande.
+
+                In Kimai, comprendiamo perfettamente questo percorso. Ecco perché offriamo una prova gratuita che ti permette di testare la nostra soluzione prima di decidere quali funzionalità aggiuntive o plugin siano più adatti a te. La nostra app all-in-one cresce insieme al tuo business: puoi aggiungere estensioni facilmente, ogni volta che ne hai bisogno. Provala gratuitamente oggi stesso e ti auguriamo una giornata ben organizzata!
+        subtitle: Massimizza le ore fatturabili e l'efficienza
+        name: Consulenti
+        title: Monitoraggio del tempo per i consulenti
+        testimonials:
+            introduction: In Kimai, abbiamo sviluppato la nostra piattaforma per soddisfare sia le esigenze dei singoli consulenti che quelle dei team più numerosi. Come soluzione all-in-one, Kimai gode della fiducia di aziende di ogni dimensione in svariati settori. Ecco le testimonianze dei nostri utenti che operano nel campo della consulenza.
+            title: Approfondimenti sul monitoraggio del tempo da parte di professionisti della consulenza
+        intro: Aumenta la redditività e il valore offerto al cliente attraverso un monitoraggio strategico del tempo per l'eccellenza nella consulenza
+        introduction: |
+            Nell'odierno e dinamico panorama della consulenza, che tu ti occupi di consulenza direzionale, consulenza finanziaria, servizi IT, data science, consulenza legale, servizi psicologici o consulenza HR - una verità rimane costante: il tempo è il tuo asset più prezioso. Un accurato monitoraggio del tempo non riguarda solo la registrazione delle ore. Riguarda la massimizzazione della redditività e l'erogazione di valore ai tuoi clienti.
+
+            Siamo onesti - gestire progetti di consulenza non è facile. I membri del tuo team potrebbero lavorare da New York, Londra e Singapore contemporaneamente. È molto di cui tenere traccia! Inoltre, devi sapere esattamente chi ha lavorato su cosa per fatturare ai tuoi clienti correttamente. Senza un adeguato monitoraggio del tempo, le cose possono diventare caotiche velocemente. Hai bisogno di controllare i costi di progetto, restare conforme alle normative e assicurarti che il tempo del tuo team sia utilizzato saggiamente.
+
+            Ecco perché gli strumenti di time tracking "all-in-one" sono diventati un must-have per i consulenti. Trasformano tutto questo potenziale caos in dati chiari e organizzati che aiutano il tuo business a prosperare. Esploriamo come una soluzione completa come Kimai può trasformare la tua attività di consulenza.
+        cta:
+            title: |
+                Pronto a scoprire un nuovo modo
+                per monitorare il tempo nella tua attività?
+    freelancers:
+        name: Libero professionista
+        testimonials:
+            introduction: "Non fidatevi solo della nostra parola. Ecco cosa dicono altri liberi professionisti:"
+            title: Cosa dicono gli altri professionisti sul monitoraggio del tempo con Kimai
+        features:
+            title: 'Funzionalità apprezzate dai freelance'
+            introduction: Kimai è progettato per aiutare l’imprenditore individuale a ottimizzare il proprio flusso di lavoro. Che tu debba gestire più clienti contemporaneamente o coordinare una varietà di progetti, Kimai ti offre gli strumenti necessari per restare organizzato e garantire la tua redditività.
+        introduction: |
+            Quando l'attività di libero professionista rappresenta un nuovo capitolo della tua vita, ti trovi a dover ricoprire nuovi ruoli e affrontare sfide inedite. Una di queste è la gestione del tempo, insieme alla necessità di bilanciare le ore lavorate con la redditività dei tuoi progetti. Gestire più progetti contemporaneamente richiede analisi costanti, sia per te che per i tuoi clienti.
+
+            Fortunatamente, esistono strumenti nati per aiutare liberi professionisti, collaboratori esterni, nomadi digitali e imprenditori individuali a monitorare le proprie ore fatturabili, fatturare ai clienti senza stress, gestire le tariffe orarie, le spese e molto altro.
+
+            Tutto questo ti permette di concentrarti su ciò che ami e di ricevere il compenso che meriti davvero. Vediamo come, utilizzando Kimai come strumento per monitorare il tempo per i liberi professionisti.
+        cta:
+            title: |
+                Pronto a sfruttare al
+                massimo il tuo tempo come freelance?
+        title: Monitoraggio del tempo per liberi professionisti di successo
+        about:
+            title: Primi passi verso una migliore gestione del tempo
+            introduction: |
+                Sei pronto a sperimentare i vantaggi di Kimai? Offriamo una prova gratuita per permetterti di esplorare tutte le funzionalità prima di decidere quale software sia il più adatto a te come libero professionista.
+
+                Iscriviti oggi stesso, inizia a monitorare il tuo tempo letteralmente con un clic e goditi una giornata più organizzata!
+        intro: Massimizza i tuoi guadagni come imprenditore individuale
+    universities:
+        cta:
+            title: |
+                Pronti a trasformare la
+                gestione del tempo nella vostra istituzione?
+        subtitle: 'Concentrati sulla reportistica, non su flussi di lavoro amministrativi complicati'
+        testimonials:
+            introduction: |
+                In Kimai, abbiamo progettato la nostra piattaforma per il monitoraggio del tempo per rispondere alle esigenze di agenzie, team e liberi professionisti.
+                La nostra interfaccia intuitiva e le potenti funzionalità aiutano le agenzie come la tua a lavorare in modo più intelligente e redditizio.
+                Ora puoi scoprire le recensioni dei nostri utenti reali.
+            title: Cosa dicono i nostri clienti
+        name: Università
+        introduction: |
+            Gestire il tempo nell'istruzione superiore comporta sfide uniche, tra cui la pianificazione di lezioni e corsi, il monitoraggio dei progetti di ricerca, l'allocazione del tempo di studenti e docenti e diverse attività amministrative che richiedono molto tempo.
+
+            Soluzioni efficaci per il monitoraggio del tempo possono aiutare a ottimizzare questi processi, consentendo a docenti e ricercatori di concentrarsi sulle loro responsabilità principali.
+        features:
+            title: Funzionalità per la gestione del tempo a livello di istituzione
+            introduction: |
+                La nostra soluzione per il monitoraggio del tempo è stata perfezionata attraverso la collaborazione con numerose università. Il feedback reale dei nostri utenti guida lo sviluppo, garantendo funzionalità che rispondono concretamente alle esigenze accademiche.
+
+                Solo per citare alcuni degli istituti accademici che utilizzano Kimai: `Universität Hamburg`, `Universität Bonn`, `Universität Wien`, `Universität Stuttgart`, `Universität Frankfurt`, `University of Fribourg`, `TU Dresden` e la `University of Moscow`.
+        about:
+            title: Inizia il tuo percorso verso una migliore gestione del tempo
+            introduction: |
+                Sappiamo che implementare un nuovo sistema di monitoraggio del tempo in un contesto accademico richiede un'attenta valutazione.
+                Per questo motivo offriamo un periodo di prova gratuita e sessioni demo.
+                Prova Kimai gratuitamente oggi stesso e rendi la tua giornata più organizzata!
+        intro: Trasforma l'efficienza della tua istituzione con un potente sistema di monitoraggio del tempo
+        title: Monitoraggio del tempo per il settore accademico
+    non-profit:
+        about:
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+            title: Our affordable non-profit plan for you
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        subtitle: Less administrative burden, so your mission stays in focus
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking
+        title: Time Tracking for Non-Profit Organizations ✨
+        features:
+            title: Features that NPOs appreciate
+            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+        testimonials:
+            title: What other NPOs say about Kimai
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        intro: We put your work and vision center stage while simplifying administration and billing
+        name: Non-Profits
 industry:
     name: Monitoraggio del tempo per ogni attività
     intro: Puoi migliorare la produttività dei tuoi dipendenti con il software di registrazione delle presenze Kimai.
     title: Monitoraggio del tempo per ogni settore
     subtitle: Tieni i tuoi progetti sotto controllo con Kimai
-    office: Per chi lavora in ufficio
     more: Altri settori
 terms-plugins:
     name: Licenza plugin
@@ -565,14 +790,12 @@ time-tracking-terms:
     title: Termini di monitoraggio del tempo
     intro: Dai un'occhiata dietro le quinte della registrazione del tempo e scopri di più sui termini usati di frequente in Kimai
     name: Termini di monitoraggio del tempo
-changelogs:
+changelog:
     name: Registro delle modifiche
     title: Registro delle modifiche di Kimai Cloud
-    intro: Panoramica di tutti gli aggiornamenti di Kimai cloud e della data della loro installazione.
+    subtitle: Panoramica di tutti gli aggiornamenti di Kimai Cloud e delle relative date di installazione.
 open-source-community:
     name: Open Source
-onpremise:
-    name: Self hosting
 integrations:
     subtitle: Collega Kimai ai tuoi strumenti preferiti, dalle app desktop ai client mobili, agli strumenti CLI e molto altro, e monitora il tempo ovunque tu lavori.
     name: App e integrazioni
@@ -582,7 +805,7 @@ product:
 store-category-desktop: Applicazioni desktop
 stories:
     title: Le storie di successo dei nostri clienti
-    intro: Discover how our customers utilise our powerful open-source solution and save time and money with Kimai.
+    intro: Scopri come i nostri clienti utilizzano la nostra potente soluzione open source e risparmiano tempo e denaro con Kimai.
     since: Utilizzo Kimai da
     name: Storie di successo
     wins: Risparmi con Kimai
@@ -590,3 +813,22 @@ stories:
     location: Posizione
     company: Azienda
     employees: Dipendenti
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+title: Titolo
+date: Data
+press-media:
+    subtitle: 'Saremmo lieti di aiutarvi. Trovate le risorse del marchio qui sotto oppure contattateci direttamente: rispondiamo rapidamente.'
+    contact_title: Stai parlando di Kimai?
+    contact_button: Inviaci un'e-mail
+    name: Ufficio stampa e media
+    contact_text: Non esitate a porre le vostre domande via E-mail o a programmare una chat.
+per-month: per mese
+version-1:
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+    name: Kimai 1
+on-premise:
+    name: Self hosting
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.

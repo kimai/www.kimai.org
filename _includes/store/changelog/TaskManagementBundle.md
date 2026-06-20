@@ -1,3 +1,33 @@
+**Version 2.18.1**
+
+Compatibility: requires minimum Kimai 2.59.0
+
+- Fix fetching assignable timesheets for non-admins
+
+**Version 2.18.0**
+
+Compatibility: requires minimum Kimai 2.59.0
+
+- Assign timesheets to task (if they match project and activity)
+- Widgets update ticktack on start/stop/unassign/delete
+- Widgets update duration of active timesheets
+- Detail view updates duration of active timesheets
+- Open timesheet edit form with teamlead permissions if available (e.g. allows to change user)
+
+**Version 2.17.0**
+
+Compatibility: requires minimum Kimai 2.38.0
+
+- Remove usage of "Toasts"
+- Improved UX for dashboard widgets on open/close task
+
+**Version 2.16.1**
+
+Compatibility: requires minimum Kimai 2.38.0
+
+- Better theme support with Kimai 2.49
+- Fix deprecations
+
 **Version 2.16.0**
 
 Compatibility: requires minimum Kimai 2.38.0

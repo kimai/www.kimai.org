@@ -37,7 +37,7 @@ Use the following alignments in your data-tables:
 
 A small colored warning sign will be shown, if a user has an active timesheet.
 
-The maximum number of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`, see [System > Settings]({% link _documentation/configurations.md %})).
+The maximum number of active timesheets can be configured with the setting `timesheet.active_entries.hard_limit` (called `Permitted number of simultaneously running time entries`, see [System → Settings]({% link _documentation/configurations.md %})).
 
 ## Icons
 

@@ -1,6 +1,6 @@
 ---
 title: Working contract
-description: Logging entity changes in Kimai
+description: Better contract management and working times
 toc: false
 ---
 

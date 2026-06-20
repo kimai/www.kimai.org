@@ -1,10 +1,8 @@
 ---
 title: Demo
-lang: zh_Hans
-layout: default
-navi_dark: true
-navi_absolute: true
+layout: page
 permalink: /zh_Hans/demo.html
+cta: cloud
 ---
 
 {% include pages/demo.md %}

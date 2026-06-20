@@ -8,7 +8,7 @@ related:
     - fresh-ubuntu-20
 ---
 
-{% include snippets/self-hosting-warning.md %}
+{% include documentation/self-hosting-warning.md %}
 
 This is a collection of snippets to help you with setting up a fresh Ubuntu 22.04 LTS server for using with Kimai.
 It is neither a fully fledged documentation, explaining each step, nor is it a bash tutorial.
@@ -160,6 +160,8 @@ Configure the database connection and adjust the settings to your needs (compare
 ```
 DATABASE_URL=mysql://kimai:my-super-secret-password@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=10.6.12-MariaDB
 ```
+
+The `TRUSTED_HOSTS` setting is important to prevent "HTTP Host header attacks".
 
 Then execute the Kimai installation:
 ```bash

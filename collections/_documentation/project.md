@@ -9,8 +9,23 @@ The project administration can be found at `Administration > Projects`.
 
 ## Create a project
 
-There is a configuration (can be configured at [System > Settings]({% link _documentation/configurations.md %})), which allows to copy teams of the current user to newly created projects. 
+There is a configuration (can be configured at [System → Settings]({% link _documentation/configurations.md %})), which allows to copy teams of the current user to newly created projects. 
 This is mostly useful when teamleads manage their own projects and should have immediate access to them after creation.
+
+## Copy a project
+
+In the listing page you can open the context menu of any project and click "Create copy".
+
+By copying a project, you will create a new project, whose name is applied the string ` [COPY]` and in addition to that, the following happens:
+
+- A new project number will be created
+- The start of the project is set to the end of the copied project
+- The end of the new project is empty
+- Assigned teams will be assigned to new the project 
+- Rates for the project will be created and attached to the new project
+- Custom field content will be duplicated and saved for the new project
+- ALL project specific activities will be copied and linked to the new project (their names will not be changed)
+- Activity specific rates will be applied to the new activities
 
 ## Manage projects
 
@@ -38,7 +53,7 @@ Start and end-date are inclusive, so both dates will be included when filtering 
 
 ### Budgets
 
-{% include snippets/budgets.md permission="project" %} 
+{% include documentation/budgets.md permission="project" %} 
 
 ### Prices
 
@@ -67,7 +82,7 @@ Please note:
 
 ## Project listing
 
-{% include docs-image.html src="/images/documentation/project-filter.webp" title="Project toolbar filter" width="700px" %}
+{% include docs-image.html src="/images/documentation/project-filter.webp" title="Project toolbar filter" %}
 
 The **Visible** filter in the toolbar has three states:
 - `Yes` - all visible projects: the project itself and its customer are visible
@@ -81,7 +96,7 @@ But you can use the project filter to show all or only invisible projects.
 
 Invisible projects will be highlighted in the listing table:
 
-{% include docs-image.html src="/images/documentation/project-listing-visibility.webp" title="Visible and invisible projects in the project listing" width="700px" %}
+{% include docs-image.html src="/images/documentation/project-listing-visibility.webp" title="Visible and invisible projects in the project listing" %}
 
 ### Filter and search 
 

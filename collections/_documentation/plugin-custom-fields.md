@@ -56,10 +56,7 @@ each value from its title by using a pipe `|` character: `,01|Banana,02|Apple,Or
 
 ### Invoice template
 
-A select box that is useful if you want to generate automatic invoices via command line / cronjobs.
-
-The Kimai command `bin/console kimai:invoice:create` supports invoice templates via custom-field ([see docs]({% link _documentation/invoices.md %}#create-invoices-with-cronjobs)).
-The option parameter `--template-meta` takes the internal name of the custom field that will identify the invoice template to be used.
+A select box that is allows to select default and custom invoice templates.
 
 ### Auto-Tags
 

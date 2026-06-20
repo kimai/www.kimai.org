@@ -10,7 +10,7 @@ In case of any question or problem, please contact [our support](https://www.kim
 
 **Highlights:**
 - Support for SAML authentication (in beta-test for Google Workspace customers) - [see documentation](https://www.kimai.cloud/help/saml-authentication)
-- Configure the default value of the timesheet `billable` field per customer, project & activity - [see  documentation](https://www.kimai.org/documentation/billable.html)
+- Configure the default value of the timesheet `billable` field per customer, project & activity - [see  documentation]({% link _documentation/billable.md %})
 - Tasks: added task list to customer, project & activity detail pages
 - Expenses: added sums to revenue on dashboard
 - Expenses: show amount/cost/refundable statistics on customer, project & activity detail pages

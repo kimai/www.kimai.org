@@ -20,7 +20,9 @@ This structure is used to allow all kinds of features, like customer based invoi
 
 ## First data and configuration
 
-Before you are going to use Kimai in production, please create an initial data set and then check the configuration.  
+Before you are going to use Kimai in production, please create an initial data set and then check the configuration.
+
+{% include youtube-video.html id="setup_object_structure" %}
 
 ### Track times for your company
 

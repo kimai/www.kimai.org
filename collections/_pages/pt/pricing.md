@@ -1,11 +1,8 @@
 ---
 title: Pricing
-lang: pt
-layout: default
-bg_dark: true
-navi_dark: true
-navi_absolute: false
 permalink: /pt/pricing
+cta: cloud
+hero_features: cloud, pricing-switch
 ---
 
-{% include pages/pricing.md %} 
+{% include pages/pricing.md %}

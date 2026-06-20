@@ -1,8 +1,8 @@
 ---
 title: Download
-lang: zh_Hans
 permalink: /zh_Hans/download.html
-layout: download
+newsletter: true
 ---
 
 {% include pages/download.md %}
+

@@ -44,9 +44,11 @@ The {% include demo-action-button.html icon="import" %} button for bulk importin
 
 ### Import feature
 
-The import dialog provides a worldwide location database (in English only):
-- Search for countries (e.g. `Germany`)
-- Search for regions (e.g. `NorthRhineWestphalia`)
+The import dialog provides a worldwide location database. 
+
+- Names of public holidays are not translated: switch Kimai to the language that you want to import
+- Search for your country: the database uses all names in English, do you would type `germany` instead of `Deutschland` to find it
+- Search for the region: e.g. `NorthRhineWestphalia` (not `Nordrhein-Westfalen`)
 - Review and import all holidays for the selected region
 
 {% alert warning %}The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.{% endalert %}
