@@ -99,6 +99,5 @@ Duplicate entry 'test@example.com'
 **Solution**
 
 On your Authentik Provider, switch to Advanced protocol settings and set the `NameID Property Mapping` to be the username. 
+
 This will start sending the correct username and email, which Kimai needs to map the SSO user to the internal Kimai account for the authentication.
-
-
