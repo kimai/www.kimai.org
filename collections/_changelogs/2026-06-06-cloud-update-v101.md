@@ -42,4 +42,4 @@ New video tutorials:
 - [Track Expenses](https://www.youtube.com/watch?v=OuHq0tFspuQ)
 - [Working Times](https://www.youtube.com/watch?v=BYkgplGTz4Q) 
 
-Follow us [on YouTube](https://www.youtube.com/@kimai_org) to stay up to date.
+Follow us [on YouTube]({{ site.data.socials.youtube.url }}) to stay up to date.

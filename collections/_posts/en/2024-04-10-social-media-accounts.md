@@ -14,9 +14,9 @@ We've officially joined your favorite socials to bring you even more of what you
 Follow us on 
 [Facebook](https://www.facebook.com/profile.php?id=61570597485256), 
 [Instagram](https://www.instagram.com/kimai_org),
-[YouTube](https://www.youtube.com/@kimai_org), 
+[YouTube]({{ site.data.socials.youtube.url }}), 
 [Twitter / X](https://twitter.com/kimai_org), and
-[LinkedIn](https://www.linkedin.com/company/kimai-org/) 
+[LinkedIn]({{ site.data.socials.linkedin.url }}) 
 for software updates, demos, behind-the-scenes content, a quick laugh, special offers, and more!
 
 Stay connected and be part of our online community. Let's continue the journey together!
