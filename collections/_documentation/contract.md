@@ -101,6 +101,16 @@ Examples are:
 - adding a positive amount of days => taking over holiday from the last year
 - removing a negative amount of days => old holidays which were not taken on time expired
 
+### Why immmutable?
+
+Manual bookings directly affect an employee's working time balance. This balance determines overtime, compensation, and holiday entitlements — making it financially and legally relevant for both employers and employees.
+Kimai deliberately prevents editing or deleting manual bookings. Instead, corrections must be made through counter-bookings (a new booking with the opposite value and a note explaining the reason). This design follows the same immutability principle that applies to other legally relevant records, such as vehicle logbooks or accounting ledgers.
+
+Working time records flow into payroll and are subject to regulatory requirements. These require that records are traceable, complete, and tamper-proof. Corrections must not overwrite or remove the original entry — they must be documented as separate, visible transactions. A system that allows silent modification of records may be rejected during an audit, regardless of whether actual manipulation occurred.
+An immutable record protects employees from having their time balance quietly reduced, and it protects employers from accusations of manipulating working time data. Both parties can always trace what was booked, when, and why.
+
+### Fixing invalid manual bookings
+
 ## How calculations work
 
 Kimai only calculates working time up to the current moment.
