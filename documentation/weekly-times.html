@@ -13,13 +13,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
 <title>Weekly hours – Kimai</title>
-<meta name="description" content="Manage your time records in quick and easy weekly spreadsheet-like view.">
+<meta name="description" content="Manage your time records in a quick and easy weekly spreadsheet-like view.">
 <link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
 <meta property="og:locale" content="en">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Weekly hours">
 <meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
-<meta property="og:description" content="Manage your time records in quick and easy weekly spreadsheet-like view.">
+<meta property="og:description" content="Manage your time records in a quick and easy weekly spreadsheet-like view.">
 <link href="/assets/build/main.css?v11" rel="stylesheet" />
 
 </head>
@@ -666,7 +666,7 @@
                             </div>
                         </div>
                         
-                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Manage your time records in quick and easy weekly spreadsheet-like view.</p>
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Manage your time records in a quick and easy weekly spreadsheet-like view.</p>
                         
                     </div>
                 </div>
@@ -675,13 +675,12 @@
                     <div>
                         
                         <div id="documentation-content">
-                            <p>The “weekly times” view shows one week in a simple table structure, which mimics a classical spreadsheet.</p>
+                            <p>The “Weekly hours” view displays a single week in a simple table layout that mimics a classical spreadsheet.</p>
 
-<p>Rows represent a customer/project and activity and a duration for each date.
-If you have multiple entries for the same day, there will be multiple rows for the same project/activity combination.</p>
+<p>Each row represents a combination of customer/project and activity, with a duration column for each day of the week.
+If you have multiple entries for the same project/activity on a given day, each entry appears as a separate row.</p>
 
-<p>The nature of this form is simple and fast “duration tracking”. That means start and end time do not matter and therefor 
-all entries start at the same time.</p>
+<p>This view is designed for simple and fast <strong>duration tracking</strong> — start and end times are not relevant, so all entries for a day share the same start time.</p>
 
 <div class="youtube-wrapper" style="max-width: 560px;">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/qVexU6KyWUE?start=192" title="Creating and editing timesheets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
@@ -689,41 +688,45 @@ all entries start at the same time.</p>
 
 <h2 id="managing-records">Managing records</h2>
 
-<p>New users, without any previous timesheet, will see 3 empty rows. 
-Existing users will have up to 5 rows with the last recent activities pre-filled.</p>
+<p>New users without any previous timesheet entries will see 3 empty rows.
+Existing users will see up to 5 rows, pre-filled with their most recent activities.</p>
 
-<p>The amount of <code class="language-plaintext highlighter-rouge">recent activities</code> can be configured since 1.16.10 as a global configuration, see the <code class="language-plaintext highlighter-rouge">Weekly working hours</code> 
-section in <a href="/documentation/configurations.html">System → Settings</a>.</p>
+<p>The number of pre-filled <code class="language-plaintext highlighter-rouge">recent activities</code> can be configured as a global setting.
+See the <code class="language-plaintext highlighter-rouge">Weekly working hours</code> section in <a href="/documentation/configurations.html">System → Settings</a>.</p>
 
-<h3 id="create-further-rows">Create further rows</h3>
+<h3 id="adding-rows">Adding rows</h3>
 
-<p>If the existing rows are not sufficient, you can <code class="language-plaintext highlighter-rouge">+ Add</code> new ones at any time.</p>
+<p>If the existing rows are not sufficient, click <code class="language-plaintext highlighter-rouge">+ Add</code> to create new ones at any time.</p>
 
 <h3 id="creating-records">Creating records</h3>
 
-<p>If you add multiple times for one day, they will start at the same time (configured through the above mentioned configuration). 
-There is no way to detect the correct order of times, so instead of guessing start times by sequencing one after another, 
-they all intentionally start at the same time.</p>
+<p>Enter a duration in any day column to create a record. If you add multiple durations for the same day, they will all share the same start time (configured via the setting mentioned above). There is no way to determine the correct chronological order, so rather than guessing start times by sequencing entries one after another, they all intentionally use the same start time.</p>
 
 <h3 id="deleting-records">Deleting records</h3>
 
-<p>You can delete records from the view, by emptying the duration field. The record will be removed after saving the week data.</p>
+<p>To delete a record, clear its duration field. The record will be removed when you save the week.</p>
 
 <h2 id="configuration">Configuration</h2>
 
-<p>The start time of each new record is configured by the <code class="language-plaintext highlighter-rouge">Default start-time</code> from <a href="/documentation/configurations.html">System → Settings</a>.</p>
+<p>The start time assigned to each new record is determined by the <code class="language-plaintext highlighter-rouge">Default start-time</code> setting in <a href="/documentation/configurations.html">System → Settings</a>.</p>
 
 <h2 id="permissions">Permissions</h2>
 
-<p>The view is only available to users with the permission <code class="language-plaintext highlighter-rouge">weekly_own_timesheet</code>. 
-You can disable this feature by toggling the <a href="/documentation/permissions.html">System &gt; Role permission</a> to <code class="language-plaintext highlighter-rouge">OFF</code>.</p>
+<p>To access the Weekly hours screen, a user needs all of the following:</p>
 
-<p>Users require additionally the permissions <code class="language-plaintext highlighter-rouge">view_own_timesheet</code> and <code class="language-plaintext highlighter-rouge">edit_own_timesheet</code>.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">view_own_timesheet</code> and <code class="language-plaintext highlighter-rouge">edit_own_timesheet</code></li>
+  <li><code class="language-plaintext highlighter-rouge">weekly_own_timesheet</code></li>
+  <li>The current time-tracking mode (see <a href="/documentation/configurations.html">System → Settings</a>) must allow <code class="language-plaintext highlighter-rouge">editing the duration</code> or <code class="language-plaintext highlighter-rouge">editing the end</code> — this is <strong>not</strong> the case in punch mode.</li>
+</ul>
 
-<p>The last check is if the current time-tracking mode (see <a href="/documentation/configurations.html">System → Settings</a>) 
-allows <code class="language-plaintext highlighter-rouge">editing the duration</code> or <code class="language-plaintext highlighter-rouge">editing the end</code> (which is not true for the punch-mode).</p>
+<p>If you have the <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> permission, you can switch to view and edit another user’s weekly hours.</p>
 
-<p>If you own the permission <code class="language-plaintext highlighter-rouge">view_other_timesheet</code> you can switch the user.</p>
+<h2 id="disabling-weekly-hours">Disabling Weekly hours</h2>
+
+<p>Companies that need to record exact start and end times may want to deactivate this screen, since it only tracks durations.</p>
+
+<p>You can disable it by setting the <a href="/documentation/permissions.html">System → Role permission</a> <code class="language-plaintext highlighter-rouge">weekly_own_timesheet</code> to <code class="language-plaintext highlighter-rouge">OFF</code>.</p>
 
                         </div>
                         
@@ -753,7 +756,7 @@ allows <code class="language-plaintext highlighter-rouge">editing the duration</
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#managing-records" class="nav-link">Managing records</a><ul><li class="nav-item"><a href="#create-further-rows" class="nav-link">Create further rows</a></li><li class="nav-item"><a href="#creating-records" class="nav-link">Creating records</a></li><li class="nav-item"><a href="#deleting-records" class="nav-link">Deleting records</a></li></ul></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#managing-records" class="nav-link">Managing records</a><ul><li class="nav-item"><a href="#adding-rows" class="nav-link">Adding rows</a></li><li class="nav-item"><a href="#creating-records" class="nav-link">Creating records</a></li><li class="nav-item"><a href="#deleting-records" class="nav-link">Deleting records</a></li></ul></li><li class="nav-item"><a href="#configuration" class="nav-link">Configuration</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#disabling-weekly-hours" class="nav-link">Disabling Weekly hours</a></li></ul>
                     
                     <ul class="nav">
                         <li>

@@ -427,13 +427,16 @@
 
                     <h2 id="description">Description</h2>
 
-<p>Lexoffice plugin for Kimai is a plugin that allows you to automatically create invocies in Lexoffice, whenver an invoice in Kimai is created. By using the Lexoffice API (API key is needed) this plugin can create invoice drafts and finalized invoices in Lexoffice, based on your settings. Furthermore, this plugin allows you to customize the title and description of the items in the Lexoffice-invoice. The plugin therefore offers a few replacers you can choose from and that are replaced dynamically when creating the invoice for Lexoffice.</p>
+<p>Lexoffice plugin for Kimai is a plugin that allows you to automatically create invoices in Lexoffice, whenever an invoice in Kimai is created. 
+By using the Lexoffice API (API key is needed) this plugin can create invoice drafts and finalized invoices in Lexoffice, based on your settings. 
+Furthermore, this plugin allows you to customize the title and description of the items in the Lexoffice-invoice. 
+The plugin therefore offers a few replacers you can choose from and that are replaced dynamically when creating the invoice for Lexoffice.</p>
 
 <h2 id="installation">Installation</h2>
 
 <p>This plugin does not need a database table, so there is no installation of the plugin necessary.
 To communicate with Lexoffice however, you need to install the Lexoffice-php-sdk composer package:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require helsinki-systems/lexoffice-php-sdk:dev-master
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require helsinki-systems/lexoffice-php-sdk:dev-master <span class="nt">--update-no-dev</span> <span class="nt">--optimize-autoloader</span>
 </code></pre></div></div>
 
 <div class="card border-primary mb-3">
