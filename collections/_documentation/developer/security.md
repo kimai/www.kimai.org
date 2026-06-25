@@ -40,6 +40,11 @@ rated higher than `Medium`, as these preconditions significantly limit the reali
 - The **System-Admin** role is the Kimai equivalent of a **root** account and can easily delete all data in the system.
 - Users who already have filesystem access to the server have a variety of options to manipulate the system and do not need Kimai for that.
 
+Each of the following pre-conditions will lower the severity level:
+- requires filesystem access of some kind (e.g. hosting a HTML page on the same subdomain for an automated `POST` request)
+- the assumption of the _mysterious legacy browser_ that does not support the `samesite` cookie setting `lax`
+- requirement that the attacker is a **System-Admin** 
+
 ## Published vulnerabilities
  
 You can subscribe to all advisories via [Atom RSS Feed]({% link security.xml %}).
