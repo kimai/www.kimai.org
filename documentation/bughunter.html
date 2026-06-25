@@ -508,20 +508,40 @@
 
 <p>EU and German law may require service operators to report certain attacks to authorities, even without malicious intent. Prior written consent protects both parties.</p>
 
-<h2 id="automated-and-low-quality-reports">Automated and low-quality reports</h2>
+<h2 id="automated-reports">Automated reports</h2>
 
-<p>We receive a high volume of automated or templated reports that show no familiarity with Kimai or its codebase. These reports are not reviewed.</p>
+<p>We regularly receive reports that don’t meet the quality bar for a disclosure. Common issues include:</p>
 
-<p>To be considered, a report should:</p>
+<ul>
+  <li>Demonstrations against internal APIs in ways that aren’t reachable through the Kimai UI</li>
+  <li>Exaggerated severity levels that don’t reflect realistic attack scenarios (see <a href="/documentation/security.html">Severity levels</a>)</li>
+  <li>Multi-page write-ups padded with boilerplate code and filler text (AKA unvalidated, AI output)</li>
+</ul>
+
+<p>And our favorites:</p>
+<ul>
+  <li>Descriptions of Kimai features or behavior that don’t exist (unvalidated AI-hallucinations)</li>
+  <li>Reports that ignore this documentation page</li>
+</ul>
+
+<p><strong>If you use AI tools to draft your report, you’re responsible for reviewing and validating every claim before submission. 
+Raw LLM output — even if technically accurate — won’t be credited unless a human researcher is available to answer follow-up questions.</strong></p>
+
+<p>To be considered, a report must:</p>
 
 <ul>
   <li>Clearly identify the affected component or endpoint</li>
   <li>Describe the vulnerability and its potential impact</li>
-  <li>Include reproduction steps or a proof of concept</li>
-  <li>AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.</li>
+  <li>Include reproduction steps and/or a realistic proof of concept</li>
+  <li>Not include one of the points listed below</li>
 </ul>
 
-<p>Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.</p>
+<p>Every submitted report requires significant unplanned time to triage and evaluate, given the potential implications.
+That time comes directly at the expense of other development work.
+We appreciate every effort to help secure Kimai, but we can’t afford to spend limited maintainer resources on reports 
+that don’t meet these criteria.</p>
+
+<p>We might not answer in such cases and repeated low-quality submissions may result in your account being blocked.</p>
 
 <h2 id="not-security-issues">Not security issues</h2>
 
@@ -653,7 +673,7 @@ The common industry standard recommends using SPF as just one part of the bigger
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-and-low-quality-reports" class="nav-link">Automated and low-quality reports</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#password-reset-host-header-poisoning" class="nav-link">Password reset: Host header poisoning</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#reporting-a-vulnerability" class="nav-link">Reporting a vulnerability</a></li><li class="nav-item"><a href="#bug-bounty--rewards" class="nav-link">Bug bounty &amp; rewards</a></li><li class="nav-item"><a href="#testing-guidelines" class="nav-link">Testing guidelines</a><ul><li class="nav-item"><a href="#permitted" class="nav-link">Permitted</a></li><li class="nav-item"><a href="#not-permitted" class="nav-link">Not permitted</a></li></ul></li><li class="nav-item"><a href="#automated-reports" class="nav-link">Automated reports</a></li><li class="nav-item"><a href="#not-security-issues" class="nav-link">Not security issues</a><ul><li class="nav-item"><a href="#password-reset-host-header-poisoning" class="nav-link">Password reset: Host header poisoning</a></li><li class="nav-item"><a href="#csv-formula-injection" class="nav-link">CSV Formula injection</a></li><li class="nav-item"><a href="#logout-works-without-csrf-token" class="nav-link">Logout works without CSRF token</a></li><li class="nav-item"><a href="#unverified-password-change" class="nav-link">Unverified Password Change</a></li><li class="nav-item"><a href="#back-button-that-keeps-working-after-logout" class="nav-link">“Back” button that keeps working after logout</a></li><li class="nav-item"><a href="#no-dmarc-record-found" class="nav-link">No DMARC record found</a></li><li class="nav-item"><a href="#misconfigured-spf" class="nav-link">Misconfigured SPF</a></li><li class="nav-item"><a href="#missing-certificate-authority-authorization-rule" class="nav-link">Missing Certificate Authority Authorization Rule</a></li><li class="nav-item"><a href="#website-framing" class="nav-link">Website framing</a></li></ul></li></ul>
                     
                 </aside>
             
