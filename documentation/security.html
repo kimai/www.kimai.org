@@ -488,6 +488,13 @@ rated higher than <code class="language-plaintext highlighter-rouge">Medium</cod
   <li>Users who already have filesystem access to the server have a variety of options to manipulate the system and do not need Kimai for that.</li>
 </ul>
 
+<p>Each of the following pre-conditions will lower the severity level:</p>
+<ul>
+  <li>requires filesystem access of some kind (e.g. hosting a HTML page on the same subdomain for an automated <code class="language-plaintext highlighter-rouge">POST</code> request)</li>
+  <li>the assumption of the <em>mysterious legacy browser</em> that does not support the <code class="language-plaintext highlighter-rouge">samesite</code> cookie setting <code class="language-plaintext highlighter-rouge">lax</code></li>
+  <li>requirement that the attacker is a <strong>System-Admin</strong></li>
+</ul>
+
 <h2 id="published-vulnerabilities">Published vulnerabilities</h2>
 
 <p>You can subscribe to all advisories via <a href="/security.xml">Atom RSS Feed</a>.</p>
