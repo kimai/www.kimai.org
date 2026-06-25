@@ -50,18 +50,34 @@ Make a good-faith effort to avoid privacy violations, data loss, and service dis
 
 EU and German law may require service operators to report certain attacks to authorities, even without malicious intent. Prior written consent protects both parties.
 
-## Automated and low-quality reports
+## Automated reports
 
-We receive a high volume of automated or templated reports that show no familiarity with Kimai or its codebase. These reports are not reviewed.
+We regularly receive reports that don't meet the quality bar for a disclosure. Common issues include:
 
-To be considered, a report should:
+- Demonstrations against internal APIs in ways that aren't reachable through the Kimai UI
+- Exaggerated severity levels that don't reflect realistic attack scenarios (see [Severity levels]({% link _documentation/developer/security.md %}))
+- Multi-page write-ups padded with boilerplate code and filler text (AKA unvalidated, AI output)
+
+And our favorites:
+- Descriptions of Kimai features or behavior that don't exist (unvalidated AI-hallucinations)
+- Reports that ignore this documentation page
+
+**If you use AI tools to draft your report, you're responsible for reviewing and validating every claim before submission. 
+Raw LLM output — even if technically accurate — won't be credited unless a human researcher is available to answer follow-up questions.**
+
+To be considered, a report must:
 
 - Clearly identify the affected component or endpoint
 - Describe the vulnerability and its potential impact
-- Include reproduction steps or a proof of concept
-- AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.
+- Include reproduction steps and/or a realistic proof of concept
+- Not include one of the points listed below 
 
-Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.
+Every submitted report requires significant unplanned time to triage and evaluate, given the potential implications.
+That time comes directly at the expense of other development work.
+We appreciate every effort to help secure Kimai, but we can't afford to spend limited maintainer resources on reports 
+that don't meet these criteria.
+
+We might not answer in such cases and repeated low-quality submissions may result in your account being blocked.
 
 ## Not security issues
 
