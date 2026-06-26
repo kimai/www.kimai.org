@@ -44,26 +44,27 @@ The company is a member of the Alliance for Cyber Security Germany and has made 
 
 **When Excel reaches its limits**
 
-For Jan Krempchen, owner of TECH-SUPPORT.KOELN, time tracking was a necessary evil for a long time. "Before Kimai, we recorded working hours and sold hardware in Excel spreadsheets," he recalls.  
+For Jan Krempchen, owner of TECH-SUPPORT.KOELN, time tracking was a necessary evil for a long time. 
+*"Before Kimai, we recorded working hours and sold hardware in Excel spreadsheets,"* he recalls.  
 At first glance, that sounds like a practical solution — but the reality was different.
 
-Every four weeks, accounting faced a mountain of work: "Once a month, accounting had to manually transfer these lists, item by item, into the accounting software.  
-That took a full working day and was prone to errors." An entire working day — just to move data from one system to another. Time that could not be invested in customer support or in further developing the business.
+Every four weeks, accounting faced a mountain of work: *"Once a month, accounting had to manually transfer these lists, item by item, into the accounting software.  
+That took a full working day and was prone to errors."* An entire working day — just to move data from one system to another. Time that could not be invested in customer support or in further developing the business.
 
 **The search for the right solution**
 
 As an IT service provider, Jan knew there had to be better solutions. But the selection was overwhelming, and many vendors attracted attention with features that turned out to be of little practical use.  
-"Other solutions looked promising at first, but were poorly scalable or targeted exclusively at large companies," he says, describing his experience.  
+*"Other solutions looked promising at first, but were poorly scalable or targeted exclusively at large companies,"* he says, describing his experience.  
 The system not only had to be reliable, but also flexible enough to integrate into the existing infrastructure, such as the Zammad ticketing system.
 
 **The decisive difference: openness and integration**
 
 What set Kimai apart from other solutions was not just its functionality, but the philosophy behind it.  
-"I believe this openness of Kimai, with its interfaces, can be used much more than I am using it today," Jan explains enthusiastically.  
-"It's not just Zammad, but many other systems that allow you to move data in and out."
+*"I believe this openness of Kimai, with its interfaces, can be used much more than I am using it today,"* Jan explains enthusiastically.  
+*"It's not just Zammad, but many other systems that allow you to move data in and out."*
 
 Jan implemented a clever integration between Zammad and Kimai:  
-"In our ticketing system, customers can report their IT problems, and Zammad automatically creates a one-click link for time tracking in Kimai for each ticket."
+*"In our ticketing system, customers can report their IT problems, and Zammad automatically creates a one-click link for time tracking in Kimai for each ticket."*
 
 As a result, the date, time, customer, and error description from the Zammad ticket are automatically transferred into the appropriate fields in Kimai.  
 *"That is, of course, a huge advantage — being able to start time tracking directly with a single click."*
@@ -77,12 +78,15 @@ In addition to the existing functionality, Jan purchased Kimai plugins for expen
 
 **From burden to routine: how Kimai became a daily companion**
 
-Today, Kimai is as natural as morning coffee. "Kimai has become a standard tool for us," Jan says.  
-"When we start our laptop in the morning, the browser automatically opens a tab with Kimai, alongside other tabs such as our ticketing system.  
-And only in the evening, when we finish work, do we close the browser with Kimai and our other standard tools. So it accompanies us throughout the entire working day."
+Today, Kimai is as natural as morning coffee. 
+*"Kimai has become a standard tool for us,"* Jan says.  
+*"When we start our laptop in the morning, the browser automatically opens a tab with Kimai, alongside other tabs such as our ticketing system.  
+And only in the evening, when we finish work, do we close the browser with Kimai and our other standard tools. So it accompanies us throughout the entire working day."*
 
-This integration into the daily workflow was no coincidence. It is the result of a system that adapts to the needs of the user — not the other way around.  
-"All the updates always run very smoothly," Jan emphasizes. "That’s a big advantage compared to other open-source projects, where after almost every update you sometimes have to struggle with: Why is this error there? — and then figure it out yourself."
+This integration into the daily workflow was no coincidence. 
+It is the result of a system that adapts to the needs of the user — not the other way around.  
+*"All the updates always run very smoothly,"* Jan emphasizes. 
+*"That’s a big advantage compared to other open-source projects, where after almost every update you sometimes have to struggle with: Why is this error there? — and then figure it out yourself."*
 
 <!-- PARTS -->
 
@@ -91,22 +95,24 @@ This integration into the daily workflow was no coincidence. It is the result of
 The process is simple: working hours and sold hardware are entered directly into Kimai.  
 Once a month, accounting uses this data to create the invoices.
 
-But it is about more than efficiency alone. The error rate has dropped dramatically, accounting can focus on more strategic tasks, and the team no longer has to worry about forgotten time entries.
+But it is about more than efficiency alone. 
+The error rate has dropped dramatically, accounting can focus on more strategic tasks, and the team no longer has to worry about forgotten time entries.
 
 **Support that makes the difference**
 
-Even the best software is only as good as the support behind it. Jan remembers one particular moment: "I once had a critical error where the system simply wouldn’t run — because of a mistake I made.  
-And Kevin (the developer of Kimai) was able to help me very quickly via remote support."
+Even the best software is only as good as the support behind it. 
+Jan remembers one particular moment: *"I once had a critical error where the system simply wouldn’t run — because of a mistake I made.  
+And Kevin (the developer of Kimai) was able to help me very quickly via remote support."*
 
 This experience highlights an important aspect: Kimai is not just about software, but about a complete package of technology, support, and continuous development.  
-"Over the years, you can see the progress — it keeps moving forward. You never get the feeling that it stands still. There is always a support contact available."
+*"Over the years, you can see the progress — it keeps moving forward. You never get the feeling that it stands still. There is always a support contact available."*
 
 **Looking ahead: even more potential**
 
 For Jan, the story is far from over.  
-"I believe this openness of Kimai, with its interfaces, can be used much more than I am using it today," he says thoughtfully.
+*"I believe this openness of Kimai, with its interfaces, can be used much more than I am using it today,"* he says thoughtfully.
 
-His advice for new Kimai users is based on exactly that insight: "If someone wants to use Kimai, they should really engage with it from the very beginning and see how they can build automated systems."  
+His advice for new Kimai users is based on exactly that insight: *"If someone wants to use Kimai, they should really engage with it from the very beginning and see how they can build automated systems."*  
 The investment in initial planning and integration pays off in the long term.
 
 The story of TECH-SUPPORT.KOELN shows that time tracking can be far more than a bureaucratic obligation.  
