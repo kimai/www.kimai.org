@@ -49,6 +49,10 @@ layout: base
                             {{ site.data[page.lang].translation.stories.since }}: <strong>{{ page.since }}</strong>
                             <br>
                             Homepage: <strong><a href="{{ page.homepage_url }}" target="_blank">{{ page.homepage }}</a></strong>
+                            {% if page.blog_url != nil %}
+                            <br>
+                            Blog: <strong><a href="{{ page.blog_url }}" target="_blank">{{ page.blog_url }}</a></strong>
+                            {% endif %}
                             <br>
                             {{ site.data[page.lang].translation.stories.location }}: <strong>{{ page.location }}</strong>
                         </div>
