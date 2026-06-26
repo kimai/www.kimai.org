@@ -39,6 +39,37 @@ calendar:
           description: "when activated, form details will be populated from last entry"
         - title: "Display of the titles of calendar entries"
           description: "which data should be displayed in the title of each calendar entry"
+kiosk:
+    name: Kiosk
+    configurations:
+        - title: "Login mode"
+          description: "Which mode scans the Kiosk code (external scanner for NFC and other e.g. USB scanners, which act as a keyboard)"
+        - title: "Activity"
+          description: "You can only choose 'non-global' activities here. If you see an empty dropdown, you need to create a customer/project/activity combination for Kiosk timesheets. The activity needs to be assigned to the Kiosk project."
+        - title: "Placeholder for input field"
+          description: "A short info text that is shown as placeholder in the input field (like: 'enter your code' or 'scan your NFC token')"
+        - title: "Duration of confirmation dialog"
+          description: "The confirmation dialog (both coming and going) is shown for the selected amount of seconds"
+        - title: "Screensaver"
+          description: "Days of the week, when the screensaver should be activated. Between 6 a.m. and 10 p.m., the logo and time are displayed; otherwise, the screen is black."
+        - title: "Hide entered/scanned code (the browsers password manager needs to be disabled)"
+          description: "Transforms the text field into a password field. To prevent the browser from asking to store the passwords (codes), you need to disable the password manager."
+        - title: "Grouped week view when clocking in and out"
+          description: ""
+        - title: "Hide logo"
+          description: "Hides the company logo (see System > Preferences > My Company) from the Kiosk screen "
+        - title: "Show 'not logged in' users on login screen"
+          description: "Show avatars of all user that do not have a running timesheet on the log-in screen"
+        - title: "Show 'logged in' users on login screen"
+          description: "Show avatars of all user that have a running timesheet on the log-in screen"
+        - title: "Save client IP for new timesheets"
+          description: "Save the client IP in a timesheet custom-field (can be exported)"
+        - title: "Play a short sound for logins and logouts"
+          description: "Choose between silence, an audio sound and simple beeps"
+        - title: "Prevent page reload in login process"
+          description: ""
+        - title: "Stop only kiosk activities when clocking out"
+          description: 'If enabled, all "non-kiosk activities" will not be stopped for the user when clocking out'
 empty:
     name: Foo
     before: Bar

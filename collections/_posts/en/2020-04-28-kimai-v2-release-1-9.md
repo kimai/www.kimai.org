@@ -26,7 +26,7 @@ Thanks to all of you for using and supporting Kimai, especially:
 
 > Want to upgrade? [Click here to find out how]({%link _documentation/updates.md %}).
 
-# Changelog
+## Changelog
 
 [Full Changelog]({{ site.kimai_v2_repo }}/compare/1.8...1.9)
 

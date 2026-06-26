@@ -3,6 +3,7 @@ title: Migration from Kimai v1
 navigation: Migrate from Kimai v1
 description: Install Kimai and import your existing timesheet data from the ancient Kimai 1
 canonical: /documentation/migration-v1.html
+plugin: keleo-importer-bundle
 ---
 
 This documentation covers the necessary steps to migrate from Kimai 1 to Kimai 2.

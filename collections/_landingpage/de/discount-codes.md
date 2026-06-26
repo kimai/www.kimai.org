@@ -1,6 +1,7 @@
 ---
-title: "Kimai Rabatt und Gutschein Codes"
+title: "Rabatt und Gutschein Codes"
 centered: true
+cta: cloud
 ---
 
 Diese Seite erklärt meine Rabattrichtlinien, mit denen ich eine faire Preispolitik für alle Kunden gewährleisten möchte.
@@ -11,7 +12,7 @@ Die einzige Ausnahme von dieser Regel wird unter "Kaufkraftparität" aufgeführt
 
 ### Gemeinnützig
 
-Für gemeinnützige Organisationen, welche die Kimai-Cloud nutzen möchten, biete ich einen [großzügigen Rabatt in Form eines jährlichen Tarifs]({% link _landingpage/de/non-profit.md %}) an.   
+Für gemeinnützige Organisationen, welche die Kimai-Cloud nutzen möchten, biete ich einen [großzügigen Rabatt in Form eines jährlichen Tarifs]({% link _industries/de/non-profit.md %}) an.   
 
 ### Cloud
 

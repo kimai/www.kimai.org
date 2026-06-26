@@ -1,4 +1,5 @@
-{% for social in site.data.socials %}
+{% for entry in site.data.socials %}
+    {% assign social = entry[1] %}
     <a target="_blank" href="{{ social.url }}" class="btn btn-icon btn-secondary btn-{{ social.button }} rounded-circle me-3" aria-label="{{ social.name }}">
         <i class="bx bxl-{{ social.icon }}"></i>
     </a>

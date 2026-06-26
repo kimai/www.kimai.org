@@ -4,54 +4,44 @@ keyword: "Time Tracker"
 intro: "A time-tracker is a software tool or application designed to automatically or manually record and monitor how time is spent on various activities, tasks, or projects, helping individuals and organizations measure and analyze their time usage."
 ---
 
-Welcome to a world where time trackers meet innovation — Kimai is the cutting edge open source time tracker software!
+There are hundreds of time trackers out there. Most of them look the same, work the same, and cost the same — a monthly fee per user that quietly adds up until someone in accounting starts asking questions. Kimai takes a different approach: it's open source, it's free to self-host, and it's been around since 2006. That's not a typo — nearly two decades of development, long before "SaaS time tracker" became a crowded category.
 
-#### Open-source time-tracker for professionals
+### What a time tracker actually needs to do
 
-As you evaluate your options, consider the freedom, flexibility, and full control that Kimai offers. 
-It's not just software; it's a game-changer for your business.
+Strip away the marketing buzzwords and a time tracker has one job: record how people spend their working hours. Everything else — reports, invoices, integrations — is built on top of that foundation.
 
-In your search for the perfect time tracker solution, you've probably come across numerous options.
-But if you're looking for unparalleled flexibility and control, Kimai is the open source time tracker software stands out as the optimal choice.
+The trouble is, most time trackers optimize for the demo, not for daily use. Flashy dashboards look great in a sales call but slow you down at 8 AM on a Monday. Kimai takes the opposite approach: the most common action (starting and stopping a timer) is one click. Everything else stays out of your way until you need it.
 
-#### Kimai is the best open-source choice for time-tracking
+### Who uses an open-source time tracker?
 
-Kimai isn't just another simplified time-tracking tool; it's also providing many features around project management, employee management and tracking and so mut more! 
+**Agencies billing by the hour** need every minute assigned to the right client. Kimai tracks time against a hierarchy of customers, projects, and activities. At the end of the month, invoices generate from actual recorded hours — no guessing, no rounding, no spreadsheets.
 
-Kimai is a professional grade software, given away for free by its maker, who strongly beliefs in the idea of open-source software, even in B2B situations.
+**Development teams** use Kimai to understand where engineering time goes. When half the sprint disappears into unplanned support work, the time tracker makes that visible. You can't fix what you can't measure.
 
-#### Where functionality meets freedom
+**Universities and research institutions** appreciate two things about Kimai: it's free, and it runs on their own servers. Research budgets are tight, data protection requirements are strict, and a self-hosted open-source time tracker checks both boxes.
 
-With Kimai, you're not just buying software; you're buying a customisable platform that adapts to your business needs. 
+**Trades and construction firms** need a time tracker that works on a job site. Kimai runs in any browser — including the one on that dusty tablet in the foreman's truck. The kiosk mode lets workers clock in and out with a PIN, no individual accounts required.
 
-You can modify and extend its functionality to fit your workflows and processes. You can add pre-made plugins or develop your own ones, to hook deep into the core of Kimai.
+**Freelancers** want something lightweight but professional. Kimai delivers clean time reports for clients and a solid paper trail for taxes. No per-user fees when you're the only user.
 
-#### Robust features that drive productivity
+### Why open source matters for time tracking
 
-- **Effortless time tracker**: Track hours with a single click and focus on the work that matters.
-- **Project based organisation**: Assign every second to the right task for accurate billing and reporting.
-- **Transparent reporting**: Create detailed reports that provide insight into your team's productivity.
-- **User Access Levels**: Maintain control with customised user roles and permissions.
-- **Cross-Platform Availability**: Whether you're on a PC, tablet, or smartphone, Kimai is there for you—anytime, anywhere.
-- **Customization at its Core**: Mold Kimai to fit your business like a glove with extensive customization options.
+A time tracker sees everything: when your team starts working, how long they spend on each task, when they take breaks. That's sensitive data. With a proprietary SaaS tool, you trust the vendor's privacy policy and hope for the best. With Kimai, you can read every line of code, host it on your own infrastructure, and know exactly where your data lives.
 
-#### Driven through community feedback
+Open source also means no artificial limitations. There's no "starter plan" with 5 users and crippled reporting, no "enterprise tier" that unlocks the features you actually need. Self-hosted Kimai gives you everything, for free, with unlimited users.
 
-Kimai plays well with others and has an extensive API that can manage your employee time trackers, integrating effortlessly with your favorite tools and services.
+### Extending Kimai: plugins, API, and custom fields
 
-Plus, being open source means you have a robust community for support, offering updates, plugins, and fixes.
-Get answers, share ideas and move forward with community-validated solutions.
+Out of the box, Kimai covers the fundamentals well. But businesses have specific needs, and that's where the plugin system comes in. Pre-built plugins add features like advanced invoicing, custom reports, approval workflows, and expense tracking. If none of the existing plugins fit, the API lets you build your own integrations.
 
-#### SaaS-Hosted or On-Premise
+Custom fields deserve a special mention: you can add any data field to time entries, projects, customers, or users. Tracking cost centers? Add a custom field. Need a purchase order number on every entry? Custom field. This flexibility means Kimai adapts to your processes instead of forcing you to adapt to its assumptions.
 
-Kimai is fully open, no matter which version you choose: you get the same code.
+### Cloud or self-hosted — same software, your call
 
-Both the SaaS version and the On-Premise version are running the same codebase, including the commercial plugins.
+The Kimai Cloud is the fastest way to get started: sign up, create your instance, invite your team. It runs on European servers, handles updates and backups automatically, and includes all commercial plugins.
 
-That means there is no vendor lock-in, not even in the cloud. As paying customer your receive regular full backups of your data, including the entire database and all generated invoices.
-So if you ever need to move from Cloud to On-Premise - that is possible!
+Self-hosting gives you full control. Run Kimai on your own Linux server, your company's Kubernetes cluster, or a five-dollar VPS — it's your choice. Docker images make deployment straightforward.
 
-The other way around is also no problem, we can migrate your On-Premise Kimai to the cloud.
+Both versions run the same code. Switching directions is always possible: cloud customers receive full data exports, self-hosted users can migrate to the cloud. No lock-in, no data hostage situations.
 
-You see: when it comes to time trackers, Kimai is more than just software - it is a strategic partner that grows with you.
-Take advantage of open source and make it your time-tracking experience: choose Kimai.
+Give Kimai a try and discover what time tracking feels like when the software works for you, not the other way around.

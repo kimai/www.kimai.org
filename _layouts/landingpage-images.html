@@ -4,74 +4,39 @@ layout: base
 
 <main class="page-wrapper">
 
-    {% include header-navigation.html absolute=true light=false %}
+    {% include header-navigation.html %}
 
-    <section class="position-relative py-5">
-        <div class="position-absolute top-0 start-0 w-100 bg-position-bottom-center bg-size-cover bg-repeat-0" style="background-image: url(/images/layout/landingpage/hero-bg.svg);">
-            <div class="d-lg-none" style="height: 1050px;"></div>
-            <div class="d-none d-lg-block" style="height: 900px;"></div>
-        </div>
-        <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5">
-            <div class="row">
-                <div class="col-lg-6 d-flex flex-column">
-                    <h1 class="display-3 mb-4">
-                        {{ page.title }}
-                    </h1>
-                    <p class="fs-lg mb-5">
-                        {{ content }}
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row row-cols-2 gx-3 gx-lg-4">
-                        <div class="col pt-lg-5 mt-lg-1">
-                            <img src="{{ page.logos.logo1 }}" class="d-block rounded-3 mb-3 mb-lg-4" alt="Image">
-                            <img src="{{ page.logos.logo2 }}" class="d-block rounded-3" alt="Image">
-                        </div>
-                        <div class="col">
-                            <img src="{{ page.logos.logo3 }}" class="d-block rounded-3 mb-3 mb-lg-4" alt="Image">
-                            <img src="{{ page.logos.logo4 }}" class="d-block rounded-3" alt="Image">
-                        </div>
-                    </div>
+    {% assign pagetitle = page.title %}
+    {% assign subtitle = '' %}
+    {% assign eyebrow = site.slogan %}
+
+    {% include hero-plain-text.html %}
+
+    <section class="container mt-3 mb-5 pt-lg-5" id="benefits">
+        <div class="row align-items-center pt-4">
+
+            {% for feature in page.features %}
+            <div class="col col-xs-12 {% unless forloop.last %}border-end-lg{% endunless %} px-2">
+                <div class="text-center">
+                    <img src="{{ feature.image }}" width="48" alt="{{ feature.text }} logo" class="d-block mb-4 mx-auto">
+                    <h4 class="mb-2 pb-1">{{ feature.title }}</h4>
+                    <p class="mx-auto" style="max-width: 336px;">{{ feature.text }}</p>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </section>
 
     <section class="container mt-3 mb-5 pt-lg-5" id="benefits">
-        <div class="swiper pt-3" data-swiper-options='{
-          "slidesPerView": 1,
-          "pagination": {
-            "el": ".swiper-pagination",
-            "clickable": true
-          },
-          "breakpoints": {
-            "500": {
-              "slidesPerView": 2
-            },
-            "991": {
-              "slidesPerView": {{ page.features.size }}
-            }
-          }
-        }'>
-            <div class="swiper-wrapper pt-4">
+        <div class="row align-items-center pt-4">
 
-                {% for feature in page.features %}
-                <div class="swiper-slide {% unless forloop.last %}border-end-lg{% endunless %} px-2">
-                    <div class="text-center">
-                        <img src="{{ feature.image }}" width="48" alt="{{ feature.text }} logo" class="d-block mb-4 mx-auto">
-                        <h4 class="mb-2 pb-1">{{ feature.title }}</h4>
-                        <p class="mx-auto" style="max-width: 336px;">{{ feature.text }}</p>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+            {{ content }}
 
-            <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
         </div>
     </section>
 
-    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains page.review_tags" | sample: 5 %}
-    {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro language=page.lang %}
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains page.review_tags" | sample: 8 %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials title=testimonial_title introduction=testimonial_intro %}
 
     <section class="container pb-3 pb-md-4 pb-lg-5">
         <div class="row gy-4 py-xl-2 mt-5">
@@ -96,7 +61,4 @@ layout: base
 
 </main>
 
-{% include cta-socials-square.html %}
-
 {% include footer.html %}
-

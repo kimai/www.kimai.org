@@ -62,7 +62,6 @@ kimai:
         activate: true
         title: Login with Azure AD
         mapping:
-            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: username }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname, kimai: alias }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname, kimai: title }

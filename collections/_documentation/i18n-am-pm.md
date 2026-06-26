@@ -1,5 +1,5 @@
 ---
-title: "Date and Time formats"
+title: "Date & Time format"
 description: How times, dates and money is rendered in Kimai and exports
 ---
 

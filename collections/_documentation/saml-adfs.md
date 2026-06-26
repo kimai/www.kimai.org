@@ -21,7 +21,6 @@ kimai:
         title: Login with ADFS
         mapping:            
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: email }
-            - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress, kimai: username }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname, kimai: alias }
             - { saml: $http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name, kimai: title }
         roles:

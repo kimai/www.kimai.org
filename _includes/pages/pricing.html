@@ -1,27 +1,32 @@
-<section class="bg-dark py-4">
-    <div class="container pb-2 py-lg-3 text-center">
-        <h1 class="mb-4">{{ site.data[page.lang].translation.pricing.name }}</h1>
-        <p class="text-body fs-lg pb-3 mb-3">{{ site.data[page.lang].translation.pricing.subtitle }}</p>
-    </div>
-    <div style="height: 250px;"></div>
-</section>
-
-<div class="price-switch-wrapper">
-    <section class="container mb-5 pt-md-1 pt-lg-4 pt-xl-5" style="margin-top: -300px;">
+<div class="price-switch-wrapper" style="margin-top: -50px">
+    <section class="container mb-5 pb-5">
         {% include pricing-plans.html %}
         <p class="my-3 text-muted text-center">
             {{ site.data[page.lang].translation.pricing.tax_exclusive }}
             {{ site.data[page.lang].translation.pricing.cancellation }}
         </p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+            <span class="d-inline-flex align-items-center gap-2 fs-sm fw-semibold">
+                <span class="d-flex align-items-center justify-content-center rounded-circle bg-faded-primary text-primary checkmark">✓</span>
+                {{ site.data[page.lang].translation.pricing.trust_trial }}
+            </span>
+            <span class="d-inline-flex align-items-center gap-2 fs-sm fw-semibold">
+                <span class="d-flex align-items-center justify-content-center rounded-circle bg-faded-primary text-primary checkmark">✓</span>
+                {{ site.data[page.lang].translation.pricing.trust_hosting }}
+            </span>
+            <span class="d-inline-flex align-items-center gap-2 fs-sm fw-semibold">
+                <span class="d-flex align-items-center justify-content-center rounded-circle bg-faded-primary text-primary checkmark">✓</span>
+                {{ site.data[page.lang].translation.pricing.trust_no_fee }}
+            </span>
+        </div>
     </section>
 
     <section class="container mb-5 pt-md-1 pt-lg-2 pt-xl-3">
+        <div class="text-center mb-5">
+            <p class="eyebrow mb-1">{{ site.data[page.lang].translation.testimonials.title }}</p>
+            <h3>{{ site.data[page.lang].translation.store-hero-counter | replace: '%number%', site.kimai_customers }}</h3>
+        </div>
         {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'FeaturedShort'" %}
-        {% if page.lang == 'de' %}
-            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'German'" %}
-        {% else %}
-            {% assign testimonials = testimonials | where_exp: "item", "item.tags contains 'English'" %}
-        {% endif %}
         {% assign testimonials = testimonials | sample: 3 %}
         {% include testimonials-horizontal.html testimonials=testimonials %}
     </section>
@@ -30,3 +35,26 @@
         {% include plan-compare-features.html %}
     </section>
 </div>
+<script>
+document.querySelector('[data-bs-toggle="price"]').addEventListener('change', (e) => {
+    let checkbox = e.currentTarget.querySelector('input[type="checkbox"]'),
+        monthlyPrice = document.querySelectorAll('[data-monthly-price]'),
+        annualPrice = document.querySelectorAll('[data-annual-price]');
+
+    for (let n = 0; n < monthlyPrice.length; n++) {
+        if (checkbox.checked) {
+            monthlyPrice[n].classList.add('d-none');
+        } else {
+            monthlyPrice[n].classList.remove('d-none');
+        }
+    }
+
+    for (let m = 0; m < monthlyPrice.length; m++) {
+        if (checkbox.checked) {
+            annualPrice[m].classList.remove('d-none');
+        } else {
+            annualPrice[m].classList.add('d-none');
+        }
+    }
+})
+</script>

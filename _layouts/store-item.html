@@ -283,8 +283,7 @@ shopping: article
                 {% endif %}
                 {% if documentation %}
                 <li class="nav-item">
-                    <a target="_blank" href="{% link _documentation/{{ documentation }}.md %}" class="nav-link">
-                        <i class="bx bx-link-external opacity-70 me-2"></i>
+                    <a href="{% link _documentation/{{ documentation }}.md %}" class="nav-link">
                         {{ site.data[page.lang].translation.documentation.name }}
                     </a>
                 </li>
@@ -368,10 +367,11 @@ shopping: article
 <section class="mb-5 pt-md-3 pt-lg-4 pt-xl-5">
     <h2 class="h1 pt-lg-2 pt-xl-3 mb-5 text-center">{{ site.data[page.lang].translation.screenshots-title }}</h2>
     <div class="pb-2 pb-sm-3 pb-md-4">
-        <div class="swiper" data-swiper-options='{
+        <div class="swiper store-screenshots-swiper" data-swiper-options='{
             "loop": true,
             "grabCursor": false,
             "centeredSlides": true,
+            "slidesPerView": "auto",
             "autoplay": {
               "delay": 0,
               "disableOnInteraction": false
@@ -379,16 +379,12 @@ shopping: article
             "freeMode": true,
             "speed": 38000,
             "freeModeMomentum": false,
+            "spaceBetween": 8,
             "breakpoints": {
-              "0": {
-                "slidesPerView": 1,
-                "spaceBetween": 8
-              },
               "500": {
                 "spaceBetween": 16
               },
               "768": {
-                "slidesPerView": 2,
                 "spaceBetween": 24
               }
             }
@@ -397,9 +393,9 @@ shopping: article
                 {% for imageId in screenshots %}
                     {% assign source = site.data.screenshots[imageId].src %}
                     {% assign image = site.data[page.lang].store.screenshots[imageId] %}
-                    <div class="swiper-slide pb-3">
-                        <figure class="figure">
-                            <img src="{{ source }}" class="figure-img" alt="Screenshot">
+                    <div class="swiper-slide store-screenshot-slide pb-3">
+                        <figure class="figure store-screenshot-figure">
+                            <img src="{{ source }}" class="figure-img img-fluid rounded-3 store-screenshot-image" alt="Screenshot">
                             {% if image.description %}
                             <figcaption class="figure-caption text-center">{{ image.description }}</figcaption>
                             {% endif %}
@@ -408,8 +404,8 @@ shopping: article
                 {% endfor %}
 
                 {% for s in screenshot %}
-                <div class="swiper-slide">
-                    <img src="{{ s }}" alt="Screenshot" class="rounded-3">
+                <div class="swiper-slide store-screenshot-slide pb-3">
+                    <img src="{{ s }}" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
                 </div>
                 {% endfor %}
             </div>
@@ -485,6 +481,12 @@ shopping: article
                         GitHub
                     </a>
                     {% endif %}
+                    {% if developer.linkedin %}
+                    <a href="{{ developer.linkedin }}" class="btn btn-linkedin me-sm-4 mb-3 mb-sm-0">
+                        <i class="bx bxl-linkedin fs-xl me-2"></i>
+                        LinkedIn
+                    </a>
+                    {% endif %}
                     <br>
                     {% if developer.twitter %}
                     <a href="{{ developer.twitter }}" class="btn btn-twitter me-sm-4 mb-3 mb-sm-0 mt-3">
@@ -511,7 +513,7 @@ shopping: article
 </section>
 
 {% comment %}
-        <h4>All items by {{ developer.name }}</h4>
-        {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | sort: 'title' %}
-        {% include store-list.html products=products %}
+    <h4>All items by {{ developer.name }}</h4>
+    {% assign products = site.store | where: "lang", page.lang | where: "developer", settings.developer | sort: 'title' %}
+    {% include store-list.html products=products %}
 {% endcomment %}

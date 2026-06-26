@@ -1,0 +1,246 @@
+//
+// Steps
+// --------------------------------------------------
+
+
+.steps {
+  --#{$prefix}steps-padding-y: #{$steps-padding-y};
+  --#{$prefix}steps-padding-x: #{$steps-padding-x};
+  --#{$prefix}steps-number-size: #{$steps-number-size};
+  --#{$prefix}steps-number-inner-size: #{$steps-number-inner-size};
+  --#{$prefix}steps-number-size-sm: #{$steps-number-size-sm};
+  --#{$prefix}steps-number-inner-size-sm: #{$steps-number-inner-size-sm};
+  --#{$prefix}steps-number-border-radius: #{$steps-number-border-radius};
+  --#{$prefix}steps-number-bg: #{$steps-number-bg};
+  --#{$prefix}steps-number-inner-bg: #{$steps-number-inner-bg};
+  --#{$prefix}steps-number-inner-box-shadow: #{$steps-number-inner-box-shadow};
+  --#{$prefix}steps-number-font-size: #{$steps-number-font-size};
+  --#{$prefix}steps-number-font-size-sm: #{$steps-number-font-size-sm};
+  --#{$prefix}steps-number-color: #{$steps-number-color};
+  --#{$prefix}steps-connect-width: #{$steps-connect-width};
+  --#{$prefix}steps-connect-color: #{$steps-connect-color};
+
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--#{$prefix}steps-padding-y) 0;
+
+  &:first-child { padding-top: 0 !important; } // stylelint-disable-line declaration-no-important
+  &:last-child { padding-bottom: 0 !important; } // stylelint-disable-line declaration-no-important
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: calc(var(--#{$prefix}steps-number-size) * .5);
+    width: var(--#{$prefix}steps-connect-width);
+    height: 50%;
+    content: "";
+  }
+
+  &::before { top: 0; }
+  &::after { top: 50%; }
+
+  &:not(:first-child)::before {
+    background-color: var(--#{$prefix}steps-connect-color);
+  }
+  &:not(:last-child)::after {
+    background-color: var(--#{$prefix}steps-connect-color);
+  }
+}
+
+.step-number {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--#{$prefix}steps-number-size);
+  height: var(--#{$prefix}steps-number-size);
+  @include border-radius(var(--#{$prefix}steps-number-border-radius));
+  color: var(--#{$prefix}steps-number-color);
+  background-color: var(--#{$prefix}steps-number-bg);
+  font: {
+    size: var(--#{$prefix}steps-number-font-size);
+    weight: $steps-number-font-weight;
+  }
+
+  .step-number-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--#{$prefix}steps-number-inner-size);
+    height: var(--#{$prefix}steps-number-inner-size);
+    @include border-radius(var(--#{$prefix}steps-number-border-radius));
+    background-color: var(--#{$prefix}steps-number-inner-bg);
+    @include box-shadow(var(--#{$prefix}steps-number-inner-box-shadow));
+  }
+}
+
+.step-body {
+  padding-left: var(--#{$prefix}steps-padding-x);
+}
+
+
+// Small size
+
+.steps-sm {
+  .step::before,
+  .step::after {
+    left: calc(var(--#{$prefix}steps-number-size-sm) * .5);
+  }
+
+  .step-number {
+    width: var(--#{$prefix}steps-number-size-sm);
+    height: var(--#{$prefix}steps-number-size-sm);
+    font-size: var(--#{$prefix}steps-number-font-size-sm);
+
+    .step-number-inner {
+      width: var(--#{$prefix}steps-number-inner-size-sm);
+      height: var(--#{$prefix}steps-number-inner-size-sm);
+    }
+  }
+}
+
+
+// Convert steps to horizontal layout on chosen breakpoint
+// steps-horizontal-sm, steps-horizontal-md, steps-horizontal-lg,
+// steps-horizontal-xl, steps-horizontal-xxl
+
+.steps-horizontal {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-up($next) {
+
+        &.steps {
+          flex-direction: row;
+          margin: {
+            right: calc(var(--#{$prefix}steps-padding-x) * -1);
+            left: calc(var(--#{$prefix}steps-padding-x) * -1);
+          }
+        }
+
+        .step {
+          display: block;
+          flex-basis: 0;
+          flex-grow: 1;
+          padding: 0 var(--#{$prefix}steps-padding-x);
+
+          &::before,
+          &::after {
+            top: calc(var(--#{$prefix}steps-number-size) * .5);
+            height: var(--#{$prefix}steps-connect-width);
+          }
+
+          &::before {
+            left: 0;
+            display: none;
+          }
+          &::after {
+            left: var(--#{$prefix}steps-padding-x);
+            width: 100%;
+          }
+        }
+
+        &.steps-sm .step::before,
+        &.steps-sm .step::after {
+          top: calc(var(--#{$prefix}steps-number-size-sm) * .5);
+        }
+
+        .step-number {
+          margin-bottom: var(--#{$prefix}steps-padding-y);
+        }
+
+        .step-body {
+          padding-left: 0;
+        }
+
+        &.steps-center {
+          text-align: center;
+
+          .step {
+            &::after {
+              left: 50%;
+              width: 50%;
+            }
+            &:not(:first-child)::before {
+              display: block;
+              width: 50%;
+            }
+          }
+
+          .step-number {
+            margin: {
+              right: auto;
+              left: auto;
+            }
+          }
+        }
+
+        &.steps-end {
+          text-align: right;
+
+          .step {
+            &:not(:first-child)::before {
+              display: block;
+              width: calc(100% - var(--#{$prefix}steps-padding-x));
+            }
+            &::after {
+              right: 0;
+              left: auto;
+              width: var(--#{$prefix}steps-padding-x);
+            }
+            &:last-child::after {
+              display: none;
+            }
+          }
+
+          .step-number {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Reduce steps number size on smaller screens
+
+@include media-breakpoint-down(sm) {
+  .steps:not(.steps-sm) .step {
+    padding: calc(var(--#{$prefix}steps-padding-y) * .625) 0;
+
+    &::before,
+    &::after {
+      left: calc((var(--#{$prefix}steps-number-size) * .625) * .5);
+    }
+  }
+
+  .step-number {
+    font-size: calc(var(--#{$prefix}steps-number-font-size) * .625) !important; // stylelint-disable-line declaration-no-important
+  }
+
+  .steps:not(.steps-sm) .step-number {
+    width: calc(var(--#{$prefix}steps-number-size) * .625);
+    height: calc(var(--#{$prefix}steps-number-size) * .625);
+
+    .step-number-inner {
+      width: calc(var(--#{$prefix}steps-number-inner-size) * .625);
+      height: calc(var(--#{$prefix}steps-number-inner-size) * .625);
+    }
+  }
+
+  .step-body {
+    padding-left: calc(var(--#{$prefix}steps-padding-x) * .875);
+  }
+}
+

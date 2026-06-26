@@ -1,44 +1,67 @@
 ---
-layout: base
+layout: page
 ---
 {% assign date_format = site.date_format[page.lang] | default: "%Y-%m-%d" %}
 
-<main class="page-wrapper">
-    {% include header-navigation.html %}
+{% if page.slug != 'blog' %}
+    {% assign limit = 50 %}
+    {% assign tagged_posts = site.tags[page.slug] | filter_page_lang %}
+{% else %}
+    {% assign limit = 15 %}
+    {% assign tagged_posts = site.posts | filter_page_lang %}
+{% endif %}
 
-    <section class="container mt-4 pt-lg-2 pb-4">
-        <div class="row gy-4 align-items-end mb-2 pb-md-3">
-            <div class="col-lg-8 col-md-6">
-                <h1 class="mb-0">
-                    <i class="bx bxs-hot 1 me-1 text-gradient-primary"></i>
-                    {{ site.data[page.lang].translation.blog.title }}
-                </h1>
-            </div>
-            <div class="col-lg-4 col-md-6 text-end">
-                <a href="{% link _pages/{{ page.lang }}/feed.xml %}" class="btn btn-link btn-icon my-1 me-2" aria-label="RSS Feed">
-                    <i class="bx bx-rss fs-2"></i>
+<ul class="nav nav-tabs justify-content-center mb-5" id="nav-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+        {% assign all_title = site.data[page.lang].translation.blog.archive-tags %}
+        {% include link-translated-menu.html item="blog" language=page.lang class="nav-link" active=true title=all_title %}
+    </li>
+    {% for tags in site.tags %}
+        {% if tags[0] != "version-1" %}
+            {% assign tag_page = site.blog_tags | filter_slug_lang: tags[0] %}
+            <li class="nav-item" role="presentation">
+                <a href="{{ tag_page.url }}" class="nav-link {% if page.slug == tag_page.slug %}active{% endif %}">
+                    {{ site.data[page.lang].translation[tag_page.slug].name | default: tag_page.title }}
                 </a>
-            </div>
-        </div>
-    </section>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
 
-    <section class="container mb-5 pt-5 pb-lg-5" dir="ltr">
-        <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-4">
-            <h3 class="mb-3">{{ site.data[page.lang].translation.blog.categories }}</h3>
-            <div class="nav flex-nowrap ms-sm-4 ms-3">
-            {% include blog-tag-buttons.html %}
+<section class="container mb-5 pb-lg-5" dir="ltr">
+    <div class="masonry-grid row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 shuffle mb-5">
+        {% for post in tagged_posts limit: limit %}
+            {% assign image = '/images/blog/cover-fallback.webp' %}
+            {% if post.image != nil %}
+                {% assign image = post.image %}
+            {% endif %}
+            <div class="masonry-grid-item col pb-2 pb-lg-3 shuffle-item shuffle-item--visible {% if forloop.index0 == 2 %}d-md-none d-lg-block{% endif %}">
+                <article class="card bg-transparent border-0">
+                    <div class="position-relative overflow-hidden rounded-3" style="height:260px">
+                        <a href="{{ post.url }}" class="position-absolute top-0 start-0 w-100 h-100" aria-label="Read more"></a>
+                        {% comment %}
+                        <a href="#" class="btn btn-icon btn-light bg-white border-white btn-sm rounded-circle position-absolute top-0 end-0 zindex-5 me-3 mt-3" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Read later" data-bs-original-title="Read later">
+                            <i class="bx bx-bookmark"></i>
+                        </a>
+                        {% endcomment %}
+                        <img src="{{ image }}" alt="Blog article logo" class="w-100 h-100" style="object-fit: cover">
+                    </div>
+                    <div class="card-body pb-1 px-0">
+                        {% comment %}<a href="#" class="badge fs-sm text-white bg-info shadow-info text-decoration-none mb-3">Digital</a>{% endcomment %}
+                        <h3 class="h4">
+                            <a href="{{ post.url }}">{{ post.title }}</a>
+                        </h3>
+                        <p class="mb-4">
+                            {{ post.excerpt | strip_html | truncate: 250 }}
+                        </p>
+                        <div class="d-flex align-items-center text-muted">
+                            <div class="fs-sm pe-3 me-3">{{ post.date | date_to_string }}</div>
+                        </div>
+                    </div>
+                </article>
             </div>
-        </div>
-        {% include blog-preview.html tag="general" limit=15 %}
-        <div class="d-flex align-items-center justify-content-between my-2 pb-1 pb-md-3">
-            <h4 class="mb-3">{{ site.data[page.lang].translation.blog.category-pages }}</h4>
-            <div class="nav flex-nowrap ms-sm-4 ms-3">
-            {% include blog-tag-buttons.html %}
-            </div>
-        </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>
 
-    {% include section-newsletter.html background=true %}
-</main>
-
-{% include footer.html %}
+{% include section-newsletter.html background=true %}

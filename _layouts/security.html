@@ -2,18 +2,23 @@
 layout: page
 ---
 
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item">
         <a href="/"><i class="bx bx-home-alt fs-lg me-1"></i>Home</a>
     </li>
     <li class="breadcrumb-item">
-        <a href="{% link _documentation/developer/bughunter.md %}">Security</a>
+        <a href="{% link _documentation/developer/security.md %}">Security</a>
     </li>
     <li class="breadcrumb-item active" aria-current="page">
         Kimai Advisory
         {% if page.cve_id != nil %}{{ page.cve_id }}{% else %}{{ page.ghsa_id }}{% endif %}
     </li>
 </ol>
+
 
 <h2>Affected versions</h2>
 
@@ -46,3 +51,8 @@ layout: page
 <p>
     First reported in GitHub advisory: <a href="https://github.com/kimai/kimai/security/advisories/{{ page.ghsa_id }}" target="_blank">{{ page.ghsa_id }}</a>
 </p>
+
+        </div>
+    </div>
+</section>
+

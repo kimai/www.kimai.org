@@ -38,7 +38,7 @@ The task to perform:
 
 Every advisory follows this shape:
 
-1. **Frontmatter** — pre-generated, do not modify except `title`. Contains: `title`, `date`, `ghsa_id`, `cve_id`, `severity`, `affected_version`, `patched_version`, `author`, `published`, `state`.
+1. **Frontmatter** — pre-generated, do not modify except `title`. Contains: `title`, `date`, `ghsa_id`, `cve_id`, `severity`, `affected_version`, `patched_version`, `author`, `published`.
 2. **`<INTRO`>** — one or two sentences giving a quick overview of the issue and its impact. No heading.
 3. **`<DETAILS>`** — detailed explanation, preferably a bullet-point list. Cover the relevant subset of required role or permissions, conditions that trigger the issue, whether OnPremise or Cloud deployments are affected (if both then write "All Kimai installations"), audit-log visibility, and any caveats.
 4. **`## Solution`** — what was changed in Kimai to fix the issue. If you do not know what changed, ask the user before writing this section.

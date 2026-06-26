@@ -143,3 +143,18 @@ Define the user attribute mapping as follows (**case is important; configure all
 - `Employee Details > Title` → `Title`
 
 Also edit the SAML capabilities and set the **Name ID format** to `email`.
+
+## Auth0
+
+Customers report successful use of `Auth0` as Identity Provider with the following settings:
+```json
+{
+    "mappings": {
+        "email": "Email"
+    },
+    "nameIdentifierProbes": [
+        "Email"
+    ],
+    "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress“
+}
+```

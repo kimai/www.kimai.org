@@ -11,7 +11,7 @@ cta: cloud
 Lange Arbeitstage erfordern einen Zeittracker ohne Ablenkung.
 Der überarbeitete Dark Mode in Kimai ist ein cleanes Interface, das speziell für Profis entwickelt wurde, die täglich 8+ Stunden arbeiten und sich dabei oft noch bis in die Abendstunden einloggen.
 
-# Warum der Dark Mode für Zeittracker wichtig ist
+## Warum der Dark Mode für Zeittracker wichtig ist
 
 Ein ablenkungsfreier Zeittracker erfordert durchdachtes Design. Der Dark Mode ist nicht nur Kosmetik – er ist ein Produktivitätswerkzeug, das die Augenbelastung bei langen Arbeitstagen reduziert.
 

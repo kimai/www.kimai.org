@@ -1,6 +1,8 @@
 ---
 title: Kiosk mode
 description: Kiosk mode with support for Barcode, RFID, Web NFC
+plugin: kiosk-barcode-bundle
+cloud: pro
 ---
 
 {% include plugins/kiosk.md %}  
@@ -176,6 +178,10 @@ This helps maintain proper NFC input functionality over extended periods.
 ## Permissions
 
 {% include documentation/permissions.md id="kiosk" howto=true super_admin=true %}
+
+## Configurations
+
+{% include documentation/configurations.md id="kiosk" howto=true %}
 
 ## Credits
 

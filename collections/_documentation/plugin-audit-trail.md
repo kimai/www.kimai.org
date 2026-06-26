@@ -1,6 +1,8 @@
 ---
 title: Audit logs
-description: Logging entity changes in Kimai 
+description: Logging entity changes in Kimai
+plugin: audit-trail-bundle
+cloud: all
 ---
 
 {% include plugins/audit-trail.md %}

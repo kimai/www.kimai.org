@@ -8,7 +8,6 @@ affected_version: "< 2.54.0"
 patched_version: "2.54.0"
 author: "AzureADTrent"
 published: "kevinpapst"
-state: "published"
 ---
 
 The Team API endpoints use `#[IsGranted('edit_team')]` instead of `#[IsGranted('edit', 'team')]`, causing TeamVoter to abstain from voting. 
@@ -22,7 +21,7 @@ The voter abstains entirely. Only `RolePermissionVoter` fires, which checks the 
 
 In default configuration, only `ROLE_ADMIN` and `ROLE_SUPER_ADMIN` have `edit_team`, making the missing check less critical. 
 The vulnerability becomes exploitable if an administrator grants `edit_team` to a lower-privilege role (such as `ROLE_TEAMLEAD`) through the permissions UI. 
-In that scenario, the lower-privilege user could modify any team's membership, customer assignments, project assignments, and activity assignments without being a member or teamlead of that team.
+In that scenario, the lower-privilege user could modify any team's membership, customer assignments, project assignments, and activity assignments without being a member or team lead of that team.
 
 ## Solution
 

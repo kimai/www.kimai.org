@@ -1,13 +1,9 @@
-{% assign introduction = site.data[page.lang].translation.changelog.intro %}
-{% assign title = site.data[page.lang].translation.changelog.title %}
 {% assign changelogs = site.changelogs | reverse %}
 
-{% include hero-text-round-dark.html title=title intro=introduction %}
+<section class="container">
+    <div class="row justify-content-center">
 
-<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
-    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
-
-        <table class="table">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th style="min-width: 140px; max-width: 200px">Date</th>
@@ -28,5 +24,3 @@
 
     </div>
 </section>
-
-{% include cta-begin-journey.html %}

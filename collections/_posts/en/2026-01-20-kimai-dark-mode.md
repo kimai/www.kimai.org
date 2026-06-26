@@ -11,7 +11,7 @@ cta: cloud
 Working long hours demands a time tracker without distraction. 
 The refreshed dark mode in Kimai is a clean interface designed specifically for professionals who work 8+ hours daily and often find themselves logging time into the evening hours.
 
-# Why dark mode matters for time trackers
+## Why dark mode matters for time trackers
 
 A time tracker without distraction requires thoughtful design. Dark mode isn’t just cosmetic — it’s a productivity tool that reduces eye strain during long workdays.
 

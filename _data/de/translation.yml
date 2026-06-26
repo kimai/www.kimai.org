@@ -2,7 +2,7 @@ made-with-love: Entwickelt von
 developed-at: Entwickelt bei
 access-demo: Demo aufrufen
 docu-alert-english: Der Inhalt ist nur auf Englisch verfügbar
-store-hero-counter: "Mehr als %number% Kunden vertrauen auf Kimai"
+store-hero-counter: "Über %number% Unternehmen vertrauen auf Kimai"
 store-contribute-title: Beitragen
 store-contribute-subtitle: Bist Du ein Entwickler? Dann lies wie Du
 store-contribute-plugin: ein Plugin erstellst
@@ -22,7 +22,6 @@ homepage-alert-title: Kostenlose Zeiterfassung für jedermann
 homepage-alert-intro: Kimai ist eine kostenlose und quelloffene Zeiterfassung. Erfasst Arbeitszeiten und druckt Zusammenfassungen aller Aktivitäten aus. Es gibt Berichte und Auswertungen für jährliche, monatliche und tägliche Zeiten, Kunden oder Projekte… es können Rechnungen und Exporte erstellt werden.
 homepage-alert-button-download: Herunterladen
 homepage-alert-button-demo: Ausprobieren
-cloud-title: 'Kimai Cloud (SaaS)'
 cloud-feature-ssl: Kostenloses TLS (SSL) Zertifikat
 cloud-feature-hosting: Hosting & Updates
 cloud-feature-backups: Backups
@@ -76,14 +75,15 @@ purchase-power-parity: Zu teuer? Frag nach einem PPP-Rabatt.
 date: Datum
 title: Titel
 changelog:
-    name: Änderungen
-    title: Änderungsprotokoll Kimai Cloud
-    intro: Übersicht über alle Kimai-Cloud-Updates und wann sie installiert wurden.
+    name: Updates
+    title: Was ist neu
+    subtitle: Neue Funktionen, Fehlerbehebungen und Verbesserungen für deine Kimai-Cloud.
 cloud-cta:
     days_30: 'Registrieren Sie sich für Ihre 30-tägige kostenlose Testversion'
 stories:
     name: Erfolgsgeschichten
     title: Erfolgsgeschichten unserer Kunden
+    subtitle: Erfahren Sie, wie unsere Kunden dank unserer Open-Source-Lösung Zeit und Geld sparen.
     intro: "Erfahren Sie, wie unsere Kunden unsere leistungsstarke Open-Source-Lösung nutzen und mit Kimai Zeit und Geld sparen."
     company: Unternehmen
     industry: Branche
@@ -102,16 +102,35 @@ reviews:
         Tausende Unternehmen nutzen Kimai täglich um Ihre Zeiten zu erfassen.
         Hier teilen einige von ihnen ihre Erfahrungen …
 cloud:
-    status: Status
+    status: System-Status
+    name: Cloud
+    subtitle: Ankündigungen und Neuigkeiten rund um die Kimai-Cloud.
 faq:
     title: FAQ
     subtitle: Häufig gestellte Fragen
     intro: Die FAQs werden vom Entwickler des Angebots bereitgestellt.
 oss-cloud-compare:
-    title: Eine Software, zwei Versionen
-    intro: Kimai ist eine Open-Source-Software, die sowohl zum Selbst-Hosting als auch als SaaS verfügbar ist.
-    onpremise: Von Dir gehostet
-    saas: Für Dich gehostet
+    title: |
+        Cloud oder selbst gehostet.
+        Du entscheidest.
+    subtitle: Wähle deinen Weg
+    intro: Gleiche leistungsstarke Funktionen, unterschiedliche Bereitstellung. Wähle, was zu deinem Team passt.
+    cloud:
+        badge: Empfohlen
+        intro: Vollständig verwaltet, immer aktuell. Wir kümmern uns um die Infrastruktur, damit du dich auf deine Arbeit konzentrieren kannst.
+        reason_1: Sofort einsatzbereit, kein Server nötig
+        reason_2: Automatische Updates & Backups
+        reason_3: DSGVO-konformes EU-Hosting
+        reason_4: Bevorzugter Support
+        reason_5: Plugins inklusive
+    on-premise:
+        badge: Für immer kostenlos
+        intro: Volle Kontrolle über deine Daten und Infrastruktur. Betreibe es auf deinem eigenen Server mit Docker oder manuell.
+        reason_1: 100 % Open Source (AGPL 3)
+        reason_2: Vollständige Datenhoheit
+        reason_3: Docker- & manuelle Installation
+        reason_4: Community-Support
+        reason_5: Plugin-Marktplatz
 highlight:
     title: Unterstützt dein Unternehmen
     subtitle: Mit Kimai lässt sich der gewünschte Zeiterfassungs-Workflow spielend leicht in die bestehende Infrastruktur integrieren.
@@ -144,15 +163,14 @@ section-features:
     subtitle: Kimai bietet noch viel mehr als nur die Zeiterfassung, hier finden Sie eine Liste weiterer wichtiger Business-Funktionen.
 homepage:
     title: Zeiterfassung für projektorientierte Teams
-    intro: Unsere Open-Source-Plattform wurde entwickelt, um die Zeitdaten Ihres Unternehmens zu erfassen und zu analysieren, und ist geeignet für Unternehmen jeder Größe. Kimai hilft Ihnen, Zeit und Geld im Blick zu behalten.
+    subtitle: Unsere Open-Source-Plattform wurde entwickelt, um die Zeitdaten Ihres Unternehmens zu erfassen und zu analysieren, und ist geeignet für Unternehmen jeder Größe. Kimai hilft Ihnen, Zeit und Geld im Blick zu behalten.
 open-source-community:
     name: Open Source
 newsletter:
     name: Newsletter
-    title: Sie wollen nichts mehr verpassen?
+    teaser: Sie wollen nichts mehr verpassen?
     introduction: Abonnieren Sie unseren Newsletter und bleiben Sie auf dem Laufenden über Kimai- und Plugin-Updates.
-    page_title: On-Premise Newsletter
-    page_intro: "Wenn du Kimai selbst hostest (oder dich einfach nur damit beschäftigst), solltest du unseren Newsletter nicht verpassen. Wir teilen Neuigkeiten und Einblicke mit einer Community von Menschen, welche die volle Kontrolle über ihre Daten bevorzugen."
+    subtitle: "Wenn du Kimai selbst hostest (oder dich einfach nur damit beschäftigst), solltest du unseren Newsletter nicht verpassen. Wir teilen Neuigkeiten und Einblicke mit einer Community von Menschen, welche die volle Kontrolle über ihre Daten bevorzugen."
     email-title: Ihre E-Mail-Adresse
     email-help: Geben Sie Ihre E-Mail-Adresse an, um sich anzumelden.
     field-invalid: Die angegebenen Informationen sind ungültig. Bitte überprüfen Sie das Format und versuchen Sie es erneut.
@@ -176,9 +194,8 @@ donate: Spenden
 demo:
     name: Demo
     description: Testen Sie die Projekt-Zeiterfassung Kimai, direkt online mit einer Demo-Installation.
-    title: Teste Kimai in einer unserer Demos
-    introduction: "Probieren Sie die Kimai-Zeiterfassung aus und wir versprechen Ihnen: Sie werden es weiter nutzen!"
-    choose: Wählen Sie eine unserer Demo-Installationen aus, um sich einen ersten Eindruck davon zu verschaffen, wie sich Kimai anfühlt und welche Funktionen es bietet.
+    title: Erst testen, dann tracken
+    subtitle: Starte eine Live-Demo und erlebe Kimai — ganz ohne Registrierung.
     reinstall: Beachten Sie, dass die Demos in regelmäßigen Abständen neu installiert werden und alle eingegebenen Daten entfernt werden.
     user: Demo-Benutzer
     accounts: "Diese Konten stehen für Ihre Tests zur Verfügung. Sie können aber auch einen eigenen Testbenutzer im Anmeldeformular jeder Demo erstellen."
@@ -186,11 +203,9 @@ demo:
     role_teamlead: Teamleiter
     role_admin: Administrator
     role_super: Super-Admin
-    stable-title: Basis
     stable-description: "Aktuelle Version ohne Plugins, mit Demo-Daten."
     plugins-title: Vorgestellt
     plugins-description: Entwicklungsversion mit Plugins und Demodaten.
-    empty-title: Plugins
     empty-description: Die aktuelle Version, mit Plugins, ohne Demo-Daten.
 index:
     name: Startseite
@@ -199,9 +214,8 @@ index:
 download:
     name: Installation
     title: Kimai installieren
-    description: Download und Installation mit SSH, Docker und Kubernetes – Kimai-Zeiterfassung
-    subtitle: Download und Installation
-    intro: Wir bieten verschiedene Wege zur Installation von Kimai an. Wählen Sie die für Sie passende Option aus.
+    eyebrow: Kimai selbst hosten
+    subtitle: Betreibe Kimai auf deiner eigenen Infrastruktur — mit Docker oder einem manuellen Server-Setup. Wähle den Weg, der zu deinem Stack passt.
 trademark:
     name: Marke
 terms-cloud:
@@ -213,8 +227,6 @@ terms-plugins:
     name: Plugin-Lizenz
 product:
     name: Produkt
-onpremise:
-    name: Selber hosten
 hosted:
     name: Cloud
     title: Kimai-Cloud – Nutze Kimai direkt ohne Setup. Problemfreies Kimai-Hosting!
@@ -231,6 +243,7 @@ start-trial:
     step_3_text: Nach einem kurzen Moment ist Ihre Kimai-Cloud einsatzbereit, Sie können sich nun einloggen und die Zeiterfassung starten.
 about:
     name: Über Kimai
+    subtitle: "Was als Hobbyprojekt begann, ist jetzt die weltweit führende Open-Source-Zeiterfassung. Werfen wir einen Blick auf seine Geschichte."
     description: Erfahren Sie mehr über die Geschichte der Zeiterfassung Kimai und dessen Entwickler.
     kevin: Kimai und die Cloud werden entwickelt und betrieben von Kevin, einem unabhängigen Software-Entwickler aus Wien.
     collaboration:
@@ -249,8 +262,8 @@ integrations:
 store:
     name: Plugins
     title: "Plugins für Kimai"
+    eyebrow: Erweitere Deine Zeiterfassung
     subtitle: "Nutzen Sie die vielfältigen Plugins aus dem Kimai-Ökosystem, um Ihre selbst gehostete Zeiterfassungslösung mit zusätzlichen Funktionen auszustatten."
-    description: Plugins für Kimai erweitern Ihre Zeiterfassung um zusätzliche Funktionen
 blog:
     name: Blog
     title: Aktuelles von Kimai
@@ -260,6 +273,15 @@ blog:
     archive-tags: Alle anzeigen
     categories: Kategorien
     category-pages: Verwenden Sie die Kategorieseiten, um alle Beiträge zu finden
+on-premise:
+    name: Selber hosten
+    subtitle: Kimai On-Premise - Versionshinweise, Sicherheitsupdates, Docker-News
+general:
+    name: Allgemein
+    subtitle: Anleitungen, Produkt-Updates und weitere Neuigkeiten vom Kimai-Team.
+version-1:
+    name: Kimai 1
+    subtitle: Historie von Kimai 1, dessen Entwicklung 2018 eingestellt wurde.
 documentation:
     name: Dokumentation
     description: Support-Informationen, Benutzerhandbuch und andere Dokumentationen für die Kimai-Zeiterfassung
@@ -274,11 +296,10 @@ docu-manual:
     name: Benutzerhandbuch
 docu-developer:
     name: Entwickler
-docu-onpremise:
-    name: Selbst gehostet
 features:
     name: Funktionen
 alternatives:
+    subtitle: Suchen Sie nach einer Alternative zu Ihrer aktuellen Zeiterfassungslösung? Lesen Sie hier, warum wir glauben, dass Sie wechseln sollten
     name: Vergleiche Zeiterfassungen
     description: Kimai ist die beste verfügbare Open-Source-Zeiterfassung, nicht nur für projektbasierte Teams. Sehen Sie, wie sich Kimai im Vergleich zu alternativen Zeiterfassungslösungen verhält, damit Sie die richtige für Ihre Organisation auswählen können.
 industry:
@@ -287,10 +308,9 @@ industry:
     name: Zeiterfassung für jedes Unternehmen
     subtitle: Mit Kimai bleiben Ihre Projekte auf Kurs
     intro: Du kannst die Produktivität deiner Mitarbeiter mit der Zeiterfassungssoftware Kimai verbessern.
-    office: Für Büroangestellte
 time-tracking-terms:
     title: Begriffe zur Zeiterfassung
-    name: Zeiterfassungsbegriffe
+    name: Glossar
     subtitle: Erläuterungen von häufigen Begriffen
     intro: Werfen Sie einen Blick hinter die Kulissen der Zeiterfassung und erfahren Sie mehr über die in Kimai häufig verwendeten Begriffe
 feature:
@@ -433,7 +453,6 @@ developer:
 
             Mein besonderer Dank gilt der tollen Community für die langjährige Treue, ich freue mich auf die nächsten 10 Jahre Kimai 🚀
 history:
-    intro: "Was als Hobbyprojekt begann, ist jetzt die weltweit führende Open-Source-Zeiterfassung. Werfen wir einen Blick auf seine Geschichte."
     early-days-subtitle: "Kimai hat eine lange Geschichte und existiert seit 2006. Hier ein kurzer Überblick, wie alles begann."
     early-days-title: "Wie alles begann"
     year-2006: "Die erste Version von Kimai wird veröffentlicht und gewinnt schnell eine wachsende Benutzerbasis."
@@ -464,10 +483,6 @@ cta:
         question: "Bereit loszulegen?"
         answer: "Starte jetzt damit Zeiten zu erfassen"
         button: "Support erhalten"
-    tech-support:
-        question: "Technischer &amp; Business-Support"
-        answer: "Ich stelle den Support für alle von mir entwickelten Anwendungen sicher und stehe Ihnen und Ihrem Team zur Seite."
-        button: "Arbeiten wir zusammen"
     best-features:
         question: "Die besten Funktionen für Sie"
         answer: "Kimai bietet eine breite Palette von Funktionen, die sich an den Anforderungen Ihrer Projektzeiterfassung orientieren, sowie Best-Practice-Lösungen, die unseren Kunden die Buchhaltung erleichtern."
@@ -493,12 +508,11 @@ comparison:
     server_maintenance: Serverwartung
     saml: SAML
     ip_restriction: IP-Zugriffsbeschränkung
-    finding: Die richtige Zeiterfassungslösung finden
-    use_case: Suchen Sie nach einer Alternative zu Ihrer aktuellen Zeiterfassungslösung? Lesen Sie hier, warum wir glauben, dass Sie wechseln sollten
+    finding: Die richtige Zeiterfassung finden
 support:
     name: Support
     description: Support benötigt? Hier finden Sie Hilfe bei der Nutzung, Installation oder Updates von Kimai.
-    intro: Einige Kunden präferieren es Kimai intern zu betreiben, wollen dabei aber nicht auf professionelle Unterstützung verzichten. Ich freue mich Ihnen helfen zu können und bieten einen Support-Tarif für selbst gehostete Installationen an.
+    subtitle: Einige Kunden präferieren es Kimai intern zu betreiben, wollen dabei aber nicht auf professionelle Unterstützung verzichten. Ich freue mich Ihnen helfen zu können und bieten einen Support-Tarif für selbst gehostete Installationen an.
     community: "Community"
     community_cta: "Besuche GitHub"
     community_intro: |
@@ -541,20 +555,30 @@ non-profit:
 discount-codes:
     name: "Rabatt-Codes"
 pricing:
+    trust_trial: "30 Tage kostenlos testen"
+    trust_hosting: "Gehostet in Deutschland · DSGVO-konform"
+    trust_no_fee: "Keine Einrichtungsgebühr"
     name: Preise
-    subtitle: Diese Tarife sind für Cloud-Kunden verfügbar
+    subtitle: Voller Funktionsumfang ab dem ersten Tag. Starte kostenlos, bezahle pro Nutzer und kündige jederzeit.
+    title: Preise, die zu deinem Team passen
+    eyebrow: Gehostet & wartungsfrei
     short_monthly: "Pro Benutzer & Monat"
     short_annual: "Pro Benutzer & Jahr"
     monthly: "Monatlich"
+    monthly_cta: "Wechsle zu jährlich und spare 20%."
     annual: "Jährlich"
+    annual_cta: "Du sparst 20 % gegenüber der monatlichen Zahlung."
+    favorite: Am beliebtesten
     not_available: Nicht verfügbar
     included: Was ist enthalten?
     tax_exclusive: Alle Preise sind exklusive Steuern.
     cancellation: Sie können Ihr Abonnement jederzeit, bis zu einem Tag vor Ende der Laufzeit, kündigen.
 plans:
+    standard_intro: "Für Freiberufler und kleine Teams, die Zeiten und Rechnungen sauber im Griff haben wollen."
+    pro_intro: "Für wachsende Teams und Unternehmen, die Arbeitszeitkonten, Ausgaben und SSO brauchen."
     max_users: "Max. Benutzer"
     timetracking: "Projekt-Zeiterfassung"
-    billable_hours: "Abrechenbare- und nicht abrechenbare Stunden"
+    billable_hours: "Abrechenbare Stunden"
     translation: "Branchenspezifische Übersetzungen"
     invoices: "Rechnungen"
     all_from_plan: "Alle Funktionen aus '%plan%'"
@@ -606,11 +630,10 @@ theme:
     light: Hell
     dark: Dunkel
 press-media:
-    intro: Wir helfen Ihnen gerne weiter. Nachstehend finden Sie unsere Markenmaterialien, oder wenden Sie sich direkt an uns – wir antworten schnell.
+    subtitle: Wir helfen Ihnen gerne weiter. Nachstehend finden Sie unsere Markenmaterialien, oder wenden Sie sich direkt an uns – wir antworten schnell.
     contact_title: Berichten Sie über Kimai?
     contact_button: Schreiben Sie uns eine E-Mail
     name: Presse & Medien
-    title: Presse & Medien
     contact_text: Gerne können Sie Ihre Fragen per E-Mail stellen oder einen Gesprächstermin vereinbaren.
 industries:
     name: Branchen
@@ -672,7 +695,7 @@ industries:
     freelancers:
         name: Freiberufler
         title: "Zeiterfassung für erfolgreiche Freelancer"
-        intro: "Maximieren Sie Ihr Einkommen als Solo-Selbstständiger"
+        intro: "Behalten Sie den Überblick über Ihre abrechnungsfähigen Stunden und erstellen Sie Rechnungen im Handumdrehen und maximieren Sie Ihr Einkommen als Solo-Selbstständiger"
         introduction: |
             Wenn die Freelance-Tätigkeit ein neues Kapitel in Ihrem Leben ist, übernehmen Sie neue Rollen und stellen sich neuen Herausforderungen. Eine davon ist das Zeitmanagement und die Balance zwischen Ihren Arbeitsstunden und der Profitabilität Ihrer Projekte. Mehrere Projekte gleichzeitig zu steuern erfordert Analyse – sowohl für Sie selbst als auch für Ihre Kunden.
 
@@ -695,31 +718,6 @@ industries:
             title: |
                 Bereit, als Freelancer
                 das Beste aus Ihrer Zeit herauszuholen?
-    lawyer:
-        name: Anwälte
-        title: "Zeiterfassung für Anwälte"
-        subtitle: "Konzentrieren Sie sich auf abrechenbare Stunden, nicht auf komplizierte Stundenzettel"
-        intro: "Verabschieden Sie sich von komplexen Stundenzetteln und konzentrieren Sie sich mit moderner Zeiterfassung auf erstklassige juristische Dienstleistungen"
-        introduction: |
-            In der schnelllebigen Welt juristischer Dienstleistungen ist Zeit Ihr wertvollstes Gut. Kanzleien, selbstständige Anwälte und Rechtsteams benötigen eine Zeiterfassungslösung, die auf die besonderen Anforderungen ihres Berufs zugeschnitten ist. Bei Kimai wissen wir, dass Ihr Fokus auf exzellenten juristischen Leistungen liegen sollte – nicht auf dem Kampf mit komplizierten Stundenzetteln.
-
-            Manuelle Zeiterfassung, endlose Tabellenkalkulationen und aufwendige Exportprozesse kosten wertvolle Zeit, die Sie besser in die fachkundige Beratung Ihrer Mandanten investieren. Entdecken Sie, wie effiziente Zeiterfassung Ihnen hilft, sich auf das zu konzentrieren, was wirklich zählt.
-        features:
-            title: "Kimai-Funktionen, die Kanzleien lieben"
-            introduction: "Kimai wurde speziell für juristische Fachkräfte entwickelt. Wir haben ein Zeiterfassungstool geschaffen, das Ihre Sprache spricht – einfach, zuverlässig, DSGVO-konform und darauf ausgerichtet, Ihren Arbeitsalltag reibungsloser zu gestalten."
-        testimonials:
-            title: "Einblicke in die Zeiterfassung unserer Kunden"
-            introduction: Bei Kimai standen juristische Fachkräfte und Berater schon immer im Mittelpunkt. Jetzt können Sie von den echten Erfahrungen unserer Nutzer lesen.
-        about:
-            title: "Erste Schritte zu besserer Zeiterfassung in Ihrer Kanzlei"
-            introduction: |
-                Wir wissen, dass sich neue Software im juristischen Umfeld zunächst herausfordernd anfühlen kann. Deshalb bieten wir eine kostenlose und unverbindliche Testphase, ein einfaches Onboarding, einen flexiblen Funktionsumfang, der mit Ihrer Kanzlei oder Ihrem Team wächst, sowie persönlichen Support.
-
-                Wir sind überzeugt, dass Sie schon während der kostenlosen Testphase erleben können, wie Sie den Aufwand mit Stundenzetteln hinter sich lassen. Testen Sie Kimai noch heute kostenlos und bringen Sie mehr Struktur in Ihren Arbeitsalltag!
-        cta:
-            title: |
-                Bereit, die Zeiterfassung
-                in Ihrer Kanzlei zu revolutionieren?
     software-developers:
         name: Softwareentwickler
         title: "Zeiterfassung für Softwareentwickler"
@@ -776,3 +774,65 @@ industries:
             title: |
                 Bereit, das Zeitmanagement
                 an Ihrer Einrichtung zu verbessern?
+    lawyer:
+        name: Anwälte
+        title: "Zeiterfassung für Anwälte"
+        subtitle: "Konzentrieren Sie sich auf abrechenbare Stunden, nicht auf komplizierte Stundenzettel"
+        intro: "Verabschieden Sie sich von komplexen Stundenzetteln und konzentrieren Sie sich mit moderner Zeiterfassung auf erstklassige juristische Dienstleistungen"
+        introduction: |
+            In der schnelllebigen Welt juristischer Dienstleistungen ist Zeit Ihr wertvollstes Gut. Kanzleien, selbstständige Anwälte und Rechtsteams benötigen eine Zeiterfassungslösung, die auf die besonderen Anforderungen ihres Berufs zugeschnitten ist. Bei Kimai wissen wir, dass Ihr Fokus auf exzellenten juristischen Leistungen liegen sollte – nicht auf dem Kampf mit komplizierten Stundenzetteln.
+
+            Manuelle Zeiterfassung, endlose Tabellenkalkulationen und aufwendige Exportprozesse kosten wertvolle Zeit, die Sie besser in die fachkundige Beratung Ihrer Mandanten investieren. Entdecken Sie, wie effiziente Zeiterfassung Ihnen hilft, sich auf das zu konzentrieren, was wirklich zählt.
+        features:
+            title: "Kimai-Funktionen, die Kanzleien lieben"
+            introduction: "Kimai wurde speziell für juristische Fachkräfte entwickelt. Wir haben ein Zeiterfassungstool geschaffen, das Ihre Sprache spricht – einfach, zuverlässig, DSGVO-konform und darauf ausgerichtet, Ihren Arbeitsalltag reibungsloser zu gestalten."
+        testimonials:
+            title: "Einblicke in die Zeiterfassung unserer Kunden"
+            introduction: Bei Kimai standen juristische Fachkräfte und Berater schon immer im Mittelpunkt. Jetzt können Sie von den echten Erfahrungen unserer Nutzer lesen.
+        about:
+            title: "Erste Schritte zu besserer Zeiterfassung in Ihrer Kanzlei"
+            introduction: |
+                Wir wissen, dass sich neue Software im juristischen Umfeld zunächst herausfordernd anfühlen kann. Deshalb bieten wir eine kostenlose und unverbindliche Testphase, ein einfaches Onboarding, einen flexiblen Funktionsumfang, der mit Ihrer Kanzlei oder Ihrem Team wächst, sowie persönlichen Support.
+
+                Wir sind überzeugt, dass Sie schon während der kostenlosen Testphase erleben können, wie Sie den Aufwand mit Stundenzetteln hinter sich lassen. Testen Sie Kimai noch heute kostenlos und bringen Sie mehr Struktur in Ihren Arbeitsalltag!
+        cta:
+            title: |
+                Bereit, die Zeiterfassung
+                in Ihrer Kanzlei zu revolutionieren?
+    non-profit:
+        name: Non-Profits
+        title: "Zeiterfassung für Non-Profit Organisationen ✨"
+        subtitle: "Weniger Verwaltungsaufwand, damit Eure Mission im Mittelpunkt bleibt"
+        intro: "Wir stellen ihre Arbeit und Visionen in den Mittelpunkt und erleichtern dabei Administration und Abrechnung"
+        introduction: |
+            Heute sagen wir Danke an die vielen NGOs und NPOs:
+
+            - Gemeinnützige Organisationen und Wohltätigkeitsorganisationen
+            - Öffentliche und freie Schulen, Universitäten, Volkshochschulen
+            - Behörden und Organisationen mit Sicherheitsaufgaben, Rettungsdienste, Katastrophenschutz, Feuerwehr, THW
+            - Naturschutz-, Sport- und alle anderen Vereine, die das Miteinander gestalten und Fähigkeiten vermitteln
+            - Soziale Dienste, Altenpflege- und Jugendeinrichtungen
+            - … und die vielen, vielen anderen, die ich vergessen habe aufzuzählen
+
+            Ihr gebt Eure Zeit, verschenkt kleine und große Wunder und bereichert das Leben von so vielen: **Danke, dass Ihr da seid ❤️**
+
+            Mit wachsender Größe, steigenden Spendeneinnahmen und den ersten festangestellten Mitarbeitern stellt sich für jede Organisation die Frage nach einer strukturierten Zeiterfassung. Wer Arbeitsabläufe transparent dokumentiert, erkennt Optimierungspotenziale frühzeitig – und schafft damit nicht nur Freiräume für die eigentliche Mission, sondern legt auch die Grundlage für nachvollziehbare Rechenschaftsberichte.
+        features:
+            title: "Funktionen, die NPOs schätzen"
+            introduction: "Kimai hilft vielen Non-Profit dabei, Einblick in Projekte zu bekommen und erleichtert gleichzeitig die Führung von Arbeitszeitkonten. Wir haben ein Zeiterfassungstool geschaffen, das Ihre Sprache spricht – einfach, zuverlässig, DSGVO-konform und darauf ausgerichtet, Ihren Arbeitsalltag reibungsloser zu gestalten."
+        testimonials:
+            title: "Das sagen andere NPOs über Kimai"
+            introduction: |
+                Wir verstehen uns aufgrund des Open-Source Backgrounds von Kimai als Teil der großen Non-Profit Bewegung, die so viele Bereiche und Branchen umfasst.
+                Wir freuen uns, Euch unterstützen zu können!
+        about:
+            title: "Unser kostengünstiger Non-Profit Tarif für Euch"
+            introduction: |
+                Wenn Du einen gemeinnützigen Verein bzw. eine Organisation repräsentierst, dann registriere Dich mit einer offiziellen
+                E-Mail-Adresse des Vereins und verfasse eine kurze Support-Nachricht. Der Tarif wird nach manueller Prüfung freigeschaltet.
+
+                Im Gegenzug bitten wir um eine Bewertung mit Eurem Logo und Namen oder ein Interview, um Euch als Nutzer darstellen zu können.
+        cta:
+            title: |
+                Wir möchten Ihnen dabei helfen,
+                ihre Zeiterfassung zu vereinfachen

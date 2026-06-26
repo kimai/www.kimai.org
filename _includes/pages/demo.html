@@ -1,22 +1,20 @@
 
-<section class="container py-5 my-md-2 my-lg-4 my-xl-5">
-    <div class="row justify-content-center pt-5 pb-1 pb-sm-2 pb-md-3">
+<section class="container pb-5 mb-md-2 mb-lg-4 mb-xl-5">
+    <div class="row justify-content-center">
 
-        <p>{{ site.data[page.lang].translation.demo.choose }} {{ site.data[page.lang].translation.demo.reinstall }}</p>
-
-        <div class="row row-cols-1 row-cols-sm-3 justify-content-center g-4 pb-xl-3">
+        <div class="row row-cols-1 row-cols-sm-3 justify-content-center g-4 pb-xl-3 mt-0">
             <div class="col text-center border-end px-5">
                 {% assign pluginsTitle = site.data[page.lang].translation.demo.plugins-title %}
                 {% assign pluginsDescription = site.data[page.lang].translation.demo.plugins-description %}
                 {% include card-demo.html id="plugins" title=pluginsTitle description=pluginsDescription url="https://demo.kimai.org" color="success" icon="featured" %}
             </div>
             <div class="col text-center border-end px-5">
-                {% assign emptyTitle = site.data[page.lang].translation.demo.empty-title %}
+                {% assign emptyTitle = site.cloud.title %}
                 {% assign emptyDescription = site.data[page.lang].translation.demo.empty-description %}
                 {% include card-demo.html id="empty" title=emptyTitle description=emptyDescription url="https://demo-empty.kimai.org" color="secondary" icon="plugins" %}
             </div>
             <div class="col text-center px-5">
-                {% assign stableTitle = site.data[page.lang].translation.demo.stable-title %}
+                {% assign stableTitle = site.data[page.lang].translation.on-premise.name %}
                 {% assign stableDescription = site.data[page.lang].translation.demo.stable-description %}
                 {% include card-demo.html id="stable" title=stableTitle description=stableDescription url="https://demo-stable.kimai.org" color="secondary" icon="default" %}
             </div>
@@ -26,7 +24,7 @@
 
         <p>{{ site.data[page.lang].translation.demo.accounts }}</p>
 
-        <table class="table">
+        <table class="table table-hover">
             <thead>
             <tr>
                 <th>{{ site.data[page.lang].translation.username }}</th>

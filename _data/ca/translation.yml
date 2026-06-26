@@ -20,7 +20,6 @@ homepage-alert-title: 'Seguiment de temps gratuït per a tothom'
 homepage-alert-intro: 'Kimai és una solució de seguiment de temps de codi obert. Registra el temps de treball i imprimeix un resum de les teves activitats sota demanda. Anual, mensual, diàriament, per client, per projecte... La seva simplicitat és la seva fortalesa. Gràcies a la interfície basada en navegador de Kimai, funciona multiplataforma, fins i tot al teu dispositiu mòbil.'
 homepage-alert-button-download: 'Descàrrega'
 homepage-alert-button-demo: 'Proveu primer'
-cloud-title: 'Kimai Cloud (SaaS)'
 cloud-feature-ssl: 'Certificat TLS (SSL) gratuït'
 cloud-feature-hosting: 'Allotjament i actualitzacions'
 cloud-feature-backups: 'Còpies de seguretat'
@@ -82,6 +81,8 @@ reviews:
         Aquí teniu el que algunes d'elles diuen …
 cloud:
     status: 'Estat'
+    subtitle: Announcements and news about the Kimai Cloud.
+    name: Cloud
 faq:
     title: 'FAQ'
     intro: 'Aquestes FAQs són proporcionades pel desenvolupador d''aquesta oferta.'
@@ -89,8 +90,23 @@ faq:
 oss-cloud-compare:
     title: 'Un programari, dues versions'
     intro: 'Kimai és un programari de codi obert disponible tant per allotjament propi com a SaaS.'
-    saas: 'Allotjat per a tu'
-    onpremise: 'Allotjat per tu'
+    on-premise:
+        badge: Free forever
+        reason_5: Plugin marketplace
+        reason_3: Docker & manual install
+        reason_2: Full data ownership
+        reason_1: 100% open source (AGPL 3)
+        reason_4: Community support
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+    cloud:
+        reason_2: Automatic updates & backups
+        reason_1: Instant setup, no server needed
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_5: Plugins included
+        reason_4: Priority support
+        badge: Recommended
+        reason_3: GDPR-compliant EU hosting
+    subtitle: Choose your path
 highlight:
     title: 'Dona suport al teu negoci'
     subtitle: 'Kimai té totes les funcions bàsiques de negoci que necessites per configurar els teus fluxos de treball de seguiment del temps i integrar-los amb la teva infraestructura existent.'
@@ -122,10 +138,10 @@ section-features:
     title: 'Què pot fer Kimai per tu?'
     subtitle: 'Kimai ofereix molt més que només seguiment del temps, aquí hi ha una llista d''altres funcions empresarials importants.'
 homepage:
-    title: 'Seguiment del temps per a equips orientats a projectes'
-    intro: 'La nostra plataforma de codi obert està dissenyada per fer el seguiment i analitzar les dades de temps de la teva empresa, fent-la perfecta per a negocis de totes les mides. Kimai t''ajuda a controlar el temps i els diners.'
+    title: 'Control del temps per equips de projecte'
+    subtitle: 'La nostra plataforma de codi obert està dissenyada per fer el seguiment i analitzar les dades de temps de la teva empresa, fent-la perfecta per a negocis de totes les mides. Kimai t''ajuda a controlar el temps i els diners.'
 newsletter:
-    title: 'No t''oblides de res?'
+    teaser: 'No t''oblides de res?'
     introduction: 'Subscriu-te al nostre butlletí i mantenir-se actualitzat sobre Kimai i les actualitzacions de connectors.'
     email-title: 'La teva adreça de correu electrònic'
     email-help: 'Proporciona la teva adreça de correu electrònic per subscriure''t.'
@@ -137,8 +153,7 @@ newsletter:
     button: 'SUBSCRIU-TE'
     archive: Arxiu
     name: Butlletí
-    page_intro: Si t'autoallotges el Kimai (o simplement l'estàs explorant), no et perdis el nostre butlletí. Compartim notícies i idees amb una comunitat de persones que prefereixen tenir el control total de les seves dades.
-    page_title: Novetats per a l'autoallotjament
+    subtitle: Si t'autoallotges el Kimai (o simplement l'estàs explorant), no et perdis el nostre butlletí. Compartim notícies i idees amb una comunitat de persones que prefereixen tenir el control total de les seves dades.
 photos:
     dashboard:
         title: 'Tauler de control'
@@ -154,8 +169,7 @@ demo:
     name: 'Demostració'
     description: 'Proveu i avalueu el nostre seguidor de temps Kimai en línia, directament des de la nostra pàgina de demostració.'
     title: 'Proveu Kimai en una de les demostracions'
-    introduction: "Proveu la demostració de seguiment de temps de Kimai, i prometem: continuareu utilitzant-la!"
-    choose: 'Seleccioneu una de les nostres instal·lacions de demostració, per obtenir una primera impressió de com és Kimai i quina funcionalitat ofereix.'
+    subtitle: 'Seleccioneu una de les nostres instal·lacions de demostració, per obtenir una primera impressió de com és Kimai i quina funcionalitat ofereix.'
     reinstall: 'Tingueu en compte que les demostracions es reinstal·laran segons un horari regular i totes les dades introduïdes s''eliminaran.'
     user: 'Usuari de demostració'
     accounts: "Aquests comptes estan disponibles per a les vostres proves. O creeu el vostre propi usuari de prova al formulari d'inici de sessió de cada demostració."
@@ -163,11 +177,9 @@ demo:
     role_teamlead: 'Cap d''equip'
     role_admin: 'Administrador'
     role_super: 'Súper-Admin'
-    stable-title: 'Nucli'
     stable-description: "L'última versió, sense connectors, sense dades de demostració."
     plugins-title: 'Destacat'
     plugins-description: 'Versió de desenvolupament amb connectors i dades de demostració.'
-    empty-title: 'Connectors'
     empty-description: 'La versió actual amb connectors destacats, sense dades.'
 index:
     name: 'Inici'
@@ -176,14 +188,14 @@ index:
 download:
     name: 'Instal·lació'
     title: 'Instal·lació de Kimai'
-    description: 'Descàrrega i instal·lació amb SSH, Docker i Kubernetes - Seguiment de temps Kimai'
-    subtitle: 'Descàrrega i instal·lació'
-    intro: 'Oferim diverses maneres d''instal·lar Kimai. Trieu l''opció que us convingui.'
+    subtitle: 'Descàrrega i instal·lació amb SSH, Docker i Kubernetes - Seguiment de temps Kimai'
+    eyebrow: Self-Host Kimai
 hosted:
     name: 'Núvol'
     title: 'Kimai-Cloud — Utilitza Kimai directament sense configuració. Allotjament gratuït de Kimai!'
 about:
     name: 'Sobre Kimai'
+    subtitle: "El que va començar com a projecte de hobby és ara l'aplicació de seguiment de temps de codi obert líder al món. Fem una ullada a la seva història."
     description: 'Descobreix la història del seguidor de temps Kimai i el seu desenvolupador.'
     kevin: 'Kimai i el Núvol són desenvolupats i operats per Kevin, un desenvolupador de programari independent de Viena (Àustria).'
     collaboration:
@@ -198,8 +210,8 @@ about:
 store:
     name: 'Complements'
     title: Complements per a Kimai
-    description: Els connectors per a Kimai amplien la vostra experiència de seguiment del temps amb funcions addicionals
     subtitle: Utilitzeu la gran varietat de connectors de l'ecosistema Kimai per equipar la vostra solució de registre de temps allotjada localment amb funcions addicionals.
+    eyebrow: Extend Your Time-Tracker
 blog:
     name: 'Bloc'
     title: 'Notícies de Kimai'
@@ -208,7 +220,7 @@ blog:
     archive-link: 'Trobeu notícies més antigues sobre %topic% aquí'
     archive-tags: Veure tot
     category-pages: Utilitza les pàgines de categories per trobar totes les nostres publicacions
-    categories: Categories
+    categories: Classificació
 documentation:
     name: 'Documentació'
     description: 'Informació de suport, manual d''usuari i altra documentació per al seguiment del temps amb Kimai'
@@ -223,11 +235,10 @@ docu-manual:
     name: 'Manual d''usuari'
 docu-developer:
     name: 'Desenvolupador'
-docu-onpremise:
-    name: 'Allotjat localment'
 features:
     name: 'Característiques'
 alternatives:
+    subtitle: 'Busques una alternativa al teu gestor de temps actual? Aquí tens per què creiem que hauries de fer el canvi'
     name: Compara els gestors de temps
     description: 'Kimai és la millor aplicació de seguiment de temps de codi obert disponible, no només per a equips basats en projectes. Vegeu com es compara Kimai amb solucions alternatives de seguiment del temps perquè pugueu triar la adequada per a la vostra organització.'
 feature:
@@ -351,11 +362,11 @@ feature:
         description: 'Respecto la vostra privacitat i les vostres dades, així com les dels vostres usuaris. No, aquesta no és una altra introducció avorrida a una política de privacitat: així és com gestiono aquest negoci. No venc dades. Segueixo el RGPD i respondré a qualsevol pregunta sobre els subprocessadors implicats.'
         name: El primer és la privacitat
     electronic-invoicing:
-        name: E-Invoices
-        description: Create e-invoices in both XML and PDF/A formats, compliant with EN 16931, XRechnung 3.0, Zugferd/Factur-X, and using CII and UBL syntax
+        name: Factures electròniques
+        description: Crea factures electròniques en formats XML i PDF/A, conformes amb EN 16931, XRechnung 3.0, ZUGFeRD/Factur-X, i utilitzant les sintaxis CII i UBL
     eu-hosting:
-        description: Independent and European 🇪🇺 – built in Austria 🇦🇹 and hosted in Germany 🇩🇪
-        name: EU Hosting
+        description: Independent i Europeu 🇪🇺 – desenvolupat a Austria 🇦🇹 i allotjat a Alemanya 🇩🇪
+        name: Allotjament a UE
 install:
     ssh: 'Aquest mètode instal·la Kimai directament al vostre servidor.'
     docker: 'Utilitzeu la nostra imatge Docker per instal·lar i actualitzar fàcilment el contenidor Kimai.'
@@ -370,7 +381,6 @@ developer:
 
             Els meus agraïments especials a la gran comunitat per la seva lleialtat al llarg dels anys, m'alegre pensar en els propers 10 anys de Kimai 🚀
 history:
-    intro: "El que va començar com a projecte de hobby és ara l'aplicació de seguiment de temps de codi obert líder al món. Fem una ullada a la seva història."
     early-days-subtitle: "Kimai té una llarga història i existeix des del 2006, aquí teniu una breu visió general de com va començar tot."
     early-days-title: "Com va començar"
     year-2006: "Es llança la primera versió de Kimai i guanya lentament una creixent base d'usuaris i desenvolupadors."
@@ -401,10 +411,6 @@ cta:
         question: "Preparat per començar?"
         answer: "Comença ara el teu seguiment de temps"
         button: "Obté suport"
-    tech-support:
-        question: "Suport tècnic i empresarial"
-        answer: "Garanteixo suport per a totes les aplicacions que he construït i ajudaré a tu i al teu equip."
-        button: "Treballem junts"
     best-features:
         question: "Les millors funcions de seguiment del temps per a tu"
         answer: "Kimai ofereix una àmplia gamma de funcions dissenyades per a les teves necessitats de seguiment de temps en projectes i solucions basades en les millors pràctiques per als nostres clients, facilitant la seva comptabilitat."
@@ -429,13 +435,12 @@ comparison:
     server_maintenance: 'Manteniment del servidor'
     ip_restriction: 'Restricció d''accés per IP'
     finding: 'Trobar la solució de seguiment de temps adequada'
-    use_case: 'Busques una alternativa al teu gestor de temps actual? Aquí tens per què creiem que hauries de fer el canvi'
     compare_with: Compara Kimai amb %name%
     alternative: 'Alternativa a %product%'
 support:
     name: "Suport"
     description: "Necessiteu suport? Trobeu ajuda amb l'ús, la instal·lació o l'actualització de Kimai."
-    intro: "Alguns clients prefereixen executar Kimai internament, però no volen perdre's el suport professional. Em complé ajudar-vos i oferir un pla de suport per a instal·lacions allotjades localment."
+    subtitle: "Alguns clients prefereixen executar Kimai internament, però no volen perdre's el suport professional. Em complé ajudar-vos i oferir un pla de suport per a instal·lacions allotjades localment."
     community: "Comunitat"
     community_cta: "Visita GitHub"
     community_intro: |
@@ -488,6 +493,14 @@ pricing:
     included: 'Què s''inclou?'
     cancellation: Podeu cancel·lar la vostra subscripció en qualsevol moment fins a un dia abans del final del període de subscripció.
     tax_exclusive: Tots els preus no inclouen impostos.
+    favorite: Most popular
+    annual_cta: You save 20% compared to monthly billing.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
+    monthly_cta: Switch to annual and save 20%.
+    trust_hosting: Hosted in Germany · GDPR compliant
+    trust_trial: 30-day free trial
+    trust_no_fee: No setup fee
 plans:
     max_users: "Usuaris"
     timetracking: "Seguiment del temps de projecte"
@@ -524,6 +537,8 @@ plans:
     backup_weekly: 'Setmanal'
     backup_daily: 'Diari'
     customer_portal: Àrea de client
+    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
+    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
 error:
     back: 'Torna a la pàgina d''inici'
     title: 'Ups!'
@@ -714,12 +729,48 @@ industries:
                 Prova Kimai de forma gratuïta ara i gaudeix d'una jornada més organitzada!
         intro: Transforma l'eficiència de la teva institució amb un registre de temps potent
         title: Registre de temps per al sector acadèmic
+    non-profit:
+        about:
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+            title: Our affordable non-profit plan for you
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        subtitle: Less administrative burden, so your mission stays in focus
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking
+        title: Time Tracking for Non-Profit Organizations ✨
+        features:
+            title: Features that NPOs appreciate
+            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+        testimonials:
+            title: What other NPOs say about Kimai
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        intro: We put your work and vision center stage while simplifying administration and billing
+        name: Non-Profits
 industry:
     name: Seguiment del temps per a cada negoci
     intro: Podeu millorar la productivitat dels vostres empleats amb el programari de registre de temps Kimai.
     title: Seguiment del temps per a cada sector
     subtitle: Mantingueu els vostres projectes en marxa amb Kimai
-    office: Per a treballadors d'oficina
     more: Més sectors
 terms-plugins:
     name: Llicència del connector
@@ -744,11 +795,9 @@ time-tracking-terms:
 changelog:
     name: Registre de canvis
     title: Registre de canvis de Kimai Cloud
-    intro: Visió general de totes les actualitzacions de Kimai Cloud i quan es van instal·lar.
+    subtitle: Visió general de totes les actualitzacions de Kimai Cloud i quan es van instal·lar.
 open-source-community:
     name: Codi obert
-onpremise:
-    name: Allotjament propi
 integrations:
     title: Aplicacions i integracions per a Kimai
     subtitle: Connecta Kimai amb les teves eines preferides — des d'aplicacions d'escriptori fins a clients mòbils, eines de CLI i més — i fes el seguiment del temps on treballis.
@@ -766,13 +815,22 @@ stories:
     location: Ubicació
     company: Empresa
     employees: Empleats
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
 title: Títol
 date: Data
 press-media:
-    intro: Ens encantaria ajudar-te. Troba els actius de marca a continuació, o posa't en contacte directament amb nosaltres; responem ràpidament.
+    subtitle: Ens encantaria ajudar-te. Troba els actius de marca a continuació, o posa't en contacte directament amb nosaltres; responem ràpidament.
     contact_title: Ets periodista o estàs escrivint sobre Kimai?
     contact_button: Envia'ns un correu electrònic
     name: Premsa i mitjans
-    title: Premsa i mitjans
     contact_text: No dubtis a fer-nos les teves preguntes per correu electrònic o a programar una xerrada.
 per-month: per mes
+version-1:
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+    name: Kimai 1
+on-premise:
+    name: Allotjament propi
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.

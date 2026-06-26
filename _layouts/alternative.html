@@ -13,52 +13,24 @@ layout: base
 <main class="page-wrapper">
     {% include header-navigation.html %}
 
-    <section class="position-relative pt-5 overflow-hidden">
-        <span class="position-absolute top-0 start-0 d-dark-mode-none d-block w-100 h-100 bg-secondary"></span>
-        <span class="position-absolute top-0 start-0 d-dark-mode-block d-none w-100 h-100" style="background: radial-gradient(84.79% 172.9% at 73.31% 31.4%, rgba(99, 135, 241, .1) 0%, rgba(218, 70, 239, .05) 52.47%, rgba(99, 135, 241, .1) 100%);"></span>
+    <section class="hero border-bottom position-relative py-5 overflow-hidden">
+        <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-hero"></span>
         <div class="container position-relative pt-xl-5 pt-md-3 zindex-5">
-            <div class="row justify-content-md-start justify-content-center flex-md-nowrap pt-lg-5 pt-4">
-                <div class="col-xl-7 col-md-7 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3 pb-xl-5 pb-lg-4">
-                    <div class="text-md-start text-center">
-                        <h1 class="display-4 mb-lg-4 mb-3">
-                            <small class="fs-2">Best open source</small><br>
-                            {{ tool.name }} alternative
-                        </h1>
-                        <p class="mb-4 mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
-                            {% assign alt_page = site.pages | filter_slug_lang: "alternatives" %}
-                            Kimai is the #1 open-source <a href="{{ alt_page.url }}">time-tracking alternative</a> for {{ tool.name }}.
-                            Learn how Kimai measures up to {{ tool.name }}, so you can choose the right solution for your business.
-                        </p>
-                    </div>
-                </div>
-                {% assign image = tool.image | default: '/images/alternatives/background.webp' %}
-                <div class="col-md-12 d-flex mt-lg-4 mb-4 p-lg-4 p-sm-3 p-2">
-                    <div class="align-self-start ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden d-none d-md-flex" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
-                        {% if tool.comparison != false %}
-                            <a href="#compare-features">
-                                <img src="{{ image }}" width="700" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
-                            </a>
-                        {% else %}
-                            <img src="{{ image }}" width="700" alt="Logo" class="rounded-4" style="box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
-                        {% endif %}
-                        <span style="position: absolute;top: 50px;left: 100px;color: #fff;font-size: 5em;font-weight: 900;" class="d-none d-md-flex">
-                        {{ tool.name }}
-                        <br>
-                        vs.
-                        <br>
-                        Kimai
-                        </span>
-                    </div>
+            <div class="row justify-content-center flex-md-nowrap">
+                <div class="d-flex flex-column justify-content-between mb-3 text-center">
+                    <p class="eyebrow mb-1">Best open source</p>
+                    <h1 class="page-title mb-lg-4 mb-3">{{ tool.name }} alternative</h1>
+                    <p class="mb-4 pb-xl-3 pb-lg-2 fs-lg mx-auto" style="max-width: 30.5rem;">
+                        {% assign alt_page = site.pages | filter_slug_lang: "alternatives" %}
+                        Kimai is the #1 open-source <a class="text-decoration-none" href="{{ alt_page.url }}">time-tracking alternative</a> for {{ tool.name }}.
+                        Learn how Kimai measures up to {{ tool.name }}, so you can choose the right solution for your business.
+                    </p>
                 </div>
             </div>
         </div>
-        <span class="position-absolute bottom-0 start-0 w-100">
-          <span class="d-dark-mode-none d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
-          <span class="d-dark-mode-block d-none w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-dark"></span>
-        </span>
     </section>
 
-    <section class="container py-5 my-1 my-md-4 my-lg-5">
+    <section class="container py-5 my-1 my-md-4 mb-lg-5">
         <div class="row">
             <div class="col-lg-12 mb-4 mb-lg-0">
                 <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
@@ -124,10 +96,9 @@ Let’s explore the best time tracking tools for {{ site.this_year }} and see ho
         </div>
     </section>
 
-    {% assign testimonial_tag = page.testimonials.tag | default: "WallOfLove" %}
     {% assign testimonial_intro = "At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help companies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users." %}
-    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains testimonial_tag" | sample: 10 %}
-    {% include testimonials-horizontal-swipe.html testimonials=testimonials introduction=testimonial_intro language=page.lang %}
+    {% assign testimonials = site.data.testimonials | where_exp: "item", "item.tags contains 'WallOfLove'" | sample: 10 %}
+    {% include testimonials-horizontal-swipe.html testimonials=testimonials introduction=testimonial_intro %}
 
     <section class="container py-5 my-1 my-md-4 my-lg-5">
         <div class="row">

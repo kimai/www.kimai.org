@@ -1,4 +1,5 @@
 {% assign title = include.title | default: site.data[page.lang].translation.testimonials.title %}
+{% assign type = include.type | default: "position" %}
 <section class="bg-secondary py-5 mb-2 mb-md-4 mb-lg-5">
     <div class="container pt-lg-4 mt-1">
         <h2 class="h1 text-center pb-2 pb-md-3 pb-xl-4">{{ title }}</h2>
@@ -41,17 +42,7 @@
                             </span>
                             <div class="card-body pb-3 mb-0">
                                 <div class="mb-0">
-                                    {% assign testimonial_text = testimonial.text %}
-                                    {% if include.language and testimonial.translations[include.language] %}
-                                        {% assign testimonial_text = testimonial.translations[include.language] %}
-                                    {% endif %}
-
-                                    {{ testimonial_text | slice: 0, 750 | markdownify }}
-
-                                    {% assign title_length = testimonial_text | size %}
-                                    {% if title_length > 750 %}
-                                        ...
-                                    {% endif %}
+                                    {% include testimonial-content.html testimonial=testimonial %}
                                 </div>
                             </div>
                             <div class="card-footer border-0 text-nowrap pt-0">
@@ -72,7 +63,13 @@
                             {% endif %}
                             <div class="ps-3">
                                 <h6 class="fs-sm fw-semibold mb-0">{{ testimonial.name }}</h6>
-                                <span class="fs-xs text-muted">{{ testimonial.position }}</span>
+                                <span class="fs-xs text-muted">
+                                    {% if testimonial.company != '' %}
+                                        {{ testimonial.company }}
+                                    {% else %}
+                                        {{ testimonial.position }}
+                                    {% endif %}
+                                </span>
                             </div>
                         </figcaption>
                     </figure>

@@ -19,7 +19,6 @@ homepage-alert-title: 'Monitoraggio del tempo gratuito per tutti'
 homepage-alert-intro: 'Kimai è una soluzione di monitoraggio del tempo open source. Tiene traccia del tempo di lavoro e stampa un riepilogo delle tue attività su richiesta. Annuale, mensile, giornaliero, per cliente, per progetto… La sua semplicità è la sua forza. Grazie all''interfaccia basata su browser, Kimai funziona su più piattaforme, anche sul tuo dispositivo mobile.'
 homepage-alert-button-download: 'Download'
 homepage-alert-button-demo: 'Prova prima'
-cloud-title: 'Kimai Cloud (SaaS)'
 cloud-feature-ssl: 'Certificato TLS (SSL) gratuito'
 cloud-feature-hosting: 'Hosting e aggiornamenti'
 cloud-feature-backups: 'Backup'
@@ -56,7 +55,7 @@ create-database: 'Crea database'
 install-assets: 'Installa risorse'
 ask-question: 'Fai una domanda'
 newsletter:
-    title: 'Non vuoi perderti nulla?'
+    teaser: 'Non vuoi perderti nulla?'
     introduction: 'Iscriviti alla nostra newsletter e rimani aggiornato sugli aggiornamenti di Kimai e dei plugin.'
     email-title: 'Il tuo indirizzo e-mail'
     email-help: 'Inserisci il tuo indirizzo e-mail per iscriverti.'
@@ -68,8 +67,7 @@ newsletter:
     button: 'ISCRIVITI'
     archive: Archivio
     name: Newsletter
-    page_intro: Se utilizzi Kimai in modalità self-hosting (o lo stai semplicemente esplorando), non perderti la nostra newsletter. Condividiamo notizie e approfondimenti con una community di persone che preferiscono avere il pieno controllo dei propri dati.
-    page_title: Newsletter self-hosted
+    subtitle: Se utilizzi Kimai in modalità self-hosting (o lo stai semplicemente esplorando), non perderti la nostra newsletter. Condividiamo notizie e approfondimenti con una community di persone che preferiscono avere il pieno controllo dei propri dati.
 photos:
     dashboard:
         title: 'Pannello di controllo'
@@ -85,8 +83,7 @@ demo:
     name: 'Demo'
     description: 'Prova e valuta il nostro Kimai online time-tracker, direttamente dalla nostra pagina demo.'
     title: 'Prova Kimai in una delle demo'
-    introduction: "Prova la demo di Kimai monitoraggio del tempo: ti promettiamo che continuerai a usarla!"
-    choose: 'Scegli una delle nostre installazioni demo per avere una prima impressione su Kimai e sulle funzionalità che fornisce.'
+    subtitle: 'Scegli una delle nostre installazioni demo per avere una prima impressione su Kimai e sulle funzionalità che fornisce.'
     reinstall: 'Tieni presente che le demo verranno reinstallate regolarmente e tutti i dati inseriti verranno rimossi.'
     user: 'Utente demo'
     accounts: "Questi account sono disponibili per i tuoi test. Oppure crea il tuo utente di prova nel modulo di accesso di ogni demo."
@@ -97,8 +94,6 @@ demo:
     empty-description: La versione attuale con plugin in evidenza, senza dati.
     plugins-description: Versione di sviluppo con plugin e dati demo.
     plugins-title: In evidenza
-    stable-title: Core
-    empty-title: Plugin
     stable-description: L'ultima versione, senza plugin, senza dati dimostrativi.
 index:
     name: 'Pagina iniziale'
@@ -107,14 +102,14 @@ index:
 download:
     name: 'Installazione'
     title: 'Installazione di Kimai'
-    description: 'Download e installazione con SSH, Docker e Kubernetes - Monitoraggio del tempo Kimai'
-    intro: Offriamo diverse modalità per installare Kimai. Scegli l'opzione che fa al caso tuo.
-    subtitle: Download e Installazione
+    subtitle: 'Download e installazione con SSH, Docker e Kubernetes - Monitoraggio del tempo Kimai'
+    eyebrow: Self-Host Kimai
 hosted:
     name: 'Cloud'
     title: 'Kimai-Cloud: usa Kimai direttamente senza configurazione. Hosting Kimai senza problemi!'
 about:
     name: 'Informazioni su Kimai'
+    subtitle: Quello che era iniziato come un progetto per hobby è ora l'applicazione di monitoraggio del tempo open source leader a livello mondiale. Diamo uno sguardo alla sua storia.
     description: 'Scopri la storia di Kimai time-tracker e del suo sviluppatore.'
     collaboration:
         title: Collaborazione
@@ -129,8 +124,8 @@ about:
 store:
     name: 'Plugin'
     title: Plugin per Kimai
-    description: 'I plugin per Kimai estendono la tua esperienza di monitoraggio del tempo con funzionalità aggiuntive'
     subtitle: Utilizza l'ampia gamma di plugin, app ed estensioni dell'ecosistema Kimai per dotare la tua soluzione di monitoraggio del tempo self-hosted con funzioni aggiuntive.
+    eyebrow: Extend Your Time-Tracker
 blog:
     name: 'Blog'
     description: 'Notizie su Kimai, il software per il monitoraggio del tempo'
@@ -152,11 +147,10 @@ features:
     name: Caratteristiche
 docu-developer:
     name: Sviluppatore
-docu-onpremise:
-    name: In sede
 docu-manual:
     name: Manuale utente
 alternatives:
+    subtitle: Cerchi un'alternativa alla tua attuale soluzione di monitoraggio del tempo? Ecco perché pensiamo che dovresti cambiare
     name: Confronta il time-tracker
     description: Kimai è la migliore applicazione di monitoraggio del tempo open source disponibile, non solo per i team basati su progetti. Scopri come Kimai si confronta con soluzioni alternative di monitoraggio del tempo in modo da poter scegliere quella giusta per la tua organizzazione.
 feature:
@@ -294,15 +288,15 @@ install:
     caddy-docker: Utilizzo di Docker-Compose e Caddy come proxy inverso con supporto SSL.
 developer:
     kevinpapst:
-        intro: 'È sempre stato il mio sogno guadagnarmi da vivere con un prodotto open source. Con Kimai ho potuto sviluppare un software che offre un grande valore ai miei clienti e il cui sviluppo mi guida ogni giorno.
+        intro: |
+            È sempre stato il mio sogno guadagnarmi da vivere con un prodotto open source. Con Kimai ho potuto sviluppare un software che offre un grande valore ai miei clienti e il cui sviluppo mi guida ogni giorno.
 
-
-            I miei ringraziamenti speciali vanno alla grande community per la loro fedeltà nel corso degli anni, non vedo l''ora che arrivino i prossimi 10 anni di Kimai 🚀'
+            I miei ringraziamenti speciali vanno alla grande community per la loro fedeltà nel corso degli anni, non vedo l''ora che arrivino i prossimi 10 anni di Kimai 🚀
 full-documentation: Documentazione completa in inglese
 contact-developer: Se hai qualche domanda usa i seguenti recapiti per contattare direttamente lo sviluppatore.
 homepage:
-    title: Monitoraggio del tempo per team orientati alla realizzazione di progetti
-    intro: "La nostra piattaforma open source è stata progettata per tenere traccia e analizzare i dati temporali della tua azienda: è quindi l'ideale per imprese di qualsiasi dimensione. Kimai ti aiuta a gestire tempo e denaro in modo efficace."
+    title: Time tracking per team di progetto
+    subtitle: "La nostra piattaforma open source è stata progettata per tenere traccia e analizzare i dati temporali della tua azienda: è quindi l'ideale per imprese di qualsiasi dimensione. Kimai ti aiuta a gestire tempo e denaro in modo efficace."
 section-teaser:
     report:
         title: Rapporti
@@ -329,7 +323,6 @@ history:
     year-2023: Tutto il duro lavoro ha finalmente dato i suoi frutti e Kimai ora è il mio lavoro a tempo pieno al 100%. Grazie mille!
     year-2014: Viene creata l'ultima versione di Kimai 1, lo sviluppo è in stallo e non c'è più molta attività.
     year-2006: Viene rilasciata la prima versione di Kimai e lentamente guadagna una base di utenti e sviluppatori in crescita.
-    intro: Quello che era iniziato come un progetto per hobby è ora l'applicazione di monitoraggio del tempo open source leader a livello mondiale. Diamo uno sguardo alla sua storia.
     year-2018: La riscrittura di Kimai si fa strada nella comunità, la migrazione dei dati funziona e la diffusione è in aumento.
     current: |
         Kimai è un software di monitoraggio del tempo con una lunga storia, la prima versione è stata rilasciata nel 2006. Perché ne parlo? Perché da allora ho visto molti programmi andare e venire, credetemi quando dico: Kimai è qui per restare. Ho passato molti anni a sviluppare Kimai per divertimento, oggi Kimai è il mio business e non sono mai stato così motivato a continuare a migliorarlo.
@@ -349,10 +342,6 @@ history:
         Il Kimai originale è stato rilasciato per la prima volta nel 2006 ed è stato usato da molte persone in tutto il mondo, sono orgoglioso di questo e anche della sua grande comunità. Vorrei ringraziare tutti coloro che hanno contribuito a Kimai.
 store-hero-counter: 'Più di %number% clienti si fidano di Kimai'
 cta:
-    tech-support:
-        question: Supporto tecnico e aziendale
-        button: Lavoriamo insieme
-        answer: Garantisco supporto per tutte le applicazioni che ho creato e assisterò te e il tuo team.
     get-started:
         answer: Inizia subito a monitorare il tempo
         button: Ottieni supporto
@@ -372,10 +361,25 @@ highlight:
         european: 'Indipendente ed europeo 🇪🇺: creato in Austria 🇦🇹 e ospitato in Germania 🇩🇪 con un forte impegno per la protezione dei dati, la trasparenza e la qualità open source.'
 description: Descrizione
 oss-cloud-compare:
-    saas: Sul nostro server
-    onpremise: Sul tuo server
     intro: Kimai è un software open source disponibile sia per il self-hosting che per SaaS.
     title: Un software, due versioni
+    on-premise:
+        badge: Free forever
+        reason_5: Plugin marketplace
+        reason_3: Docker & manual install
+        reason_2: Full data ownership
+        reason_1: 100% open source (AGPL 3)
+        reason_4: Community support
+        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+    cloud:
+        reason_2: Automatic updates & backups
+        reason_1: Instant setup, no server needed
+        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
+        reason_5: Plugins included
+        reason_4: Priority support
+        badge: Recommended
+        reason_3: GDPR-compliant EU hosting
+    subtitle: Choose your path
 section-features:
     subtitle: Kimai offre molto di più del semplice monitoraggio del tempo, ecco un elenco di altre importanti funzioni aziendali.
     title: Cosa può fare Kimai per te?
@@ -405,13 +409,12 @@ comparison:
     saml: SAML
     ip_restriction: Restrizione dell'accesso IP
     finding: Trovare la giusta soluzione di monitoraggio del tempo
-    use_case: Cerchi un'alternativa alla tua attuale soluzione di monitoraggio del tempo? Ecco perché pensiamo che dovresti cambiare
     compare_with: Confronta Kimai con %name%
     alternative: 'Alternativa %product%'
 support:
     name: "Supporto"
     description: "Hai bisogno di supporto? Trova assistenza per l'uso, l'installazione o l'aggiornamento di Kimai."
-    intro: "Alcuni clienti preferiscono eseguire Kimai internamente ma non vogliono rinunciare a un supporto professionale. Sarò lieto di assisterti e offrirti un piano di supporto per le installazioni self-hosted."
+    subtitle: "Alcuni clienti preferiscono eseguire Kimai internamente ma non vogliono rinunciare a un supporto professionale. Sarò lieto di assisterti e offrirti un piano di supporto per le installazioni self-hosted."
     community: "Comunità"
     community_cta: "Visita GitHub"
     community_intro: |
@@ -483,6 +486,8 @@ plans:
     backup_weekly: Settimanale
     backup_daily: Quotidiano
     customer_portal: Portale clienti
+    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
+    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
 pricing:
     short_monthly: Per utente e mese
     short_annual: Per utente e anno
@@ -494,6 +499,14 @@ pricing:
     subtitle: Questi piani sono disponibili per i clienti cloud
     cancellation: Puoi annullare l'abbonamento in qualsiasi momento fino a un giorno prima della scadenza del periodo di abbonamento.
     tax_exclusive: Tutti i prezzi sono tasse escluse.
+    favorite: Most popular
+    annual_cta: You save 20% compared to monthly billing.
+    title: Pricing that fits your team
+    eyebrow: Hosted & maintenance-free
+    monthly_cta: Switch to annual and save 20%.
+    trust_hosting: Hosted in Germany · GDPR compliant
+    trust_trial: 30-day free trial
+    trust_no_fee: No setup fee
 non-profit:
     name: Non-profit
     eligible: Saperne di più
@@ -528,6 +541,8 @@ theme:
     light: Chiaro
 cloud:
     status: Stato
+    subtitle: Announcements and news about the Kimai Cloud.
+    name: Cloud
 licenses: Licenze
 roadmap: Roadmap
 purchase-power-parity: Non puoi pagare? Richiedi uno sconto PPP.
@@ -712,12 +727,48 @@ industries:
                 Prova Kimai gratuitamente oggi stesso e rendi la tua giornata più organizzata!
         intro: Trasforma l'efficienza della tua istituzione con un potente sistema di monitoraggio del tempo
         title: Monitoraggio del tempo per il settore accademico
+    non-profit:
+        about:
+            introduction: |
+                If you represent a non-profit organization, please register with an official
+                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+
+                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
+            title: Our affordable non-profit plan for you
+        introduction: |
+            Today we say thank you to the many NGOs and NPOs:
+
+            - Charitable and philanthropic organizations
+            - Public and independent schools, universities, community colleges
+            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
+            - Conservation, sports, and all other clubs that foster community and teach skills
+            - Social services, elderly care, and youth facilities
+            - … and the many, many others we forgot to mention
+
+            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+
+            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+        subtitle: Less administrative burden, so your mission stays in focus
+        cta:
+            title: |
+                We want to help you
+                simplify your time tracking
+        title: Time Tracking for Non-Profit Organizations ✨
+        features:
+            title: Features that NPOs appreciate
+            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+        testimonials:
+            title: What other NPOs say about Kimai
+            introduction: |
+                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
+                We are happy to support you!
+        intro: We put your work and vision center stage while simplifying administration and billing
+        name: Non-Profits
 industry:
     name: Monitoraggio del tempo per ogni attività
     intro: Puoi migliorare la produttività dei tuoi dipendenti con il software di registrazione delle presenze Kimai.
     title: Monitoraggio del tempo per ogni settore
     subtitle: Tieni i tuoi progetti sotto controllo con Kimai
-    office: Per chi lavora in ufficio
     more: Altri settori
 terms-plugins:
     name: Licenza plugin
@@ -742,11 +793,9 @@ time-tracking-terms:
 changelog:
     name: Registro delle modifiche
     title: Registro delle modifiche di Kimai Cloud
-    intro: Panoramica di tutti gli aggiornamenti di Kimai Cloud e delle relative date di installazione.
+    subtitle: Panoramica di tutti gli aggiornamenti di Kimai Cloud e delle relative date di installazione.
 open-source-community:
     name: Open Source
-onpremise:
-    name: Self hosting
 integrations:
     subtitle: Collega Kimai ai tuoi strumenti preferiti, dalle app desktop ai client mobili, agli strumenti CLI e molto altro, e monitora il tempo ovunque tu lavori.
     name: App e integrazioni
@@ -764,13 +813,22 @@ stories:
     location: Posizione
     company: Azienda
     employees: Dipendenti
+    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
 title: Titolo
 date: Data
 press-media:
-    intro: 'Saremmo lieti di aiutarvi. Trovate le risorse del marchio qui sotto oppure contattateci direttamente: rispondiamo rapidamente.'
+    subtitle: 'Saremmo lieti di aiutarvi. Trovate le risorse del marchio qui sotto oppure contattateci direttamente: rispondiamo rapidamente.'
     contact_title: Stai parlando di Kimai?
     contact_button: Inviaci un'e-mail
     name: Ufficio stampa e media
-    title: Ufficio stampa e media
     contact_text: Non esitate a porre le vostre domande via E-mail o a programmare una chat.
 per-month: per mese
+version-1:
+    subtitle: History of Kimai 1, which is not maintained since 2018.
+    name: Kimai 1
+on-premise:
+    name: Self hosting
+    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+general:
+    name: General
+    subtitle: Instructions, product updates, and other news from the Kimai team.

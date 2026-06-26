@@ -56,7 +56,6 @@ affected_version: "${affected}"
 patched_version: "${patched}"
 author: "${author}"
 published: "${publisher}"
-state: "${state}"
 ---
 
 <INTRO>

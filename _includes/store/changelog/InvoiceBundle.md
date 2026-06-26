@@ -1,3 +1,9 @@
+**Version 2.9.0**
+
+Compatibility: requires minimum Kimai 2.57.0
+
+- Make the "automatic timesheet export" PDF template configurable
+
 **Version 2.8.0**
 
 Compatibility: requires minimum Kimai 2.57.0

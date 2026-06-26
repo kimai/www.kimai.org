@@ -8,7 +8,6 @@ affected_version: "<=2.53.0"
 patched_version: "2.54.0"
 author: "melnicek"
 published: "kevinpapst"
-state: "published"
 ---
 
 Kimai exposed a small timing difference in the legacy API authentication flow that accepted `X-AUTH-USER` and `X-AUTH-TOKEN` header. 

@@ -4,6 +4,8 @@ description: Managing absences
 related:
 - contract
 - public-holiday
+plugin: controlling
+cloud: pro
 ---
 
 This screen and the `Contract` menu can be seen by any user that has active contract settings.

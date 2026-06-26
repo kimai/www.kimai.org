@@ -1,56 +1,105 @@
-<section class="container position-relative zindex-2 pt-2 pt-sm-3 pt-md-4 pt-lg-5 mt-xl-3">
-    <h2 class="h1 text-center pb-2 pb-lg-3 pt-2 pt-md-3 pt-lg-4 pt-xxl-5">
-        {{ site.data[page.lang].translation.oss-cloud-compare.title }}
-    </h2>
-    <p class="fs-lg text-center text-muted pb-3 pb-lg-4">
-        {{ site.data[page.lang].translation.oss-cloud-compare.intro }}
-    </p>
+<section class="container position-relative zindex-2 mt-xl-3 rounded-5 p-5">
 
-    <ul class="nav nav-tabs flex-nowrap justify-content-lg-center overflow-auto pb-2 mb-3 mb-lg-4" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link text-nowrap" id="open-source-onpremise-tab" data-bs-toggle="tab" data-bs-target="#open-source-onpremise" type="button" role="tab" aria-controls="open-source-onpremise" aria-selected="false">
-                <i class="bx bx-server fs-lg opacity-60 me-2"></i>
-                {{ site.data[page.lang].translation.oss-cloud-compare.onpremise }}
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link text-nowrap active" id="saas-cloud-tab" data-bs-toggle="tab" data-bs-target="#saas-cloud" type="button" role="tab" aria-controls="saas-cloud" aria-selected="true">
-                <i class="bx bx-cloud fs-lg opacity-60 me-2"></i>
-                {{ site.data[page.lang].translation.oss-cloud-compare.saas }}
-            </button>
-        </li>
-    </ul>
+    <div class="row text-center">
+        <p class="fs-sm text-muted mb-0 text-uppercase fw-bold">
+            {{ site.data[page.lang].translation.oss-cloud-compare.subtitle }}
+        </p>
+        <h2 class="pb-2 pb-lg-3">
+            {{ site.data[page.lang].translation.oss-cloud-compare.title | newline_to_br }}
+        </h2>
+        <p class="fs-lg text-muted pb-3 pb-lg-4 w-5">
+            {{ site.data[page.lang].translation.oss-cloud-compare.intro }}
+        </p>
+    </div>
 
-    <div class="tab-content bg-secondary rounded-3 py-4">
+    <div class="row row-cols-1 row-cols-sm-2">
 
-        <div class="tab-pane fade" id="open-source-onpremise" role="tabpanel" aria-labelledby="open-source-onpremise-tab">
-            <div class="row align-items-center pt-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
-                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
-                    <h3 class="mb-lg-4">Open Source</h3>
-                    <p>
-                        {{ site.data[page.lang].translation.homepage-alert-intro }}
+        <div class="col">
+            <div class="card card-hover border-primary rounded-5 p-5 bg-faded-primary">
+                <div class="card-body pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                    <span class="badge rounded-pill bg-faded-primary text-primary fs-sm mb-2">
+                        {{ site.data[page.lang].translation.oss-cloud-compare.cloud.badge }}
+                    </span>
+                    <h2 class="mb-lg-4">{{ site.cloud.title }}</h2>
+                    <p class="text-muted">
+                        {{ site.data[page.lang].translation.oss-cloud-compare.cloud.intro }}
                     </p>
-                    <p>
-                        {{ site.data[page.lang].translation.homepage-quote-excel }}
-                    </p>
-                    {% assign demoText = site.data[page.lang].translation.homepage-alert-button-demo %}
-                    {% include link-translated-menu.html item="demo" language=page.lang class="btn btn-primary w-100 mb-2" title=demoText %}
-                </div>
-                <div class="col-lg-6 col-md-7 mt-md-4">
-                    <img src="/images/screenshots/widget-teams.webp" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+                    {% comment %}
+                        {{ site.data[page.lang].translation.cloud-feature-ssl }}
+                        {{ site.data[page.lang].translation.cloud-feature-hosting }}
+                        {{ site.data[page.lang].translation.cloud-feature-backups }}
+                        {{ site.data[page.lang].store.items.custom-fields-bundle.title }}
+                        {{ site.data[page.lang].store.items.task-management-bundle.title }}
+                        {{ site.data[page.lang].store.items.expenses-bundle.title }}
+                        {{ site.data[page.lang].store.items.audit-trail-bundle.title }}
+                        {{ site.data[page.lang].store.items.controlling.title }}
+                    {% endcomment %}
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3">
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.cloud.reason_1 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.cloud.reason_2 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.cloud.reason_3 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.cloud.reason_4 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.cloud.reason_5 }}
+                        </li>
+                    </ul>
+
+                    {% include link-cloud-start.html classes="btn btn-primary mb-2" %}
                 </div>
             </div>
         </div>
 
-        <div class="tab-pane fade show active" id="saas-cloud" role="tabpanel" aria-labelledby="saas-cloud-tab">
-            <div class="row align-items-center pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
-                <div class="col-lg-4 col-md-5 offset-lg-1 text-center text-md-start">
-                    <h3 class="mb-lg-4">{{ site.data[page.lang].translation.cloud-title }}</h3>
-                    {% include list-cloud-features.html %}
-                    {% include link-cloud-start.html classes="btn btn-danger w-100 mb-2" %}
-                </div>
-                <div class="col-lg-6 col-md-7 mt-md-4">
-                    <img src="/images/screenshots/absence-table.webp" class="d-none d-sm-block my-lg-2 mx-auto me-md-0" width="502" alt="Image">
+        <div class="col">
+            <div class="card card-hover border-primary rounded-5 p-5 bg-faded-info">
+                <div class="card-body pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                    <span class="badge rounded-pill bg-faded-info text-info fs-sm mb-2">
+                        {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.badge }}
+                    </span>
+                    <h2 class="mb-lg-4">{{ site.data[page.lang].translation.on-premise.name }}</h2>
+                    <p class="text-muted">
+                        {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.intro }}
+                    </p>
+                    {% comment %}
+                        {{ site.data[page.lang].translation.homepage-alert-intro }}
+                        {{ site.data[page.lang].translation.homepage-quote-excel }}
+                    {% endcomment %}
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3">
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.reason_1 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.reason_2 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.reason_3 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.reason_4 }}
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            {{ site.data[page.lang].translation.oss-cloud-compare.on-premise.reason_5 }}
+                        </li>
+                    </ul>
+
+                    {% include link-translated-menu.html item="download" language=page.lang class="btn btn-info mb-2" %}
                 </div>
             </div>
         </div>

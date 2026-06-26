@@ -8,7 +8,6 @@ affected_version: "< 2.1.0"
 patched_version: "2.1.0"
 author: "ixSly"
 published: "kevinpapst"
-state: "published"
 ---
 
 Kimai contained a server-side template injection vulnerability in Twig-based invoice rendering.

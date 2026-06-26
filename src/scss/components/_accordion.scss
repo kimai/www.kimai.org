@@ -1,0 +1,41 @@
+//
+// Accordion
+// --------------------------------------------------
+
+
+.accordion {
+  --#{$prefix}accordion-color: var(--#{$prefix}body-color);
+  --#{$prefix}accordion-btn-font-weight: #{$accordion-button-font-weight};
+  --#{$prefix}accordion-btn-color: #{$accordion-button-color};
+  --#{$prefix}accordion-btn-icon-box-size: #{$accordion-icon-box-size};
+  --#{$prefix}accordion-btn-icon-box-border-radius: 50%;
+  --#{$prefix}accordion-btn-icon-box-bg: #{$accordion-icon-box-bg};
+  --#{$prefix}accordion-btn-icon-box-active-bg: #{$accordion-icon-box-active-bg};
+  --#{$prefix}accordion-btn-icon-box-active-shadow: #{$accordion-icon-box-active-box-shadow};
+}
+
+.accordion-button {
+  font-weight: var(--#{$prefix}accordion-btn-font-weight);
+  transition: none;
+  &:not(.collapsed) {
+    @include box-shadow(inset 0 calc(var(--#{$prefix}accordion-border-width) * -1) 0 var(--#{$prefix}accordion-border-color));
+  }
+
+  // Indicator (Icon)
+  &::after {
+    width: var(--#{$prefix}accordion-btn-icon-box-size);
+    height: var(--#{$prefix}accordion-btn-icon-box-size);
+    background: {
+      position: center;
+      color: var(--#{$prefix}accordion-btn-icon-box-bg);
+    }
+    transition: all .35s;
+    @include border-radius(var(--#{$prefix}accordion-btn-icon-box-border-radius));
+  }
+
+  &:not(.collapsed)::after {
+    background-color: var(--#{$prefix}accordion-btn-icon-box-active-bg);
+    @include box-shadow(var(--#{$prefix}accordion-btn-icon-box-active-shadow));
+  }
+}
+

@@ -4,9 +4,7 @@
 #      (and all other languages with the same filename) are rebuilt.
 #   2. Blog index pages: edit any post => all
 #      _pages/<lang>/blog.html are rebuilt.
-#   3. Story index pages: edit _stories/<lang>/<slug>.md =>
-#      _pages/<lang>/stories.html is rebuilt.
-#   4. Security advisories: edit any _security entry =>
+#   3. Security advisories: edit any _security entry =>
 #      _documentation/developer/bughunter.md is rebuilt.
 #
 # The additionally enforced paths are inserted into the watcher log,
@@ -57,7 +55,6 @@ if ENV["JEKYLL_ENV"] == "development"
     end
 
     posts       = site.collections["posts"].docs
-    stories     = site.collections["stories"].docs
     security    = site.collections["security"].docs
     by_basename = posts.group_by { |doc| File.basename(doc.relative_path) }
     pages       = site.collections["pages"].docs
@@ -67,18 +64,16 @@ if ENV["JEKYLL_ENV"] == "development"
       page.relative_path.match?(%r{_pages/[^/]+/blog\.html\z})
     end
 
-    stories_pages_by_lang = pages.each_with_object({}) do |page, memo|
-      match = page.relative_path.match(%r{_pages/([^/]+)/stories\.html\z})
-      memo[match[1]] = page if match
-    end
-
     bughunter_page = docs.find do |doc|
-      doc.relative_path == "_documentation/developer/bughunter.md"
+      doc.relative_path == "_documentation/developer/security.md"
     end
 
     data_dependencies = {
       "_data/feature.yml" => pages.select do |page|
         page.relative_path.match?(%r{_pages/[^/]+/features\.html\z})
+      end,
+      "_data/testimonials.yml" => pages.select do |page|
+        page.relative_path.match?(%r{_pages/[^/]+/reviews\.md\z})
       end
     }
 
@@ -102,19 +97,6 @@ if ENV["JEKYLL_ENV"] == "development"
         regenerator.force(page.path)
         forced << page.path
       end
-    end
-
-    stories.each do |story|
-      next unless source_file_changed.call(story.path)
-
-      match = story.relative_path.match(%r{_stories/([^/]+)/.+\.(?:md|markdown)\z})
-      next unless match
-
-      stories_page = stories_pages_by_lang[match[1]]
-      next unless stories_page
-
-      regenerator.force(stories_page.path)
-      forced << stories_page.path
     end
 
     if bughunter_page && security.any? { |doc| source_file_changed.call(doc.path) }

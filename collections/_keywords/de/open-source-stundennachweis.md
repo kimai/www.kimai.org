@@ -4,43 +4,40 @@ keyword: "Stundennachweise"
 intro: "Ein Stundennachweis ist ein Dokument, das die geleisteten Arbeitsstunden eines Mitarbeiters mit Datum, Beginn, Ende und Dauer der täglichen Arbeitszeit detailliert auflistet."
 ---
 
-### Kimai: Die Open-Source Lösung für die digitale Erfassung von Stundennachweisen
+Freitagabend, 17:30 Uhr. Die Buchhaltung braucht die Stundennachweise bis Montag. Und Sie sitzen vor einem Stapel handgeschriebener Stundenzettel, auf denen jemand "ca. 3-4h" notiert hat — ohne Datum. Kommt Ihnen bekannt vor? Dann wird es Zeit, Stundennachweise anders zu denken.
 
-Genug von manuellen Stundenzetteln und mühsamer Nachverfolgung von Arbeitszeiten?
+### Warum Stundennachweise wichtiger sind, als die meisten glauben
 
-Entdecken Sie Kimai, die Open-Source Anwendung, die speziell für die effiziente Erfassung und Verwaltung von Stundennachweisen entwickelt wurde.
+Stundennachweise sind keine Schikane der Personalabteilung. Sie sind die Grundlage für korrekte Lohnabrechnungen, rechtssichere Arbeitszeitdokumentation und ehrliche Projektkalkulationen. Ohne belastbare Stundennachweise kalkulieren Unternehmen auf Basis von Bauchgefühl — und das geht auf Dauer schief.
 
-### Kimai – mehr als nur eine Anwendung zur Erfassung von Stundennachweisen
+**Freelancer und Selbständige** brauchen Stundennachweise für ihre Rechnungen. Kunden erwarten nachvollziehbare Aufstellungen, und das Finanzamt möchte im Zweifel ebenfalls Belege sehen. Ein "ich habe ungefähr 20 Stunden gearbeitet" reicht da nicht.
 
-Kimai ist eine einfache, und gleichzeitig mächtige App zur Erfassung von Stundennachweisen für Teams, die ihre Zeiterfassung und Projektmanagement verbessern wollen.
+**Projektbasierte Teams** leben davon, Aufwände korrekt zu erfassen. Nur wer weiß, wie lange eine Aufgabe tatsächlich gedauert hat, kann das nächste Angebot realistisch kalkulieren — und nicht im stillen Kämmerlein die Marge auffressen.
 
-- Kosteneinsparung: Vermeiden Sie teure Fehler durch ungenaue Zeiterfassung.
-- Verbesserte Planung: Gewinnen Sie eine zuverlässige Grundlage für die Kalkulation und Planung Ihrer Projekte.
-- Effizienzsteigerung: Optimieren Sie Ihre Prozesse und sparen Sie wertvolle Zeit bei der Verwaltung von Stundennachweisen.
-- Höhere Kundenzufriedenheit: Stellen Sie sicher, dass Ihre Kunden pünktlich und zuverlässig bedient werden.
+**Arbeitgeber mit Dokumentationspflicht** müssen laut Arbeitszeitgesetz die tägliche Arbeitszeit über acht Stunden aufzeichnen. In der Praxis bedeutet das: Eine lückenlose Dokumentation ist Pflicht, keine Kür.
 
-### Warum Sie Kimai für Ihre Stundennachweise wählen sollten
+### Wie Kimai Stundennachweise schmerzfrei macht
 
-Kimai ist mehr als eine Open Source Stundennachweis; es ist ein Innovationsmotor für Projektmanagement und Zeitprotokollierung.
-Hier sind einige Gründe, warum Kimai Ihre Team-Produktivität steigern kann:
+Das Prinzip ist denkbar unkompliziert: Sie starten eine Zeitbuchung in Kimai, wählen Kunde und Projekt, und arbeiten. Kimai läuft im Hintergrund mit und dokumentiert alles — Beginn, Ende, Dauer, Projekt, Tätigkeit. Am Ende des Tages, der Woche oder des Monats generieren Sie Ihren Stundennachweis per Knopfdruck.
 
-**Flexibilität, die keine Wünsche offenlässt**
+Kimai bietet verschiedene Export-Formate: PDF für Kunden, Excel für die Buchhaltung, oder direkt als Druckansicht. Jeder Stundennachweis enthält exakt die Informationen, die der Empfänger braucht — keine handschriftlichen Korrekturen, keine fehlenden Einträge, keine Rechenakrobatik.
 
-Kimai bietet ein Stundennachweissystem, das sich Ihren betrieblichen Anforderungen perfekt anpasst und ein maßgeschneidertes Zeitmanagement für Projekte ermöglicht.
+### Was Kimai von einer Excel-Tabelle unterscheidet
 
-#### Starke Funktionen, die Produktivität ankurbeln
+Natürlich können Sie Stundennachweise in Excel führen. Können Sie auch Nägel mit einem Schuh einschlagen — es funktioniert, macht aber keinen Spaß und das Ergebnis ist fragwürdig.
 
-- **Einfache Stundennachweise**: Mit einem Klick Arbeitszeit aufzeichnen und sich auf wesentliche Aufgaben konzentrieren.
-- **Projektzentriertes Tracking**: Gewährleistet genaue Abrechnungen und bietet aussagekräftige Berichte & Analysen.
-- **Transparente Berichterstattung**: Erstellen Sie Berichte, die tiefe Einblicke in Leistung und Effizienz bieten.
-- **Detaillierte Benutzerberechtigungen**: Sichern Sie Ihre Daten mit angepassten Rollen und Berechtigungen.
-- **Überall verfügbar**: Kimai gewährleistet, dass Ihre projektbasierte Zeiterfassung immer verfügbar ist.
+Kimai erfasst die Zeiten dort, wo sie entstehen: während der Arbeit. Kein nachträgliches Ausfüllen am Freitagnachmittag, kein Raten, was Sie am Dienstag zwischen 10 und 12 Uhr gemacht haben. Die Zeitbuchung läuft live, und der Stundennachweis baut sich von selbst auf.
 
-Kimai wird durch eine lebendige Open-Source-Gemeinschaft unterstützt, die kontinuierlich zur Verbesserung von Kimai beiträgt.
+Dazu kommt: Kimai ist mehrbenutzerfähig. Teamleiter sehen die Stundennachweise aller Mitarbeiter, können sie freigeben oder Rückfragen stellen — alles in einer Oberfläche, ohne E-Mail-Ping-Pong mit angehängten Tabellen.
 
-### Ihre Suche nach einer Open-Source Software für Stundennachweise hat hier ein Ende
+### Open Source: Ihre Stundennachweise gehören Ihnen
 
-Kimai ist mehr als eine Software - es ist ein Verbündeter, der mit Ihrem Unternehmen wächst.
-Mit Kimai erreicht Ihre Zeiterfassung für projektbasierte Teams ein neues Niveau der Effizienz.
+Stundennachweise enthalten sensible Informationen über Arbeitsgewohnheiten und Produktivität. Bei Kimai als Open-Source-Software behalten Sie die volle Kontrolle: Betreiben Sie die Software auf eigenen Servern, prüfen Sie den Quellcode, und seien Sie sicher, dass Ihre Daten nicht bei einem Cloud-Anbieter landen, dessen Geschäftsmodell Sie nicht durchschauen.
 
-Wählen Sie Kimai, die Open Source Software für Stundennachweise, gerüstet fürs nächste Jahrzehnt!
+Alternativ bietet die Kimai Cloud einen gehosteten Service — mit der Garantie, dass Sie Ihre Daten jederzeit exportieren und zu einer eigenen Installation wechseln können. Kein Kleingedrucktes, kein Lock-in.
+
+### Vom Stundenzettel zur strategischen Ressource
+
+Ein Stundennachweis ist nicht nur ein Beleg für geleistete Arbeit. In Kimai wird er zur Datenquelle für bessere Entscheidungen: Welche Projekte sind profitabel? Wo werden Aufwände systematisch unterschätzt? Stimmt die Auslastung im Team? Die Antworten stecken in den Stunden, die Sie ohnehin erfassen.
+
+Starten Sie mit Kimai und machen Sie Schluss mit Stundenzetteln, die niemand lesen kann.

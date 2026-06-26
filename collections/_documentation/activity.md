@@ -1,9 +1,7 @@
 ---
 title: Activities
-description: Activities in Kimai
+description: Activities describe the type of work performed
 ---
-
-Activities (usually) describe the type of work performed.
 
 The activity administration can be found at `Administration > Activities`.
 

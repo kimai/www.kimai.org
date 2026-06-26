@@ -45,7 +45,7 @@ Most collections map to a specific content type and often use locale subdirector
 - `collections/_error` - static error pages such as `400`, `404`, `500`, and `503`, including locale-specific variants used by webserver configuration
 - `collections/_industries` - industry-specific SEO landing pages such as agency, freelancer, lawyer, and university use cases
 - `collections/_keywords` - keyword-targeted SEO landing pages for important search phrases such as `open-source-time-tracker`
-- `collections/_landingpage` - campaign and audience-specific landing pages such as non-profit, discount-code, and community offers
+- `collections/_landingpage` - campaign and audience-specific landing pages such as discount-code, and community offers
 - `collections/_pages` - the main site pages for each locale, including homepage, pricing, support, legal pages, and section index pages
 - `collections/_posts` - blog posts published under localized blog routes; currently organized primarily in English and German
 - `collections/_security/` - security advisory pages published under `/security/`; these are linked from the bughunter documentation page
@@ -134,8 +134,6 @@ Routing and domain rules matter:
 
 ## Frontend
 
-- Do not touch anything inside `src/scss/`
-- The directory `src/scss/` contains files which cannot be committed and must never be changed by agents
 - Apply all styling changes in the top-level `src/*.scss` files
 - Use `src/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
 - If a change appears to require editing `src/scss/`, stop and find a solution through `src/*.scss` instead

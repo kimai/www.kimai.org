@@ -1,6 +1,8 @@
 ---
 title: Tasks
 description: Manage your tasks / todo lists, use user and team assignments and track times for them
+plugin: task-management-bundle
+cloud: pro
 ---
 
 {% include plugins/task-management.md %}  

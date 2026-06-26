@@ -12,7 +12,7 @@ updated on each following login.
 
 In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:
 ```bash
-composer require laminas/laminas-ldap --optimize-autoloader -n
+composer require laminas/laminas-ldap {{ site.kimai_composer_require_flags }}
 ```
  
 If you see an error message like this:

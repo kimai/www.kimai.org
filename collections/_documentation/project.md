@@ -1,9 +1,7 @@
 ---
 title: Projects
-description: Projects in Kimai
+description: Projects are assigned to customers and are linked to activities
 ---
-
-Projects in Kimai are assigned to customers and are linked to activities, which are then used for time-records.
 
 The project administration can be found at `Administration > Projects`.
 

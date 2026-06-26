@@ -1,7 +1,7 @@
 {% if include.id %}
 {% assign plan = site.data.plans[include.id] %}
 
-<div class="card h-100 border-0 shadow-sm p-xxl-3" style="min-width: 18rem;">
+<div class="card card-hover border-primary shadow-sm p-xxl-3">
     <div class="card-body">
         <div class="d-flex align-items-center pb-2 pb-md-3 mb-4">
             <div class="flex-shrink-0 rounded-3">
@@ -31,9 +31,6 @@
             {% endif %}
             {% endfor %}
         </ul>
-    </div>
-    <div class="card-footer border-0 pt-0 pb-4">
-        {% include link-cloud-start.html classes="btn btn-outline-primary w-100" %}
     </div>
 </div>
 {% endif %}

@@ -44,7 +44,7 @@
                                         <i class="bx bxs-star text-warning"></i>
                                         {% endfor %}
                                     </div>
-                                    {{ testimonial.text | markdownify }}
+                                    {% include testimonial-content.html testimonial=testimonial %}
                                 </div>
                                 <div class="card-footer d-flex align-items-center border-0 pt-0">
                                     {% if testimonial.avatar == '' %}

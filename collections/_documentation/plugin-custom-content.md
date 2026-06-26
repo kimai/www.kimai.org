@@ -1,6 +1,8 @@
 ---
 title: Custom content
 description: Add custom content to your Kimai installation
+plugin: custom-content-bundle
+cloud: all
 ---
 
 {% include plugins/custom-content.md %}  

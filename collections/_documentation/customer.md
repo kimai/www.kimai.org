@@ -1,9 +1,7 @@
 ---
 title: Customer
-description: Customers in Kimai
+description: Customers in Kimai are used to manage project and activities, which are then used for time-records
 ---
-
-Customers in Kimai are used to manage project and activities, which are then used for time-records.
 
 The customer administration can be found at `Administration > Customers`.
 

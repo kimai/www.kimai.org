@@ -1,10 +1,3 @@
-{% assign title=site.data[page.lang].translation.newsletter.page_title %}
-{% assign intro=site.data[page.lang].translation.newsletter.page_intro %}
-
-{% include hero-text-round-dark.html title=title intro=intro %}
-
-<section class="pb-5 pt-md-1 pt-lg-4 pt-xl-5">
-</section>
 
 {% include section-newsletter.html %}
 
@@ -12,7 +5,7 @@
     <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
         <div class="row justify-content-center pb-sm-3 pb-md-4 pb-lg-5">
             <div class="col-md-10 col-lg-8 text-center">
-                <h2 class="h1 mb-4">{{ site.data[page.lang].translation.newsletter.archive }}</h2>
+                <h2 class="mb-4">{{ site.data[page.lang].translation.newsletter.archive }}</h2>
             </div>
         </div>
         <div class="row justify-content-center pb-sm-3 pb-md-4 pb-lg-5">

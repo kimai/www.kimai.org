@@ -1,6 +1,7 @@
 ---
-title: "Kimai Discount and Coupon Codes"
+title: "Discount and Coupon Codes"
 centered: true
+cta: cloud
 ---
 
 This page explains our discount policy, with which we want to ensure a fair pricing policy for all customers.
@@ -11,7 +12,7 @@ The only exception to this rule is listed under "Purchasing Power Parity".
 
 ### Non Profits
 
-A [generous discount in the form of an annual plan]({% link _landingpage/en/non-profit.md %}) is offered for non-profit organisations that want to use the Kimai Cloud.   
+A [generous discount in the form of an annual plan]({% link _industries/en/non-profit.md %}) is offered for non-profit organisations that want to use the Kimai Cloud.   
 
 ### Cloud
 
