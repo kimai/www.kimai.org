@@ -7,7 +7,7 @@ severity: "medium"
 affected_version: "<= 2.56.0"
 patched_version: "2.57.0"
 author: "offset"
-published: "kevinpapst"
+developer: "kevinpapst"
 ---
 
 The Kimai API let any logged-in user attach their own time records to projects that belong to other teams or customers, including ones they normally cannot see. 

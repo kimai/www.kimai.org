@@ -7,7 +7,7 @@ severity: "medium"
 affected_version: "<=2.52.0"
 patched_version: "2.53.0"
 author: "udaypali"
-published: "kevinpapst"
+developer: "kevinpapst"
 ---
 
 Kimai contained an authorization flaw in the user preferences API.

@@ -7,7 +7,7 @@ severity: "high"
 affected_version: "<= 2.52.0"
 patched_version: "2.53.0"
 author: "wooseokdotkim"
-published: "kevinpapst"
+developer: "kevinpapst"
 ---
 
 Kimai contained a stored cross-site scripting vulnerability in the team member widget.
