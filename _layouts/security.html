@@ -44,7 +44,12 @@ layout: page
 <h2>Credits</h2>
 
 <ul>
-    <li>Reported by: {{ page.author }}</li>
+    <li>
+        Reported by: {{ page.author }}
+        {% if page.credits != nil %}
+            {{ page.credits }}
+        {% endif %}
+    </li>
     <li>Patched by: {{ page.developer }}</li>
 </ul>
 
