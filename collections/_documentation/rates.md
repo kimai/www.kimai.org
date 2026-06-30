@@ -61,7 +61,9 @@ If you want to change the rate for many timesheets at once, you can go to "All t
 Now tick the box in the top left hand corner of the results list to select all records.
 Click on the "Edit" button below the table. You will be taken to the "Batch Update" page where you activate the "Recalculate prices" toggle and click "Save".
 
-Read more about the [Batch Update Mode]({% link _documentation/timesheet.md %}) in the timesheet documentation.
+Read more about the [Batch Update Mode]({% link _documentation/timesheet.md %}) in the timesheet documentation or watch our How-To video:
+
+{% include youtube-video.html id="batch_update" %}
 
 ### Price changes upon item changes 
 

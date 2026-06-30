@@ -38,6 +38,8 @@ Click "Edit" and confirm that you want to edit all the selected records.
 
 You will see a new "Batch Update" page with various options to update all the selected timesheets.
 
+{% include youtube-video.html id="batch_update" %}
+
 ## Time input
 
 The `begin` and `end` time input fields accept various formats, to allow correct and also speed typing.
