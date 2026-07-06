@@ -85,8 +85,8 @@ index:
 download:
     name: הורדה
     title: להוריד את Kimai
-    subtitle: אפשר לארח את Kimai על התשתית שלך - דרך SSH,‏ Docker או Kubernetes
-    eyebrow: Self-Host Kimai
+    subtitle: אפשר להריץ את Kimai על התשתית שלך - דרך Docker או התקנת שרת ידנית. נא לבחור את הנתיב שהכי מתאים לתשתית לך.
+    eyebrow: אירוח עצמי של Kimai
 hosted:
     name: ענן
     title: Kimai-Cloud — להשתמש ב־Kimai ישירות ללא התקנה. אירוח Kimai בחינם וללא מאמץ!
@@ -108,7 +108,7 @@ store:
     name: תוספים
     title: תוספים ל־Kimai
     subtitle: אפשר להשתמש במגוון רחב של תוספים, יישומים והרחבות מהסביבה התומכת של Kimai כדי לצייד את פתרון תיעוד השעות באירוח עצמי עם יכולות נרחבות.
-    eyebrow: Extend Your Time-Tracker
+    eyebrow: הרחבת מעקב השעות שלך
 blog:
     name: בלוג
     description: חדשות על Kimai, התוכנה למעקב אחר שעות
@@ -258,10 +258,10 @@ feature:
         description: "תוכנות הענן שלך תמיד מגבילות אותך? לא ב־Kimai: אצלנו אין מגבלות. משלמים רק על כמות המשתמשים הפעילים. אין הגבלה, ואין חיוב על משתמשים לא פעילים. אפשר ליצור כמות בלתי מוגבלת של משתמשים, לקוחות, מיזמים, פעילויות, גיליונות שעות ועוד."
     electronic-invoicing:
         name: E-Invoices
-        description: Create e-invoices in both XML and PDF/A formats, compliant with EN 16931, XRechnung 3.0, Zugferd/Factur-X, and using CII and UBL syntax
+        description: אפשר ליצור חשבוניות גם בתסדיר XML וגם ב־PDF/A, בתאימות מול EN 16931,‏ XRechnung 3.0,‏ Zugferd/Factur-X עם תחביר CII ו־UBL
     eu-hosting:
         description: עצמאי ואירופאי🇪🇺 – נבנה באוסטריה 🇦🇹 ומתארח בגרמניה 🇩🇪
-        name: EU Hosting
+        name: אירוח באירופה
 install:
     alert-vps: "בשלב הזה, אי אפשר להתקין את Kimai על ידי הורדת קובץ zip והעלאתו לשרת שלך. צריך גישה ב־SSH לשרת שלך. זה לא אומר שצריך שרת וירטואלי פרטי (VPS). חלק מהמארחים המשותפים נותנים גישה ב־SSH, דרכה אפשר להתקין Composer ואת Kimai ללא שום בעיות."
     ssh: השיטה הזאת מתקינה את Kimai ישירות בשרת שלך.
@@ -344,7 +344,7 @@ highlight:
         european: עצמאי ואירופאי 🇪🇺 – נבנה באוסטריה 🇦🇹 ומתארח בגרמניה 🇩🇪 עם מחויבות עמוקה להגנה על פרטיות, שקיפות ואיכות ברמת קוד פתוח.
 description: תיאור
 oss-cloud-compare:
-    intro: Kimai היא תוכנה בקוד פתוח שזמינה לאירוח עצמי וגם לאירוח בענן SaaS.
+    intro: אותן יכולות עוצמתיות, הטמעה אחרת. אפשר לבחור מה שמתאים לצוות שלך.
     title: |
         ענן או אירוח עצמי.
         החלטה שלך.
@@ -358,7 +358,7 @@ oss-cloud-compare:
         intro: שליטה מלאה על הנתונים והתשתית שלך. אפשר להטמיע שרת משלך עם Docker או ידנית.
     cloud:
         reason_2: עדכונים וגיבויים אוטומטיים
-        reason_1: Instant setup, no server needed
+        reason_1: הקמה מיידית, אין צורך בשרת
         intro: ניהול מלא, עדכונים תדירים. אנחנו מטפלים בתשתית כדי לפנות אותך להתעסק בעבודה.
         reason_5: תוספים כלולים
         reason_4: תמיכה בעדיפות גבוהה
@@ -428,7 +428,7 @@ landing_oss:
 plans:
     tls_included: אישור SSL בחינם
     ip_whitelist: הגבלה לכתובות IP
-    billable_hours: שעות לחיוב ולא לחיוב
+    billable_hours: שעות לחיוב
     max_users: 'משתמשים'
     work_contract: חשבון זמן עבודה
     all_from_plan: כל היכולות של ‚%plan%’
@@ -461,8 +461,8 @@ plans:
     backup_weekly: שבועי
     backup_daily: יומי
     customer_portal: שער לקוחות
-    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
-    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
+    pro_intro: לצוותים בצמיחה וחברות שצריכות חשבונות זמני עבודה, הוצאות ו־SSO.
+    standard_intro: לעצמאיים ולקבוצות קטנות שרוצים שליטה טובה יותר על מעקב השעות והנפקת החשבוניות שלהם.
 pricing:
     short_monthly: לפי משתמש וחודש
     short_annual: לפי משתמש ושנה
@@ -471,17 +471,17 @@ pricing:
     annual: שנתית
     included: מה בחבילה?
     not_available: לא זמין
-    subtitle: התוכניות האלו זמינות ללקוחות ענן
+    subtitle: כל שלל היכולות מהיום הראשון. מתחילים בחינם, משלמים לפי משתמשים ואפשר לבטל בכל רגע.
     cancellation: אפשר לבטל את המינוי שלך בכל עת עד יום לפני סוף תקופת המינוי.
     tax_exclusive: כל המחירים אינם כוללים מסים.
-    favorite: Most popular
-    annual_cta: You save 20% compared to monthly billing.
-    title: Pricing that fits your team
-    eyebrow: Hosted & maintenance-free
-    monthly_cta: Switch to annual and save 20%.
-    trust_hosting: Hosted in Germany · GDPR compliant
-    trust_trial: 30-day free trial
-    trust_no_fee: No setup fee
+    favorite: הנפוץ ביותר
+    annual_cta: חסכון של 20% ביחס לחיוב החודשי.
+    title: תמחור שמתאים לצוות שלך
+    eyebrow: באירוח שלנו ונטול תחזוקה
+    monthly_cta: אפשר לעבור למסלול שנתי ולחסוך 20%.
+    trust_hosting: מתארח בגרמניה · תואם GDPR
+    trust_trial: ניסיון חינם ל־30 יום
+    trust_no_fee: אין עלויות הקמה
 non-profit:
     name: ללא מטרות רווח
     eligible: מידע נוסף
@@ -512,7 +512,7 @@ error:
     name: שגיאת שרת (500)
     description: תחביר הבקשה שלך שגוי ולא ניתן למלא אותה, עמך הסליחה.
 cloud:
-    status: מצב
+    status: מצב המערכת
     subtitle: הכרזות וחדשות בנוגע לענן של Kimai.
     name: ענן
 theme:
@@ -547,7 +547,7 @@ industries:
         testimonials:
             tag: Agency
             introduction: At Kimai, we've designed our time tracking platform to meet the needs of agencies, teams, and freelancers. Our intuitive interface and powerful features help agencies like yours work smarter and more profitably. You can now “listen” to the reviews of the real users.
-            title: What agencies say about time tracking
+            title: מה סוכנויות אומרות על מעקב שעות
         about:
             title: First steps for a better time tracking
             introduction: |
@@ -556,7 +556,9 @@ industries:
                 At Kimai, we offer a free trial so you can explore our solution before deciding if additional users, features, or plugins are needed. Try it for free today, and have a more organized workday!
         title: מעקב שעות לסוכנויות
         cta:
-            title: Ready to start tracking time in your agency?
+            title: |
+                שנתחיל לעקוב
+                אחרי שעות בסוכנות שלך?
         name: סוכנויות
         introduction: |
             Are you running an agency - whether it's in marketing, PR, design, consulting, HR, or architecture? Then you know how critical time tracking is to your business. Tracking employee hours and client project time is essential for billing accurately, understanding profitability, and managing your growing team.
@@ -625,8 +627,8 @@ industries:
 
                 At Kimai, we understand this journey. That's why we offer a free trial that lets you test-drive our solution before deciding which additional features or plugins would work best for you. Our all-in-one app grows with your business - you can easily add extensions whenever needed. Try it for free today and have a nice organized day!
         subtitle: Maximize billable hours & efficiency
-        name: Consultants
-        title: Time Tracking For Consultants
+        name: יועצים
+        title: מעקב שעות ליועצים
         testimonials:
             introduction: At Kimai, we’ve built our platform to cater to the needs of individual consultants and large teams alike. As an all-in-one solution, Kimai is trusted by companies of all sizes across various sectors. Here’s what our users in the consulting field have to say.
             title: Insights on time tracking from consulting professionals
@@ -758,9 +760,9 @@ time-tracking-terms:
     intro: הצצה מאחורי הקבלים של תיעוד שעות ומידע נוסף על התנאים הכי נפוצים ב־Kimai
     name: מילון מונחים
 changelog:
-    name: יומן שינויים
+    name: עדכונים
     title: מה חדש
-    subtitle: סקירת כל עדכוני ענן Kimai ומתי הם הותקנו.
+    subtitle: היכולות, התיקונים והשיפורים העדכניים ביותר לענן ה־Kimai שלך.
 open-source-community:
     name: קוד פתוח
 integrations:
