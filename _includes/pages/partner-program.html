@@ -1,0 +1,74 @@
+<section class="container mt-3 mb-5 pt-lg-5">
+    <div class="row align-items-center pt-4">
+
+        <div class="w-75">
+            <span class="eyebrow">{{ site.data[page.lang].translation.partner-program.what.eyebrow }}</span>
+            <h2>{{ site.data[page.lang].translation.partner-program.what.title }}</h2>
+            <p class="fs-5">{{ site.data[page.lang].translation.partner-program.what.description }}</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-xs-1 row-cols-lg-2 justify-content-center g-4 pb-xl-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <span class="icon-container mb-3"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+                        <h3>{{ site.data[page.lang].translation.partner-program.partner_types.service.title }}</h3>
+                        <p>{{ site.data[page.lang].translation.partner-program.partner_types.service.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <span class="icon-container mb-3"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path
+                            d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path
+                            d="m14.5 4-5 16"></path></svg></span>
+                        <h3>{{ site.data[page.lang].translation.partner-program.partner_types.developer.title }}</h3>
+                        <p>{{ site.data[page.lang].translation.partner-program.partner_types.developer.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="bg-section mt-3 mb-5 py-lg-5 border-primary border-1 border-top border-bottom">
+    <div class="container">
+        <div class="row align-items-center pt-4">
+            <div class="w-75">
+                <span class="eyebrow">{{ site.data[page.lang].translation.partner-program.how.eyebrow }}</span>
+                <h2>{{ site.data[page.lang].translation.partner-program.how.title }}</h2>
+                <p class="fs-5">{{ site.data[page.lang].translation.partner-program.how.description }}</p>
+            </div>
+
+            <div class="steps steps-sm steps-horizontal-md">
+
+                {% for step in site.data[page.lang].translation.partner-program.how.steps %}
+                <div class="step">
+                    <div class="step-number">
+                        <div class="step-number-inner">{{ forloop.index }}</div>
+                    </div>
+                    <div class="step-body">
+                        <h5 class="mb-2">{{ step[1].title }}</h5>
+                        <p class="fs-6 mb-0">{{ step[1].description }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% if page.lang == 'de' %}
+    {% include section-faq.html type="partner_program_de" background=" " %}
+{% else %}
+    {% include section-faq.html type="partner_program_en" background=" " %}
+{% endif %}
