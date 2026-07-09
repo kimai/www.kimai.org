@@ -109,6 +109,7 @@ services:
 
   kimai:
     image: kimai/kimai2:apache
+    stop_grace_period: 15s
     depends_on:
       sqldb:
         condition: service_healthy

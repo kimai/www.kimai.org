@@ -100,6 +100,27 @@ For example clearing the cache is
 docker exec -ti kimai-test /opt/kimai/bin/console kimai:reload --env=prod
 ```
 
+## Docker background worker
+
+The Docker image runs a Symfony Messenger worker alongside Apache to process asynchronous messages such as emails.
+
+The Docker healthcheck still verifies Apache only, so use `supervisorctl` to inspect worker state.
+
+For `docker-compose`, configure a grace period that is longer than the worker shutdown timeout:
+
+```yaml
+stop_grace_period: 35s
+```
+
+Useful diagnostics inside the container:
+
+```bash
+docker exec <container> supervisorctl status
+docker exec <container> php /opt/kimai/bin/console messenger:failed:list
+docker exec <container> php /opt/kimai/bin/console messenger:failed:retry --transport=failed_async
+docker exec <container> php /opt/kimai/bin/console messenger:failed:retry --transport=failed_emails
+```
+
 ## Deprecated images 
 
 Since the internal technical stack is an implementation detail irrelevant to end users, the following image name has been deprecated.
