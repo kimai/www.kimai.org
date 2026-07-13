@@ -53,3 +53,11 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 ### ISPConfig 3
 
 There is an installation doc (only in German) available at [www.howtoforge.de](https://www.howtoforge.de/anleitung/installation-kimai2-webbasierte-zeiterfassung-in-einem-ispconfig3-web/).
+
+### Zenith
+
+[Zenith](https://zenith.hosting/host/kimai) provides one-click, fully managed Kimai hosting, so you don't need your own server or any DevOps knowledge.
+Every instance includes storage, automatic backups, outgoing email, and a free subdomain, and you can connect your own domain later.
+A share of every subscription goes back to the Kimai project to help fund its development.
+
+[Deploy Kimai with Zenith](https://zenith.hosting/host/kimai){: .btn .btn-success}
