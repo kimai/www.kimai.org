@@ -3,12 +3,14 @@
     <div class="card border-0 bg-dark">
         <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
             <div class="py-md-5 py-4 text-center">
-                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Tell us about your work</h2>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">
+                    {{ site.data[page.lang].translation.become-a-partner.express_interest.heading }}
+                </h2>
                 <p>
-                Share your details via email. There's no obligation, no fee, and no automated approval — a member of the Kimai team reviews each submission.
+                    {{ site.data[page.lang].translation.become-a-partner.express_interest.description }}
                 </p>
                 <div class="pt-md-5 pt-4 pb-md-2">
-                    <a href="mailto:{{ site.support_email }}" class="btn btn-lg btn-primary">We want to hear from you!</a>
+                    <a href="mailto:{{ site.support_email }}" class="btn btn-lg btn-primary">{{ site.data[page.lang].translation.become-a-partner.express_interest.label }}</a>
                 </div>
             </div>
         </div>
