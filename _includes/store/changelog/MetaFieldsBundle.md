@@ -1,3 +1,27 @@
+**Version 2.14.0**
+
+Compatibility: requires minimum Kimai 2.62.0
+
+- Improved: new `Dependent dropdown` custom-field type for activities, see 2.13.0
+
+**Version 2.13.0**
+
+Compatibility: requires minimum Kimai 2.62.0
+
+- Added: new `Dependent dropdown` custom-field type for activities
+- Use "primary" button class for creating fields
+- Bump minimum required PHP version to 8.2
+
+This new field type lets you attach a list of choices to each activity (for example a list of tasks).
+When creating or editing a timesheet, a dropdown appears whose available options depend on the selected activity:
+choosing an activity automatically loads that activity's list of choices into the dropdown.
+This works just like the project dropdown, which updates its options based on the selected customer.
+
+To use it: create a custom-field of type "Dependent dropdown" for activities, then open an activity and enter the
+choices (one per line). Those choices become selectable on the timesheet once that activity is picked.
+
+The `Dependent dropdown` type is in beta right now, feedback is appreciated.
+
 **Version 2.12.0**
 
 Compatibility: requires minimum Kimai 2.34.0

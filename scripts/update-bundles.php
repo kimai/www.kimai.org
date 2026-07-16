@@ -11,12 +11,10 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 if(curl_exec($ch) === FALSE) {
     echo "Error: " . curl_error($ch);
-    curl_close($ch);
     return;
 }
 
 $json = curl_exec($ch);
-curl_close($ch);
 $bundles = json_decode($json, true);
 
 $releasesDir = realpath(__DIR__ . '/../_data/store/releases/');
