@@ -5,7 +5,7 @@ description: How to list your Kimai plugin, app or client in the Marketplace
 ---
 
 If you built a plugin, mobile app, desktop client, or another integration around Kimai and want it listed in the 
-[Store]({% link _pages/en/store.html %}) or [Apps & Integrations]({% link _pages/en/integrations.html %}) page, 
+[Store]({% link _pages/{{ page.lang }}/store.html %}) or [Apps & Integrations]({% link _pages/{{ page.lang }}/integrations.html %}) page, 
 this guide explains the current repository structure.
 
 Due to the multi-lingual structure of the website, its not enough to add just one store entry but it needs a few files:
