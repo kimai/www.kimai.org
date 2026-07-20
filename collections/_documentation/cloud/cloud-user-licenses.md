@@ -30,6 +30,15 @@ On top of that, Kimai doesn't have a restricted "admin-only" mode. Every account
 When registering for a plan, the system shows the minimum number of licenses you need based on your current active users.
 If the count is higher than expected, deactivate any unused accounts and reload the page to update the displayed number.
 
+### Starting a subscription
+
+- Open your [My Cloud]({{ site.cloud.my_cloud }}) portal.
+- Select the plan you want to activate.
+- If you haven't entered your company details yet, you will be prompted to add them first.
+- Proceed to the checkout and enter your payment details.
+
+Your subscription becomes active as soon as the payment is confirmed.
+
 ### Purchasing additional licenses
 
 If your subscription doesn't include enough licenses, you can purchase additional ones at any time through the [My Cloud]({{ site.cloud.my_cloud }}) portal.
