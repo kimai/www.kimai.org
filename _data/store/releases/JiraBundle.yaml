@@ -1,0 +1,11 @@
+# Fragment for kimai/www.kimai.org's _data/store/releases/JiraBundle.yaml.
+#
+# Drives the "Updates" tab on the store listing page (requires `changelog: true` in
+# ../jira-sync.yml). Named by the BUNDLE name (JiraBundle), NOT the store slug (jira-sync) - the
+# theme looks the release file up by the `bundle.name` value.
+#
+# Each entry is [plugin version, minimum Kimai version it supports], newest first. The minimum
+# Kimai version mirrors this plugin's own `extra.kimai.require` in composer.json (22100 = 2.21.0),
+# expressed here as the dotted version the store displays.
+versions:
+    - [1.0.0, 2.21.0]
