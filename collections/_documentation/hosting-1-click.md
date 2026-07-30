@@ -5,10 +5,15 @@ description: Kimai can be hosted on various systems and many hosting companies s
 canonical: /documentation/hosting-1-click.html
 ---
 
-{% include snippets/unsupported-installation-warning.md %}
 {% include documentation/self-hosting-warning.md %}
 
 The following platforms adopted Kimai to be compatible with their one-click installation systems.
+
+We don't have any partnership or collaboration with the providers listed below. 
+We haven't tested their 1-click installations and we don't provide support for them — if you run into problems, please contact the respective hosting provider directly. 
+**We don't receive any compensation or payment from these providers.** 
+
+The order of the listing doesn't imply any ranking or recommendation; new providers are added at the end of the list.
 
 ### YunoHost
 

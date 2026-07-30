@@ -59,7 +59,7 @@ Kimai also support generating hybrid formats:
 
 The e-invoice XML is always generated side by side to the original invoice document, no matter if that is PDF or e.g. Word, and the XML can be downloaded. 
 If a hybrid format is chosen, the invoice document must be a PDF. 
-The invoice will then be generated as a `PDF/A-3 + associated files + additional XMP RDF` (for `ZUGFeRD` and `Factur-X`). 
+The invoice will then be generated as a `PDF/A + associated files + additional XMP RDF` (for `ZUGFeRD` and `Factur-X`). 
 
 ### Payment type
 
