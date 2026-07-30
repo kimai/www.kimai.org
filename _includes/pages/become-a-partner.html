@@ -89,25 +89,38 @@
     </div>
 </section>
 
-<section class="bg-secondary">
-    <section class="container mt-3 mb-5 py-3 py-lg-5 bg-secondary w-50">
-        <div class="row align-items-center pt-4">
+{% assign express = site.data[page.lang].translation.become-a-partner.express_interest %}
+<section class="container mt-3 mb-5 py-3 py-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 col-xl-8">
 
-            <div class="mb-3">
-                <span class="eyebrow">The relationship, in plain terms</span>
-                <h2>What recognition is — and isn't</h2>
-            </div>
-            <div>
-{% capture text %}
-Recognition as an Official Kimai Partner is **non-exclusive**. Kimai may recognise any number of partners in the same region or specialism, and partners remain free to work with other software and vendors.
+            <span class="eyebrow">{{ express.label }}</span>
+            <h2>{{ express.heading }}</h2>
+            <p class="fs-5 mb-4 mb-lg-5">{{ express.description|newline_to_br }}</p>
 
-The designation is **reviewed periodically**. It reflects current standing rather than a permanent title, and is **revocable** — for misrepresentation of the relationship, a sustained drop in quality, or conduct that breaches the program's expectations.
+            <div class="card">
+                <div class="card-body p-4 p-lg-5">
 
-Recognition does **not** create an agency, reseller, franchise or employment relationship. Partners act independently, contract directly with their own clients, and speak for themselves rather than for Kimai.
-{% endcapture %}
-{{ text|markdownify }}
+                    <p class="fs-5">{{ express.intro|markdownify }}</p>
+
+                    <ol class="vstack gap-4 my-4 my-lg-5 ps-3">
+                        {% for item in express.items %}
+                        <li>
+                            <h5 class="mb-1">{{ item[1].title }}</h5>
+                            <p class="text-muted mb-0">{{ item[1].description }}</p>
+                        </li>
+                        {% endfor %}
+                    </ol>
+
+                    <hr class="my-4">
+
+                    <a href="mailto:{{ express.email }}" class="btn btn-primary btn-lg">
+                        <i class="bx bx-envelope fs-xl me-2"></i>{{ express.button }}
+                    </a>
+
+                </div>
             </div>
 
         </div>
-    </section>
+    </div>
 </section>

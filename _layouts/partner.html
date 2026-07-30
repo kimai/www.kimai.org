@@ -1,0 +1,206 @@
+---
+layout: default
+---
+
+{% assign developer = site.data.developer[page.developer] %}
+{% assign t = site.data[page.lang].translation.partner-detail %}
+{% assign name = page.title | default: developer.name %}
+{% assign website = developer.homepage | default: page.website %}
+{% assign website_label = website | replace: 'https://', '' | replace: 'http://', '' | remove_first: 'www.' | split: '/' | first %}
+{% assign email = developer.email | default: page.email %}
+{% assign types = page.types | default: nil %}
+{% if types == nil and page.type %}{% assign types = page.type | split: ',' %}{% endif %}
+
+<section class="container mt-4 mt-lg-5 mb-5 pb-2">
+
+    {% comment %} ---- Header ---- {% endcomment %}
+    <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4 mb-lg-5">
+        <div class="d-flex align-items-start gap-3">
+            {% if developer.image %}
+                <img src="{{ developer.image }}" alt="{{ name }}" width="80" height="80" class="rounded-3 flex-shrink-0" style="object-fit: cover;">
+            {% else %}
+                <span class="d-inline-flex align-items-center justify-content-center rounded-3 flex-shrink-0 bg-secondary text-muted fw-bold fs-2" style="width: 80px; height: 80px;">{{ name | slice: 0, 2 | upcase }}</span>
+            {% endif %}
+            <div>
+                <h1 class="mb-1">{{ name }}</h1>
+                {% if page.contact_url or email %}
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <a href="{{ page.contact_url | default: 'mailto:' | append: email }}"{% if page.contact_url %} target="_blank" rel="noopener"{% endif %} class="btn btn-primary">{{ t.contact_button }}</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row gy-4">
+
+        {% comment %} ---- Main column ---- {% endcomment %}
+        <div class="col-lg-8">
+
+            {% comment %} About {% endcomment %}
+            {% assign about = developer.introduction[english_german] | default: page.description | default: developer.description %}
+            {% if about %}
+            <div class="card mb-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h2 class="h4 mb-3">{{ t.about }}</h2>
+                    <div class="mb-0">{{ about | markdownify }}</div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% comment %} Services {% endcomment %}
+            {% if page.services %}
+            <div class="card mb-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h2 class="h4 mb-4">{{ t.services }}</h2>
+                    <div class="vstack gap-3">
+                        {% for service in page.services %}
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="d-inline-flex align-items-center justify-content-center bg-faded-primary text-primary rounded-2 flex-shrink-0" style="width: 40px; height: 40px;">
+                                {{ site.data.icons[service] }}
+                            </span>
+                            <span class="fw-semibold">{{ site.data[page.lang].translation.partner-services[service] | default: service }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% comment %} Published extensions — resolved from the store collection via the developer key {% endcomment %}
+            {% assign store_products = site.store | where: "lang", page.lang | sort: 'title' %}
+            {% assign ext_count = 0 %}
+            {% for product in store_products %}
+                {% assign settings = site.data.store[product.slug] %}
+                {% if settings.developer == page.developer %}{% assign ext_count = ext_count | plus: 1 %}{% endif %}
+            {% endfor %}
+            {% if ext_count > 0 %}
+            <div class="card mb-4">
+                <div class="card-body p-4 p-lg-5">
+                    <h2 class="h4 mb-4">{{ t.extensions }}</h2>
+                    {% assign printed = 0 %}
+                    {% for product in store_products %}
+                        {% assign settings = site.data.store[product.slug] %}
+                        {% if settings.developer == page.developer %}
+                            {% assign printed = printed | plus: 1 %}
+                            {% assign extension = site.data[page.lang].store.items[product.slug] %}
+                            <a href="{{ product.url }}" class="d-flex justify-content-between align-items-center gap-3 p-3 rounded-3 bg-secondary text-decoration-none {% unless printed == ext_count %}mb-3{% endunless %}">
+                                <span>
+                                    <span class="d-block fw-semibold text-dark">{{ extension.title | default: product.title }}</span>
+                                    {% if extension.intro %}<span class="d-block text-muted fs-sm">{{ extension.intro }}</span>{% endif %}
+                                </span>
+                                <span class="text-primary fw-semibold text-nowrap">{{ site.data[page.lang].translation.read-more }}</span>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% comment %} Free-form markdown body from the partner .md file {% endcomment %}
+            {% assign body = content | strip %}
+            {% if body != '' %}
+            <div class="card mb-4">
+                <div class="card-body p-4 p-lg-5">
+                    {{ content }}
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+
+        {% comment %} ---- Sidebar ---- {% endcomment %}
+        <div class="col-lg-4">
+
+            {% comment %} Regions {% endcomment %}
+            {% if page.regions %}
+            <div class="card mb-4">
+                <div class="card-body p-4">
+                    <p class="card-title">{{ t.regions }}</p>
+                    <ul class="list-unstyled mb-0 vstack gap-2">
+                        {% for region in page.regions %}
+                        <li class="d-flex align-items-center gap-2">
+                            <span class="fs-5 lh-1">
+                            {% case region %}
+                                {% when 'de' %}🇩🇪
+                                {% when 'at' %}🇦🇹
+                                {% when 'ch' %}🇨🇭
+                                {% when 'nl' %}🇳🇱
+                                {% when 'fr' %}🇫🇷
+                                {% when 'be' %}🇧🇪
+                                {% else %}🌐
+                            {% endcase %}
+                            </span>
+                            <span>
+                            {% if page.lang == 'de' %}
+                                {% case region %}
+                                    {% when 'de' %}Deutschland
+                                    {% when 'at' %}Österreich
+                                    {% when 'ch' %}Schweiz
+                                    {% when 'nl' %}Niederlande
+                                    {% when 'fr' %}Frankreich
+                                    {% when 'be' %}Belgien
+                                    {% else %}🌐
+                                {% endcase %}
+                            {% else %}
+                                {% case region %}
+                                    {% when 'de' %}Germany
+                                    {% when 'at' %}Austria
+                                    {% when 'ch' %}Switzerland
+                                    {% when 'nl' %}Netherlands
+                                    {% when 'fr' %}France
+                                    {% when 'be' %}Belgium
+                                    {% else %}🌐
+                                {% endcase %}
+                            {% endif %}
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page.languages %}
+            <div class="card mb-4">
+                <div class="card-body p-4">
+                    <p class="card-title">{{ t.languages }}</p>
+                    <div class="d-flex flex-wrap gap-2">
+                        {% for language in page.languages %}
+                            <span class="badge bg-secondary text-body fw-normal">{{ language }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if email or developer.phone or website or developer.location %}
+            <div class="card mb-4">
+                <div class="card-body p-4">
+                    <p class="card-title">{{ t.contact }}</p>
+                    <ul class="list-unstyled mb-0 vstack gap-2 fs-sm">
+                        {% if email %}<li><a href="mailto:{{ email }}" class="text-primary text-decoration-none">{{ email }}</a></li>{% endif %}
+                        {% if developer.phone %}<li>{{ developer.phone }}</li>{% endif %}
+                        {% if website %}<li><a href="{{ website }}" target="_blank" rel="noopener" class="text-primary text-decoration-none">{{ website_label }}</a></li>{% endif %}
+                        {% if developer.location %}<li class="text-muted">{{ developer.location }}</li>{% endif %}
+                    </ul>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page.partner_since or page.verified %}
+            <div class="card mb-4">
+                <div class="card-body p-4">
+                    <p class="card-title">{{ t.since_label }} {{ page.partner_since }}</p>
+                    <span class="badge bg-faded-primary text-primary rounded-pill px-3 py-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="badge-check" data-dc-tpl="103" style="width: 16px; height: 16px; display: inline-flex; color: var(--green-600);" class="lucide lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                        {{ t.verified }}
+                    </span>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+

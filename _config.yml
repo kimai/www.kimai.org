@@ -224,6 +224,10 @@ collections:
     security:
         output: true
         permalink: "/:lang/security/:slug"
+    partner:
+        output: true
+        permalink: "/:lang/partner/:slug"
+        multi_language: true
 
 defaults:
     -
@@ -315,6 +319,12 @@ defaults:
             type: blog_tags
         values:
             layout: blog
+    -
+        scope:
+            path: ""
+            type: partner
+        values:
+            layout: partner
 
 markdown: kramdown
 kramdown:
