@@ -13,6 +13,12 @@ layout: default
 
 <section class="container mt-4 mt-lg-5 mb-5 pb-2">
 
+    {% comment %} ---- Back to the partner directory ---- {% endcomment %}
+    <a href="{% link _pages/{{ english_german }}/find-a-partner.html %}" class="d-inline-flex align-items-center text-muted text-decoration-none mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2 flex-shrink-0"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+        {{ t.back }}
+    </a>
+
     {% comment %} ---- Header ---- {% endcomment %}
     <div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-4 mb-lg-5">
         <div class="d-flex align-items-start gap-3">
