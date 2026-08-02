@@ -727,6 +727,16 @@ For example: a customer gets a global rate of 10€, and you additionally create
 
 <p>If you leave the <code class="language-plaintext highlighter-rouge">internal price</code> empty on customer/project/activity level, the <code class="language-plaintext highlighter-rouge">internal price user-preference</code> will be used as fallback.</p>
 
+<p>The <code class="language-plaintext highlighter-rouge">internal price user-preference</code> is an hourly price, so it is multiplied with the duration of the record, the same way as the <strong>hourly price</strong>.
+That is also true for records with a <strong>fixed price</strong>: their internal price stays duration based, which means a <strong>fixed price</strong> record with a duration of <code class="language-plaintext highlighter-rouge">0</code> has an internal price of <code class="language-plaintext highlighter-rouge">0</code>.</p>
+
+<p>There are two exceptions:</p>
+
+<ul>
+  <li>If a customer/project/activity rule uses a <strong>fixed price</strong> and defines an <code class="language-plaintext highlighter-rouge">internal price</code>, that value is applied as it is (a fixed amount) and is not multiplied with the duration.</li>
+  <li>If the user has no <code class="language-plaintext highlighter-rouge">internal price</code> configured, the <strong>fixed price</strong> itself is used as internal price.</li>
+</ul>
+
 <h2 id="changing-prices">Changing prices</h2>
 
 <p>Rate changes apply to <strong>future records only</strong>. If you change e.g. a user’s hourly rate, it will be used for all timesheet records that will be created from now on.</p>
@@ -809,6 +819,13 @@ In case that the <code class="language-plaintext highlighter-rouge">users hourly
 <ul>
   <li><strong>Fixed price</strong>: <code class="language-plaintext highlighter-rouge">$fixedRate</code></li>
   <li><strong>Hourly price</strong>: <code class="language-plaintext highlighter-rouge">$hourlyRate * ($durationInSeconds / 3600) * $factor</code></li>
+</ul>
+
+<p>And the internal price is calculated like this:</p>
+
+<ul>
+  <li><strong>Fixed price</strong>: <code class="language-plaintext highlighter-rouge">$internalRate</code> if the matching rule defines one, otherwise <code class="language-plaintext highlighter-rouge">$internalHourlyRate * ($durationInSeconds / 3600)</code></li>
+  <li><strong>Hourly price</strong>: <code class="language-plaintext highlighter-rouge">$internalHourlyRate * ($durationInSeconds / 3600) * $factor</code></li>
 </ul>
 
 <p>You find more information how and where you can edit the different rates types in the following chapters.</p>
