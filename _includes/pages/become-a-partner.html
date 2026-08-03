@@ -101,9 +101,7 @@
             <div class="card">
                 <div class="card-body p-4 p-lg-5">
 
-                    <p class="fs-5">{{ express.intro|markdownify }}</p>
-
-                    <ol class="vstack gap-4 my-4 my-lg-5 ps-3">
+                    <ol class="vstack gap-4 ps-3">
                         {% for item in express.items %}
                         <li>
                             <h5 class="mb-1">{{ item[1].title }}</h5>
@@ -112,10 +110,8 @@
                         {% endfor %}
                     </ol>
 
-                    <hr class="my-4">
-
-                    <a href="mailto:{{ express.email }}" class="btn btn-primary btn-lg">
-                        <i class="bx bx-envelope fs-xl me-2"></i>{{ express.button }}
+                    <a href="mailto:partner@kimai.org" class="btn btn-primary btn-lg mt-4">
+                        <i class="bx bx-envelope fs-xl me-2"></i>{{ site.data[page.lang].translation.support.get_in_touch }}
                     </a>
 
                 </div>

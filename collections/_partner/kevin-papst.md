@@ -6,13 +6,14 @@ services:
     - installation
     - hosting
     - development
-    - training
-    - slas
+    - Kimai Cloud
     - other
 regions:
     - de
     - at
-    - ch
+    - europe
+    - usa
+    - world
 languages:
     - German
     - English

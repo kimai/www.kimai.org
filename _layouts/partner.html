@@ -45,14 +45,19 @@ layout: default
 
             {% comment %} About {% endcomment %}
             {% assign about = developer.introduction[english_german] | default: page.description | default: developer.description %}
-            {% if about %}
+            {% assign body = content | strip %}
             <div class="card mb-4">
                 <div class="card-body p-4 p-lg-5">
                     <h2 class="h4 mb-3">{{ t.about }}</h2>
-                    <div class="mb-0">{{ about | markdownify }}</div>
+                    <div class="mb-0">
+                    {% if body != '' %}
+                        {{ content }}
+                    {% elsif about %}
+                        {{ about | markdownify }}
+                    {% endif %}
+                    </div>
                 </div>
             </div>
-            {% endif %}
 
             {% comment %} Services {% endcomment %}
             {% if page.services %}
@@ -63,7 +68,7 @@ layout: default
                         {% for service in page.services %}
                         <div class="d-flex align-items-center gap-3">
                             <span class="d-inline-flex align-items-center justify-content-center bg-faded-primary text-primary rounded-2 flex-shrink-0" style="width: 40px; height: 40px;">
-                                {{ site.data.icons[service] }}
+                                {{ site.data.icons[service] | default: site.data.icons.other }}
                             </span>
                             <span class="fw-semibold">{{ site.data[page.lang].translation.partner-services[service] | default: service }}</span>
                         </div>
@@ -103,16 +108,6 @@ layout: default
             </div>
             {% endif %}
 
-            {% comment %} Free-form markdown body from the partner .md file {% endcomment %}
-            {% assign body = content | strip %}
-            {% if body != '' %}
-            <div class="card mb-4">
-                <div class="card-body p-4 p-lg-5">
-                    {{ content }}
-                </div>
-            </div>
-            {% endif %}
-
         </div>
 
         {% comment %} ---- Sidebar ---- {% endcomment %}
@@ -134,6 +129,8 @@ layout: default
                                 {% when 'nl' %}🇳🇱
                                 {% when 'fr' %}🇫🇷
                                 {% when 'be' %}🇧🇪
+                                {% when 'europe' %}🇪🇺
+                                {% when 'usa' %}🇺🇸
                                 {% else %}🌐
                             {% endcase %}
                             </span>
@@ -146,7 +143,9 @@ layout: default
                                     {% when 'nl' %}Niederlande
                                     {% when 'fr' %}Frankreich
                                     {% when 'be' %}Belgien
-                                    {% else %}🌐
+                                    {% when 'europe' %}Europa
+                                    {% when 'usa' %}USA
+                                    {% else %}Weltweit
                                 {% endcase %}
                             {% else %}
                                 {% case region %}
@@ -156,7 +155,9 @@ layout: default
                                     {% when 'nl' %}Netherlands
                                     {% when 'fr' %}France
                                     {% when 'be' %}Belgium
-                                    {% else %}🌐
+                                    {% when 'europe' %}Europe
+                                    {% when 'usa' %}USA
+                                    {% else %}World-wide
                                 {% endcase %}
                             {% endif %}
                             </span>
@@ -180,11 +181,12 @@ layout: default
             </div>
             {% endif %}
 
-            {% if email or developer.phone or website or developer.location %}
+            {% if email or developer.phone or website or developer.location or developer.contact %}
             <div class="card mb-4">
                 <div class="card-body p-4">
                     <p class="card-title">{{ t.contact }}</p>
                     <ul class="list-unstyled mb-0 vstack gap-2 fs-sm">
+                        {% if developer.contact %}<li>{{ developer.contact }}</li>{% endif %}
                         {% if email %}<li><a href="mailto:{{ email }}" class="text-primary text-decoration-none">{{ email }}</a></li>{% endif %}
                         {% if developer.phone %}<li>{{ developer.phone }}</li>{% endif %}
                         {% if website %}<li><a href="{{ website }}" target="_blank" rel="noopener" class="text-primary text-decoration-none">{{ website_label }}</a></li>{% endif %}
