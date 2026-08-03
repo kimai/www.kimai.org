@@ -498,7 +498,17 @@ Always use the attribute name instead of querying them via index.</p>
 
 <h3 id="default-values">Default values</h3>
 
-<p>The API does not promise any BC on any default value. This is especially true for optional booleans (see below).</p>
+<p>The API does not promise any BC on any default value.</p>
+
+<p>When you create objects via API, make sure to set all relevant fields explicit, as we might change them at some point 
+and then your integration could break. Some examples:</p>
+
+<ul>
+  <li>visible flag</li>
+  <li>auto generated numbers</li>
+  <li>settings with default values (like the customer default language/country/currency)</li>
+  <li>user preferences with default values</li>
+</ul>
 
 <h3 id="datetime-formats-iso-8601-and-html5">DateTime formats (ISO 8601 and HTML5)</h3>
 
