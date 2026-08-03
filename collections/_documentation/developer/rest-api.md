@@ -45,7 +45,15 @@ Always use the attribute name instead of querying them via index.
 
 ### Default values
 
-The API does not promise any BC on any default value. This is especially true for optional booleans (see below). 
+The API does not promise any BC on any default value.
+
+When you create objects via API, make sure to set all relevant fields explicit, as we might change them at some point 
+and then your integration could break. Some examples:
+
+- visible flag
+- auto generated numbers
+- settings with default values (like the customer default language/country/currency)
+- user preferences with default values
 
 ### DateTime formats (ISO 8601 and HTML5)
 
