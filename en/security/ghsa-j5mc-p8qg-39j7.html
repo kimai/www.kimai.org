@@ -296,7 +296,8 @@
 
 <h2>Description</h2>
 
-<p>A flaw in the favorite timesheet feature allowed any signed-in user to add or remove entries from another user’s list of favorite (recent) timesheets. No sensitive data was exposed, but an attacker could disrupt a colleague’s quick-entry workflow by manipulating their bookmark list.</p>
+<p>A flaw in the favorite timesheet feature allowed any signed-in user to add or remove entries from another user’s list of favorite (recent) timesheets. 
+No sensitive data was exposed, but an attacker could disrupt a colleague’s quick-entry workflow by manipulating their bookmark list.</p>
 
 <ul>
   <li>All Kimai installations up to and including version 2.56.0 are affected (OnPremise and Cloud).</li>
@@ -309,7 +310,9 @@
 
 <h3 id="why-we-didnt-request-a-cve">Why we didn’t request a CVE</h3>
 
-<p>The manipulated bookmarks are only used to render the “recent activities” list that lets a user quickly restart a previous timesheet. No business data can be tampered with, no records are created, modified, or deleted, and no information is disclosed. At worst, this is an annoyance for the affected user, which does not meet the threshold for a CVE.</p>
+<p>The manipulated bookmarks are only used to render the “recent activities” list that lets a user quickly restart a previous timesheet. 
+No business data can be tampered with, no records are created, modified, or deleted, and no information is disclosed. 
+At worst, this is an annoyance for the affected user, which does not meet the threshold for a CVE.</p>
 
 <h2 id="solution">Solution</h2>
 

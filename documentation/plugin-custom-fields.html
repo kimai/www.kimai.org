@@ -699,9 +699,9 @@
   <li>Invoice templates (custom templates have access to all fields)</li>
 </ul>
 
-<p>The ` Weekly hours` screen has a dedicated set of custom-fields for timesheets.</p>
+<p>The <a href="/documentation/weekly-times.html">Weekly hours</a> screen has a dedicated set of custom-fields for timesheets.</p>
 
-<p>You can change the “weight” of custom-fields, so they show up in the order you define.</p>
+<p>By setting a none zero value, you can change the display “order” of the custom-fields.</p>
 
 <p>Be aware:</p>
 
@@ -710,9 +710,6 @@
   <li>User preferences (custom fields for users) are not exported by the API (this is a limitation in the core application)</li>
   <li>User preferences have a maximum length of 250 character</li>
 </ul>
-
-<p>Custom fields can be of the following type:
-<code class="language-plaintext highlighter-rouge">string</code>, <code class="language-plaintext highlighter-rouge">integer</code>, <code class="language-plaintext highlighter-rouge">number</code>, <code class="language-plaintext highlighter-rouge">duration</code>, <code class="language-plaintext highlighter-rouge">money</code>, <code class="language-plaintext highlighter-rouge">language</code>, <code class="language-plaintext highlighter-rouge">currency</code>, <code class="language-plaintext highlighter-rouge">country</code>, <code class="language-plaintext highlighter-rouge">color</code>, <code class="language-plaintext highlighter-rouge">date</code>, <code class="language-plaintext highlighter-rouge">datetime</code>, <code class="language-plaintext highlighter-rouge">email</code>, <code class="language-plaintext highlighter-rouge">textarea</code>, <code class="language-plaintext highlighter-rouge">invoice template</code>, <code class="language-plaintext highlighter-rouge">checkbox</code>, <code class="language-plaintext highlighter-rouge">choice-list</code>, <code class="language-plaintext highlighter-rouge">auto-tags</code></p>
 
 <h2 id="field-types">Field types</h2>
 
@@ -744,7 +741,7 @@
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">money</code></td>
-      <td> </td>
+      <td>text-field for entering a monetary value</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">language</code></td>
@@ -784,11 +781,11 @@
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">invoice template</code></td>
-      <td>dropdown</td>
+      <td>a dropdown to select one of the invoice template names</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">checkbox</code></td>
-      <td>on/off</td>
+      <td>an on/off switch: if mandatory, the user has to activate it to submit the form</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">choice-list</code></td>
@@ -798,16 +795,21 @@
       <td><code class="language-plaintext highlighter-rouge">auto-tags</code></td>
       <td>automatic timesheet tagging through assignment on activities/projects/custo mers</td>
     </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">activity-choices</code></td>
+      <td>adds a fourth level below the activity, which users select when they track time</td>
+    </tr>
   </tbody>
 </table>
 
-<h3 id="checkbox">Checkbox</h3>
+<h3 id="default-value">Default value</h3>
 
-<p>Use the value <code class="language-plaintext highlighter-rouge">1</code> as default value for a pre-checked box or <code class="language-plaintext highlighter-rouge">0</code> for an unchecked box.</p>
+<p>Many fields support setting a <code class="language-plaintext highlighter-rouge">Default value</code>.</p>
 
-<p>If a checkbox is marked as mandatory, the user has to check it in order to submit the form.</p>
+<p>As the type of the <code class="language-plaintext highlighter-rouge">default value</code> and therefor the input field depends on the selected <code class="language-plaintext highlighter-rouge">Field type</code>,
+this input field only appears after saving the new custom-field and then re-opening its configuration.</p>
 
-<h3 id="choice-list">Choice-list</h3>
+<h2 id="choice-list">Choice-list</h2>
 
 <p>“Choice-list” is a different word for “Select-box” or “Drop-down”.
 You have to add the entries as comma-separated list in the <code class="language-plaintext highlighter-rouge">Default value</code> field.
@@ -821,23 +823,98 @@ Combined with the mandatory flag, this will force your users to select an entry 
 Let’s assume you have non-human friendly IDs for the value, but want to show a human friendly text, you can separate
 each value from its title by using a pipe <code class="language-plaintext highlighter-rouge">|</code> character: <code class="language-plaintext highlighter-rouge">,01|Banana,02|Apple,Orange,foo|Pineapple,0815|Peach</code>.</p>
 
-<h3 id="invoice-template">Invoice template</h3>
-
-<p>A select box that is allows to select default and custom invoice templates.</p>
-
-<h3 id="auto-tags">Auto-Tags</h3>
+<h2 id="auto-tags">Auto-Tags</h2>
 
 <p>This advanced feature allows to assign certain tags to Activity, Project and Customer.</p>
 
-<p>Once you assigned such an <code class="language-plaintext highlighter-rouge">auto-tag</code> e.g to a Project, each future timesheet that is linked to the selected <code class="language-plaintext highlighter-rouge">Project</code> will be assigned 
-the selected <code class="language-plaintext highlighter-rouge">auto-tags</code>. A user cannot remove these tags, they are automatically assigned after the form (to save the timesheet) was submitted.</p>
+<p>Once you assigned such an <code class="language-plaintext highlighter-rouge">auto-tag</code> e.g to a Project, each future timesheet that is linked to the selected <code class="language-plaintext highlighter-rouge">Project</code> will be assigned the selected <code class="language-plaintext highlighter-rouge">auto-tags</code>. 
+A user cannot remove these tags, they are automatically assigned after the form (to save the timesheet) was submitted.</p>
 
-<h2 id="default-value">Default value</h2>
+<h2 id="activity-choices-4-level">Activity-Choices (4 level)</h2>
 
-<p>Many fields support setting a <code class="language-plaintext highlighter-rouge">Default value</code>.</p>
+<p>Kimai organizes your data in three levels: <code class="language-plaintext highlighter-rouge">Customer</code>, <code class="language-plaintext highlighter-rouge">Project</code> and <code class="language-plaintext highlighter-rouge">Activity</code>.
+The field type <code class="language-plaintext highlighter-rouge">Activity-Choices (4 level)</code> adds a fourth level below the activity.</p>
 
-<p>As the type of the <code class="language-plaintext highlighter-rouge">default value</code> and therefor the input field depends on the selected <code class="language-plaintext highlighter-rouge">Field type</code>,
-this input field only appears after saving the new custom-field and then re-opening its configuration.</p>
+<p>You define the name of that fourth level yourself, so you can adapt it to the words your team already uses,
+for example “Tasks”, “Work packages”, “Steps” or “Phases”. Typical examples:</p>
+
+<ul>
+  <li>A construction company tracks the activity “Electrical installation” and needs to know whether the time was
+spent on “Cabling”, “Sockets” or “Testing”</li>
+  <li>An agency tracks the activity “Website relaunch” and wants to split it into “Concept”, “Design”, “Development” and “Review”</li>
+  <li>A university tracks the activity “Research project” and splits it into the work packages defined in the funding contract</li>
+</ul>
+
+<h3 id="how-it-works">How it works</h3>
+
+<p>The entries of the fourth level are maintained per activity. Every activity has its own list, so the choices a user
+sees always depend on the activity they selected.</p>
+
+<ul>
+  <li>The list is stored on the activity, one entry per line</li>
+  <li>An activity can have up to 50 entries, each with a maximum of 100 characters</li>
+  <li>The characters <code class="language-plaintext highlighter-rouge">&lt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code> and <code class="language-plaintext highlighter-rouge">"</code> aren’t allowed, and an entry name can only be used once per activity</li>
+  <li>The order of the lines defines the order of the dropdown when tracking time</li>
+</ul>
+
+<p>When a user creates or edits a timesheet, the field is shown below the activity:</p>
+
+<ul>
+  <li>As long as no activity is selected, the field is disabled</li>
+  <li>After an activity was selected, Kimai loads the entries of that activity</li>
+  <li>If the activity has at least one entry, the field becomes active and the user has to select one of them</li>
+  <li>If the activity has no entries, the field is empty and can be ignored</li>
+</ul>
+
+<p>The selected entry is stored as text in a custom-field of the timesheet. Later changes to the underlying list
+(renaming or deleting entries) don’t change existing timesheets: the value that was chosen at
+booking time stays as it is.</p>
+
+<p>If someone edits an old timesheet whose stored value isn’t part of the current list anymore, that value can’t be
+selected again. They have to choose one of the current entries before they can save the record.</p>
+
+<h3 id="create-the-custom-field">Create the custom field</h3>
+
+<p>Open the custom field administration, switch to the <code class="language-plaintext highlighter-rouge">Activity</code> section and create a new field.
+The type <code class="language-plaintext highlighter-rouge">Activity-Choices (4 level)</code> is only available for activities.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 400px">
+    <img src="/images/documentation/custom-fields-activity-choices-type.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Select the field type</figcaption>
+</figure>
+
+<p>Fill in the form as you would for any other custom field:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Internal title</code> is the technical name, for example <code class="language-plaintext highlighter-rouge">tasks</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Name</code> is the label your users see in the forms, for example <code class="language-plaintext highlighter-rouge">Tasks</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Documentation</code> is an optional help text below the field</li>
+</ul>
+
+<figure class="d-block figure mb-3" style="max-width: 600px">
+    <img src="/images/documentation/custom-fields-activity-choices-create.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Create the custom field</figcaption>
+</figure>
+
+<p>You only need one field of this type. As soon as it exists, Kimai registers it for activities (to maintain the list)
+and for timesheets (to select a value) with the same internal name.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">Mandatory field</code> setting applies to the activity form: turn it on if every activity has to define entries.
+It doesn’t control whether users have to select a value when tracking time — that’s decided per activity,
+based on whether the activity has entries or not.</p>
+
+<h3 id="maintain-the-activity-entries">Maintain the activity entries</h3>
+
+<p>Now open an activity in the administration. The new field is shown as a multi-line text field.
+Add one entry per line and save the activity.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 600px">
+    <img src="/images/documentation/custom-fields-activity-choices-activity.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Maintain the entries of an activity</figcaption>
+</figure>
+
+<p>Repeat this for every activity that needs the fourth level. Activities where you leave the field empty keep working
+exactly as before, their users don’t have to select anything.</p>
 
 <h2 id="visibility">Visibility</h2>
 
@@ -900,7 +977,7 @@ Because at the moment the form is opened, it is unknown which <code class="langu
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#field-types" class="nav-link">Field types</a><ul><li class="nav-item"><a href="#checkbox" class="nav-link">Checkbox</a></li><li class="nav-item"><a href="#choice-list" class="nav-link">Choice-list</a></li><li class="nav-item"><a href="#invoice-template" class="nav-link">Invoice template</a></li><li class="nav-item"><a href="#auto-tags" class="nav-link">Auto-Tags</a></li></ul></li><li class="nav-item"><a href="#default-value" class="nav-link">Default value</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a><ul><li class="nav-item"><a href="#customer-project-and-activity" class="nav-link">Customer, Project and Activity</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#field-types" class="nav-link">Field types</a><ul><li class="nav-item"><a href="#default-value" class="nav-link">Default value</a></li></ul></li><li class="nav-item"><a href="#choice-list" class="nav-link">Choice-list</a></li><li class="nav-item"><a href="#auto-tags" class="nav-link">Auto-Tags</a></li><li class="nav-item"><a href="#activity-choices-4-level" class="nav-link">Activity-Choices (4 level)</a><ul><li class="nav-item"><a href="#how-it-works" class="nav-link">How it works</a></li><li class="nav-item"><a href="#create-the-custom-field" class="nav-link">Create the custom field</a></li><li class="nav-item"><a href="#maintain-the-activity-entries" class="nav-link">Maintain the activity entries</a></li></ul></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a><ul><li class="nav-item"><a href="#customer-project-and-activity" class="nav-link">Customer, Project and Activity</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             
