@@ -220,6 +220,30 @@ this error occurs when trying to access the Kimai frontend:
   the process you most likely will have permission errors if the web-server is
   not started as `root` as well. [Fix file permissions]({% link _documentation/cache.md %})!
 
+### 1118 Row size too large
+
+If you see an error like this:
+```
+SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large. The maximum row size for the used table type, not counting BLOBs, is 8126. This includes storage overhead, check the manual. You have to change some columns to TEXT or BLOBs
+```
+
+Then congratulations: you are using Kimai since a very long time, thanks for your trust!
+
+It means your tables were created with a legacy format, causing a different storage model.
+This is not a Kimai issue, but more of a database administration question.
+You need to convert them, by executing a few SQL statements. 
+
+Find all tables that have either `COMPACT` or `REDUNDANT` format.
+```sql
+SELECT TABLE_NAME, ROW_FORMAT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'kimai2_database';
+```
+
+Then `ALTER` them to use the `DYNAMIC` format:
+```sql
+ALTER TABLE kimai2_customers ROW_FORMAT=DYNAMIC;
+```
+Obviously you need to replace `kimai2_customers` with the correct table names.
+
 ### Still doesn't work?
 
 These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem
