@@ -853,6 +853,27 @@ the process you most likely will have permission errors if the web-server is
 not started as <code class="language-plaintext highlighter-rouge">root</code> as well. <a href="/documentation/cache.html">Fix file permissions</a>!</li>
 </ul>
 
+<h3 id="1118-row-size-too-large">1118 Row size too large</h3>
+
+<p>If you see an error like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQLSTATE[42000]: Syntax error or access violation: 1118 Row size too large. The maximum row size for the used table type, not counting BLOBs, is 8126. This includes storage overhead, check the manual. You have to change some columns to TEXT or BLOBs
+</code></pre></div></div>
+
+<p>Then congratulations: you are using Kimai since a very long time, thanks for your trust!</p>
+
+<p>It means your tables were created with a legacy format, causing a different storage model.
+This is not a Kimai issue, but more of a database administration question.
+You need to convert them, by executing a few SQL statements.</p>
+
+<p>Find all tables that have either <code class="language-plaintext highlighter-rouge">COMPACT</code> or <code class="language-plaintext highlighter-rouge">REDUNDANT</code> format.</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">TABLE_NAME</span><span class="p">,</span> <span class="n">ROW_FORMAT</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLES</span> <span class="k">WHERE</span> <span class="n">TABLE_SCHEMA</span> <span class="o">=</span> <span class="s1">'kimai2_database'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then <code class="language-plaintext highlighter-rouge">ALTER</code> them to use the <code class="language-plaintext highlighter-rouge">DYNAMIC</code> format:</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">kimai2_customers</span> <span class="n">ROW_FORMAT</span><span class="o">=</span><span class="k">DYNAMIC</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Obviously you need to replace <code class="language-plaintext highlighter-rouge">kimai2_customers</code> with the correct table names.</p>
+
 <h3 id="still-doesnt-work">Still doesn’t work?</h3>
 
 <p>These infos were added to give you some possible guidance if you run into troubles. The Linux (and Mac) filesystem
@@ -899,7 +920,7 @@ responsibility, be aware that wrong permissions might break Kimai and can also l
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#server-requirements" class="nav-link">Server requirements</a></li><li class="nav-item"><a href="#install-kimai-with-ssh" class="nav-link">Install Kimai with SSH</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#configure-documentroot" class="nav-link">Configure DocumentRoot</a></li></ul></li><li class="nav-item"><a href="#other-installation-methods" class="nav-link">Other installation methods</a><ul><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a></li><li class="nav-item"><a href="#1-click-installations" class="nav-link">1-click installations</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li></ul></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#column-table_name-in-where-clause-is-ambiguous" class="nav-link">Column ‘TABLE_NAME’ in where clause is ambiguous</a></li><li class="nav-item"><a href="#mysql-server-has-gone-away" class="nav-link">MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#memory-limit" class="nav-link">Memory limit</a></li><li class="nav-item"><a href="#internal-server-error-500" class="nav-link">Internal Server Error 500</a></li><li class="nav-item"><a href="#still-doesnt-work" class="nav-link">Still doesn’t work?</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#server-requirements" class="nav-link">Server requirements</a></li><li class="nav-item"><a href="#install-kimai-with-ssh" class="nav-link">Install Kimai with SSH</a><ul><li class="nav-item"><a href="#file-permissions" class="nav-link">File permissions</a></li><li class="nav-item"><a href="#create-your-first-user" class="nav-link">Create your first user</a></li><li class="nav-item"><a href="#configure-documentroot" class="nav-link">Configure DocumentRoot</a></li></ul></li><li class="nav-item"><a href="#other-installation-methods" class="nav-link">Other installation methods</a><ul><li class="nav-item"><a href="#docker" class="nav-link">Docker</a></li><li class="nav-item"><a href="#kubernetes" class="nav-link">Kubernetes</a></li><li class="nav-item"><a href="#shared-hosting" class="nav-link">Shared hosting</a></li><li class="nav-item"><a href="#1-click-installations" class="nav-link">1-click installations</a></li><li class="nav-item"><a href="#plesk" class="nav-link">Plesk</a></li><li class="nav-item"><a href="#ftp-installation" class="nav-link">FTP installation</a></li><li class="nav-item"><a href="#ansible" class="nav-link">Ansible</a></li></ul></li><li class="nav-item"><a href="#installation-faq" class="nav-link">Installation FAQ</a><ul><li class="nav-item"><a href="#column-table_name-in-where-clause-is-ambiguous" class="nav-link">Column ‘TABLE_NAME’ in where clause is ambiguous</a></li><li class="nav-item"><a href="#mysql-server-has-gone-away" class="nav-link">MySQL server has gone away</a></li><li class="nav-item"><a href="#malformed-parameter-url" class="nav-link">Malformed parameter “url”</a></li><li class="nav-item"><a href="#which-user-to-use-www-data-httpd-or-your-own" class="nav-link">Which user to use, www-data, httpd or your own?</a></li><li class="nav-item"><a href="#memory-limit" class="nav-link">Memory limit</a></li><li class="nav-item"><a href="#internal-server-error-500" class="nav-link">Internal Server Error 500</a></li><li class="nav-item"><a href="#1118-row-size-too-large" class="nav-link">1118 Row size too large</a></li><li class="nav-item"><a href="#still-doesnt-work" class="nav-link">Still doesn’t work?</a></li></ul></li></ul>
                     
                     <ul class="nav">
                         <li>
