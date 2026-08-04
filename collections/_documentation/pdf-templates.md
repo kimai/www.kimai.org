@@ -50,14 +50,15 @@ Option name: `filename`
 
 ## PDF/A compliance
 
-Option names: `PDFA` and `PDFAauto`
+Option names: `PDFA` and `PDFAauto` and `PDFAversion`
 
 You can create a [PDF/A1-b compliant](https://mpdf.github.io/what-else-can-i-do/pdf-a1-b-compliance.html) document by setting
 these configurations in your template:
 
 ```twig
 {% raw %}{%- set option = pdfContext.setOption('PDFA', true) -%}
-{%- set option = pdfContext.setOption('PDFAauto', true) -%}{% endraw %} 
+{%- set option = pdfContext.setOption('PDFAauto', true) -%} 
+{%- set option = pdfContext.setOption('PDFAversion', '3-B') -%}{% endraw %} 
 ```
 
 ## Page size
