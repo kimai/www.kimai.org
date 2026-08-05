@@ -983,6 +983,7 @@ This would find all entries with the custom field <code class="language-plaintex
 <p>When a user tries to stop such a timesheet, a warning like one of the following will be shown:</p>
 
 <ul>
+  <li><code class="language-plaintext highlighter-rouge">This timesheet is already exported</code></li>
   <li><code class="language-plaintext highlighter-rouge">End date must not be earlier then start date</code></li>
   <li><code class="language-plaintext highlighter-rouge">An empty duration is not allowed</code></li>
   <li><code class="language-plaintext highlighter-rouge">Maximum 08:00 hours allowed</code></li>
@@ -1003,9 +1004,10 @@ All of them involve that you switch to <code class="language-plaintext highlight
   <li>Delete the record from the listing</li>
 </ul>
 
-<p>An administrator can fix the problem by opening the <code class="language-plaintext highlighter-rouge">All times</code> view and filtering the user.</p>
+<p>Certain cases can be fixed by an administrator account through the <code class="language-plaintext highlighter-rouge">All times</code> view.
+Administrators have a higher permission level and are allowed to perform certain actions (like updating an exported entry).</p>
 
-<p>Administrators can configure this max. duration by changing the setting <code class="language-plaintext highlighter-rouge">Timesheet → Maximum duration of a timesheet</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
+<p>Administrators can configure the max. duration by changing the setting <code class="language-plaintext highlighter-rouge">Timesheet → Maximum duration of a timesheet</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
 
 <h2 id="permissions">Permissions</h2>
 
