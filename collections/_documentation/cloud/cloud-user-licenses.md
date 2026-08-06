@@ -14,6 +14,7 @@ Deactivated accounts do not consume licenses, which keeps the model flexible and
 ### Managing user accounts
 
 - When a user leaves the company, deactivate their account to free up the license for someone else.
+  All their recorded times stay available for reports and exports — see [Offboarding users]({% link _documentation/user-offboarding.md %}) for the recommended procedure.
 - Reactivating a deactivated user will consume a license again. Reactivation is only possible if a free license is available.
 - New user accounts can only be created if at least one license is available.
 
