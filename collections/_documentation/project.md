@@ -51,23 +51,21 @@ again after it was moved back into the range. Use `Times locked until` if you wa
 
 ### Times locked until
 
-This optional date closes a project period: all times up to and including this date are frozen and can no longer be created, 
-edited, deleted, copied or stopped.
-
-The lock applies to every user, including administrators. There is no permission to bypass it.
+This optional date closes a project period: all times up to and including this date are frozen and can no longer be created, edited, deleted, copied or stopped (this applies to every user, including administrators).
 
 The project itself is not affected. It stays visible in listings, reports and invoices, and its settings (name, budget, rates, 
 end date, customer, ...) can still be changed - the lock only protects the timesheet records. Locking a period therefore does 
 not stop you from exporting or invoicing it, which is the main reason to use this field instead of hiding the project.
 
-Which projects appear in the dropdowns is still controlled by the project start and end date, not by this field.
-
 To reopen a period, clear the date or move it further into the past.
 
 {% alert warning %}
-A record that is still running and was started before the lock date cannot be stopped, because that would write into a closed period. 
-Such a record can still be edited, so you can move it to a date after the lock and stop it there.
+A timesheet that is still running and was started before the lock date cannot be stopped, because that would write into a closed period. 
+Such a record can still be edited, so you can move it to a date after the lock and stop it there. 
 {% endalert %}
+
+The `Time-clock` and `Duration` [time-tracking modes]({% link _documentation/configurations.md %}) do not offer the begin date
+in the users edit form - an administrator has to move the record or clear/move the lock date to release the record.
 
 This field locks one project at a time. To close a period for the whole installation, use the `Lockdown period` setting under 
 [System → Settings]({% link _documentation/configurations.md %}) instead - unlike this field, the lockdown period can be bypassed 
