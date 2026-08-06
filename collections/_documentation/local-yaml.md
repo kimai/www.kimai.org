@@ -31,9 +31,9 @@ These "environment specific settings" are required so Kimai can boot.
 They are stored in the `.env` or `.env.local` file.
 
 - `DATABASE_URL` - database connection for storing all application data (see below)
-- `APP_SECRET` - secret used to encrypt e.g. session cookies (**IMPORTANT** this needs to be a long and random string)
-- `TRUSTED_HOSTS` - a regexp to match the domain names Kimai can accessed from (e.g. `demo.kimai.org|demo-empty.kimai.org`), see [docs](https://symfony.com/doc/current/reference/configuration/framework.html#trusted-hosts)
-- `TRUSTED_PROXIES` - a comma separated list of ID, useful if you are running behind a Proxy, see [docs](https://symfony.com/doc/current/deployment/proxies.html)
+- `APP_SECRET` - **SECURITY WARNING** secret used to encrypt e.g. session cookies (**this needs to be a long and random string**)
+- `TRUSTED_HOSTS` - **SECURITY WARNING** a regexp to match the domain names Kimai can be accessed from (e.g. `demo.kimai.org|demo-empty.kimai.org`), see [docs](https://symfony.com/doc/current/reference/configuration/framework.html#trusted-hosts)
+- `TRUSTED_PROXIES` - a comma separated list of ID if you are running behind a Proxy, see [docs](https://symfony.com/doc/current/deployment/proxies.html)
 - `DEFAULT_URI` - the base URL of your installation, required e.g.for emails
 - `MAILER_FROM` - application specific "from" email-address used for all outgoing mails
 - `MAILER_URL` - SMTP connection for emails, see [email configuration docs]({% link _documentation/emails.md %}) for more details
