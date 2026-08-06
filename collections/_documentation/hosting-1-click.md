@@ -58,3 +58,9 @@ Read [this issue]({{ site.kimai_v2_repo }}/issues/743) if you have further quest
 ### ISPConfig 3
 
 There is an installation doc (only in German) available at [www.howtoforge.de](https://www.howtoforge.de/anleitung/installation-kimai2-webbasierte-zeiterfassung-in-einem-ispconfig3-web/).
+
+### Cloudzy
+
+[Cloudzy](https://cloudzy.com/) provides a ready-to-use VPS environment for self-hosting Kimai, with one-click deployment and full root access.
+
+[Deploy Kimai on Cloudzy](https://cloudzy.com/marketplace/kimai/) {: .btn .btn-success}
