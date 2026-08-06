@@ -638,25 +638,60 @@ Adjust settings from any configuration file by adding them in your own configura
 
 <h3 id="env">.env</h3>
 
-<p>These “environment specific settings” are required so Kimai can boot. They are stored in the <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
+<p>These “environment specific settings” are required so Kimai can boot. 
+They are stored in the <code class="language-plaintext highlighter-rouge">.env</code> or <code class="language-plaintext highlighter-rouge">.env.local</code> file.</p>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">DATABASE_URL</code> - database connection for storing all application data</li>
-  <li><code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> - a regexp to match the domain names Kimai is accessible at (e.g. <code class="language-plaintext highlighter-rouge">demo.kimai.org|demo-empty.kimai.org</code>)</li>
-  <li><code class="language-plaintext highlighter-rouge">APP_ENV</code> - environment for the runtime (always use <code class="language-plaintext highlighter-rouge">prod</code>, other option is <code class="language-plaintext highlighter-rouge">dev</code> if you want to developfor Kimai)</li>
-  <li><code class="language-plaintext highlighter-rouge">MAILER_URL</code> - SMTP connection for emails</li>
-  <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - application specific “from” address for all emails</li>
-  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - secret used to encrypt e.g. session cookies (users will be logged out if you change it)</li>
+  <li><code class="language-plaintext highlighter-rouge">DATABASE_URL</code> - database connection for storing all application data (see below)</li>
+  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - secret used to encrypt e.g. session cookies (<strong>IMPORTANT</strong> this needs to be a long and random string)</li>
+  <li><code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> - a regexp to match the domain names Kimai can accessed from (e.g. <code class="language-plaintext highlighter-rouge">demo.kimai.org|demo-empty.kimai.org</code>), see <a href="https://symfony.com/doc/current/reference/configuration/framework.html#trusted-hosts">docs</a></li>
+  <li><code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> - a comma separated list of ID, useful if you are running behind a Proxy, see <a href="https://symfony.com/doc/current/deployment/proxies.html">docs</a></li>
+  <li><code class="language-plaintext highlighter-rouge">DEFAULT_URI</code> - the base URL of your installation, required e.g.for emails</li>
+  <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - application specific “from” email-address used for all outgoing mails</li>
+  <li><code class="language-plaintext highlighter-rouge">MAILER_URL</code> - SMTP connection for emails, see <a href="/documentation/emails.html">email configuration docs</a> for more details</li>
+  <li><code class="language-plaintext highlighter-rouge">CORS_ALLOW_ORIGIN</code> - a regexp to identify frontend hosts that are allowed to communicate with the API, see <a href="https://symfony.com/bundles/NelmioCorsBundle/current/index.html">docs</a></li>
+  <li><code class="language-plaintext highlighter-rouge">APP_ENV</code> - environment for the runtime (default is <code class="language-plaintext highlighter-rouge">prod</code> - if you develop use <code class="language-plaintext highlighter-rouge">dev</code> instead)</li>
 </ul>
 
-<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You don’t need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You don’t need a <code class="language-plaintext highlighter-rouge">.env</code> file, in fact you are advised to configure the environment values via webserver config. Later ones will take precedence over the <code class="language-plaintext highlighter-rouge">.env</code> entries.</p>
 </div>
 
 <h3 id="database_url">DATABASE_URL</h3>
 
-<p>The <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> has the format of <code class="language-plaintext highlighter-rouge">mysql://user:password@host:port/database?charset=utf8mb4&amp;serverVersion=5.7.40</code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">DATABASE_URL</code> has the format of <code class="language-plaintext highlighter-rouge">mysql://user:password@host:port/database?charset=utf8mb4&amp;serverVersion=10.5.8-MariaDB</code>.</p>
 
-<p>Your task is to change the values <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">host</code>, <code class="language-plaintext highlighter-rouge">port</code> (default port for MySQL/MariaDB is <code class="language-plaintext highlighter-rouge">3306</code>), <code class="language-plaintext highlighter-rouge">database</code> and <code class="language-plaintext highlighter-rouge">serverVersion</code>.</p>
+<p>Your task is to change the values <code class="language-plaintext highlighter-rouge">user</code>, <code class="language-plaintext highlighter-rouge">password</code>, <code class="language-plaintext highlighter-rouge">host</code>, <code class="language-plaintext highlighter-rouge">port</code> (default port for MySQL/MariaDB is <code class="language-plaintext highlighter-rouge">3306</code>), <code class="language-plaintext highlighter-rouge">database</code> and <code class="language-plaintext highlighter-rouge">serverVersion</code>:</p>
+
+<ul>
+  <li>the version “10.5.8-MariaDB” (the database server version)</li>
+  <li>the database “user”</li>
+  <li>the database “password”</li>
+  <li>the database schema “database”</li>
+  <li>you might have to adapt port “3306” and server IP “127.0.0.1” as well</li>
+</ul>
+
+<p><strong>Server version</strong></p>
+
+<p>You fetch the version by connecting to your database (via <code class="language-plaintext highlighter-rouge">mariadb</code> or <code class="language-plaintext highlighter-rouge">mysql</code>) and then execute <code class="language-plaintext highlighter-rouge">select VERSION();</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MariaDB [(none)]&gt; select VERSION();
++------------------+
+| VERSION()        |
++------------------+
+| 10.11.16-MariaDB |
++------------------+
+1 row in set (0.000 sec)
+</code></pre></div></div>
+
+<p>The result is then used 1:1 in the URL:</p>
+
+<p>For MySQL that could be “serverVersion=5.7” as in:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&amp;serverVersion=5.7
+</code></pre></div></div>
+
+<p>For MariaDB it would be “serverVersion=10.11.16-MariaDB”:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&amp;serverVersion=10.11.16-MariaDB
+</code></pre></div></div>
 
 <h3 id="localyaml">local.yaml</h3>
 
