@@ -643,8 +643,8 @@ They are stored in the <code class="language-plaintext highlighter-rouge">.env</
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">DATABASE_URL</code> - database connection for storing all application data (see below)</li>
-  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - <strong>SECURITY WARNING</strong> secret used to encrypt e.g. session cookies (<strong>this needs to be a long and random string</strong>)</li>
-  <li><code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> - <strong>SECURITY WARNING</strong> a regexp to match the domain names Kimai can be accessed from (e.g. <code class="language-plaintext highlighter-rouge">demo.kimai.org|demo-empty.kimai.org</code>), see <a href="https://symfony.com/doc/current/reference/configuration/framework.html#trusted-hosts">docs</a></li>
+  <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> - <strong>SECURITY WARNING</strong> use a long and random secret used to encrypt e.g. session cookies (e.g. create with <code class="language-plaintext highlighter-rouge">php -r 'echo bin2hex(random_bytes(32));'</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> - <strong>SECURITY WARNING</strong> a regexp to match the domain names where Kimai can be accessed from (e.g. <code class="language-plaintext highlighter-rouge">demo.kimai.org|demo-empty.kimai.org</code>), see <a href="https://symfony.com/doc/current/reference/configuration/framework.html#trusted-hosts">docs</a></li>
   <li><code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> - a comma separated list of ID if you are running behind a Proxy, see <a href="https://symfony.com/doc/current/deployment/proxies.html">docs</a></li>
   <li><code class="language-plaintext highlighter-rouge">DEFAULT_URI</code> - the base URL of your installation, required e.g.for emails</li>
   <li><code class="language-plaintext highlighter-rouge">MAILER_FROM</code> - application specific “from” email-address used for all outgoing mails</li>
