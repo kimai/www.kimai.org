@@ -50,8 +50,3 @@ Do not include the trailing slash:
 
 - Wrong: `https://demo.kimai.org/`
 - Correct: `https://demo.kimai.org`
-
-If Kimai is installed in a subdirectory, that subdirectory belongs to the base URL: `https://demo.kimai.org/kimai`.
-
-The QR code always delivers the base URL in exactly this format, without a trailing slash.
-
