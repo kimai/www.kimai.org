@@ -1,0 +1,117 @@
+// Accessibility layer
+// --------------------------------------------------
+// Imported last so it wins over theme rules that disable focus styling.
+// See DESIGN.md → "The Focus Ring Rule".
+
+// Two-tone focus ring.
+//
+// The theme ships $btn-focus-width / $input-btn-focus-width at 0, so nothing
+// gets a focus indicator. This site puts controls on white, pale green,
+// saturated green, teal and near-black backgrounds — a single-colour ring
+// disappears on at least one of them. Two bands solve that: whichever one
+// blends into the surface, the other still reads.
+
+:root {
+    --kimai-focus-inner: #{$white};
+    --kimai-focus-outer: #{$gray-900};
+}
+
+// Invert on dark surfaces: the dark band would vanish there, the light one won't.
+[data-bs-theme="dark"],
+.bg-dark,
+.bg-gradient-dark {
+    --kimai-focus-inner: #{$gray-900};
+    --kimai-focus-outer: #{$white};
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.form-control:focus-visible,
+.form-select:focus-visible,
+.form-check-input:focus-visible,
+.dropdown-item:focus-visible,
+.page-link:focus-visible,
+.navbar-toggler:focus-visible,
+summary:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    // Transparent outline keeps an indicator in forced-colors / high-contrast
+    // modes, where box-shadow is discarded by the OS.
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    // !important is deliberate: `.btn:hover` sets `box-shadow: none !important`,
+    // which would otherwise strip the ring from a focused button under the cursor.
+    box-shadow:
+        0 0 0 2px var(--kimai-focus-inner),
+        0 0 0 4px var(--kimai-focus-outer) !important;
+}
+
+// Contrast: green that carries text steps down the ramp.
+//
+// $primary (#00a63e) is 3.22:1 against white. That clears the 3:1 bar for
+// non-text use — logo, icons, fills, borders, focus states — so the brand
+// colour is untouched there. It fails the 4.5:1 bar for text, so anywhere
+// green and text meet, the pairing moves to $green-700 (6.43:1).
+
+.btn-primary {
+    --#{$prefix}btn-bg: #{$green-700};
+    --#{$prefix}btn-border-color: #{$green-700};
+    --#{$prefix}btn-hover-bg: #{$green-800};
+    --#{$prefix}btn-hover-border-color: #{$green-800};
+    --#{$prefix}btn-active-bg: #{$green-800};
+    --#{$prefix}btn-active-border-color: #{$green-800};
+    --#{$prefix}btn-disabled-bg: #{$green-700};
+    --#{$prefix}btn-disabled-border-color: #{$green-700};
+}
+
+// Outline buttons only carry white text once they fill on hover.
+.btn-outline-primary {
+    --#{$prefix}btn-hover-bg: #{$green-700};
+    --#{$prefix}btn-hover-border-color: #{$green-700};
+    --#{$prefix}btn-active-bg: #{$green-700};
+    --#{$prefix}btn-active-border-color: #{$green-700};
+}
+
+// Accent text — badges on faded fills were 2.81:1 (green) and 2.62:1 (teal).
+// Scoped to the text utilities, so .bg-primary and .border-primary keep
+// the true brand colour.
+.text-primary {
+    --#{$prefix}primary-rgb: #{to-rgb($green-700)};
+}
+
+.text-info {
+    --#{$prefix}info-rgb: #{to-rgb(darken($info, 10%))};
+}
+
+// The eyebrow is 13px uppercase — normal-text rules apply, so the 4.5:1 bar
+// does too. $brand-color (#1fbb60) was 2.52:1 on white and 2.31:1 on the hero
+// wash. $brand-color still fills the decorative newsletter squiggle, which
+// carries no meaning and no contrast requirement.
+.eyebrow {
+    color: $green-700;
+}
+
+// On dark surfaces the relationship inverts: the deep greens disappear against
+// near-black, and the brighter brand colour is the legible one.
+[data-bs-theme="dark"],
+.bg-dark {
+    .text-primary { --#{$prefix}primary-rgb: #{to-rgb($primary)}; }
+    .text-info { --#{$prefix}info-rgb: #{to-rgb($info)}; }
+    .eyebrow { color: $brand-color; }
+}
+
+// Respect a reduced-motion preference.
+//
+// Covers CSS transitions and animations only. JavaScript-driven motion
+// (rellax parallax, swiper autoplay) sets inline styles and is not affected
+// by this block — those need to check the same media query in JS.
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
