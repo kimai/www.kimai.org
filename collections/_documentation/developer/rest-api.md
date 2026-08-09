@@ -51,15 +51,15 @@ The QR code contains a JSON object:
 }
 ```
 
-| Field     | Type    | Description                                                                                         |
-|-----------|---------|-----------------------------------------------------------------------------------------------------|
-| `type`    | string  | Always `kimai`. Use it to detect whether a scanned QR code belongs to Kimai at all.                  |
-| `version` | integer | Format version, currently `1`. See below.                                                           |
-| `url`     | string  | Absolute base URL of the Kimai installation, without a trailing slash. Append `/api` for API calls.  |
-| `token`   | string  | The API token, to be sent as `Authorization: Bearer <token>` header.                                |
+| Field     | Type    | Description                                                                                           |
+|-----------|---------|-------------------------------------------------------------------------------------------------------|
+| `type`    | string  | Always `kimai`. Use it to detect whether a scanned QR code belongs to Kimai at all.                   |
+| `version` | integer | Format version, currently `1`. See below.                                                             |
+| `url`     | string  | Absolute base URL of the Kimai installation, without a trailing slash. Append `/api` for API calls.   |
+| `token`   | string  | The API token, to be sent as `Authorization: Bearer <token>` header.                                  |
 {: .table}
 
-The `url` stays correct behind a reverse proxy and in sub-directory installations (e.g. `https://example.com/kimai`).
+The `url` stays correct behind a reverse proxy and in subdirectory installations (e.g. `https://example.com/kimai`).
 
 {% alert %}The payload is plain JSON and not a URL: scanning it with a generic camera app shows text and does not 
 open anything. Apps have to use their own in-app scanner.{% endalert %}
