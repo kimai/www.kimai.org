@@ -64,6 +64,32 @@ summary:focus-visible,
     --#{$prefix}btn-disabled-border-color: #{$green-700};
 }
 
+// $success is byte-identical to $primary, so .btn-success had the same 3.22:1
+// failure. $info (teal) was worse at 2.62:1 — and that one is the self-hosting
+// door's primary action, so leaving it would have broken the Two Doors Rule
+// by making one path measurably harder to read than the other.
+.btn-success {
+    --#{$prefix}btn-bg: #{$green-700};
+    --#{$prefix}btn-border-color: #{$green-700};
+    --#{$prefix}btn-hover-bg: #{$green-800};
+    --#{$prefix}btn-hover-border-color: #{$green-800};
+    --#{$prefix}btn-active-bg: #{$green-800};
+    --#{$prefix}btn-active-border-color: #{$green-800};
+    --#{$prefix}btn-disabled-bg: #{$green-700};
+    --#{$prefix}btn-disabled-border-color: #{$green-700};
+}
+
+.btn-info {
+    --#{$prefix}btn-bg: #{darken($info, 14%)};
+    --#{$prefix}btn-border-color: #{darken($info, 14%)};
+    --#{$prefix}btn-hover-bg: #{darken($info, 20%)};
+    --#{$prefix}btn-hover-border-color: #{darken($info, 20%)};
+    --#{$prefix}btn-active-bg: #{darken($info, 20%)};
+    --#{$prefix}btn-active-border-color: #{darken($info, 20%)};
+    --#{$prefix}btn-disabled-bg: #{darken($info, 14%)};
+    --#{$prefix}btn-disabled-border-color: #{darken($info, 14%)};
+}
+
 // Outline buttons only carry white text once they fill on hover.
 .btn-outline-primary {
     --#{$prefix}btn-hover-bg: #{$green-700};
@@ -87,8 +113,13 @@ summary:focus-visible,
 // does too. $brand-color (#1fbb60) was 2.52:1 on white and 2.31:1 on the hero
 // wash. $brand-color still fills the decorative newsletter squiggle, which
 // carries no meaning and no contrast requirement.
+// `!important` matches Bootstrap's utilities: the hero markup pairs .eyebrow
+// with .text-muted (itself `!important`) plus .opacity-70, which together
+// rendered the slogan at roughly 1.9:1. Opacity is neutralised too — a
+// translucent label cannot be reasoned about with a contrast ratio.
 .eyebrow {
-    color: $green-700;
+    color: $green-700 !important;
+    opacity: 1 !important;
 }
 
 // On dark surfaces the relationship inverts: the deep greens disappear against
