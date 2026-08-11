@@ -525,21 +525,20 @@ There is also a (german) blog post that discuss the basics of adding a FOSRestBu
 
 When you want to use the interactive functions of the Swagger UI, you will probably notice that it's not working due to a wrong URL being used.
 The Swagger UI currently doesn't use the current hostname, but always points to `localhost` on port 80.
-Therefor you have to configure the values used manually.
+Therefor you have to tell Kimai its own base URL, by setting the `DEFAULT_URI` environment variable
+in your `.env` file (see [.env]({% link _documentation/local-yaml.md %})):
 
-Please add these lines to your local.yaml (adapt them to your needs):
-```yaml
-parameters:
-    router.request_context.host: '127.0.0.1'
-    router.request_context.port: '8050'
-    router.request_context.scheme: 'http'
-    router.request_context.base_url: ''
+```
+DEFAULT_URI=http://127.0.0.1:8050
+```
 
-# the next lines are only necessary, if you use a port other than 80
-nelmio_api_doc:
-    documentation:
-        host: '%router.request_context.host%:%router.request_context.port%'
-```  
+Make sure to include the port, if you use one other than `80` (http) or `443` (https).
+
+{% alert warning %}
+Older Kimai versions documented the parameters `router.request_context.host`, `router.request_context.port`, 
+`router.request_context.scheme` and `router.request_context.base_url` in the `local.yaml` for this. 
+These are deprecated: delete them from your `local.yaml`, as long as they exist `DEFAULT_URI` has no effect.
+{% endalert %}
 
 ## Swagger file and Postman
 
