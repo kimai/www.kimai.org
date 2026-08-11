@@ -540,20 +540,6 @@ Older Kimai versions documented the parameters `router.request_context.host`, `r
 These are deprecated: delete them from your `local.yaml`, as long as they exist `DEFAULT_URI` has no effect.
 {% endalert %}
 
-## Swagger file and Postman
-
-You could change your [local.yaml]({% link _documentation/local-yaml.md %}) and add this, which will cause the generated Swagger file to contain a variable instead of the hostname URL: 
-
-```yaml
-nelmio_api_doc:
-    documentation:
-        host: '{%raw%}{{hostname}}{%endraw%}'
-        schemes: ['https']
-```
-
-The variable `hostname` can then be changed for the complete collection in Postman.
-Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.
-
 ## Adding a wizard
 
 Plugins extend the wizard by listening to the `WizardEvent` 
