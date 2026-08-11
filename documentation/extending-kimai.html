@@ -971,33 +971,19 @@ Make sure to include an <code class="language-plaintext highlighter-rouge">@Secu
 
 <p>When you want to use the interactive functions of the Swagger UI, you will probably notice that it’s not working due to a wrong URL being used.
 The Swagger UI currently doesn’t use the current hostname, but always points to <code class="language-plaintext highlighter-rouge">localhost</code> on port 80.
-Therefor you have to configure the values used manually.</p>
+Therefor you have to tell Kimai its own base URL, by setting the <code class="language-plaintext highlighter-rouge">DEFAULT_URI</code> environment variable
+in your <code class="language-plaintext highlighter-rouge">.env</code> file (see <a href="/documentation/local-yaml.html">.env</a>):</p>
 
-<p>Please add these lines to your local.yaml (adapt them to your needs):</p>
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">parameters</span><span class="pi">:</span>
-    <span class="na">router.request_context.host</span><span class="pi">:</span> <span class="s1">'</span><span class="s">127.0.0.1'</span>
-    <span class="na">router.request_context.port</span><span class="pi">:</span> <span class="s1">'</span><span class="s">8050'</span>
-    <span class="na">router.request_context.scheme</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http'</span>
-    <span class="na">router.request_context.base_url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
-
-<span class="c1"># the next lines are only necessary, if you use a port other than 80</span>
-<span class="na">nelmio_api_doc</span><span class="pi">:</span>
-    <span class="na">documentation</span><span class="pi">:</span>
-        <span class="na">host</span><span class="pi">:</span> <span class="s1">'</span><span class="s">%router.request_context.host%:%router.request_context.port%'</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEFAULT_URI=http://127.0.0.1:8050
 </code></pre></div></div>
 
-<h2 id="swagger-file-and-postman">Swagger file and Postman</h2>
+<p>Make sure to include the port, if you use one other than <code class="language-plaintext highlighter-rouge">80</code> (http) or <code class="language-plaintext highlighter-rouge">443</code> (https).</p>
 
-<p>You could change your <a href="/documentation/local-yaml.html">local.yaml</a> and add this, which will cause the generated Swagger file to contain a variable instead of the hostname URL:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">nelmio_api_doc</span><span class="pi">:</span>
-    <span class="na">documentation</span><span class="pi">:</span>
-        <span class="na">host</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{{hostname}}'</span>
-        <span class="na">schemes</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">https'</span><span class="pi">]</span>
-</code></pre></div></div>
-
-<p>The variable <code class="language-plaintext highlighter-rouge">hostname</code> can then be changed for the complete collection in Postman.
-Using Postman environments, you can even switch the API location via a simple change of the environments drop-down.</p>
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>Older Kimai versions documented the parameters <code class="language-plaintext highlighter-rouge">router.request_context.host</code>, <code class="language-plaintext highlighter-rouge">router.request_context.port</code>, 
+<code class="language-plaintext highlighter-rouge">router.request_context.scheme</code> and <code class="language-plaintext highlighter-rouge">router.request_context.base_url</code> in the <code class="language-plaintext highlighter-rouge">local.yaml</code> for this. 
+These are deprecated: delete them from your <code class="language-plaintext highlighter-rouge">local.yaml</code>, as long as they exist <code class="language-plaintext highlighter-rouge">DEFAULT_URI</code> has no effect.</p>
+</div>
 
 <h2 id="adding-a-wizard">Adding a wizard</h2>
 
@@ -1047,7 +1033,7 @@ But we advise against it, as you never know what other plugins might do.</p>
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a><ul><li class="nav-item"><a href="#displaying-and-exporting-userpreferences" class="nav-link">Displaying and exporting UserPreferences</a></li></ul></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li><li class="nav-item"><a href="#json-api-rest" class="nav-link">JSON API (REST)</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li><li class="nav-item"><a href="#using-the-swagger-ui" class="nav-link">Using the Swagger UI</a></li><li class="nav-item"><a href="#swagger-file-and-postman" class="nav-link">Swagger file and Postman</a></li><li class="nav-item"><a href="#adding-a-wizard" class="nav-link">Adding a wizard</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#extending-the-navigation-bar" class="nav-link">Extending the navigation bar</a></li><li class="nav-item"><a href="#extending-the-dashboard-with-widgets" class="nav-link">Extending the dashboard with widgets</a><ul><li class="nav-item"><a href="#adding-new-widget-types" class="nav-link">Adding new widget types</a></li><li class="nav-item"><a href="#display-widgets-in-your-template" class="nav-link">Display widgets in your template</a></li></ul></li><li class="nav-item"><a href="#invoices" class="nav-link">Invoices</a><ul><li class="nav-item"><a href="#adding-documents-for-invoice-rendering" class="nav-link">Adding documents for invoice rendering</a></li><li class="nav-item"><a href="#adding-invoice-calculator" class="nav-link">Adding invoice calculator</a></li><li class="nav-item"><a href="#adding-invoice-number-generator" class="nav-link">Adding invoice-number generator</a></li><li class="nav-item"><a href="#adding-invoice-renderer" class="nav-link">Adding invoice renderer</a></li></ul></li><li class="nav-item"><a href="#export-templates" class="nav-link">Export templates</a></li><li class="nav-item"><a href="#adding-export-renderer" class="nav-link">Adding export renderer</a><ul><li class="nav-item"><a href="#adding-timesheet-export-renderer" class="nav-link">Adding timesheet export renderer</a></li></ul></li><li class="nav-item"><a href="#adding-timesheet-calculator" class="nav-link">Adding timesheet calculator</a></li><li class="nav-item"><a href="#adding-custom-fields-meta-fields" class="nav-link">Adding custom fields (meta fields)</a></li><li class="nav-item"><a href="#adding-userpreference" class="nav-link">Adding UserPreference</a><ul><li class="nav-item"><a href="#displaying-and-exporting-userpreferences" class="nav-link">Displaying and exporting UserPreferences</a></li></ul></li><li class="nav-item"><a href="#adding-custom-meta-tags-stylesheets-or-javascript" class="nav-link">Adding custom meta tags, stylesheets or javascript</a></li><li class="nav-item"><a href="#adding-permissions" class="nav-link">Adding permissions</a></li><li class="nav-item"><a href="#adding-system-configuration" class="nav-link">Adding system configuration</a></li><li class="nav-item"><a href="#extending-the-reports" class="nav-link">Extending the reports</a></li><li class="nav-item"><a href="#json-api-rest" class="nav-link">JSON API (REST)</a></li><li class="nav-item"><a href="#adding-api-methods" class="nav-link">Adding API methods</a></li><li class="nav-item"><a href="#using-the-swagger-ui" class="nav-link">Using the Swagger UI</a></li><li class="nav-item"><a href="#adding-a-wizard" class="nav-link">Adding a wizard</a></li></ul>
                     
                 </aside>
             
