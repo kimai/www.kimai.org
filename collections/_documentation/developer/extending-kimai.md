@@ -532,7 +532,8 @@ in your `.env` file (see [.env]({% link _documentation/local-yaml.md %})):
 DEFAULT_URI=http://127.0.0.1:8050
 ```
 
-Make sure to include the port, if you use one other than `80` (http) or `443` (https).
+Always include the scheme (`http://` or `https://`), otherwise the value is interpreted as a URL path. 
+Include the port as well, if you use one other than `80` (http) or `443` (https).
 
 {% alert warning %}
 Older Kimai versions documented the parameters `router.request_context.host`, `router.request_context.port`, 
