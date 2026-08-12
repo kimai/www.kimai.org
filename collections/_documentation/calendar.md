@@ -6,6 +6,7 @@ related:
   - timesheet
   - weekly-times
   - configurations
+last_check: 2026-08-12
 ---
 
 Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
