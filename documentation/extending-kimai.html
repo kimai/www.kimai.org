@@ -977,7 +977,8 @@ in your <code class="language-plaintext highlighter-rouge">.env</code> file (see
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DEFAULT_URI=http://127.0.0.1:8050
 </code></pre></div></div>
 
-<p>Make sure to include the port, if you use one other than <code class="language-plaintext highlighter-rouge">80</code> (http) or <code class="language-plaintext highlighter-rouge">443</code> (https).</p>
+<p>Always include the scheme (<code class="language-plaintext highlighter-rouge">http://</code> or <code class="language-plaintext highlighter-rouge">https://</code>), otherwise the value is interpreted as a URL path. 
+Include the port as well, if you use one other than <code class="language-plaintext highlighter-rouge">80</code> (http) or <code class="language-plaintext highlighter-rouge">443</code> (https).</p>
 
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
 <p>Older Kimai versions documented the parameters <code class="language-plaintext highlighter-rouge">router.request_context.host</code>, <code class="language-plaintext highlighter-rouge">router.request_context.port</code>, 
