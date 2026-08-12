@@ -862,13 +862,13 @@ You can define as many rules as you want (“default” is only an example) and 
 
 <h3 id="integrating-google-calender">Integrating google calender</h3>
 
-<p>If you want to embed Google calendars e.g. to display regional holidays or company events you can import (multiple) Google calendars, 
-which will be displayed in each of the <a href="/documentation/calendar.html">user calendar</a>.</p>
+<p>You can display external Google calendars (e.g. public holidays or company events) as additional <a href="/documentation/calendar.html">calendar sources</a>.</p>
+
+<p>These events are read-only: they cannot be edited or converted into timesheet records.</p>
 
 <ul>
-  <li>read how to obtain your <a href="https://fullcalendar.io/docs/v3/google-calendar">Google API key and find the Calender ID</a></li>
-  <li>add the optional <code class="language-plaintext highlighter-rouge">kimai.calendar.google</code> configuration</li>
-  <li>you can add any number of sources under the <code class="language-plaintext highlighter-rouge">kimai.calendar.google.sources</code> node, each must have its own name (like <code class="language-plaintext highlighter-rouge">holidays</code> and <code class="language-plaintext highlighter-rouge">company</code> in this example)</li>
+  <li>Obtain your <a href="https://fullcalendar.io/docs/v3/google-calendar">Google API key and find the Calender ID</a></li>
+  <li>Add the optional <code class="language-plaintext highlighter-rouge">kimai.calendar.google</code> configuration</li>
 </ul>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">kimai</span><span class="pi">:</span>
@@ -883,6 +883,8 @@ which will be displayed in each of the <a href="/documentation/calendar.html">us
                     <span class="na">id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">de.german#holiday@group.v.calendar.google.com'</span>
                     <span class="na">color</span><span class="pi">:</span> <span class="s1">'</span><span class="s">#cc0000'</span>
 </code></pre></div></div>
+
+<p>You can add any number of sources under the <code class="language-plaintext highlighter-rouge">kimai.calendar.google.sources</code> node, each must have its own name (like <code class="language-plaintext highlighter-rouge">holidays</code> and <code class="language-plaintext highlighter-rouge">company</code> in this example)</p>
 
                         </div>
                         

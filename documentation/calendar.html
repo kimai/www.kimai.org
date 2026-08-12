@@ -697,6 +697,59 @@ can choose between a monthly, weekly and daily view.</p>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/qVexU6KyWUE?start=111" title="Creating and editing timesheets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
+<h2 id="views">Views</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Month</code> - one box per day, best suited for a quick overview of a longer period</li>
+  <li><code class="language-plaintext highlighter-rouge">Week</code> and <code class="language-plaintext highlighter-rouge">Day</code> - a time grid with one row per time slot, which shows the actual begin and end times of your records</li>
+</ul>
+
+<p>The initial view can be changed by every user, see <a href="/documentation/user-preferences.html">user preferences</a>.</p>
+
+<p>Each entry is colored like everywhere else in Kimai: the color of the activity is used, with a fallback to the 
+project color, the customer color and finally the system default color.</p>
+
+<p>The content of the entry title can be configured system-wide, see <code class="language-plaintext highlighter-rouge">Configurations</code> below.</p>
+
+<h2 id="time-slots">Time slots</h2>
+
+<p>The week and day views split each hour into slots (the rows of the time grid). 
+The height of one row is defined by the setting <code class="language-plaintext highlighter-rouge">Slot duration for week- and day view</code> 
+(default: <code class="language-plaintext highlighter-rouge">00:30:00</code> = two slots per hour).</p>
+
+<p><strong>15 minutes is the smallest unit that the calendar can display.</strong></p>
+
+<h3 id="why-do-my-entries-overlap">Why do my entries overlap?</h3>
+
+<p>The slot duration also defines how precise records can be rendered. 
+If a slot is longer than the records inside it, there is not enough room to draw them one below the other 
+while keeping the vertical time labels correct. In that case the calendar draws them overlapping (side by side).</p>
+
+<p>An example: your calendar uses slots of 30 minutes (two slots between each hour label) and you have two 
+consecutive records from <code class="language-plaintext highlighter-rouge">10:00 - 10:15</code> and <code class="language-plaintext highlighter-rouge">10:15 - 10:30</code>. Both of them live inside the same 30 minute slot, 
+so they will be shown overlapping instead of one after another.</p>
+
+<p>If you regularly track short entries, lower the <code class="language-plaintext highlighter-rouge">Slot duration</code> to <code class="language-plaintext highlighter-rouge">00:15:00</code> and the entries will be displayed 
+one after another.</p>
+
+<h2 id="creating-timesheets">Creating timesheets</h2>
+
+<p>There are a couple of ways you can create a new timesheet record in the calendar view:</p>
+
+<ul>
+  <li>By clicking into the calendar you open a “create timesheet” form for a running entry with the correct day pre-selected (month, week and day view)</li>
+  <li>When you click and drag the selection, you open a “create timesheet” form for a completed timesheet (week and day view)</li>
+  <li>Drag &amp; drop existing entries (like recent activities) from the left side into the calendar (month, week and day view)</li>
+</ul>
+
+<h2 id="editing-timesheets">Editing timesheets</h2>
+
+<ul>
+  <li>By clicking an existing timesheet in the calendar, you open the “edit timesheet” form</li>
+  <li>By selecting and then moving the entry on the calendar, you can shift the time of the entry. So you can easily change <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code>, without changing the <code class="language-plaintext highlighter-rouge">duration</code> (see <code class="language-plaintext highlighter-rouge">Drag &amp; Drop</code>)</li>
+  <li>By clicking the handle at the bottom of an existing record and then dragging it to another time (<code class="language-plaintext highlighter-rouge">end</code> and <code class="language-plaintext highlighter-rouge">duration</code> will be changed)</li>
+</ul>
+
 <h2 id="context-menu">Context-menu</h2>
 
 <p>All calendar entries offer a context-menu with several options (like <code class="language-plaintext highlighter-rouge">Duplicate</code> or <code class="language-plaintext highlighter-rouge">Delete</code>), <em>right at your fingertip</em>.</p>
@@ -715,6 +768,8 @@ can choose between a monthly, weekly and daily view.</p>
 
 <p>Drag &amp; Drop is globally deactivated if the time-tracking mode (see <a href="/documentation/configurations.html">System → Settings</a>) 
 does not allow to edit the start-time (e.g. punch in-out mode deactivates drag &amp; drop).</p>
+
+<p>The drag &amp; drop box is also hidden if you are not allowed to create timesheets for the currently displayed user.</p>
 
 <p><strong>Why doesn’t drag &amp; drop in the calendar copy all fields?</strong></p>
 
@@ -768,24 +823,6 @@ does not allow to edit the start-time (e.g. punch in-out mode deactivates drag &
 <p>Your system administrator can change this behavior, see <code class="language-plaintext highlighter-rouge">Configurations</code> below.</p>
 </div>
 
-<h2 id="editing-timesheets">Editing timesheets</h2>
-
-<ul>
-  <li>By clicking an existing timesheet in the calendar, you open the “edit timesheet” form</li>
-  <li>By selecting and then moving the entry on the calendar, you can shift the time of the entry. So you can easily change <code class="language-plaintext highlighter-rouge">begin</code> and <code class="language-plaintext highlighter-rouge">end</code>, without changing the <code class="language-plaintext highlighter-rouge">duration</code> (see <code class="language-plaintext highlighter-rouge">Drag &amp; Drop</code>)</li>
-  <li>By clicking the handle at the bottom of an existing record and then dragging it to another time (<code class="language-plaintext highlighter-rouge">end</code> and <code class="language-plaintext highlighter-rouge">duration</code> will be changed)</li>
-</ul>
-
-<h2 id="creating-timesheets">Creating timesheets</h2>
-
-<p>There are a couple of ways you can create a new timesheet record in the calendar view:</p>
-
-<ul>
-  <li>By clicking into the calendar you open a “create timesheet” form for a running entry with the correct day pre-selected (month, week and day view)</li>
-  <li>When you click and drag the selection, you open a “create timesheet” form for a completed timesheet (week and day view)</li>
-  <li>Drag &amp; drop existing entries (like recent activities) from the left side into the calendar (month, week and day view)</li>
-</ul>
-
 <h2 id="switching-user">Switching user</h2>
 
 <p>You can switch the account whose data is displayed, if your user owns the permission <code class="language-plaintext highlighter-rouge">view_other_timesheet</code>.</p>
@@ -813,7 +850,7 @@ Whether or not you can see another user depends on your team assignments: you ne
   <li><code class="language-plaintext highlighter-rouge">End of normal business hours</code> — the end time of your working day, which will be highlighted in the weekly and daily view (default: 18:00)</li>
   <li><code class="language-plaintext highlighter-rouge">Start of visible time range</code> — the start time of the calendars week and day view (default: 00:00)</li>
   <li><code class="language-plaintext highlighter-rouge">End of visible time range</code> — the end time of the calendars week and day view (default: 24:00)</li>
-  <li><code class="language-plaintext highlighter-rouge">Slot duration for week- and day view</code> — defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes)</li>
+  <li><code class="language-plaintext highlighter-rouge">Slot duration for week- and day view</code> — defines the duration for each calendar slot (row) in the week and day views, format: hh:mm:ss (default: 00:30:00 = 30 minutes). The smallest supported unit is 15 minutes, shorter records inside one slot will be displayed overlapping.</li>
   <li><code class="language-plaintext highlighter-rouge">Amount of entries for drag&amp;drop</code> — amount of rows per drag &amp; drop box (0 = deactivated)</li>
   <li><code class="language-plaintext highlighter-rouge">Copies data when adding via drag and drop</code> — when activated, form details will be populated from last entry</li>
   <li><code class="language-plaintext highlighter-rouge">Display of the titles of calendar entries</code> — which data should be displayed in the title of each calendar entry</li>
@@ -841,6 +878,11 @@ Whether or not you can see another user depends on your team assignments: you ne
                                     <a href="/documentation/weekly-times.html">Weekly hours</a> &ndash; Manage your time records in a quick and easy weekly spreadsheet-like view.
                                 </li>
                                 
+                                
+                                <li>
+                                    <a href="/documentation/configurations.html">Settings</a> &ndash; Kimai system configurations
+                                </li>
+                                
                             </ul>
                         </div>
                         
@@ -851,7 +893,7 @@ Whether or not you can see another user depends on your team assignments: you ne
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#context-menu" class="nav-link">Context-menu</a><ul><li class="nav-item"><a href="#delete-a-timesheet" class="nav-link">Delete a timesheet</a></li></ul></li><li class="nav-item"><a href="#drag--drop" class="nav-link">Drag &amp; Drop</a></li><li class="nav-item"><a href="#editing-timesheets" class="nav-link">Editing timesheets</a></li><li class="nav-item"><a href="#creating-timesheets" class="nav-link">Creating timesheets</a></li><li class="nav-item"><a href="#switching-user" class="nav-link">Switching user</a></li><li class="nav-item"><a href="#configurations" class="nav-link">Configurations</a><ul><li class="nav-item"><a href="#user-preference" class="nav-link">User preference</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#views" class="nav-link">Views</a></li><li class="nav-item"><a href="#time-slots" class="nav-link">Time slots</a><ul><li class="nav-item"><a href="#why-do-my-entries-overlap" class="nav-link">Why do my entries overlap?</a></li></ul></li><li class="nav-item"><a href="#creating-timesheets" class="nav-link">Creating timesheets</a></li><li class="nav-item"><a href="#editing-timesheets" class="nav-link">Editing timesheets</a></li><li class="nav-item"><a href="#context-menu" class="nav-link">Context-menu</a><ul><li class="nav-item"><a href="#delete-a-timesheet" class="nav-link">Delete a timesheet</a></li></ul></li><li class="nav-item"><a href="#drag--drop" class="nav-link">Drag &amp; Drop</a></li><li class="nav-item"><a href="#switching-user" class="nav-link">Switching user</a></li><li class="nav-item"><a href="#configurations" class="nav-link">Configurations</a><ul><li class="nav-item"><a href="#user-preference" class="nav-link">User preference</a></li></ul></li></ul>
                     
                     <ul class="nav">
                         <li>
