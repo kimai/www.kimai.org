@@ -5,12 +5,60 @@ canonical: /documentation/calendar.html
 related:
   - timesheet
   - weekly-times
+  - configurations
 ---
 
 Kimai provides a calendar view, which allows management of your timesheet entries in a calendar format, where you 
 can choose between a monthly, weekly and daily view.
 
 {% include youtube-video.html id="timesheets" chapter="calendar" %}
+
+## Views
+
+- `Month` - one box per day, best suited for a quick overview of a longer period
+- `Week` and `Day` - a time grid with one row per time slot, which shows the actual begin and end times of your records
+
+The initial view can be changed by every user, see [user preferences]({% link _documentation/user-preferences.md %}).
+
+Each entry is colored like everywhere else in Kimai: the color of the activity is used, with a fallback to the 
+project color, the customer color and finally the system default color.
+
+The content of the entry title can be configured system-wide, see `Configurations` below.
+
+## Time slots
+
+The week and day views split each hour into slots (the rows of the time grid). 
+The height of one row is defined by the setting `Slot duration for week- and day view` 
+(default: `00:30:00` = two slots per hour).
+
+**15 minutes is the smallest unit that the calendar can display.**
+
+### Why do my entries overlap?
+
+The slot duration also defines how precise records can be rendered. 
+If a slot is longer than the records inside it, there is not enough room to draw them one below the other 
+while keeping the vertical time labels correct. In that case the calendar draws them overlapping (side by side).
+
+An example: your calendar uses slots of 30 minutes (two slots between each hour label) and you have two 
+consecutive records from `10:00 - 10:15` and `10:15 - 10:30`. Both of them live inside the same 30 minute slot, 
+so they will be shown overlapping instead of one after another.
+
+If you regularly track short entries, lower the `Slot duration` to `00:15:00` and the entries will be displayed 
+one after another.
+
+## Creating timesheets
+
+There are a couple of ways you can create a new timesheet record in the calendar view:
+
+- By clicking into the calendar you open a "create timesheet" form for a running entry with the correct day pre-selected (month, week and day view)
+- When you click and drag the selection, you open a "create timesheet" form for a completed timesheet (week and day view)
+- Drag & drop existing entries (like recent activities) from the left side into the calendar (month, week and day view)
+
+## Editing timesheets
+
+- By clicking an existing timesheet in the calendar, you open the "edit timesheet" form
+- By selecting and then moving the entry on the calendar, you can shift the time of the entry. So you can easily change `begin` and `end`, without changing the `duration` (see `Drag & Drop`)
+- By clicking the handle at the bottom of an existing record and then dragging it to another time (`end` and `duration` will be changed)  
 
 ## Context-menu
 
@@ -28,6 +76,8 @@ The calendar allows managing entries by using drag & drop:
 
 Drag & Drop is globally deactivated if the time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
 does not allow to edit the start-time (e.g. punch in-out mode deactivates drag & drop).
+
+The drag & drop box is also hidden if you are not allowed to create timesheets for the currently displayed user.
 
 **Why doesn't drag & drop in the calendar copy all fields?**
 
@@ -50,20 +100,6 @@ When to use each feature:
 {% alert info %}
 Your system administrator can change this behavior, see `Configurations` below. 
 {% endalert %}
-
-## Editing timesheets
-
-- By clicking an existing timesheet in the calendar, you open the "edit timesheet" form
-- By selecting and then moving the entry on the calendar, you can shift the time of the entry. So you can easily change `begin` and `end`, without changing the `duration` (see `Drag & Drop`)
-- By clicking the handle at the bottom of an existing record and then dragging it to another time (`end` and `duration` will be changed)  
-
-## Creating timesheets
-
-There are a couple of ways you can create a new timesheet record in the calendar view:
-
-- By clicking into the calendar you open a "create timesheet" form for a running entry with the correct day pre-selected (month, week and day view)
-- When you click and drag the selection, you open a "create timesheet" form for a completed timesheet (week and day view)
-- Drag & drop existing entries (like recent activities) from the left side into the calendar (month, week and day view)
 
 ## Switching user
 

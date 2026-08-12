@@ -252,12 +252,12 @@ kimai:
 
 ### Integrating google calender
 
-If you want to embed Google calendars e.g. to display regional holidays or company events you can import (multiple) Google calendars, 
-which will be displayed in each of the [user calendar]({% link _documentation/calendar.md %}).
+You can display external Google calendars (e.g. public holidays or company events) as additional [calendar sources]({% link _documentation/calendar.md %}).
 
-- read how to obtain your [Google API key and find the Calender ID](https://fullcalendar.io/docs/v3/google-calendar)
-- add the optional `kimai.calendar.google` configuration
-- you can add any number of sources under the `kimai.calendar.google.sources` node, each must have its own name (like `holidays` and `company` in this example)
+These events are read-only: they cannot be edited or converted into timesheet records.
+
+- Obtain your [Google API key and find the Calender ID](https://fullcalendar.io/docs/v3/google-calendar)
+- Add the optional `kimai.calendar.google` configuration
 
 ```yaml
 kimai:
@@ -272,3 +272,5 @@ kimai:
                     id: 'de.german#holiday@group.v.calendar.google.com'
                     color: '#cc0000'
 ```
+
+You can add any number of sources under the `kimai.calendar.google.sources` node, each must have its own name (like `holidays` and `company` in this example)
