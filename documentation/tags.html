@@ -691,44 +691,149 @@
                         <div id="documentation-content">
                             <h2 id="tagging-timesheet-records">Tagging timesheet records</h2>
 
-<p>Kimai supports tagging timesheet records, which allows you to create arbitrary logical structures, 
-which can be used to filter records in exports/invoices and reports.</p>
+<p>Kimai supports tagging of timesheet records, which allows you to create arbitrary logical structures.</p>
+
+<p>Unlike customer, project and activity, tags are not hierarchical: every timesheet record can have any number of tags
+and every tag can be used by any number of records. They are the right tool whenever you need a second dimension
+besides your project structure, e.g. to mark records as <code class="language-plaintext highlighter-rouge">travel</code>, <code class="language-plaintext highlighter-rouge">onsite</code>, <code class="language-plaintext highlighter-rouge">bugfix</code> or with a sprint name.</p>
+
+<p>Tags can be used to filter records in the timesheet screens, exports, invoices and reports.</p>
 
 <div class="youtube-wrapper" style="max-width: 560px;">
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/qVexU6KyWUE?start=239" title="Creating and editing timesheets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
 
-<h3 id="tagging-modes">Tagging modes</h3>
+<h3 id="assigning-tags">Assigning tags</h3>
 
-<p>Kimai supports two tagging modes:</p>
+<p>Tags are assigned in the timesheet form (and in the batch-update form when editing multiple records at once).
+Only <code class="language-plaintext highlighter-rouge">visible</code> tags are offered for selection.</p>
+
+<p>The tag field adapts to the amount of existing tags:</p>
 
 <ul>
-  <li>free tagging: users can assign any number of tags to each timesheet entry</li>
-  <li>predefined: users can only select tags from a pre-defined list (since 1.8)</li>
+  <li>up to 500 visible tags: a dropdown with search and multi-select</li>
+  <li>more than 500 visible tags: a text field with auto-completion</li>
 </ul>
 
-<p>The mode can be switched in the <code class="language-plaintext highlighter-rouge">Theme</code> section at <a href="/documentation/configurations.html">System → Settings</a>.</p>
+<h3 id="tagging-modes">Tagging modes</h3>
+
+<p>Kimai supports two tagging modes, which are controlled by the <code class="language-plaintext highlighter-rouge">create_tag</code> permission:</p>
+
+<ul>
+  <li><strong>Free tagging</strong>: users with the <code class="language-plaintext highlighter-rouge">create_tag</code> permission can enter arbitrary tags in the timesheet form.
+Unknown tags are created automatically when the form is saved. This permission is assigned to <code class="language-plaintext highlighter-rouge">ROLE_USER</code> by default.</li>
+  <li><strong>Predefined tags</strong>: if you remove the <code class="language-plaintext highlighter-rouge">create_tag</code> permission at <code class="language-plaintext highlighter-rouge">System → Roles</code>, users can only select from
+the tags that were created before in the tag administration.</li>
+</ul>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Removing <code class="language-plaintext highlighter-rouge">create_tag</code> does not delete existing tags, it only prevents the creation of new ones.</p>
+</div>
+
+<h3 id="tag-names">Tag names</h3>
+
+<p>A couple of rules apply to tag names:</p>
+
+<ul>
+  <li>they have to be unique</li>
+  <li>they must be between 2 and 100 characters long</li>
+  <li>leading and trailing whitespaces are removed automatically</li>
+  <li>these characters are not allowed: <code class="language-plaintext highlighter-rouge">,</code> <code class="language-plaintext highlighter-rouge">"</code> <code class="language-plaintext highlighter-rouge">&lt;</code> <code class="language-plaintext highlighter-rouge">&gt;</code> <code class="language-plaintext highlighter-rouge">=</code></li>
+</ul>
 
 <h2 id="tag-administration">Tag administration</h2>
 
-<p>There is a tag administration screen, which displays all available tags including the counter how often they are used.</p>
+<p>The tag administration screen can be found at <code class="language-plaintext highlighter-rouge">Administration → Tags</code> and requires the <code class="language-plaintext highlighter-rouge">view_tag</code> permission.
+It lists all tags (including the hidden ones) with:</p>
 
-<p>The action menu for each tag allows you to filter all records for the chosen tag, by linking to the team timesheet with 
-a preset tag filter.</p>
+<ul>
+  <li>the tag <code class="language-plaintext highlighter-rouge">name</code>, rendered in the tags color</li>
+  <li>an <code class="language-plaintext highlighter-rouge">amount</code> counter, which shows how often the tag is used in timesheet records</li>
+  <li>the <code class="language-plaintext highlighter-rouge">visibility</code> state</li>
+</ul>
+
+<p>The listing can be sorted by each of these columns.</p>
+
+<h3 id="create-and-edit-a-tag">Create and edit a tag</h3>
+
+<p>Creating and editing tags requires the <code class="language-plaintext highlighter-rouge">manage_tag</code> permission. A tag has these attributes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Name</code> - see the naming rules above</li>
+  <li><code class="language-plaintext highlighter-rouge">Visible</code> - whether the tag can still be assigned to timesheet records</li>
+  <li><code class="language-plaintext highlighter-rouge">Color</code> - used to highlight the tag in listings, e.g. in the timesheet tables</li>
+</ul>
+
+<p>The available colors can be configured with the <code class="language-plaintext highlighter-rouge">Allowed colors</code> setting in the
+<code class="language-plaintext highlighter-rouge">Theme</code> section at <a href="/documentation/configurations.html">System → Settings</a>.
+If no color is chosen, Kimai calculates one from the tag name.</p>
+
+<h3 id="visibility">Visibility</h3>
+
+<p>Hiding a tag is the recommended way to retire a keyword that should no longer be used:</p>
+
+<ul>
+  <li>hidden tags are not offered in the tag dropdowns any longer</li>
+  <li>existing timesheet records keep their tag and are still exported, filtered and invoiced as before</li>
+</ul>
+
+<h3 id="batch-actions">Batch actions</h3>
+
+<p>Select multiple rows with the checkboxes in the first column to apply one of these actions to all of them at once:</p>
+
+<ul>
+  <li>set visible / set invisible (requires <code class="language-plaintext highlighter-rouge">manage_tag</code>)</li>
+  <li>delete (requires <code class="language-plaintext highlighter-rouge">delete_tag</code>)</li>
+</ul>
+
+<h3 id="row-actions">Row actions</h3>
+
+<p>The action menu of each tag allows you to:</p>
+
+<ul>
+  <li>edit the tag (requires <code class="language-plaintext highlighter-rouge">manage_tag</code>)</li>
+  <li>filter all records for the chosen tag, by linking to the team timesheet page with a preset tag filter
+(requires <code class="language-plaintext highlighter-rouge">view_other_timesheet</code>)</li>
+  <li>delete the tag (requires <code class="language-plaintext highlighter-rouge">delete_tag</code>)</li>
+</ul>
 
 <h3 id="deleting-a-tag">Deleting a tag</h3>
 
 <p>When a tag is deleted, only the tag and all links to it are deleted.
 The linked timesheet records are NOT touched.</p>
 
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Deleting a tag cannot be undone: the tag assignments of all timesheet records are lost.
+If you only want to stop the further usage of a tag, set it to invisible instead.</p>
+</div>
+
 <h2 id="filter-and-search">Filter and search</h2>
 
-<p>You can query for a free search term, which will be searched in the fields:</p>
+<p>The tag administration can be filtered by <code class="language-plaintext highlighter-rouge">visibility</code> and you can query for a free search term,
+which will be searched in the fields:</p>
+
 <ul>
   <li><code class="language-plaintext highlighter-rouge">name</code></li>
 </ul>
 
+<p>Timesheet records can be filtered by tags in <code class="language-plaintext highlighter-rouge">My times</code>, <code class="language-plaintext highlighter-rouge">Administration → Timesheets</code>, in the export
+and when creating invoices.</p>
+
+<h2 id="tags-in-other-features">Tags in other features</h2>
+
+<ul>
+  <li><strong>Invoices</strong>: the placeholder <code class="language-plaintext highlighter-rouge">${entry.tags}</code> prints a comma separated list of all tags of a timesheet record,
+see <a href="/documentation/invoice-templates.html">invoice templates</a></li>
+  <li><strong>Import</strong>: timesheets can be imported with a <code class="language-plaintext highlighter-rouge">Tags</code> column (comma separated list of tag names),
+see <a href="/documentation/plugin-import.html">Import</a></li>
+  <li><strong>Auto-tags</strong>: tags can be assigned automatically through customer, project and activity,
+see <a href="/documentation/plugin-custom-fields.html">Custom-Fields plugin</a></li>
+  <li><strong>API</strong>: tags can be read and created through the <a href="/documentation/user-api.html">API</a></li>
+</ul>
+
 <h2 id="permissions">Permissions</h2>
+
+<p>Users always have access to the list of all existing tags (in forms and with the API).
+Tags cannot be restricted in their visibility for certain users or teams.
+The existing permissions all handle administrative tasks.</p>
 
 <table class="table permissions">
   <thead>
@@ -740,7 +845,11 @@ The linked timesheet records are NOT touched.</p>
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">view_tag</code></td>
-      <td>View the <code class="language-plaintext highlighter-rouge">Tags</code> administration at <code class="language-plaintext highlighter-rouge">Administration &gt; Tags</code> (this is just hiding the menu, users can always see tags with the API)</td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Tags</code> administration at <code class="language-plaintext highlighter-rouge">Administration &gt; Tags</code> (this is hiding the menu, users can always see tags in forms and with the API)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_tag</code></td>
+      <td>Create new tags on-the-fly in the timesheet form (assigned to <code class="language-plaintext highlighter-rouge">ROLE_USER</code> by default, remove it to only allow pre-defined tags)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">delete_tag</code></td>
@@ -762,6 +871,28 @@ The linked timesheet records are NOT touched.</p>
                         
 
                         
+                        <div data-pagefind-ignore="all">
+                            <h2 id="related-articles" class="fs-4 mt-5">Related articles</h2>
+                            <ul>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/timesheet.html">Timesheet</a> &ndash; View and manage your time-tracking data in the timesheet view
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/permissions.html">Roles & Permissions</a> &ndash; Configure the permission system which is based on user roles
+                                </li>
+                                
+                                
+                                <li>
+                                    <a href="/documentation/configurations.html">Settings</a> &ndash; Kimai system configurations
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -769,7 +900,13 @@ The linked timesheet records are NOT touched.</p>
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#tagging-timesheet-records" class="nav-link">Tagging timesheet records</a><ul><li class="nav-item"><a href="#tagging-modes" class="nav-link">Tagging modes</a></li></ul></li><li class="nav-item"><a href="#tag-administration" class="nav-link">Tag administration</a><ul><li class="nav-item"><a href="#deleting-a-tag" class="nav-link">Deleting a tag</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#tagging-timesheet-records" class="nav-link">Tagging timesheet records</a><ul><li class="nav-item"><a href="#assigning-tags" class="nav-link">Assigning tags</a></li><li class="nav-item"><a href="#tagging-modes" class="nav-link">Tagging modes</a></li><li class="nav-item"><a href="#tag-names" class="nav-link">Tag names</a></li></ul></li><li class="nav-item"><a href="#tag-administration" class="nav-link">Tag administration</a><ul><li class="nav-item"><a href="#create-and-edit-a-tag" class="nav-link">Create and edit a tag</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#batch-actions" class="nav-link">Batch actions</a></li><li class="nav-item"><a href="#row-actions" class="nav-link">Row actions</a></li><li class="nav-item"><a href="#deleting-a-tag" class="nav-link">Deleting a tag</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#tags-in-other-features" class="nav-link">Tags in other features</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    
+                    <ul class="nav">
+                        <li>
+                            <a href="#related-articles" class="nav-link">Related articles</a>
+                        </li>
+                    </ul>
                     
                 </aside>
             

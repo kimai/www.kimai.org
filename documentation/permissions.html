@@ -1458,7 +1458,11 @@ For example, exported timesheet records cannot be edited, even if a user owns th
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">view_tag</code></td>
-      <td>View the <code class="language-plaintext highlighter-rouge">Tags</code> administration at <code class="language-plaintext highlighter-rouge">Administration &gt; Tags</code> (this is just hiding the menu, users can always see tags with the API)</td>
+      <td>View the <code class="language-plaintext highlighter-rouge">Tags</code> administration at <code class="language-plaintext highlighter-rouge">Administration &gt; Tags</code> (this is hiding the menu, users can always see tags in forms and with the API)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_tag</code></td>
+      <td>Create new tags on-the-fly in the timesheet form (assigned to <code class="language-plaintext highlighter-rouge">ROLE_USER</code> by default, remove it to only allow pre-defined tags)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">delete_tag</code></td>
