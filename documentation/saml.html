@@ -742,12 +742,15 @@ and <a href="/documentation/cache.html">reload the cache</a> afterwards:</p>
   </li>
   <li><code class="language-plaintext highlighter-rouge">roles</code> (array) settings related to the user roles syncing
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">resetOnLogin</code> (bool) if <code class="language-plaintext highlighter-rouge">true</code> all user roles will be reset upon login and synced with the SAML roles, if <code class="language-plaintext highlighter-rouge">false</code> you can configure user roles in Kimai and only the mapped ones will be forced when the user logs-in (other roles will stick with the user) - config exists since 1.22.0</li>
       <li><code class="language-plaintext highlighter-rouge">attribute</code> (string) the SAML attribute whose values are used for syncing the groups</li>
       <li><code class="language-plaintext highlighter-rouge">mapping</code> (array) an array of role name mappings. The <code class="language-plaintext highlighter-rouge">saml</code> key is your SAML role name (here <code class="language-plaintext highlighter-rouge">Admin</code> and <code class="language-plaintext highlighter-rouge">Manager</code>) and the key <code class="language-plaintext highlighter-rouge">kimai</code> (here <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> and <code class="language-plaintext highlighter-rouge">ROLE_TEAMLEAD</code>) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED even if they are existing in Kimai.</li>
+      <li><code class="language-plaintext highlighter-rouge">resetOnLogin</code> (bool) if <code class="language-plaintext highlighter-rouge">true</code> all user roles will be reset upon login and synced with the SAML roles. Otherwise (<code class="language-plaintext highlighter-rouge">false</code>) you configure user roles in Kimai and only the mapped ones will be forced upon login.</li>
     </ul>
   </li>
 </ul>
+
+<div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The role reset via <code class="language-plaintext highlighter-rouge">kimai.saml.roles.resetOnLogin</code> only works if a <code class="language-plaintext highlighter-rouge">kimai.saml.roles.attribute</code> is configured and exists in the SAML response. If it is missing from the config or the configured role attribute is absent, roles will not be reset.</p>
+</div>
 
 <p>If you have troubles with your certificate you can <a href="https://www.samltool.com/format_x509cert.php">use this online tool</a> to convert the X.509 cert into “string format”.</p>
 
