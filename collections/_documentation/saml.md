@@ -127,9 +127,11 @@ A brief description of the available fields:
       - If the optional SAML attribute `Title` is missing, it will be ignored
       - If you manually configured the title, it will not be overwritten if the SAML attribute `Title` is missing
 - `roles` (array) settings related to the user roles syncing
-    - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles, if `false` you can configure user roles in Kimai and only the mapped ones will be forced when the user logs-in (other roles will stick with the user) - config exists since 1.22.0 
     - `attribute` (string) the SAML attribute whose values are used for syncing the groups
     - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admin` and `Manager`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED even if they are existing in Kimai.
+    - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles. Otherwise (`false`) you configure user roles in Kimai and only the mapped ones will be forced upon login.  
+
+{% alert danger %}The role reset via `kimai.saml.roles.resetOnLogin` only works if a `kimai.saml.roles.attribute` is configured and exists in the SAML response. If it is missing from the config or the configured role attribute is absent, roles will not be reset.{% endalert %}
 
 If you have troubles with your certificate you can [use this online tool](https://www.samltool.com/format_x509cert.php) to convert the X.509 cert into "string format".
 
