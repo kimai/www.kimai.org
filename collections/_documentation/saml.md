@@ -132,11 +132,8 @@ A brief description of the available fields:
     - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles. Otherwise (`false`) you configure user roles in Kimai and only the mapped ones will be forced upon login.  
 
 {% alert danger %}The role reset via `kimai.saml.roles.resetOnLogin` only works if a `kimai.saml.roles.attribute` is configured and exists in the SAML response. If it is missing from the config or the configured role attribute is absent, roles will not be reset.{% endalert %}
-
-If you have troubles with your certificate you can [use this online tool](https://www.samltool.com/format_x509cert.php) to convert the X.509 cert into "string format".
-
 {% alert %}User data and roles are synchronized during each login.{% endalert %}
-{% alert %}Every user automatically owns the ROLE_USER role, you don't have to create a mapping for it.{% endalert %}
+{% alert %}Every user automatically owns the **ROLE_USER** role, you don't have to create a mapping for it.{% endalert %}
 {% alert warning %}Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.{% endalert %}
 
 ### Multiline Certificate - x509cert
