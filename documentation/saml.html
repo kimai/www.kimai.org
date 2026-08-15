@@ -751,12 +751,9 @@ and <a href="/documentation/cache.html">reload the cache</a> afterwards:</p>
 
 <div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>The role reset via <code class="language-plaintext highlighter-rouge">kimai.saml.roles.resetOnLogin</code> only works if a <code class="language-plaintext highlighter-rouge">kimai.saml.roles.attribute</code> is configured and exists in the SAML response. If it is missing from the config or the configured role attribute is absent, roles will not be reset.</p>
 </div>
-
-<p>If you have troubles with your certificate you can <a href="https://www.samltool.com/format_x509cert.php">use this online tool</a> to convert the X.509 cert into “string format”.</p>
-
 <div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>User data and roles are synchronized during each login.</p>
 </div>
-<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Every user automatically owns the ROLE_USER role, you don’t have to create a mapping for it.</p>
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Every user automatically owns the <strong>ROLE_USER</strong> role, you don’t have to create a mapping for it.</p>
 </div>
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>Every user needs a username and email address, you cannot activate SAML without a mapping for the email. The username cannot be set from SAML attributes, but will always be taken from the SAML request.</p>
 </div>
