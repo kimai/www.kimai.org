@@ -239,19 +239,31 @@ server {
 }
 ```
 
-Now, when you open `https://kimai2.local/` you wil be redirected to the login URL without `http`, here: `http://kimai2.local/en/login/`.
-Why is that? Well, because you have to tell Kimai (or the Symfony framework) that it should trust your proxy and take the headers into account 
-when generating URLs for links and redirects.
+Now, when you open `https://kimai2.local/`, you might find that you are redirected to a plain `http` URL (e.g. `http://kimai2.local/en/login/`).
+Why is that? You need to tell Kimai (and the underlying Symfony framework) to trust your reverse proxy and evaluate the `X-Forwarded-*` headers when generating URLs and redirects.
 
-To achieve that, set the environment variable `TRUSTED_PROXIES` to the name of your proxy, either via `.env` file:
+To achieve that, set the `TRUSTED_PROXIES` environment variable.
 
-```
-TRUSTED_PROXIES=127.0.0.1,kimai2.local,localhost
+{% alert warning %}
+**Important:** Symfony's `TRUSTED_PROXIES` configuration requires **IP addresses**, **CIDR subnets**, or specific Symfony keywords. It does **not** accept hostnames or domain names (such as `localhost`, `nginx`, or `kimai.local`).
+{% endalert %}
+
+Supported values include:
+- Single IP addresses (e.g. `127.0.0.1`, `::1`)
+- CIDR IP ranges (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`)
+- `PRIVATE_SUBNETS` (trusts standard RFC 1918 private IPv4/IPv6 ranges; recommended for Docker setups)
+- `REMOTE_ADDR` (trusts the immediate IP connecting to the webserver)
+
+Set this either via your `.env.local` file / container environment:
+
+```text
+TRUSTED_PROXIES=127.0.0.1,PRIVATE_SUBNETS
 ```
 
-or set it in your Kimai server definition (here nginx syntax):
-```
-fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
+Or pass it in your Kimai webserver configuration (e.g., Nginx FastCGI syntax):
+
+```nginx
+fastcgi_param TRUSTED_PROXIES "127.0.0.1,PRIVATE_SUBNETS";
 ```
 
 ## Links
