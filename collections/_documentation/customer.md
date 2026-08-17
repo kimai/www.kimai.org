@@ -19,9 +19,9 @@ There is another field under "Invoice settings" for the full company name.
 
 ## Manage customers
 
-The following attributes are available for every custom:
+The following attributes are available for every customer:
 
-- `Account number` - Internal number identifying the customer, also available in invoices and exports
+- `Account` - A number identifying the customer, also available in invoices and exports (see [Customer number](#customer-number))
 - `Vat-ID` - Will be used in invoicing
 - `Contact` - Name of the main contact for this customer 
 - `E-mail` - Contact address
@@ -95,6 +95,10 @@ The visibility filter in the toolbar has three state:
 - Visible: Yes (all customers that are visible)
 - Visible: No (all customers that are invisible)
 - Visible "empty" (all customers, not filtering on their visibility)
+
+### Customer number
+
+{% include snippets/number-format.md entity="customer" entities="customers" Entity="Customer" article="a" counter="{cc}" section="Customer" setting="Customer number format" length="10" %}
 
 ### Access permissions
 
