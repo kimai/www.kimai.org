@@ -883,6 +883,233 @@ Even though she has a higher internal cost of 45 € / hour, her work earns 85 �
   <li>Empty: Shows all activities regardless of visibility</li>
 </ul>
 
+<h3 id="activity-number">Activity number</h3>
+
+<p>Every activity can have a <code class="language-plaintext highlighter-rouge">number</code>: a short identifier, which is shown in the listing and detail pages
+and which is available in exports and invoice templates.</p>
+
+<p>The number is optional, it is a free text field and by default it has to be unique.</p>
+
+<h4 id="automatic-number-generation">Automatic number generation</h4>
+
+<p>Kimai calculates a number whenever a new activity is created: when you open the
+<code class="language-plaintext highlighter-rouge">create activity</code> form, the <code class="language-plaintext highlighter-rouge">number</code> field is already pre-filled.
+The same happens when an activity is created through the API.</p>
+
+<p>The pre-filled value is only a suggestion:</p>
+
+<ul>
+  <li>you can overwrite it or empty it before saving</li>
+  <li>you can change it later on the edit screen</li>
+  <li>existing activities are never renumbered, a changed format only applies to newly created ones</li>
+</ul>
+
+<p>The format is configured at <code class="language-plaintext highlighter-rouge">System &gt; Settings &gt; Activity &gt; Activity number format</code> and its
+default value is <code class="language-plaintext highlighter-rouge">{ac,4}</code>. If the format is emptied, no number will be generated and the field stays empty.</p>
+
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>The number is calculated when the create form is <b>opened</b>, not when it is saved.
+If two users open the create form at the same time, both will see the same number and the second one to save
+runs into the “number already used” validation error (unless duplicates are allowed, see below).</p>
+</div>
+
+<h4 id="format-and-replacer">Format and replacer</h4>
+
+<p>The format is a free text, in which the following replacer can be used:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Replacer</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ac}</code></td>
+      <td>Activity counter</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
+      <td>Year 4 digits</td>
+      <td>2025</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{y}</code></td>
+      <td>Year 2 digits</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{M}</code></td>
+      <td>Month with leading zero</td>
+      <td>04 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{m}</code></td>
+      <td>Month 1 or 2 digits</td>
+      <td>4 or 10</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{D}</code></td>
+      <td>Day with leading zero</td>
+      <td>04 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{d}</code></td>
+      <td>Day 1 or 2 digits</td>
+      <td>4 or 23</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{Y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>2026</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{m}</code>, but the increment is added to the month (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{d}</code>, but the increment is added to the day (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each replacer supports an increment/decrement (e.g. <code class="language-plaintext highlighter-rouge">{ac+100}</code>) and a length formatter, which prepends
+leading zeros (e.g. <code class="language-plaintext highlighter-rouge">{ac,4}</code>).</p>
+
+<p>Every character outside a replacer is copied as-is, but <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code> are reserved and cannot be used.
+An unknown replacer (e.g. <code class="language-plaintext highlighter-rouge">{foo}</code>) is not replaced and ends up in the number as written.</p>
+
+<h4 id="counter">Counter</h4>
+
+<p>The counter <code class="language-plaintext highlighter-rouge">{ac}</code> is <strong>not</strong> derived from the highest number in use, it is calculated from the
+<strong>amount of existing activities</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>counter = amount of existing activities + 1 + increment
+</code></pre></div></div>
+
+<p>The increment defaults to <code class="language-plaintext highlighter-rouge">1</code> (see below), therefor the first activity in an empty installation
+receives the counter value <code class="language-plaintext highlighter-rouge">2</code> and with 41 existing activities the next one receives <code class="language-plaintext highlighter-rouge">43</code>.</p>
+
+<p>Because the counter is based on the record count, deleting activities lowers it again, which would
+lead to numbers that were used before. Kimai detects and skips used numbers (see <a href="#uniqueness">Uniqueness</a>),
+but if you want a permanently higher counter, use the increment.</p>
+
+<p>If several activities are created within one request, each of them receives the next free counter value.</p>
+
+<h4 id="increment-and-decrement">Increment and decrement</h4>
+
+<p>Every counter and every “incrementing” date replacer can be shifted by a fixed amount, by adding <code class="language-plaintext highlighter-rouge">+X</code> or <code class="language-plaintext highlighter-rouge">-X</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{ac+100}</code> - adds 100 to the counter instead of the default <code class="language-plaintext highlighter-rouge">1</code></li>
+  <li><code class="language-plaintext highlighter-rouge">{ac-1}</code> - subtracts 1 from the counter</li>
+</ul>
+
+<p>The default increment is <code class="language-plaintext highlighter-rouge">1</code> and it cannot be set to <code class="language-plaintext highlighter-rouge">0</code>, so <code class="language-plaintext highlighter-rouge">{ac}</code> behaves exactly like <code class="language-plaintext highlighter-rouge">{ac+1}</code>.</p>
+
+<p>The increment is applied to <code class="language-plaintext highlighter-rouge">{ac}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code> and <code class="language-plaintext highlighter-rouge">{DD}</code>.
+It is ignored by <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code> and <code class="language-plaintext highlighter-rouge">{d}</code>, which always return the current date.</p>
+
+<p>This also means that <code class="language-plaintext highlighter-rouge">{YY}</code> does not “increment until a free number was found”, it is simply “the current year
+plus the increment”: <code class="language-plaintext highlighter-rouge">{YY}</code> and <code class="language-plaintext highlighter-rouge">{YY+1}</code> return next year, <code class="language-plaintext highlighter-rouge">{YY-1}</code> returns the last year and <code class="language-plaintext highlighter-rouge">{YY-2}</code> the year before.</p>
+
+<h4 id="length-formatter">Length formatter</h4>
+
+<p>Adding <code class="language-plaintext highlighter-rouge">,X</code> to a replacer prepends leading zeros, until the result is <code class="language-plaintext highlighter-rouge">X</code> characters long:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">{ac,4}</code> - results in <code class="language-plaintext highlighter-rouge">0043</code> for the counter value <code class="language-plaintext highlighter-rouge">43</code></li>
+  <li>a result which is already longer than <code class="language-plaintext highlighter-rouge">X</code> characters will not be shortened</li>
+</ul>
+
+<p>The length formatter is always the last part of a replacer and it can be combined with the increment and
+decrement, e.g. <code class="language-plaintext highlighter-rouge">{ac+100,5}</code>.</p>
+
+<h4 id="uniqueness">Uniqueness</h4>
+
+<p>The setting <code class="language-plaintext highlighter-rouge">System &gt; Settings &gt; Activity &gt; Allow multiple usages of the same number</code> defines
+whether the same number may be used more than once:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">No</code> (default) - saving an activity with an already used number fails with a validation error</li>
+  <li><code class="language-plaintext highlighter-rouge">Yes</code> - the same number can be used by multiple activities</li>
+</ul>
+
+<p>Independent of this setting, the <strong>generator</strong> always avoids numbers which are already in use: if the calculated
+number exists, the counter is increased and the number is calculated again, for a maximum of 100 retries.</p>
+
+<p>If no free number can be found, the field is left empty. That happens for example with a format which does not
+contain a counter (like <code class="language-plaintext highlighter-rouge">{Y}</code>), because every retry produces the same result.</p>
+
+<h4 id="limits">Limits</h4>
+
+<ul>
+  <li>The number can be at most 10 characters long</li>
+  <li>These characters are not allowed: <code class="language-plaintext highlighter-rouge">&lt;</code> <code class="language-plaintext highlighter-rouge">&gt;</code> <code class="language-plaintext highlighter-rouge">"</code> <code class="language-plaintext highlighter-rouge">=</code></li>
+</ul>
+
+<h4 id="examples">Examples</h4>
+
+<p>The following examples assume that today is the 9th of July 2025 and that 41 activities exist:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Format</th>
+      <th>Result</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ac}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">43</code></td>
+      <td>the plain counter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ac,4}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">0043</code></td>
+      <td>the counter with four digits</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ac-1}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">41</code></td>
+      <td>the counter, shifted down by one</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{ac+100}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">142</code></td>
+      <td>the counter, shifted up by 100</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{Y}-{ac,3}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">2025-043</code></td>
+      <td>year and a three digit counter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">{y}{M}{D}-{ac}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">250709-43</code></td>
+      <td>date and counter</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">K-{Y}-{ac,4}</code></td>
+      <td><code class="language-plaintext highlighter-rouge">K-2025-0043</code></td>
+      <td>a static prefix, the year and the counter</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="access-permissions">Access permissions</h3>
 
 <p>Activities follow a hierarchical permission model:</p>
@@ -1104,7 +1331,7 @@ This would find all entries with the custom field <code class="language-plaintex
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-an-activity" class="nav-link">Create an activity</a><ul><li class="nav-item"><a href="#project-specific" class="nav-link">Project specific</a></li><li class="nav-item"><a href="#global-activities" class="nav-link">Global activities</a></li><li class="nav-item"><a href="#change-activity-type" class="nav-link">Change activity type</a></li></ul></li><li class="nav-item"><a href="#manage-activities" class="nav-link">Manage activities</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#activity-listing" class="nav-link">Activity listing</a><ul><li class="nav-item"><a href="#invisible-activities" class="nav-link">Invisible activities</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-an-activity" class="nav-link">Delete an activity</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-an-activity" class="nav-link">Create an activity</a><ul><li class="nav-item"><a href="#project-specific" class="nav-link">Project specific</a></li><li class="nav-item"><a href="#global-activities" class="nav-link">Global activities</a></li><li class="nav-item"><a href="#change-activity-type" class="nav-link">Change activity type</a></li></ul></li><li class="nav-item"><a href="#manage-activities" class="nav-link">Manage activities</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#activity-number" class="nav-link">Activity number</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#activity-listing" class="nav-link">Activity listing</a><ul><li class="nav-item"><a href="#invisible-activities" class="nav-link">Invisible activities</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-an-activity" class="nav-link">Delete an activity</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             

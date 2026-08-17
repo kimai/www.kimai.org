@@ -834,7 +834,7 @@ users can edit their records until the fifth day of the month (because invoices 
   <li><code class="language-plaintext highlighter-rouge">Country</code> - default value for the “create customer” form</li>
   <li><code class="language-plaintext highlighter-rouge">Currency</code> - default value for the “create customer” form</li>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a customer in dropdown fields</li>
-  <li><code class="language-plaintext highlighter-rouge">Customer number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{cc}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Customer number format</code> - format for automatically generated customer numbers, see the replacer table below</li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple customers</li>
 </ul>
 
@@ -850,7 +850,7 @@ users can edit their records until the fifth day of the month (because invoices 
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{cc}</code></td>
       <td>Customer counter</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
@@ -884,36 +884,42 @@ users can edit their records until the fifth day of the month (because invoices 
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>2027</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{Y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>2026</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>27</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>26</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>07</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{m}</code>, but the increment is added to the month (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>5</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>27</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{d}</code>, but the increment is added to the day (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table>
 
-<p>The same rules as <a href="/documentation/invoices.html">Invoice number format</a> apply here:<br />
-You can use increment (for configuring a start value)) and decrement (for adjusting the calculated value) and length formatter.</p>
+<p>Each replacer supports an increment/decrement (e.g. <code class="language-plaintext highlighter-rouge">{cc+100}</code>) and a length formatter, which prepends
+leading zeros (e.g. <code class="language-plaintext highlighter-rouge">{cc,4}</code>).</p>
+
+<p>Every character outside a replacer is copied as-is, but <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code> are reserved and cannot be used.
+An unknown replacer (e.g. <code class="language-plaintext highlighter-rouge">{foo}</code>) is not replaced and ends up in the number as written.</p>
+
+<p>Read the chapter <a href="/documentation/customer.html">Customer number</a> to learn how the
+number is calculated and when it is applied.</p>
 
 <h2 id="project">Project</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of a project in dropdown fields</li>
   <li><code class="language-plaintext highlighter-rouge">Take over teams from the logged-in user when creating new entries</code> - if this is active, all teams of the currently logged-in users will be copied over to new created project, therefor extending the visibility of the current user (and all his teams) to the new project</li>
-  <li><code class="language-plaintext highlighter-rouge">Project number format</code> - format for automatically generated project numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{pc}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Project number format</code> - format for automatically generated project numbers, see the replacer table below</li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple projects</li>
 </ul>
 
@@ -929,7 +935,7 @@ You can use increment (for configuring a start value)) and decrement (for adjust
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{pc}</code></td>
       <td>Project counter</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
@@ -963,32 +969,41 @@ You can use increment (for configuring a start value)) and decrement (for adjust
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>2027</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{Y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>2026</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>27</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>26</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>07</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{m}</code>, but the increment is added to the month (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>5</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>27</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{d}</code>, but the increment is added to the day (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table>
+
+<p>Each replacer supports an increment/decrement (e.g. <code class="language-plaintext highlighter-rouge">{pc+100}</code>) and a length formatter, which prepends
+leading zeros (e.g. <code class="language-plaintext highlighter-rouge">{pc,4}</code>).</p>
+
+<p>Every character outside a replacer is copied as-is, but <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code> are reserved and cannot be used.
+An unknown replacer (e.g. <code class="language-plaintext highlighter-rouge">{foo}</code>) is not replaced and ends up in the number as written.</p>
+
+<p>Read the chapter <a href="/documentation/project.html">Project number</a> to learn how the
+number is calculated and when it is applied.</p>
 
 <h2 id="activity">Activity</h2>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Display of entries in selection lists</code> - the display of an activity in dropdown fields</li>
-  <li><code class="language-plaintext highlighter-rouge">Activity number format</code> - format for automatically generated activity numbers, allowed replacers are <code class="language-plaintext highlighter-rouge">{ac}</code>, <code class="language-plaintext highlighter-rouge">{Y}</code>, <code class="language-plaintext highlighter-rouge">{y}</code>, <code class="language-plaintext highlighter-rouge">{M}</code>, <code class="language-plaintext highlighter-rouge">{m}</code>, <code class="language-plaintext highlighter-rouge">{D}</code>, <code class="language-plaintext highlighter-rouge">{d}</code>, <code class="language-plaintext highlighter-rouge">{YY}</code>, <code class="language-plaintext highlighter-rouge">{yy}</code>, <code class="language-plaintext highlighter-rouge">{MM}</code>, <code class="language-plaintext highlighter-rouge">{DD}</code> (see above at <code class="language-plaintext highlighter-rouge">Customer</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Activity number format</code> - format for automatically generated activity numbers, see the replacer table below</li>
   <li><code class="language-plaintext highlighter-rouge">Allow multiple usages of the same number</code> - whether the same number can be used on multiple activities</li>
 </ul>
 
@@ -1004,7 +1019,7 @@ You can use increment (for configuring a start value)) and decrement (for adjust
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{ac}</code></td>
       <td>Activity counter</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{Y}</code></td>
@@ -1038,26 +1053,35 @@ You can use increment (for configuring a start value)) and decrement (for adjust
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{YY}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>2027</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{Y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>2026</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{yy}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>27</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{y}</code>, but the increment is added to the year (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>26</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{MM}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>07</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{m}</code>, but the increment is added to the month (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>5</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">{DD}</code></td>
-      <td>Like {y}, but incrementing until an unused number will be found</td>
-      <td>27</td>
+      <td>Like <code class="language-plaintext highlighter-rouge">{d}</code>, but the increment is added to the day (default increment is <code class="language-plaintext highlighter-rouge">1</code>)</td>
+      <td>24</td>
     </tr>
   </tbody>
 </table>
+
+<p>Each replacer supports an increment/decrement (e.g. <code class="language-plaintext highlighter-rouge">{ac+100}</code>) and a length formatter, which prepends
+leading zeros (e.g. <code class="language-plaintext highlighter-rouge">{ac,4}</code>).</p>
+
+<p>Every character outside a replacer is copied as-is, but <code class="language-plaintext highlighter-rouge">{</code> and <code class="language-plaintext highlighter-rouge">}</code> are reserved and cannot be used.
+An unknown replacer (e.g. <code class="language-plaintext highlighter-rouge">{foo}</code>) is not replaced and ends up in the number as written.</p>
+
+<p>Read the chapter <a href="/documentation/activity.html">Activity number</a> to learn how the
+number is calculated and when it is applied.</p>
 
 <h2 id="user">User</h2>
 
