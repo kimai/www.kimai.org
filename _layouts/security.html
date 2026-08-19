@@ -15,7 +15,9 @@ layout: page
     </li>
     <li class="breadcrumb-item active" aria-current="page">
         Kimai Advisory
-        {% if page.cve_id != nil %}{{ page.cve_id }}{% else %}{{ page.ghsa_id }}{% endif %}
+        {% if page.cve_id != "pending" %}
+            {% if page.cve_id != nil %}{{ page.cve_id }}{% else %}{{ page.ghsa_id }}{% endif %}
+        {% endif %}
     </li>
 </ol>
 
@@ -27,7 +29,9 @@ layout: page
 <li>The issue has been fixed in Kimai <strong>{{ page.patched_version }}</strong></li>
 <li>Severity: <strong>{{ page.severity | capitalize }}</strong></li>
 <li>
-{% if page.cve_id != nil %}
+{% if page.cve_id == "pending" %}
+    <i>A CVE ID is requested, pending assignment</i>
+{% elsif page.cve_id != nil %}
     The Common Vulnerabilities and Exposures (CVE) project has assigned the name <strong>{{ page.cve_id }}</strong> to this issue
 {% else %}
     We have not requested an official CVE ID for this security advisory
