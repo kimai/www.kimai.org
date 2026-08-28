@@ -47,7 +47,6 @@ jobs:
           echo "<?xml version=\"1.0\"?><users><user>874E17F27A8EABE9DDAED762FC498BC4</user></users>" > _site/BingSiteAuth.xml
       - name: BlueSky verification file
         run: |
-          mkdir _site/.well-known/
           echo "did:plc:honlpxnvzll2rpfcszvgrgw5" > _site/.well-known/atproto-did
       - name: Fix locale Hebrew
         run: |
