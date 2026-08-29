@@ -9,6 +9,12 @@ Each user can configure their own dashboard directly via the frontend—no speci
 
 However, some widgets may require specific permissions (for example, those showing project budgets). As a result, different user roles may see different sets of available widgets.
 
+## Working Time Chart
+
+The working time chart shows your recorded hours as a stacked bar chart.
+
+Use the range buttons to switch between week, month, quarter, year, year-to-date, or a custom date range. The chart can show either daily hours or weekly hours. Bar segments are grouped by customer, project, and activity, and use the configured customer colors where available.
+
 ## Editing the Dashboard
 
 Click the {% include demo-action-button.html icon="preferences" title="Preferences" %} button in the top-right corner to switch to edit mode.
