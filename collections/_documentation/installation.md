@@ -4,7 +4,6 @@ description: How to install Kimai on your server with git, composer and SSH or F
 canonical: /documentation/installation.html
 related:
   - shared-hosting
-  - hosting-1-click
   - fresh-ubuntu-22
   - webserver-configuration
 ---
@@ -91,10 +90,6 @@ The rise of containerization and orchestration is not stopping, please read the 
 ### Shared hosting
 
 Kimai is known to be compatible and can be installed on a wide range of [shared hosting environments]({% link _documentation/shared-hosting.md %}) like Uberspace, 1&1, ionos, Domainfactiry, All-Inkl, Strato and others.
-
-### 1-click installations
-
-Many platforms adopted Kimai to be compatible with their [1-click installation systems]({% link _documentation/hosting-1-click.md %}), like YunoHost, Softaculous, Cloudron, VestaCP, ISPConfig 3 and Cloudjiffy.
 
 ### Plesk
 
