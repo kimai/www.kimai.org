@@ -30,11 +30,11 @@ Required code adjustments:
 - API: upgraded to [Open API specification v3](https://blog.readme.com/an-example-filled-guide-to-swagger-3-2/) - require use of new attributes/annotations
 - User preference names cannot contain dots `.` anymore (you might need migrations to adapt existing ones, please replace with underscore `_`!)
 - Removed Twig filters. You have to replace them in your custom export/invoice templates:
-    - `date_full` => `date_time`
-    - `duration_decimal` => `duration(true)`
-    - `currency` => `currency_name`
-    - `country` => `country_name`
-    - `language` => `language_name`
+    - `date_full` ⇒ `date_time`
+    - `duration_decimal` ⇒ `duration(true)`
+    - `currency` ⇒ `currency_name`
+    - `country` ⇒ `country_name`
+    - `language` ⇒ `language_name`
 - Switch from `createForm()` to `createFormForGetRequest()` for toolbar forms
 
 ## API changes 

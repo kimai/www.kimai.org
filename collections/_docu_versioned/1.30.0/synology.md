@@ -294,8 +294,8 @@ Remark:
 If you see an error like `Error: Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes)` then you 
 have to adjust the memory limit for the PHP command-line interface.
 PHP has two different settings for memory limit, depending on where you run it:
-- executed in web-context (you open a page in your browser) => the settings from DSM are used
-- executing scripts (like the installer) via SSH => settings from another config file are used 
+- executed in web-context (you open a page in your browser) ⇒ the settings from DSM are used
+- executing scripts (like the installer) via SSH ⇒ settings from another config file are used 
 
 So  when running the installer and running into a memory issue, you have to adjust the `php.ini` whose settings are used 
 in SSH, e.g. the file `/usr/local/etc/php81/php.ini` is used for PHP 8.1.

@@ -90,16 +90,16 @@ You cannot delete manual bookings, so if you accidentally added wrong values, si
 Manual bookings can be used to increase or reduce the users time account.
 
 Popular examples are:
-- adding a positive amount of hours => taking over hours from the last year
-- removing a negative amount of hours => payment to compensate for plus hours
+- adding a positive amount of hours ⇒ taking over hours from the last year
+- removing a negative amount of hours ⇒ payment to compensate for plus hours
 
 ### Holidays
 
 Manual bookings can be used to increase or reduce the users available holidays.
 
 Examples are:
-- adding a positive amount of days => taking over holiday from the last year
-- removing a negative amount of days => old holidays which were not taken on time expired
+- adding a positive amount of days ⇒ taking over holiday from the last year
+- removing a negative amount of days ⇒ old holidays which were not taken on time expired
 
 ### Why immmutable?
 
