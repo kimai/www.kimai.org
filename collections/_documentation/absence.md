@@ -156,6 +156,8 @@ While this video talks about your time balance, the workflow is the same.
 
 Switch back to the previous year and remember to lock the entire year. 
 
+Read more about manual bookings in the [Working times]({% link _documentation/contract.md %}) chapter. 
+
 ## Permissions
 
 {% include documentation/permissions.md id="absences" howto=true %}
