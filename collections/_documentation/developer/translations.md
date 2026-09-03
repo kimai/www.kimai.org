@@ -22,7 +22,7 @@ All translations in Kimai are managed at Weblate and should be changed there exc
 
 If you want to change certain keys in your installation, you can use the [Translation plugin]({% link _store/{{ page.lang }}/translation-bundle.md %}) for that.
 
-{% alert %}The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.{% endalert %}
+{% alert warning %}The following documentation is not meant for end-users or translators. It is a technical documentation for the folks working on the Kimai code.{% endalert %}
 
 ## Language files
 
@@ -58,9 +58,9 @@ If you apply changes to any files mentioned on this page, you have to [clear the
 The authentication screens (login, registration, register account) are translated through the theme bundle which is used in Kimai.
 The bundle can be [found here](https://github.com/kevinpapst/TablerBundle) and the translations [in this directory](https://github.com/kevinpapst/TablerBundle/tree/main/translations).
 
-When you create a new translation, please open a Pull Request in this repository as well.
-
 ## Adding a new language
+
+{% alert warning %}Do not use this way if you want to translate Kimai, [use Weblate instead](https://hosted.weblate.org/projects/kimai/)! This here is a technical documentation.{% endalert %}
 
 This example assumes you are creating the (not existing) locale `xx`. 
 
