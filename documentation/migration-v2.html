@@ -480,11 +480,11 @@ If you encounter any issue, please post them at GitHub and we will adjust this d
   <li>User preference names cannot contain dots <code class="language-plaintext highlighter-rouge">.</code> anymore (you might need migrations to adapt existing ones, please replace with underscore <code class="language-plaintext highlighter-rouge">_</code>!)</li>
   <li>Removed Twig filters. You have to replace them in your custom export/invoice templates:
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">date_full</code> =&gt; <code class="language-plaintext highlighter-rouge">date_time</code></li>
-      <li><code class="language-plaintext highlighter-rouge">duration_decimal</code> =&gt; <code class="language-plaintext highlighter-rouge">duration(true)</code></li>
-      <li><code class="language-plaintext highlighter-rouge">currency</code> =&gt; <code class="language-plaintext highlighter-rouge">currency_name</code></li>
-      <li><code class="language-plaintext highlighter-rouge">country</code> =&gt; <code class="language-plaintext highlighter-rouge">country_name</code></li>
-      <li><code class="language-plaintext highlighter-rouge">language</code> =&gt; <code class="language-plaintext highlighter-rouge">language_name</code></li>
+      <li><code class="language-plaintext highlighter-rouge">date_full</code> ⇒ <code class="language-plaintext highlighter-rouge">date_time</code></li>
+      <li><code class="language-plaintext highlighter-rouge">duration_decimal</code> ⇒ <code class="language-plaintext highlighter-rouge">duration(true)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">currency</code> ⇒ <code class="language-plaintext highlighter-rouge">currency_name</code></li>
+      <li><code class="language-plaintext highlighter-rouge">country</code> ⇒ <code class="language-plaintext highlighter-rouge">country_name</code></li>
+      <li><code class="language-plaintext highlighter-rouge">language</code> ⇒ <code class="language-plaintext highlighter-rouge">language_name</code></li>
     </ul>
   </li>
   <li>Switch from <code class="language-plaintext highlighter-rouge">createForm()</code> to <code class="language-plaintext highlighter-rouge">createFormForGetRequest()</code> for toolbar forms</li>

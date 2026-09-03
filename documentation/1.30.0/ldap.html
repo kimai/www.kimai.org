@@ -889,7 +889,7 @@ group names from the result-sets attribute <code class="language-plaintext highl
 <p>After finding a list of group names, they will be converted to Kimai roles:</p>
 <ul>
   <li>first step is to lookup in <code class="language-plaintext highlighter-rouge">groups</code> mapping, if there is a match in <code class="language-plaintext highlighter-rouge">ldap_value</code> and uses the <code class="language-plaintext highlighter-rouge">role</code> value without further processing</li>
-  <li>if no mapping was found, the group name will be UPPERCASED and prefixed with <code class="language-plaintext highlighter-rouge">ROLE_</code> =&gt; e.g. <code class="language-plaintext highlighter-rouge">admin</code> will become <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code></li>
+  <li>if no mapping was found, the group name will be UPPERCASED and prefixed with <code class="language-plaintext highlighter-rouge">ROLE_</code> ⇒ e.g. <code class="language-plaintext highlighter-rouge">admin</code> will become <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code></li>
 </ul>
 
 <p>These converted names will be validated and <a href="/documentation/users.html">only existing roles</a> will pass to the user profile.</p>
