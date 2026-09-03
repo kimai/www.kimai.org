@@ -2,7 +2,7 @@
 title: "Creating a default team could grant team lead rights on an existing team"
 date: "2026-07-06 16:31:49 +0000"
 ghsa_id: "GHSA-hvq2-5gh2-rgvv"
-cve_id: "pending"
+cve_id: "CVE-2026-84807"
 severity: "medium"
 affected_version: "<= 2.65.0"
 patched_version: "2.65.0"
