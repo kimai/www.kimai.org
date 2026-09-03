@@ -121,7 +121,7 @@ A minimal `composer.json` could look like this:
     "description": "A simple demo plugin for Kimai, which actually does nothing",
     "homepage": "https://www.example.com/",
     "type": "kimai-plugin",
-    "version": "0.1",
+    "version": "0.1.0",
     "license": "MIT",
     "authors": [
         {
@@ -155,6 +155,13 @@ use the global directory configured for Kimai.
 
 Please use `App\Utils\FileHelper` to access files in the data directory
 
+## Naming your plugin ZIP
+
+The filename of the plugin that you ship should follow the convention: `Namespace-<full-version>.zip`.
+
+So in this pages examples it would be `YourBundle-0.1.0.zip`.
+
+Users will extract that to `var/plugins/YourBundle-0.1.0` and then have to rename it to `var/plugins/YourBundle/` (the renaming will be automated in the next major release).
 
 ## Example plugin
 
