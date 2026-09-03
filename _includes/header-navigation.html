@@ -21,6 +21,9 @@
                             <li class="dropdown-divider"></li>
                             <li>{% include link-translated-menu.html item="blog" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html item="support" language=page.lang class="dropdown-item" %}</li>
+                            {% if page.lang == 'de' or page.lang == 'en' %}
+                            <li>{% include link-translated-menu.html item="partner" language=page.lang class="dropdown-item" %}</li>
+                            {% endif %}
                             <li class="dropdown-divider"></li>
                             <li>{% include link-translated-menu.html item="about" language=page.lang class="dropdown-item" %}</li>
                             <li>{% include link-translated-menu.html type="landingpage" item="open-source-community" language=page.lang class="dropdown-item" %}</li>

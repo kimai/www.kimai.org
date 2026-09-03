@@ -14,7 +14,11 @@
         {%- if include.title != nil -%}
             {{- include.title -}}
         {%- elsif site.data[page.lang].translation[menu.slug] != nil -%}
-            {{- site.data[page.lang].translation[menu.slug].name -}}
+            {%- if site.data[page.lang].translation[menu.slug].menu != nil -%}
+                {{- site.data[page.lang].translation[menu.slug].menu -}}
+            {%- else -%}
+                {{- site.data[page.lang].translation[menu.slug].name -}}
+            {%- endif -%}
         {%- elsif site.data[lang].translation[menu.slug] != nil -%}
             {{- site.data[lang].translation[menu.slug].name -}}
         {%- elsif site.data['en'].translation[menu.slug] != nil -%}
