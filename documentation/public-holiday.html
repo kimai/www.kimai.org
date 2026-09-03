@@ -776,6 +776,15 @@
 <p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
 </div>
 
+<h2 id="faq-admins">FAQ Admins</h2>
+
+<p>If you see an error message like this you are missing the OS library <code class="language-plaintext highlighter-rouge">tzdata-legacy</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Failed importing public holidays for year 2026 with: DateTimeZone::__construct(): Unknown or bad timezone (Australia/West)
+</code></pre></div></div>
+
+<p>The error will be fixed in the future without that step, but for now you need to install it e.g. with <code class="language-plaintext highlighter-rouge">apt install tzdata-legacy</code>.</p>
+
 
                         </div>
                         
@@ -805,7 +814,7 @@
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li></ul></li><li class="nav-item"><a href="#editing-public-holidays" class="nav-link">Editing public holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li></ul></li><li class="nav-item"><a href="#editing-public-holidays" class="nav-link">Editing public holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#faq-admins" class="nav-link">FAQ Admins</a></li></ul>
                     
                     <ul class="nav">
                         <li>
