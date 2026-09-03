@@ -65,3 +65,15 @@ By editing single public holidays you can:
 ## Permissions
  
 {% include documentation/permissions.md id="public_holidays" howto=true %}
+
+
+## FAQ Admins
+
+If you see an error message like this you are missing the OS library `tzdata-legacy`:
+
+```
+Failed importing public holidays for year 2026 with: DateTimeZone::__construct(): Unknown or bad timezone (Australia/West)
+```
+
+The error will be fixed in the future without that step, but for now you need to install it e.g. with `apt install tzdata-legacy`.
+
