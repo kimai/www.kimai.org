@@ -977,6 +977,7 @@ This would find all entries with the custom field <code class="language-plaintex
 <ul>
   <li>The record has already been exported. In that case, editing is only possible if the required permissions for exported entries are granted.</li>
   <li>The global lockdown mode is active. Check the “Lockdown period” setting under <a href="/documentation/configurations.html">System → Settings</a>.</li>
+  <li>The period is locked for the project of that record. Check the <a href="/documentation/project.html">“Times locked until” date</a> in the project settings. This lock cannot be bypassed by any permission.</li>
   <li>The user’s first working day is set in the future. Please review the user’s working contract and adjust the start date if necessary.</li>
   <li>A future working month is locked. In that case, editing records would affect existing calculations, so all relevant future months must be unlocked first.</li>
 </ul>
@@ -1018,6 +1019,11 @@ All of them involve that you switch to <code class="language-plaintext highlight
 Administrators have a higher permission level and are allowed to perform certain actions (like updating an exported entry).</p>
 
 <p>Administrators can configure the max. duration by changing the setting <code class="language-plaintext highlighter-rouge">Timesheet → Maximum duration of a timesheet</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
+
+<p>A locked project period is another reason why a record cannot be stopped.
+If the record was started before the <a href="/documentation/project.html">“Times locked until” date</a> of its project, stopping it
+would write into a closed period, so the stop action is not offered at all - not even for administrators.
+Edit the record, move it to a date after the lock and stop it there, or clear the lock date in the project settings.</p>
 
 <h2 id="permissions">Permissions</h2>
 

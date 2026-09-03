@@ -723,15 +723,41 @@ This is mostly useful when teamleads manage their own projects and should have i
 
 <h3 id="start-date--end-date">Start date / end date</h3>
 
-<p>Having a project start and end date is optional, but it can help you to limit the project visibility in the “edit timesheet record” screen.</p>
+<p>Both dates are optional and define the time range in which times can be booked on this project.</p>
 
-<p>Setting a date for project start or end will place an implicit restriction for project selection when creating a timesheet record. 
-If the date of the record falls before the project start or after the project end the project will not be listed in the dropdown menu.</p>
+<p>If a date is set, the project is only offered in the project dropdown when the date of the record falls inside that range. 
+Records outside the range are rejected when saving as well, so the restriction also applies to the API and to imports.</p>
 
-<p>This behavior is intended to avoid ghost bookings on not yet started or already finished projects. 
-If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.</p>
+<p>Both dates are inclusive: a record on the start date or on the end date is still allowed.</p>
 
-<p>Start and end-date are inclusive, so both dates will be included when filtering any data.</p>
+<p>This avoids ghost bookings on projects that have not started yet or are already finished. 
+If a booking outside the range is necessary, a teamlead or admin can widen or remove the dates in the project settings.</p>
+
+<p>Existing records are not changed when you set these dates. 
+They stay visible in all listings, reports and invoices, but a record that now lies outside the range can only be saved 
+again after it was moved back into the range. Use <code class="language-plaintext highlighter-rouge">Times locked until</code> if you want to freeze records instead of restricting new ones.</p>
+
+<h3 id="times-locked-until">Times locked until</h3>
+
+<p>This optional date closes a project period: all times up to and including this date are frozen and can no longer be created, edited, deleted, copied or stopped (this applies to every user, including administrators).</p>
+
+<p>The project itself is not affected. It stays visible in listings, reports and invoices, and its settings (name, budget, rates, 
+end date, customer, …) can still be changed - the lock only protects the timesheet records. Locking a period therefore does 
+not stop you from exporting or invoicing it, which is the main reason to use this field instead of hiding the project.</p>
+
+<p>To reopen a period, clear the date or move it further into the past.</p>
+
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>A timesheet that is still running and was started before the lock date cannot be stopped, because that would write into a closed period. 
+Such a record can still be edited, so you can move it to a date after the lock and stop it there.</p>
+</div>
+
+<p>The <code class="language-plaintext highlighter-rouge">Time-clock</code> and <code class="language-plaintext highlighter-rouge">Duration</code> <a href="/documentation/configurations.html">time-tracking modes</a> do not offer the begin date
+in the users edit form - an administrator has to move the record or clear/move the lock date to release the record.</p>
+
+<p>This field locks one project at a time. To close a period for the whole installation, use the <code class="language-plaintext highlighter-rouge">Lockdown period</code> setting under 
+<a href="/documentation/configurations.html">System → Settings</a> instead - unlike this field, the lockdown period can be bypassed 
+by users with the according permissions.</p>
 
 <h3 id="billable">Billable</h3>
 
@@ -1200,7 +1226,7 @@ the attached timesheets to another project.</p>
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-project" class="nav-link">Create a project</a></li><li class="nav-item"><a href="#copy-a-project" class="nav-link">Copy a project</a></li><li class="nav-item"><a href="#manage-projects" class="nav-link">Manage projects</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#start-date--end-date" class="nav-link">Start date / end date</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#project-number" class="nav-link">Project number</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#project-listing" class="nav-link">Project listing</a><ul><li class="nav-item"><a href="#invisible-projects" class="nav-link">Invisible projects</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-project" class="nav-link">Delete a project</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-project" class="nav-link">Create a project</a></li><li class="nav-item"><a href="#copy-a-project" class="nav-link">Copy a project</a></li><li class="nav-item"><a href="#manage-projects" class="nav-link">Manage projects</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#start-date--end-date" class="nav-link">Start date / end date</a></li><li class="nav-item"><a href="#times-locked-until" class="nav-link">Times locked until</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#project-number" class="nav-link">Project number</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#project-listing" class="nav-link">Project listing</a><ul><li class="nav-item"><a href="#invisible-projects" class="nav-link">Invisible projects</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-project" class="nav-link">Delete a project</a></li></ul></li></ul>
                     
                 </aside>
             
