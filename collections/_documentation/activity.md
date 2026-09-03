@@ -77,6 +77,10 @@ The visibility filter has three states:
 - No: Shows activities hidden by their visibility setting
 - Empty: Shows all activities regardless of visibility
 
+### Activity number
+
+{% include snippets/number-format.md entity="activity" entities="activities" Entity="Activity" article="an" counter="{ac}" section="Activity" setting="Activity number format" length="10" %}
+
 ### Access permissions
 
 Activities follow a hierarchical permission model:

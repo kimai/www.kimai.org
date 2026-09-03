@@ -59,6 +59,11 @@
   &.border-primary:hover {
     @include box-shadow($box-shadow-primary !important); // stylelint-disable-line declaration-no-important
   }
+  // Teal counterpart, so a self-hosting card lifts exactly like a Cloud card.
+  // Without it the teal card fell back to the plain ambient shadow.
+  &.border-info:hover {
+    @include box-shadow($box-shadow-info !important); // stylelint-disable-line declaration-no-important
+  }
 }
 .card-hover {
   --#{$prefix}card-icon-hover-color: #{$primary};

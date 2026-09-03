@@ -1,0 +1,122 @@
+
+<section class="container mt-3 mb-5 pt-lg-5">
+    <div class="row align-items-center pt-4 gx-5">
+
+        <div class="w-75">
+            <span class="eyebrow">{{ site.data[page.lang].translation.become-a-partner.recognition.eyebrow }}</span>
+            <h2>{{ site.data[page.lang].translation.become-a-partner.recognition.heading }}</h2>
+            <p class="fs-5">
+                {{ site.data[page.lang].translation.become-a-partner.recognition.description }}
+            </p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-xs-1 row-cols-lg-2 justify-content-center g-4 pb-xl-3">
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex gap-3">
+                            <span class="icon-container"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path
+                                d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path
+                                d="M8 18h13"></path><path d="M8 6h13"></path></svg></span>
+                            <div>
+                                <h5>{{ site.data[page.lang].translation.become-a-partner.benefits.listing.title }}</h5>
+                                <p>{{ site.data[page.lang].translation.become-a-partner.benefits.listing.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex gap-3">
+                            <span class="icon-container"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path
+                                d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"></path><path
+                                d="M15 5.764v15"></path><path d="M9 3.236v15"></path></svg></span>
+                            <div>
+                                <h5>{{ site.data[page.lang].translation.become-a-partner.benefits.roadmap.title }}</h5>
+                                <p>{{ site.data[page.lang].translation.become-a-partner.benefits.roadmap.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex gap-3">
+                            <span class="icon-container"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path
+                                d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><path
+                                d="m9 12 2 2 4-4"></path></svg></span>
+                            <div>
+                                <h5>{{ site.data[page.lang].translation.become-a-partner.benefits.badge.title }}</h5>
+                                <p>{{ site.data[page.lang].translation.become-a-partner.benefits.badge.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex gap-3">
+                            <span class="icon-container"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path
+                                d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path
+                                d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+                            <div>
+                                <h5>{{ site.data[page.lang].translation.become-a-partner.benefits.leads.title }}</h5>
+                                <p>{{ site.data[page.lang].translation.become-a-partner.benefits.leads.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% assign express = site.data[page.lang].translation.become-a-partner.express_interest %}
+<section class="container mt-3 mb-5 py-3 py-lg-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 col-xl-8">
+
+            <span class="eyebrow">{{ express.label }}</span>
+            <h2>{{ express.heading }}</h2>
+            <p class="fs-5 mb-4 mb-lg-5">{{ express.description|newline_to_br }}</p>
+
+            <div class="card">
+                <div class="card-body p-4 p-lg-5">
+
+                    <ol class="vstack gap-4 ps-3">
+                        {% for item in express.items %}
+                        <li>
+                            <h5 class="mb-1">{{ item[1].title }}</h5>
+                            <p class="text-muted mb-0">{{ item[1].description }}</p>
+                        </li>
+                        {% endfor %}
+                    </ol>
+
+                    <a href="mailto:partner@kimai.org" class="btn btn-primary btn-lg mt-4">
+                        <i class="bx bx-envelope fs-xl me-2"></i>{{ site.data[page.lang].translation.support.get_in_touch }}
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -27,22 +27,58 @@ Adjust settings from any configuration file by adding them in your own configura
 
 ### .env
 
-These "environment specific settings" are required so Kimai can boot. They are stored in the `.env` file:
+These "environment specific settings" are required so Kimai can boot. 
+They are stored in the `.env` or `.env.local` file.
 
-- `DATABASE_URL` - database connection for storing all application data
-- `TRUSTED_HOSTS` - a regexp to match the domain names Kimai is accessible at (e.g. `demo.kimai.org|demo-empty.kimai.org`)
-- `APP_ENV` - environment for the runtime (always use `prod`, other option is `dev` if you want to developfor Kimai)
-- `MAILER_URL` - SMTP connection for emails
-- `MAILER_FROM` - application specific "from" address for all emails
-- `APP_SECRET` - secret used to encrypt e.g. session cookies (users will be logged out if you change it)
+- `DATABASE_URL` - database connection for storing all application data (see below)
+- `APP_SECRET` - **SECURITY WARNING** use a long and random secret used to encrypt e.g. session cookies (e.g. create with `php -r 'echo bin2hex(random_bytes(32));'`)
+- `TRUSTED_HOSTS` - **SECURITY WARNING** a regexp to match the domain names where Kimai can be accessed from (e.g. `demo.kimai.org|demo-empty.kimai.org`), see [docs](https://symfony.com/doc/current/reference/configuration/framework.html#trusted-hosts)
+- `TRUSTED_PROXIES` - a comma separated list of ID if you are running behind a Proxy, see [docs](https://symfony.com/doc/current/deployment/proxies.html)
+- `DEFAULT_URI` - the base URL of your installation, required e.g.for emails
+- `MAILER_FROM` - application specific "from" email-address used for all outgoing mails
+- `MAILER_URL` - SMTP connection for emails, see [email configuration docs]({% link _documentation/emails.md %}) for more details
+- `CORS_ALLOW_ORIGIN` - a regexp to identify frontend hosts that are allowed to communicate with the API, see [docs](https://symfony.com/bundles/NelmioCorsBundle/current/index.html) 
+- `APP_ENV` - environment for the runtime (default is `prod` - if you develop use `dev` instead)
 
-{% alert warning %}You don't need a .env file, but can set these environment values via webserver config as well. Later ones will take precedence over the .env entries.{% endalert %}
+{% alert warning %}You don't need a `.env` file, in fact you are advised to configure the environment values via webserver config. Later ones will take precedence over the `.env` entries.{% endalert %}
 
 ### DATABASE_URL
 
-The `DATABASE_URL` has the format of `mysql://user:password@host:port/database?charset=utf8mb4&serverVersion=5.7.40`.
+The `DATABASE_URL` has the format of `mysql://user:password@host:port/database?charset=utf8mb4&serverVersion=10.5.8-MariaDB`.
 
-Your task is to change the values `user`, `password`, `host`, `port` (default port for MySQL/MariaDB is `3306`), `database` and `serverVersion`.
+Your task is to change the values `user`, `password`, `host`, `port` (default port for MySQL/MariaDB is `3306`), `database` and `serverVersion`:
+
+- the version "10.5.8-MariaDB" (the database server version)
+- the database "user"
+- the database "password"
+- the database schema "database"
+- you might have to adapt port "3306" and server IP "127.0.0.1" as well
+
+**Server version**
+
+You fetch the version by connecting to your database (via `mariadb` or `mysql`) and then execute `select VERSION();`: 
+
+```
+MariaDB [(none)]> select VERSION();
++------------------+
+| VERSION()        |
++------------------+
+| 10.11.16-MariaDB |
++------------------+
+1 row in set (0.000 sec)
+```
+
+The result is then used 1:1 in the URL:
+
+For MySQL that could be "serverVersion=5.7" as in:
+```
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=5.7
+```
+
+For MariaDB it would be "serverVersion=10.11.16-MariaDB":
+```
+DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=10.11.16-MariaDB
+```
 
 ### local.yaml
 
@@ -216,12 +252,12 @@ kimai:
 
 ### Integrating google calender
 
-If you want to embed Google calendars e.g. to display regional holidays or company events you can import (multiple) Google calendars, 
-which will be displayed in each of the [user calendar]({% link _documentation/calendar.md %}).
+You can display external Google calendars (e.g. public holidays or company events) as additional [calendar sources]({% link _documentation/calendar.md %}).
 
-- read how to obtain your [Google API key and find the Calender ID](https://fullcalendar.io/docs/v3/google-calendar)
-- add the optional `kimai.calendar.google` configuration
-- you can add any number of sources under the `kimai.calendar.google.sources` node, each must have its own name (like `holidays` and `company` in this example)
+These events are read-only: they cannot be edited or converted into timesheet records.
+
+- Obtain your [Google API key and find the Calender ID](https://fullcalendar.io/docs/v3/google-calendar)
+- Add the optional `kimai.calendar.google` configuration
 
 ```yaml
 kimai:
@@ -236,3 +272,5 @@ kimai:
                     id: 'de.german#holiday@group.v.calendar.google.com'
                     color: '#cc0000'
 ```
+
+You can add any number of sources under the `kimai.calendar.google.sources` node, each must have its own name (like `holidays` and `company` in this example)

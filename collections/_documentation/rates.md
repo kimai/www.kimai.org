@@ -48,6 +48,14 @@ For example: a customer gets a global rate of 10€, and you additionally create
 
 If you leave the `internal price` empty on customer/project/activity level, the `internal price user-preference` will be used as fallback.  
 
+The `internal price user-preference` is an hourly price, so it is multiplied with the duration of the record, the same way as the __hourly price__.
+That is also true for records with a __fixed price__: their internal price stays duration based, which means a __fixed price__ record with a duration of `0` has an internal price of `0`.
+
+There are two exceptions:
+
+- If a customer/project/activity rule uses a __fixed price__ and defines an `internal price`, that value is applied as it is (a fixed amount) and is not multiplied with the duration.
+- If the user has no `internal price` configured, the __fixed price__ itself is used as internal price.
+
 ## Changing prices
 
 Rate changes apply to **future records only**. If you change e.g. a user's hourly rate, it will be used for all timesheet records that will be created from now on. 
@@ -104,6 +112,11 @@ The timesheet price calculation is based on the following formula:
 
 - __Fixed price__: `$fixedRate`
 - __Hourly price__: `$hourlyRate * ($durationInSeconds / 3600) * $factor`
+
+And the internal price is calculated like this:
+
+- __Fixed price__: `$internalRate` if the matching rule defines one, otherwise `$internalHourlyRate * ($durationInSeconds / 3600)`
+- __Hourly price__: `$internalHourlyRate * ($durationInSeconds / 3600) * $factor`
 
 
 You find more information how and where you can edit the different rates types in the following chapters.

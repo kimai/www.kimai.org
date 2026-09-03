@@ -14,6 +14,7 @@ Deactivated accounts do not consume licenses, which keeps the model flexible and
 ### Managing user accounts
 
 - When a user leaves the company, deactivate their account to free up the license for someone else.
+  All their recorded times stay available for reports and exports — see [Offboarding users]({% link _documentation/user-offboarding.md %}) for the recommended procedure.
 - Reactivating a deactivated user will consume a license again. Reactivation is only possible if a free license is available.
 - New user accounts can only be created if at least one license is available.
 
@@ -29,6 +30,15 @@ On top of that, Kimai doesn't have a restricted "admin-only" mode. Every account
 
 When registering for a plan, the system shows the minimum number of licenses you need based on your current active users.
 If the count is higher than expected, deactivate any unused accounts and reload the page to update the displayed number.
+
+### Starting a subscription
+
+- Open your [My Cloud]({{ site.cloud.my_cloud }}) portal.
+- Select the plan you want to activate.
+- If you haven't entered your company details yet, you will be prompted to add them first.
+- Proceed to the checkout and enter your payment details.
+
+Your subscription becomes active as soon as the payment is confirmed.
 
 ### Purchasing additional licenses
 

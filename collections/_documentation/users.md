@@ -4,6 +4,7 @@ description: User, roles and the authentication system in Kimai
 canonical: /documentation/users.html
 related:
 - user-preferences
+- user-offboarding
 ---
 
 A user can be part of a [team]({% link _documentation/teams.md %}), which can limit/extend the visibility of data.
@@ -29,9 +30,14 @@ If you uncheck the `Active` checkbox when editing the user profile and save:
 
 A user can be re-activated at any time. The logged-in user cannot deactivate his own profile.
 
-If you want to see all deactivated accounts, please switch to the user listing (at System > Users) and choose `Active = No` in the filter dropdown.
+If you want to see all deactivated accounts, switch to the user listing (at System > Users) and choose `Active = No` in the filter dropdown.
 
 {% include youtube-video.html id="deactivated_users" %}
+
+### Offboarding users
+
+Deactivation is the recommended way to handle employees who leave your company: it keeps all recorded times available for
+reports and exports. See [Offboarding users]({% link _documentation/user-offboarding.md %}) for the complete procedure and its consequences.
 
 ## System accounts
 

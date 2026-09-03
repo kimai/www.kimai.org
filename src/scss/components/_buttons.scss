@@ -211,8 +211,9 @@
 
   position: fixed;
   right: $spacer * 1.25;
-  bottom: -($btn-scroll-top-size * 1.5);
+  bottom: $btn-scroll-top-offset;
   z-index: $zindex-fixed;
+  transform: translateY($btn-scroll-top-size * 1.5 + $btn-scroll-top-offset);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,14 +252,16 @@
   }
 
   &.show {
-    bottom: $spacer * 1.25;
     opacity: 1;
+    transform: translateY(0);
   }
 
   @include media-breakpoint-down(sm) {
     right: $spacer;
+    bottom: $btn-scroll-top-offset-sm;
     width: calc(var(--#{$prefix}btn-scroll-top-size) * .8);
     height: calc(var(--#{$prefix}btn-scroll-top-size) * .8);
-    &.show { bottom: $spacer; }
+    transform: translateY($btn-scroll-top-size * 1.5 + $btn-scroll-top-offset-sm);
+    &.show { transform: translateY(0); }
   }
 }

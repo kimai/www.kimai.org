@@ -53,7 +53,6 @@ Please share your votes and input in these existing issues. The features will be
     - Include: holidays at start of month sum
     - Include: start of month working-time sum
     - Include: manual bookings
-- API: method to create absences
 - Pause / Break times configuration and validation
 ```
 

@@ -67,7 +67,7 @@ donate: Doniraj
 demo:
     name: Demo
     description: Testiraj i ocijeni naš program za evidentiranje vremena Kimai, izravno s naše demo stranice.
-    title: Testiraj Kimai u jednoj od demo verzija
+    title: Isprobajte prije nego što počnete pratiti
     subtitle: Odaberi jednu od naših demo instalacija za dobivanje dojma o tome kako se Kimai osjeća i koju funkcionalnost pruža.
     reinstall: Imaj na umu da će se demo verzije redovito ponovo instalirati i da će se svi uneseni podaci ukloniti.
     user: Korisnik demo verzija
@@ -86,9 +86,9 @@ index:
     description: Kimai – besplatan i jednostavan program za evidentiranje vremena za freelancere, agencije i poduzeća, uz mogućnost upravjanja korisnicima i računima.
 download:
     name: Instalacija
-    title: Kimai instalacija
-    subtitle: Preuzimanje i instaliranje sa SSH, Docker i Kubernetes – Kimai program za evidentiranje vremena
-    eyebrow: Self-Host Kimai
+    title: Instaliraj Kimai
+    subtitle: Pokreni Kimai na vlastitoj infrastrukturi – s Dockerom ili ručno postavljenim serverom. Odaberi stazu koja odgovara tvom stacku.
+    eyebrow: Hostaj Kimai
 hosted:
     name: Oblak
     title: Kimai oblak – Koristi Kimai izravno bez postavljanja. Bezbrižni Kimai hosting!
@@ -110,7 +110,7 @@ store:
     name: Dodaci
     title: Dodaci za Kimai
     subtitle: Koristi veliki izbor dodataka, aplikacija i proširenja Kimai ekosustava za dodavanje dodatnih funkcija tvom evidentiranju vremena.
-    eyebrow: Extend Your Time-Tracker
+    eyebrow: Proširite svoj alat za praćenje vremena
 blog:
     name: Blog
     description: "Novosti o programu Kimai, softveru za evidentiranje vremena"
@@ -284,7 +284,7 @@ newsletter:
     introduction: Pretplati se na naš bilten i primaj obavijesti o novim verzijama Kimaija i dodataka.
     archive: Arhiva
     name: Bilten
-    subtitle: Ako koristiš vlastiti hosing za Kimai (ili ga samo istražuješ), ne propusti naš bilten. Dijelimo novosti i uvide sa zajednicom ljudi koji preferiraju potpunu kontrolu nad svojim podacima.
+    subtitle: Hostate li Kimai sami ili ga tek istražujete? Dijelimo novosti o proizvodu, savjete i povremene poglede iza kulisa sa zajednicom koja preferira potpunu kontrolu nad svojim alatima i podacima.
 developer:
     kevinpapst:
         intro: "Oduvijek sam sanjao o zarađivanju novca s proizvodom otvorenog koda. S programom Kimai sam uspio razviti softver koji pruža veliku vrijednost mojim kupcima i čiji me razvoj pokreće svaki dan.\n\nPosebno se zahvaljujem velikoj zajednici na njihovoj odanosti prijektu tijekom godina i radujem se sljedećim 10 godinama Kimaija 🚀"
@@ -358,25 +358,27 @@ highlight:
         european: Neovisno i europsko 🇪🇺 – izgrađeno u Austriji 🇦🇹 i smješteno u Njemačkoj 🇩🇪 s naglaskom na zaštitu podataka, transparentnost i kvalitetu otvorenog koda.
 description: Opis
 oss-cloud-compare:
-    intro: Kimai je softver otvorenog koda koji je dostupan za vlastiti hosting kao i za SaaS.
-    title: Jedan softver, dvije verzije
+    intro: Iste moćne funkcionalnosti, drugačiji način implementacije. Odaberite ono što najbolje odgovara vašem timu.
+    title: |
+        Oblak ili vlastiti hosting,
+        Ti odlučuješ
     on-premise:
-        badge: Free forever
-        reason_5: Plugin marketplace
-        reason_3: Docker & manual install
-        reason_2: Full data ownership
-        reason_1: 100% open source (AGPL 3)
-        reason_4: Community support
-        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+        badge: Vi ga hostate
+        reason_5: Prodavnica dodataka
+        reason_3: Instalacija putem Dockera i ručna instalacija
+        reason_2: Potpuno vlasništvo nad podacima
+        reason_1: 100 % otvoreni kôd (AGPL 3)
+        reason_4: Podrška zajednice
+        intro: Potpuna kontrola nad svojim podacima i infrastrukturom. Implementirajte ga na vlastitom poslužitelju putem Dockera ili ručno.
     cloud:
-        reason_2: Automatic updates & backups
-        reason_1: Instant setup, no server needed
-        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
-        reason_5: Plugins included
-        reason_4: Priority support
-        badge: Recommended
-        reason_3: GDPR-compliant EU hosting
-    subtitle: Choose your path
+        reason_2: Automatska ažuriranja i sigurnosne kopije
+        reason_1: Trenutačno postavljanje, bez potrebe za poslužiteljem
+        intro: Potpuno upravljano rješenje, uvijek ažurirano. Mi brinemo o infrastrukturi, a vi se možete usredotočiti na posao.
+        reason_5: Uključeni dodaci
+        reason_4: Prioritetna podrška
+        badge: Mi ga hostujemo
+        reason_3: Hosting u EU-u usklađen s GDPR-om
+    subtitle: Odaberite svoj put
 section-features:
     subtitle: Kimai nudi puno više od pukog evidentiranja vremena. Pregledaj popis drugih važnih poslovnih funkcija.
     title: Kako ti Kimai može pomoći?
@@ -450,7 +452,7 @@ landing_oss:
 plans:
     tls_included: Besplatni SSL certifikat
     ip_whitelist: Ograničenje pristupa putem IP adrese
-    billable_hours: Naplativi i nenaplativi sati
+    billable_hours: Naplativi sati
     max_users: Maks. broj korisnika
     work_contract: Račun radnog vremena
     all_from_plan: Sve funkcije tarife „%plan%”
@@ -483,8 +485,8 @@ plans:
     backup_weekly: Tjedno
     backup_daily: Dnevno
     customer_portal: Portal za kupce
-    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
-    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
+    pro_intro: Za rastuće timove i tvrtke kojima su potrebni računi radnog vremena, evidencija troškova i SSO.
+    standard_intro: Za freelancere i male timove koji žele imati kontrolu nad praćenjem vremena i fakturiranjem.
 pricing:
     short_monthly: Po korisniku i mjesecu
     short_annual: Po korisniku i godini
@@ -493,17 +495,17 @@ pricing:
     annual: Godišnje
     included: Što je uključeno?
     not_available: Nije dostupno
-    subtitle: Ove su tarife dostupne kupcima oblaka
+    subtitle: Potpuni skup funkcija od prvog dana. Započni besplatno, plaćaj po korisniku i otkaži bilo kada.
     cancellation: Pretplatu možeš otkazati u bilo kojem trenutku do jedan dan prije isteka razdoblja pretplate.
     tax_exclusive: Sve cijene su bez poreza.
-    favorite: Most popular
-    annual_cta: You save 20% compared to monthly billing.
-    title: Pricing that fits your team
-    eyebrow: Hosted & maintenance-free
-    monthly_cta: Switch to annual and save 20%.
-    trust_hosting: Hosted in Germany · GDPR compliant
-    trust_trial: 30-day free trial
-    trust_no_fee: No setup fee
+    favorite: Najpopularniji
+    annual_cta: Štediš 20 % u usporedbi s mjesečnim plaćanjem.
+    title: Cijene koje odgovaraju tvom timu
+    eyebrow: Eksterni hosting i bez potrebe za održavanjem
+    monthly_cta: Prebaci se na godišnje i uštedi 20 %.
+    trust_hosting: Hosting u Njemačkoj · U skladu s GDPR-om
+    trust_trial: 30-dnevna besplatna proba
+    trust_no_fee: Nema naknade za postavljanje
 non-profit:
     name: Neprofitne organizacije
     eligible: Saznaj više
@@ -537,8 +539,8 @@ theme:
     dark: Tamna
     light: Svijetla
 cloud:
-    status: Stanje
-    subtitle: Announcements and news about the Kimai Cloud.
+    status: Stanje sustava
+    subtitle: Najave i vijesti o Kimai Cloud-u.
     name: Cloud
 licenses: Licence
 roadmap: Plan razvoja verzija
@@ -668,7 +670,7 @@ industries:
                 Jesi li spreman/na isprobati novi način
                 evidentiranja vremena u tvojoj praksi?
     freelancers:
-        name: Freelancer
+        name: Samostalni suradnik
         testimonials:
             introduction: "Nemoj samo nama vjerovati. Evo što kažu drugi freelanceri:"
             title: Što drugi profesionalci dijele o evidentiranju vremena s Kimaijem
@@ -692,7 +694,7 @@ industries:
                 Jesi li spreman/na iskusiti prednosti Kimai-a? Nudimo besplatno probno razdoblje za istaživanje svih funkcija prije nego što odlučiš koji je softver za evidentiranje vremena najbolji za tebe kao samostalnog profesionalca.
 
                 Prijavi se već danas, počni evidentirati svoje vrijeme doslovno jednim klikom i uvedi više reda u svoj radni dan!
-        intro: Maksimiraj svoj prihod kao samostalni poduzetnik
+        intro: Nikada ne gubite pregled nad svojim naplativim satima, jednostavno izrađujte račune i povećajte svoje prihode kao samostalni poduzetnik
     universities:
         cta:
             title: |
@@ -727,40 +729,40 @@ industries:
     non-profit:
         about:
             introduction: |
-                If you represent a non-profit organization, please register with an official
-                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+                Ako predstavljate neprofitnu organizaciju, registrirajte se službenom 
+                adresom e-pošte svoje organizacije i pošaljite nam kratku poruku podršci. Paket će biti aktiviran nakon ručne provjere.
 
-                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
-            title: Our affordable non-profit plan for you
+                Zauzvrat vas molimo za izjavu s vašim logotipom i nazivom organizacije ili intervju kako bismo vas mogli predstaviti kao korisnika.
+            title: Naš povoljan neprofitni paket za vas
         introduction: |
-            Today we say thank you to the many NGOs and NPOs:
+            Danas zahvaljujemo brojnim nevladinim i neprofitnim organizacijama:
 
-            - Charitable and philanthropic organizations
-            - Public and independent schools, universities, community colleges
-            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
-            - Conservation, sports, and all other clubs that foster community and teach skills
-            - Social services, elderly care, and youth facilities
-            - … and the many, many others we forgot to mention
+            dobrotvornim i filantropskim organizacijama
+            javnim i neovisnim školama, sveučilištima i veleučilištima
+            agencijama za javnu sigurnost, hitnim službama, službama za pomoć u katastrofama, vatrogasnim postrojbama i civilnoj zaštiti
+            organizacijama za zaštitu prirode, sportskim i svim drugim klubovima koji jačaju zajednicu i podučavaju vještinama
+            socijalnim službama, ustanovama za skrb o starijim osobama i ustanovama za mlade
+            … i mnogim, mnogim drugima koje smo zaboravili spomenuti
 
-            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+            Poklanjate svoje vrijeme, stvarate mala i velika čuda te obogaćujete živote tolikih ljudi: **Hvala vam što ste tu ❤️**
 
-            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
-        subtitle: Less administrative burden, so your mission stays in focus
+            Kako organizacija raste, donacije se povećavaju, a prvi zaposlenici pridružuju timu, potreba za strukturiranim praćenjem vremena postaje jasna. Transparentno dokumentiranje tijeka rada pomaže u ranom prepoznavanju mogućnosti za poboljšanje – oslobađajući resurse za vašu stvarnu misiju, a istodobno postavljajući temelje za transparentna izvješća o odgovornosti.
+        subtitle: Manje administrativnog opterećenja kako bi vaša misija ostala u središtu pozornosti
         cta:
             title: |
-                We want to help you
-                simplify your time tracking
-        title: Time Tracking for Non-Profit Organizations ✨
+                Želimo vam pomoći da 
+                pojednostavite praćenje vremena.
+        title: Praćenje vremena za neprofitne organizacije ✨
         features:
-            title: Features that NPOs appreciate
-            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+            title: Značajke koje neprofitne organizacije cijene
+            introduction: Kimai pomaže mnogim neprofitnim organizacijama da steknu uvid u svoje projekte i istodobno pojednostave upravljanje radnim vremenom. Izradili smo alat za praćenje vremena koji govori vašim jezikom – jednostavan, pouzdan, usklađen s GDPR-om i osmišljen kako bi vaš svakodnevni rad tekao jednostavnije.
         testimonials:
-            title: What other NPOs say about Kimai
+            title: Što druge neprofitne organizacije kažu o Kimaiu
             introduction: |
-                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
-                We are happy to support you!
-        intro: We put your work and vision center stage while simplifying administration and billing
-        name: Non-Profits
+                Zahvaljujući Kimaiovim korijenima u otvorenom kodu, smatramo se dijelom šireg neprofitnog pokreta koji obuhvaća brojna područja i sektore.
+                Drago nam je što vam možemo pružiti podršku!
+        intro: Stavljamo vaš rad i viziju u prvi plan, istodobno pojednostavljujući administraciju i fakturiranje
+        name: Neprofitne organizacije
 industry:
     name: Evidentiranje vremena za svako poduzeće
     intro: Pomoću Kimai softvera za evidentiranje vremena možeš poboljšati produktivnost tvojih zaposlenika.
@@ -786,10 +788,10 @@ time-tracking-terms:
     subtitle: Objašnjenja uobičajenih pojmova
     title: Pojmovi evidentiranja vremena
     intro: Zaviri iza kulisa evidentiranja vremena i saznaj više o često korištenim pojmovima u Kimaiju
-    name: Pojmovi evidentiranja vremena
+    name: Riječnik pojmova
 changelog:
     name: Dnevnik promjena
-    title: Kimai Cloud dnevnik promjena
+    title: Što je novo
     subtitle: Pregled svih aktualiziranja Kimai oblaka i kada su instalirana.
 open-source-community:
     name: Otvoreni kod
@@ -810,7 +812,7 @@ stories:
     location: Lokacija
     company: Poduzeće
     employees: Zaposlenici
-    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+    subtitle: Saznajte kako naši korisnici štede vrijeme i novac zahvaljujući našem rješenju otvorenog koda.
 title: Naslov
 date: Datum
 press-media:
@@ -821,11 +823,112 @@ press-media:
     contact_text: Slobodno postavi pitanja putem e-pošte ili zakaži razgovor.
 per-month: po mjesecu
 version-1:
-    subtitle: History of Kimai 1, which is not maintained since 2018.
+    subtitle: Povijest Kimai 1, koji se ne održava od 2018. godine.
     name: Kimai 1
 on-premise:
     name: Vlastiti hosting
-    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+    subtitle: Kimai On-Premise – bilješke o izdanju, sigurnosna ažuriranja i novosti o Dockeru
 general:
-    name: General
-    subtitle: Instructions, product updates, and other news from the Kimai team.
+    name: Opće
+    subtitle: Upute, ažuriranja proizvoda i druge novosti tima Kimai.
+become-a-partner:
+    name: Predstavite svoj rad za priznanje
+    express_interest:
+        items:
+            languages:
+                title: Languages
+                description: The languages you can support clients in.
+            category:
+                title: Partner category
+                description: Whether you apply as a Service Partner, Development Partner, or both.
+            regions:
+                title: Regions & availability
+                description: Which regions you serve and whether you offer remote, on-site, or both.
+            name:
+                title: Company or individual name
+                description: The official name of your company, or your full name if you apply as an individual.
+            experience:
+                description: Implemented projects, published extensions, or both. Links to repositories, case studies or client references help us assess your qualification.
+                title: Relevant work & experience
+            website:
+                description: A link to your company or personal website.
+                title: Website
+        label: Express interest
+        description: Share the essentials as in the list below. We will review your submission.
+        heading: Tell us about your work
+    benefits:
+        listing:
+            title: Uvrštenje u imenik
+            description: Profil u javnom imeniku partnera, vidljiv organizacijama koje aktivno traže pouzdanu pomoć s Kimaiem.
+        roadmap:
+            description: Briefings on what's coming next, so that partners can plan, prepare and advise their clients ahead of release.
+            title: Early roadmap access
+        leads:
+            description: Introductions to organisations whose needs match your track, region and expertise.
+            title: Qualified lead referrals
+        badge:
+            description: The right to display the Official Kimai Partner mark on your site and proposals — a clear, verifiable signal of your standing.
+            title: Official badge & logo usage
+    eyebrow: Postanite partner
+    recognition:
+        description: Svaki element u nastavku proizlazi iz dobivenog priznanja – odražava dokazanu stručnost i kontinuirani dobar status.
+        heading: Stečeni status za Kimai partnere
+        eyebrow: Što priznanje uključuje
+    cta_button: Izrazite interes
+    subtitle: Priznanje se dodjeljuje organizacijama i programerima koji su dokazali svoju stručnost u radu s Kimaiem. Recite nam nešto o svom radu, a mi ćemo vas povezati s klijentima koji traže upravo vaše vještine.
+partner-detail:
+    contact: Contact
+    since_label: Partner since
+    about: About us
+    extensions: Published extensions
+    verified: Verified partner
+    back: Back to the partner directory
+    contact_button: Get in touch
+    languages: Languages
+    regions: Regions
+    services: Services
+partner-services:
+    other: Other
+    development: Development
+    installation: Installation
+    training: Training
+    slas: SLAs (support & maintenance)
+    hosting: Hosting
+partner:
+    how:
+        steps:
+            three:
+                description: Priznati partneri dobivaju službenu oznaku, partnersku značku, potencijalne klijente i mjesto u imeniku partnera.
+                title: Priznanje i uvrštavanje
+            two:
+                title: Pregled usklađenosti
+                description: 'Pregledavamo rad i način na koji partner posluje: vrijednosti tvrtke, zaštitu podataka i odnos prema klijentima.'
+            four:
+                description: Priznanje se preispituje jednom godišnje i odražava trenutni status.
+                title: Periodični pregled
+            one:
+                title: Dokažite stručnost
+                description: Pokažite praktičan rad na implementaciji, objavljena proširenja ili oboje — uz jasno razumijevanje platforme.
+        title: Standard koji održavamo
+        description: Priznanje slijedi pažljivo definiran proces. Ne postoji trenutna prijava — oznaka se dodjeljuje, zadržava i povremeno ponovno razmatra tijekom vremena.
+        eyebrow: KAKO FUNKCIONIRA
+    name: Pronađite Kimai stručnjaka koji je potreban vašem projektu
+    what:
+        description: Partnerski program okuplja pouzdane stručnjake za Kimai kako bi klijenti s povjerenjem mogli pronaći pomoć, a partneri koji su dokazali svoju stručnost za to bili primjereno priznati.
+        title: Priznanje za ljude koji omogućuju da Kimai funkcionira u stvarnom svijetu
+        eyebrow: Što je to
+    partner_types:
+        service:
+            title: Servisni partneri
+            description: Agencije, konzultantske tvrtke i integratori koji instaliraju, ugošćuju, pružaju podršku, obučavaju korisnike i prilagođavaju Kimai organizacijama. Prepoznati su po praktičnom iskustvu u implementaciji i dokazanim rezultatima uspješno provedenih implementacija.
+        developer:
+            description: Timovi i pojedinci koji izrađuju dodatke, proširenja i integracije za Kimai. Prepoznati su po objavljenim i održavanim radovima koji proširuju platformu za širu zajednicu.
+            title: Razvojni partneri
+    subtitle: Priznanje se dodjeljuje organizacijama i programerima koji su dokazali svoju stručnost u radu s Kimaiem. Recite nam o svojoj stručnosti — povezat ćemo vas s klijentom koji čeka vašu pomoć.
+    eyebrow: Službeni program Kimai partnera
+    menu: Partner
+find-a-partner:
+    view_profile: View profile
+    name: Official Kimai Partners, ready to help
+    subtitle: Every partner listed here has been recognised by Kimai for demonstrated competence.
+    eyebrow: Find a Partner

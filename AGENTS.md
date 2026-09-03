@@ -135,9 +135,9 @@ Routing and domain rules matter:
 ## Frontend
 
 - Apply all styling changes in the top-level `src/*.scss` files
-- Use `src/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
-- If a change appears to require editing `src/scss/`, stop and find a solution through `src/*.scss` instead
-- If there is truly no other way, ask for approval before touching `src/scss/`
+- Use `src/scss/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
+- If a change appears to require editing `src/scss/components/`, stop and find a solution through `src/scss/*.scss` instead
+- If there is truly no other way, ask for approval before touching `src/scss/components/`
 
 ## Safe Change Boundaries
 

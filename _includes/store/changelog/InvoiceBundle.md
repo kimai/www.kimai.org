@@ -1,3 +1,9 @@
+**Version 2.10.0**
+
+Compatibility: requires minimum Kimai 2.57.0
+
+- Set `PDFA/3-B` as default version for E-Invoices (see [#349](https://github.com/kimai/Paid-plugins/issues/349))
+
 **Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.57.0

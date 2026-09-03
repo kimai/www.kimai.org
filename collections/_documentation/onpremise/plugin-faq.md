@@ -42,4 +42,4 @@ Once cancelled, no further payments will be charged.
 Because plugins are delivered as digital downloads, they cannot be returned once the source code has been accessed. 
 Payment processors also charge non-refundable transaction fees regardless of outcome. For these reasons, all sales are final — including subscriptions that weren't cancelled before renewal.
 
-If you're unsure whether a plugin is right for you, please try the demo version or [contact us]({% link _pages/en/support.html %}) before purchasing.
+If you're unsure whether a plugin is right for you, please try the demo version or [contact us]({% link _pages/{{ page.lang }}/support.html %}) before purchasing.

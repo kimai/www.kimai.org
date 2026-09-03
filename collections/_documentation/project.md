@@ -72,6 +72,10 @@ Please note:
   - You cannot create new timesheet records for this project 
 - You can still access invisible projects by changing the visibility filter on the listing view
 
+### Project number
+
+{% include snippets/number-format.md entity="project" entities="projects" Entity="Project" article="a" counter="{pc}" section="Project" setting="Project number format" length="10" creation_hint=" or when an existing project is copied" %}
+
 ### Access permissions
 
 - Inherit permissions from their linked customer

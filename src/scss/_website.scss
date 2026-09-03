@@ -89,10 +89,11 @@ pre[class=highlight], figure[class=highlight] pre
     border-radius: 0;
 }
 
-/* monster icons for homepage */
+/* Oversized feature icons. Fluid rather than a fixed 12rem, which held its
+   full 192px on a 375px viewport and ate half the screen width per row. */
 i.feature-icon {
-    font-size: 12rem;
-    line-height: 12rem;
+    font-size: clamp(5rem, 14vw, 10rem);
+    line-height: 1;
 }
 
 .card-note, .alert {
@@ -306,4 +307,17 @@ input:user-invalid {
     height: 18px;
     font-size: 10px;
     font-weight: 800;
+}
+
+.icon-container {
+    flex: 0 0 auto; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+    border-radius: var(--bs-border-radius); background: $green-50; color: $green-600; box-shadow: var(--bs-box-shadow-sm);
+}
+
+.title-header {
+    max-width: 700px;
+}
+
+.bg-section {
+    background: $gray-50;
 }

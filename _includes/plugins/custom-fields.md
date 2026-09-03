@@ -14,9 +14,9 @@ The custom-field data is then available in:
 - API (collections and entities)
 - Invoice templates (custom templates have access to all fields)
 
-The ` Weekly hours` screen has a dedicated set of custom-fields for timesheets.
+The [Weekly hours]({% link _documentation/weekly-times.md %}) screen has a dedicated set of custom-fields for timesheets.
 
-You can change the "weight" of custom-fields, so they show up in the order you define.
+By setting a none zero value, you can change the display "order" of the custom-fields.
 
 Be aware:
 

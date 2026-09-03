@@ -83,7 +83,7 @@ demo:
     name: 'Demo'
     description: 'Prova e valuta il nostro Kimai online time-tracker, direttamente dalla nostra pagina demo.'
     title: 'Prova Kimai in una delle demo'
-    subtitle: 'Scegli una delle nostre installazioni demo per avere una prima impressione su Kimai e sulle funzionalità che fornisce.'
+    subtitle: 'Prova subito una demo dal vivo e scopri Kimai, senza bisogno di creare un account.'
     reinstall: 'Tieni presente che le demo verranno reinstallate regolarmente e tutti i dati inseriti verranno rimossi.'
     user: 'Utente demo'
     accounts: "Questi account sono disponibili per i tuoi test. Oppure crea il tuo utente di prova nel modulo di accesso di ogni demo."
@@ -102,7 +102,7 @@ index:
 download:
     name: 'Installazione'
     title: 'Installazione di Kimai'
-    subtitle: 'Download e installazione con SSH, Docker e Kubernetes - Monitoraggio del tempo Kimai'
+    subtitle: 'Esegui Kimai sulla tua infrastruttura, con Docker o un''installazione manuale del server. Scegli il percorso più adatto al tuo stack.'
     eyebrow: Self-Host Kimai
 hosted:
     name: 'Cloud'
@@ -125,7 +125,7 @@ store:
     name: 'Plugin'
     title: Plugin per Kimai
     subtitle: Utilizza l'ampia gamma di plugin, app ed estensioni dell'ecosistema Kimai per dotare la tua soluzione di monitoraggio del tempo self-hosted con funzioni aggiuntive.
-    eyebrow: Extend Your Time-Tracker
+    eyebrow: Estendi il tuo time-tracker
 blog:
     name: 'Blog'
     description: 'Notizie su Kimai, il software per il monitoraggio del tempo'
@@ -268,7 +268,7 @@ feature:
             security_2: Sicurezza ottimale, firewall e prevenzione della forza bruta
             security_1: Tutte le connessioni protette tramite TLS (SSL)
             security_6: Il codice viene eseguito in ambienti di dominio strettamente limitati
-            security_3: Nessuna dato condiviso, ogni cliente ha il proprio database
+            security_3: Nessun dato condiviso, ogni cliente ha il proprio database
             security_4: I server sono ospitati in un data center nell'UE
             security_5: I servizi critici non sono accessibili al mondo esterno
         description: Il software è sicuro tanto quanto il sistema su cui viene eseguito. Adotto un approccio di difesa approfondita con server e infrastruttura di rete. I clienti sulla piattaforma ospitata sono protetti tramite più livelli di protezione.
@@ -288,7 +288,7 @@ install:
     caddy-docker: Utilizzo di Docker-Compose e Caddy come proxy inverso con supporto SSL.
 developer:
     kevinpapst:
-        intro: |
+        intro: |-
             È sempre stato il mio sogno guadagnarmi da vivere con un prodotto open source. Con Kimai ho potuto sviluppare un software che offre un grande valore ai miei clienti e il cui sviluppo mi guida ogni giorno.
 
             I miei ringraziamenti speciali vanno alla grande community per la loro fedeltà nel corso degli anni, non vedo l''ora che arrivino i prossimi 10 anni di Kimai 🚀
@@ -361,25 +361,27 @@ highlight:
         european: 'Indipendente ed europeo 🇪🇺: creato in Austria 🇦🇹 e ospitato in Germania 🇩🇪 con un forte impegno per la protezione dei dati, la trasparenza e la qualità open source.'
 description: Descrizione
 oss-cloud-compare:
-    intro: Kimai è un software open source disponibile sia per il self-hosting che per SaaS.
-    title: Un software, due versioni
+    intro: Le stesse potenti funzionalità, distribuzione diversa. Scegli quella più adatta al tuo team.
+    title: |
+        Cloud oppure self-hosted.
+        Decidi tu.
     on-premise:
-        badge: Free forever
-        reason_5: Plugin marketplace
-        reason_3: Docker & manual install
-        reason_2: Full data ownership
+        badge: Lo ospiti tu
+        reason_5: Marketplace dei plugin
+        reason_3: Docker e installazione manuale
+        reason_2: Piena proprietà dei dati
         reason_1: 100% open source (AGPL 3)
-        reason_4: Community support
-        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+        reason_4: Supporto della community
+        intro: Controllo completo sui tuoi dati e sulla tua infrastruttura. Distribuisci sul tuo server con Docker o manualmente.
     cloud:
-        reason_2: Automatic updates & backups
-        reason_1: Instant setup, no server needed
-        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
-        reason_5: Plugins included
-        reason_4: Priority support
-        badge: Recommended
-        reason_3: GDPR-compliant EU hosting
-    subtitle: Choose your path
+        reason_2: Aggiornamenti e backup automatici
+        reason_1: Configurazione immediata, nessun server necessario
+        intro: Completamente gestito e sempre aggiornato. Ci occupiamo noi dell'infrastruttura così puoi concentrarti sul tuo lavoro.
+        reason_5: Plugin inclusi
+        reason_4: Supporto prioritario
+        badge: Lo ospitiamo noi
+        reason_3: Hosting UE conforme al GDPR
+    subtitle: Scegli il tuo percorso
 section-features:
     subtitle: Kimai offre molto di più del semplice monitoraggio del tempo, ecco un elenco di altre importanti funzioni aziendali.
     title: Cosa può fare Kimai per te?
@@ -453,7 +455,7 @@ landing_oss:
 plans:
     tls_included: Certificato SSL gratuito
     ip_whitelist: Restrizione dell'accesso IP
-    billable_hours: Ore fatturabili e non fatturabili
+    billable_hours: Ore fatturabili
     max_users: Utenti
     work_contract: Conto ore lavorative
     all_from_plan: Tutte le funzionalità di '%plan%'
@@ -486,27 +488,27 @@ plans:
     backup_weekly: Settimanale
     backup_daily: Quotidiano
     customer_portal: Portale clienti
-    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
-    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
+    pro_intro: Per team e aziende in crescita che hanno bisogno di conti ore lavorative, spese e SSO.
+    standard_intro: Per liberi professionisti e piccoli team che vogliono tenere sotto controllo il monitoraggio del tempo e la fatturazione.
 pricing:
     short_monthly: Per utente e mese
     short_annual: Per utente e anno
-    name: Prezzi
+    name: Prezzatura
     monthly: Mensile
     annual: Annuale
     included: Cosa è incluso?
     not_available: Non disponibile
-    subtitle: Questi piani sono disponibili per i clienti cloud
+    subtitle: Tutte le funzionalità fin dal primo giorno. Inizia gratis, paga per utente e annulla quando vuoi.
     cancellation: Puoi annullare l'abbonamento in qualsiasi momento fino a un giorno prima della scadenza del periodo di abbonamento.
     tax_exclusive: Tutti i prezzi sono tasse escluse.
-    favorite: Most popular
-    annual_cta: You save 20% compared to monthly billing.
-    title: Pricing that fits your team
-    eyebrow: Hosted & maintenance-free
-    monthly_cta: Switch to annual and save 20%.
-    trust_hosting: Hosted in Germany · GDPR compliant
-    trust_trial: 30-day free trial
-    trust_no_fee: No setup fee
+    favorite: Il più scelto
+    annual_cta: Risparmi il 20% rispetto alla fatturazione mensile.
+    title: Prezzi su misura per il tuo team
+    eyebrow: Hosting e manutenzione inclusi
+    monthly_cta: Passa al piano annuale e risparmia il 20%.
+    trust_hosting: Hosting in Germania · Conforme al GDPR
+    trust_trial: Prova gratuita di 30 giorni
+    trust_no_fee: Nessun costo di attivazione
 non-profit:
     name: Non-profit
     eligible: Saperne di più
@@ -540,8 +542,8 @@ theme:
     dark: Scuro
     light: Chiaro
 cloud:
-    status: Stato
-    subtitle: Announcements and news about the Kimai Cloud.
+    status: Stato del sistema
+    subtitle: Annunci e notizie su Kimai Cloud.
     name: Cloud
 licenses: Licenze
 roadmap: Roadmap
@@ -695,7 +697,7 @@ industries:
                 Sei pronto a sperimentare i vantaggi di Kimai? Offriamo una prova gratuita per permetterti di esplorare tutte le funzionalità prima di decidere quale software sia il più adatto a te come libero professionista.
 
                 Iscriviti oggi stesso, inizia a monitorare il tuo tempo letteralmente con un clic e goditi una giornata più organizzata!
-        intro: Massimizza i tuoi guadagni come imprenditore individuale
+        intro: Non perdere mai traccia delle tue ore fatturabili, scrivi fatture con facilità e massimizza i tuoi guadagni come imprenditore individuale
     universities:
         cta:
             title: |
@@ -730,40 +732,40 @@ industries:
     non-profit:
         about:
             introduction: |
-                If you represent a non-profit organization, please register with an official
-                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+                Se rappresenti un'organizzazione no-profit, registrati con un indirizzo
+                e-mail ufficiale della tua organizzazione e inviaci un breve messaggio di supporto. Il piano verrà attivato dopo una revisione manuale.
 
-                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
-            title: Our affordable non-profit plan for you
+                In cambio, ti chiediamo una testimonianza con il tuo logo e nome, oppure un'intervista in modo da poterti presentare come utente.
+            title: Il nostro piano no-profit conveniente per te
         introduction: |
-            Today we say thank you to the many NGOs and NPOs:
+            Oggi vogliamo ringraziare le tante ONG e organizzazioni no-profit:
 
-            - Charitable and philanthropic organizations
-            - Public and independent schools, universities, community colleges
-            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
-            - Conservation, sports, and all other clubs that foster community and teach skills
-            - Social services, elderly care, and youth facilities
-            - … and the many, many others we forgot to mention
+            - Organizzazioni caritatevoli e filantropiche
+            - Scuole pubbliche e private, università, college comunitari
+            - Enti per la sicurezza pubblica, servizi di emergenza, soccorso in caso di catastrofi, vigili del fuoco, protezione civile
+            - Associazioni di conservazione, sportive e tutti gli altri club che favoriscono la comunità e insegnano competenze
+            - Servizi sociali, assistenza agli anziani e strutture per i giovani
+            - … e i tanti, tantissimi altri che abbiamo dimenticato di citare
 
-            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+            Dedicate il vostro tempo, create piccoli e grandi miracoli e arricchite la vita di tante persone: **grazie per esserci ❤️**
 
-            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
-        subtitle: Less administrative burden, so your mission stays in focus
+            Man mano che un'organizzazione cresce, le donazioni aumentano e arrivano i primi dipendenti, la necessità di un monitoraggio del tempo strutturato diventa evidente. Documentare i flussi di lavoro in modo trasparente aiuta a individuare per tempo le opportunità di miglioramento, liberando risorse per la vostra vera missione e gettando le basi per rendiconti trasparenti.
+        subtitle: Meno carico amministrativo, così la tua missione resta al centro
         cta:
             title: |
-                We want to help you
-                simplify your time tracking
-        title: Time Tracking for Non-Profit Organizations ✨
+                Vogliamo aiutarti a
+                semplificare il monitoraggio del tempo
+        title: Monitoraggio del tempo per le organizzazioni no-profit ✨
         features:
-            title: Features that NPOs appreciate
-            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+            title: Funzionalità apprezzate dalle organizzazioni no-profit
+            introduction: Kimai aiuta molte organizzazioni no-profit ad avere una visione chiara dei propri progetti, semplificando al contempo la gestione dell'orario di lavoro. Abbiamo creato uno strumento di monitoraggio del tempo che parla la tua stessa lingua, semplice, affidabile, conforme al GDPR e pensato per rendere più fluido il tuo lavoro quotidiano.
         testimonials:
-            title: What other NPOs say about Kimai
+            title: Cosa dicono altre organizzazioni no-profit su Kimai
             introduction: |
-                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
-                We are happy to support you!
-        intro: We put your work and vision center stage while simplifying administration and billing
-        name: Non-Profits
+                Grazie alle radici open source di Kimai, ci sentiamo parte del più ampio movimento no-profit che abbraccia tanti campi e settori diversi.
+                Siamo felici di supportarti!
+        intro: Mettiamo al centro il tuo lavoro e la tua visione, semplificando allo stesso tempo l'amministrazione e la fatturazione
+        name: No-profit
 industry:
     name: Monitoraggio del tempo per ogni attività
     intro: Puoi migliorare la produttività dei tuoi dipendenti con il software di registrazione delle presenze Kimai.
@@ -789,11 +791,11 @@ time-tracking-terms:
     subtitle: Spiegazioni dei termini comuni
     title: Termini di monitoraggio del tempo
     intro: Dai un'occhiata dietro le quinte della registrazione del tempo e scopri di più sui termini usati di frequente in Kimai
-    name: Termini di monitoraggio del tempo
+    name: Glossario
 changelog:
-    name: Registro delle modifiche
-    title: Registro delle modifiche di Kimai Cloud
-    subtitle: Panoramica di tutti gli aggiornamenti di Kimai Cloud e delle relative date di installazione.
+    name: Aggiornamenti
+    title: Novità
+    subtitle: Le ultime funzionalità, correzioni e miglioramenti per il tuo Kimai Cloud.
 open-source-community:
     name: Open Source
 integrations:
@@ -813,7 +815,7 @@ stories:
     location: Posizione
     company: Azienda
     employees: Dipendenti
-    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+    subtitle: Scopri come i nostri clienti risparmiano tempo e denaro grazie alla nostra soluzione open source.
 title: Titolo
 date: Data
 press-media:
@@ -824,11 +826,112 @@ press-media:
     contact_text: Non esitate a porre le vostre domande via E-mail o a programmare una chat.
 per-month: per mese
 version-1:
-    subtitle: History of Kimai 1, which is not maintained since 2018.
+    subtitle: Storia di Kimai 1, non più mantenuto dal 2018.
     name: Kimai 1
 on-premise:
     name: Self hosting
-    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+    subtitle: 'Kimai On-Premise: note di rilascio, aggiornamenti di sicurezza, notizie su Docker'
 general:
-    name: General
-    subtitle: Instructions, product updates, and other news from the Kimai team.
+    name: Generale
+    subtitle: Istruzioni, aggiornamenti del prodotto e altre notizie dal team di Kimai.
+become-a-partner:
+    name: Fatti riconoscere per il tuo lavoro
+    express_interest:
+        items:
+            languages:
+                title: Lingue
+                description: Le lingue in cui puoi assistere i clienti.
+            category:
+                title: Categoria partner
+                description: Se ti candidi come Service Partner, Development Partner, o entrambi.
+            regions:
+                title: Regioni e disponibilità
+                description: Quali regioni servi e se offri assistenza da remoto, in loco, o entrambe.
+            name:
+                title: Nome dell'azienda o del singolo
+                description: Il nome ufficiale della tua azienda, oppure il tuo nome completo se ti candidi come singolo.
+            experience:
+                description: Progetti realizzati, estensioni pubblicate, o entrambi. Link a repository, casi studio o referenze clienti ci aiutano a valutare la tua candidatura.
+                title: Esperienza e lavori rilevanti
+            website:
+                description: Un link al sito della tua azienda o al tuo sito personale.
+                title: Sito web
+        label: Manifesta interesse
+        description: "Condividi le tue informazioni come indicato nell'elenco qui sotto: ti contatteremo dopo la revisione."
+        heading: Raccontaci del tuo lavoro
+    benefits:
+        listing:
+            title: Presenza nella directory
+            description: Un profilo nella directory pubblica dei partner, visibile alle organizzazioni che cercano attivamente un aiuto affidabile con Kimai.
+        roadmap:
+            description: Aggiornamenti su cosa arriverà, così i partner possono pianificare, prepararsi e consigliare i propri clienti prima del rilascio.
+            title: Accesso anticipato alla roadmap
+        leads:
+            description: Presentazioni a organizzazioni le cui esigenze corrispondono al tuo ambito, alla tua regione e alla tua competenza.
+            title: Segnalazioni di contatti qualificati
+        badge:
+            description: 'Il diritto di esporre il marchio Official Kimai Partner sul tuo sito e nelle tue proposte: un segnale chiaro e verificabile del tuo status.'
+            title: Uso del badge e del logo ufficiali
+    eyebrow: Diventa partner
+    recognition:
+        description: 'Ogni elemento qui sotto deriva dal riconoscimento ottenuto: riflette una competenza dimostrata e una reputazione mantenuta nel tempo.'
+        heading: Uno status guadagnato per i partner Kimai
+        eyebrow: Cosa include il riconoscimento
+    cta_button: Manifesta interesse
+    subtitle: Il riconoscimento viene concesso a organizzazioni e sviluppatori che hanno dimostrato la propria competenza con Kimai. Raccontaci del tuo lavoro e ti metteremo in contatto con i clienti che cercano proprio le tue competenze.
+partner-detail:
+    contact: Contatto
+    since_label: Partner dal
+    about: Chi siamo
+    extensions: Estensioni pubblicate
+    verified: Partner verificato
+    back: Torna alla directory dei partner
+    contact_button: Mettiti in contatto
+    languages: Lingue
+    regions: Regioni
+    services: Servizi
+partner-services:
+    other: Altro
+    development: Sviluppo
+    installation: Installazione
+    training: Formazione
+    slas: SLA (supporto e manutenzione)
+    hosting: Hosting
+partner:
+    how:
+        steps:
+            three:
+                description: I partner riconosciuti ricevono la qualifica ufficiale, il badge partner, contatti di clienti e un posto nella directory dei partner.
+                title: Riconoscimento e presenza in directory
+            two:
+                title: Verifica di allineamento
+                description: 'Esaminiamo il lavoro svolto e il modo in cui opera il partner: valori aziendali, protezione dei dati e comportamento verso i clienti.'
+            four:
+                description: Il riconoscimento viene rivisto ogni anno e riflette lo status attuale.
+                title: Revisione periodica
+            one:
+                title: Dimostra la tua competenza
+                description: Mostra progetti realmente implementati, estensioni pubblicate, o entrambi, insieme a una chiara conoscenza della piattaforma.
+        title: Uno standard che manteniamo
+        description: "Il riconoscimento segue un percorso preciso. Non esiste un'iscrizione immediata: la qualifica viene concessa, mantenuta e rivista nel tempo."
+        eyebrow: COME FUNZIONA
+    name: Trova l'esperto Kimai di cui il tuo progetto ha bisogno
+    what:
+        description: Il Partner Program individua esperti affidabili nell'ecosistema Kimai, così i clienti possono trovare aiuto con fiducia, e i partner che hanno dimostrato la propria competenza vengono adeguatamente riconosciuti.
+        title: Un riconoscimento per chi fa funzionare Kimai nel mondo reale
+        eyebrow: Cos'è
+    partner_types:
+        service:
+            title: Partner di servizio
+            description: Agenzie, società di consulenza e integratori che installano, ospitano, supportano, formano e personalizzano Kimai per le organizzazioni. Riconosciuti per l'esperienza pratica di implementazione e per un track record di installazioni ben gestite.
+        developer:
+            description: Team e singoli sviluppatori che creano plugin, estensioni e integrazioni per Kimai. Riconosciuti per lavori pubblicati e mantenuti che estendono la piattaforma a beneficio dell'intera community.
+            title: Partner di sviluppo
+    subtitle: 'Il riconoscimento viene concesso a organizzazioni e sviluppatori che hanno dimostrato la propria competenza con Kimai. Raccontaci della tua esperienza: ti metteremo in contatto con il cliente che aspetta il tuo aiuto.'
+    eyebrow: Programma ufficiale Kimai Partner
+    menu: Partner
+find-a-partner:
+    view_profile: Visualizza profilo
+    name: Partner ufficiali Kimai, pronti ad aiutarti
+    subtitle: Ogni partner elencato qui è stato riconosciuto da Kimai per la competenza dimostrata.
+    eyebrow: Trova un partner

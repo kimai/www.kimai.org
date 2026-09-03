@@ -20,15 +20,20 @@ $green-700:                 #006e2b;   /* active / pressed */
 $green-800:                 #075524;
 $green-900:                 #0a431e;
 
-$gray-100:                  #f3f6ff !default;
-$gray-200:                  #eff2fc !default;
-$gray-300:                  #e2e5f1 !default;
-$gray-400:                  #d4d7e5 !default;
-$gray-500:                  #b4b7c9 !default;
-$gray-600:                  #9397ad !default;
-$gray-700:                  #565973 !default;
-$gray-800:                  #33354d !default;
-$gray-900:                  #0b0f19 !default;
+/* ---- Neutrals: green-tinted, hue 145, matched to the brand ----
+   Replaces the theme's inherited blue-violet ramp. Each step keeps the
+   luminance (within 0.65%) and the RGB chroma spread of the value it
+   replaced, so every existing contrast ratio on the site is preserved. */
+$gray-50:                   #f4f6f4 !default;
+$gray-100:                  #edf9f2 !default;
+$gray-200:                  #e8f5ee !default;
+$gray-300:                  #dae9e0 !default;
+$gray-400:                  #cbdcd2 !default;
+$gray-500:                  #a8bdb0 !default;
+$gray-600:                  #849e8f !default;
+$gray-700:                  #446150 !default;
+$gray-800:                  #223c2d !default;
+$gray-900:                  #04120a !default;
 
 $secondary:                 $gray-200 !default;
 $light:                     $white !default;
@@ -36,13 +41,7 @@ $dark:                      $gray-900 !default;
 $dropdown-border-color:     $gray-300 !default;
 
 /* Kimai brand colors */
-$brand-color:               $green-400;
-$brand-cloud:               #e4f4f1;
-$brand-onpremise:           #e9f7ef;
-$brand-neutral:             #f1f3f1;
-$border-cloud:              #b7e3dc;
-$border-onpremise:          $green-200;
-$border-neutral:            $gray-200;
+$brand-color:               $green-400;   /* --brand-icons, .eyebrow */
 
 $pre-padding-y:             0.1rem !default;
 $pre-padding-x:             0.5rem !default;
@@ -60,13 +59,15 @@ $display-font-weight:       $font-weight-normal;
 $steps-number-inner-bg:     $green-300 !default;
 $steps-number-bg:           $green-100 !default;
 
-// 57d287
+/* Green carries Cloud, teal carries self-hosting — matching the homepage
+   comparison and DESIGN.md's Two Doors Rule. The "cloud" and "onpremise"
+   keys used to be assigned the opposite way round. */
 $theme-gradients: (
     "primary":              linear-gradient(90deg, $green-700 0%, $green-500 50%, $green-300 100%),
     "primary-translucent":  linear-gradient(180deg, rgba($primary, 0) 0%, rgba($primary, .6) 120%),
-    "neutral":              linear-gradient(90deg, rgba(84,93,84,.08) 0%, rgba(120,130,120,.06) 50%, rgba(146,162,146,.10) 100%),
-    "cloud":                linear-gradient(90deg, rgba(14,133,121,.12) 0%, rgba(20,168,154,.10) 50%, rgba(111,214,203,.18) 100%),
-    "onpremise":            linear-gradient(90deg, rgba(0,110,43,.12) 0%, rgba(0,166,62,.10) 50%, rgba(87,210,135,.16) 100%),
+    "neutral":              linear-gradient(90deg, rgba($gray-800, .08) 0%, rgba($gray-600, .06) 50%, rgba($gray-500, .10) 100%),
+    "cloud":                linear-gradient(90deg, rgba($green-700, .12) 0%, rgba($primary, .10) 50%, rgba($green-300, .16) 100%),
+    "onpremise":            linear-gradient(90deg, rgba(darken($info, 8%), .12) 0%, rgba($info, .10) 50%, rgba(lighten($info, 25%), .18) 100%),
 ) !default;
 
 // ------------------------------------------------------------
@@ -160,12 +161,11 @@ $theme-faded-colors: (
   "dark":       rgba($dark, .12)
 ) !default;
 
-// Gradients map
-$theme-gradients: (
-  "primary":              linear-gradient(90deg, $primary 0%, #8b5cf6 50%, #d946ef 100%),
-  "primary-translucent":  linear-gradient(180deg, rgba($primary, 0) 0%, rgba($primary, .6) 120%),
-  "dark-translucent":     linear-gradient(180deg, rgba($dark, .58) 0%, rgba($dark, .78) 100%)
-) !default;
+// Gradients map — see the brand definition near the top of this file.
+// The theme's original purple/magenta gradient map lived here. It was inert
+// (the brand map above is assigned first, and !default means the first
+// assignment wins), and its palette is the documented anti-reference in
+// DESIGN.md, so it was removed rather than left to drift back in.
 
 
 // User selection color
@@ -220,7 +220,9 @@ $text-muted:                                var(--#{$prefix}gray-600) !default;
 
 // Links
 
-$link-color:                                $primary !default;
+// Link text steps down the ramp to $green-700: white-bearing $primary is only
+// 3.22:1 on white and fails AA as text. $primary stays for non-text use.
+$link-color:                                $green-700 !default;
 $link-decoration:                           underline !default;
 $link-hover-color:                          darken($link-color, 8%) !default;
 $link-hover-decoration:                     none !default;
@@ -494,7 +496,11 @@ $btn-scroll-top-bg:                         rgba($gray-900, .2) !default;
 $btn-scroll-top-hover-bg:                   rgba($gray-900, .4) !default;
 $btn-scroll-top-color:                      $white !default;
 $btn-scroll-top-hover-color:                $white !default;
-$btn-scroll-top-transition:                 bottom 400ms cubic-bezier(.68, -.55, .265, 1.55), opacity .3s, background-color .25s ease-in-out !default;
+// Slides on transform, not `bottom`, so the reveal is composited instead of
+// re-laying out. Ease-out-quint decelerates without the old back-easing overshoot.
+$btn-scroll-top-transition:                 transform 400ms cubic-bezier(.22, 1, .36, 1), opacity .3s, background-color .25s ease-in-out !default;
+$btn-scroll-top-offset:                     $spacer * 1.25 !default;
+$btn-scroll-top-offset-sm:                  $spacer !default;
 
 
 // Forms
@@ -596,7 +602,7 @@ $nav-link-padding-y:                        .535rem !default;
 $nav-link-padding-x:                        1rem !default;
 $nav-link-font-weight:                      $font-weight-medium !default;
 $nav-link-color:                            $gray-800 !default;
-$nav-link-hover-color:                      $primary !default;
+$nav-link-hover-color:                      $green-700 !default;   // text: $primary is 3.22:1
 $nav-link-active-color:                     $primary !default;
 $nav-link-disabled-color:                   $gray-600 !default;
 $nav-link-transition:                       color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out !default;
@@ -610,7 +616,7 @@ $nav-tabs-link-bg:                          $gray-200 !default;
 $nav-tabs-link-color:                       $nav-link-color !default;
 $nav-tabs-link-hover-border-color:          transparent !default;
 $nav-tabs-link-hover-bg:                    map-get($theme-faded-colors, "primary") !default;
-$nav-tabs-link-hover-color:                 $primary !default;
+$nav-tabs-link-hover-color:                 $green-700 !default;   // text: $primary is 3.22:1
 $nav-tabs-link-active-border-color:         transparent !default;
 $nav-tabs-link-active-bg:                   $primary !default;
 $nav-tabs-link-active-color:                $white !default;
@@ -969,7 +975,11 @@ $carousel-bullet-width:                     .3125rem !default;
 $carousel-bullet-height:                    .3125rem !default;
 $carousel-bullet-border-radius:             $border-radius-pill !default;
 $carousel-bullet-spacer:                    $spacer * .875 !default;
-$carousel-bullet-transition:                width .2s ease-in-out, height .2s ease-in-out, background-color .2s ease-in-out !default;
+// `height` never changes between states — dropped. `width` does (.3125rem to
+// 1.5rem on the active bullet) and has no transform equivalent: scaleX on a
+// pill stretches its end caps into ellipses. Contained to 3-5 elements inside
+// an absolutely-positioned row, so the reflow never reaches page layout.
+$carousel-bullet-transition:                width .2s ease-in-out, background-color .2s ease-in-out !default;
 
 $carousel-bullet-bg:                        $gray-500 !default;
 $carousel-bullet-active-bg:                 $primary !default;
