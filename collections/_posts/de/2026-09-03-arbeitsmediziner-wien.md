@@ -1,6 +1,6 @@
 ---
 title: "Arbeitsmediziner. Wien"
-date: "2026-06-12 12:00:00 +0200"
+date: "2026-09-03 12:00:00 +0200"
 permalink: /de/stories/arbeitsmediziner-wien
 layout: story
 tags: [stories]
