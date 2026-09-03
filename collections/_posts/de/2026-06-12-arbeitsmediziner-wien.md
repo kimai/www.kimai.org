@@ -10,6 +10,7 @@ company: Arbeitsmediziner.Wien
 homepage: Arbeitsmediziner.Wien
 homepage_url: https://www.arbeitsmediziner.wien
 logo: /images/stories/arbeitsmediziner-wien-logo.avif
+# https://unsplash.com/de/fotos/arzt-der-auf-eine-patientenakte-schreibt-8WYkI3cEZm8
 image: /images/stories/arbeitsmediziner-wien.webp
 person: Dr. Thomas Entner
 photo: /images/stories/arbeitsmediziner-wien-dr-thomas-entner.webp
