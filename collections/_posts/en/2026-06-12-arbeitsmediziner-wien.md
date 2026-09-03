@@ -14,7 +14,7 @@ image: /images/stories/arbeitsmediziner-wien.webp
 person: Dr. Thomas Entner
 photo: /images/stories/arbeitsmediziner-wien-dr-thomas-entner.webp
 quote: "Dr. Thomas Entner is an experienced occupational physician and radiologist with many years of expertise in workplace health prevention. He has been working as a radiologist in a hospital for many years. Since 2020, he has been helping companies create healthy and safe workplaces."
-quote2: "I think it's important not to give just any big OS company access to all my data; instead, I prefer to retain control over my own data."
+quote2: "I think it's important not to give a large external provider access to all my data, but to retain control over my data myself."
 position: Founder
 industry: Medical Services
 size: 1+
@@ -42,7 +42,7 @@ Founded in 2020 and based in Vienna, the company provides occupational health se
 
 **Physician and Independent Entrepreneur**
 
-Thomas lives a daily routine that feels like two jobs in one: a radiologist in a hospital during the day, and an independent occupational physician on the side. 
+Thomas combines two professional roles: his work as a radiologist at the hospital and his independent practice as an occupational physician. 
 And in between: appointments, company visits, vaccinations, examinations, organization, and the obligation to document everything properly. 
 *"My workday is varied. There really is no typical workday, because I'm on-site at different clients. It ranges from a regular office business to parking garage operators."*
 

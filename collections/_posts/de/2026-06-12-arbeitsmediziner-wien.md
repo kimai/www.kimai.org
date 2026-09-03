@@ -14,7 +14,7 @@ image: /images/stories/arbeitsmediziner-wien.webp
 person: Dr. Thomas Entner
 photo: /images/stories/arbeitsmediziner-wien-dr-thomas-entner.webp
 quote: "Dr. Thomas Entner ist ein erfahrener Arbeitsmediziner und Radiologe mit langjähriger Expertise in der betrieblichen Gesundheitsvorsorge. Seit vielen Jahren arbeitet er als Radiologe im Krankenhaus. Seit 2020 unterstützt er Unternehmen dabei, gesunde und sichere Arbeitsplätze zu schaffen."
-quote2: "Ich finde es wichtig, nicht irgendeiner großen OS-Bude den Zugriff auf alle meine Daten zu geben, sondern bevorzuge es, selber die Datenhoheit zu haben."
+quote2: "Ich finde es wichtig, nicht einem großen externen Anbieter Zugriff auf alle meine Daten zu geben, sondern die Datenhoheit selbst zu behalten."
 position: Gründer
 industry: Medizinische Dienstleistungen
 size: 1+
@@ -42,7 +42,7 @@ Das 2020 gegründete Unternehmen aus Wien bietet arbeitsmedizinische Betreuung m
 
 **Arzt und selbstständiger Unternehmer**
 
-Thomas lebt einen Alltag, der sich anfühlt wie zwei Jobs in einem: Tagsüber Radiologe im Krankenhaus, daneben selbstständiger Arbeitsmediziner. 
+Thomas verbindet zwei berufliche Rollen: seine Tätigkeit als Radiologe im Krankenhaus und seine selbstständige Arbeit als Arbeitsmediziner.
 Und dazwischen: Termine, Betriebe, Impfungen, Untersuchungen, Organisation und die Pflicht, alles sauber zu dokumentieren. 
 *“Der Arbeitsalltag ist abwechslungsreich. Also den typischen Arbeitsalltag, den gibt es nicht, weil ich bei unterschiedlichen Kunden vor Ort bin. Das geht von einem normalen Büroarbeitsbetrieb bis zu Garagenbetreibern.”*
 
