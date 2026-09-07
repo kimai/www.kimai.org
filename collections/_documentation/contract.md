@@ -116,6 +116,9 @@ Corrections must be made through counter-bookings: a new booking with the opposi
 
 ## How calculations work
 
+Kimai compares two values for every single day: the **expected time** (from the employment contract) and the **actual time** (from the recorded timesheets).
+Which timesheets are used for the actual time depends on the configured calculation mode, see ["Working time calculation modes"](#working-time-calculation-modes) below.
+
 Kimai only calculates working time up to the current moment.
 This means that adding a holiday for tomorrow, or any other future absence, will not affect your hour balance yet.
 
@@ -123,7 +126,12 @@ Please read the chapter ["How absences affect expected working time"]({% link _d
 
 In short: depending on the configured absence calculation mode, the reported annual working time can be significantly higher than the hours recorded in timesheets.
 
+The calculation mode is configured per absence type with the `Count as expected hours` settings in [System → Settings]({% link _documentation/configurations.md %}).
+Be aware that these settings use the internal absence type names: `Holiday` means vacation, `Public holiday` refers to the [public holiday administration]({% link _documentation/public-holiday.md %}) and `Absence` means the absence type `Other`.
+
 ### Absences compensate expected working time
+
+This is the behaviour when the matching `Count as expected hours` setting is **activated**.
 
 - **Public holidays** — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.
 - **Vacation** — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.
@@ -133,15 +141,112 @@ In short: depending on the configured absence calculation mode, the reported ann
 
 ### Absences reduce expected working time
 
+This is the behaviour when the matching `Count as expected hours` setting is **deactivated**.
+
 - **Public holidays** — Reduces the expected working time for that day to 0. If you create a timesheet on the same day, it is counted as overtime.
 - **Vacation** — Reduces the expected working time by the duration of the absence. A full-day vacation reduces it to 0. A half-day vacation reduces it accordingly. If you create a timesheet on the same day, it is counted as overtime.
 - **Sickness** — Reduces the remaining expected working time for that day. Either to 0 or for example, if the expected time is 8 hours and 2 hours have already been recorded, the remaining 6 hours are removed from the expected time.
 - **Other** — Reduces the expected working time by the configured absence duration.
 - **Time-Off** — Does not affect working time calculations. This entry is for informational purposes only.
 
+## Working time calculation modes
+
+By default, Kimai adds up **all** timesheets of a day to calculate the actual working time.
+With the setting `Only count entries of the selected project as working time` in [System → Settings]({% link _documentation/configurations.md %}) you can change that, so only the timesheets of one single project are used.
+
+This changes nothing about the way the working time is calculated — it only changes **which timesheets are taken into account**.
+Everything else (expected time from the contract, absences, public holidays, manual bookings, locking of months) behaves identically in both modes.
+
+Neither mode is better than the other. They describe two different ways of working, and you should pick the one that matches how your company records time.
+
+### All timesheets (default)
+
+No project is selected, and every timesheet a user records on any project counts towards the actual working time.
+
+Attendance and project work are the same data: the working day is a chain of consecutive timesheets.
+The employee starts a record when arriving, switches the project or activity whenever the task changes, and stops the last record when leaving.
+Time that cannot be assigned to a customer project (internal meetings, administration, training) still has to be recorded on some project, otherwise it is missing from the balance.
+
+**Advantages**
+
+- Easy to understandEvery recorded minute counts, so nothing can be lost by forgetting a second, separate record.
+- Project times and the time account validate each other: if the sum of the project times is wrong, the balance is visibly wrong as well.
+
+**Disadvantages**
+
+- When mixing project and attendance entries, you create many records per day and a lot of switching.
+- Every kind of non-project time needs its own "catch-all" project, otherwise the balance drops.
+- Gaps between records reduce the balance, as they look like a break.
+
+### Attendance project only
+
+One project is selected as the attendance project.
+Only the timesheets of that project are used to calculate the actual working time — all other timesheets are ignored for the employment contract.
+
+Those other timesheets are **not** deleted or changed in any way: they are still visible in `My times`, in all reports, exports, invoices and budgets.
+They simply no longer influence the time account.
+
+The working day now looks different: the employee starts one record on the attendance project in the morning and stops it in the evening.
+The real project times are recorded **in parallel** to this attendance record, and they can have gaps — they no longer need to cover the entire day.
+
+**Advantages**
+
+- Attendance (when was the employee at work) and project work (what did the employee do) are separated.
+- Project times no longer have to be gapless and can be recorded with the detail level that makes sense for controlling and invoicing.
+- Fewer records and less timesheet switching during the day.
+
+**Disadvantages**
+
+- The employee has to remember two things instead of one: the attendance record and the project times.
+- If the attendance record is missing, the day counts as zero actual time — even if project times were recorded for it.
+- Overlapping and parallel records have to be allowed for everybody (see below), which also allows them everywhere else.
+- Not all widgets and reports take this setting into account (we work on that).
+
+### Configuring the attendance project
+
+The project is selected in [System → Settings]({% link _documentation/configurations.md %}) with the setting `Only count entries of the selected project as working time`.
+
+- Only one single project can be selected.
+- The setting is global for the entire installation. There is no exception for single users, it applies to everyone.
+- If the field is left empty, Kimai uses mode 1 (all timesheets).
+
+Two further settings in [System → Settings]({% link _documentation/configurations.md %}) have to be adjusted, because the attendance record and the project record run at the same time:
+
+- `Allow overlapping time entries` has to be activated
+- `Maximum number of active/running entries` has to be at least `2`
+
+Both are required. If only one of them is changed, the employees cannot record their project times while the attendance record is running.
+
+### Recording breaks
+
+There are two ways to record breaks in the attendance mode, and which one fits depends on your company and on the legal requirements you have to fulfil.
+Some countries require the begin and the end of a break to be documented, others only require its duration.
+
+- **Stopping and restarting the attendance record** — the employee stops the attendance record when the break starts and creates a new one when the break ends. This results in several attendance records per day and documents the exact begin and end of every break.
+- **Using the `Break` field** — the employee keeps one single attendance record for the entire day and enters the break duration in the `Break` field of that record. Kimai subtracts this duration from the record, so only the duration of the break is documented, not its position within the day.
+
+Both variants reduce the actual working time by the same amount.
+
+### Switching between the modes
+
+Kimai does not store the actual working time of a day permanently. As long as a month is not locked, the values you see are recalculated from the timesheets every time the `Working times` screen is opened.
+Only when a month is locked, the calculated values are written to the database — and from then on they are never recalculated again.
+
+This is why the switch between the two modes must be prepared carefully:
+
+**Lock all previous months before you change the setting.**
+This includes the months of all previous years. As only the selected year is calculated at a time, you have to open every past year and lock its months individually.
+
+If you skip this, all days that are not locked will be recalculated with the new rule as soon as you save the setting.
+Switching to the attendance project mode would then set the actual time of all those past days to zero (no attendance records exist for them yet), which results in a massive negative balance for every employee.
+Switching back has exactly the same effect in the other direction.
+
+Because months can only be locked completely, the switch is only possible at the beginning of a month.
+Plan it accordingly: lock everything up to the end of the current month, inform your employees about the new way of recording, and change the setting when the new month starts.
+
 ## Limit timesheets to working days
 
-There is a validation that can be activated in [System → Settings]({% link _documentation/configurations.md %}), which helps to restrict timesheets to contractual working days.
+There is a validation called `Allow time entries only for days for which expected hours are defined in the employment contract`, which can be activated in [System → Settings]({% link _documentation/configurations.md %}) and helps to restrict timesheets to contractual working days.
 Once activated, users cannot create timesheets for days without active contract setting.
 So a user who works Monday to Thursday cannot create timesheets for Fridays.
 
