@@ -158,6 +158,12 @@ Switch back to the previous year and remember to lock the entire year.
 
 Read more about manual bookings in the [Working times]({% link _documentation/contract.md %}) chapter. 
 
+## Settings
+
+Settings for Absences can be found under "Employment contract".
+
+{% include documentation/configurations.md id="controlling" howto=true %}
+
 ## Permissions
 
 {% include documentation/permissions.md id="absences" howto=true %}
