@@ -756,6 +756,27 @@ You can use it for a quick customer report, an internal Excel analysis, or a CSV
   <li><strong>HTML</strong> for a browser-friendly print view that you can review or save as PDF</li>
 </ul>
 
+<h3 id="csv-export">CSV export</h3>
+
+<p>The CSV export is meant as a plain data interchange format.
+Use it when another system reads the file: accounting software, a BI tool, a payroll system, or your own import script.</p>
+
+<p>The difference to the Excel export:</p>
+
+<ul>
+  <li>CSV is a pure text format without formatting, data types, formulas, or multiple sheets</li>
+  <li>XLSX keeps cell types (dates, numbers, durations), column formatting and summaries, and is meant to be opened and worked with in a spreadsheet application</li>
+  <li>CSV only contains the raw column values, separated by a comma or semicolon (see the <code class="language-plaintext highlighter-rouge">Separator</code> option of the export template)</li>
+</ul>
+
+<p>In short: choose CSV for machine-to-machine data transfer and XLSX whenever a human opens the file in Excel or a similar application.</p>
+
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p>The CSV export does not apply the same validation and escaping as the Excel export: the values are written to the file as they were entered in Kimai.
+Spreadsheet applications like Excel, LibreOffice Calc, or Numbers interpret certain cell values as formulas and may execute them when the file is opened.
+Therefore, do not use the CSV export if the file is opened or edited in a spreadsheet application that executes formulas automatically - use the XLSX export instead.</p>
+</div>
+
 <h2 id="export-state">Export state</h2>
 
 <div class="youtube-wrapper" style="max-width: 560px;">
@@ -978,7 +999,7 @@ If users must not see rates or other sensitive columns, do not grant them <code 
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#export-vs-invoice" class="nav-link">Export vs. invoice</a></li><li class="nav-item"><a href="#how-export-works" class="nav-link">How export works</a></li><li class="nav-item"><a href="#supported-formats" class="nav-link">Supported formats</a></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#reusable-export-templates" class="nav-link">Reusable export templates</a><ul><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a></li><li class="nav-item"><a href="#pdf-option" class="nav-link">PDF option</a></li><li class="nav-item"><a href="#csv-option" class="nav-link">CSV option</a></li><li class="nav-item"><a href="#share-templates-with-care" class="nav-link">Share templates with care</a></li></ul></li><li class="nav-item"><a href="#custom-pdf-and-html-templates" class="nav-link">Custom PDF and HTML templates</a><ul><li class="nav-item"><a href="#access-custom-fields-in-pdf-templates" class="nav-link">Access custom fields in PDF templates</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li></ul></li><li class="nav-item"><a href="#automation-and-integrations" class="nav-link">Automation and integrations</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#export-vs-invoice" class="nav-link">Export vs. invoice</a></li><li class="nav-item"><a href="#how-export-works" class="nav-link">How export works</a></li><li class="nav-item"><a href="#supported-formats" class="nav-link">Supported formats</a><ul><li class="nav-item"><a href="#csv-export" class="nav-link">CSV export</a></li></ul></li><li class="nav-item"><a href="#export-state" class="nav-link">Export state</a></li><li class="nav-item"><a href="#reusable-export-templates" class="nav-link">Reusable export templates</a><ul><li class="nav-item"><a href="#create-a-template" class="nav-link">Create a template</a></li><li class="nav-item"><a href="#pdf-option" class="nav-link">PDF option</a></li><li class="nav-item"><a href="#csv-option" class="nav-link">CSV option</a></li><li class="nav-item"><a href="#share-templates-with-care" class="nav-link">Share templates with care</a></li></ul></li><li class="nav-item"><a href="#custom-pdf-and-html-templates" class="nav-link">Custom PDF and HTML templates</a><ul><li class="nav-item"><a href="#access-custom-fields-in-pdf-templates" class="nav-link">Access custom fields in PDF templates</a></li><li class="nav-item"><a href="#time-format" class="nav-link">Time format</a></li></ul></li><li class="nav-item"><a href="#automation-and-integrations" class="nav-link">Automation and integrations</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             

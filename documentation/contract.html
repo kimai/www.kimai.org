@@ -817,6 +817,9 @@ An immutable record protects employees from having their time balance quietly re
 
 <h2 id="how-calculations-work">How calculations work</h2>
 
+<p>Kimai compares two values for every single day: the <strong>expected time</strong> (from the employment contract) and the <strong>actual time</strong> (from the recorded timesheets).
+Which timesheets are used for the actual time depends on the configured calculation mode, see <a href="#working-time-calculation-modes">“Working time calculation modes”</a> below.</p>
+
 <p>Kimai only calculates working time up to the current moment.
 This means that adding a holiday for tomorrow, or any other future absence, will not affect your hour balance yet.</p>
 
@@ -824,7 +827,12 @@ This means that adding a holiday for tomorrow, or any other future absence, will
 
 <p>In short: depending on the configured absence calculation mode, the reported annual working time can be significantly higher than the hours recorded in timesheets.</p>
 
+<p>The calculation mode is configured per absence type with the <code class="language-plaintext highlighter-rouge">Count as expected hours</code> settings in <a href="/documentation/configurations.html">System → Settings</a>.
+Be aware that these settings use the internal absence type names: <code class="language-plaintext highlighter-rouge">Holiday</code> means vacation, <code class="language-plaintext highlighter-rouge">Public holiday</code> refers to the <a href="/documentation/public-holiday.html">public holiday administration</a> and <code class="language-plaintext highlighter-rouge">Absence</code> means the absence type <code class="language-plaintext highlighter-rouge">Other</code>.</p>
+
 <h3 id="absences-compensate-expected-working-time">Absences compensate expected working time</h3>
+
+<p>This is the behaviour when the matching <code class="language-plaintext highlighter-rouge">Count as expected hours</code> setting is <strong>activated</strong>.</p>
 
 <ul>
   <li><strong>Public holidays</strong> — The configured working time for that day is added as worked time. If you create a timesheet on the same day, it is counted as overtime.</li>
@@ -836,6 +844,8 @@ This means that adding a holiday for tomorrow, or any other future absence, will
 
 <h3 id="absences-reduce-expected-working-time">Absences reduce expected working time</h3>
 
+<p>This is the behaviour when the matching <code class="language-plaintext highlighter-rouge">Count as expected hours</code> setting is <strong>deactivated</strong>.</p>
+
 <ul>
   <li><strong>Public holidays</strong> — Reduces the expected working time for that day to 0. If you create a timesheet on the same day, it is counted as overtime.</li>
   <li><strong>Vacation</strong> — Reduces the expected working time by the duration of the absence. A full-day vacation reduces it to 0. A half-day vacation reduces it accordingly. If you create a timesheet on the same day, it is counted as overtime.</li>
@@ -844,9 +854,118 @@ This means that adding a holiday for tomorrow, or any other future absence, will
   <li><strong>Time-Off</strong> — Does not affect working time calculations. This entry is for informational purposes only.</li>
 </ul>
 
+<h2 id="working-time-calculation-modes">Working time calculation modes</h2>
+
+<p>By default, Kimai adds up <strong>all</strong> timesheets of a day to calculate the actual working time.
+With the setting <code class="language-plaintext highlighter-rouge">Only count entries of the selected project as working time</code> in <a href="/documentation/configurations.html">System → Settings</a> you can change that, so only the timesheets of one single project are used.</p>
+
+<p>This changes nothing about the way the working time is calculated — it only changes <strong>which timesheets are taken into account</strong>.
+Everything else (expected time from the contract, absences, public holidays, manual bookings, locking of months) behaves identically in both modes.</p>
+
+<p>Neither mode is better than the other. They describe two different ways of working, and you should pick the one that matches how your company records time.</p>
+
+<h3 id="all-timesheets-default">All timesheets (default)</h3>
+
+<p>No project is selected, and every timesheet a user records on any project counts towards the actual working time.</p>
+
+<p>Attendance and project work are the same data: the working day is a chain of consecutive timesheets.
+The employee starts a record when arriving, switches the project or activity whenever the task changes, and stops the last record when leaving.
+Time that cannot be assigned to a customer project (internal meetings, administration, training) still has to be recorded on some project, otherwise it is missing from the balance.</p>
+
+<p><strong>Advantages</strong></p>
+
+<ul>
+  <li>Easy to understandEvery recorded minute counts, so nothing can be lost by forgetting a second, separate record.</li>
+  <li>Project times and the time account validate each other: if the sum of the project times is wrong, the balance is visibly wrong as well.</li>
+</ul>
+
+<p><strong>Disadvantages</strong></p>
+
+<ul>
+  <li>When mixing project and attendance entries, you create many records per day and a lot of switching.</li>
+  <li>Every kind of non-project time needs its own “catch-all” project, otherwise the balance drops.</li>
+  <li>Gaps between records reduce the balance, as they look like a break.</li>
+</ul>
+
+<h3 id="attendance-project-only">Attendance project only</h3>
+
+<p>One project is selected as the attendance project.
+Only the timesheets of that project are used to calculate the actual working time — all other timesheets are ignored for the employment contract.</p>
+
+<p>Those other timesheets are <strong>not</strong> deleted or changed in any way: they are still visible in <code class="language-plaintext highlighter-rouge">My times</code>, in all reports, exports, invoices and budgets.
+They simply no longer influence the time account.</p>
+
+<p>The working day now looks different: the employee starts one record on the attendance project in the morning and stops it in the evening.
+The real project times are recorded <strong>in parallel</strong> to this attendance record, and they can have gaps — they no longer need to cover the entire day.</p>
+
+<p><strong>Advantages</strong></p>
+
+<ul>
+  <li>Attendance (when was the employee at work) and project work (what did the employee do) are separated.</li>
+  <li>Project times no longer have to be gapless and can be recorded with the detail level that makes sense for controlling and invoicing.</li>
+  <li>Fewer records and less timesheet switching during the day.</li>
+</ul>
+
+<p><strong>Disadvantages</strong></p>
+
+<ul>
+  <li>The employee has to remember two things instead of one: the attendance record and the project times.</li>
+  <li>If the attendance record is missing, the day counts as zero actual time — even if project times were recorded for it.</li>
+  <li>Overlapping and parallel records have to be allowed for everybody (see below), which also allows them everywhere else.</li>
+  <li>Not all widgets and reports take this setting into account (we work on that).</li>
+</ul>
+
+<h3 id="configuring-the-attendance-project">Configuring the attendance project</h3>
+
+<p>The project is selected in <a href="/documentation/configurations.html">System → Settings</a> with the setting <code class="language-plaintext highlighter-rouge">Only count entries of the selected project as working time</code>.</p>
+
+<ul>
+  <li>Only one single project can be selected.</li>
+  <li>The setting is global for the entire installation. There is no exception for single users, it applies to everyone.</li>
+  <li>If the field is left empty, Kimai uses mode 1 (all timesheets).</li>
+</ul>
+
+<p>Two further settings in <a href="/documentation/configurations.html">System → Settings</a> have to be adjusted, because the attendance record and the project record run at the same time:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Allow overlapping time entries</code> has to be activated</li>
+  <li><code class="language-plaintext highlighter-rouge">Maximum number of active/running entries</code> has to be at least <code class="language-plaintext highlighter-rouge">2</code></li>
+</ul>
+
+<p>Both are required. If only one of them is changed, the employees cannot record their project times while the attendance record is running.</p>
+
+<h3 id="recording-breaks">Recording breaks</h3>
+
+<p>There are two ways to record breaks in the attendance mode, and which one fits depends on your company and on the legal requirements you have to fulfil.
+Some countries require the begin and the end of a break to be documented, others only require its duration.</p>
+
+<ul>
+  <li><strong>Stopping and restarting the attendance record</strong> — the employee stops the attendance record when the break starts and creates a new one when the break ends. This results in several attendance records per day and documents the exact begin and end of every break.</li>
+  <li><strong>Using the <code class="language-plaintext highlighter-rouge">Break</code> field</strong> — the employee keeps one single attendance record for the entire day and enters the break duration in the <code class="language-plaintext highlighter-rouge">Break</code> field of that record. Kimai subtracts this duration from the record, so only the duration of the break is documented, not its position within the day.</li>
+</ul>
+
+<p>Both variants reduce the actual working time by the same amount.</p>
+
+<h3 id="switching-between-the-modes">Switching between the modes</h3>
+
+<p>Kimai does not store the actual working time of a day permanently. As long as a month is not locked, the values you see are recalculated from the timesheets every time the <code class="language-plaintext highlighter-rouge">Working times</code> screen is opened.
+Only when a month is locked, the calculated values are written to the database — and from then on they are never recalculated again.</p>
+
+<p>This is why the switch between the two modes must be prepared carefully:</p>
+
+<p><strong>Lock all previous months before you change the setting.</strong>
+This includes the months of all previous years. As only the selected year is calculated at a time, you have to open every past year and lock its months individually.</p>
+
+<p>If you skip this, all days that are not locked will be recalculated with the new rule as soon as you save the setting.
+Switching to the attendance project mode would then set the actual time of all those past days to zero (no attendance records exist for them yet), which results in a massive negative balance for every employee.
+Switching back has exactly the same effect in the other direction.</p>
+
+<p>Because months can only be locked completely, the switch is only possible at the beginning of a month.
+Plan it accordingly: lock everything up to the end of the current month, inform your employees about the new way of recording, and change the setting when the new month starts.</p>
+
 <h2 id="limit-timesheets-to-working-days">Limit timesheets to working days</h2>
 
-<p>There is a validation that can be activated in <a href="/documentation/configurations.html">System → Settings</a>, which helps to restrict timesheets to contractual working days.
+<p>There is a validation called <code class="language-plaintext highlighter-rouge">Allow time entries only for days for which expected hours are defined in the employment contract</code>, which can be activated in <a href="/documentation/configurations.html">System → Settings</a> and helps to restrict timesheets to contractual working days.
 Once activated, users cannot create timesheets for days without active contract setting.
 So a user who works Monday to Thursday cannot create timesheets for Fridays.</p>
 
@@ -882,8 +1001,19 @@ you have to roll over the hours to the next year:</p>
 
 <ul class="table">
   <li><code class="language-plaintext highlighter-rouge">Absence: Comment is a mandatory field</code> — Whether users have to enter a comment with their absence requests</li>
-  <li><code class="language-plaintext highlighter-rouge">Allow half days for holidays</code> — Whether users can request half-day absences</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow half days for holidays</code> — Whether users can request half days of vacation. Turn it off if you only agree to full vacation days</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow time entries only for days for which expected hours are defined in the employment contract</code> — Prevents timesheets on days without expected working hours, e.g. a user working Monday to Thursday cannot record time on Fridays. The permission <code class="language-plaintext highlighter-rouge">workdays_override_timesheet</code> allows to bypass this validation</li>
+  <li><code class="language-plaintext highlighter-rouge">Only count entries of the selected project as working time</code> — If a project is selected, only timesheets of this project are used to calculate the actual working time and all other timesheets are ignored for the employment contract. Leave it empty to count all timesheets</li>
+  <li><code class="language-plaintext highlighter-rouge">Public holidays</code> — The service used by the import dialog in the public holiday administration. <code class="language-plaintext highlighter-rouge">Yasumi</code> is the recommended default, use <code class="language-plaintext highlighter-rouge">Google</code> only if Yasumi does not return any results for your country or region</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Public holiday</code> — When enabled, a public holiday counts as worked hours towards the expected daily hours. When disabled, the expected hours for that day are set to 0</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Sickness</code> — When enabled, a sickness fills up the remaining hours of the day until the expected duration is reached. When disabled, it reduces the remaining expected hours of that day instead</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Absence</code> — Applies to the absence type <code class="language-plaintext highlighter-rouge">Other</code>. When enabled, the configured absence duration counts as worked hours. When disabled, it reduces the expected hours by the same duration</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Holiday</code> — Applies to vacation. When enabled, the vacation counts as worked hours towards the expected daily hours. When disabled, it reduces the expected hours by the duration of the vacation</li>
 </ul>
+
+<p>The four <code class="language-plaintext highlighter-rouge">Count as expected hours</code> settings control the absence calculation mode and can be configured individually for every absence type.
+Please note that the labels use the internal absence type names: <code class="language-plaintext highlighter-rouge">Holiday</code> means vacation, <code class="language-plaintext highlighter-rouge">Public holiday</code> means a day from the public holiday administration and <code class="language-plaintext highlighter-rouge">Absence</code> means the absence type <code class="language-plaintext highlighter-rouge">Other</code>.
+The absence type <code class="language-plaintext highlighter-rouge">Time-Off</code> has no setting, because it never influences the working time calculation.</p>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -963,7 +1093,7 @@ you have to roll over the hours to the next year:</p>
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#why-immmutable" class="nav-link">Why immmutable?</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#absences-compensate-expected-working-time" class="nav-link">Absences compensate expected working time</a></li><li class="nav-item"><a href="#absences-reduce-expected-working-time" class="nav-link">Absences reduce expected working time</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#carry-over-your-time-balance-to-the-next-year" class="nav-link">Carry over your time balance to the next year</a></li><li class="nav-item"><a href="#video" class="nav-link">Video</a></li><li class="nav-item"><a href="#settings" class="nav-link">Settings</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#user-interface" class="nav-link">User interface</a></li><li class="nav-item"><a href="#summary" class="nav-link">Summary</a></li><li class="nav-item"><a href="#working-times" class="nav-link">Working times</a></li><li class="nav-item"><a href="#lock-a-month" class="nav-link">Lock a month</a><ul><li class="nav-item"><a href="#unlock-a-month" class="nav-link">Unlock a month</a></li></ul></li><li class="nav-item"><a href="#changing-a-work-contract" class="nav-link">Changing a work contract</a></li><li class="nav-item"><a href="#manual-bookings" class="nav-link">Manual bookings</a><ul><li class="nav-item"><a href="#account-working-times" class="nav-link">Account working times</a></li><li class="nav-item"><a href="#holidays" class="nav-link">Holidays</a></li><li class="nav-item"><a href="#why-immmutable" class="nav-link">Why immmutable?</a></li></ul></li><li class="nav-item"><a href="#how-calculations-work" class="nav-link">How calculations work</a><ul><li class="nav-item"><a href="#absences-compensate-expected-working-time" class="nav-link">Absences compensate expected working time</a></li><li class="nav-item"><a href="#absences-reduce-expected-working-time" class="nav-link">Absences reduce expected working time</a></li></ul></li><li class="nav-item"><a href="#working-time-calculation-modes" class="nav-link">Working time calculation modes</a><ul><li class="nav-item"><a href="#all-timesheets-default" class="nav-link">All timesheets (default)</a></li><li class="nav-item"><a href="#attendance-project-only" class="nav-link">Attendance project only</a></li><li class="nav-item"><a href="#configuring-the-attendance-project" class="nav-link">Configuring the attendance project</a></li><li class="nav-item"><a href="#recording-breaks" class="nav-link">Recording breaks</a></li><li class="nav-item"><a href="#switching-between-the-modes" class="nav-link">Switching between the modes</a></li></ul></li><li class="nav-item"><a href="#limit-timesheets-to-working-days" class="nav-link">Limit timesheets to working days</a></li><li class="nav-item"><a href="#carry-over-your-time-balance-to-the-next-year" class="nav-link">Carry over your time balance to the next year</a></li><li class="nav-item"><a href="#video" class="nav-link">Video</a></li><li class="nav-item"><a href="#settings" class="nav-link">Settings</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                     <ul class="nav">
                         <li>

@@ -746,6 +746,17 @@
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.</p>
 </div>
 
+<h3 id="import-provider">Import provider</h3>
+
+<p>The data source used by the import dialog is selected with the <code class="language-plaintext highlighter-rouge">Public holidays</code> setting in <a href="/documentation/configurations.html">System → Settings</a>.</p>
+
+<ul>
+  <li><strong>Yasumi</strong> — the default &amp; recommended option. The holidays are calculated inside your Kimai installation, no external service is contacted. Yasumi offers countries as well as regions, so you can import the holidays of a single federal state or province.</li>
+  <li><strong>Google</strong> — only recommended if Yasumi does not return any results for your country. Google offers countries only, there are no regions to choose from. The holidays are downloaded from public Google calendars, which means your server needs to be able to reach <code class="language-plaintext highlighter-rouge">www.google.com</code>.</li>
+</ul>
+
+<p>Changing the provider does not touch the public holidays that were already imported. The setting only affects the next import.</p>
+
 <h2 id="editing-public-holidays">Editing public holidays</h2>
 
 <p>By editing single public holidays you can:</p>
@@ -814,7 +825,7 @@
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li></ul></li><li class="nav-item"><a href="#editing-public-holidays" class="nav-link">Editing public holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#faq-admins" class="nav-link">FAQ Admins</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#public-holiday-groups" class="nav-link">Public holiday groups</a><ul><li class="nav-item"><a href="#default-group" class="nav-link">Default group</a></li><li class="nav-item"><a href="#multiple-locations" class="nav-link">Multiple locations</a></li></ul></li><li class="nav-item"><a href="#managing-public-holidays" class="nav-link">Managing public holidays</a><ul><li class="nav-item"><a href="#creating-holidays" class="nav-link">Creating holidays</a></li><li class="nav-item"><a href="#import-feature" class="nav-link">Import feature</a></li><li class="nav-item"><a href="#import-provider" class="nav-link">Import provider</a></li></ul></li><li class="nav-item"><a href="#editing-public-holidays" class="nav-link">Editing public holidays</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li><li class="nav-item"><a href="#faq-admins" class="nav-link">FAQ Admins</a></li></ul>
                     
                     <ul class="nav">
                         <li>

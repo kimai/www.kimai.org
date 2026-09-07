@@ -1146,8 +1146,19 @@ supporting simple lists and other HTML content. It will only be rendered in <cod
 
 <ul class="table">
   <li><code class="language-plaintext highlighter-rouge">Absence: Comment is a mandatory field</code> — Whether users have to enter a comment with their absence requests</li>
-  <li><code class="language-plaintext highlighter-rouge">Allow half days for holidays</code> — Whether users can request half-day absences</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow half days for holidays</code> — Whether users can request half days of vacation. Turn it off if you only agree to full vacation days</li>
+  <li><code class="language-plaintext highlighter-rouge">Allow time entries only for days for which expected hours are defined in the employment contract</code> — Prevents timesheets on days without expected working hours, e.g. a user working Monday to Thursday cannot record time on Fridays. The permission <code class="language-plaintext highlighter-rouge">workdays_override_timesheet</code> allows to bypass this validation</li>
+  <li><code class="language-plaintext highlighter-rouge">Only count entries of the selected project as working time</code> — If a project is selected, only timesheets of this project are used to calculate the actual working time and all other timesheets are ignored for the employment contract. Leave it empty to count all timesheets</li>
+  <li><code class="language-plaintext highlighter-rouge">Public holidays</code> — The service used by the import dialog in the public holiday administration. <code class="language-plaintext highlighter-rouge">Yasumi</code> is the recommended default, use <code class="language-plaintext highlighter-rouge">Google</code> only if Yasumi does not return any results for your country or region</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Public holiday</code> — When enabled, a public holiday counts as worked hours towards the expected daily hours. When disabled, the expected hours for that day are set to 0</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Sickness</code> — When enabled, a sickness fills up the remaining hours of the day until the expected duration is reached. When disabled, it reduces the remaining expected hours of that day instead</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Absence</code> — Applies to the absence type <code class="language-plaintext highlighter-rouge">Other</code>. When enabled, the configured absence duration counts as worked hours. When disabled, it reduces the expected hours by the same duration</li>
+  <li><code class="language-plaintext highlighter-rouge">Count as expected hours: Holiday</code> — Applies to vacation. When enabled, the vacation counts as worked hours towards the expected daily hours. When disabled, it reduces the expected hours by the duration of the vacation</li>
 </ul>
+
+<p>The four <code class="language-plaintext highlighter-rouge">Count as expected hours</code> settings control the absence calculation mode and can be configured individually for every absence type.
+Please note that the labels use the internal absence type names: <code class="language-plaintext highlighter-rouge">Holiday</code> means vacation, <code class="language-plaintext highlighter-rouge">Public holiday</code> means a day from the public holiday administration and <code class="language-plaintext highlighter-rouge">Absence</code> means the absence type <code class="language-plaintext highlighter-rouge">Other</code>.
+The absence type <code class="language-plaintext highlighter-rouge">Time-Off</code> has no setting, because it never influences the working time calculation.</p>
 
 <h2 id="kiosk">Kiosk</h2>
 
