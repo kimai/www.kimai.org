@@ -55,6 +55,15 @@ The import dialog provides a worldwide location database.
 
 {% alert warning %}The imported data has been calculated automatically, is not subject to any liability and needs to be verified after import.{% endalert %}
 
+### Import provider
+
+The data source used by the import dialog is selected with the `Public holidays` setting in [System → Settings]({% link _documentation/configurations.md %}).
+
+- **Yasumi** — the default & recommended option. The holidays are calculated inside your Kimai installation, no external service is contacted. Yasumi offers countries as well as regions, so you can import the holidays of a single federal state or province.
+- **Google** — only recommended if Yasumi does not return any results for your country. Google offers countries only, there are no regions to choose from. The holidays are downloaded from public Google calendars, which means your server needs to be able to reach `www.google.com`.
+
+Changing the provider does not touch the public holidays that were already imported. The setting only affects the next import.
+
 ## Editing public holidays
 
 By editing single public holidays you can:
