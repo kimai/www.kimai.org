@@ -714,8 +714,7 @@
 
 <h2 id="customer">Customer</h2>
 
-<p>Customers will not be updated, if you import the same file multiple-times, you will end up with several customers with the same name.
-You will have to delete the imported customers if you plan to re-import a file.</p>
+<p>Customers will be updated if a customer exists with the <code class="language-plaintext highlighter-rouge">Customer</code> / <code class="language-plaintext highlighter-rouge">Name</code> name, otherwise a new customer will be created.</p>
 
 <table class="table">
   <thead>
@@ -806,6 +805,10 @@ You will have to delete the imported customers if you plan to re-import a file.<
       <td>Whether the customer is visible or not (supported values: <code class="language-plaintext highlighter-rouge">1</code> or <code class="language-plaintext highlighter-rouge">0</code>)</td>
     </tr>
     <tr>
+      <td>Language</td>
+      <td>The customers language</td>
+    </tr>
+    <tr>
       <td>meta.xxx</td>
       <td>Custom fields, e.g. <code class="language-plaintext highlighter-rouge">meta.foo</code> for a custom field with the internal name <code class="language-plaintext highlighter-rouge">foo</code></td>
     </tr>
@@ -814,8 +817,10 @@ You will have to delete the imported customers if you plan to re-import a file.<
 
 <h2 id="projects">Projects</h2>
 
-<p>Projects will not be updated, if you import the same file multiple-times, you will end up with several projects with the same name and customer.
-You will have to delete the imported projects if you plan to re-import a file.</p>
+<ul>
+  <li>Customers will be updated if a customer exists with the <code class="language-plaintext highlighter-rouge">Customer</code> name, otherwise a new customer will be created.</li>
+  <li>Projects will be updated if a <code class="language-plaintext highlighter-rouge">Project</code> / <code class="language-plaintext highlighter-rouge">Name</code> exists for the <code class="language-plaintext highlighter-rouge">Customer</code>, otherwise a new project will be created.</li>
+</ul>
 
 <table class="table">
   <thead>
