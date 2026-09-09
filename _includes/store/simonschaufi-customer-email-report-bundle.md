@@ -31,7 +31,7 @@ Dies ist erforderlich, um den Befehl `bin/console customer-email-report:send` au
 
 Wenn Sie den E-Mail-Bericht täglich um 1:00 Uhr nachts in deutscher Sprache versenden möchten, können Sie den folgenden Cronjob verwenden:
 
-```
+```bash
 0 1 * * * /usr/bin/php8.1 /var/www/html/kimai/bin/console customer-email-report:send --locale=de >/dev/null 2>&1
 ```
 {% else %}
@@ -67,7 +67,7 @@ This is required for executing the command `bin/console customer-email-report:se
 
 If you want to send the email report in English daily at 1:00 am, you can use the following cronjob:
 
-```
+```bash
 0 1 * * * /usr/bin/php8.1 /var/www/html/kimai/bin/console customer-email-report:send --locale=en >/dev/null 2>&1
 ```
 {% endif %}
