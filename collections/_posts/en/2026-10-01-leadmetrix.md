@@ -1,6 +1,6 @@
 ---
 title: "Leadmetrix"
-date: "2026-19-01 12:00:00 +0200"
+date: "2026-10-01 12:00:00 +0200"
 permalink: /en/stories/leadmetrix
 layout: story
 tags: [stories]
