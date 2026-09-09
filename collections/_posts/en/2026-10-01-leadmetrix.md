@@ -6,11 +6,10 @@ layout: story
 tags: [stories]
 author: nikita
 excerpt: How a revenue operations agency turned time tracking into a competitive advantage with Kimai Time Tracker
-company: Leadmetrix
 homepage: www.leadmetrix.com
 homepage_url: https://www.leadmetrix.com
 logo: /images/stories/leadmetrix-logo.svg
-# https://unsplash.com/de/fotos/arzt-der-auf-eine-patientenakte-schreibt-8WYkI3cEZm8
+# https://unsplash.com/de/fotos/vier-personen-arbeiten-an-schreibtischen-in-einem-modernen-buro-LycaA7rWsHc
 image: /images/stories/leadmetrix-image.webp
 person: Gil Ben-Horin
 photo: /images/stories/leadmetrix-photo.webp
