@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>CLI - Remote console – Kimai</title>
+<meta name="description" content="Running Kimai commands via command line from a remote console">
+<link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CLI - Remote console">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="Running Kimai commands via command line from a remote console">
+<link href="/assets/build/main.css?v13" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow position-sticky top-0" style="z-index: 40" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo" class="me-2">
+                Kimai Docs
+            </a>
+            <span class="badge bg-warning">Documentation</span>
+        </div>
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link ">
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link ">
+                            Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link ">
+                            Self hosting
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-developer.html" class="nav-link ">
+                            Developer
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<aside class="bg-dark">
+    <div id="componentsNav" class="bg-dark offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100" style="width: 19rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/" class="navbar-brand d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
+                Kimai Docs
+            </a>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-cloud opacity-70 me-1"></i>
+                        Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-server opacity-70 me-1"></i>
+                        Self hosting
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code-alt opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body overflow-scroll w-100 p-4">
+            <div class="h-auto docsnavi">
+                
+                    <a href="/en/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const dpm = document.getElementById('docnavi-cli');
+        if (dpm !== null) {
+            dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    });
+</script>
+<main class="docs-container">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-baseline justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="w-100">
+                        <div class="d-flex align-items-baseline justify-content-between gap-3 pb-1">
+                            <div class="d-flex align-items-baseline flex-wrap gap-2">
+                                <h1 class="mb-0" data-pagefind-meta="title" data-pagefind-weight="10.0">
+                                    CLI - Remote console
+                                </h1>
+                                <div id="availability-pills" class="d-flex flex-shrink-0 gap-2">
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-flex">
+                            
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary btn-sm dropdown-toggle rounded-3 px-3" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Latest
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+                <a class="dropdown-item" href="#">Latest (2.66.0)</a>
+            
+        </div>
+    </div>
+
+                            </div>
+                        </div>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Running Kimai commands via command line from a remote console</p>
+                        
+                    </div>
+                </div>
+
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>This is a small PHP application to access your Kimai installation from the command line, utilizing Kimai’s JSON API.</p>
+
+<p>The code can be found at <a href="https://github.com/kimai/cli">https://github.com/kimai/cli</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p><strong>Requirements</strong></p>
+
+<ul>
+  <li>Kimai &gt; v2.14.0</li>
+  <li>PHP 8.1 to 8.4</li>
+  <li>cURL extension</li>
+  <li>json extension</li>
+  <li>iconv extension</li>
+  <li>zlib extension</li>
+  <li>mbstring extension</li>
+</ul>
+
+<p>To install the Kimai console tools, execute the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-LO</span> https://github.com/kimai/cli/releases/latest/download/kimai.phar
+curl <span class="nt">-LO</span> https://github.com/kimai/cli/releases/latest/download/kimai.phar.sha1
+<span class="nb">sha1sum</span> <span class="nt">--check</span> kimai.phar.sha1
+<span class="nb">rm </span>kimai.phar.sha1
+<span class="nb">chmod</span> +x kimai.phar
+<span class="nb">mv </span>kimai.phar /usr/local/bin/kimai
+</code></pre></div></div>
+
+<h3 id="configuration-file">Configuration file</h3>
+
+<p>Before using it the first time, you have to create a configuration file, which holds the connection infos for Kimai.
+By default this config file will be located at <code class="language-plaintext highlighter-rouge">~/.kimai-api.json</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kimai configuration
+</code></pre></div></div>
+
+<p>Make sure the file is only readable for your own user:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>600 ~/.kimai-api.json
+</code></pre></div></div>
+
+<p>That’s it, you can use Kimai from the command line now.</p>
+
+<p>By default, the configuration file targets the demo installation and will work…
+but now it’s time to target your own Kimai, so please edit the config file and change the settings:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">URL</code>: the Kimai installation URL</li>
+  <li><code class="language-plaintext highlighter-rouge">API_TOKEN</code>: your Kimai API token (can be set when editing your profile)</li>
+  <li><code class="language-plaintext highlighter-rouge">OPTIONS</code>: an array of request options for CURL (see <a href="http://docs.guzzlephp.org/en/stable/request-options.html">guzzle docs</a>)</li>
+</ul>
+
+<p>FAQ:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">I want to use a self-signed certificate</code> - add <code class="language-plaintext highlighter-rouge">"OPTIONS": {"verify": false}</code> to your configuration</li>
+</ul>
+
+<h2 id="available-commands">Available commands</h2>
+
+<p>You get a list of all available commands with <code class="language-plaintext highlighter-rouge">kimai</code>.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">kimai active</code> - display and update all running timesheets (via <code class="language-plaintext highlighter-rouge">--description</code> and <code class="language-plaintext highlighter-rouge">--tags</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai stop</code> - stop currently active timesheets and update them (via <code class="language-plaintext highlighter-rouge">--description</code> and <code class="language-plaintext highlighter-rouge">--tags</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai start</code> - start a new timesheet (see below)</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai customer:list</code> - show a list of customers</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai project:list</code> - show a list of projects</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai activity:list</code> - show a list of activities</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai version</code> - show the full version string of the remote installation</li>
+  <li><code class="language-plaintext highlighter-rouge">kimai configuration</code> - creates the initial configuration file or displays it</li>
+</ul>
+
+<p>To get help for a dedicated command use the <code class="language-plaintext highlighter-rouge">--help</code> switch, eg: <code class="language-plaintext highlighter-rouge">kimai project:list --help</code></p>
+
+<h3 id="start-a-timesheet">Start a timesheet</h3>
+
+<p>This command tries to detect customer, project and activity from your input in the following way:</p>
+
+<ul>
+  <li>if it is a number, then it tries to load the entity by its ID
+    <ul>
+      <li>if a entity is found, it will be used</li>
+    </ul>
+  </li>
+  <li>if it is a string, then this is just as search term
+    <ul>
+      <li>if one entity is found, it will be used</li>
+      <li>if multiple entities are found, a select list is shown</li>
+    </ul>
+  </li>
+  <li>if nothing is given or no result was found in the previous steps, a list of all entities is fetched and shown for selection
+    <ul>
+      <li>this list might be filtered (eg. only activities for found project)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This most simple example will display a select list for all customers, then a filtered list for the projects of the chosen customer and finally a select list for all activities for the chosen project:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/kimai start
+</code></pre></div></div>
+
+<p>Example to start a new timesheet by search terms only, adding a description and some tags:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/kimai start --customer Schowalter --project analyzer --activity iterate --description "working for fun" --tags "test, bla foo, tagging"
+
+ [OK] Started timesheet                                                                                                 
+
+ ------------- ------------------------------------ 
+  ID            5085                                
+  Begin         2020-01-03T23:34:26+0100            
+  Description   working for fun                     
+  Tags          bla foo                             
+                test                                
+                tagging                             
+  Customer      Schowalter PLC                      
+  Project       Grass-roots system-worthy analyzer  
+  Activity      iterate viral infomediaries         
+ ------------- ------------------------------------ 
+</code></pre></div></div>
+
+<h3 id="output-format">Output format</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">:list</code>ing commands display a formatted table of all found entities.</p>
+
+<p>If you want to use the output in a script, instead of manually looking at them, please use the <code class="language-plaintext highlighter-rouge">--csv</code> switch.</p>
+
+<h2 id="environment-variables">Environment variables</h2>
+
+<p>The following environment variables are supported:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">KIMAI_MEMORY_LIMIT</code> - configures the allowed memory limit (eg <code class="language-plaintext highlighter-rouge">128MB</code>, or <code class="language-plaintext highlighter-rouge">-1</code> for unlimited) (see <a href="https://www.php.net/manual/en/ini.core.php#ini.memory-limit">here</a>)</li>
+  <li><code class="language-plaintext highlighter-rouge">KIMAI_CONFIG</code> - path to your configuration file (defaults to: <code class="language-plaintext highlighter-rouge">$HOME/.kimai-api.json</code>)</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="updating-the-console-tools">Updating the Console tools</h3>
+
+<p>Redo the initial installation process and overwrite the file <code class="language-plaintext highlighter-rouge">/usr/local/bin/kimai</code> with the <a href="https://github.com/kimai/cli/releases">latest release</a>.</p>
+
+                        </div>
+                        
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a><ul><li class="nav-item"><a href="#configuration-file" class="nav-link">Configuration file</a></li></ul></li><li class="nav-item"><a href="#available-commands" class="nav-link">Available commands</a><ul><li class="nav-item"><a href="#start-a-timesheet" class="nav-link">Start a timesheet</a></li><li class="nav-item"><a href="#output-format" class="nav-link">Output format</a></li></ul></li><li class="nav-item"><a href="#environment-variables" class="nav-link">Environment variables</a></li><li class="nav-item"><a href="#faq" class="nav-link">FAQ</a><ul><li class="nav-item"><a href="#updating-the-console-tools" class="nav-link">Updating the Console tools</a></li></ul></li></ul>
+                    
+                </aside>
+            
+        </div>
+    </div>
+</main>
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v3"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
