@@ -55,6 +55,12 @@ layout: base
                             {% endif %}
                             <br>
                             {{ site.data[page.lang].translation.stories.location }}: <strong>{{ page.location }}</strong>
+                            {% if page.intro_lines != nil %}
+                                {% for line in page.intro_lines %}
+                                    <br>
+                                    {{ line.title }}: <strong>{{ line.content }}</strong>
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -6,7 +6,6 @@ layout: story
 tags: [stories]
 author: nikita
 excerpt: How a British law firm runs entirely on free open-source
-company: decoded.legal
 homepage: decoded.legal
 homepage_url: https://decoded.legal/
 blog_url: https://neilzone.co.uk/
