@@ -6,7 +6,6 @@ layout: story
 tags: [stories]
 author: nikita
 excerpt: Wie ein österreichischer Arzt eine Kimai App entwickelte
-company: Arbeitsmediziner.Wien
 homepage: Arbeitsmediziner.Wien
 homepage_url: https://www.arbeitsmediziner.wien
 logo: /images/stories/arbeitsmediziner-wien-logo.avif

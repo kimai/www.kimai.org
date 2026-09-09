@@ -6,7 +6,6 @@ layout: story
 tags: [stories]
 author: nikita
 excerpt: Wie eine britische Anwaltskanzlei vollständig auf freier Open-Source-Software läuft
-company: decoded.legal
 homepage: decoded.legal
 homepage_url: https://decoded.legal/
 blog_url: https://neilzone.co.uk/
