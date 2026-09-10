@@ -392,11 +392,12 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
 <p>The following providers are currently supported:</p>
 
 <ul>
-  <li>Google Workspace</li>
-  <li>Microsoft Entra (formerly Azure AD)</li>
-  <li>Keycloak</li>
-  <li>Auth0</li>
-  <li>Authentik</li>
+  <li><a href="#google-saml">Google Workspace</a></li>
+  <li><a href="#microsoft-saml">Microsoft Entra</a> (formerly Azure AD)</li>
+  <li><a href="#keycloak-saml">Keycloak</a></li>
+  <li><a href="#auth0">Auth0</a></li>
+  <li><a href="#authentik">Authentik</a></li>
+  <li><a href="#okta">Okta</a> (works, but we have no provider docs)</li>
 </ul>
 
 <p>See below for integration details.</p>
@@ -612,6 +613,21 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
 }
 </span></code></pre></div></div>
 
+<h2 id="authentik">Authentik</h2>
+
+<p>Customers reported successful use of <code class="language-plaintext highlighter-rouge">Authentik</code> as Identity Provider.</p>
+
+<p>Unfortunately we cannot provide examples at this point, but we look forward to hear back from you, if your company uses it!</p>
+
+<h2 id="okta">Okta</h2>
+
+<p>Customers report successful use of <code class="language-plaintext highlighter-rouge">Okta</code> as Identity Provider with the following settings:</p>
+
+<ul>
+  <li>Single Sign-On URL: https://bnpnl.oktapreview.com/app/xxxxxxxxxxxxx/xxxxxxxxxxxxxxxxxxx/sso/saml</li>
+  <li>Entity ID: http://www.okta.com/xxxxxxxxxxxxxxxxxxx</li>
+</ul>
+
                         </div>
                         
 
@@ -623,7 +639,7 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#google-saml" class="nav-link">Google SAML</a><ul><li class="nav-item"><a href="#workspace-configuration" class="nav-link">Workspace configuration</a></li><li class="nav-item"><a href="#cloud-configuration" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#microsoft-saml" class="nav-link">Microsoft SAML</a><ul><li class="nav-item"><a href="#entra-id-formerly-azure-ad-configuration" class="nav-link">Entra ID (formerly Azure AD) configuration</a></li><li class="nav-item"><a href="#cloud-configuration-1" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#keycloak-saml" class="nav-link">Keycloak SAML</a></li><li class="nav-item"><a href="#auth0" class="nav-link">Auth0</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#google-saml" class="nav-link">Google SAML</a><ul><li class="nav-item"><a href="#workspace-configuration" class="nav-link">Workspace configuration</a></li><li class="nav-item"><a href="#cloud-configuration" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#microsoft-saml" class="nav-link">Microsoft SAML</a><ul><li class="nav-item"><a href="#entra-id-formerly-azure-ad-configuration" class="nav-link">Entra ID (formerly Azure AD) configuration</a></li><li class="nav-item"><a href="#cloud-configuration-1" class="nav-link">Cloud configuration</a></li></ul></li><li class="nav-item"><a href="#keycloak-saml" class="nav-link">Keycloak SAML</a></li><li class="nav-item"><a href="#auth0" class="nav-link">Auth0</a></li><li class="nav-item"><a href="#authentik" class="nav-link">Authentik</a></li><li class="nav-item"><a href="#okta" class="nav-link">Okta</a></li></ul>
                     
                 </aside>
             
