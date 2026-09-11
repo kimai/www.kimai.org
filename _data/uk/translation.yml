@@ -65,8 +65,8 @@ newsletter:
     email-title: Ваша електронна адреса
     field-invalid: Надана інформація не є дійсною. Будь ласка, перегляньте формат і спробуйте ще раз.
     archive: Архів
-    name: Newsletter
-    subtitle: Якщо ви хостите Kimai самостійно (або просто його випробовуєте), не пропустіть наш newsletter. Ми ділимося новинами та інсайтами зі спільнотою людей, які цінують повний контроль над своїми даними.
+    name: Розсилка
+    subtitle: Розгортаєте Kimai на власному сервері чи тільки знайомитеся з ним? Ми ділимося новинами продукту, корисними порадами та зрідка залаштунковими деталями зі спільнотою, яка надає перевагу повному контролю над своїми інструментами та даними.
 photos:
     dashboard:
         title: 'Табло'
@@ -81,7 +81,7 @@ donate: Пожертвувати
 demo:
     name: 'Демо'
     description: Протестуйте та оцініть наш Реєстратор часу Kimai онлайн, прямо з нашої демонстраційної сторінки.
-    title: Спробуйте Kimai в одній з демо-версій
+    title: Спробуйте перед початком обліку
     subtitle: Будь ласка, оберіть одну з наших демо-інсталяцій і Ви отримаєте перше враження про те, як працює Kimai та які він має функції.
     reinstall: Майте на увазі, що демо-версії будуть перевстановлюватися за графіком і всі введені дані будуть видалятися.
     user: Demo-користувач
@@ -100,9 +100,9 @@ index:
     description: Kimai - безплатний і простий облік часу для фрилансерів, агентств та компаній з керуванням користувачами та рахунками-фактурами.
 download:
     name: 'Отримати'
-    title: 'Отримати Kimai'
-    subtitle: Отримати — Реєстратор часу Kimai
-    eyebrow: Self-Host Kimai
+    title: 'Встановити Kimai'
+    subtitle: Розгортайте Kimai на власній інфраструктурі — за допомогою Docker або через ручне налаштування сервера. Виберіть варіант, що підходить вашому стеку.
+    eyebrow: Розгорнути Kimai на власному сервері
 hosted:
     name: 'Хмара'
     title: 'Kimai-Cloud — Використовуйте Kimai одразу без налаштування. Безпроблемний хостинг Kimai!'
@@ -124,7 +124,7 @@ store:
     name: 'Плагіни'
     subtitle: Користуйтеся широким вибором плагінів, програм та розширень екосистеми Kimai та додавайте додатковий функціонал у власне рішення обліку часу.
     title: Плагіни для Kimai
-    eyebrow: Extend Your Time-Tracker
+    eyebrow: Розширте можливості свого тайм-трекера
 blog:
     name: 'Блог'
     description: Новини щодо програмного забезпечення для обліку часу Kimai
@@ -163,7 +163,7 @@ feature:
         name: "Кілька користувачів"
         description: "Kimai може використовуватися будь-якою кількістю користувачів: кожна інсталяція підтримує необмежену кількість користувачів з різними ролями (див. дозволи)."
     multi-language:
-        name: "Мови"
+        name: "Багатомовність"
         description: "Kimai може бути локалізований на будь-яку мову і вже перекладений більш ніж на 30 мов."
     teams:
         name: "Команди"
@@ -337,7 +337,7 @@ history:
         Ідея перепису Kimai під сучасні фреймворки кружляла давно, про що нагадували запити спільноти, але ні у кого не було часу на втілення цієї ідеї. Наприкінці 2017 року склалися одночасно декілька факторів і вже тоді почалися певні кроки до наступного еволюційного етапу, який ми називаємо "Kimai 2".
 
         Оригінальний Kimai був вперше випущений у 2006 році та використовувався багатьма людьми з усього світу, про що мені дуже приємного говорити, маючи таку велику спільноту. Я хотів би подякувати кожному, хто додав свою частинку у Kimai.
-store-hero-counter: 'Нам довіряють більше %number% клієнтів'
+store-hero-counter: 'Нам довіряють понад %number% компаній'
 cta:
     get-started:
         answer: Розпочніть свій облік часу зараз
@@ -358,25 +358,27 @@ highlight:
         european: Незалежний та європейський 🇪🇺 – створений в Австрії 🇦🇹 та розміщений у Німеччині 🇩🇪 з твердим зобов'язанням щодо захисту даних, прозорості та якості з відкритим вихідним кодом.
 description: Опис
 oss-cloud-compare:
-    intro: Kimai — це програма з відкритим кодом, який доступний як для самостійного розміщення, так і у формі SaaS.
-    title: Одна програма, дві версії
+    intro: Ті самі потужні функції, різні способи розгортання. Виберіть те, що підходить вашій команді.
+    title: |
+        Cloud чи власний сервер.
+        Вирішувати вам.
     on-premise:
-        badge: Free forever
-        reason_5: Plugin marketplace
-        reason_3: Docker & manual install
-        reason_2: Full data ownership
-        reason_1: 100% open source (AGPL 3)
-        reason_4: Community support
-        intro: Full control over your data and infrastructure. Deploy on your own server with Docker or manually.
+        badge: Власний хостинг
+        reason_5: Маркетплейс плагінів
+        reason_3: Docker & ручне встановлення
+        reason_2: Повне володіння даними
+        reason_1: 100% з відкритим вихідним кодом (AGPL 3)
+        reason_4: Підтримка спільноти
+        intro: Повний контроль над вашими даними та інфраструктурою. Розгортайте на власному сервері за допомогою Docker або вручну.
     cloud:
-        reason_2: Automatic updates & backups
-        reason_1: Instant setup, no server needed
-        intro: Fully managed, always up-to-date. We handle the infrastructure so you can focus on work.
-        reason_5: Plugins included
-        reason_4: Priority support
-        badge: Recommended
-        reason_3: GDPR-compliant EU hosting
-    subtitle: Choose your path
+        reason_2: Автоматичні оновлення & резервні копії
+        reason_1: Миттєве налаштування, сервер не потрібен
+        intro: Повністю кероване рішення, завжди актуальна версія. Ми беремо інфраструктуру на себе, щоб ви могли зосередитися на роботі.
+        reason_5: Включає плагіни
+        reason_4: Пріоритетна підтримка
+        badge: Ми забезпечуємо хостинг
+        reason_3: Хостинг у ЄС, що відповідає GDPR
+    subtitle: Виберіть власний шлях
 section-features:
     subtitle: Kimai пропонує набагато більше, ніж просто облік часу, тут список інших важливих функцій для бізнесу.
     title: Що Kimai може зробити для Вас?
@@ -450,7 +452,7 @@ landing_oss:
 plans:
     tls_included: Безплатний сертифікат SSL
     ip_whitelist: Обмеження доступу за IP
-    billable_hours: Оплачувані та неоплачувані години
+    billable_hours: Оплачувані години
     max_users: Користувачі
     work_contract: "Обліковий запис робочого часу"
     all_from_plan: Усі можливості '%plan%'
@@ -483,8 +485,8 @@ plans:
     backup_weekly: Щотижня
     backup_daily: Щодня
     customer_portal: Клієнтський портал
-    pro_intro: For growing teams and companies that need working time accounts, expenses and SSO.
-    standard_intro: For freelancers and small teams who want to keep their time tracking and invoicing under control.
+    pro_intro: Для команд і компаній, що розвиваються, яким потрібні баланси робочого часу, облік витрат та SSO.
+    standard_intro: Для фрилансерів і невеликих команд, які хочуть тримати облік часу та виставлення рахунків під контролем.
 pricing:
     short_monthly: За користувача на місяць
     short_annual: За користувача на рік
@@ -493,17 +495,17 @@ pricing:
     annual: Щорічно
     included: Що включене?
     not_available: Недоступне
-    subtitle: Ці тарифи доступні для користувачів хмари
+    subtitle: Повний набір функцій із першого дня. Почніть безкоштовно, платіть за користувача та скасовуйте будь-коли.
     cancellation: Ви можете скасувати свою передплату у будь-який час за один день до закінчення періоду.
     tax_exclusive: Усі ціни вказані без урахування податків.
-    favorite: Most popular
-    annual_cta: You save 20% compared to monthly billing.
-    title: Pricing that fits your team
-    eyebrow: Hosted & maintenance-free
-    monthly_cta: Switch to annual and save 20%.
-    trust_hosting: Hosted in Germany · GDPR compliant
-    trust_trial: 30-day free trial
-    trust_no_fee: No setup fee
+    favorite: Найпопулярніший вибір
+    annual_cta: Ви заощаджуєте 20% порівняно зі щомісячною оплатою.
+    title: Ціни, що підходять вашій команді
+    eyebrow: З хостингом і без потреби в обслуговуванні
+    monthly_cta: Переходьте на річну оплату та заощаджуйте 20%.
+    trust_hosting: Хостинг у Німеччині · Відповідає вимогам GDPR
+    trust_trial: 30 днів безкоштовного пробного періоду
+    trust_no_fee: Жодної плати за налаштування
 non-profit:
     name: Неприбуткові організації
     eligible: Дізнайтеся більше
@@ -537,8 +539,8 @@ theme:
     dark: Темна
     light: Світла
 cloud:
-    status: Стан
-    subtitle: Announcements and news about the Kimai Cloud.
+    status: Стан системи
+    subtitle: Оголошення та новини про Kimai Cloud.
     name: Cloud
 licenses: Ліцензії
 roadmap: Дорожня карта
@@ -578,7 +580,9 @@ industries:
                 У Kimai ми пропонуємо безкоштовний пробний період, щоб ви могли ознайомитися з нашим рішенням, перш ніж вирішити, чи потрібні вам додаткові користувачі, функції чи розширення. Спробуйте сьогодні безкоштовно і насолоджуйтеся більш організованим робочим днем!
         title: Облік часу для агентств
         cta:
-            title: Ready to start tracking time in your agency?
+            title: |
+                Готові почати
+                облік часу у своїй агенції?
         name: Агентства
         introduction: |
             Ви керуєте агентством — у сфері маркетингу, PR, дизайну, консалтингу, HR чи архітектури? Тоді ви знаєте, наскільки важливим є облік часу для вашого бізнесу. Реєстрація годин працівників і часу, витраченого на клієнтські проєкти, необхідна для точного виставлення рахунків, розуміння прибутковості та управління командою, що зростає.
@@ -610,7 +614,9 @@ industries:
 
             Ручне ведення годин, нескінченні електронні таблиці та складні процеси експорту забирають цінний час, який можна було б витратити на експертну юридичну консультацію. Дізнайтеся, як ефективний облік часу допоможе вам зосередитися на тому, що справді важливо.
         cta:
-            title: Ready to revolutionize time tracking in your practice?
+            title: |
+                Готові революціонізувати
+                облік часу у своїй практиці?
     software-developers:
         features:
             title: Функції Kimai, які використовують інженери-програмісти
@@ -669,7 +675,7 @@ industries:
             introduction: "Не вірте на слово лише нам. Ось що кажуть інші фрілансери:"
             title: Що інші професіонали кажуть про облік часу з Kimai
         features:
-            title: 'Features loved by freelancers '
+            title: 'Функції, які люблять фрилансери'
             introduction: Kimai розроблено, щоб допомагати solopreneur’ам оптимізувати робочий процес. Незалежно від того, чи ви жонглюєте кількома клієнтами, чи керуєте різноманітними проєктами, Kimai надає інструменти, які вам потрібні, щоб залишатися організованими та прибутковими.
         introduction: |
             Коли фрілансинг є новим розділом у вашому житті, доводиться брати на себе нові ролі та стикатися з новими викликами. Один із них — управління часом і баланс між відпрацьованими годинами та прибутковістю проєктів. Жонглювання кількома проєктами потребує аналізу — як для вас, так і для ваших клієнтів.
@@ -678,7 +684,9 @@ industries:
 
             Це дозволяє вам зосередитися на тому, що ви любите, — і отримувати оплату, на яку ви справді заслуговуєте. Розгляньмо, як це робиться з Kimai як інструментом обліку часу для фрілансерів.
         cta:
-            title: Ready to get the most of your time as a freelancer?
+            title: |
+                Готові отримати максимум
+                від свого часу на фрилансі?
         title: Облік часу для успішних фрілансерів
         about:
             title: Перші кроки до кращого управління часом
@@ -686,11 +694,13 @@ industries:
                 Готові відчути переваги Kimai? Ми пропонуємо безкоштовний пробний період, щоб ви могли ознайомитися з усіма функціями, перш ніж вирішити, яке програмне забезпечення для обліку часу найкраще підходить вам як незалежному професіоналу.
 
                 Зареєструйтеся сьогодні, почніть обліковувати свій час буквально одним кліком і насолоджуйтеся більш організованим днем!
-        intro: Максимізуйте свій дохід як solopreneur
+        intro: Не губіть жодної оплачуваної години, легко виставляйте рахунки та максимізуйте свій дохід як соло-підприємець
     universities:
         cta:
-            title: Ready to transform time management at your institution?
-        subtitle: ' '
+            title: |
+                Готові перетворити
+                керування часом у вашому закладі?
+        subtitle: 'Зосередьтеся на звітності, а не на складних адміністративних процесах'
         testimonials:
             introduction: |
                 У Kimai ми створили нашу платформу обліку часу так, щоб вона відповідала потребам агентств, команд і фрілансерів.
@@ -719,40 +729,40 @@ industries:
     non-profit:
         about:
             introduction: |
-                If you represent a non-profit organization, please register with an official
-                email address of your organization and send us a brief support message. The plan will be activated after manual review.
+                Якщо ви представляєте неприбуткову організацію, будь ласка, зареєструйтеся з офіційною
+                електронною адресою вашої організації та надішліть нам коротке повідомлення в службу підтримки. Тариф буде активовано після ручної перевірки.
 
-                In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
-            title: Our affordable non-profit plan for you
+                Натомість ми просимо про відгук із вашим логотипом та назвою або інтерв’ю, щоб ми могли розповісти про вас як про нашого користувача.
+            title: Наш доступний тариф для неприбуткових організацій
         introduction: |
-            Today we say thank you to the many NGOs and NPOs:
+            Сьогодні ми дякуємо численним громадським і неприбутковим організаціям:
 
-            - Charitable and philanthropic organizations
-            - Public and independent schools, universities, community colleges
-            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
-            - Conservation, sports, and all other clubs that foster community and teach skills
-            - Social services, elderly care, and youth facilities
-            - … and the many, many others we forgot to mention
+            - Благодійним і філантропічним фондам та організаціям
+            - Державним і приватним школам, університетам та коледжам
+            - Службам громадської безпеки, екстреним службам, підрозділам ліквідації наслідків катастроф, пожежним частинам і цивільному захисту
+            - Природоохоронним, спортивним та всім іншим клубам, які згуртовують спільноти та навчають нового
+            - Соціальним службам, закладам догляду за людьми літнього віку та молодіжним центрам
+            ... і багатьом, багатьом іншим, кого ми не згадали
 
-            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+            Ви віддаєте свій час, творите малі й великі дива та збагачуєте життя багатьох: **Дякуємо, що ви є ❤️**
 
-            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
-        subtitle: Less administrative burden, so your mission stays in focus
+            У міру зростання організації, збільшення пожертв і появи перших найманих працівників потреба в структурованому обліку часу стає очевидною. Прозоре документування робочих процесів допомагає своєчасно виявляти можливості для оптимізації — це вивільняє ресурси для вашої справжньої місії та створює надійну основу для прозорої публічної звітності.
+        subtitle: Менше адміністративного навантаження, щоб зосередитися на своїй місії
         cta:
             title: |
-                We want to help you
-                simplify your time tracking
-        title: Time Tracking for Non-Profit Organizations ✨
+                Ми хочемо допомогти вам
+                спростити облік часу
+        title: Облік часу для неприбуткових організацій ✨
         features:
-            title: Features that NPOs appreciate
-            introduction: Kimai helps many non-profits gain insight into their projects while simplifying working time management. We have built a time tracking tool that speaks your language – simple, reliable, GDPR-compliant, and designed to make your daily work run more smoothly.
+            title: Можливості, які цінують неприбуткові організації
+            introduction: Kimai допомагає багатьом неприбутковим організаціям отримувати повну картину своїх проєктів і спрощує керування робочим часом. Ми створили інструмент для обліку часу, який розмовляє вашою мовою - простий, надійний, сумісний із GDPR та створений для того, щоб щоденна робота рухалася значно легше.
         testimonials:
-            title: What other NPOs say about Kimai
+            title: Що кажуть про Kimai інші неприбуткові організації
             introduction: |
-                Thanks to Kimai's open-source roots, we see ourselves as part of the broader non-profit movement that spans so many fields and sectors.
-                We are happy to support you!
-        intro: We put your work and vision center stage while simplifying administration and billing
-        name: Non-Profits
+                Завдяки відкритому вихідному коду Kimai ми відчуваємо себе частиною ширшого неприбуткового руху, що охоплює стільки різних сфер і галузей.
+                Ми раді підтримати вас!
+        intro: Ми ставимо вашу роботу та бачення на перше місце, спрощуючи адміністрування й виставлення рахунків
+        name: Неприбуткові організації
 industry:
     name: Облік часу для кожної справи
     intro: Ви можете з програмою запису часу Kimai збільшити продуктивність своїх працівників.
@@ -778,11 +788,11 @@ time-tracking-terms:
     subtitle: Пояснення загальних термінів
     title: Умови обліку часу
     intro: Зазирніть за лаштунки відстеження часу та дізнайтеся більше про терміни, які часто використовуються Kimai
-    name: Умови обліку часу
+    name: Глосарій
 changelog:
-    name: Журнал змін
-    title: Журнал змін Kimai Cloud
-    subtitle: Перегляд усіх оновлень Kimai cloud та коли вони були встановлені.
+    name: Оновлення
+    title: Що нового
+    subtitle: Найновіші функції, виправлення та покращення для вашого Kimai Cloud.
 open-source-community:
     name: Відкритий код
 product:
@@ -802,7 +812,7 @@ stories:
     location: Розташування
     company: Компанія
     employees: Співробітники
-    subtitle: Find out how our customers are saving time and money thanks to our open-source solution.
+    subtitle: Дізнайтеся, як наші клієнти заощаджують час і гроші завдяки нашому рішенню з відкритим вихідним кодом.
 title: Назва
 date: Дата
 press-media:
@@ -813,112 +823,112 @@ press-media:
     contact_text: Сміливо надсилайте свої запитання електронною поштою або заплануйте розмову.
 per-month: на місяць
 version-1:
-    subtitle: History of Kimai 1, which is not maintained since 2018.
+    subtitle: Історія Kimai 1, підтримку якої припинено у 2018 році.
     name: Kimai 1
 on-premise:
     name: Самостійний хостинг
-    subtitle: Kimai On-Premise - Release Notes, Security Updates, Docker News
+    subtitle: Kimai на власному сервері — примітки до випусків, оновлення безпеки, новини Docker
 general:
-    name: General
-    subtitle: Instructions, product updates, and other news from the Kimai team.
+    name: Загальне
+    subtitle: Інструкції, оновлення продукту та інші новини від команди Kimai.
 become-a-partner:
-    name: Put your work forward for recognition
+    name: Заявіть про свою роботу та отримайте визнання
     express_interest:
         items:
             languages:
-                title: Languages
-                description: The languages you can support clients in.
+                title: Мови
+                description: Мови, якими ви можете надавати підтримку клієнтам.
             category:
-                title: Partner category
-                description: Whether you apply as a Service Partner, Development Partner, or both.
+                title: Тип партнерства
+                description: Чи ви подаєте заявку як сервісний партнер, партнер із розробки або за обома напрямами.
             regions:
-                title: Regions & availability
-                description: Which regions you serve and whether you offer remote, on-site, or both.
+                title: Регіони та доступність
+                description: 'Регіони, у яких ви працюєте, а також формат послуг: віддалено, на місці або обидва варіанти.'
             name:
-                title: Company or individual name
-                description: The official name of your company, or your full name if you apply as an individual.
+                title: Назва компанії або ім'я спеціаліста
+                description: Офіційна назва вашої компанії або ваше повне ім'я, якщо ви подаєте заявку як приватна особа.
             experience:
-                description: Implemented projects, published extensions, or both. Links to repositories, case studies or client references help us assess your qualification.
-                title: Relevant work & experience
+                description: Реалізовані проєкти, опубліковані розширення або обидва варіанти. Посилання на репозиторії, кейси чи відгуки клієнтів допоможуть нам оцінити вашу кваліфікацію.
+                title: Відповідний досвід і проєкти
             website:
-                description: A link to your company or personal website.
-                title: Website
-        label: Express interest
-        description: Share the essentials as in the list below. We will review your submission.
-        heading: Tell us about your work
+                description: Посилання на сайт вашої компанії або персональний вебсайт.
+                title: Вебсайт
+        label: Подати заявку
+        description: Надайте інформацію за списком нижче, і ми зв'яжемося з вами після її розгляду.
+        heading: Розкажіть про свою діяльність
     benefits:
         listing:
-            title: Directory listing
-            description: A profile in the public partner directory, surfaced to organisations actively looking for trusted help with Kimai.
+            title: Розміщення в каталозі
+            description: Профіль у публічному каталозі партнерів, який демонструється організаціям, що активно шукають надійну допомогу з Kimai.
         roadmap:
-            description: Briefings on what's coming next, so that partners can plan, prepare and advise their clients ahead of release.
-            title: Early roadmap access
+            description: Брифінги щодо майбутніх оновлень, щоб партнери могли планувати, готуватися та консультувати своїх клієнтів заздалегідь до релізу.
+            title: Ранній доступ до дорожньої карти
         leads:
-            description: Introductions to organisations whose needs match your track, region and expertise.
-            title: Qualified lead referrals
+            description: Знайомство з організаціями, чиї потреби відповідають вашому напрямку, регіону та експертизі.
+            title: Спрямування кваліфікованих лідів
         badge:
-            description: The right to display the Official Kimai Partner mark on your site and proposals — a clear, verifiable signal of your standing.
-            title: Official badge & logo usage
-    eyebrow: Become a Partner
+            description: Право розміщувати знак Official Kimai Partner на своєму сайті та в комерційних пропозиціях — чітке, перевірене свідчення вашого статусу.
+            title: Офіційний бейдж і використання логотипа
+    eyebrow: Стати партнером
     recognition:
-        description: Every element below follows from being recognised — it reflects demonstrated competence and continued good standing.
-        heading: Earned standing for Kimai partners
-        eyebrow: What recognition includes
-    cta_button: Express interest
-    subtitle: Recognition is granted to organisations and developers who have demonstrated their competence with Kimai. Tell us about your work and we will put you in front of the clients looking for exactly your skills.
+        description: Усі зазначені нижче переваги є наслідком здобуття визнання — вони засвідчують вашу доведену експертність і бездоганну партнерську репутацію.
+        heading: Заслужений статус для партнерів Kimai
+        eyebrow: Що передбачає визнання
+    cta_button: Виявити зацікавленість
+    subtitle: Визнання надається організаціям і розробникам, які підтвердили свою експертність у роботі з Kimai. Розкажіть нам про свої проєкти, і ми познайомимо вас із клієнтами, які шукають саме ваші навички.
 partner-detail:
-    contact: Contact
-    since_label: Partner since
-    about: About us
-    extensions: Published extensions
-    verified: Verified partner
-    back: Back to the partner directory
-    contact_button: Get in touch
-    languages: Languages
-    regions: Regions
-    services: Services
+    contact: Контакт
+    since_label: Партнер з
+    about: Про нас
+    extensions: Опубліковані розширення
+    verified: Верифікований партнер
+    back: Повернутися до каталогу партнерів
+    contact_button: Зв'язатися
+    languages: Мови
+    regions: Регіони
+    services: Послуги
 partner-services:
-    other: Other
-    development: Development
-    installation: Installation
-    training: Training
-    slas: SLAs (support & maintenance)
-    hosting: Hosting
+    other: Інше
+    development: Розробка
+    installation: Встановлення
+    training: Тренування
+    slas: SLA (підтримка та обслуговування)
+    hosting: Хостинг
 partner:
     how:
         steps:
             three:
-                description: Recognized partners receive the official designation, partner badge, client leads and a place in the partner directory.
-                title: Recognition & listing
+                description: Визнані партнери отримують офіційний статус, бейдж партнера, клієнтські ліди та місце в каталозі партнерів.
+                title: Визнання та розміщення в каталозі
             two:
-                title: Alignment review
-                description: 'We review the work and how the partner operates: company values, data protection and conduct towards customers.'
+                title: Перевірка на відповідність вимогам
+                description: 'Ми оцінюємо виконану роботу та підхід партнера до діяльності: цінності компанії, захист даних і взаємодію з клієнтами.'
             four:
-                description: Recognition is revisited on a yearly basis and reflects current standing.
-                title: Periodic review
+                description: Визнання переглядається щороку та відображає актуальний статус.
+                title: Періодичний перегляд
             one:
-                title: Demonstrate competence
-                description: Show real implementation work, published extensions, or both — alongside a clear understanding of the platform.
-        title: A standard we maintain
-        description: Recognition follows a deliberate path. There is no instant sign-up — the designation is granted, held, and revisited over time.
-        eyebrow: HOW IT WORKS
-    name: Find the Kimai expert your project needs
+                title: Підтвердіть компетентність
+                description: Покажіть реальні кейси впровадження, опубліковані розширення або й те, й інше — разом із чітким розумінням платформи.
+        title: Стандарт, якого ми дотримуємося
+        description: 'Отримання визнання — це виважений процес. Жодних миттєвих реєстрацій: статус присвоюється, підтримується та періодично переглядається з часом.'
+        eyebrow: ЯК ЦЕ ПРАЦЮЄ
+    name: Знайдіть експерта Kimai для вашого проєкту
     what:
-        description: The Partner Program identifies trusted experts around Kimai so clients can find help with confidence — and so the partners who have demonstrated their competence are properly acknowledged for it.
-        title: Recognition for the people who make Kimai work in the real world
-        eyebrow: What it is
+        description: Партнерська програма визначає надійних експертів Kimai, аби клієнти могли впевнено звертатися по допомогу, а партнери з підтвердженою компетентністю — отримували за це належне визнання.
+        title: Визнання для людей, завдяки яким Kimai працює в реальному світі
+        eyebrow: Що це
     partner_types:
         service:
-            title: Service partners
-            description: Agencies, consultancies and integrators who install, host, support, train and tailor Kimai for organisations. Recognised for hands-on implementation experience and a track record of well-run deployments.
+            title: Сервісні партнери
+            description: Агенції, консалтингові компанії та інтегратори, які встановлюють, розміщують, підтримують, навчають і адаптують Kimai під потреби організацій. Вони відзначені за практичний досвід упровадження та підтверджену історію успішних розгортань.
         developer:
-            description: Teams and individuals who build plugins, extensions and integrations on top of Kimai. Recognised for published, maintained work that extends the platform for the wider community.
-            title: Development partners
-    subtitle: Recognition is granted to organisations and developers who have demonstrated their competence with Kimai. Tell us about your expertise — we will connect you to the client waiting for your help.
-    eyebrow: Official Kimai Partner Program
-    menu: Partner
+            description: Команди та окремі розробники, які створюють плагіни, розширення та інтеграції на базі Kimai. Відзначені за опубліковані та регулярно супроводжувані рішення, які розширюють можливості платформи для ширшої спільноти.
+            title: Партнери з розробки
+    subtitle: Офіційне визнання надається організаціям і розробникам, які підтвердили свою компетентність у роботі з Kimai. Розкажіть про власну експертизу — і ми допоможемо знайти клієнтів, що потребують вашої допомоги.
+    eyebrow: Офіційна партнерська програма Kimai
+    menu: Партнер
 find-a-partner:
-    view_profile: View profile
-    name: Official Kimai Partners, ready to help
-    subtitle: Every partner listed here has been recognised by Kimai for demonstrated competence.
-    eyebrow: Find a Partner
+    view_profile: Переглянути профіль
+    name: Офіційні партнери Kimai, готові допомогти
+    subtitle: Кожен партнер у цьому списку відзначений Kimai за підтверджену компетентність.
+    eyebrow: Знайти партнера
