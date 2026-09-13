@@ -122,14 +122,52 @@ Unpaid holidays cover a date-range of full days.
 
 ## Absence calendar
 
-There is a monthly report available, showing all approved absences at [Report → Absence calendar]({% link _documentation/reporting.md %}).
+The absence calendar is a monthly report at [Report → Absence calendar]({% link _documentation/reporting.md %}).
+It shows one row per user and one column per day of the selected month, so you can see at a glance who is absent and when.
 
 {% include docs-image.html src="/images/documentation/absence-calendar.webp" title="Absence calendar" %}
 
-The required [permission]({% link _documentation/permissions.md %}) to see that report is `absence`.
-To see absences of other users you require `view_other_absence` (e.g. other team members) and `view_other_reporting` (to select other teams).
+Typical use cases are planning team capacity, checking whether a requested vacation collides with another team member, or getting an overview of the current month before approving new requests.
 
-There is also `view_team_absence` which you can assign to the regular User role, so they can see absences of all team members.
+### Permissions
+
+The [permission]({% link _documentation/permissions.md %}) `absence` is required to open the report.
+With that permission alone, you only see your own row.
+
+To see the absences of other users, you need one of these permissions:
+
+- `view_other_absence` by default set for the `Teamlead` role
+- `view_team_absence` this can be safely assigned to the normal `User` role
+
+Both permissions unlock the same rows in this report and additionally show the team dropdown.
+The difference: only with `view_other_absence` the usernames become links to the absence screen of that user, as it gives access to other features as well.
+
+### Which users are shown
+
+- Without one of the above permissions, only your own row is shown
+- With one of them, you see all members of your own teams
+- Admins see all users, including users that are not assigned to any team
+- Deactivated users and system accounts are never shown
+
+By default, only users with an approved absence in the selected month are listed.
+Use the chevron button next to the filter to toggle the rows of users without absences.
+Showing all users turns the report from an **absence calendar** into an **availability calendar**.
+
+If you select a team from the dropdown, all members of that team are shown right away, no matter whether they have absences in that period.
+The toggle works the same way and lets you reduce the list to members with absence entries again.
+
+### What the calendar shows
+
+- Only **approved** absences are displayed - requested and rejected entries are not part of this report
+- Each absence type has its own color and icon, hover a day to see the type as tooltip
+- Public holidays of the user are highlighted with their own color and icon
+- Days that are not working days for that user (for example weekends or days without expected working time) are shown in a different shade
+
+{% alert info %}
+The calendar shows one entry per day.
+Half-days look exactly like full days, and if a user has multiple absences on the same day, only one of them is displayed.
+For the exact durations and the remaining vacation days, open the `Absence` screen of that user.
+{% endalert %}
 
 ## Creating absences for next year
 
