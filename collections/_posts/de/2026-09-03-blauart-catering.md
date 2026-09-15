@@ -1,5 +1,5 @@
 ---
-title: "Blauart Catering GmbH"
+title: "BlauArt Catering GmbH"
 date: "2026-09-03 12:00:00 +0200"
 permalink: /de/stories/blauart-catering
 layout: story
@@ -18,7 +18,7 @@ position: IT-Administrator
 industry: Catering
 size: 70+
 since: 2021
-location: Wien, Österreich
+location: Potsdam, Deutschland
 version: onpremise
 wins:
     - Mehrere Stunden Zeitersparnis in der Personalabteilung durch automatische Zeitaufzeichnung
