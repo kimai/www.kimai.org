@@ -4,13 +4,11 @@ sitemap: false
 permalink: /cloud-changelog.json
 ---
 {%- assign changes = site.changelogs | reverse -%}
-{%- capture absolute_prefix -%}href="{{ site.url }}/{%- endcapture -%}
-{%- capture absolute_src_prefix -%}src="{{ site.url }}/{%- endcapture -%}
 [
     {% for changelog in changes limit: 5 %}
     {
         "title": "{{ changelog.title }}",
-        "content": {{ changelog.content | strip | replace: 'href="/', absolute_prefix | replace: 'src="/', absolute_src_prefix | jsonify }},
+        "content": {{ changelog.content | strip | changelog_links: 'kimai', 'cloud-changelog' | jsonify }},
         "url": "{{ changelog.url | absolute_url }}",
         "date": "{{ changelog.date|date_to_xmlschema }}"
     }{% unless forloop.last %},{% endunless %}

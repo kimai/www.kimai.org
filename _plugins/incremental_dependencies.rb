@@ -6,6 +6,9 @@
 #      _pages/<lang>/blog.html are rebuilt.
 #   3. Security advisories: edit any _security entry =>
 #      _documentation/developer/bughunter.md is rebuilt.
+#   4. Cloud changelog JSON: edit cloud-changelog.json => all _changelogs entries are
+#      rebuilt (otherwise their `content` is still unrendered Liquid source), and
+#      edit any _changelogs entry => cloud-changelog.json is rebuilt.
 #
 # The additionally enforced paths are inserted into the watcher log,
 # so they appear below the “Regenerating: ...” line.
@@ -59,6 +62,7 @@ if ENV["JEKYLL_ENV"] == "development"
     by_basename = posts.group_by { |doc| File.basename(doc.relative_path) }
     pages       = site.collections["pages"].docs
     docs        = site.collections["documentation"].docs
+    changelogs  = site.collections["changelogs"].docs
 
     blog_pages = pages.select do |page|
       page.relative_path.match?(%r{_pages/[^/]+/blog\.html\z})
@@ -67,6 +71,11 @@ if ENV["JEKYLL_ENV"] == "development"
     bughunter_page = docs.find do |doc|
       doc.relative_path == "_documentation/developer/security.md"
     end
+
+    cloud_changelog_page = site.pages.find do |page|
+      page.relative_path == "cloud-changelog.json"
+    end
+    cloud_changelog_path = cloud_changelog_page && site.in_source_dir(cloud_changelog_page.relative_path)
 
     data_dependencies = {
       "_data/feature.yml" => pages.select do |page|
@@ -102,6 +111,18 @@ if ENV["JEKYLL_ENV"] == "development"
     if bughunter_page && security.any? { |doc| source_file_changed.call(doc.path) }
       regenerator.force(bughunter_page.path)
       forced << bughunter_page.path
+    end
+
+    if cloud_changelog_path
+      if source_file_changed.call(cloud_changelog_path)
+        changelogs.each do |changelog|
+          regenerator.force(changelog.path)
+          forced << changelog.path
+        end
+      elsif changelogs.any? { |changelog| source_file_changed.call(changelog.path) }
+        regenerator.force(cloud_changelog_path)
+        forced << cloud_changelog_path
+      end
     end
 
     data_dependencies.each do |source_path, dependent_pages|
