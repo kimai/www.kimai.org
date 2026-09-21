@@ -31,8 +31,6 @@ token (Jira Cloud).
 
 Checkout the plugin into `var/plugins/JiraBundle` and clear the cache.
 
-Run `bin/console kimai:bundle:jira:install` to create the plugin's own database table.
-
 ## Usage
 
 Configure the Jira server URL and authentication mode **on each customer** (Customers \> edit a
