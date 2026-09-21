@@ -699,34 +699,7 @@ this guide explains the current repository structure.</p>
 
 <p>If you want your item to appear in additional locales immediately, create the matching wrapper pages and add the translated <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">intro</code> to the corresponding <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code> files.</p>
 
-<h2 id="step-6-add-locale-wrapper-pages-when-needed">Step 6: Add locale wrapper pages when needed</h2>
-
-<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Skip this step, we will do it for you. Or run <code class="language-plaintext highlighter-rouge">php ./scripts/translate-pages.php</code>.</p>
-</div>
-
-<p>All existing Store items currently have wrapper pages for all active Store locales.</p>
-
-<p>Each wrapper page looks the same except for the path, for example:</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">collections/_store/de/acme-foo.md</code></li>
-  <li><code class="language-plaintext highlighter-rouge">collections/_store/fr/acme-foo.md</code></li>
-  <li><code class="language-plaintext highlighter-rouge">collections/_store/zh_Hans/acme-foo.md</code></li>
-</ul>
-
-<p>The content can stay identical:</p>
-
-<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">Foo</span>
-<span class="na">type</span><span class="pi">:</span> <span class="s">plugin</span>
-<span class="nn">---</span>
-
-{% include store/acme-foo.md %}
-</code></pre></div></div>
-
-<p>The localized title and intro still come from <code class="language-plaintext highlighter-rouge">_data/&lt;locale&gt;/store.yml</code>.</p>
-
-<h2 id="step-7-add-screenshots">Step 7: Add screenshots</h2>
+<h2 id="step-6-add-screenshots">Step 6: Add screenshots</h2>
 
 <p>If your item has screenshots, there are two parts:</p>
 
@@ -759,7 +732,7 @@ this guide explains the current repository structure.</p>
         <span class="na">description</span><span class="pi">:</span> <span class="s">Configuration screen</span>
 </code></pre></div></div>
 
-<h2 id="step-8-add-compatibility-and-changelog-data">Step 8: Add compatibility and changelog data</h2>
+<h2 id="step-7-add-compatibility-and-changelog-data">Step 7: Add compatibility and changelog data</h2>
 
 <p>If your plugin should display compatibility information or a changelog tab, add release metadata.</p>
 
@@ -798,12 +771,12 @@ this guide explains the current repository structure.</p>
   <li>some Kimai-maintained plugins update this data through <code class="language-plaintext highlighter-rouge">scripts/update-bundles.php</code></li>
 </ul>
 
-<h2 id="step-9-send-a-pull-request">Step 9: Send a Pull request</h2>
+<h2 id="step-8-send-a-pull-request">Step 8: Send a Pull request</h2>
 
 <p>Send us a pull request with your changes and wait for a review. 
 If you don’t get feedback in two weeks, you can ping us.</p>
 
-<h2 id="step-10-our-review">Step 10: Our review</h2>
+<h2 id="final-step-our-review">Final step: Our review</h2>
 
 <p>We will always try your integration / app / plugin.</p>
 
@@ -892,7 +865,7 @@ _includes/store/changelog/FooBundle.md
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#before-you-start" class="nav-link">Before you start</a></li><li class="nav-item"><a href="#what-a-store-entry-consists-of" class="nav-link">What a Store entry consists of</a></li><li class="nav-item"><a href="#step-1-add-the-developer-entry" class="nav-link">Step 1: Add the developer entry</a></li><li class="nav-item"><a href="#step-2-add-the-product-metadata" class="nav-link">Step 2: Add the product metadata</a><ul><li class="nav-item"><a href="#common-keys-in-_datastoreslugyml" class="nav-link">Common keys in _data/store/&lt;slug&gt;.yml</a></li><li class="nav-item"><a href="#plugin-specific-bundle-block" class="nav-link">Plugin-specific bundle block</a></li></ul></li><li class="nav-item"><a href="#step-3-add-the-shared-content-partial" class="nav-link">Step 3: Add the shared content partial</a></li><li class="nav-item"><a href="#step-4-add-the-store-page-wrapper" class="nav-link">Step 4: Add the Store page wrapper</a></li><li class="nav-item"><a href="#step-5-add-translated-list-texts" class="nav-link">Step 5: Add translated list texts</a></li><li class="nav-item"><a href="#step-6-add-locale-wrapper-pages-when-needed" class="nav-link">Step 6: Add locale wrapper pages when needed</a></li><li class="nav-item"><a href="#step-7-add-screenshots" class="nav-link">Step 7: Add screenshots</a></li><li class="nav-item"><a href="#step-8-add-compatibility-and-changelog-data" class="nav-link">Step 8: Add compatibility and changelog data</a></li><li class="nav-item"><a href="#step-9-send-a-pull-request" class="nav-link">Step 9: Send a Pull request</a></li><li class="nav-item"><a href="#step-10-our-review" class="nav-link">Step 10: Our review</a></li><li class="nav-item"><a href="#full-example" class="nav-link">Full example</a></li><li class="nav-item"><a href="#what-changed-compared-to-the-old-workflow" class="nav-link">What changed compared to the old workflow</a></li><li class="nav-item"><a href="#tips-for-first-time-contributors" class="nav-link">Tips for first-time contributors</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#before-you-start" class="nav-link">Before you start</a></li><li class="nav-item"><a href="#what-a-store-entry-consists-of" class="nav-link">What a Store entry consists of</a></li><li class="nav-item"><a href="#step-1-add-the-developer-entry" class="nav-link">Step 1: Add the developer entry</a></li><li class="nav-item"><a href="#step-2-add-the-product-metadata" class="nav-link">Step 2: Add the product metadata</a><ul><li class="nav-item"><a href="#common-keys-in-_datastoreslugyml" class="nav-link">Common keys in _data/store/&lt;slug&gt;.yml</a></li><li class="nav-item"><a href="#plugin-specific-bundle-block" class="nav-link">Plugin-specific bundle block</a></li></ul></li><li class="nav-item"><a href="#step-3-add-the-shared-content-partial" class="nav-link">Step 3: Add the shared content partial</a></li><li class="nav-item"><a href="#step-4-add-the-store-page-wrapper" class="nav-link">Step 4: Add the Store page wrapper</a></li><li class="nav-item"><a href="#step-5-add-translated-list-texts" class="nav-link">Step 5: Add translated list texts</a></li><li class="nav-item"><a href="#step-6-add-screenshots" class="nav-link">Step 6: Add screenshots</a></li><li class="nav-item"><a href="#step-7-add-compatibility-and-changelog-data" class="nav-link">Step 7: Add compatibility and changelog data</a></li><li class="nav-item"><a href="#step-8-send-a-pull-request" class="nav-link">Step 8: Send a Pull request</a></li><li class="nav-item"><a href="#final-step-our-review" class="nav-link">Final step: Our review</a></li><li class="nav-item"><a href="#full-example" class="nav-link">Full example</a></li><li class="nav-item"><a href="#what-changed-compared-to-the-old-workflow" class="nav-link">What changed compared to the old workflow</a></li><li class="nav-item"><a href="#tips-for-first-time-contributors" class="nav-link">Tips for first-time contributors</a></li></ul>
                     
                 </aside>
             
