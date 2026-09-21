@@ -701,6 +701,9 @@ this guide explains the current repository structure.</p>
 
 <h2 id="step-6-add-locale-wrapper-pages-when-needed">Step 6: Add locale wrapper pages when needed</h2>
 
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>Skip this step, we will do it for you. Or run <code class="language-plaintext highlighter-rouge">php ./scripts/translate-pages.php</code>.</p>
+</div>
+
 <p>All existing Store items currently have wrapper pages for all active Store locales.</p>
 
 <p>Each wrapper page looks the same except for the path, for example:</p>
@@ -795,6 +798,32 @@ this guide explains the current repository structure.</p>
   <li>some Kimai-maintained plugins update this data through <code class="language-plaintext highlighter-rouge">scripts/update-bundles.php</code></li>
 </ul>
 
+<h2 id="step-9-send-a-pull-request">Step 9: Send a Pull request</h2>
+
+<p>Send us a pull request with your changes and wait for a review. 
+If you don’t get feedback in two weeks, you can ping us.</p>
+
+<h2 id="step-10-our-review">Step 10: Our review</h2>
+
+<p>We will always try your integration / app / plugin.</p>
+
+<p>If it is not publicly available, we need access to it in some way.
+This can be a license key (e.g. for an app) or the plugin ZIP via email to support@kimai.org.</p>
+
+<p>We will do a basic compatibility test against the latest version of Kimai.
+This test is neither a QA process, nor a test for correctness of your features.
+We just want to make sure, that apps can install, API connection is easy to setup, 
+that plugins hook into the default Kimai UI and don’t invent a new frontend.</p>
+
+<p>What we test for plugins:</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">composer.json</code> entries work (the title, description. version and link to the docs works on the <a href="/documentation/plugins.html">System → Plugins</a> page)</li>
+  <li>That we have translation files and that <code class="language-plaintext highlighter-rouge">en</code> is available</li>
+  <li>That the plugin installer follows the general best practices / guidelines</li>
+  <li>That the provided documentation covers the functionality and additional required setup steps and shows some screenshots</li>
+  <li>That you name the contact information for support</li>
+</ul>
+
 <h2 id="full-example">Full example</h2>
 
 <p>For a new free plugin called <code class="language-plaintext highlighter-rouge">acme-foo</code>, the minimal useful file set is:</p>
@@ -863,7 +892,7 @@ _includes/store/changelog/FooBundle.md
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#before-you-start" class="nav-link">Before you start</a></li><li class="nav-item"><a href="#what-a-store-entry-consists-of" class="nav-link">What a Store entry consists of</a></li><li class="nav-item"><a href="#step-1-add-the-developer-entry" class="nav-link">Step 1: Add the developer entry</a></li><li class="nav-item"><a href="#step-2-add-the-product-metadata" class="nav-link">Step 2: Add the product metadata</a><ul><li class="nav-item"><a href="#common-keys-in-_datastoreslugyml" class="nav-link">Common keys in _data/store/&lt;slug&gt;.yml</a></li><li class="nav-item"><a href="#plugin-specific-bundle-block" class="nav-link">Plugin-specific bundle block</a></li></ul></li><li class="nav-item"><a href="#step-3-add-the-shared-content-partial" class="nav-link">Step 3: Add the shared content partial</a></li><li class="nav-item"><a href="#step-4-add-the-store-page-wrapper" class="nav-link">Step 4: Add the Store page wrapper</a></li><li class="nav-item"><a href="#step-5-add-translated-list-texts" class="nav-link">Step 5: Add translated list texts</a></li><li class="nav-item"><a href="#step-6-add-locale-wrapper-pages-when-needed" class="nav-link">Step 6: Add locale wrapper pages when needed</a></li><li class="nav-item"><a href="#step-7-add-screenshots" class="nav-link">Step 7: Add screenshots</a></li><li class="nav-item"><a href="#step-8-add-compatibility-and-changelog-data" class="nav-link">Step 8: Add compatibility and changelog data</a></li><li class="nav-item"><a href="#full-example" class="nav-link">Full example</a></li><li class="nav-item"><a href="#what-changed-compared-to-the-old-workflow" class="nav-link">What changed compared to the old workflow</a></li><li class="nav-item"><a href="#tips-for-first-time-contributors" class="nav-link">Tips for first-time contributors</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#before-you-start" class="nav-link">Before you start</a></li><li class="nav-item"><a href="#what-a-store-entry-consists-of" class="nav-link">What a Store entry consists of</a></li><li class="nav-item"><a href="#step-1-add-the-developer-entry" class="nav-link">Step 1: Add the developer entry</a></li><li class="nav-item"><a href="#step-2-add-the-product-metadata" class="nav-link">Step 2: Add the product metadata</a><ul><li class="nav-item"><a href="#common-keys-in-_datastoreslugyml" class="nav-link">Common keys in _data/store/&lt;slug&gt;.yml</a></li><li class="nav-item"><a href="#plugin-specific-bundle-block" class="nav-link">Plugin-specific bundle block</a></li></ul></li><li class="nav-item"><a href="#step-3-add-the-shared-content-partial" class="nav-link">Step 3: Add the shared content partial</a></li><li class="nav-item"><a href="#step-4-add-the-store-page-wrapper" class="nav-link">Step 4: Add the Store page wrapper</a></li><li class="nav-item"><a href="#step-5-add-translated-list-texts" class="nav-link">Step 5: Add translated list texts</a></li><li class="nav-item"><a href="#step-6-add-locale-wrapper-pages-when-needed" class="nav-link">Step 6: Add locale wrapper pages when needed</a></li><li class="nav-item"><a href="#step-7-add-screenshots" class="nav-link">Step 7: Add screenshots</a></li><li class="nav-item"><a href="#step-8-add-compatibility-and-changelog-data" class="nav-link">Step 8: Add compatibility and changelog data</a></li><li class="nav-item"><a href="#step-9-send-a-pull-request" class="nav-link">Step 9: Send a Pull request</a></li><li class="nav-item"><a href="#step-10-our-review" class="nav-link">Step 10: Our review</a></li><li class="nav-item"><a href="#full-example" class="nav-link">Full example</a></li><li class="nav-item"><a href="#what-changed-compared-to-the-old-workflow" class="nav-link">What changed compared to the old workflow</a></li><li class="nav-item"><a href="#tips-for-first-time-contributors" class="nav-link">Tips for first-time contributors</a></li></ul>
                     
                 </aside>
             
