@@ -27,10 +27,6 @@ token (Jira Cloud).
 - Works against both **Jira Cloud** and **Jira Server / Data Center** (Bearer or Basic auth,
   configured per customer - so different customers can run different Jira instances).
 
-## Installation
-
-Checkout the plugin into `var/plugins/JiraBundle` and clear the cache.
-
 ## Usage
 
 Configure the Jira server URL and authentication mode **on each customer** (Customers \> edit a
@@ -43,7 +39,7 @@ once the entry is stopped or saved with an end time.
 See the [documentation](https://hilfor.github.io/kimai-jira-docs/) for the full configuration reference,
 including Jira Cloud vs. Server/Data Center setup, per-project routing and auto-create, the
 optional `kimai:jira:import` reverse importer and custom-field passthrough, and the cron entries
-the background reconciler and importer need.
+the background reconciler, the daily license check and the importer need.
 
 ## Support
 
