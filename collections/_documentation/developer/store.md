@@ -239,6 +239,8 @@ If you want your item to appear in additional locales immediately, create the ma
 
 ## Step 6: Add locale wrapper pages when needed
 
+{% alert info %}Skip this step, we will do it for you. Or run `php ./scripts/translate-pages.php`.{% endalert %}
+
 All existing Store items currently have wrapper pages for all active Store locales.
 
 Each wrapper page looks the same except for the path, for example:
@@ -328,6 +330,30 @@ Notes:
 - compatibility data lives in `_data/store/releases/`
 - changelog content lives in `_includes/store/changelog/`
 - some Kimai-maintained plugins update this data through `scripts/update-bundles.php`
+
+## Step 9: Send a Pull request
+
+Send us a pull request with your changes and wait for a review. 
+If you don't get feedback in two weeks, you can ping us.
+
+## Step 10: Our review
+
+We will always try your integration / app / plugin.
+
+If it is not publicly available, we need access to it in some way.
+This can be a license key (e.g. for an app) or the plugin ZIP via email to {{ site.support_email }}.
+
+We will do a basic compatibility test against the latest version of Kimai.
+This test is neither a QA process, nor a test for correctness of your features.
+We just want to make sure, that apps can install, API connection is easy to setup, 
+that plugins hook into the default Kimai UI and don't invent a new frontend.
+
+What we test for plugins: 
+- The `composer.json` entries work (the title, description. version and link to the docs works on the [System → Plugins]({% link _documentation/developer/plugins.md %}) page)
+- That we have translation files and that `en` is available
+- That the plugin installer follows the general best practices / guidelines
+- That the provided documentation covers the functionality and additional required setup steps and shows some screenshots
+- That you name the contact information for support
 
 ## Full example
 
