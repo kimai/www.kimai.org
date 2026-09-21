@@ -70,8 +70,13 @@ Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom
 
 ## Beschwerderecht bei der zuständigen Aufsichtsbehörde
 
-Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
-Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem unser Unternehmen seinen Sitz hat.
+Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO oder das österreichische Datenschutzgesetz (DSG) verstößt, haben Sie das Recht, Beschwerde bei einer Aufsichtsbehörde einzulegen (Art. 77 DSGVO).
+Sie können sich insbesondere an die Aufsichtsbehörde in dem Mitgliedstaat Ihres gewöhnlichen Aufenthalts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes wenden.
+
+Die für uns zuständige Aufsichtsbehörde ist:
+
+Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien  
+Telefon: +43 1 52 152-0, E-Mail: dsb@dsb.gv.at, Web: https://dsb.gv.at/
 
 ## Recht auf Datenübertragbarkeit
 
@@ -84,9 +89,9 @@ Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertra
 
 Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
 
-### Auskunft, Sperrung, Löschung
+### Auskunft, Berichtigung, Einschränkung, Löschung
 
-Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
+Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie gegebenenfalls ein Recht auf Berichtigung, Einschränkung der Verarbeitung oder Löschung dieser Daten.
 Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im Impressum angegebenen Adresse an uns wenden.
 
 Personenbezogene Daten werden gelöscht, wenn sie für die Zwecke der Verarbeitung nicht mehr erforderlich sind, insbesondere wenn während einer Testphase keine Nutzung des Dienstes erfolgt.
@@ -138,25 +143,24 @@ Die Bereitstellung der Rechnungs- und Zahlungsdaten ist für den Vertragsabschlu
 Soweit es für die Vertragserfüllung erforderlich ist, werden Daten auch an Dritte übermittelt (z.B. an unseren Zahlungsdienstleister oder das beauftragte Kreditinstitut).
 Rechtgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 b DSGVO.
 
-**Emails und Newsletter**
+**E-Mails zu unseren Diensten**
 
-Wir verwenden Brevo für den Versand von Newslettern und E-Mails zu unseren Diensten (sowohl für Plugins als auch für Cloud).
+Für den Versand von E-Mails zu unseren Diensten (Cloud und Plugins) setzen wir Brevo (Sendinblue GmbH, Berlin) ein.
+Wenn Sie sich registrieren und eine Kimai Cloud erstellen, verarbeiten wir Ihre E-Mail-Adresse und Ihren Namen zur Erfüllung des Vertrags.
+Soweit dafür erforderlich, übermitteln wir Daten an unseren E-Mail-Dienstleister.
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.
 
-Durch Anmeldung an unserem System und der Erstellung einer Kimai Cloud, werden Ihre E-Mail-Adresse und Name zum Zweck der Vertragserfüllung verarbeitet.
-Soweit es für die Vertragserfüllung erforderlich ist, werden Daten auch an Dritte übermittelt (z.B. an unseren Email-Provider).
+**Newsletter**
 
-Wenn Sie sich für den Erhalt unseres Newsletters anmelden, werden die bei der Anmeldung abgefragten Daten (Ihre E-Mail-Adresse) von Brevo verarbeitet.
-Dazu werden Ihre IP-Adresse und das Datum Ihrer Anmeldung sowie die Uhrzeit gespeichert.
-Als weiterer Bestandteil des Anmeldevorgangs wird Ihre Einwilligung zum Versand des Newsletters eingeholt, der Inhalt konkret beschrieben und auf diese Datenschutzerklärung verwiesen.
+Wenn Sie sich für unseren Newsletter anmelden, verarbeitet Brevo in unserem Auftrag Ihre E-Mail-Adresse sowie IP-Adresse, Datum und Uhrzeit der Anmeldung.
+Bei der Anmeldung holen wir Ihre Einwilligung zum Versand des Newsletters und zur nachfolgend beschriebenen Auswertung ein, beschreiben den Inhalt konkret und verweisen auf diese Datenschutzerklärung.
 
-Die von Brevo versandten Newsletter enthalten Technologien, mit denen wir analysieren können, ob und wann eine E-Mail geöffnet wurde und ob und welche im Newsletter enthaltenen Links verfolgt wurden.
-Diese Daten speichern wir zusätzlich zu den technischen Daten (Systemdaten und IP-Adresse), damit der jeweilige Newsletter optimal auf Ihre Wünsche und Interessen zugeschnitten werden kann.
-Die so erhobenen Daten werden verwendet, um die Qualität unserer Newsletter kontinuierlich zu verbessern.
+Unsere Newsletter enthalten Technologien, mit denen wir auswerten können, ob und wann ein Newsletter geöffnet wurde und welche darin enthaltenen Links angeklickt wurden.
+Diese Daten speichern wir zusammen mit technischen Daten (Systemdaten und IP-Adresse), um die Qualität unserer Newsletter zu verbessern und sie besser auf Ihre Interessen abzustimmen.
 
-Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 b DSGVO.
-
-Die Einwilligung in die Zusendung des Newsletters kann jederzeit mit Wirkung für die Zukunft gemäß Art. 7 Abs. 3 GDPR.
-Dazu müssen Sie uns lediglich über Ihren Widerruf informieren oder den in jedem Newsletter enthaltenen Abmeldelink anklicken.
+Rechtsgrundlage für den Versand des Newsletters und die Auswertung ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
+Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO), indem Sie den Abmeldelink in jedem Newsletter anklicken oder uns formlos informieren.
+Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon unberührt.
 
 **YouTube**
 
@@ -205,6 +209,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
  
 ### Änderungsverlauf
 
+- **21.09.2026**: Zuständige Aufsichtsbehörde korrigiert (Österreichische Datenschutzbehörde)
 - **07.05.2026**: Google Fonts entfernt
 - **20.03.2026**: Simple Analytics entfernt (anonyme Webseiten Analyse) - durch selbst-gehostete Lösung ersetzt
 - **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
@@ -288,10 +293,15 @@ You may revoke your consent at any time with future effect.
 An informal email making this request is sufficient. 
 The data processed before we receive your request may still be legally processed.
 
-## Right to file complaints with regulatory authorities 
+## Right to lodge a complaint with a supervisory authority
 
-If there has been a breach of data protection legislation, the person affected may file a complaint with the competent regulatory authorities.
-The competent regulatory authority for data protection issues is the state data protection officer of the federal state in which our company is based.
+If you believe that the processing of your personal data infringes the GDPR or the Austrian Data Protection Act (DSG), you have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR).
+In particular, you may contact the supervisory authority in the Member State of your habitual residence, your place of work or the place of the alleged infringement.
+
+The supervisory authority competent for us is:
+
+Austrian Data Protection Authority (Österreichische Datenschutzbehörde), Barichgasse 40–42, 1030 Vienna, Austria  
+Phone: +43 1 52 152-0, Email: dsb@dsb.gv.at, Web: https://dsb.gv.at/
 
 ## Right to data portability
 
@@ -304,12 +314,12 @@ This site uses SSL or TLS encryption for security reasons and for the protection
 
 If SSL or TLS encryption is activated, the data you transfer to us cannot be read by third parties.
 
-### Information, blocking, deletion
+### Access, rectification, restriction, erasure
 
-As permitted by law, you have the right to be provided at any time with information free of charge about any of your personal data that is stored as well as its origin, the recipient and the purpose for which it has been processed. 
-You also have the right to have this data corrected, blocked or deleted. You can contact us at any time using the address given in our legal notice if you have further questions on the topic of personal data.
+Within the scope of the applicable legal provisions, you have the right at any time to obtain information free of charge about your stored personal data, its origin and recipients and the purpose of the processing, and, where applicable, the right to have this data rectified, its processing restricted or erased.
+For this purpose and for any other questions regarding personal data, you can contact us at any time at the address given in the site notice.
 
-Personal data will be deleted when it is no longer necessary for the purposes of processing, particularly if the service is not used during a trial period.
+Personal data is erased when it is no longer necessary for the purposes of processing, in particular if the service is not used during a trial period.
 
 ## Data collection 
 
@@ -360,25 +370,24 @@ The provision of invoice and payment data is mandatory for the conclusion of the
 Insofar as it is necessary for the fulfilment of the contract, data is also transmitted to third parties (e.g. to the payment service provider or the commissioned credit institution).
 The legal basis for data processing is Art. 6 Para. 1 S. 1 b DSGVO.
 
-**Emails and Newsletter**
+**Emails about our services**
 
-We use Brevo to send newsletters and emails regarding our services (both for plugins and cloud).
+We use Brevo (Sendinblue GmbH, Berlin) to send emails about our services (cloud and plugins).
+When you register and create a Kimai Cloud, we process your email address and name to perform the contract.
+Where necessary for this purpose, we transfer data to our email service provider.
+The legal basis is Art. 6(1)(b) GDPR.
 
-By logging into the system and creating a Kimai Cloud, your email address and name is processed for the purpose of fulfilling the contract.
-Insofar as it is necessary for the fulfilment of the contract, data is also transmitted to third parties (e.g. to the email provider).
+**Newsletter**
 
-If you sign up to receive our newsletter, the data requested during the registration process (your email address) will be processed by Brevo.
-For this your IP address and the date of your registration will be saved along with the time.
-As a further part of the registration process, your consent to the sending of the newsletter will be obtained, the content will be described in concrete terms and reference made to this data protection declaration.
+If you subscribe to our newsletter, Brevo processes your email address as well as your IP address and the date and time of subscription on our behalf.
+During subscription, we obtain your consent to receive the newsletter and to the analysis described below, describe its content specifically and refer to this privacy policy.
 
-The newsletters sent by Brevo contain technologies by which we can analyse whether and when an email was opened and whether and which links contained in the newsletter were followed.
-We save this data in addition to the technical data (system data and IP address) so that the respective newsletter can be best tailored to your wishes and interests.
-The data thus collected is used to continuously improve the quality of our newsletters.
+Our newsletters contain technologies that allow us to analyse whether and when a newsletter was opened and which links in it were clicked.
+We store this data together with technical data (system data and IP address) in order to improve the quality of our newsletters and to better tailor them to your interests.
 
-The legal basis for data processing is Art. 6 Para. 1 S. 1 b DSGVO.
-
-Consent to the newsletter being sent can be revoked at any time with future effect in accordance with Art. 7 Para. 3 GDPR.
-To do this, you only have to inform us of your revocation or click the unsubscribe link contained in each newsletter.
+The legal basis for sending the newsletter and for this analysis is your consent (Art. 6(1)(a) GDPR).
+You can withdraw your consent at any time with effect for the future (Art. 7(3) GDPR) by clicking the unsubscribe link in any newsletter or by informing us informally.
+The lawfulness of processing carried out before the withdrawal remains unaffected.
 
 **YouTube**
 
@@ -426,6 +435,7 @@ We are using the following service providers (also called sub-processors) to ass
 
 ### Change history
 
+- **21.09.2026**: Corrected competent supervisory authority (Austrian Data Protection Authority)
 - **07.05.2026**: Removed Google Fonts
 - **20.03.2026**: Removed Simple Analytics (anonymous EU website tracking) - replaced by a self-hosted solution
 - **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
