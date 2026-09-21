@@ -206,6 +206,7 @@ Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverar
 ### Änderungsverlauf
 
 - **07.05.2026**: Google Fonts entfernt
+- **20.03.2026**: Simple Analytics entfernt (anonyme Webseiten Analyse) - durch selbst-gehostete Lösung ersetzt
 - **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
 - **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
@@ -426,6 +427,7 @@ We are using the following service providers (also called sub-processors) to ass
 ### Change history
 
 - **07.05.2026**: Removed Google Fonts
+- **20.03.2026**: Removed Simple Analytics (anonymous EU website tracking) - replaced by a self-hosted solution
 - **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
 - **06.01.2026**: Mention 8 rights under the GDPR
 - **23.06.2025**: Removed URL of German data protection authorities and replaced "German" with "of the federal state in which our company is based"
