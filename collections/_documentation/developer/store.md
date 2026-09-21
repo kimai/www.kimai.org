@@ -237,32 +237,7 @@ Current repository reality:
 
 If you want your item to appear in additional locales immediately, create the matching wrapper pages and add the translated `title` and `intro` to the corresponding `_data/<locale>/store.yml` files.
 
-## Step 6: Add locale wrapper pages when needed
-
-{% alert info %}Skip this step, we will do it for you. Or run `php ./scripts/translate-pages.php`.{% endalert %}
-
-All existing Store items currently have wrapper pages for all active Store locales.
-
-Each wrapper page looks the same except for the path, for example:
-
-- `collections/_store/de/acme-foo.md`
-- `collections/_store/fr/acme-foo.md`
-- `collections/_store/zh_Hans/acme-foo.md`
-
-The content can stay identical:
-
-```md
----
-title: Foo
-type: plugin
----
-
-{% raw %}{% include store/acme-foo.md %}{% endraw %}
-```
-
-The localized title and intro still come from `_data/<locale>/store.yml`.
-
-## Step 7: Add screenshots
+## Step 6: Add screenshots
 
 If your item has screenshots, there are two parts:
 
@@ -296,7 +271,7 @@ screenshots:
         description: Configuration screen
 ```
 
-## Step 8: Add compatibility and changelog data
+## Step 7: Add compatibility and changelog data
 
 If your plugin should display compatibility information or a changelog tab, add release metadata.
 
@@ -331,12 +306,12 @@ Notes:
 - changelog content lives in `_includes/store/changelog/`
 - some Kimai-maintained plugins update this data through `scripts/update-bundles.php`
 
-## Step 9: Send a Pull request
+## Step 8: Send a Pull request
 
 Send us a pull request with your changes and wait for a review. 
 If you don't get feedback in two weeks, you can ping us.
 
-## Step 10: Our review
+## Final step: Our review
 
 We will always try your integration / app / plugin.
 
