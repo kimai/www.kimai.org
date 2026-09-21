@@ -62,8 +62,22 @@ And our favorites:
 - Descriptions of Kimai features or behavior that don't exist (unvalidated AI-hallucinations)
 - Reports that ignore this documentation page
 
-**If you use AI tools to draft your report, you're responsible for reviewing and validating every claim before submission. 
-Raw LLM output — even if technically accurate — won't be credited unless a human researcher is available to answer follow-up questions.**
+### AI-assisted reports
+ 
+Using AI tools to find or write up a vulnerability is fine. Submitting their raw output is not.
+
+**If you use AI tools, you are responsible for verifying, editing and understanding every claim before submission.**
+A report is treated as unreviewed AI output when it shows signs like:
+
+- unfilled template placeholders, internal pipeline notes or file references we cannot see
+- claims that were not checked against the actual code or a running Kimai
+- severity ratings which ignore the preconditions of the attack
+- boilerplate and filler text instead of a focused description
+- nobody being able to answer follow-up questions about the report
+
+Such reports are closed. This is not a judgement about the underlying finding:
+the report can be re-opened once it was revised by a human who takes responsibility for its content and is available for questions.
+Reports which were revised this way are welcome and will be credited like any other.
 
 To be considered, a report must:
 
