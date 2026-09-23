@@ -463,7 +463,7 @@ This is required for executing the command <code class="language-plaintext highl
 
 <p>If you want to send the email report in English daily at 1:00 am, you can use the following cronjob:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 1 * * * /usr/bin/php8.1 /var/www/html/kimai/bin/console customer-email-report:send --locale=en &gt;/dev/null 2&gt;&amp;1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 1 <span class="k">*</span> <span class="k">*</span> <span class="k">*</span> /usr/bin/php8.1 /var/www/html/kimai/bin/console customer-email-report:send <span class="nt">--locale</span><span class="o">=</span>en <span class="o">&gt;</span>/dev/null 2&gt;&amp;1
 </code></pre></div></div>
 
 
@@ -675,11 +675,11 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 
                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
                     <h3 class="accordion-header">
-                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="false" aria-controls="q-1">Where can I buy this plugin?</button>
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-1" aria-expanded="false" aria-controls="q-1">How is the plugin licensed?</button>
                     </h3>
                     <div class="accordion-collapse collapse" id="q-1" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p><p>You can buy the plugin via Lemon Squeezy (CreditCard, instant access)</p>
+                            <p><p>All paid plugins are annual subscriptions.</p>
 </p>
                         </div>
                     </div>
@@ -687,9 +687,21 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 
                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
                     <h3 class="accordion-header">
-                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-1">Where can I get support for this plugin?</button>
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-2" aria-expanded="false" aria-controls="q-1">Where can I buy this plugin?</button>
                     </h3>
                     <div class="accordion-collapse collapse" id="q-2" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p><p>You can buy the plugin via the Marketplace <strong>LemonSqueezy</strong> and pay with Credit Card or PayPal for immediate access. You can also <a href="https://www.simonschaufelberger.de/de/kontakt.html" target="_blank">get in touch</a> and pay with wire transfer or SEPA, but you will have to wait a few days before getting access to the plugin.</p>
+</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-1">Where can I get support for this plugin?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
                             <p><p>Support-questions, bug-reports and feature-requests can be made via the contact form at <a href="https://www.simonschaufelberger.de/de/kontakt.html" target="_blank">www.simonschaufelberger.de</a>.</p>
 </p>
@@ -699,11 +711,23 @@ And you probably need to prefix them with <code class="language-plaintext highli
                 
                 <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
                     <h3 class="accordion-header">
-                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-3" aria-expanded="false" aria-controls="q-1">Can I get access to the GitHub Repository of this plugin?</button>
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-4" aria-expanded="false" aria-controls="q-1">What happens if I cancel the subscription?</button>
                     </h3>
-                    <div class="accordion-collapse collapse" id="q-3" data-bs-parent="#faq">
+                    <div class="accordion-collapse collapse" id="q-4" data-bs-parent="#faq">
                         <div class="accordion-body fs-sm pt-0">
-                            <p><p>Yes, after purchasing the plugin, I can give you access to the GitHub Repository of this plugin if you tell me your GitHub username via the contact form at <a href="https://www.simonschaufelberger.de/de/kontakt.html" target="_blank">www.simonschaufelberger.de</a>.</p>
+                            <p><p>If you purchase a plugin subscription, you’ll receive all updates, bugfixes, and support for one year. After the subscription ends, your plugin will continue to work without any restrictions – you can keep using the last version you downloaded. This model is known as a <strong>perpetual fallback license</strong>. However, access to future updates, new features, and compatibility fixes require an active subscription.</p>
+</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button shadow-none rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#q-5" aria-expanded="false" aria-controls="q-1">Do you offer refunds?</button>
+                    </h3>
+                    <div class="accordion-collapse collapse" id="q-5" data-bs-parent="#faq">
+                        <div class="accordion-body fs-sm pt-0">
+                            <p><p>No, refunds are not available. Kimai plugins are delivered as digital downloads and cannot be returned once the source code has been accessed. Additionally, payment providers charge non-refundable transaction fees, even if a refund were issued. For these reasons, all sales are final. The same applies for subscriptions that were not canceled in time. Please contact me before purchase if you’re unsure whether a plugin fits your needs.</p>
 </p>
                         </div>
                     </div>
