@@ -1,6 +1,6 @@
 ---
 title: "BlauArt Catering GmbH"
-date: "2026-09-03 12:00:00 +0200"
+date: "2026-09-23 12:00:00 +0200"
 permalink: /de/stories/blauart-catering
 layout: story
 tags: [stories]
