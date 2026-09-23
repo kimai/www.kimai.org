@@ -13,12 +13,8 @@ Create trainee reports directly from Kimai as PDF documents for daily, weekly, m
 
 ## Requirements
 
-* PHP 8.1 or higher
-* Kimai 2.x, recommended build 22000 or higher
-* Composer for Git-based installations
-* PHP extension `ext-mbstring`
-* PHP extension `ext-xml`
-* `mpdf/mpdf` PHP library
+* PHP 8.2 or higher
+* Kimai 2.20 or higher
 
 ## Usage
 
