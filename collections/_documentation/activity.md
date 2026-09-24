@@ -132,9 +132,12 @@ Activities can be deleted from the `Activity listing` view.
 
 {% alert danger %}Usually it is not a good idea to delete an activity that was used before, as all linked timesheets will be deleted as well. Consider to switch the visibility instead to hide it.{% endalert %}
 
-Use the row context menu to access the delete option. The system will either:
-- Confirm safe deletion for unused activities
-- Show activity statistics and prompt for timesheet reassignment
+Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected activity.
+The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
+activity is unused and can be safely deleted, or it will show you quick stats of the activity and then ask you to re-assign
+the attached timesheets to another activity.
+
+You can only see the `Delete` entry in the context menu, if you own the `delete_activity` permission, see [System → Roles]({% link _documentation/permissions.md %}).
 
 ## Permissions
 

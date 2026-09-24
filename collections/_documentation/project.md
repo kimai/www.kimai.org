@@ -150,6 +150,8 @@ The last action in the list is `Delete` - once you click it you wil get a feedba
 project is unused and can be safely deleted, or it will show you quick stats of the project and then ask you to re-assign
 the attached timesheets to another project.  
 
+You can only see the `Delete` entry in the context menu if you own the `delete_project` permission, see [System → Roles]({% link _documentation/permissions.md %}).
+
 ## Permissions
 
 {% include documentation/permissions.md id="project_admin" title=true %}
