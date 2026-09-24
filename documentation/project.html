@@ -1215,6 +1215,142 @@ The last action in the list is <code class="language-plaintext highlighter-rouge
 project is unused and can be safely deleted, or it will show you quick stats of the project and then ask you to re-assign
 the attached timesheets to another project.</p>
 
+<p>You can only see the <code class="language-plaintext highlighter-rouge">Delete</code> entry in the context menu if you own the <code class="language-plaintext highlighter-rouge">delete_project</code> permission, see <a href="/documentation/permissions.html">System → Roles</a>.</p>
+
+<h2 id="permissions">Permissions</h2>
+
+<p><strong>Admin</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_project</code></td>
+      <td>Allows to see the budget (money) reports for projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_project</code></td>
+      <td>Allows to see the budget (time) reports for projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comments_project</code></td>
+      <td>Allows to see the comment section for projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">create_project</code></td>
+      <td>Create a new project</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">delete_project</code></td>
+      <td>Delete existing projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">details_project</code></td>
+      <td>View project details (Order number &amp; date, start and end date, rates, assigned teams &amp; users)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_project</code></td>
+      <td>Edit existing projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permissions_project</code></td>
+      <td>Allows to edit the teams for assigned projects</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_project</code></td>
+      <td>Allows access to the project administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a Teamleader, whose team is assigned to this project</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_teamlead_project</code></td>
+      <td>Allow team leaders to see the budget (money) reports for assigned projects or projects of assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_teamlead_project</code></td>
+      <td>Allow team leaders to see the budget (time) reports for assigned projects or projects of assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comments_teamlead_project</code></td>
+      <td>Allow team leaders to see the comment section for project</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">details_teamlead_project</code></td>
+      <td>Allow team leaders to see project details</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_teamlead_project</code></td>
+      <td>Allow team leaders to edit assigned projects or projects for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permissions_teamlead_project</code></td>
+      <td>Allow team leaders to edit the teams for assigned projects or projects of assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_teamlead_project</code></td>
+      <td>Allow team leaders to access projects administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>If you are a member of a team, that is assigned to this project</strong></p>
+
+<table class="table permissions">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">budget_team_project</code></td>
+      <td>Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">time_team_project</code></td>
+      <td>Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">comments_team_project</code></td>
+      <td>Allows team-members to see the comment section for project</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">details_team_project</code></td>
+      <td>Allows team-members to see project details</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">edit_team_project</code></td>
+      <td>Allows team-members to edit assigned projects or projects for assigned customers</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">view_team_project</code></td>
+      <td>Allows team-members to access projects administration</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Read how to assign these permissions to your user roles in the <a href="/documentation/permissions.html">permission documentation</a>.</p>
+</div>
+
+
                         </div>
                         
 
@@ -1226,7 +1362,7 @@ the attached timesheets to another project.</p>
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-project" class="nav-link">Create a project</a></li><li class="nav-item"><a href="#copy-a-project" class="nav-link">Copy a project</a></li><li class="nav-item"><a href="#manage-projects" class="nav-link">Manage projects</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#start-date--end-date" class="nav-link">Start date / end date</a></li><li class="nav-item"><a href="#times-locked-until" class="nav-link">Times locked until</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#project-number" class="nav-link">Project number</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#project-listing" class="nav-link">Project listing</a><ul><li class="nav-item"><a href="#invisible-projects" class="nav-link">Invisible projects</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-project" class="nav-link">Delete a project</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-a-project" class="nav-link">Create a project</a></li><li class="nav-item"><a href="#copy-a-project" class="nav-link">Copy a project</a></li><li class="nav-item"><a href="#manage-projects" class="nav-link">Manage projects</a><ul><li class="nav-item"><a href="#colors" class="nav-link">Colors</a></li><li class="nav-item"><a href="#start-date--end-date" class="nav-link">Start date / end date</a></li><li class="nav-item"><a href="#times-locked-until" class="nav-link">Times locked until</a></li><li class="nav-item"><a href="#billable" class="nav-link">Billable</a></li><li class="nav-item"><a href="#budgets" class="nav-link">Budgets</a></li><li class="nav-item"><a href="#budget-type" class="nav-link">Budget type</a></li><li class="nav-item"><a href="#money-budget" class="nav-link">Money budget</a></li><li class="nav-item"><a href="#time-budget" class="nav-link">Time budget</a></li><li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li><li class="nav-item"><a href="#edit-price-screen" class="nav-link">Edit price screen</a></li><li class="nav-item"><a href="#pricing-example" class="nav-link">Pricing example</a></li><li class="nav-item"><a href="#visibility" class="nav-link">Visibility</a></li><li class="nav-item"><a href="#project-number" class="nav-link">Project number</a></li><li class="nav-item"><a href="#access-permissions" class="nav-link">Access permissions</a></li></ul></li><li class="nav-item"><a href="#project-listing" class="nav-link">Project listing</a><ul><li class="nav-item"><a href="#invisible-projects" class="nav-link">Invisible projects</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#delete-a-project" class="nav-link">Delete a project</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             

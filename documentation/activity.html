@@ -1204,11 +1204,12 @@ This would find all entries with the custom field <code class="language-plaintex
 <div class="alert alert-danger d-flex" role="alert"><i class="bx bx-info-circle lead me-3"></i><p>Usually it is not a good idea to delete an activity that was used before, as all linked timesheets will be deleted as well. Consider to switch the visibility instead to hide it.</p>
 </div>
 
-<p>Use the row context menu to access the delete option. The system will either:</p>
-<ul>
-  <li>Confirm safe deletion for unused activities</li>
-  <li>Show activity statistics and prompt for timesheet reassignment</li>
-</ul>
+<p>Right-click on a row (or open the action dropdown at the end of it) to see all available actions for the selected activity.
+The last action in the list is <code class="language-plaintext highlighter-rouge">Delete</code> - once you click it you wil get a feedback screen which either tells you that the
+activity is unused and can be safely deleted, or it will show you quick stats of the activity and then ask you to re-assign
+the attached timesheets to another activity.</p>
+
+<p>You can only see the <code class="language-plaintext highlighter-rouge">Delete</code> entry in the context menu, if you own the <code class="language-plaintext highlighter-rouge">delete_activity</code> permission, see <a href="/documentation/permissions.html">System → Roles</a>.</p>
 
 <h2 id="permissions">Permissions</h2>
 
