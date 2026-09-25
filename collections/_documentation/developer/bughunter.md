@@ -121,6 +121,21 @@ A missing or incorrect server configuration is the responsibility of the adminis
 
 **Additional mitigation:** This attack does not work against accounts with two-factor authentication enabled.
 
+### SAML: Linking of existing local accounts
+
+If SAML is activated and a user logs in with an identifier (the `NameID` or the configured username attribute) 
+that matches the username of an existing local account, Kimai links that account on the first SAML login and migrates it to SAML authentication.
+No password of the local account is required, its roles and data are kept.
+
+This is an intended feature. It allows existing installations to move their users to single sign-on,
+without re-creating accounts and losing all their data (timesheets, invoices and so on). 
+Refusing to link existing accounts would make it impossible to ever switch the authentication method.
+
+The identity provider has to deliver an immutable identifier as `NameID` (or username attribute), 
+which cannot be changed by end users (e.g. a persistent ID or object GUID instead of a self-editable email or username).
+If end users can choose that value themselves, they can impersonate any other account - SAML or local.
+This would be a misconfiguration of the identity provider and the responsibility of the administrator, not a defect in Kimai.
+
 ### CSV Formula injection
 
 Kimai does have a couple of code pieces in place to prevent simple `Dynamic Data Exchange` or `DDE payload` attacks. 
