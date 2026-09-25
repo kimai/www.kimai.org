@@ -1,6 +1,17 @@
 {% if include.id %}
-{% assign video = site.data.videos[include.id] %}
+{%- assign video = site.data.videos[include.id] -%}
+{%- assign video_start = '' -%}
+{%- if include.chapter -%}{%- assign video_start = video.chapter[include.chapter] -%}{%- endif -%}
+{%- assign video_lang = page.lang | default: 'en' -%}
+{%- assign video_play = site.data[video_lang].translation.video-play | default: site.data.en.translation.video-play -%}
+{%- assign video_consent = site.data[video_lang].translation.video-consent | default: site.data.en.translation.video-consent -%}
 <div class="youtube-wrapper" style="max-width: 560px;">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{ video.id }}{% if include.chapter %}?start={{ video.chapter[include.chapter] }}{% endif %}" title="{{ video.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a class="youtube-consent" href="https://www.youtube.com/watch?v={{ video.id }}{% if video_start != '' %}&amp;t={{ video_start }}s{% endif %}" target="_blank" rel="noopener" data-youtube-id="{{ video.id }}"{% if video_start != '' %} data-youtube-start="{{ video_start }}"{% endif %} data-youtube-title="{{ video.title | escape }}" aria-label="{{ video_play | escape }}: {{ video.title | escape }}">
+        {%- if video.thumbnail %}
+        <img class="youtube-consent-thumbnail" src="/images/{{ video.thumbnail }}" alt="" loading="lazy" width="1280" height="720">
+        {%- endif %}
+        <span class="youtube-consent-play" aria-hidden="true"><i class="bx bx-play"></i></span>
+        <span class="youtube-consent-notice">{{ video_consent }}</span>
+    </a>
 </div>
 {% endif %}
