@@ -792,6 +792,8 @@ so he can’t log in via password any longer.
 Additionally, all configured SAML attributes will be applied.
 To change such an account back to “password login”, you need to update the <code class="language-plaintext highlighter-rouge">auth</code> column in the <code class="language-plaintext highlighter-rouge">kimai2_users</code> table and set the value from <code class="language-plaintext highlighter-rouge">saml</code> to <code class="language-plaintext highlighter-rouge">kimai</code>.</p>
 
+<p>This is an intended feature and not a security issue, <a href="/documentation/bughunter.html#saml-linking-of-existing-local-accounts">read why</a>.</p>
+
 <h2 id="using-saml-only">Using SAML only</h2>
 
 <p>If SAML is activated, you can turn off the login form entirely by unchecking the <code class="language-plaintext highlighter-rouge">Login form</code> configuration under <code class="language-plaintext highlighter-rouge">Authentication</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
