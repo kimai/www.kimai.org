@@ -1,4 +1,3 @@
-# _includes/store/leadmetrix-custom-reports.md
 CustomReportsBundle adds flexible, multi-dimensional reporting to Kimai — with multi-customer filtering, budget tracking, saved report presets, and CSV/PDF export.
 
 ## Features
@@ -11,18 +10,3 @@ CustomReportsBundle adds flexible, multi-dimensional reporting to Kimai — with
 - **Toggleable columns** — Duration, Billable Hours, Time Budget, Money Budget, Revenue, Costs, Profit, Date, Description, Activity
 - **CSV and PDF export** — export exactly what you see, respecting column visibility
 - **Access control** — respects Kimai's existing permission system; non-admin users see only their own data and team-accessible projects
-
-## Requirements
-
-- Kimai 2.48.0 or later
-- PHP 8.1 or later
-
-## Installation
-
-After copying the bundle into `var/plugins/`, run the install command to apply the database migration:
-
-```
-bin/console kimai:bundle:custom-reports:install
-```
-
-The plugin creates its own database table and requires no changes to Kimai's core migrations.

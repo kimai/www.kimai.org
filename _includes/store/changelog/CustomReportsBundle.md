@@ -1,4 +1,3 @@
-# _includes/store/changelog/CustomReportsBundle.md
 ## Version 1.0.0
 
 Initial release.
