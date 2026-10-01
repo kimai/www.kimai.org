@@ -7,7 +7,7 @@ Share a time report with a client under a public link, as a web page and as a PD
 - **Revocation and expiry dates.** A revoked or expired link returns 404, exactly like a mistyped token, so the address space cannot be probed from outside.
 - **Visit counter** with the date of the last visit, and an **email to the person who created the link** when the client opens it for the first time.
 - **English or Polish report**, chosen when the link is created, regardless of the language of the account that created it.
-- **Scope**: one project or a whole customer, any date range, optionally narrowed to selected users, activities or tags.
+- **Scope**: one project or a whole customer, any date range, optionally narrowed to selected users, activities or tags. A customer-wide report can leave out chosen projects, e.g. a fixed-price one invoiced separately.
 - **A "share with client" button on the Kimai Export screen**, carrying over the filters set there.
 - Company logo on the page and in the PDF.
 
