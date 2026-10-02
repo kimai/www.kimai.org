@@ -854,6 +854,14 @@ the <a href="https://www.php.net/manual/en/datetime.formats.time.php">time forma
   <li>Examples: <code class="language-plaintext highlighter-rouge">1,5</code> = 1 hour and 30 minutes, <code class="language-plaintext highlighter-rouge">2</code> = 2 hours</li>
 </ul>
 
+<p><strong>Special case</strong></p>
+
+<ul>
+  <li>Format: <code class="language-plaintext highlighter-rouge">{duration}</code> (a plain number, no decimal point or letter)</li>
+  <li>Description:  Integers lower than 10 are interpreted as hours, greater or equal 10 as minutes</li>
+  <li>Examples: <code class="language-plaintext highlighter-rouge">2</code> = 2 hours, <code class="language-plaintext highlighter-rouge">15</code> = 15 minutes</li>
+</ul>
+
 <h4 id="duration-drop-down">Duration drop-down</h4>
 
 <p>If activated in <a href="/documentation/configurations.html">System → Settings</a>, the duration field has a dropdown.
