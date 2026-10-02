@@ -578,7 +578,7 @@ Kimai’s installation documentation explicitly lists this variable as mandatory
 <ul>
   <li><code class="language-plaintext highlighter-rouge">APP_SECRET</code> — You <strong>MUST</strong> set this to a long and unique string</li>
   <li><code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> — You <strong>MUST</strong> set this to the domain name used to access Kimai (can be a regexp like <code class="language-plaintext highlighter-rouge">localhost|127.0.0.1|kimai.example.com</code>)</li>
-  <li><code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> — Default: “nginx,localhost,127.0.0.1”</li>
+  <li><code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> — Default: “127.0.0.1”</li>
 </ul>
 
 <p>The application cannot determine which hostnames are legitimate on its own — only the administrator of a given deployment knows how the instance is reachable. 
