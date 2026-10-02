@@ -25,7 +25,7 @@ The Kimai image supports the following environment variables:
 - `DATABASE_URL` - Default "mysql://kimai:kimai@127.0.0.1:3306/kimai?charset=utf8mb4&serverVersion=5.7.40"
 - `APP_SECRET` - You **MUST** set this to a long and unique string
 - `TRUSTED_HOSTS` - You **MUST** set this to the domain name that is used to access Kimai (can be a regexp like `localhost|127.0.0.1|kimai.example.com`)
-- `TRUSTED_PROXIES` - Default: "nginx,localhost,127.0.0.1" 
+- `TRUSTED_PROXIES` - Default: "127.0.0.1" (see [webserver docs]({% link _documentation/webserver-configuration.md %})) 
 - `MAILER_FROM` - Default: "kimai@example.com"
 - `MAILER_URL` - Default: "null://localhost"
 - `ADMINMAIL` - Email for the new `admin` user (will be created if not existing)
