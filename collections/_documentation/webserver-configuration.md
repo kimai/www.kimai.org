@@ -251,7 +251,7 @@ To achieve that, set the `TRUSTED_PROXIES` environment variable.
 Supported values include:
 - Single IP addresses (e.g. `127.0.0.1`, `::1`)
 - CIDR IP ranges (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`)
-- `PRIVATE_SUBNETS` (trusts standard RFC 1918 private IPv4/IPv6 ranges; recommended for Docker setups)
+- Multiple IP addresses or CIDR ranges as a comma-separated list
 - `REMOTE_ADDR` (trusts the immediate IP connecting to the webserver)
 
 Set this either via your `.env.local` file / container environment:
