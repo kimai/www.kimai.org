@@ -4,7 +4,7 @@ CustomReportsBundle adds flexible, multi-dimensional reporting to Kimai — with
 
 - **Multi-customer, project and user filtering** — filter across multiple customers and projects simultaneously in a single report run
 - **Hierarchical report view** — Customer → Project → User, with expandable rows to drill down into individual timesheet entries
-- **Budget progress bars** — time and money budget consumption visible at the project level, colour-coded by usage (green → amber → red)
+- **Budget progress bars** — time and money budget consumption visible at the project level, color-coded by usage (green → amber → red)
 - **Saved report presets** — save any filter configuration as a named report, share with your team, and reload in one click
 - **Date range presets** — This Week, Last Week, This Month, Last Month, or custom range
 - **Toggleable columns** — Duration, Billable Hours, Time Budget, Money Budget, Revenue, Costs, Profit, Date, Description, Activity
