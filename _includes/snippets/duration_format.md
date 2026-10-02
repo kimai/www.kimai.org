@@ -20,7 +20,7 @@ The `{{ fieldName }}` field supports entering data in the following formats:
 - Description: Duration in hours, for decimal separator both `.`  and `,` are supported, minutes need to be given as decimal portion (eg. 30 minutes = 0.5)
 - Examples: `1,5` = 1 hour and 30 minutes, `2` = 2 hours
 
-#### Integer duration
+**Special case**
 
 - Format: `{duration}` (a plain number, no decimal point or letter)
 - Description:  Integers lower than 10 are interpreted as hours, greater or equal 10 as minutes
