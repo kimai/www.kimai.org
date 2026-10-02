@@ -852,17 +852,31 @@ to Kimai running at <code class="language-plaintext highlighter-rouge">http://12
 }
 </code></pre></div></div>
 
-<p>Now, when you open <code class="language-plaintext highlighter-rouge">https://kimai2.local/</code> you wil be redirected to the login URL without <code class="language-plaintext highlighter-rouge">http</code>, here: <code class="language-plaintext highlighter-rouge">http://kimai2.local/en/login/</code>.
-Why is that? Well, because you have to tell Kimai (or the Symfony framework) that it should trust your proxy and take the headers into account 
-when generating URLs for links and redirects.</p>
+<p>Now, when you open <code class="language-plaintext highlighter-rouge">https://kimai2.local/</code>, you might find that you are redirected to a plain <code class="language-plaintext highlighter-rouge">http</code> URL (e.g. <code class="language-plaintext highlighter-rouge">http://kimai2.local/en/login/</code>).
+Why is that? You need to tell Kimai (and the underlying Symfony framework) to trust your reverse proxy and evaluate the <code class="language-plaintext highlighter-rouge">X-Forwarded-*</code> headers when generating URLs and redirects.</p>
 
-<p>To achieve that, set the environment variable <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> to the name of your proxy, either via <code class="language-plaintext highlighter-rouge">.env</code> file:</p>
+<p>To achieve that, set the <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> environment variable.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TRUSTED_PROXIES=127.0.0.1,kimai2.local,localhost
+<div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i>
+<p><strong>Important:</strong> Symfony’s <code class="language-plaintext highlighter-rouge">TRUSTED_PROXIES</code> configuration requires <strong>IP addresses</strong>, <strong>CIDR subnets</strong>, or specific Symfony keywords. It does <strong>not</strong> accept hostnames or domain names (such as <code class="language-plaintext highlighter-rouge">localhost</code>, <code class="language-plaintext highlighter-rouge">nginx</code>, or <code class="language-plaintext highlighter-rouge">kimai.local</code>).</p>
+</div>
+
+<p>Supported values include:</p>
+<ul>
+  <li>Single IP addresses (e.g. <code class="language-plaintext highlighter-rouge">127.0.0.1</code>, <code class="language-plaintext highlighter-rouge">::1</code>)</li>
+  <li>CIDR IP ranges (e.g. <code class="language-plaintext highlighter-rouge">10.0.0.0/8</code>, <code class="language-plaintext highlighter-rouge">172.16.0.0/12</code>, <code class="language-plaintext highlighter-rouge">192.168.0.0/16</code>)</li>
+  <li>Multiple IP addresses or CIDR ranges as a comma-separated list</li>
+  <li><code class="language-plaintext highlighter-rouge">REMOTE_ADDR</code> (trusts the immediate IP connecting to the webserver)</li>
+</ul>
+
+<p>Set this either via your <code class="language-plaintext highlighter-rouge">.env.local</code> file / container environment:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>TRUSTED_PROXIES=127.0.0.1,PRIVATE_SUBNETS
 </code></pre></div></div>
 
-<p>or set it in your Kimai server definition (here nginx syntax):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastcgi_param TRUSTED_PROXIES "127.0.0.1,kimai2.local,localhost";
+<p>Or pass it in your Kimai webserver configuration (e.g., Nginx FastCGI syntax):</p>
+
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fastcgi_param</span> <span class="s">TRUSTED_PROXIES</span> <span class="s">"127.0.0.1,PRIVATE_SUBNETS"</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h2 id="links">Links</h2>
