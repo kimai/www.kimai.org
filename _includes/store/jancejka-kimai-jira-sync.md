@@ -14,8 +14,7 @@ Download the free version for one project from the public distribution:
 
 ## Requirements
 
-- Kimai version 2.0 or newer
-- PHP 8.2+
+- Kimai version 2.6.0 or newer
 - Jira Cloud or Jira Server access
 
 ## Pricing
