@@ -23,7 +23,7 @@ See [View container logs](https://docs.docker.com/config/containers/logging/) on
 
 While outside the direct responsibility of this project we get a lot of issues reported that relate to proxying with NGINX into the FPM container.
 
-Note that you will need to set the name of your NGINX container to be in the list of `TRUSTED_PROXIES` when you start the Kimai container.
+Note that you will need to set the IP of your NGINX container to be in the list of `TRUSTED_PROXIES` when you start the Kimai container.
 
 ## Permissions
 
