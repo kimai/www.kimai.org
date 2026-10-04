@@ -14,7 +14,7 @@ Download the free version for one project from the public distribution:
 
 ## Requirements
 
-- Kimai version 2.6.0 or newer
+- Kimai version 2.56.0 or newer
 - Jira Cloud or Jira Server access
 
 ## Pricing
