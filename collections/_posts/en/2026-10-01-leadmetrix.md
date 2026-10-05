@@ -1,5 +1,5 @@
 ---
-title: "Leadmetrix"
+title: "LeadMetrix"
 date: "2026-10-01 12:00:00 +0200"
 permalink: /en/stories/leadmetrix
 layout: story
@@ -35,25 +35,25 @@ A boutique RevOps agency from Israel has relied on Kimai for years to ensure tra
 
 **About the Company**
 
-Leadmetrix is a boutique revenue operations (RevOps) agency specializing in marketing ops and sales ops for B2B companies. The team builds data-driven flows and journeys across platforms like HubSpot and Salesforce — connecting ticketing systems, messaging channels, and CRMs into seamless customer experiences.
+LeadMetrix is a boutique revenue operations (RevOps) agency specializing in marketing ops and sales ops for B2B companies. The team builds data-driven flows and journeys across platforms like HubSpot and Salesforce — connecting ticketing systems, messaging channels, and CRMs into seamless customer experiences.
 
-For Gil, founder of Leadmetrix, time tracking was never optional. *"Without a time tracking app, we simply can't justify the invoices we send at the end of the month."* As a boutique RevOps agency billing clients by the hour, the connection between logged time and business survival is direct.
+For Gil, founder of LeadMetrix, time tracking was never optional. *"Without a time tracking app, we simply can't justify the invoices we send at the end of the month."* As a boutique RevOps agency billing clients by the hour, the connection between logged time and business survival is direct.
 
-But finding a tool that could match the way Leadmetrix actually works – transparently, flexibly, and with enough depth to separate billable from non-billable time – took some searching. Kimai time tracker turned out to be the answer. Today it's a pinned tab in Gil's browser, open at least seven times a day.
+But finding a tool that could match the way LeadMetrix actually works – transparently, flexibly, and with enough depth to separate billable from non-billable time – took some searching. Kimai time tracker turned out to be the answer. Today it's a pinned tab in Gil's browser, open at least seven times a day.
 
 <!-- PARTS -->
 
 **The challenge: visibility before it's too late**
 
-Leadmetrix manages revenue operations for clients across HubSpot, Salesforce, and a range of integration platforms. *"We initially started as a web development company and when SaaS and web platforms emerged, I realized the same technologies used for websites could power those systems and started working on these platforms independently and expanded our services."* Work is varied, often complex, and frequently involves tasks that appear for the first time – requiring research before a team member can even begin billing.
+LeadMetrix manages revenue operations for clients across HubSpot, Salesforce, and a range of integration platforms. *"We initially started as a web development company and when SaaS and web platforms emerged, I realized the same technologies used for websites could power those systems and started working on these platforms independently and expanded our services."* Work is varied, often complex, and frequently involves tasks that appear for the first time – requiring research before a team member can even begin billing.
 
-Before Kimai, the team used Toggl. It covered the basics, but Leadmetrix needed something more structured. Gil needed to see not just whether work was delivered by the deadline, but what was happening week by week, day by day. *"By the time you know a task is late, it's too late,"* he says. *"With Kimai we have earlier visibility, can spot blockers, and can help solve issues."*
+Before Kimai, the team used Toggl. It covered the basics, but LeadMetrix needed something more structured. Gil needed to see not just whether work was delivered by the deadline, but what was happening week by week, day by day. *"By the time you know a task is late, it's too late,"* he says. *"With Kimai we have earlier visibility, can spot blockers, and can help solve issues."*
 
 The company also needed clear separation between billable and non-billable time within the same client account. When a new type of task arrives, Gil expects two to three hours of non-billable research before the team can work efficiently. That cost is real, even if the client never sees it. "*I need to see whether we're profitable on that client,"* he explains. Without granular tracking at the project level, that calculation was impossible.
 
 **The setup: clients, projects, and a simple structure that scales**
 
-Leadmetrix built their Kimai structure around a clear hierarchy: client → project → billable or non-billable. Every paying customer with a signed contract gets a client record. Projects are created by type of work: website management, HubSpot ops, Salesforce ops, etc. Each with its own hourly rate. Internal and non-billable work sits in separate projects within the same client record. At month end, the team runs reports to compare billable versus non-billable time per client. Clients only receive the billable portion. The non-billable data stays internal and is used to track profitability, coach the team, and refine estimates over time.
+LeadMetrix built their Kimai structure around a clear hierarchy: client → project → billable or non-billable. Every paying customer with a signed contract gets a client record. Projects are created by type of work: website management, HubSpot ops, Salesforce ops, etc. Each with its own hourly rate. Internal and non-billable work sits in separate projects within the same client record. At month end, the team runs reports to compare billable versus non-billable time per client. Clients only receive the billable portion. The non-billable data stays internal and is used to track profitability, coach the team, and refine estimates over time.
 
 Gil deliberately kept activity tracking broad. *"If you get too granular, you spend more time on administration than on actual work."* The balance, as he describes it, is between having enough structure to generate insight and not so much that it becomes a burden.
 
@@ -63,7 +63,7 @@ The team quickly got used to Kimai's [calendar view]({% link _documentation/cale
 
 **The outcome: reports clients actually trust**
 
-Leadmetrix sends clients weekly reports with a full breakdown of what was done, by whom, and how long it took. The transparency is deliberate and has become a competitive differentiator. But producing those reports used to be manual work with filtering, formatting, and laying out data each time.
+LeadMetrix sends clients weekly reports with a full breakdown of what was done, by whom, and how long it took. The transparency is deliberate and has become a competitive differentiator. But producing those reports used to be manual work with filtering, formatting, and laying out data each time.
 
 Gil's team solved this by building a Custom Reports for Kimai plugin, now headed to the Kimai [plugin store]({% link _pages/{{page.lang}}/store.html %}). It allows saved report templates: set the criteria once for a given client, project, and team member combination, and run it again the following week with one click. Reports can be personal or shared across the team. The result is a PDF generated automatically, in exactly the format clients expect.
 
@@ -75,10 +75,10 @@ Gil's team solved this by building a Custom Reports for Kimai plugin, now headed
 
 Gil is already experimenting with orchestration tools like n8n and Zapier. *"They let you connect hundreds or thousands of tools without writing custom integrations"*, he says. For example: when a new ticket is created in HubSpot, a trigger automatically creates the corresponding customer and project in Kimai and opens a time log. It's the kind of automation that removes friction at the exact moment a new engagement begins.
 
-The agency world is also navigating a new kind of pressure. Clients increasingly ask why a task took ten hours when they believe AI could do it in five. Gil's answer is measured: "*We use AI where it helps, but it's not a solution for everything.*" For now, the combination of transparent time reporting and clear task descriptions – made possible by Kimai time tracker – is what lets Leadmetrix defend its hours with confidence.
+The agency world is also navigating a new kind of pressure. Clients increasingly ask why a task took ten hours when they believe AI could do it in five. Gil's answer is measured: "*We use AI where it helps, but it's not a solution for everything.*" For now, the combination of transparent time reporting and clear task descriptions – made possible by Kimai time tracker – is what lets LeadMetrix defend its hours with confidence.
 
 For other agencies considering the same path, his advice is simple: start tracking, keep the structure lean, and let the data speak. *"We learn more week by week. Before, we only knew whether a task was delivered by the due date. Now we have visibility throughout."*
 
-Thank you, Gil Ben-Horin, for the inspiring conversation, and all the best for the future of Leadmetrix!
+Thank you, Gil Ben-Horin, for the inspiring conversation, and all the best for the future of LeadMetrix!
 
 
