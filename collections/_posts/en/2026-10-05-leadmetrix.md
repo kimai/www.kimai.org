@@ -1,6 +1,6 @@
 ---
 title: "LeadMetrix"
-date: "2026-10-01 12:00:00 +0200"
+date: "2026-10-05 10:00:00 +0200"
 permalink: /en/stories/leadmetrix
 layout: story
 tags: [stories]
@@ -80,5 +80,3 @@ The agency world is also navigating a new kind of pressure. Clients increasingly
 For other agencies considering the same path, his advice is simple: start tracking, keep the structure lean, and let the data speak. *"We learn more week by week. Before, we only knew whether a task was delivered by the due date. Now we have visibility throughout."*
 
 Thank you, Gil Ben-Horin, for the inspiring conversation, and all the best for the future of LeadMetrix!
-
-
