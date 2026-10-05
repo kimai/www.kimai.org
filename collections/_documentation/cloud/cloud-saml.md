@@ -10,11 +10,12 @@ You'll find the configuration after logging in at: **[My Kimai Cloud]({{ site.cl
 
 The following providers are currently supported:
 
-- Google Workspace
-- Microsoft Entra (formerly Azure AD)
-- Keycloak
-- Auth0
-- Authentik
+- [Google Workspace](#google-saml) 
+- [Microsoft Entra](#microsoft-saml) (formerly Azure AD)
+- [Keycloak](#keycloak-saml)
+- [Auth0](#auth0)
+- [Authentik](#authentik)
+- [Okta](#okta) (works, but we have no provider docs)
 
 See below for integration details.
 
@@ -158,3 +159,16 @@ Customers report successful use of `Auth0` as Identity Provider with the followi
     "nameIdentifierFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress“
 }
 ```
+
+## Authentik
+
+Customers reported successful use of `Authentik` as Identity Provider.
+
+Unfortunately we cannot provide examples at this point, but we look forward to hear back from you, if your company uses it!
+
+## Okta
+
+Customers report successful use of `Okta` as Identity Provider with the following settings:
+
+- Single Sign-On URL: https://bnpnl.oktapreview.com/app/xxxxxxxxxxxxx/xxxxxxxxxxxxxxxxxxx/sso/saml
+- Entity ID: http://www.okta.com/xxxxxxxxxxxxxxxxxxx

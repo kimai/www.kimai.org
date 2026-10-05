@@ -138,6 +138,7 @@ Routing and domain rules matter:
 - Use `src/scss/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
 - If a change appears to require editing `src/scss/components/`, stop and find a solution through `src/scss/*.scss` instead
 - If there is truly no other way, ask for approval before touching `src/scss/components/`
+- Changing Javascript, CSS or SCSS files needs a new frontend rebuild via npm. A new frontend build needs an incremented cache-buster IDs in `_layouts/base.html`
 
 ## Safe Change Boundaries
 

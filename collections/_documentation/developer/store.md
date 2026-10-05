@@ -128,7 +128,6 @@ bundle:
 - `demo` - set to `true` to show the demo tab
 - `changelog` - set to `true` to show a changelog tab
 - `screenshots` - screenshot IDs from `_data/screenshots.yml`
-- `screenshot` - direct image URLs, usually only used for simple cases
 - `new` - legacy field that may be used for temporary highlighting
 
 ### Plugin-specific `bundle` block
@@ -237,30 +236,9 @@ Current repository reality:
 
 If you want your item to appear in additional locales immediately, create the matching wrapper pages and add the translated `title` and `intro` to the corresponding `_data/<locale>/store.yml` files.
 
-## Step 6: Add locale wrapper pages when needed
+## Step 6: Add screenshots
 
-All existing Store items currently have wrapper pages for all active Store locales.
-
-Each wrapper page looks the same except for the path, for example:
-
-- `collections/_store/de/acme-foo.md`
-- `collections/_store/fr/acme-foo.md`
-- `collections/_store/zh_Hans/acme-foo.md`
-
-The content can stay identical:
-
-```md
----
-title: Foo
-type: plugin
----
-
-{% raw %}{% include store/acme-foo.md %}{% endraw %}
-```
-
-The localized title and intro still come from `_data/<locale>/store.yml`.
-
-## Step 7: Add screenshots
+Only use WEBP format.
 
 If your item has screenshots, there are two parts:
 
@@ -294,7 +272,7 @@ screenshots:
         description: Configuration screen
 ```
 
-## Step 8: Add compatibility and changelog data
+## Step 7: Add compatibility and changelog data
 
 If your plugin should display compatibility information or a changelog tab, add release metadata.
 
@@ -328,6 +306,30 @@ Notes:
 - compatibility data lives in `_data/store/releases/`
 - changelog content lives in `_includes/store/changelog/`
 - some Kimai-maintained plugins update this data through `scripts/update-bundles.php`
+
+## Step 8: Send a Pull request
+
+Send us a pull request with your changes and wait for a review. 
+If you don't get feedback in two weeks, you can ping us.
+
+## Final step: Our review
+
+We will always try your integration / app / plugin.
+
+If it is not publicly available, we need access to it in some way.
+This can be a license key (e.g. for an app) or the plugin ZIP via email to {{ site.support_email }}.
+
+We will do a basic compatibility test against the latest version of Kimai.
+This test is neither a QA process, nor a test for correctness of your features.
+We just want to make sure, that apps can install, API connection is easy to setup, 
+that plugins hook into the default Kimai UI and don't invent a new frontend.
+
+What we test for plugins: 
+- The `composer.json` entries work (the title, description. version and link to the docs works on the [System → Plugins]({% link _documentation/developer/plugins.md %}) page)
+- That we have translation files and that `en` is available
+- That the plugin installer follows the general best practices / guidelines
+- That the provided documentation covers the functionality and additional required setup steps and shows some screenshots
+- That you name the contact information for support
 
 ## Full example
 

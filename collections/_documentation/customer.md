@@ -150,6 +150,8 @@ The last action in the list is `Delete` - once you click it you wil get a feedba
 customer is unused and can be safely deleted, or it will show you quick stats of the customer and then ask you to re-assign
 the attached timesheets to another customer.
 
+You can only see the `Delete` entry in the context menu if you own the `delete_customer` permission, see [System → Roles]({% link _documentation/permissions.md %}).
+
 ## Permissions
 
 {% include documentation/permissions.md id="customer_admin" title=true %}

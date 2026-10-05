@@ -8,7 +8,7 @@ Kimai provides a flexible [permissions system]({% link _documentation/permission
 There is **no reason** for changing the default permission through your [local.yaml]({% link _documentation/local-yaml.md %}).
 It can be considered bad practice, as it can lead to problems with future updates.
 
-**You can change the permissions with the administration screens in the System > Roles page.**
+**You can change the permissions with the administration screens in the [System → Roles]({% link _documentation/permissions.md %}) page.**
 
 ## Plugin permissions
 

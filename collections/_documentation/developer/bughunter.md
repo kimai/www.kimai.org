@@ -62,8 +62,22 @@ And our favorites:
 - Descriptions of Kimai features or behavior that don't exist (unvalidated AI-hallucinations)
 - Reports that ignore this documentation page
 
-**If you use AI tools to draft your report, you're responsible for reviewing and validating every claim before submission. 
-Raw LLM output — even if technically accurate — won't be credited unless a human researcher is available to answer follow-up questions.**
+### AI-assisted reports
+ 
+Using AI tools to find or write up a vulnerability is fine. Submitting their raw output is not.
+
+**If you use AI tools, you are responsible for verifying, editing and understanding every claim before submission.**
+A report is treated as unreviewed AI output when it shows signs like:
+
+- unfilled template placeholders, internal pipeline notes or file references we cannot see
+- claims that were not checked against the actual code or a running Kimai
+- severity ratings which ignore the preconditions of the attack
+- boilerplate and filler text instead of a focused description
+- nobody being able to answer follow-up questions about the report
+
+Such reports are closed. This is not a judgement about the underlying finding:
+the report can be re-opened once it was revised by a human who takes responsibility for its content and is available for questions.
+Reports which were revised this way are welcome and will be credited like any other.
 
 To be considered, a report must:
 
@@ -97,7 +111,7 @@ Kimai's installation documentation explicitly lists this variable as mandatory:
 
 - `APP_SECRET` — You **MUST** set this to a long and unique string
 - `TRUSTED_HOSTS` — You **MUST** set this to the domain name used to access Kimai (can be a regexp like `localhost|127.0.0.1|kimai.example.com`)
-- `TRUSTED_PROXIES` — Default: "nginx,localhost,127.0.0.1"
+- `TRUSTED_PROXIES` — Default: "127.0.0.1"
 
 The application cannot determine which hostnames are legitimate on its own — only the administrator of a given deployment knows how the instance is reachable. 
 Setting `TRUSTED_HOSTS` is a fundamental part of securing any Symfony-based application, and this class of attack has been publicly 
@@ -106,6 +120,21 @@ documented since [2013 (CVE-2013-4752)](https://symfony.com/blog/security-releas
 A missing or incorrect server configuration is the responsibility of the administrator, not a defect in the application.
 
 **Additional mitigation:** This attack does not work against accounts with two-factor authentication enabled.
+
+### SAML: Linking of existing local accounts
+
+If SAML is activated and a user logs in with an identifier (the `NameID` or the configured username attribute) 
+that matches the username of an existing local account, Kimai links that account on the first SAML login and migrates it to SAML authentication.
+No password of the local account is required, its roles and data are kept.
+
+This is an intended feature. It allows existing installations to move their users to single sign-on,
+without re-creating accounts and losing all their data (timesheets, invoices and so on). 
+Refusing to link existing accounts would make it impossible to ever switch the authentication method.
+
+The identity provider has to deliver an immutable identifier as `NameID` (or username attribute), 
+which cannot be changed by end users (e.g. a persistent ID or object GUID instead of a self-editable email or username).
+If end users can choose that value themselves, they can impersonate any other account - SAML or local.
+This would be a misconfiguration of the identity provider and the responsibility of the administrator, not a defect in Kimai.
 
 ### CSV Formula injection
 

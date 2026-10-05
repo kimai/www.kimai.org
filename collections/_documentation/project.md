@@ -149,3 +149,11 @@ Right-click on a row (or open the action dropdown at the end of it) to see all a
 The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
 project is unused and can be safely deleted, or it will show you quick stats of the project and then ask you to re-assign
 the attached timesheets to another project.  
+
+You can only see the `Delete` entry in the context menu if you own the `delete_project` permission, see [System → Roles]({% link _documentation/permissions.md %}).
+
+## Permissions
+
+{% include documentation/permissions.md id="project_admin" title=true %}
+{% include documentation/permissions.md id="project_team_leader" title=true %}
+{% include documentation/permissions.md id="project_team_member" title=true howto=true %}

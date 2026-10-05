@@ -1,0 +1,360 @@
+{% alert warning %}
+This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-cloud.md %}), is legally valid.
+{% endalert %}
+
+## § 1. Definition
+
+(1) Provider of the services (hereinafter "service", "Kimai") offered at the Internet address www.kimai.org and www.kimai.cloud (hereinafter "website") is Kevin Papst with registered office in Austria (hereinafter "Provider"). The complete address can be found in the imprint.
+
+(2) The Provider offers its service exclusively to entrepreneurial customers. The Provider does not conclude any contracts with consumers.
+A consumer is any natural person who enters into a legal transaction for purposes that are predominantly neither commercial nor self-employed.
+The provider reserves the right to verify the entrepreneurial status of the customer (e.g. by querying the VAT ID).
+
+After registering via the Provider's website, Customers may subscribe to services offered in accordance with the respective valid service packages.
+
+Acceptance of this agreement may only be made by authorized representatives of the customer.
+
+(3) The services and offers, as well as all agreements decided between the customer and the provider are governed exclusively by these terms and conditions.
+Only the terms and conditions of the provider apply; other conditions do not become part of the contract, even if the provider does not expressly contradict them. Deviating terms and conditions require the express consent of the provider in writing.
+
+## § 2. Scope of services
+
+The provider offers customers a time tracking system and related services (support, updates, maintenance) on the website. The scope of services provided by the software is described on the website.
+
+(1) The subject of the services offered are the functionalities of the Internet platform in the area of time recording in their respective installed version; depending on the software version and subscribed service packages, these may include, for example, time and expense recording (collectively "contractual services").
+
+(2) In the interest of all customers, the Provider shall always endeavor to improve and meaningfully expand the Internet platform in order to continuously increase its benefits for its customers.
+The Provider therefore expressly reserves the right to further develop the Internet platform during the term of the contract. Within the scope of further developments, the Provider may, for example, change the appearance of the front end and modify, add and remove functionalities as well as adapt designs, input masks and other components of the front and back end (collectively "Platform Updates").
+The Customer shall have no claim to Platform Updates, nor shall it have any claim to the continued use of a particular version of the Internet Platform. The Customer may not derive any claims against the Provider from Platform Updates carried out, provided that Platform Updates do not result in the elimination or significant restriction of functionalities booked by the Customer and the Customer does not suffer any unreasonable disadvantages in the context of the use of the Platform.
+
+(3) If the Provider provides software or services free of charge in addition to the service offer, this shall be subject to revocation at any time and shall not constitute a commitment for the future.
+
+(4) The Provider shall provide its services exclusively to its respective Customer; the Customer shall not provide these services to any third party, not even in parts or for a limited period of time, unless this has been agreed with the Provider.
+Employees of the Customer shall not be deemed to be third parties; other contractual partners of the Customer, such as freelancers, whose times are recorded by the Customer, shall also be deemed to be "employees" within the meaning of these Terms and Conditions.
+
+(5) Insofar as the Provider provides templates within its service, e.g. invoice templates or working time templates for employees, these serve merely as design examples.
+The Provider does not warrant the accuracy or completeness of the templates. Insofar as the Customer requires legally binding information on working time regulations or other matters, the Customer must obtain professional legal advice.
+
+(6) Data backup is not part of the contractual services.
+The Customer shall remain responsible at all times for backing up data and content that it, its employees or third parties otherwise acting on its behalf upload to or create on the Internet platform (hereinafter "Customer Data") and shall download and back up such data itself and regularly with the due care of a prudent businessman.
+The Provider shall provide the Customer with the tools for this purpose, depending on the services booked, for the collected downloading of data via the Customer's account. The customer shall store the data backups in such a way that he can access them at any time and independently of the Internet platform.
+The Provider shall only be liable for the loss of the Customer's data if such loss could not have been avoided by reasonable data backup measures on the part of the Customer.
+
+(7) The Service shall be made available to the Customer exclusively via the Internet.
+An Internet-capable end device and an Internet connection are therefore required for use.
+
+## § 3. Registration, test phase, conclusion of contract
+
+(1) The prerequisite for the conclusion of a contract on the use of the Internet platform is registration by the customer.
+By registering, the customer warrants that he is an entrepreneur within the meaning of the UGB (Austrian Company Code) and that he is registering on the Internet platform in this capacity. A violation of the aforementioned assurance entitles the provider, without prejudice to his other rights, to terminate the user agreement with the customer without notice for good cause.
+The customer may only carry out the registration by a person authorized to represent the customer or by a body authorized to represent the customer.
+
+(2) To set up the customer account (hereinafter referred to as "registration"), the Provider collects the name, e-mail address and a password.
+With these data (e-mail address and password), the customer can log into his customer account after successful registration. Alternatively, a login can be performed via the service providers "Google" or "GitHub". In this case, personal data such as "user name", "full name" and "user picture" are transferred to the service by the respective service provider.
+
+By clicking on the registration button, the customer makes an offer to enter into the usage agreement in accordance with the provisions of these TOS.
+A claim on the part of the customer to the conclusion of the user contract does not exist.
+
+In order to avoid misuse, the provider sends a confirmation link to the e-mail address provided during registration, unless the registration was made via one of the mentioned service providers.
+It is the responsibility of the customer to confirm his e-mail address by following this link within 48 hours ("double opt-in").
+If the e-mail address is not confirmed in time, the Provider shall immediately delete all data associated with the registration.
+The deletion of the data shall also be deemed termination without notice for cause.
+
+If the registration was carried out via one of the service providers "Google" or "GitHub", no "double opt-in" will be carried out by the Provider.
+
+(3) The provider confirms the creation of the customer account on the screen as well as by e-mail.
+With the creation of the customer account, a usage contract for the service of the provider is concluded.
+
+(4) The Provider shall maintain a customer account free of charge for a period of 30 days from its establishment (hereinafter referred to as the "test phase").
+
+(5) During the test phase, the customer can use all functions of the service free of charge. If the Customer is convinced of the Provider's service, he may switch to a chargeable tariff at any time.
+
+(6) Upon expiry of the trial period, access to the Service will be suspended. Continued use of the Service is only possible upon conclusion of a paid subscription.
+The customer account, including all data, will be deleted no later than four (4) weeks after the end of the trial period if no paid contract is concluded.
+
+If, during the trial period, the customer has at no time logged into the time tracking system and no time entries have been created, the provider is entitled to delete the customer account, including all stored data, immediately upon expiry of the trial period.
+In such case, it is evident that the customer has not made use of the contractual core functionality of the Service; the provider is therefore entitled to delete unused accounts at an early stage in accordance with the principle of data minimization under the GDPR.
+
+(7) There is no consumer right of revocation for the contracts concluded with the Provider, as the Provider offers its service exclusively to entrepreneurs.
+
+## § 4. Tariff selection
+
+(1) An input mask is available to the customer in his customer account for changing to a chargeable tariff.
+To order a chargeable tariff, the customer is required to enter his billing and payment data.
+The Customer warrants that he/she is of legal age and that - if he/she wishes to book the tariff on behalf of a company - he/she is authorized to conclude this contract.
+
+(2) The customer will receive a confirmation by e-mail about the concluded chargeable tariff.
+
+(3) The change to a larger tariff (upgrade) is possible at any time with effect for the future.
+On the date of the upgrade, the current billing period shall be billed on a pro rata basis and a new term shall begin with the larger rate.
+Payments already made for the smaller tariff will be credited pro rata to the larger tariff.
+In addition to the features of the selected rate, which are listed on the website, the provisions of these TOS shall apply.
+
+(4) The change to a smaller tariff (downgrade) is possible at the end of the booked term.
+After a downgrade, only a smaller number of functions is generally available.
+
+## § 5. Term of contract
+
+(1) The contract of use is concluded for an indefinite period and begins with the successful registration of the user. It exists independently of any subscriptions.
+The termination of one or all current subscriptions shall not affect the existence of the user contract.
+
+(2) The contractual relationship shall be extended in each case by the originally agreed period of time as long as neither party terminates or the contractual conditions are adjusted by mutual agreement.
+
+(3) The customer may terminate the contract without giving reasons at any time at the end of the agreed term in his account.
+If the customer cannot use this option, the termination can also be declared in writing or in text form to the provider.
+
+(4) The provider can terminate the contract without giving reasons with a notice period of 1 (one) month to the end of the agreed term.
+The Provider is free to send the notice of termination exclusively electronically by e-mail to the e-mail address stored in the account.
+
+(5) The right to extraordinary termination for cause remains unaffected.
+In the event of extraordinary termination of this user agreement for good cause, all current subscriptions shall also end upon termination of this user agreement.
+Good cause shall be deemed to exist in particular if the customer:
+
+- is in arrears with an agreed payment and does not settle this immediately even after a reminder with a reasonable deadline, which is a maximum of 30 (thirty) days, or
+- violates any obligation arising from these TOS and does not immediately remedy the violation after receiving a warning from the Provider, or
+- has not registered in his capacity as an entrepreneur in the sense of §1 UGB.
+
+(6) The Customer's claim for reimbursement of usage fees paid in advance is excluded, unless the Customer cancels the contract for an important reason for which the Provider is responsible.
+The customer's claim for reimbursement of usage fees, which he has paid in advance, is excluded in any case, if the provider terminates the contract for an important reason, for which the customer is responsible.
+
+## § 6. Prices, terms of payment, billing
+
+(1) In principle, the prices listed on the website shall apply, unless an individual offer has been made.
+All prices are net plus the value-added tax valid at the time of payment, unless expressly stated otherwise.
+
+(2) All fees are due at the beginning of the agreed contractual period. If the contractual relationship is extended, the fees for the extension period shall become due at the beginning of the extension period.
+Due fees are to be paid within 10 days of the invoice date, unless a longer payment period is indicated on the invoice.
+
+(3) The Provider expressly reserves the right to change the listed prices during the agreed contract term, exclusively for the purpose of inflation adjustment.
+
+(4) Other deliveries and services for which no price was agreed at the time of their order shall be charged at the list prices valid on the day of performance.
+I reserve the right to make changes to the charges.
+
+(5) If the contract contains a currency other than Euro, the Provider expressly reserves the right to adjust the listed prices to currency fluctuations.
+
+(6) The responsibility for the proper payment of value added taxes, import duties and import taxes lies with the customer.
+The customer is obliged to indicate the respective tax number.
+
+(7) The Provider may withhold its services and block access to the Customer's account insofar as the Customer is in default with the payment of due fees.
+
+(8) Billing is based on the agreed tariff model:
+
+(a) For contracts concluded before 2024 (Plus and Premium tariffs), costs are determined monthly according to the number of registered users and the selected tariff. The billing period is always the respective previous month.
+All registered users of the respective Kimai instance will be charged, regardless of whether these users are active or deactivated.
+
+(b) For contracts concluded after 2024, advance payment is required. The agreed number of licences will be invoiced in advance at the beginning of the respective billing period. The customer may purchase additional licences during a current billing period; these will be charged pro rata until the end of the current period. A reduction in the number of licences is only possible at the end of a billing period and will take effect in the following billing period.
+One licence is required for each activated user.
+
+(9) The generated invoice contains a detailed list of all services, can be sent automatically by mail and can be accessed in the account management.
+
+(10) The payment of the invoice will be made according to the payment method available in the respective country and for the customer.
+
+(11) If the customer has chosen credit card or direct debit as payment method, the customer is responsible for ensuring that valid data is entered in the software at all times.
+All customers with the payment method credit card or direct debit declare and guarantee that the authorization to use the respective data is given and that all costs incurred can be charged to this payment method and cannot be rejected.
+If a debit is not possible due to the fault of the customer, the provider reserves the right to charge any additional costs as well as interest on arrears to the customer.
+In the event of default, business interest pursuant to § 456 UGB (Austrian Commercial Code) shall be deemed agreed.
+
+(12) In the event of late payment, the Provider may charge interest on arrears without prejudice to its other rights.
+The crediting of the invoice amount to the Provider's bank account shall be decisive for the calculation of the default.
+
+## § 7. Consent to transfer the rights and obligations of the provider to third parties.
+
+(1) The Provider is entitled to transfer rights and obligations arising from the contractual relationship in whole or in part to third parties. This applies in particular in the event that the service is transferred to another operator.
+The Provider shall notify the Customer of such a change in text form (e-mail is sufficient). The customer already agrees in advance to a transfer of the contract.
+
+(2) The Provider is entitled to transfer its service obligations under the User Agreement to third parties or to engage subcontractors and to transfer claims against the Customer to third parties. In doing so, the Provider shall remain responsible to the Customer for the performance of services in accordance with the contract.
+The Provider informs the customer about any intended changes regarding the involvement or replacement of subcontractors, including data transfers to third countries.
+
+(3) A transfer of rights and obligations from this contract by the Customer to third parties is only permitted with the prior express consent of the Provider.
+
+(4) The Provider assists the customer, within the scope of the technical possibilities, in responding to requests for exercising data subject rights (e.g., access, rectification, erasure).
+
+## § 8. Data protection
+
+(1) The Provider shall strictly comply with the provisions of the applicable data protection law. The customer's data will only be collected and processed for the execution of the contract and will not be disclosed to third parties without the customer's express consent.
+
+(2) For personal data collected, processed or used by the customer, the customer is the responsible party.
+
+(3) Insofar as this is required under data protection law, the parties shall conclude contracts with each other under data protection law. The conclusion of such contracts shall constitute an essential contractual obligation. If the Customer refuses to conclude such legally required contracts, the Provider shall be entitled to discontinue all affected services as well as to delete stored personal data and, after expiration of a reasonable period of time, to terminate the contract with the Customer.
+
+(4) In various areas of the Service, the Customer has the option to process personal data of third parties. This concerns in particular names and e-mail addresses of his employees for whom he creates licenses and names and addresses of his service recipients for whom he creates projects. The Customer warrants to the Provider that it will process with the Service only such data as it is authorized to process; it also provides this warranty for its employees and all other persons to whom it grants access to the Service.
+
+(5) The Customer shall indemnify the Provider against all claims asserted by third parties against the Provider in connection with the processing of their personal data by the Customer, unless the Customer is not responsible for such assertion. The claim for indemnification shall also include the necessary costs for an appropriate examination of the claim and legal defense.
+
+(6) The Provider shall inform the customer via the registered e-mail address without undue delay after becoming aware of a personal data breach.
+
+Further information on data protection can be found in the separate data protection declaration.
+
+## § 9. Data processing
+
+(1) The Customer grants the Provider the right to duplicate the data to be stored for the Customer for the purpose of performing the contract, to the extent that this is necessary to provide the services owed under this contract. The Provider shall also be entitled to keep the data in a failover system or separate failover computer center. In order to eliminate malfunctions, the Provider shall also be entitled to make changes to the structure of the data or the data format.
+
+(2) The Provider is entitled to use the Customer's e-mail address stored in the account to inform the Customer about innovations to the services and benefits, changes to TOS and status notifications.
+The Provider is also entitled to send the Customer a limited number of ("onboarding") emails containing guidance and explanations on the use of the platform, which will mainly happen during the trial period.
+The Customer may object to receiving these onboarding emails or unsubscribe from such communications at any time.
+
+(3) If an account is terminated by the customer or by the provider, the account data will be irrevocably deleted. A recovery is not possible. Exceptions to the deletion exist for data that is subject to statutory retention periods.
+
+## § 10. Availability
+
+(1) The Provider shall operate the Service with due care and reliability and shall endeavor to ensure continuous availability. However, the User acknowledges that already for technical reasons and due to the dependence on external influences, e.g. in the context of telecommunications networks, an uninterrupted availability of the Service is not feasible, which is why the User has no right to constant access. Merely temporary access restrictions grant neither warranty claims nor a right to extraordinary termination.
+
+(2) In the case of data transmission, the Provider's obligation to perform is limited to communication between the Provider's server and a suitable connection point to the Internet to be selected by the Provider. The Provider has no influence on the availability and reliability of the data paths of the Internet outside its own network. A successful data exchange from the connection point to servers of third parties is therefore not owed.
+
+(3) In addition to the prevention of access due to external influences beyond the control of the Provider, the Provider reserves the right to restrict access temporarily and/or extensively, in particular in the following cases:
+
+- temporary blocking of the service for the purpose of implementing technical improvements, eliminating errors and malfunctions, etc.
+- Restriction of the right of use due to default of payment by the customer
+
+In the event of permanent restriction of access, a claim for reduction or a right to extraordinary termination shall only exist if this restriction affects essential rights and obligations within the meaning of the TOS and this leads to a threat to the purpose of the contract.
+
+(4) The Customer shall notify the Provider immediately of any service failures or other technical errors in order to enable immediate troubleshooting. In this respect, the customer shall have a duty to cooperate and mitigate damages.
+
+(5) The availability of the Internet platform is determined as follows:
+
+- The Provider shall carry out scheduled maintenance work between 23:00 and 06:00 according to Central European Time ("Maintenance Window"). During these Maintenance Windows, the Platform may be completely or with respect to some Services temporarily unavailable on the Internet.
+- The Provider shall provide the Services with an availability of at least 98% per month on the Internet. The times of the maintenance windows are not included in the calculation of the availability.
+- The Provider may also restrict access to the offered services outside the maintenance windows if the security of the platform operation, the maintenance of the network integrity, in particular the avoidance of serious disturbances of the network, the software or stored data require this.
+
+## § 11. Obligations of the customer
+
+(1) The customer is obliged to keep the information in his account up to date at all times. This applies in particular to the stored e-mail address, as the Provider uses this to send the Customer notifications that are essential to the contract.
+
+(2) The Customer is obligated to protect his account against unauthorized access by means of a sufficiently secure password and to protect the access data for his account in accordance with the current state of the art and against unauthorized access by third parties. If the customer becomes aware of improper access to his access data or to his customer account or if facts give rise to a suspicion in this regard, he must inform the provider of this without delay.
+
+(3) The Customer shall notify the Provider immediately if unauthorized use of the account has occurred. The Provider is not liable for damages incurred by the Customer due to stolen or hacked passwords within the Customer's sphere of influence.
+
+(4) All customers undertake to observe the Provider's copyright, to secure it within the scope of their use and not to reproduce, transfer or otherwise disseminate any copyrighted information, software or other content made available by the Provider.
+
+(5) The Customer undertakes to indemnify the Provider against all claims for damages brought against the Provider by third parties due to damage caused by a Client in connection with the use of the Service.
+
+(6) The Provider is allowed to place advertising banners, sponsor contributions or other own and third party advertising material at any place within the provided services and capacities including e-mails, SMS or other electronic messages sent via the Service.
+
+(7) The Customer is prohibited from misusing the Provider's system. The customer assures that he does not use any devices and equipment, software or other data in a way that could lead to changes of the system and/or could affect the availability of the system.
+
+(8) The Customer is prohibited from performing or promoting any action that serves or is potentially suitable to impair the functionality and/or integrity of the Services, in particular to overload, influence, interrupt or modify them.
+
+(9) Insofar as the Customer provides the Provider with protected content (e.g. graphics, trademarks and other content protected by copyright or trademark law), the Customer shall grant the Provider all rights necessary for the performance of the contractual agreement. This includes in particular the right to make the relevant content available to the public. In this context, the Customer assures that he owns all necessary rights to transferred content in order to grant the Provider the corresponding rights.
+
+(10) As a technical service provider, the Provider stores content and data for the Customer, which the Customer enters and stores when using the Software and makes available for retrieval. The Customer undertakes vis-à-vis the Provider not to post any content and data that is punishable by law or otherwise illegal in absolute terms or in relation to individual third parties and not to use any programs containing viruses or other malware in connection with the Software. In particular, he undertakes not to use the software to offer illegal services or goods. The Customer shall be the responsible party with regard to personal data of itself and its users and shall therefore always check whether the processing of such data via the use of the Software is covered by the relevant permissions.
+
+(11) The Customer shall be solely responsible for all content and processed data used by it or its Users as well as any legal positions required for this. The Provider shall not take note of any content of the Customer or its users and shall generally not check the content used with the Software.
+
+(12) In this context, the Customer undertakes to indemnify the Provider against any liability and any costs, including possible and actual costs of legal proceedings, if a claim is made against the Provider by third parties, including employees of the Customer personally, as a result of alleged acts or omissions of the Customer. The Provider shall notify the Customer of the claim and, to the extent legally possible, give the Customer the opportunity to defend the asserted claim. At the same time, the customer shall immediately provide the provider with all information available to him regarding the facts that are the subject of the claim. Any further claims for damages by the Provider shall remain unaffected.
+
+(13) The Customer is entitled to create employee accesses to his Customer Account for third parties (hereinafter referred to as "Employees") in accordance with the service packages booked by him. The Customer shall remain the sole contractual partner of the Provider. A contractual relationship between the Employees and the Provider shall not be established.
+
+(14) The Customer is liable to the Provider for the conduct of the employees to whom he grants access to his Customer Account. Violations of customer obligations from these TOS by such employees are attributed to the customer. The customer is responsible to the provider for ensuring that these employees behave in accordance with the contract and do not violate these TOS, laws and/or the rights of third parties in connection with the use of the contractual services. Violations of these provisions by the employees will be attributed to the customer, the customer is in these cases the claimant of the provider.
+
+In case of violation of these Terms and Conditions by the Customer, the Provider shall withdraw the Customer's right to continue using the system without reimbursement of any costs.
+
+## § 12. Termination and end of contract
+
+(1) The Customer may terminate the contractual relationship at any time with effect from the end of the respective term.
+
+(2) The Provider may terminate the contractual relationship by giving 4 weeks' notice with effect from the end of the respective term.
+
+(3) The right to terminate without notice for good cause remains unaffected for each party.
+
+(4) Any termination must be in text form to be effective. Insofar as the Provider offers a cancellation function on its website, the Customer may use this instead of the text form.
+
+(5) After termination, all payments still due from the Customer shall be determined as part of a final invoice. These will be invoiced to the customer and are due promptly. For its part, the Provider expressly reserves the right to terminate a contract for serious reasons (misuse, unauthorized subletting, insolvency of the Customer, etc.).
+
+(6) After the end of the contract, it is no longer possible for the customer and his employees to log into the customer account. It is the responsibility of the customer to copy those data that he wishes to continue using after the end of the contract to his own storage medium in good time before the end of the contract.
+
+(7) The Provider is entitled and obligated vis-à-vis the Customer to irretrievably delete any data of the Customer's account - subject to paragraph 8 - after expiration of a retention period of 30 days after the end of the contract. The purpose of the retention period is to enable the customer to restore his data in the event that he has terminated the contract by mistake, has objected to the termination or changes his mind. The right of the customer to demand immediate deletion at the end of the contract at any time shall remain unaffected.
+
+(8) Data that the Provider is obligated to retain for tax law, commercial law or other legal reasons shall remain stored until the respective retention obligation has expired.
+
+(9) If the Customer is of the opinion that a termination on the part of the Provider is unjustified, it shall be incumbent upon the Customer to object to the termination within three weeks of its receipt. If the Customer does not object, the Provider may assume that the Customer agrees to the termination of the contractual relationship; in this case, the Customer shall not be entitled to any claims for damages due to data deletion pursuant to paragraph 7.
+
+## § 13. Liability
+
+The provider is liable, regardless of the legal grounds, exclusively in accordance with the following provisions.
+
+(1) The Provider shall not be liable for damages caused by acts of third parties, force majeure (e.g. fire and water damage, lightning strike, etc.) or effects by the Customer or the Customer's employees that make the contractual services impossible or even significantly complicate or temporarily hinder the proper performance of the contract. Force majeure shall be deemed to be all circumstances that are independent of the will and influence of the contracting parties, such as terrorist attacks, embargo, confiscation, natural disasters, strikes, decisions by authorities or other serious and unforeseeable circumstances that are not the fault of the contracting parties. A circumstance shall only be considered as force majeure if it occurred after the conclusion of the contract.
+
+Furthermore, the Provider shall not be liable for disruptions and loss of quality of data transmission on the Internet for which he is not responsible and which impede or prevent the use of functions of the Internet platform or services accessible via it.
+
+(2) The provider is not liable for the content, correctness or completeness of data or content transmitted by the customer.
+
+(3) Furthermore, the provider is, as far as legally agreed, in no case liable for lost profits, consequential damages, non-material damages, savings not achieved, loss of interest, financial losses and claims of third parties under the title of product liability.
+
+(4) The Provider assumes no liability that the system provided by the Provider meets all requirements of the Customer and achieves the desired economic success for the Customer.
+
+(5) The Provider shall only be liable for intent and gross negligence. In case of gross negligence, the provider is liable for any damages. The maximum liability amount is limited to the agreed annual service fee or the agreed license costs, capped at a maximum of € 1000 per damage event.
+
+(6) If the Customer violates any legal provisions in connection with the use of the Software, it shall indemnify and hold harmless the Provider from and against any and all claims of third parties resulting therefrom.
+
+(7) The limitation of liability of the Provider shall not apply in case of injury to life, body and/or health and in case of liability according to the Product Liability Act.
+
+(8) Any claims for damages shall become time-barred within one year.
+
+(9) Insofar as the liability of the Provider is excluded or limited, this shall also apply to the personal liability of the shareholders, employees, other staff, representatives and vicarious agents of the Provider.
+
+### § 14. Copyright
+
+The Software and all documentation shall remain the property of the Provider.
+
+Should the Provider make adjustments or enhancements to the Software for the Customer during the execution of this Agreement, all resulting copyrights and rights of use to the developments shall remain with the Provider.
+
+### § 15. Changes to the TOS
+
+The Provider reserves the right to adapt or change the TOS. The customer will be informed about changes to the TOS in text form. For this purpose, the amended TOS will be sent to the e-mail address provided by the customer during registration.
+
+If the customer does not object to the amended TOS within two weeks after receipt of the notification, the amended TOS shall be deemed accepted.
+
+If the customer exercises his right of objection, the provider is entitled to terminate this contract properly in accordance with the provisions of § 5 of these TOS (e-mail is sufficient). The notice period is seven days.
+
+### § 16. Final provisions
+
+(1) The parties submit the contract exclusively to the law of Austria to the exclusion of the
+international private law and the UN Convention on Contracts for the International Sale of Goods.
+
+(2) The place of performance shall be the registered office of the Provider. The exclusive place of jurisdiction shall be the registered office of the provider. In addition, any other statutory place of jurisdiction shall apply to actions brought by the Provider against the Entrepreneur.
+
+(3) Insofar as the parties refer to working days, Sundays, public holidays, dates or times, the statutory time and the statutory public holiday regulations for the registered office of the Provider shall be used as a basis for this.
+
+(4) The Customer agrees that communication - also in contractual matters - can be made by e-mail. The Customer undertakes to always store a current e-mail address in his account. The e-mail address of the provider can be found in the imprint.
+
+(5) Contractual language is German, all declarations and communication are made in German. The parties shall ensure that their contact persons are each proficient in the German language.
+
+(6) The Customer warrants that its use of the system and all data entered or uploaded comply with all applicable laws and regulations and do not violate the rights of third parties.
+
+(7) Should individual provisions of these TOS or of contracts or agreements made between the parties be wholly or partially invalid or unenforceable or become invalid or unenforceable after the conclusion of the contract, the validity of the remaining provisions shall remain unaffected.
+Instead, the parties shall work towards agreeing on a substitute provision which comes closest to the invalid or unenforceable provision in terms of its effects in a legally permissible and economic manner.
+The above provisions shall apply mutatis mutandis in the event that provisions prove to be incomplete.
+
+### Change history
+
+**Version 1.6 (03. May 2026)**
+- § 3 (6): Early deletion of unused trial accounts
+
+**Version 1.5 (06. January 2026)**
+- § 5 (1): Clarified the contract start date
+- § 7 (2): Added obligation to inform customers regarding changes to subprocessors
+- § 7 (4): Added provision on assisting customers with data subject rights requests (e.g., GDPR)
+- § 8 (6): Defined the notification channel in the event of a personal data breach
+
+**Version 1.4 (03. October 2025)**
+- § 3 (3): Confirmation email no longer contains terms and conditions
+- § 6 (8): Division into (a) contracts before 2024 and (b) contracts after 2024
+- § 9 (2): Mention onboarding emails
+- Added www.kimai.org and www.kimai.cloud as part of the service offering
+- URLs removed and replaced with the word ‘website’
+- Replaced ‘§14 BGB’ (Germany) with ‘§1 UGB’ (Austria)
+- Replaced abbreviation `GTC` (General Terms and Conditions) with `TOS` (Terms of Service)
+
+**Version 1.3 (24. March 2025)**
+- § 3 (6): After expiration of test phase exists no free usage plan exists
+
+**Version 1.2 (26. March 2021)**
+- Added english translation for informational purposes
+
+**Version 1.1 (01. January 2021)**
+- § 1  (1): Replaced `Kevin Papst with registered office in Munich` by `Kevin Papst with registered office in Austria`
+- § 16 (1): Replaced `the law of the Federal Republic of Germany` by `the law of Austria`
+- § 16 (2): Replaced `business location of the provider (currently Munich)` by `business location of the provider`.
+
+**Version 1.0 (05. October 2019)**
+- Initial version
