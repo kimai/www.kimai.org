@@ -5,7 +5,7 @@ permalink: /de/stories/leadmetrix
 layout: story
 tags: [stories]
 author: nikita
-excerpt: Wie eine Revenue-Operations-Agentur mit der Zeiterfassung Kimai einen echten Wettbewerbsvorteil geschaffen hat
+excerpt: Wie eine RevOps-Agentur einen echten Wettbewerbsvorteil mit Kimai geschaffen hat
 homepage: www.leadmetrix.com
 homepage_url: https://www.leadmetrix.com
 logo: /images/stories/leadmetrix-logo.svg
