@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>LeadMetrix – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LeadMetrix">
+<meta property="og:image" content="https://www.kimai.org/images/stories/leadmetrix-image.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/stories/leadmetrix">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/stories/leadmetrix">
+<link href="/assets/build/main.css?v14" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+<main class="page-wrapper">
+    
+
+
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                            
+                            <li><a href="/de/partner/" class="dropdown-item">Partner</a></li>
+                            
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Updates</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            
+            
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    <section class="hero container pt-5 pb-2 mb-lg-5">
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                
+<li class="breadcrumb-item">
+    <a href="/de/"><i class="bx bx-home-alt fs-lg me-1"></i>Startseite</a>
+</li>
+<li class="breadcrumb-item">
+    <a href="/de/stories/">Erfolgsgeschichten</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">LeadMetrix</li>
+
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url(/images/stories/leadmetrix-image.webp); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
+            </div>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        
+<li class="breadcrumb-item">
+    <a href="/de/"><i class="bx bx-home-alt fs-lg me-1"></i>Startseite</a>
+</li>
+<li class="breadcrumb-item">
+    <a href="/de/stories/">Erfolgsgeschichten</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">LeadMetrix</li>
+
+                    </ol>
+                </nav>
+
+                <div class="bg-hero rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
+                        <h1 class="page-title pb-2 pb-xxl-3">LeadMetrix</h1>
+                        <div class="pb-2 mb-4 mb-xxl-5">
+                            Gründer: <strong>Gil Ben-Horin</strong>
+                            <br>
+                            Branche: <strong>B2B RevOps</strong>
+                            <br>
+                            Mitarbeiter: <strong>10+</strong>
+                            <br>
+                            Nutzt Kimai seit: <strong>2024</strong>
+                            <br>
+                            Homepage: <strong><a href="https://www.leadmetrix.com" target="_blank">www.leadmetrix.com</a></strong>
+                            
+                            <br>
+                            Standort: <strong>Tel Mond, Israel</strong>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-md-9 pe-lg-5">
+                <h2 class="h2 pb-4 mb-1 mb-lg-3">Wie eine RevOps-Agentur einen echten Wettbewerbsvorteil mit Kimai geschaffen hat</h2>
+                <p><strong>TL;DR</strong></p>
+
+<p>Eine RevOps-Boutique-Agentur aus Israel setzt seit Jahren auf Kimai, um transparent und stundengenau abzurechnen und so das Vertrauen ihrer Kunden zu gewinnen. Als das Team das Potenzial der Berichtsfunktionen von Kimai erkannte, ging es einen Schritt weiter und entwickelte ein eigenes Reporting-Plugin – das inzwischen im Kimai Plugin-Store erhältlich ist.</p>
+
+<p><strong>Über das Unternehmen</strong></p>
+
+<p>LeadMetrix ist eine Boutique-Agentur für Revenue Operations (RevOps), spezialisiert auf Marketing Ops und Sales Ops für B2B-Unternehmen. Das Team baut datengetriebene Abläufe und Customer Journeys über Plattformen wie HubSpot und Salesforce hinweg – und verbindet Ticketsysteme, Messaging-Kanäle und CRMs zu einem nahtlosen Kundenerlebnis.</p>
+
+<p>Für Gil, den Gründer von LeadMetrix, war Zeiterfassung nie optional. <em>„Ohne eine Zeiterfassungs-App können wir die Rechnungen, die wir am Monatsende verschicken, schlicht nicht begründen.“</em> Für eine RevOps-Agentur, die nach Stunden abrechnet, hängt das Geschäft direkt an der erfassten Zeit.</p>
+
+<p>Ein Tool zu finden, das zur Arbeitsweise von LeadMetrix passt – transparent, flexibel und detailliert genug, um abrechenbare von nicht abrechenbarer Zeit zu trennen –, erforderte allerdings etwas Suche. Die Antwort war schließlich die Zeiterfassung mit Kimai. Heute ist sie ein angehefteter Tab in Gils Browser, den er mindestens sieben Mal am Tag öffnet.</p>
+
+
+            </div>
+            <div class="col-md-3 pb-2 pb-md-0 mb-4 mb-md-0">
+                <div class="card card-body border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></span>
+                    <div class="position-relative zindex-2">
+                        <h3 class="h5">Einsparungen mit Kimai</h3>
+                        <ul class="ps-4 mb-0">
+                            
+                            <li class="pb-3 mb-1">Zeitersparnis bei der Berichtserstellung dank eines selbst entwickelten Plugins</li>
+                            
+                            <li class="pb-3 mb-1">Frühere Einblicke in die Projektrentabilität durch wöchentliche Auswertungen</li>
+                            
+                            <li class="pb-3 mb-1">Optimiertes Verhältnis von abrechenbarer zu nicht abrechenbarer Zeit senkt interne Kosten</li>
+                            
+                            <li class="pb-3 mb-1">Weniger Rückfragen zu Rechnungen dank transparenter, detaillierter PDF-Berichte</li>
+                            
+                            <li class="pb-3 mb-1">Weniger Verwaltungsaufwand durch die Wochenansicht der Arbeitszeiten</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary py-5">
+    <div class="container py-2 py-md-4 py-lg-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="position-relative d-flex h-100">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-center" style="background-image: url(/images/stories/leadmetrix-photo.webp);"></div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <figure class="card position-relative border-0 shadow-sm py-3 p-0 p-lg-4 mb-0 ms-xl-5">
+                    <div class="card-body mt-2 mb-0">
+                        <p class="fs-lg">Gil Ben-Horin ist Entwickler und Unternehmer mit einem Hintergrund in Computerlinguistik und einem MBA. Er hat das Unternehmen von einer Ein-Personen-Webentwicklung zu einer erfolgreichen RevOps-Boutique ausgebaut – organisch gewachsen, mit dem Fokus auf Ergebnisse statt auf Prozesse.</p>
+                    </div>
+                    <figcaption class="card-footer border-0 d-sm-flex pt-0 mt-n3 mt-lg-0">
+                        <div class="d-flex align-items-center border-end-sm pe-sm-4 me-sm-4">
+                            <img src="/images/stories/leadmetrix-photo.webp" width="48" class="d-md-none rounded-circle" alt="Gil Ben-Horin">
+                            <div class="ps-3 ps-md-0">
+                                <h5 class="fw-semibold lh-base mb-0">Gil Ben-Horin</h5>
+                                <span class="fs-sm text-muted">Gründer</span>
+                            </div>
+                        </div>
+                        <img src="/images/stories/leadmetrix-logo.svg" style="max-height:50px;" class="d-block mt-2 ms-5 mt-sm-0 ms-sm-0" alt="">
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                
+
+<p><strong>Die Herausforderung: Überblick, bevor es zu spät ist</strong></p>
+
+<p>LeadMetrix betreut Revenue Operations für Kunden auf HubSpot, Salesforce und verschiedenen Integrationsplattformen. <em>„Wir haben als Webentwicklungsfirma angefangen. Als SaaS- und Web-Plattformen aufkamen, wurde mir klar, dass dieselben Technologien, mit denen man Websites baut, auch diese Systeme antreiben können. Also habe ich angefangen, eigenständig auf diesen Plattformen zu arbeiten, und wir haben unser Angebot erweitert.“</em> Die Arbeit ist vielfältig, oft komplex und umfasst häufig Aufgaben, die zum ersten Mal auftauchen – und erst recherchiert werden müssen, bevor überhaupt abrechenbare Zeit entsteht.</p>
+
+<p>Vor Kimai nutzte das Team Toggl. Das deckte die Grundlagen ab, aber LeadMetrix brauchte mehr Struktur. Gil wollte nicht nur sehen, ob eine Arbeit bis zur Deadline erledigt wurde, sondern was Woche für Woche und Tag für Tag passiert. <em>„Wenn man erst merkt, dass eine Aufgabe verspätet ist, ist es zu spät“</em>, sagt er. <em>„Mit Kimai sehen wir früher, wo es hakt, erkennen Blocker und können bei Problemen helfen.“</em></p>
+
+<p>Außerdem brauchte das Unternehmen eine klare Trennung zwischen abrechenbarer und nicht abrechenbarer Zeit innerhalb desselben Kunden. Kommt eine neue Art von Aufgabe hinzu, rechnet Gil mit zwei bis drei Stunden nicht abrechenbarer Recherche, bevor das Team effizient arbeiten kann. Diese Kosten sind real, auch wenn der Kunde sie nie sieht. „<em>Ich muss sehen, ob wir mit diesem Kunden profitabel sind</em>“, erklärt er. Ohne detaillierte Erfassung auf Projektebene war diese Rechnung unmöglich.</p>
+
+<p><strong>Die Struktur: Kunden, Projekte und ein einfacher Aufbau, der mitwächst</strong></p>
+
+<p>LeadMetrix hat seine Kimai-Struktur entlang einer klaren Hierarchie aufgebaut: Kunde → Projekt → abrechenbar oder nicht abrechenbar. Jeder zahlende Kunde mit unterschriebenem Vertrag bekommt einen eigenen Kundeneintrag. Projekte werden nach Art der Arbeit angelegt: Website-Betreuung, HubSpot Ops, Salesforce Ops usw. – jeweils mit eigenem Stundensatz. Interne und nicht abrechenbare Arbeit liegt in separaten Projekten beim selben Kunden. Am Monatsende erstellt das Team Berichte, um abrechenbare und nicht abrechenbare Zeit pro Kunde zu vergleichen. Kunden erhalten nur den abrechenbaren Teil. Die nicht abrechenbaren Daten bleiben intern und dienen dazu, die Rentabilität im Blick zu behalten, das Team zu coachen und Schätzungen laufend zu verbessern.</p>
+
+<p>Bei den Tätigkeiten hat Gil die Erfassung bewusst grob gehalten. <em>„Wenn man zu kleinteilig wird, verbringt man mehr Zeit mit Verwaltung als mit der eigentlichen Arbeit.“</em> Es geht ihm um die Balance: genug Struktur, um Erkenntnisse zu gewinnen, aber nicht so viel, dass sie zur Last wird.</p>
+
+<p><strong>Der Arbeitsablauf: eine Kalenderansicht, die das ganze Team nutzt</strong></p>
+
+<p>Das Team hat sich schnell an die <a href="/documentation/calendar.html">Kalenderansicht</a> von Kimai gewöhnt. Man öffnet die Woche, zieht einen Zeitblock auf – etwa Montag von 9:00 bis 11:00 Uhr –, tippt eine Beschreibung ein und speichert. Häufig genutzte Aufgaben liegen in einer Seitenleiste und lassen sich direkt in den Kalender ziehen. <em>„Es ist richtig befriedigend, eine komplett erfasste Woche zu sehen“</em>, sagt Gil. Jeder erfasst anders: manche in Echtzeit, manche nach Abschluss einer Aufgabe, manche gesammelt am Ende des Tages. Kimai unterstützt all das, ohne eine einzige Arbeitsweise vorzuschreiben. Der Head of Operations startet jeden Morgen damit, Kimai zu öffnen und die Wochenansicht pro Mitarbeiter durchzugehen: wie viel gearbeitet und wie viel abgerechnet wurde.</p>
+
+<p><strong>Das Ergebnis: Berichte, denen Kunden vertrauen</strong></p>
+
+<p>LeadMetrix schickt seinen Kunden wöchentliche Berichte mit einer vollständigen Aufschlüsselung, was gemacht wurde, von wem und wie lange es gedauert hat. Diese Transparenz ist gewollt und hat sich zu einem echten Unterscheidungsmerkmal entwickelt. Die Berichte zu erstellen war früher allerdings Handarbeit: filtern, formatieren und die Daten jedes Mal neu aufbereiten.</p>
+
+<p>Gils Team hat das gelöst, indem es ein Custom-Reports-Plugin für Kimai entwickelt hat, das demnächst im Kimai <a href="/de/store/">Plugin-Store</a> erscheint. Damit lassen sich Berichtsvorlagen speichern: Die Kriterien für eine Kombination aus Kunde, Projekt und Teammitglied werden einmal festgelegt und in der Folgewoche mit einem Klick erneut ausgeführt. Berichte können persönlich sein oder mit dem Team geteilt werden. Das Ergebnis ist ein automatisch erzeugtes PDF – genau in dem Format, das die Kunden erwarten.</p>
+
+<p><em>„Unsere Kunden schätzen die Transparenz“</em>, sagt Gil. <em>„Früher bekamen sie am Monatsende nur eine Rechnung und haben nachgefragt, wenn ihnen die Stunden unangemessen vorkamen. Heute sehen sie genau, was gemacht wurde.“</em> Diese Sichtbarkeit führt gelegentlich zu Rückfragen, wenn Kunden bezweifeln, dass eine Aufgabe wirklich so lange gedauert hat wie erfasst – doch Gil führt dieses Gespräch lieber als die Alternative. Eine Rechnung ohne Nachweis ist schwerer zu verteidigen als ein klar strukturierter Bericht.</p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row w-lg-50 w-md-75 w-100 m-auto pb-xl-3">
+            <div class="col">
+                <div class="card position-relative border-0 shadow-sm pt-4">
+                    <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                      <i class="bx bxs-quote-left"></i>
+                    </span>
+                    <div class="card-body pb-3 mb-0">
+                        <p class="mb-0"><p>Unsere Kunden schätzen die Transparenz. Früher bekamen sie am Monatsende nur eine Rechnung und haben nachgefragt, wenn ihnen die Stunden unangemessen vorkamen. Heute sehen sie genau, was gemacht wurde.</p>
+</p>
+                        <div class="d-flex align-items-center pt-4">
+                            <img src="/images/stories/leadmetrix-photo.webp" width="58" class="rounded-circle" alt="Gil Ben-Horin">
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Gil Ben-Horin</h6>
+                                <span class="fs-xs text-muted">Gründer &ndash; LeadMetrix</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                
+
+<p><strong>Ausblick: Integrationen und der Druck durch KI</strong></p>
+
+<p>Gil experimentiert bereits mit Automatisierungstools wie n8n und Zapier. <em>„Damit lassen sich Hunderte oder Tausende Tools verbinden, ohne eigene Integrationen schreiben zu müssen“</em>, sagt er. Ein Beispiel: Wird in HubSpot ein neues Ticket angelegt, erstellt ein Trigger automatisch den passenden Kunden und das Projekt in Kimai und startet eine Zeiterfassung. Genau diese Art von Automatisierung nimmt Reibung aus dem Moment, in dem ein neuer Auftrag beginnt.</p>
+
+<p>Gleichzeitig steht die Agenturbranche unter einem neuen Druck. Kunden fragen immer öfter, warum eine Aufgabe zehn Stunden gedauert hat, wenn KI sie doch in fünf erledigen könnte. Gils Antwort ist besonnen: „<em>Wir setzen KI dort ein, wo sie hilft, aber sie ist nicht für alles die Lösung.</em>“ Vorerst ist es die Kombination aus transparenten Zeitberichten und klaren Aufgabenbeschreibungen – ermöglicht durch die Zeiterfassung mit Kimai –, mit der LeadMetrix seine Stunden selbstbewusst vertreten kann.</p>
+
+<p>Anderen Agenturen, die denselben Weg gehen wollen, rät er: mit der Zeiterfassung beginnen, die Struktur schlank halten und die Daten sprechen lassen. <em>„Wir lernen Woche für Woche dazu. Früher wussten wir nur, ob eine Aufgabe bis zum Stichtag erledigt wurde. Heute haben wir durchgehend den Überblick.“</em></p>
+
+<p>Vielen Dank, Gil Ben-Horin, für das inspirierende Gespräch, und alles Gute für die Zukunft von LeadMetrix!</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+                <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/de/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Glossar</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v4"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
