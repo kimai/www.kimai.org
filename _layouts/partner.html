@@ -44,7 +44,7 @@ layout: default
         <div class="col-lg-8">
 
             {% comment %} About {% endcomment %}
-            {% assign about = developer.introduction[english_german] | default: page.description | default: developer.description %}
+            {% assign about = developer.introduction[english_german] | default: developer.description %}
             {% assign body = content | strip %}
             <div class="card mb-4">
                 <div class="card-body p-4 p-lg-5">
