@@ -39,7 +39,7 @@ LeadMetrix ist eine Boutique-Agentur für Revenue Operations (RevOps), spezialis
 
 Für Gil, den Gründer von LeadMetrix, war Zeiterfassung nie optional. *„Ohne eine Zeiterfassungs-App können wir die Rechnungen, die wir am Monatsende verschicken, schlicht nicht begründen.“* Für eine RevOps-Agentur, die nach Stunden abrechnet, hängt das Geschäft direkt an der erfassten Zeit.
 
-Ein Tool zu finden, das zur Arbeitsweise von LeadMetrix passt – transparent, flexibel und detailliert genug, um abrechenbare von nicht abrechenbarer Zeit zu trennen –, erforderte allerdings etwas Suche. Die Antwort war schließlich die Zeiterfassung Kimai. Heute ist sie ein angehefteter Tab in Gils Browser, den er mindestens sieben Mal am Tag öffnet.
+Ein Tool zu finden, das zur Arbeitsweise von LeadMetrix passt – transparent, flexibel und detailliert genug, um abrechenbare von nicht abrechenbarer Zeit zu trennen –, erforderte allerdings etwas Suche. Die Antwort war schließlich die Zeiterfassung mit Kimai. Heute ist sie ein angehefteter Tab in Gils Browser, den er mindestens sieben Mal am Tag öffnet.
 
 <!-- PARTS -->
 
