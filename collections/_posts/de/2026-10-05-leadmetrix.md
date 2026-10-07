@@ -59,7 +59,7 @@ Bei den Tätigkeiten hat Gil die Erfassung bewusst grob gehalten. *„Wenn man z
 
 **Der Arbeitsablauf: eine Kalenderansicht, die das ganze Team nutzt**
 
-Das Team hat sich schnell an die [Kalenderansicht]({% link _documentation/calendar.md %}) von Kimai gewöhnt. Man öffnet die Woche, zieht einen Zeitblock auf – etwa Montag von 9:00 bis 11:00 Uhr –, tippt eine Beschreibung ein und klickt. Häufig genutzte Aufgaben liegen in einer Seitenleiste und lassen sich direkt in den Kalender ziehen. *„Es ist richtig befriedigend, eine komplett erfasste Woche zu sehen“*, sagt Gil. Jeder erfasst anders: manche in Echtzeit, manche nach Abschluss einer Aufgabe, manche gesammelt am Ende des Tages. Kimai unterstützt all das, ohne eine einzige Arbeitsweise vorzuschreiben. Der Head of Operations startet jeden Morgen damit, Kimai zu öffnen und die Wochenansicht pro Mitarbeiter durchzugehen: wie viel gearbeitet und wie viel abgerechnet wurde.
+Das Team hat sich schnell an die [Kalenderansicht]({% link _documentation/calendar.md %}) von Kimai gewöhnt. Man öffnet die Woche, zieht einen Zeitblock auf – etwa Montag von 9:00 bis 11:00 Uhr –, tippt eine Beschreibung ein und speichert. Häufig genutzte Aufgaben liegen in einer Seitenleiste und lassen sich direkt in den Kalender ziehen. *„Es ist richtig befriedigend, eine komplett erfasste Woche zu sehen“*, sagt Gil. Jeder erfasst anders: manche in Echtzeit, manche nach Abschluss einer Aufgabe, manche gesammelt am Ende des Tages. Kimai unterstützt all das, ohne eine einzige Arbeitsweise vorzuschreiben. Der Head of Operations startet jeden Morgen damit, Kimai zu öffnen und die Wochenansicht pro Mitarbeiter durchzugehen: wie viel gearbeitet und wie viel abgerechnet wurde.
 
 **Das Ergebnis: Berichte, denen Kunden vertrauen**
 
