@@ -10,7 +10,7 @@ permalink: /sitemap.xml
 {%- if item.sitemap == nil or item.sitemap -%}
 {%- unless site.custom_domain[item.lang] -%}
 <url>
-    <loc>{% include link-language-domain.html language=item.lang url=item.url %}</loc>
+    <loc>{{ item.lang | language_domain_url: item.url }}</loc>
     <lastmod>{{ item.date | date_to_xmlschema }}</lastmod>
 </url>
 {% endunless -%}

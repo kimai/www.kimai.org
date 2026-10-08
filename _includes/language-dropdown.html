@@ -7,7 +7,7 @@
         {% for lang in site.languages %}
             {% unless site.languages_disabled contains lang %}
             <li>
-                <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{% include link-language-domain.html language=lang %}" class="dropdown-item{% if lang == include.language %} active{% endif %}"{% if lang == include.language %} aria-current="true"{% endif %} title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
+                <a dir="{% if site.rtl contains lang %}rtl{% else %}ltr{% endif %}" href="{{ lang | language_domain_url }}" class="dropdown-item{% if lang == include.language %} active{% endif %}"{% if lang == include.language %} aria-current="true"{% endif %} title="{{ site.data[lang].translation.index.title }}">{{ site.language_names[lang] }}</a>
             </li>
             {% endunless %}
         {% endfor %}

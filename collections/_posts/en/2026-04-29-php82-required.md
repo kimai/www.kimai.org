@@ -49,7 +49,7 @@ Beyond the PHP bump, this release packs a handful of useful improvements:
 **Improved `kimai.sh` management script.** The CLI script that helps you administer your Kimai installation has been polished. We are explicitly asking you for feedback on this one — if you use it, give it a spin and report back.
 
 **A new Catalan translation**, plus the usual round of translation updates from Hosted Weblate. Big thanks to the contributors keeping Kimai accessible in dozens of languages.
-Oh, and the website is also [available in Catalan]({% include link-language-domain.html language="ca" url="/ca/" %}) now. 
+Oh, and the website is also [available in Catalan]({{ "ca" | language_domain_url: "/ca/" }}) now. 
 
 ## How to prepare for the upgrade
 
