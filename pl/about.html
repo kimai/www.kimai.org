@@ -40,7 +40,7 @@
 <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/about.html">
 <link rel="alternate" hreflang="zh-hans" href="https://www.kimai.org/zh_Hans/about.html">
 <link rel="alternate" hreflang="zh-hant" href="https://www.kimai.tw/about.html">
-<link href="/assets/build/main.css?v14" rel="stylesheet" />
+<link href="/assets/build/main.css?v16" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -337,6 +337,161 @@
 <p>Mogę napisać o Kimai jeszcze wiele więcej, o funkcjach i korzyściach, które może przynieść ci - niezależnie od tego, czy jesteś freelancerem, małą firmą czy firmą z setkami pracowników - ale uważam, że dając ci możliwość wypróbowania go na własną rękę, jest jeszcze lepszy niż tysiąc słów ode mnie.</p>
 
 </section>
+
+<section class="pb-5 pt-md-1 pt-lg-4 pt-xl-5 mb-5" id="world-map">
+	<div class="container py-2 py-md-3 py-lg-4 py-xl-5">
+		<div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center title-header">
+			<h2 class="h1 mb-4"></h2>
+			<p class="mb-4"></p>
+		</div>
+		
+
+		<figure class="world-map-figure" data-world-map="" data-src="/images/world-map-%projection%.svg" data-projection="miller" data-dataset="all" data-lang="pl" data-label="">
+			<div class="world-map-stage">
+				<div class="world-map-canvas" data-world-map-canvas=""></div>
+				<div class="tooltip bs-tooltip-top world-map-tooltip" role="tooltip" aria-hidden="true" data-world-map-tooltip="">
+					<div class="tooltip-arrow"></div>
+					<div class="tooltip-inner"></div>
+				</div>
+			</div>
+			<figcaption class="world-map-legend">
+				<ul class="list-unstyled">
+					
+					<li><span class="world-map-swatch" data-level="1"></span><span data-level-label="1"></span></li>
+					
+					<li><span class="world-map-swatch" data-level="10"></span><span data-level-label="10"></span></li>
+					
+					<li><span class="world-map-swatch" data-level="100"></span><span data-level-label="100"></span></li>
+					
+				</ul>
+			</figcaption>
+			
+		</figure>
+	</div>
+</section>
+
+<script type="application/json" id="world-map-data">{"levels":[1,10,100],"datasets":["all","cloud","onpremise"],"countries":{"AD":{"all":1,"onpremise":1},"AE":{"all":10,"onpremise":10},"AL":{"all":1,"onpremise":1},"AM":{"all":1,"onpremise":1},"AO":{"all":1,"onpremise":1},"AR":{"all":10,"onpremise":10},"AT":{"all":100,"cloud":100,"onpremise":100},"AU":{"all":100,"cloud":10,"onpremise":10},"BA":{"all":1,"onpremise":1},"BD":{"all":1,"onpremise":1},"BE":{"all":100,"cloud":10,"onpremise":10},"BG":{"all":10,"cloud":1,"onpremise":10},"BH":{"all":1,"onpremise":1},"BR":{"all":10,"onpremise":10},"BY":{"all":1,"onpremise":1},"BZ":{"all":1,"onpremise":1},"CA":{"all":100,"cloud":10,"onpremise":100},"CH":{"all":100,"cloud":100,"onpremise":100},"CL":{"all":10,"onpremise":10},"CN":{"all":10,"onpremise":10},"CO":{"all":10,"cloud":1,"onpremise":10},"CR":{"all":1,"onpremise":1},"CY":{"all":10,"cloud":1,"onpremise":1},"CZ":{"all":100,"cloud":10,"onpremise":10},"DE":{"all":100,"cloud":100,"onpremise":100},"DK":{"all":10,"cloud":10,"onpremise":10},"DO":{"all":1,"onpremise":1},"DZ":{"all":1,"onpremise":1},"EC":{"all":1,"onpremise":1},"EE":{"all":10,"cloud":1,"onpremise":10},"EG":{"all":10,"onpremise":10},"ES":{"all":100,"cloud":10,"onpremise":100},"ET":{"all":1,"onpremise":1},"FI":{"all":10,"cloud":10,"onpremise":10},"FR":{"all":100,"cloud":10,"onpremise":100},"GB":{"all":100,"cloud":10,"onpremise":100},"GE":{"all":1,"onpremise":1},"GH":{"all":1,"onpremise":1},"GP":{"all":1,"onpremise":1},"GR":{"all":10,"cloud":1,"onpremise":1},"GT":{"all":1,"onpremise":1},"HK":{"all":1,"onpremise":1},"HN":{"all":1,"onpremise":1},"HR":{"all":10,"cloud":1,"onpremise":10},"HU":{"all":10,"cloud":1,"onpremise":10},"ID":{"all":10,"onpremise":10},"IE":{"all":10,"cloud":1,"onpremise":10},"IL":{"all":10,"cloud":1,"onpremise":10},"IN":{"all":100,"cloud":1,"onpremise":100},"IS":{"all":1,"cloud":1,"onpremise":1},"IT":{"all":100,"cloud":10,"onpremise":100},"JO":{"all":1,"onpremise":1},"JP":{"all":10,"cloud":1,"onpremise":10},"KE":{"all":1,"onpremise":1},"KG":{"all":1,"onpremise":1},"KR":{"all":10,"cloud":1,"onpremise":10},"KY":{"all":1,"onpremise":1},"KZ":{"all":1,"onpremise":1},"LI":{"all":1,"onpremise":1},"LK":{"all":1,"onpremise":1},"LT":{"all":10,"cloud":1,"onpremise":1},"LU":{"all":10,"cloud":1,"onpremise":10},"LV":{"all":1,"cloud":1,"onpremise":1},"MA":{"all":1,"onpremise":1},"MD":{"all":1,"onpremise":1},"ME":{"all":1,"onpremise":1},"MG":{"all":1,"onpremise":1},"MK":{"all":1,"onpremise":1},"MQ":{"all":1,"onpremise":1},"MT":{"all":1,"onpremise":1},"MU":{"all":1,"onpremise":1},"MV":{"all":1,"onpremise":1},"MX":{"all":10,"onpremise":10},"MY":{"all":10,"onpremise":10},"NA":{"all":1,"onpremise":1},"NC":{"all":1,"onpremise":1},"NI":{"all":1,"onpremise":1},"NL":{"all":100,"cloud":10,"onpremise":100},"NO":{"all":10,"cloud":10,"onpremise":10},"NP":{"all":1,"onpremise":1},"NZ":{"all":10,"cloud":1,"onpremise":10},"OM":{"all":1,"onpremise":1},"PA":{"all":1,"onpremise":1},"PE":{"all":1,"onpremise":1},"PG":{"all":1,"onpremise":1},"PH":{"all":10,"onpremise":10},"PK":{"all":10,"cloud":1,"onpremise":10},"PL":{"all":100,"cloud":10,"onpremise":100},"PT":{"all":10,"cloud":10,"onpremise":10},"PY":{"all":1,"cloud":1,"onpremise":1},"RO":{"all":10,"cloud":10,"onpremise":10},"RS":{"all":10,"cloud":1,"onpremise":1},"RU":{"all":10,"onpremise":10},"SA":{"all":1,"onpremise":1},"SC":{"all":1,"onpremise":1},"SE":{"all":10,"cloud":10,"onpremise":10},"SG":{"all":10,"cloud":1,"onpremise":10},"SI":{"all":10,"cloud":1,"onpremise":10},"SK":{"all":10,"cloud":1,"onpremise":10},"SN":{"all":1,"onpremise":1},"SV":{"all":1,"onpremise":1},"TH":{"all":10,"onpremise":10},"TJ":{"all":1,"onpremise":1},"TN":{"all":1,"onpremise":1},"TR":{"all":10,"cloud":1,"onpremise":10},"TW":{"all":10,"onpremise":10},"UA":{"all":10,"cloud":1,"onpremise":10},"US":{"all":100,"cloud":100,"onpremise":100},"UY":{"all":1,"cloud":1,"onpremise":1},"VE":{"all":1,"onpremise":1},"VN":{"all":10,"onpremise":10},"ZA":{"all":10,"cloud":1,"onpremise":10},"ZW":{"all":1,"onpremise":1}}}</script>
+
+<script>
+(function () {
+    const figure = document.querySelector('[data-world-map]');
+    const canvas = figure.querySelector('[data-world-map-canvas]');
+    const tooltip = figure.querySelector('[data-world-map-tooltip]');
+    const tooltipInner = tooltip.querySelector('.tooltip-inner');
+    const tooltipArrow = tooltip.querySelector('.tooltip-arrow');
+    const data = JSON.parse(document.getElementById('world-map-data').textContent);
+    const levels = data.levels.slice().sort((a, b) => a - b);
+
+    const labels = {};
+    figure.querySelectorAll('[data-level-label]').forEach((el) => {
+        labels[el.dataset.levelLabel] = el.textContent.trim();
+    });
+
+    let countryNames = null;
+    try {
+        countryNames = new Intl.DisplayNames([figure.dataset.lang, 'en'], { type: 'region' });
+    } catch (e) {}
+
+    const countryName = (iso) => {
+        try {
+            return countryNames ? countryNames.of(iso) : iso;
+        } catch (e) {
+            return iso;
+        }
+    };
+
+    // the highest level reached by a value, 0 if none
+    const levelOf = (value) => levels.reduce((result, level) => (value >= level ? level : result), 0);
+
+    const countryLevel = (iso) => levelOf((data.countries[iso] || {})[figure.dataset.dataset] || 0);
+
+    const render = () => {
+        canvas.querySelectorAll('svg [data-iso]').forEach((el) => {
+            const level = countryLevel(el.dataset.iso);
+            if (level > 0) {
+                el.setAttribute('data-level', level);
+            } else {
+                el.removeAttribute('data-level');
+            }
+        });
+    };
+
+    const hideTooltip = () => tooltip.classList.remove('show');
+
+    const showTooltip = (iso, clientX, clientY) => {
+        const level = countryLevel(iso);
+        const name = document.createElement('strong');
+        name.textContent = countryName(iso);
+        tooltipInner.replaceChildren(name);
+        if (level > 0) {
+            tooltipInner.append(document.createElement('br'), labels[level]);
+        }
+
+        // keep the tooltip inside the map, the arrow always points to the cursor
+        const stage = canvas.getBoundingClientRect();
+        const x = clientX - stage.left;
+        const left = Math.min(Math.max(x - tooltip.offsetWidth / 2, 0), Math.max(stage.width - tooltip.offsetWidth, 0));
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = (clientY - stage.top) + 'px';
+        tooltipArrow.style.left = (x - left - tooltipArrow.offsetWidth / 2) + 'px';
+        tooltip.classList.add('show');
+    };
+
+    const onPointer = (event) => {
+        const el = event.target.closest('[data-iso]');
+        if (el === null) {
+            hideTooltip();
+            return;
+        }
+        showTooltip(el.dataset.iso, event.clientX, event.clientY);
+    };
+
+    canvas.addEventListener('pointermove', onPointer);
+    canvas.addEventListener('pointerdown', onPointer);
+    canvas.addEventListener('pointerleave', hideTooltip);
+
+    const svgCache = {};
+    const loadProjection = (projection) => {
+        if (svgCache[projection] === undefined) {
+            svgCache[projection] = fetch(figure.dataset.src.replace('%projection%', projection)).then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to load world map: ' + response.status);
+                }
+                return response.text();
+            });
+        }
+        figure.dataset.projection = projection;
+
+        return svgCache[projection].then((svg) => {
+            // ignore responses for a projection that is no longer selected
+            if (figure.dataset.projection !== projection) {
+                return;
+            }
+            hideTooltip();
+            canvas.innerHTML = svg;
+            const map = canvas.querySelector('svg');
+            map.setAttribute('aria-label', figure.dataset.label);
+            canvas.style.aspectRatio = map.viewBox.baseVal.width + ' / ' + map.viewBox.baseVal.height;
+            render();
+        });
+    };
+
+    loadProjection(figure.dataset.projection).catch(() => figure.classList.add('d-none'));
+
+    document.querySelectorAll('input[name="world-map-projection"]').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            loadProjection(event.target.value).catch((error) => console.error(error));
+        });
+    });
+
+    document.querySelectorAll('input[name="world-map-dataset"]').forEach((input) => {
+        input.addEventListener('change', (event) => {
+            figure.dataset.dataset = event.target.value;
+            render();
+        });
+    });
+})();
+</script>
 
 <section class="bg-secondary pb-5 pt-md-1 pt-lg-4 pt-xl-5">
     <div class="container py-2 py-md-3 py-lg-4 py-xl-5">
