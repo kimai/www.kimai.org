@@ -30,6 +30,7 @@ $availableLanguages = [
     'pt_BR',
     'ru',
     'sk',
+    'sr',
     'sv',
     'ta',
     'uk',

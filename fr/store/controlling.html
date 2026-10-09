@@ -34,6 +34,7 @@
 <link rel="alternate" hreflang="pt-br" href="https://www.kimai.org/pt_BR/store/controlling.html">
 <link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/store/controlling.html">
 <link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/store/controlling.html">
+<link rel="alternate" hreflang="sr" href="https://www.kimai.org/sr/store/controlling.html">
 <link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/store/controlling.html">
 <link rel="alternate" hreflang="ta" href="https://www.kimai.org/ta/store/controlling.html">
 <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/store/controlling.html">
@@ -104,7 +105,7 @@
                             <li class="dropdown-divider"></li>
                             <li><a href="/fr/blog/" class="dropdown-item">Blog</a></li>
                             <li><a href="/fr/support.html" class="dropdown-item">Support</a></li>
-                            
+                            <li><a href="/fr/partner/" class="dropdown-item">Partenaires</a></li>
                             <li class="dropdown-divider"></li>
                             <li><a href="/fr/about.html" class="dropdown-item">À propos de Kimai</a></li>
                             <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
@@ -249,6 +250,12 @@
             
             <li>
                 <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
             </li>
             
         
@@ -695,9 +702,76 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Mises à Jour</h2>
                     
-                    <p><strong>Version 1.35.0</strong></p>
+                    <p><strong>Version 1.37.1</strong></p>
 
-<p>Compatibility: requires minimum Kimai 2.49.0</p>
+<p>Compatibility: requires minimum Kimai 2.69.0</p>
+
+<ul>
+  <li>Fix: negative duration in manual booking weren’t possible in 1.37.0 with Kimai 2.68.0</li>
+</ul>
+
+<p><strong>Version 1.37.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.66.0</p>
+
+<ul>
+  <li>Absence calendar
+    <ul>
+      <li>Now also shows pending absences</li>
+      <li>The dropdown also offers the next 12 month as selection</li>
+    </ul>
+  </li>
+  <li>The link to “absence calendar” from Working times view goes to
+    <ul>
+      <li>the current month if the view shows the current year</li>
+      <li>or to the start of the currently shown year, if it is not the current one</li>
+    </ul>
+  </li>
+  <li>Compatibility with the “sticky first report column” feature of Kimai core (only works with 2.68)</li>
+  <li>Fix: the form to “edit an existing absence” could not be opened</li>
+</ul>
+
+<p><strong>Version 1.36.1</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.66.0</p>
+
+<ul>
+  <li>Fix: mail links with subregion locales failed - e.g. <code class="language-plaintext highlighter-rouge">/de_DE/</code> is now created as <code class="language-plaintext highlighter-rouge">/de/</code></li>
+</ul>
+
+<p><strong>Version 1.36.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.66.0</p>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">default</code> as placeholder for default public holiday group</li>
+  <li>API now returns absence <code class="language-plaintext highlighter-rouge">comment</code>s</li>
+  <li>Allow to set <code class="language-plaintext highlighter-rouge">comment</code> when rejecting absence via API</li>
+  <li>New API endpoints for manual working time bookings:
+    <ul>
+      <li>Fetch <code class="language-plaintext highlighter-rouge">GET /api/manual-bookings/working-times/{user}</code></li>
+      <li>Create <code class="language-plaintext highlighter-rouge">POST /api/manual-bookings/working-times/{user}</code></li>
+    </ul>
+  </li>
+  <li>New API endpoints for manual holiday bookings:
+    <ul>
+      <li>Fetch <code class="language-plaintext highlighter-rouge">GET /api/manual-bookings/holidays/{user}</code></li>
+      <li>Create <code class="language-plaintext highlighter-rouge">POST /api/manual-bookings/holidays/{user}</code></li>
+    </ul>
+  </li>
+  <li>Absence calendar:
+    <ul>
+      <li>Allow to toggle visibility of users without absences in the initial screen</li>
+      <li>Show all users, with and without absences, on team pages and allow to toggle their visibility</li>
+      <li>Show user avatar</li>
+      <li>A user with either <code class="language-plaintext highlighter-rouge">view_other_absence</code> or <code class="language-plaintext highlighter-rouge">view_team_absence</code> can see all team-members</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Version 1.35.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.54.0</p>
 
 <ul>
   <li>Removed invalid API endpoint <code class="language-plaintext highlighter-rouge">DELETE /api/lock/{user}/{month}</code></li>
@@ -1498,6 +1572,12 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
             
             <li>
                 <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
             </li>
             
         

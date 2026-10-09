@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="sr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Kimai – програм отвореног кода за евидентирање времена</title>
+<meta name="description" content="Kimai – бесплатан и једноставан програм за евидентирање времена за фриленсере, агенције и компаније, са могућношћу управљања корисницима и фактурама.">
+<link type="application/atom+xml" rel="alternate" href="/sr/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="sr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kimai – програм отвореног кода за евидентирање времена">
+<meta property="og:image" content="https://www.kimai.org/images/screenshots/screenshot-dashboard.webp">
+<meta property="og:description" content="Kimai – бесплатан и једноставан програм за евидентирање времена за фриленсере, агенције и компаније, са могућношћу управљања корисницима и фактурама.">
+<link rel="alternate" hreflang="ca" href="https://www.kimai.org/ca/">
+<link rel="alternate" hreflang="cs" href="https://www.kimai.org/cs/">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/">
+<link rel="alternate" hreflang="es" href="https://www.kimai.org/es/">
+<link rel="alternate" hreflang="fr" href="https://www.kimai.org/fr/">
+<link rel="alternate" hreflang="he" href="https://www.kimai.co.il/">
+<link rel="alternate" hreflang="hr" href="https://www.kimai.org/hr/">
+<link rel="alternate" hreflang="it" href="https://www.kimai.org/it/">
+<link rel="alternate" hreflang="nl" href="https://www.kimai.org/nl/">
+<link rel="alternate" hreflang="pl" href="https://www.kimai.org/pl/">
+<link rel="alternate" hreflang="pt" href="https://www.kimai.org/pt/">
+<link rel="alternate" hreflang="pt-br" href="https://www.kimai.org/pt_BR/">
+<link rel="alternate" hreflang="ru" href="https://www.kimai.org/ru/">
+<link rel="alternate" hreflang="sk" href="https://www.kimai.org/sk/">
+<link rel="alternate" hreflang="sr" href="https://www.kimai.org/sr/">
+<link rel="alternate" hreflang="sv" href="https://www.kimai.org/sv/">
+<link rel="alternate" hreflang="ta" href="https://www.kimai.org/ta/">
+<link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/">
+<link rel="alternate" hreflang="zh-hans" href="https://www.kimai.org/zh_Hans/">
+<link rel="alternate" hreflang="zh-hant" href="https://www.kimai.tw/">
+<link href="/assets/build/main.css?v16" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/sr/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – програм отвореног кода за евидентирање времена"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Производ</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/sr/integrations" class="dropdown-item">Апликације и интеграције</a></li>
+                            <li><a href="/sr/demo.html" class="dropdown-item">Демо</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/sr/blog/" class="dropdown-item">Блог</a></li>
+                            <li><a href="/sr/support.html" class="dropdown-item">Подршка</a></li>
+                            <li><a href="/sr/partner/" class="dropdown-item">Партнер</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/sr/about.html" class="dropdown-item">О Kimai-ју</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Отворени код</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Цлоуд</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/sr/pricing" class="dropdown-item">Цене</a></li>
+                            <li><a href="/sr/changelog" class="dropdown-item">Дневник промена</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Сопствени хостинг</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/sr/download.html" class="dropdown-item">Инсталација</a></li>
+                            <li><a href="/sr/store/" class="dropdown-item">Додаци</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Форум <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Документација</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                Кориснички приручник
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Цлоуд
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Сопствени хостинг
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Програмер
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Srpski
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item active" aria-current="true" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">Започни бесплатно</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+
+
+
+
+
+
+
+    
+
+
+
+<section class="hero position-relative pt-4 overflow-hidden">
+    <span class="position-absolute top-0 start-0 d-block w-100 h-100 bg-hero"></span>
+    <div class="container position-relative zindex-2 py-lg-4 pt-xxl-5 pt-3">
+        <div class="row justify-content-md-start justify-content-center flex-md-nowrap">
+            <div class="col-xl-5 col-md-6 col-sm-10 d-flex flex-column justify-content-between mb-md-5 mb-md-4 mb-3">
+                <div class="text-md-start text-center">
+                    
+                    <p class="eyebrow text-muted mb-1 opacity-70">Open Source · Made in Austria</p>
+                    
+
+                    <h1 class="page-title mb-lg-4 mb-3">
+                        Евидентирање времена за тимове који раде на пројектима
+                    </h1>
+
+                    <p class="mx-md-0 mx-auto pb-xl-3 pb-lg-2 fs-lg" style="max-width: 30.5rem;">
+                        Наша платформа отвореног кода дизајнирана је за евидентирање и анализу временских података твоје компаније, што је чини идеалном за компаније свих величина. Kimai ти помаже да имаш преглед над временом и новцем.
+                    </p>
+
+                    
+                    <div class="ps-3">
+                        
+                        <div class="d-flex">
+    <div class="d-flex me-3">
+        
+        <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 48px; height: 48px;">
+            <img src="/images/testimonials/christoph-empl.webp" class="rounded-circle" width="44" alt="Christoph Empl - CEO - Etronet">
+        </div>
+        
+        <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 48px; height: 48px;">
+            <img src="/images/testimonials/mathias.webp" class="rounded-circle" width="44" alt="Mathias - IT Consulting - Cenas">
+        </div>
+        
+        <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 48px; height: 48px;">
+            <img src="/images/testimonials/jeremy-white.webp" class="rounded-circle" width="44" alt="Jeremy White - Founder - CodeWeavers">
+        </div>
+        
+        <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 48px; height: 48px;">
+            <img src="/images/testimonials/sam-pollock.webp" class="rounded-circle" width="44" alt="Sam Pollock - Director - Iconal">
+        </div>
+        
+        <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3" style="width: 48px; height: 48px;">
+            <img src="/images/testimonials/hendrik-michel.webp" class="rounded-circle" width="44" alt="Hendrik Michel, PoE - Head of Office & Administration - Pulse of Europe e.V.">
+        </div>
+        
+    </div>
+    
+    <div>
+        <div class="d-block fs-base">
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            <i class="bx bxs-star text-warning"></i>
+            5.0
+        </div>
+        <span class="fs-sm">Више од <span class="text-primary fw-semibold">7500</span> компанија верује Kimai-ју</span>
+    </div>
+</div>
+
+                    </div>
+                    
+
+                    
+                    <a href="https://www.kimai.cloud/auth/registration" class="btn btn-primary rounded-pill py-1 px-3 mt-5">
+                        <span class="lh-lg">Започни бесплатно</span>
+                        <i class="bx bx-right-arrow-alt fs-lg ms-2 me-n1"></i>
+                    </a>
+                    
+                </div>
+
+                
+
+                
+            </div>
+            <div class="col-md-12 offset-xl-1 d-flex mt-lg-4 mb-4">
+                <div class="align-self-end ms-xl-0 ms-md-4 p-lg-4 p-sm-3 p-2 rounded-4 overflow-hidden" style="background: linear-gradient(153.32deg, rgba(255, 255, 255, .3) -65.62%, rgba(255, 255, 255, .1) 83.28%); box-shadow: 0 .25rem 1.5rem -.0625rem rgba(0, 0, 0, .2); backdrop-filter: blur(25px);">
+                    
+                    <div class="swap-image">
+                        <img src="/images/screenshots/screenshot-dashboard.webp" alt="Screenshot" class="rounded-4 swap-from" style="max-height: 600px; width: 100%; box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        <div class="swap-to">
+                            <img src="/images/screenshots/screenshot-reporting.webp" alt="Screenshot" class="rounded-4" style="max-height: 600px; width: 100%; box-shadow: 0 0 7.5rem rgba(0, 0, 0, .1);">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="position-absolute bottom-0 start-0 w-100">
+        <span class="d-block w-100 h-100 py-xl-5 pt-lg-4 pt-md-0 pt-4 pb-5 bg-light"></span>
+    </span>
+</section>
+
+
+
+
+<section class="container position-relative zindex-2 mt-xl-3 rounded-5 p-5">
+
+    <div class="row text-center">
+        <p class="fs-sm text-muted mb-0 text-uppercase fw-bold">
+            Изабери свој пут
+        </p>
+        <h2 class="pb-2 pb-lg-3">
+            Цлоуд или сопствени хостинг.<br />
+Ти одлучујеш<br />
+
+        </h2>
+        <p class="fs-lg text-muted pb-3 pb-lg-4 w-5">
+            Исте моћне функције, различит начин постављања. Изабери оно што одговара твом тиму.
+        </p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-sm-2">
+
+        <div class="col">
+            <div class="card card-hover border-primary rounded-5 p-5 bg-faded-primary">
+                <div class="card-body pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                    <span class="badge rounded-pill bg-faded-primary text-primary fs-sm mb-2">
+                        Ми га хостујемо
+                    </span>
+                    <h2 class="mb-lg-4">Kimai Cloud</h2>
+                    <p class="text-muted">
+                        Потпуно управљано, увек ажурно. Ми се бринемо о инфраструктури да би се ти могао/ла фокусирати на посао.
+                    </p>
+                    
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3">
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            Тренутно постављање, без потребе за сервером
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            Аутоматска ажурирања и резервне копије
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            Хостинг у ЕУ у складу са ГДПР-ом
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            Приоритетна подршка
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-primary me-1"></i>
+                            Укључени додаци
+                        </li>
+                    </ul>
+
+                    <a href="https://www.kimai.cloud/auth/registration" class="btn btn-primary mb-2">Започни бесплатно</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card card-hover border-info rounded-5 p-5 bg-faded-info">
+                <div class="card-body pt-3 pb-2 pb-sm-3 pt-sm-4 pt-md-0 px-3 px-sm-4 px-lg-0">
+                    <span class="badge rounded-pill bg-faded-info text-info fs-sm mb-2">
+                        Ви га хостујете
+                    </span>
+                    <h2 class="mb-lg-4">Сопствени хостинг</h2>
+                    <p class="text-muted">
+                        Потпуна контрола над твојим подацима и инфраструктуром. Постави на сопственом серверу помоћу Docker-а или ручно.
+                    </p>
+                    
+                    <ul class="list-unstyled fs-sm pb-md-3 mb-3">
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            100 % отворени кôд (АГПЛ 3)
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            Потпуно власништво над подацима
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            Docker и ручна инсталација
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            Подршка заједнице
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="bx bx-check fs-xl text-info me-1"></i>
+                            Продавница додатака
+                        </li>
+                    </ul>
+
+                    <a href="/sr/download.html" class="btn btn-info mb-2">Инсталација</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="mt-5 container gx-5">
+    
+    
+    
+<div class="row gx-5">
+    
+    <div class="col-12 col-md-4">
+        <div class="card border rounded-5 p-3 h-100">
+            <div class="d-flex text-nowrap mb-3">
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+            </div>
+            
+
+            
+            <p class="">fast tracking, an overview of outstanding items, and lightning-fast billing with a clean timesheet</p>
+
+            <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="/images/testimonials/christoph-van-bracht.webp" class="rounded-circle flex-shrink-0" width="60" alt="Christoph van Bracht">
+                <div>
+                    <p class="fs-base fw-bold mb-0">Christoph van Bracht</p>
+                    <p class="fs-xs text-muted mb-0">
+                        Geschäftsführer
+                        ,
+                            van Bracht | Haus & EDV
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-4">
+        <div class="card border rounded-5 p-3 h-100">
+            <div class="d-flex text-nowrap mb-3">
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+            </div>
+            
+
+            
+            <p class="">We also underwent a payroll tax audit without any issues</p>
+
+            <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="/images/testimonials/christoph-empl.webp" class="rounded-circle flex-shrink-0" width="60" alt="Christoph Empl">
+                <div>
+                    <p class="fs-base fw-bold mb-0">Christoph Empl</p>
+                    <p class="fs-xs text-muted mb-0">
+                        CEO
+                        ,
+                            Etronet
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-12 col-md-4">
+        <div class="card border rounded-5 p-3 h-100">
+            <div class="d-flex text-nowrap mb-3">
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+                <i class="bx bxs-star text-warning"></i>
+                
+            </div>
+            
+
+            
+            <p class="">Not only the generosity toward NGOs and the lightning-fast, always helpful support, but also the ease of use and the range of features justify this decision to use Kimai every single day.</p>
+
+            <div class="d-flex align-items-center gap-3 mt-auto">
+                <img src="/images/testimonials/pulse-of-europe.webp" class="rounded-circle flex-shrink-0" width="60" alt="Wolf Peter K.">
+                <div>
+                    <p class="fs-base fw-bold mb-0">Wolf Peter K.</p>
+                    <p class="fs-xs text-muted mb-0">
+                        Vorstand für Finanzen und IT
+                        ,
+                            Pulse of Europe e.V.
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+</div>
+
+
+<section class="position-relative pt-5">
+    <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
+        
+        <div class="row justify-content-center text-center pb-3 mb-sm-2 mb-lg-3">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+                <h2 class="h1 mb-lg-4">Подржава твоју компанију</h2>
+                <p class="fs-lg text-muted mb-0">Kimai садржи све основне пословне функције које су ти потребне за постављање радних токова евидентирања времена и интеграцију са твојом постојећом инфраструктуром.</p>
+            </div>
+        </div>
+        
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bx-check-shield feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Аутентификација и безбедност</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Kimai подржава разне спољне провајдере идентитета и пријаву путем LDAP-а и SAML-а (као што су Google Workspace, Azure AD или Authentik). Опционо је могућа двофакторска аутентификација путем TOTP токена.
+                </p>
+                
+            </div>
+        </div>
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6  pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bx-bar-chart feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6  text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Извештаји и анализе</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Анализа евидентираног времена по корисницима, клијентима, пројектима, активностима, ознакама, временским периодима и много тога.
+                </p>
+                
+            </div>
+        </div>
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6 order-md-2 pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bxs-file-pdf feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 order-md-1 text-center text-md-start px-5">
+                <h3 class="mb-lg-4">Фактурисање</h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Подесиви шаблони фактура, могућности груписања уноса, подесиви бројеви фактура и више формата попут PDF и DOCX.
+                </p>
+                
+            </div>
+        </div>
+        
+        
+        <div class="row align-items-center justify-content-center py-4 py-md-5 my-1 my-sm-3 my-md-0 my-xl-3 px-5">
+            <div class="col-12 col-md-6  pb-2 pb-sm-3 pb-md-0 mb-4 mb-md-0">
+                <div class="text-center">
+                    <i class="bx bx-code-curly feature-icon"></i>
+                </div>
+            </div>
+            <div class="col-12 col-md-6  text-center text-md-start px-5">
+                <h3 class="mb-lg-4"></h3>
+                <p class="fs-lg pb-lg-2 mb-4">
+                    Садржи опсежан JSON API за читање и писање података, тако да спољне апликације и прилагођени алати могу да комуницирају са Kimai-jем.
+                </p>
+                
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+<section class="container py-5 my-2 my-md-4 my-lg-5">
+    <div class="row pt-2 py-xl-3">
+        <div class="col-lg-3 col-md-4">
+            <h2 class="text-center text-md-start mx-auto mx-md-0 pt-md-2" style="max-width: 300px;">Шта корисници кажу о Kimai-ју</h2>
+            
+
+            <div class="d-flex justify-content-center justify-content-md-start pb-4 mb-2 pt-3">
+                <button type="button" id="prev-testimonial" class="btn btn-prev btn-icon btn-sm me-2" aria-label="Previous">
+                    <i class="bx bx-chevron-left"></i>
+                </button>
+                <button type="button" id="next-testimonial" class="btn btn-next btn-icon btn-sm ms-2" aria-label="Next">
+                    <i class="bx bx-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-8">
+            <div class="swiper mx-n2" data-swiper-options='{
+              "slidesPerView": 1,
+              "spaceBetween": 8,
+              "loop": true,
+              "navigation": {
+                "prevEl": "#prev-testimonial",
+                "nextEl": "#next-testimonial"
+              },
+              "breakpoints": {
+                "600": { "slidesPerView": 2 }
+              }
+            }'>
+                <div class="swiper-wrapper">
+
+                    
+                    <div class="swiper-slide h-auto pt-4 pb-3 px-2">
+                        <div class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                            <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                                <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                    <i class="bx bxs-quote-left"></i>
+                                </span>
+                                <div class="card-body pb-4 mb-0">
+                                    <div class="text-nowrap pt-1 mb-3">
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                    </div>
+                                    
+<div class="testimonial-text-wrapper">
+    <div class="testimonial-text">
+        
+        <p>We use Kimai for project time tracking with our partner organizations.
+<mark>We particularly appreciate its clarity, evaluability, and ease of use.</mark>
+As an NGO, we also appreciate Kimai’s strong focus on this sector. The support is excellent. We are very satisfied.</p>
+
+    </div>
+    <div class="testimonial-fade"></div>
+</div>
+
+                                </div>
+                                <div class="card-footer d-flex align-items-center border-0 pt-0">
+                                    
+                                        <img src="/images/testimonials/johannes-mertens.webp" width="48" class="rounded-circle ms-n1" alt="Johannes Mertens">
+                                    
+                                    <div class="ps-2 ms-1">
+                                        <h6 class="fs-base fw-semibold mb-0">Johannes Mertens</h6>
+                                        <span class="fs-sm text-muted">Entwickler</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide h-auto pt-4 pb-3 px-2">
+                        <div class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                            <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                                <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                    <i class="bx bxs-quote-left"></i>
+                                </span>
+                                <div class="card-body pb-4 mb-0">
+                                    <div class="text-nowrap pt-1 mb-3">
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                    </div>
+                                    
+<div class="testimonial-text-wrapper">
+    <div class="testimonial-text">
+        
+        <p>I want to say you thank you for this amazing tool you have build. <mark>Kimai is great for many purposes</mark> and I’m sure you can keep improving a great business with it. I found it a few years ago (in 2021), looking for some tools to make my life easier when i have to make everyday time tracking. 
+So that’s the unique thing I use from Kimai.</p>
+
+    </div>
+    <div class="testimonial-fade"></div>
+</div>
+
+                                </div>
+                                <div class="card-footer d-flex align-items-center border-0 pt-0">
+                                    
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" /></svg>
+                                    
+                                    <div class="ps-2 ms-1">
+                                        <h6 class="fs-base fw-semibold mb-0"> Alberto Lasaga Orio</h6>
+                                        <span class="fs-sm text-muted"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide h-auto pt-4 pb-3 px-2">
+                        <div class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                            <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                                <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                    <i class="bx bxs-quote-left"></i>
+                                </span>
+                                <div class="card-body pb-4 mb-0">
+                                    <div class="text-nowrap pt-1 mb-3">
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                    </div>
+                                    
+<div class="testimonial-text-wrapper">
+    <div class="testimonial-text">
+        
+        <p><mark>I needed to find a good time tracker on short notice, and wanted it to be EU hosted and open source. Luckily, I found Kimai and have been very happy with it ever since</mark>, especially because it is very straightforward and intuitive to use.
+After using it for my initial project, the Kimai team helped me migrate my data for company use, now allowing us to roll it out for the entire team without losing the original data.
+Keep up the good work!</p>
+
+    </div>
+    <div class="testimonial-fade"></div>
+</div>
+
+                                </div>
+                                <div class="card-footer d-flex align-items-center border-0 pt-0">
+                                    
+                                        <img src="/images/testimonials/brian-osborn.webp" width="48" class="rounded-circle ms-n1" alt="Brian Osborn">
+                                    
+                                    <div class="ps-2 ms-1">
+                                        <h6 class="fs-base fw-semibold mb-0">Brian Osborn</h6>
+                                        <span class="fs-sm text-muted">Executive Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide h-auto pt-4 pb-3 px-2">
+                        <div class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                            <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                                <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                    <i class="bx bxs-quote-left"></i>
+                                </span>
+                                <div class="card-body pb-4 mb-0">
+                                    <div class="text-nowrap pt-1 mb-3">
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                    </div>
+                                    
+<div class="testimonial-text-wrapper">
+    <div class="testimonial-text">
+        
+        <p><mark>I love how I can combine time tracking, expense tracking, and invoicing into one app</mark> without features hidden behind nagging subscriptions. I can click one button to invoice my clients now! Seriously a godsend. Also, the clean UI is well thought-out and simple to learn. Highly recommend this one!</p>
+
+    </div>
+    <div class="testimonial-fade"></div>
+</div>
+
+                                </div>
+                                <div class="card-footer d-flex align-items-center border-0 pt-0">
+                                    
+                                        <img src="/images/testimonials/isaac-mailach.webp" width="48" class="rounded-circle ms-n1" alt="Isaac Mailach">
+                                    
+                                    <div class="ps-2 ms-1">
+                                        <h6 class="fs-base fw-semibold mb-0">Isaac Mailach</h6>
+                                        <span class="fs-sm text-muted">Media Composer, Studio Cellist</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide h-auto pt-4 pb-3 px-2">
+                        <div class="d-flex flex-column h-100 px-2 px-sm-0 mb-0">
+                            <div class="card h-100 position-relative border-0 shadow-sm pt-4">
+                                <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                                    <i class="bx bxs-quote-left"></i>
+                                </span>
+                                <div class="card-body pb-4 mb-0">
+                                    <div class="text-nowrap pt-1 mb-3">
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                        <i class="bx bxs-star text-warning"></i>
+                                        
+                                    </div>
+                                    
+<div class="testimonial-text-wrapper">
+    <div class="testimonial-text">
+        
+        <p>Kimai is a super web platform for keeping tracks of our daily work, the interface is clean and very useful, just easy, couple clicks and data, and that is done. 
+<mark>we have used since 5 years ago, and the reports are easy to run</mark>. only 1 time i have to support a ticket, because we forgot the password!. 
+thanks for all the work here!</p>
+
+    </div>
+    <div class="testimonial-fade"></div>
+</div>
+
+                                </div>
+                                <div class="card-footer d-flex align-items-center border-0 pt-0">
+                                    
+                                        <img src="/images/testimonials/mathias.webp" width="48" class="rounded-circle ms-n1" alt="Mathias">
+                                    
+                                    <div class="ps-2 ms-1">
+                                        <h6 class="fs-base fw-semibold mb-0">Mathias</h6>
+                                        <span class="fs-sm text-muted">IT Consulting</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="position-relative pt-5">
+    <div class="container position-relative zindex-5 pb-md-4 pt-md-2 pt-lg-3 pb-lg-5">
+        <div class="row justify-content-center text-center pb-3 mb-sm-2 mb-lg-3">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+                <h2 class="h1 mb-lg-4">Како ти Kimai може помоћи?</h2>
+                <p class="fs-lg text-muted mb-0">Kimai нуди много више од пуког евидентирања времена. Ево списка других важних пословних функција.</p>
+            </div>
+        </div>
+        <div class="mb-xl-3 text-center">
+            
+            <a href="/sr/features.html" class="btn btn-lg btn-outline-primary">Функције</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-0 pb-xl-3">
+            
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/sr/store/" class="stretched-link" title="Додаци"><i class="bx bx-plug fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Додаци</p>
+                            <p class="mb-0">Kimai је направљен тако да може да се проширује, а функције се могу додати помоћу додатака. Програмери који желе да их направе могу да користе многе тачке за проширење.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/users.html" class="stretched-link" title="Више корисника"><i class="bx bxs-user-account fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Више корисника</p>
+                            <p class="mb-0">Kimai може да користи било који број корисника: свака инсталација подржава неограничен број корисника са различитим улогама (види дозволе).</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/translations.html" class="stretched-link" title="Више језика"><i class="bx bx-chat fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Више језика</p>
+                            <p class="mb-0">Kimai се може локализовати на било који језик и већ је преведен на више од 30 језика.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/teams.html" class="stretched-link" title="Тимови"><i class="bx bx-select-multiple fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Тимови</p>
+                            <p class="mb-0">Тимови повезују кориснике у логичке групе, попут одељења. Ограничи приступ подацима додељивањем клијената и пројеката својим тимовима.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/customer.html" class="stretched-link" title="Клијенти"><i class="bx bx-store fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Клијенти</p>
+                            <p class="mb-0">Управљај својим клијентима и подеси адресу, контакте, државу, валуту, видљивост (за архивирање) и многа друга поља.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/project.html" class="stretched-link" title="Пројекти"><i class="bx bx-briefcase fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Пројекти</p>
+                            <p class="mb-0">Управљај пројектима за сваког клијента са бројем наруџбине, буџетом и видљивошћу (за архивирање).</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/invoices.html" class="stretched-link" title="Фактурисање"><i class="bx bxs-file-pdf fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Фактурисање</p>
+                            <p class="mb-0">Подесиви шаблони фактура, могућности груписања уноса, подесиви бројеви фактура и више формата попут PDF и DOCX.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/export.html" class="stretched-link" title="Извоз података"><i class="bx bx-export fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Извоз података</p>
+                            <p class="mb-0">Подаци из евиденције времена могу се извести и делити у форматима XLSX, PDF, CSV и HTML. Извезени записи могу се закључати и заштитити од даљих промена.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/sr/store/expenses-bundle.html" class="stretched-link" title="Трошкови"><i class="bx bx-receipt fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Трошкови</p>
+                            <p class="mb-0">Купи додатак и евидентирај трошкове на основу клијента, пројекта и активности – ради категоризације и укључивања у твоје фактуре.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/saml.html" class="stretched-link" title=""><i class="bx bx-key fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2"></p>
+                            <p class="mb-0">Пријављуј и региструј кориснике путем SAML-а користећи свог постојећег SSO провајдера идентитета, као што су Google Workspace, Authentik или Azure Active Directory.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/rest-api.html" class="stretched-link" title=""><i class="bx bx-code-curly fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2"></p>
+                            <p class="mb-0">Садржи опсежан JSON API за читање и писање података, тако да спољне апликације и прилагођени алати могу да комуницирају са Kimai-jем.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/users.html" class="stretched-link" title="Двофакторска аутентификација (2FA)"><i class="bx bx-key fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Двофакторска аутентификација (2FA)</p>
+                            <p class="mb-0">Kimai подржава двофакторску аутентификацију са TOTP токенима: заштити своје корисничке налоге већ данас!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/dashboard.html" class="stretched-link" title="Статистика"><i class="bx bxs-widget fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Статистика</p>
+                            <p class="mb-0">Твоја контролна табла ће ти приказати неколико статистика о евидентираном времену и количини прикупљених података. И увек можемо додати још графикона!</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/docker.html" class="stretched-link" title=""><i class="bx bxl-docker fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2"></p>
+                            <p class="mb-0">Имамо Docker слике за развој, као и више варијанти Docker Compose поставки за продукцију.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/timesheet.html" class="stretched-link" title="Контролни сат"><i class="bx bx-stopwatch fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Контролни сат</p>
+                            <p class="mb-0">Не желиш да твоји корисници уносе произвољне записе у евиденцију времена? Пребаци се на режим контролног сата, који дозвољава само записе "пријава" и "ођава".</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/plugin-customer-portal.html" class="stretched-link" title="Портал за клијенте"><i class="bx bx-share-alt fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Портал за клијенте</p>
+                            <p class="mb-0">Дели статистику клијената и пројеката, као и евиденције времена, са било ким користећи тајни URL, опционо заштићен лозинком.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/documentation/reporting.html" class="stretched-link" title="Извештаји и анализе"><i class="bx bx-bar-chart fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Извештаји и анализе</p>
+                            <p class="mb-0">Анализа евидентираног времена по корисницима, клијентима, пројектима, активностима, ознакама, временским периодима и много тога.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                
+                
+                
+                
+                
+                <div class="col position-relative g-3">
+                    <div class="card card-hover h-100 shadow-sm border-primary bg-secondary p-md-1 p-xl-3">
+                        <div class="d-table bg-secondary rounded-3 p-3 mx-auto mt-3 mt-md-4">
+                            
+                                <a href="/sr/store/invoice-bundle.html" class="stretched-link" title="Е-фактуре"><i class="bx bxs-file-pdf fs-2"></i></a>
+                            
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="h5 pb-1 mb-2">Е-фактуре</p>
+                            <p class="mb-0">Направи е-фактуре у XML и PDF/А форматима, у складу са EN 16931, XRechnung 3.0, Zugferd/Factur-X, користећи CII и UBL синтаксу</p>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+    
+        
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <p class="lead text-light opacity-70 mb-3">Спреман/на да почнеш?</p>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Започни са евидентирањем времена одмах</h2>
+                <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-lg">Започни бесплатно</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+</main>
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">Најбоља апликација отвореног кода за евидентирање времена</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Једноставно евидентирање времена. Софтвер отвореног кода за тимове свих величина – самостални хостинг или СааС.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Srpski
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item active" aria-current="true" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/sr/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Функције</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sr/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Приче о успеху</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sr/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Рецензије</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sr/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Медији</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Кодови за попуст</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/sr/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Билтен</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/sr/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Агенције</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/sr/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Консултанти</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/sr/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Фриленсер</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/sr/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Непрофитне организације</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/sr/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Софтверски програмери</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/sr/industry" class="nav-link fs-sm fw-medium px-0 py-1">Остале делатности</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/sr/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Упореди програме за евидентирање времена</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Упореди Kimai са Clockify">Clockify алтернатива</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Упореди Kimai са Clockodo">Clockodo алтернатива</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Упореди Kimai са Harvest">Harvest алтернатива</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Упореди Kimai са toggl track">toggl track алтернатива</a>
+                                    </li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/sr/site-notice.html" class="nav-link fs-sm fw-medium">Импресум</a>
+        </li>
+        <li class="nav-item">
+            <a href="/sr/privacy-policy.html" class="nav-link fs-sm fw-medium">Политика приватности</a>
+        </li>
+        <li class="nav-item">
+            <a href="/sr/terms-cloud.html" class="nav-link fs-sm fw-medium">Услови</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">Стање система</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v4"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
