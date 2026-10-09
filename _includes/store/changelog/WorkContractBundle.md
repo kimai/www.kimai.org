@@ -1,6 +1,50 @@
+**Version 1.37.1**
+
+Compatibility: requires minimum Kimai 2.69.0
+
+- Fix: negative duration in manual booking weren't possible in 1.37.0 with Kimai 2.68.0
+
+**Version 1.37.0**
+
+Compatibility: requires minimum Kimai 2.66.0
+
+- Absence calendar
+  - Now also shows pending absences  
+  - The dropdown also offers the next 12 month as selection  
+- The link to "absence calendar" from Working times view goes to 
+  - the current month if the view shows the current year
+  - or to the start of the currently shown year, if it is not the current one 
+- Compatibility with the "sticky first report column" feature of Kimai core (only works with 2.68)
+- Fix: the form to "edit an existing absence" could not be opened
+
+**Version 1.36.1**
+
+Compatibility: requires minimum Kimai 2.66.0
+
+- Fix: mail links with subregion locales failed - e.g. `/de_DE/` is now created as `/de/`
+
+**Version 1.36.0**
+
+Compatibility: requires minimum Kimai 2.66.0
+
+- Use `default` as placeholder for default public holiday group
+- API now returns absence `comment`s 
+- Allow to set `comment` when rejecting absence via API
+- New API endpoints for manual working time bookings: 
+  - Fetch `GET /api/manual-bookings/working-times/{user}`
+  - Create `POST /api/manual-bookings/working-times/{user}`
+- New API endpoints for manual holiday bookings:
+  - Fetch `GET /api/manual-bookings/holidays/{user}`
+  - Create `POST /api/manual-bookings/holidays/{user}`
+- Absence calendar: 
+  - Allow to toggle visibility of users without absences in the initial screen
+  - Show all users, with and without absences, on team pages and allow to toggle their visibility
+  - Show user avatar
+  - A user with either `view_other_absence` or `view_team_absence` can see all team-members
+
 **Version 1.35.0**
 
-Compatibility: requires minimum Kimai 2.49.0
+Compatibility: requires minimum Kimai 2.54.0
 
 - Removed invalid API endpoint `DELETE /api/lock/{user}/{month}`
 - Setup default work-contract preferences for new users via API

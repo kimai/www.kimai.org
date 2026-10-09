@@ -1,3 +1,20 @@
+**Version 2.29.0**
+
+Compatibility: requires minimum Kimai 2.63.0
+
+- Initialize custom-field definitions when loading or creating:
+  - Customers
+  - Projects
+  - Activities
+- Prevent that imported custom-fields are invisible by default: now they use the configured visibility.
+- All touched objects have the full-set of configured custom-fields.
+
+**Version 2.28.0**
+
+Compatibility: requires minimum Kimai 2.63.0
+
+- Support new `Customer` fields `invoice_email` and `language`
+
 **Version 2.27.0**
 
 Compatibility: requires minimum Kimai 2.41.0

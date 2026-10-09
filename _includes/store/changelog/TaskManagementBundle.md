@@ -1,3 +1,9 @@
+**Version 2.18.2**
+
+Compatibility: requires minimum Kimai 2.59.0
+
+- Better report tables (works best with Kimai 2.68)
+
 **Version 2.18.1**
 
 Compatibility: requires minimum Kimai 2.59.0
