@@ -27,7 +27,7 @@ This is only an example, that needs to be adapted to your needs (eg. path and PH
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    server_name kimai.local www.kimai.local;
+    server_name www.kimai.local;
     root /var/www/kimai/public;
     index index.php;
 
@@ -58,6 +58,10 @@ server {
         fastcgi_param DOCUMENT_ROOT $realpath_root;
         # Activate this if you run Kimai alone or inside a VirtualHost, otherwise this example might break other PHP apps
         # fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
+
+        fastcgi_param TRUSTED_HOSTS "^www\.kimai\.local\z";
+        fastcgi_param DEFAULT_URI "https://www.kimai.local";
+
         internal;
     }
 

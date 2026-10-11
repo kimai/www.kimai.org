@@ -44,7 +44,7 @@ services:
       - 8001:8001
     environment:
       - APP_SECRET= # IT IS IMPORTANT THAT YOU CHANGE THIS TO A LONG RANDOM STRING
-      - TRUSTED_HOSTS=kimai.example.com # set this to the domain name you use to access Kimai
+      - "TRUSTED_HOSTS=^kimai\.example\.com$" # set this to the domain name you use to access Kimai
       - ADMINMAIL=admin@example.com
       - ADMINPASS=changemeplease
       - "DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&serverVersion=8.3.0"
@@ -80,7 +80,7 @@ DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
-TRUSTED_HOSTS=kimai.example.com
+TRUSTED_HOSTS=^kimai\.example\.com$
 APP_SECRET=your-fantastic-long-random-and-ultra-secure-secret
 ```
 

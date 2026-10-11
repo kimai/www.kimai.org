@@ -110,7 +110,7 @@ This attack requires that the `TRUSTED_HOSTS` environment variable is not config
 Kimai's installation documentation explicitly lists this variable as mandatory:
 
 - `APP_SECRET` — You **MUST** set this to a long and unique string
-- `TRUSTED_HOSTS` — You **MUST** set this to the domain name used to access Kimai (can be a regexp like `localhost|127.0.0.1|kimai.example.com`)
+- `TRUSTED_HOSTS` — You **MUST** set this to a regexp matching the domain name(s) used to access Kimai, e.g. `^demo\.kimai\.org$` or multiple via `^(localhost|127\.0\.0\.1|demo\.kimai\.org)$`
 - `TRUSTED_PROXIES` — Default: "127.0.0.1"
 
 The application cannot determine which hostnames are legitimate on its own — only the administrator of a given deployment knows how the instance is reachable. 

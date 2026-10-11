@@ -39,7 +39,7 @@ composer install {{ site.kimai_v2_composer_flags }}
 Configure at least the `DATABASE_URL` (database connection and server version), `TRUSTED_HOSTS` (the domain name you use for Kimai) and the `APP_SECRET` (a long and unique string) in the `.env` file:
 ```
 DATABASE_URL=mysql://user:password@127.0.0.1:3306/database?charset=utf8mb4&serverVersion=11.1.2-MariaDB
-TRUSTED_HOSTS=kimai.example.com
+TRUSTED_HOSTS=^kimai\.example\.com$
 APP_SECRET=IT_IS_IMPORTANT_THAT_YOU_CHANGE_THIS_TO_A_LONG_RANDOM_STRING
 ```
 Fetch the exact serverVersion by running `mysql --version` and copy&paste the entire version. 
