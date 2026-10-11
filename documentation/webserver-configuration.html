@@ -639,7 +639,7 @@ they either might be incompatible with your exact setup or might need further tw
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    server_name kimai.local www.kimai.local;
+    server_name www.kimai.local;
     root /var/www/kimai/public;
     index index.php;
 
@@ -670,6 +670,10 @@ they either might be incompatible with your exact setup or might need further tw
         fastcgi_param DOCUMENT_ROOT $realpath_root;
         # Activate this if you run Kimai alone or inside a VirtualHost, otherwise this example might break other PHP apps
         # fastcgi_param PHP_ADMIN_VALUE "open_basedir=$document_root/..:/tmp/";
+
+        fastcgi_param TRUSTED_HOSTS "^www\.kimai\.local\z";
+        fastcgi_param DEFAULT_URI "https://www.kimai.local";
+
         internal;
     }
 

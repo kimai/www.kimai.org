@@ -645,7 +645,7 @@
       <span class="pi">-</span> <span class="s">8001:8001</span>
     <span class="na">environment</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">APP_SECRET=</span> <span class="c1"># IT IS IMPORTANT THAT YOU CHANGE THIS TO A LONG RANDOM STRING</span>
-      <span class="pi">-</span> <span class="s">TRUSTED_HOSTS=kimai.example.com</span> <span class="c1"># set this to the domain name you use to access Kimai</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">TRUSTED_HOSTS=^kimai</span><span class="err">\</span><span class="s">.example</span><span class="err">\</span><span class="s">.com$"</span> <span class="c1"># set this to the domain name you use to access Kimai</span>
       <span class="pi">-</span> <span class="s">ADMINMAIL=admin@example.com</span>
       <span class="pi">-</span> <span class="s">ADMINPASS=changemeplease</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">DATABASE_URL=mysql://kimaiuser:kimaipassword@sqldb/kimai?charset=utf8mb4&amp;serverVersion=8.3.0"</span>
@@ -679,7 +679,7 @@ DATABASE_PASSWORD=kimaipassword
 DATABASE_ROOT_PASSWORD=changemeplease
 ADMIN_EMAIL=admin@example.com
 ADMIN_PASSWORD=changemeplease
-TRUSTED_HOSTS=kimai.example.com
+TRUSTED_HOSTS=^kimai\.example\.com$
 APP_SECRET=your-fantastic-long-random-and-ultra-secure-secret
 </code></pre></div></div>
 
