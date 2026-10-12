@@ -730,7 +730,7 @@ The supervisor is a setting in the <a href="/documentation/users.html">users pro
       <li>Rejection by the supervisor: the absence will be moved back to the <code class="language-plaintext highlighter-rouge">New</code> list and an email is sent to the user to inform about the rejection</li>
     </ul>
   </li>
-  <li>Approved absences: can still be deleted, until they are locked</li>
+  <li>Approved absences: can be deleted by Admins, until they are locked (see <code class="language-plaintext highlighter-rouge">delete_other_absence</code> permission)</li>
 </ul>
 
 <h2 id="how-absences-affect-expected-working-time">How absences affect expected working time</h2>
@@ -986,11 +986,11 @@ The absence type <code class="language-plaintext highlighter-rouge">Time-Off</co
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">delete_own_absence</code></td>
-      <td>Delete the own absence entries</td>
+      <td>Delete the own absence entries (only if absence is neither confirmed nor locked)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">delete_other_absence</code></td>
-      <td>Delete other users absence entries</td>
+      <td>Delete other users absence entries (also approved ones, but never locked absences)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">view_team_absence</code></td>

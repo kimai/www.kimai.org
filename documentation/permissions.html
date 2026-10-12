@@ -1532,11 +1532,11 @@ For example, exported timesheet records cannot be edited, even if a user owns th
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">delete_own_absence</code></td>
-      <td>Delete the own absence entries</td>
+      <td>Delete the own absence entries (only if absence is neither confirmed nor locked)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">delete_other_absence</code></td>
-      <td>Delete other users absence entries</td>
+      <td>Delete other users absence entries (also approved ones, but never locked absences)</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">view_team_absence</code></td>
