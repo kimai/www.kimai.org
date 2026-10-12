@@ -37,7 +37,7 @@ There are 2 phases that each absence has to go through:
 - New absence: moves the absence to the `Requested` list and sends an email to the supervisor to ask for confirmation
   - Approval by the supervisor: the absence will be moved to the `Approved` list and an email is sent to the user to confirm the approval 
   - Rejection by the supervisor: the absence will be moved back to the `New` list and an email is sent to the user to inform about the rejection 
-- Approved absences: can still be deleted, until they are locked 
+- Approved absences: can be deleted by Admins, until they are locked (see `delete_other_absence` permission)
 
 ## How absences affect expected working time
 
