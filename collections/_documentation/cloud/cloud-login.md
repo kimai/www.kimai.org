@@ -59,8 +59,15 @@ The solution is to click "Forgot password" and create a new password for `My Clo
 
 {% include docs-image.html src="/images/documentation/cloud-login/cloud-account.png" title="Cloud account" %}
 
-The same issue can happen, just the other way around, when your password manager saves the `My Kimai Cloud` account password but not the Kimai user password. I this case you should click the "I forgot my password" link and request a new password:
+The same issue can happen, just the other way around, when your password manager saves the `My Kimai Cloud` account password but not the Kimai user password. 
+In this case you should click the "I forgot my password" link and request a new password:
+
+{% include docs-image.html src="/images/documentation/cloud-login/change-user-password.png" title="Change user password" %}
+
+{% include docs-image.html src="/images/documentation/cloud-login/kimai-account.png" title="Kimai account" %}
+
+{% comment %}
+It is advised to save the user login data for your Kimai user account separately.
 
 {% include docs-image.html src="/images/documentation/cloud-login/kimai-forgot-password.png" title="Kimai forgot password account" %}
-
-Again, it is advised to save the user login data for your Kimai user account separately.
+{% endcomment %}
