@@ -4,6 +4,7 @@ CustomerGroupsBundle is for people with many customers and projects. In every pr
 - a click on a customer opens or closes its projects
 - while you type, the customers with matching projects open by themselves
 - the keyboard (arrows, Enter) skips the projects of closed customers
+- a list with the projects of one customer only (for example when the form already has a customer selected) shows them without the customer header
 
 Every select list (projects, activities, customers, users, tags...) also grows down to the bottom of the window, instead of the fixed height of about six rows.
 
