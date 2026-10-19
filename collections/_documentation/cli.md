@@ -58,6 +58,27 @@ FAQ:
 
 - `I want to use a self-signed certificate` - add `"OPTIONS": {"verify": false}` to your configuration
 
+## Running with Docker
+
+Build the image from the CLI repository:
+
+```bash
+git clone https://github.com/kimai/cli.git
+cd cli
+docker build -t kimai-cli:local .
+```
+
+Using the configuration file created above, list your projects:
+
+```bash
+docker run --rm \
+    --mount "type=bind,src=$HOME/.kimai-api.json,dst=/config.json,readonly" \
+    --env KIMAI_CONFIG=/config.json \
+    kimai-cli:local project:list
+```
+
+Replace `project:list` with any CLI command. Add `-it` to `docker run` for interactive commands such as `start`.
+
 ## Available commands
 
 You get a list of all available commands with `kimai`.
