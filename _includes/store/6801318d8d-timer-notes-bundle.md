@@ -1,6 +1,8 @@
-TimerNotesBundle lets you write the details of what you are doing while the timer runs, not only when you start it.
+TimerNotesBundle lets you write the details of what you are doing while the timer runs, not only when you start it. Next to the stop button of the running timer, in the toolbar of every page, it adds a note button and an edit button.
 
-Next to the stop button of the running timer, in the toolbar of every page, there is a pen button. It opens a small box with the description of the running entry and a new line that already starts with the current time:
+## Notes
+
+The note button (speech bubble) opens a small box with the description of the running entry and a new line that already starts with the current time:
 
 ```
 Homepage layout
@@ -15,7 +17,11 @@ Homepage layout
 - the whole description can be edited in the box, e.g. to fix a typo in an earlier note
 - the lists reload after saving, with one note per line
 
-Without the plugin, the description of a running entry can only be changed in the full edit dialog.
+## Edit
+
+The edit button opens Kimai's full edit dialog of the running entry (begin, customer, project, activity, description, tags...), the same as *Edit* on its row in *My times*. Saved with an empty end, the timer keeps running.
+
+Without the plugin, a running entry can only be edited from its row in *My times*: the toolbar has the stop button only.
 
 ## Installation
 
