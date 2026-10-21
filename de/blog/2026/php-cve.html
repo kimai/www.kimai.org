@@ -272,7 +272,43 @@
 <section class="container mb-5 pb-2 py-mg-4">
     <div class="row gy-4">
         <div class="col-lg-9">
-            <h3 id="was-ist-passiert">Was ist passiert</h3>
+            <h2 id="update-21-oktober---1930-uhr">Update 21. Oktober - 19:30 Uhr</h2>
+
+<p>Das Update ist abgeschlossen. Ein großes Dankeschön an das PHP-Team und alle anderen, die an diesem Release beteiligt waren, und vielen Dank für Ihre Geduld an diesem turbulenten Tag.</p>
+
+<h3 id="kimai-cloud">Kimai Cloud</h3>
+
+<p>Alle Kimai Cloud Systeme wurden innerhalb weniger Minuten nach Veröffentlichung der offiziellen PHP-Releases aktualisiert. 
+Sie müssen nichts tun, jede Umgebung läuft bereits auf der gepatchten PHP-Version.</p>
+
+<ul>
+  <li>Die Gegenmaßnahmen, die wir in den letzten 24 Stunden umgesetzt haben, haben uns in eine gute Ausgangslage gebracht. Dadurch konnten wir alle Systeme vor und während des Updates durchgehend in Betrieb lassen. Die meisten der im CVE-Advisory empfohlenen Einstellungen waren auf unserer Infrastruktur bereits aktiv, denn Sicherheit hat für uns seit jeher oberste Priorität.</li>
+  <li>Zwischen der <a href="https://www.php.net/archive/2026.php#2026-10-21-5">Veröffentlichung der CVEs</a> und der Verfügbarkeit der aktualisierten Pakete sind für kurze Zeit einzelne Anfragen fehlgeschlagen. Ursache waren die zusätzlichen, bewusst strengen Sicherheitsmaßnahmen, die wir vorab eingerichtet hatten. Die Fehler verschwanden, sobald die aktualisierten Pakete installiert waren.</li>
+</ul>
+
+<h3 id="docker">Docker</h3>
+
+<p>Es <a href="https://github.com/kimai/kimai/pull/6262">dauerte einige Stunden</a>, bis die relevanten PHP-Basis-Images aktualisiert waren. Sobald sie verfügbar waren, haben wir die aktualisierten Kimai Docker-Images gebaut und veröffentlicht. 
+Die aktualisierten Images sind unter den Tags <code class="language-plaintext highlighter-rouge">2.70.1</code>, <code class="language-plaintext highlighter-rouge">latest</code>, <code class="language-plaintext highlighter-rouge">apache</code>, <code class="language-plaintext highlighter-rouge">2</code> und <code class="language-plaintext highlighter-rouge">stable</code> verfügbar.</p>
+
+<p><strong>Stellen Sie sicher, dass Sie einen Tag verwenden, der weiterhin Updates erhält.</strong> Eine Übersicht finden Sie in der Liste der <a href="https://www.kimai.org/documentation/docker.html">unterstützten Tags</a> in unserer Dokumentation.</p>
+
+<p>Mit dem folgenden Befehl können Sie die PHP-Version Ihres Images prüfen (ersetzen Sie <code class="language-plaintext highlighter-rouge">kimai</code> durch den Namen des Images, das Sie verwenden):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run kimai php <span class="nt">-v</span>
+</code></pre></div></div>
+
+<p>Die Ausgabe sollte so aussehen:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PHP 8.3.36 (cli) (built: Oct 21 2026 16:06:16) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.3.36, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.36, Copyright (c), by Zend Technologies
+</code></pre></div></div>
+
+<h2 id="ankündigung-21-oktober---1000-uhr">Ankündigung 21. Oktober - 10:00 Uhr</h2>
+
+<h3 id="was-ist-passiert">Was ist passiert</h3>
 
 <p>Am 20. Oktober 2026 hat das PHP-Sicherheitsteam <a href="https://www.php.net/archive/2026.php#2026-10-20-1">ein Notfall-Sicherheitsrelease angekündigt</a>, das zwei kritische Schwachstellen in PHP selbst behebt, beide mit 9,2 von 10 Punkten bewertet. 
 Das Release ist für den 21. Oktober 2026 um 14:00 Uhr UTC geplant.</p>
