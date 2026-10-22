@@ -286,6 +286,13 @@ Sie müssen nichts tun, jede Umgebung läuft bereits auf der gepatchten PHP-Vers
   <li>Zwischen der <a href="https://www.php.net/archive/2026.php#2026-10-21-5">Veröffentlichung der CVEs</a> und der Verfügbarkeit der aktualisierten Pakete sind für kurze Zeit einzelne Anfragen fehlgeschlagen. Ursache waren die zusätzlichen, bewusst strengen Sicherheitsmaßnahmen, die wir vorab eingerichtet hatten. Die Fehler verschwanden, sobald die aktualisierten Pakete installiert waren.</li>
 </ul>
 
+<h3 id="onpremise">OnPremise</h3>
+
+<p>Wenn Kimai nativ auf einem Server läuft (also Installation via SSH), dann lautet unsere Empfehlung
+auf eine der <a href="https://www.php.net/archive/2026.php#2026-10-21-5">gepatchten PHP Versionen</a> zu aktualisieren: <code class="language-plaintext highlighter-rouge">8.5.12</code>, <code class="language-plaintext highlighter-rouge">8.4.27</code>, <code class="language-plaintext highlighter-rouge">8.3.36</code> and <code class="language-plaintext highlighter-rouge">8.2.35</code>.</p>
+
+<p>Sollten Ihre Repositories keine Updates zur Verfügung stellen, dann empfehlen wir für Debian/Ubuntu das <a href="https://packages.sury.org/php/">Repository von Ondřej Surý</a>.</p>
+
 <h3 id="docker">Docker</h3>
 
 <p>Es <a href="https://github.com/kimai/kimai/pull/6262">dauerte einige Stunden</a>, bis die relevanten PHP-Basis-Images aktualisiert waren. Sobald sie verfügbar waren, haben wir die aktualisierten Kimai Docker-Images gebaut und veröffentlicht. 
