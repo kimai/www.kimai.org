@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Roadmap – Kimai</title>
+<meta name="description" content="Suggest new features for Kimai on Kimai Roadmap">
+<link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Roadmap">
+<meta property="og:image" content="https://www.kimai.org/images/social-preview.webp">
+<meta property="og:description" content="Suggest new features for Kimai on Kimai Roadmap">
+<link rel="canonical" href="https://www.kimai.org/documentation/roadmap.html" />
+<link href="/assets/build/main.css?v16" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+
+
+
+
+
+<header class="header navbar navbar-expand bg-light border-bottom border-light shadow position-sticky top-0" style="z-index: 40" data-scroll-header>
+    <div class="container-fluid pe-lg-4">
+        <div class="d-flex align-items-center">
+            <a href="/" class="navbar-brand flex-shrink-0 py-1 py-lg-2">
+                <img src="/images/apple-touch-icon.png" width="32" alt="Kimai logo" class="me-2">
+                Kimai Docs
+            </a>
+            <span class="badge bg-warning">Developer</span>
+        </div>
+        <div class="docs-header-nav d-flex align-items-center w-100" style="padding-left: 6.75rem;">
+            <ul class="docs-primary-nav navbar-nav d-none d-lg-flex">
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-manual.html" class="nav-link ">
+                            User manual
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/cloud.html" class="nav-link ">
+                            Cloud
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-on-premise.html" class="nav-link ">
+                            Self hosting
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="nav-item">
+                        <a href="/documentation/chapter-developer.html" class="nav-link  active">
+                            Developer
+                        </a>
+                    </li>
+                
+            </ul>
+            <div class="docs-toolbar d-none d-xl-flex" data-pagefind-ignore="all">
+                <div class="docs-search-panel" data-doc-search>
+                    <label class="form-label visually-hidden" for="documentation-search">Search documentation</label>
+                    <input
+                        id="documentation-search"
+                        class="form-control"
+                        type="search"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Search the documentation"
+                        aria-describedby="documentation-search-status"
+                        data-doc-search-input
+                    >
+                    <div
+                        id="documentation-search-results"
+                        class="docs-search-results card border-0 shadow-sm"
+                        role="listbox"
+                        aria-label="Documentation search results"
+                        data-doc-search-results
+                    ></div>
+                    <div id="documentation-search-status" class="visually-hidden" aria-live="polite" data-doc-search-status></div>
+                </div>
+            </div>
+            <button type="button" class="navbar-toggler d-block d-lg-none ms-auto me-4" data-bs-toggle="offcanvas" data-bs-target="#componentsNav" aria-controls="componentsNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<aside class="bg-dark">
+    <div id="componentsNav" class="bg-dark offcanvas-lg offcanvas-start d-flex flex-column position-fixed top-0 start-0 vh-100" style="width: 19rem; z-index: 1045;">
+        <div class="offcanvas-header d-none d-lg-flex justify-content-start">
+            <a href="/" class="navbar-brand d-none d-lg-flex py-0">
+                <img src="/images/apple-touch-icon.png" width="26" alt="Kimai logo" class="me-3">
+                Kimai Docs
+            </a>
+        </div>
+        <div class="offcanvas-header d-block d-lg-none border-bottom">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h5 class="d-lg-none mb-0">Menu</h5>
+                <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#componentsNav" aria-label="Close"></button>
+            </div>
+            <div class="list-group list-group-flush mx-n4">
+                
+                    
+                    
+                    <a href="/documentation/chapter-manual.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-book opacity-70 me-1"></i>
+                        User manual
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/cloud.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-cloud opacity-70 me-1"></i>
+                        Cloud
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-on-premise.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-server opacity-70 me-1"></i>
+                        Self hosting
+                    </a>
+                
+                    
+                    
+                    <a href="/documentation/chapter-developer.html" class="list-group-item list-group-item-action d-flex align-items-center border-0 py-1 px-4">
+                        <i class="bx bx-code-alt opacity-70 me-1"></i>
+                        Developer
+                    </a>
+                
+            </div>
+        </div>
+        <div class="offcanvas-body overflow-scroll w-100 p-4">
+            <div class="h-auto docsnavi">
+                
+                    
+                    
+                    
+                    
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">JSON API</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/rest-api.html" class="list-group-item list-group-item-action border-0 " id="docnavi-rest-api">
+                                
+                                Kimai API
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-pagination.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-pagination">
+                                
+                                Pagination
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">API Examples</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/rest-api-examples.html" class="list-group-item list-group-item-action border-0 " id="docnavi-rest-api-examples">
+                                
+                                Importing a CSV file
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-example-javascript.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-example-javascript">
+                                
+                                jQuery Demo
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-example-sync.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-example-sync">
+                                
+                                Sync to a local DB
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/api-example-user.html" class="list-group-item list-group-item-action border-0 " id="docnavi-api-example-user">
+                                
+                                Onboarding users
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Create plugins</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/developers.html" class="list-group-item list-group-item-action border-0 " id="docnavi-developers">
+                                
+                                Development environment
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/extending-kimai.html" class="list-group-item list-group-item-action border-0 " id="docnavi-extending-kimai">
+                                
+                                Extending Kimai
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/plugins.html" class="list-group-item list-group-item-action border-0 " id="docnavi-plugins">
+                                
+                                Create plugins
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/translations.html" class="list-group-item list-group-item-action border-0 " id="docnavi-translations">
+                                
+                                Translations / i18n
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/meta-fields.html" class="list-group-item list-group-item-action border-0 " id="docnavi-meta-fields">
+                                
+                                Custom fields
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/theme.html" class="list-group-item list-group-item-action border-0 " id="docnavi-theme">
+                                
+                                Theme
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/store.html" class="list-group-item list-group-item-action border-0 " id="docnavi-store">
+                                
+                                Add to store
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/migration-v2.html" class="list-group-item list-group-item-action border-0 " id="docnavi-migration-v2">
+                                
+                                Migrate plugins to v2
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Security</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/security.html" class="list-group-item list-group-item-action border-0 " id="docnavi-security">
+                                
+                                Security advisories
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/bughunter.html" class="list-group-item list-group-item-action border-0 " id="docnavi-bughunter">
+                                
+                                Reporting security issues
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    
+                    
+                    <p class="fs-sm mb-1 text-uppercase text-muted fw-semibold ps-3">Technical background</p>
+                    <div class="list-group list-group-flush mb-4 me-n4">
+                        
+                        
+                            
+                            
+                            <a href="/documentation/roadmap.html" class="list-group-item list-group-item-action border-0  active" id="docnavi-roadmap">
+                                
+                                Roadmap
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/permission-structure.html" class="list-group-item list-group-item-action border-0 " id="docnavi-permission-structure">
+                                
+                                Permission structure
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/sql-examples.html" class="list-group-item list-group-item-action border-0 " id="docnavi-sql-examples">
+                                
+                                SQL Examples
+                                
+                            </a>
+                        
+                    
+                        
+                            
+                            
+                            <a href="/documentation/redis.html" class="list-group-item list-group-item-action border-0 " id="docnavi-redis">
+                                
+                                Using Redis for caching
+                                
+                            </a>
+                        
+                    
+                    </div>
+                    
+                    <div class="list-group list-group-flush pb-3 mb-4 mx-n4">
+                
+                    <a href="/en/" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Kimai Home</a>
+                    <a href="/en/site-notice.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Site notice</a>
+                    <a href="/en/privacy-policy.html" class="list-group-item list-group-item-action border-0 py-1 fs-sm px-4">Privacy policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const dpm = document.getElementById('docnavi-roadmap');
+        if (dpm !== null) {
+            dpm.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    });
+</script>
+<main class="docs-container">
+    <div class="container-fluid px-xxl-3 px-lg-2 pt-4 pt-lg-5 pb-2 pb-lg-4">
+        <div class="docs-layout">
+            <div class="docs-article" data-pagefind-body>
+                <div class="d-sm-flex align-items-baseline justify-content-between ps-lg-2 ps-xxl-0 mt-2 mt-lg-0 mb-n3 gap-4">
+                    <div class="w-100">
+                        <div class="d-flex align-items-baseline justify-content-between gap-3 pb-1">
+                            <div class="d-flex align-items-baseline flex-wrap gap-2">
+                                <h1 class="mb-0" data-pagefind-meta="title" data-pagefind-weight="10.0">
+                                    Roadmap
+                                </h1>
+                                <div id="availability-pills" class="d-flex flex-shrink-0 gap-2">
+                                    
+                                    
+                                </div>
+                            </div>
+                            <div class="d-none d-lg-flex">
+                            
+
+
+
+    <div class="dropdown">
+        <a class="btn btn-outline-secondary btn-sm dropdown-toggle rounded-3 px-3" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Latest
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+            
+                <a class="dropdown-item" href="#">Latest (2.70.2)</a>
+            
+        </div>
+    </div>
+
+                            </div>
+                        </div>
+                        
+                        <p class="text-muted fs-lg mb-2" data-pagefind-meta="description">Suggest new features for Kimai on Kimai Roadmap</p>
+                        
+                    </div>
+                </div>
+
+                <div class="markdown py-5 ps-lg-2 ps-xxl-0">
+                    <div>
+                        
+                        <div id="documentation-content">
+                            <p>Many features in Kimai started as an idea from a user. 
+If you’re missing something, post it on <a href="https://roadmap.kimai.org">Kimai Roadmap</a>.</p>
+
+<h3 id="before-you-request-a-feature">Before you request a feature</h3>
+
+<p>Search <a href="https://roadmap.kimai.org">Kimai Roadmap</a> first; browsing works without an account. 
+The most popular ideas are at the top (<code class="language-plaintext highlighter-rouge">Trending</code>), and you can also sort by <code class="language-plaintext highlighter-rouge">Most wanted</code>, <code class="language-plaintext highlighter-rouge">Most discussed</code> and <code class="language-plaintext highlighter-rouge">Recent</code>, or filter by activity, status and tags. 
+If the idea already exists, follow it or vote for it instead of posting a duplicate.</p>
+
+<h3 id="requesting-a-feature-on-kimai-roadmap">Requesting a feature on Kimai Roadmap</h3>
+
+<h4 id="create-an-account">Create an account</h4>
+
+<ol>
+  <li>Send an email to support@kimai.org asking for an invite to Kimai Roadmap</li>
+  <li>We will send you an invitation email with a sign up link</li>
+  <li>Follow the link and register</li>
+  <li>That’s it! Now you can post, vote on, comment on and follow requests</li>
+</ol>
+
+<h4 id="post-a-feature-request">Post a feature request</h4>
+
+<ol>
+  <li>Open <a href="https://roadmap.kimai.org">Kimai Roadmap</a> and go to <code class="language-plaintext highlighter-rouge">All Feedback</code></li>
+  <li>Click <code class="language-plaintext highlighter-rouge">+</code> next to “What would you like to have in Kimai?”</li>
+  <li>Answer the three questions in the form: what you’re trying to do and what’s missing, in what situation it matters and why, and any examples or screenshots</li>
+  <li>Check the similar posts shown below the form. If your idea is already on the list, vote for it instead</li>
+  <li>Give your idea a title</li>
+  <li>Click <code class="language-plaintext highlighter-rouge">Submit your idea</code></li>
+  <li>That’s it! Your request gets the status <code class="language-plaintext highlighter-rouge">Open</code>, and everyone can see it</li>
+</ol>
+
+<p>You automatically follow your own requests and get notified when someone votes, comments, or the status changes.</p>
+
+<h4 id="voting">Voting</h4>
+
+<p>You need to register in order to vote. You can vote on any request with the status <code class="language-plaintext highlighter-rouge">Open</code>, <code class="language-plaintext highlighter-rouge">Planned</code> or <code class="language-plaintext highlighter-rouge">Started</code>. Open the request and click <code class="language-plaintext highlighter-rouge">Vote for this idea</code>. Click again to remove your vote.</p>
+
+<h4 id="commenting">Commenting</h4>
+
+<p>You need to register in order to comment. You can comment on any request: write your comment in the <code class="language-plaintext highlighter-rouge">Discussion</code> section and click <code class="language-plaintext highlighter-rouge">Post</code>. Your comment is then visible to other users. To edit or delete a comment, click the <code class="language-plaintext highlighter-rouge">...</code> icon.</p>
+
+<h4 id="following">Following</h4>
+
+<p>You need to register in order to follow a request. Open the request and click <code class="language-plaintext highlighter-rouge">+ Follow</code> in the lower right corner. Click again to unfollow.</p>
+
+<p>By default, notifications appear in the web interface. Click the bell icon in the upper right corner to view them.</p>
+
+<p>To receive notifications by email, or only for status updates, click your profile icon and select <code class="language-plaintext highlighter-rouge">My Settings</code>. Scroll down to <code class="language-plaintext highlighter-rouge">Notifications</code> and choose the events you want to be notified about.</p>
+
+<h3 id="what-happens-after-you-submit">What happens after you submit</h3>
+
+<p>We review requests every week. Votes matter a lot, but they’re one signal among several: we also consider how many users a change helps, how much work it takes and how it fits Kimai’s direction. Each request shows its current status:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Open</code>: new, waiting for votes and our first look</li>
+  <li><code class="language-plaintext highlighter-rouge">Planned</code>: we intend to build it</li>
+  <li><code class="language-plaintext highlighter-rouge">Started</code>: we’re working on it</li>
+  <li><code class="language-plaintext highlighter-rouge">Completed</code>: it’s in Kimai</li>
+  <li><code class="language-plaintext highlighter-rouge">Declined</code>: we’ve decided not to build it</li>
+  <li><code class="language-plaintext highlighter-rouge">Duplicate</code>: we merged it with an existing request</li>
+</ul>
+
+
+                        </div>
+                        
+
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+                <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
+                    <h3 class="fs-lg mt-2">Jump to</h3>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#before-you-request-a-feature" class="nav-link">Before you request a feature</a></li><li class="nav-item"><a href="#requesting-a-feature-on-kimai-roadmap" class="nav-link">Requesting a feature on Kimai Roadmap</a></li><li class="nav-item"><a href="#what-happens-after-you-submit" class="nav-link">What happens after you submit</a></li></ul>
+                    
+                </aside>
+            
+        </div>
+    </div>
+</main>
+<script type="module" src="/assets/js/documentation-search.js?v1"></script>
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v4"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
