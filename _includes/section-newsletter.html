@@ -1,9 +1,31 @@
+{% comment %}
+    Newsletter subscription form, powered by Brevo.
+
+    The markup is the Brevo "HTML form" embed, re-styled with Bootstrap. Brevo's main.js (loaded below)
+    takes over the form: it validates the input, fetches a reCAPTCHA v3 token on submit, posts the form
+    via AJAX and toggles the success/error panels. Brevo's own stylesheet is NOT loaded, the hooks the
+    script needs are styled in src/scss/_website.scss ("Newsletter form").
+
+    Do not rename these IDs and classes, Brevo's script depends on them:
+    #sib-form-container, #sib-container, #sib-form, #success-message, #error-message,
+    .sib-form-message-panel, .sib-form-message-panel__inner-text, .sib-input, .form__entry,
+    .input, .entry__error, .input--hidden, .g-recaptcha-v3, the <svg> inside the submit button
+{% endcomment %}
+{% assign t = site.data[page.lang].translation.newsletter %}
+{% assign brevo_locales = "de,en,es,fr,it,pt" | split: "," %}
+{% if page.lang == "pt_BR" %}
+    {% assign brevo_locale = "br" %}
+{% elsif brevo_locales contains page.lang %}
+    {% assign brevo_locale = page.lang %}
+{% else %}
+    {% assign brevo_locale = "en" %}
+{% endif %}
 <section class="py-5{% if include.background %} bg-secondary{% endif %}">
     <div class="container py-md-3 py-lg-5">
         <div class="row justify-content-center pt-2">
             <div class="col-xl-8 col-lg-9 col-md-11">
                 <h2 class="d-md-inline-block position-relative mb-md-5 mb-sm-4 text-sm-start text-center">
-                    {{ site.data[page.lang].translation.newsletter.teaser }}
+                    {{ t.teaser }}
                     <svg class="d-md-block d-none position-absolute top-0 ms-4 ps-1" style="left: 100%; fill: var(--brand-icons);" xmlns="http://www.w3.org/2000/svg" width="65" height="68">
                         <path d="M53.9527 51.0012c8.396-10.5668 2.0302-26.0134-11.7481-26.7511-.6899-.0646-1.4612.0015-2.1258.0431.1243 9.0462-4.1714 18.8896-11.5618 21.3814-6.6695 2.2133-10.3337-4.2224-7.5813-9.676 3.2966-6.4755 9.103-11.8504 16.1678-13.8189-.5654-5.6953-3.3436-10.7672-9.485-12.48517C17.2678 6.8204 6.49364 16.3681 4.98841 26.127c-.09276 1.0297-1.68569.9497-1.59293-.0801C3.98732 12.9139 19.7395 2.55212 31.9628 8.5787c4.7253 2.3813 7.2649 7.3963 7.9368 13.067 7.4237-.9311 14.5154 3.3683 18.3422 9.5422 4.3988 7.1623 2.3584 15.1401-2.6322 21.1108-.7826.9653-2.3331-.3572-1.6569-1.2975zM26.7754 32.1845c-1.9411 2.2411-4.076 5.0872-4.3542 8.1764-.3036 2.9829 3.7601 3.0525 5.4905 2.7645 2.1568-.3863 3.7221-2.3164 4.8863-4.0419 2.6228-3.6308 4.3657-9.0752 4.4844-14.2563-4.0808 1.279-7.6514 4.2327-10.507 7.3573zm24.6311 25.592c-.7061-2.9738-1.2243-6.1031-1.1591-9.143.0423-1.242 1.767-1.0805 1.8313.1372.1284 2.435.815 4.8532 1.4764 7.1651l4.1619-1.4098c1.0153-.4586 2.4373-1.5714 3.6544-1.1804.6087.1954.7347.7264.6475 1.3068-.2302 1.3976-2.4683 1.9147-3.5901 2.398-1.8429.7619-3.6293 1.2865-5.5477 1.7298-.6391.1476-1.3233-.3665-1.4746-1.0037z"/>
                     </svg>
@@ -11,43 +33,186 @@
 
                 <div class="row gy-4 align-items-center pb-3">
                     <p class="mb-0 text-sm-start text-center">
-                        {{ site.data[page.lang].translation.newsletter.introduction }}
+                        {{ t.introduction }}
                     </p>
                 </div>
 
-                <iframe width="100%" height="280"
-                        src="https://8e086265.sibforms.com/v2/serve/MUIFANVMpvlU20yQ0_dKY3sJpdyymE0MVz22Jx47WQD1oepB0BHHkCUj8EA1oWs7YijGym7fe_XIVoG66E0MFuIJ1xD9KE6nYOsS4MICDDldSomPC6K6lOHUKsMa7OKsIFM5ci1LhslNEN_B0GEwwHD8gOIcd7xiQuai0N2Y9hobLHqifKz2362vMz96pT-MCRnwKG5q_LMrHRrQ"
-                        frameborder="0" scrolling="auto" allowfullscreen
-                        style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
-
-                {% comment %}
-                <form class="mb-3 needs-validation" id="sib-form" method="POST"
-                      action="https://8e086265.sibforms.com/serve/MUIFAITbKufb1JAQqo2E52QD_HhFiUBBmQ0FmrruptD7Re6bsqQ_Yy7sqMBRW60My579lFtXWF029J18D1Lo5036KBE9Cvk1ZWaF7vEU0QJvXA6A8E0EjcjH1HRPpZvLcL8V_LdgAjXddUzHSyc8Fq7HPPRKZ1QPh1U2ZsjpWWFlJI-XvrTmTfovimFFe6r7EW8rPwEvmrdwAlGz">
-                    <div class="d-flex flex-sm-row flex-column mb-3">
-                        <div class="input-group me-sm-3 mb-sm-0">
-                            <input type="email" class="input form-control form-control-lg rounded-3 ps-5"
-                                   placeholder="{{ site.data[page.lang].translation.newsletter.email-title }}" required
-                                   id="EMAIL" name="EMAIL" autocomplete="off" data-required="true">
-                            <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
-                        </div>
-                        <button type="submit" class="btn btn-lg btn-primary">{{
-                            site.data[page.lang].translation.newsletter.button }} *
-                        </button>
+                <div id="sib-form-container" class="sib-form-container">
+                    <div id="error-message" class="sib-form-message-panel alert alert-danger align-items-center" role="alert">
+                        <i class="bx bx-error-circle fs-4 me-2 flex-shrink-0"></i>
+                        <span class="sib-form-message-panel__inner-text">{{ t.error }}</span>
+                    </div>
+                    <div id="success-message" class="sib-form-message-panel alert alert-success align-items-center" role="status">
+                        <i class="bx bx-check-circle fs-4 me-2 flex-shrink-0"></i>
+                        <span class="sib-form-message-panel__inner-text">{{ t.success }}</span>
                     </div>
 
-                    <input type="text" name="email_address_check" value="" aria-label="not required for humans"
-                           class="visually-hidden">
-                    <input type="hidden" name="locale" value="en">
-                    <input type="hidden" name="html_type" value="simple">
-                </form>
-                {% endcomment %}
+                    <div id="sib-container">
+                        <form class="mb-3" id="sib-form" method="POST" data-type="subscription"
+                              action="https://8e086265.sibforms.com/serve/MUIFANVMpvlU20yQ0_dKY3sJpdyymE0MVz22Jx47WQD1oepB0BHHkCUj8EA1oWs7YijGym7fe_XIVoG66E0MFuIJ1xD9KE6nYOsS4MICDDldSomPC6K6lOHUKsMa7OKsIFM5ci1LhslNEN_B0GEwwHD8gOIcd7xiQuai0N2Y9hobLHqifKz2362vMz96pT-MCRnwKG5q_LMrHRrQ">
+                            <div class="sib-input">
+                                <div class="form__entry entry_block">
+                                    <div class="d-flex flex-sm-row flex-column">
+                                        <div class="input-group me-sm-3 mb-3 mb-sm-0">
+                                            <input type="email" class="input form-control form-control-lg rounded-3 ps-5"
+                                                   placeholder="{{ t.email-title }}" required
+                                                   id="EMAIL" name="EMAIL" autocomplete="off" data-required="true"
+                                                   aria-describedby="newsletter-terms">
+                                            <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
+                                        </div>
+                                        <button type="submit" class="btn btn-lg btn-primary text-nowrap">
+                                            <svg class="progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                                                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/>
+                                            </svg>
+                                            {{ t.button }} *
+                                        </button>
+                                    </div>
+                                    <div class="entry__error entry__error--primary invalid-feedback"></div>
+                                </div>
+                            </div>
 
-                <div class="form-text fs-sm text-sm-start text-center">
-                    {% assign terms = '<a target="_blank" class="clickable_link" href="https://www.brevo.com/legal/termsofuse/">%terms%</a>' %}
-                    {% assign terms = terms | replace: "%terms%", site.data[page.lang].translation.newsletter.terms %}
-                    * {{ site.data[page.lang].translation.newsletter.sendinblue | replace: "%terms%", terms }}
+                            <div class="g-recaptcha-v3" data-sitekey="{{ site.recaptcha_key }}" style="display: none"></div>
+
+                            {% comment %} honeypot: hidden from humans, bots that fill it are rejected by Brevo {% endcomment %}
+                            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="locale" value="{{ brevo_locale }}">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="form-text fs-sm text-sm-start text-center" id="newsletter-terms">
+                    {% assign terms_label = t.terms %}
+                    {% assign terms = '<a target="_blank" class="clickable_link" href="https://www.brevo.com/legal/termsofuse/">%terms%</a>' | replace: "%terms%", terms_label %}
+                    {% assign sendinblue = t.sendinblue %}
+                    {{ sendinblue | replace: "%terms%", terms }}
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+(function () {
+    var form = document.getElementById('sib-form');
+    if (form === null) {
+        return;
+    }
+
+    // Messages used by Brevo's main.js for client-side validation
+    window.LOCALE = '{{ brevo_locale }}';
+    window.REQUIRED_ERROR_MESSAGE = {{ t.field-required | jsonify }};
+    window.REQUIRED_CODE_ERROR_MESSAGE = window.REQUIRED_MULTISELECT_MESSAGE = window.REQUIRED_ERROR_MESSAGE;
+    window.GENERIC_INVALID_MESSAGE = {{ t.field-invalid | jsonify }};
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = window.INVALID_NUMBER = window.INVALID_DATE = window.GENERIC_INVALID_MESSAGE;
+    // hide the form after a successful subscription, only the success message stays visible
+    window.AUTOHIDE = true;
+
+    // Brevo's script and Google reCAPTCHA are heavy, so they are only loaded once the form is about
+    // to be used: when it scrolls near the viewport or receives focus. A submit that happens before
+    // both scripts finished loading is queued and re-triggered afterwards.
+    var started = false;
+    var ready = false;
+    var pending = false;
+
+    function addScript(src, onload) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = onload;
+        document.head.appendChild(script);
+    }
+
+    function submit() {
+        if (typeof form.requestSubmit === 'function') {
+            form.requestSubmit();
+        } else {
+            form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        }
+    }
+
+    function loadBrevo() {
+        if (started) {
+            return;
+        }
+        started = true;
+
+        var remaining = 2;
+        var onload = function () {
+            remaining--;
+            if (remaining > 0) {
+                return;
+            }
+            ready = true;
+            if (pending) {
+                pending = false;
+                submit();
+            }
+        };
+
+        addScript('https://www.google.com/recaptcha/api.js?render={{ site.recaptcha_key }}&hl={{ page.lang | replace: "_", "-" }}', onload);
+        addScript('https://sibforms.com/forms/end-form/build/main.js', onload);
+    }
+
+    // Brevo's main.js disables the native browser validation (novalidate) and does not check the
+    // format of email fields itself, that only happens on the server. This check runs before Brevo's
+    // submit handler and shows the error in the same place, so obvious typos never leave the browser.
+    var email = form.querySelector('input[name="EMAIL"]');
+    var entry = email.closest('.form__entry');
+    var entryError = entry.querySelector('.entry__error');
+
+    function showError(message) {
+        entryError.innerText = message;
+        entryError.style.display = 'block';
+        entry.classList.add('entry_errored');
+        email.focus();
+    }
+
+    function validateEmail() {
+        var value = email.value.trim();
+        if (value === '') {
+            showError(window.REQUIRED_ERROR_MESSAGE);
+            return false;
+        }
+        if (!email.validity.valid || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            showError(window.GENERIC_INVALID_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+
+    email.addEventListener('input', function () {
+        entryError.innerText = '';
+        entryError.style.display = 'none';
+        entry.classList.remove('entry_errored');
+    });
+
+    form.addEventListener('submit', function (event) {
+        if (!validateEmail()) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return;
+        }
+        if (ready) {
+            return;
+        }
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        pending = true;
+        loadBrevo();
+    });
+
+    form.addEventListener('focusin', loadBrevo, { once: true });
+
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries.some(function (entry) { return entry.isIntersecting; })) {
+                observer.disconnect();
+                loadBrevo();
+            }
+        }, { rootMargin: '400px 0px' });
+        observer.observe(form);
+    } else {
+        loadBrevo();
+    }
+})();
+</script>
