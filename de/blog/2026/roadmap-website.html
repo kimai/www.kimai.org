@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Die Kimai-Roadmap: ein Ort für Ihre Ideen und unsere Pläne</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Die Kimai-Roadmap: ein Ort für Ihre Ideen und unsere Pläne">
+<meta property="og:image" content="https://www.kimai.org/images/blog/de/roadmap-blog-teaser.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/blog/2026/roadmap-website">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/2026/roadmap-website">
+<link href="/assets/build/main.css?v16" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                            <li><a href="/de/partner/" class="dropdown-item">Partner</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Updates</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="hero container mt-4 py-5">
+    <h1 class="page-title pb-3" style="max-width: 970px;">Die Kimai-Roadmap: ein Ort für Ihre Ideen und unsere Pläne</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">
+                        Allgemein
+                    </span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">22 Oct 2026</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/nikita.webp" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Nikita</h6>
+                
+                <a href="https://www.linkedin.com/in/welcome2nikita-ermakov/" target="_blank" rel="author" class="fw-semibold stretched-link">@nikita</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p><em>Unsere Feature-Requests bekommen ein neues Zuhause – mit einer öffentlichen Roadmap, die wir in den nächsten Wochen nach und nach füllen! Schaut euch die Vorschläge aus der Community an, stimmt für die Ideen ab, die euch wichtig sind, diskutiert mit oder reicht eigene Vorschläge ein. Sobald eine Idee geplant, in Arbeit oder umgesetzt ist, werdet ihr darüber informiert.</em></p>
+
+<p>Wir haben das Glück, dass unsere Community Kimai nicht nur nutzt, sondern aktiv mitgestaltet. Im Laufe der Jahre habt ihr uns mehr als 1.000 Feature-Requests geschickt. In jedem einzelnen steckt Zeit und Mühe. Viele der vorgeschlagenen Funktionen nutzt ihr heute ganz selbstverständlich in Kimai.</p>
+
+<p>Bei all diesen Ideen den Überblick zu behalten und euch auf dem Laufenden zu halten, war allerdings nicht immer einfach. Das wollten wir schon lange verbessern.</p>
+
+<p>Heute geht die <a href="https://roadmap.kimai.org/"><strong>Kimai Roadmap</strong></a> an den Start. Damit machen wir den nächsten Schritt, um Kimai gemeinsam mit euch weiterzuentwickeln. Hier könnt ihr an einem zentralen Ort neue Funktionen vorschlagen, über Ideen abstimmen und verfolgen, woran wir gerade arbeiten.</p>
+
+<p>Hier erfahrt ihr, warum wir uns für diesen Schritt entschieden haben, was sich für euch ändert und was mit euren bisherigen Feature-Requests auf GitHub passiert.</p>
+
+<h3 id="acht-jahre-ideen-auf-github">Acht Jahre Ideen auf GitHub</h3>
+
+<p>Als wir vor mehr als acht Jahren anfingen, Feature-Requests auf GitHub zu sammeln, lag das nahe: Unser Code war schon dort, die Mitwirkenden hatten einen Account und alle konnten die Diskussionen mitverfolgen. Ein Issue war schnell erstellt, und mit einer 👍-Reaktion ließ sich ein Vorschlag unkompliziert unterstützen.</p>
+
+<p>Das hat lange gut funktioniert! Seitdem habt ihr mehr als 1.000 Feature-Requests eingereicht:</p>
+
+<ul>
+  <li><strong>Hunderte davon sind heute Teil von Kimai.</strong> Funktionen wie Kalender, Sortierung, Budgets, Ausgaben, Dark Theme sowie SAML- und LDAP-Login gehen auf eure Vorschläge zurück.</li>
+  <li><strong>Über 750 Requests wurden geschlossen:</strong> Die Vorschläge wurden umgesetzt, mit ähnlichen zusammengeführt oder abgelehnt.</li>
+  <li><strong>Über 250 sind noch offen</strong> – hier steht eine Antwort von uns noch aus.</li>
+</ul>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_kimai_github_feature_request.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<p>Darin steckt enorm viel gemeinsame Arbeit. Danke für jede einzelne Idee, jede Stimme und jeden Kommentar.</p>
+
+<h3 id="wo-github-an-seine-grenzen-stößt">Wo GitHub an seine Grenzen stößt</h3>
+
+<p>Für unseren Code ist und bleibt GitHub die richtige Plattform. Doch je größer Kimai wurde, desto deutlicher zeigten sich die Grenzen von GitHub bei der Verwaltung von Feature-Requests.</p>
+
+<p><strong>Auf Entwickler ausgerichtet.</strong></p>
+
+<p>Die Oberfläche von GitHub richtet sich an Entwickler. Viele Menschen, die Kimai täglich nutzen, haben jedoch keinen technischen Hintergrund. Für sie ist es oft umständlich, Vorschläge zu finden und deren aktuellen Stand nachzuvollziehen.</p>
+
+<p><strong>Der Überblick fehlt.</strong></p>
+
+<p>Feature-Requests stehen direkt neben Fehlermeldungen – alles heißt „Issue”. Bei 250 offenen Feature-Requests lässt sich nur schwer erkennen, welche Ideen besonders viel Unterstützung bekommen. Das gilt auch für uns.</p>
+
+<p><strong>Abstimmen geht nur über Umwege.</strong></p>
+
+<p>Eine richtige Abstimmungsfunktion gibt es auf GitHub nicht. Am ehesten lässt sich dafür die 👍-Reaktion nutzen. Viele schreiben stattdessen „+1” in die Kommentare. Das löst zwar eine Benachrichtigung an alle aus, die das Issue abonniert haben, zählt aber nicht als Stimme.</p>
+
+<p><strong>Stimmen verteilen sich auf doppelte Vorschläge.</strong></p>
+
+<p>Wurde dieselbe Idee mehrfach eingereicht, verteilten sich die Stimmen auf mehrere Issues. Dadurch wirkte so mancher Vorschlag weniger gefragt, als er tatsächlich war.</p>
+
+<p><strong>Der aktuelle Stand bleibt unklar.</strong></p>
+
+<p>Nach dem Einreichen eines Requests war oft unklar: Haben wir ihn gesehen? Ist die Umsetzung geplant? Arbeitet schon jemand daran? Wer ein Issue abonniert hatte, wurde über jeden einzelnen Kommentar benachrichtigt – nicht nur über die Fortschritte, die eigentlich interessant waren.</p>
+
+<p><strong>Datensouveränität.</strong></p>
+
+<p>Auf GitHub werden eure Beiträge, Kommentare und Stimmen bei einem externen Anbieter gespeichert, dessen Regeln gelten. Die Kimai Roadmap betreiben wir dagegen auf unserer eigenen Infrastruktur. So behalten wir die Kontrolle und übernehmen selbst die Verantwortung. Dabei gelten die strengen Datenschutzbestimmungen von Kimai.</p>
+
+<p><strong>Ideen erreichen uns über verschiedene Kanäle.</strong></p>
+
+<p>Feature-Requests bekommen wir auch per Support-E-Mail und auf anderen Wegen. Viele dieser Vorschläge wurden nicht auf GitHub erfasst. Deshalb floss nicht jede Stimme gleichermaßen ein.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_github_votes.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<p>So gingen viele Vorschläge im Laufe der Jahre in der langen Liste unter.</p>
+
+<h3 id="warum-das-für-kimai-wichtig-ist">Warum das für Kimai wichtig ist</h3>
+
+<p>Kimai ist Open Source und wurde schon immer von den Menschen geprägt, die es nutzen. Eure Ideen, Fehlermeldungen und euer Feedback bringen Kimai voran.</p>
+
+<p>Dazu gehört auch, dass ihr nachvollziehen könnt, was aus euren Vorschlägen wird. Wer sich die Zeit nimmt, eine Idee einzureichen, soll erfahren, ob wir sie einplanen, bereits daran arbeiten, sie umgesetzt haben oder nicht umsetzen werden – und warum. Diese Transparenz hilft uns, Kimai gemeinsam besser zu machen. Und sie ist ein Zeichen der Wertschätzung für eine Community, die so viel zu Kimai beiträgt.</p>
+
+<h3 id="das-ist-die-kimai-roadmap">Das ist die Kimai Roadmap</h3>
+
+<p>Die Kimai Roadmap ist für alle öffentlich einsehbar. Ihr könnt euch sämtliche Vorschläge und die gesamte Roadmap ohne Account ansehen.</p>
+
+<h4 id="ideen-teilen">Ideen teilen</h4>
+
+<p>Unter <a href="https://roadmap.kimai.org/">roadmap.kimai.org</a> findet ihr alle Vorschläge. Standardmäßig werden euch die aktuell gefragtesten Ideen angezeigt („Trending”). Ihr könnt auch nach „Most wanted”, „Most discussed” oder „Recent” sortieren und die Beiträge nach Aktivität, Status und Tags filtern.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_all_feedback_board.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<p>Ihr habt selbst eine Idee? Klickt auf das <code class="language-plaintext highlighter-rouge">+</code>, beschreibt euren Vorschlag und veröffentlicht ihn. Neue Requests erhalten zunächst den Status „Open”. Anschließend können andere dafür abstimmen, während wir uns den Vorschlag genauer ansehen.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_suggestion_form.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<h4 id="abstimmen-und-kommentieren">Abstimmen und kommentieren</h4>
+
+<p>Ihr habt eine Idee gefunden, die euch gefällt? Stimmt dafür ab und beschreibt in einem Kommentar, wie euch die vorgeschlagene Funktion im Alltag helfen würde. Solche konkreten Beispiele helfen uns zu verstehen, was ihr braucht.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_open_post.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<h4 id="die-entwicklung-mitverfolgen">Die Entwicklung mitverfolgen</h4>
+
+<p>In der Roadmap-Ansicht seht ihr, welche Funktionen als Nächstes anstehen. Dort könnt ihr verfolgen, wie sich der Status einer Idee von „Open” über „Planned” und „Started” bis hin zu „Completed” verändert.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_view.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<h4 id="benachrichtigungen-erhalten">Benachrichtigungen erhalten</h4>
+
+<p>Wenn ihr einem Request folgt, werdet ihr benachrichtigt, sobald sich sein Status ändert.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_notification.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<h4 id="warum-ihr-zum-mitmachen-vorerst-eine-einladung-braucht">Warum ihr zum Mitmachen vorerst eine Einladung braucht</h4>
+
+<p>Ansehen könnt ihr euch die Kimai Roadmap ohne Account. Wenn man selbst Vorschläge einreichen, abstimmen, kommentieren oder Requests folgen möchte, braucht man vorerst eine Einladung zur Registrierung. Schreibt einfach eine E-Mail an <a href="mailto:%7B%7B%20site.support_email%20%7D%7D">support@kimai.org</a>, und wir schicken euch einen Registrierungslink.</p>
+
+<p>Dafür haben wir uns bewusst entschieden: So halten wir Spam und Bots fern und stellen sicher, dass hinter jeder Stimme ein Mensch steht, der Kimai nutzt. Außerdem braucht man keinen Account bei einem anderen Dienst, um mitzumachen – genau diese Hürde hat die Beteiligung bisher erschwert. Und wir können alle, die dazukommen, kurz persönlich begrüßen und die Menschen hinter den Ideen kennenlernen.</p>
+
+<p>Die Einladungspflicht soll in naher Zukunft wegfallen. Zunächst möchten wir aber Erfahrungen mit der Plattform sammeln und sehen, wie sie sich im Alltag bewährt.</p>
+
+<h3 id="was-mit-den-github-feature-requests-passiert">Was mit den GitHub-Feature-Requests passiert</h3>
+
+<p>Darüber haben wir uns besonders viele Gedanken gemacht. In acht Jahren sind zahlreiche Ideen und Diskussionen zusammengekommen, die wir nicht einfach nur kopieren möchten. Deshalb erklären wir hier genau, wie wir beim Umzug vorgehen.</p>
+
+<h4 id="die-regel-requests-mit-unterstützung-ziehen-um">Die Regel: Requests mit Unterstützung ziehen um</h4>
+
+<ul>
+  <li><strong>Alle Requests aus den letzten 12 Monaten ziehen um</strong> – unabhängig von der Zahl ihrer Stimmen.</li>
+  <li><strong>Ältere Requests ziehen um, wenn ihre Stimmenzahl die Anzahl der vollen Jahre übersteigt, die sie bereits offen sind.</strong></li>
+</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Offen seit</th>
+      <th>Benötigte Stimmen für den Umzug</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Unter 1 Jahr</td>
+      <td>Zieht immer um</td>
+    </tr>
+    <tr>
+      <td>1–2 Jahre</td>
+      <td>2 oder mehr</td>
+    </tr>
+    <tr>
+      <td>2–3 Jahre</td>
+      <td>3 oder mehr</td>
+    </tr>
+    <tr>
+      <td>3–4 Jahre</td>
+      <td>4 oder mehr</td>
+    </tr>
+    <tr>
+      <td>4–5 Jahre</td>
+      <td>5 oder mehr</td>
+    </tr>
+    <tr>
+      <td>5 Jahre oder mehr</td>
+      <td>6 oder mehr</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Als Stimme zählt eine 👍-Reaktion auf das jeweilige Issue. Bevor wir diese Regel anwenden, führen wir doppelte Requests zusammen und zählen ihre Stimmen zusammen. So wird keine beliebte Idee übergangen, nur weil sich ihre Unterstützung auf mehrere Issues verteilt.</p>
+
+<h4 id="der-github-importer">Der GitHub Importer</h4>
+
+<p>Hunderte Requests manuell zu übertragen, wäre kaum zu schaffen. Deshalb unterstützt uns dabei der <strong>GitHub Importer</strong>-Bot. Er liest das jeweilige GitHub-Issue einschließlich aller Kommentare ein und fasst alles in einem Beitrag auf der Kimai Roadmap zusammen. Jeder importierte Beitrag enthält:</p>
+
+<ul>
+  <li>Den ursprünglichen Vorschlag und eine Zusammenfassung der Diskussion</li>
+  <li>Die Anzahl der Stimmen zum Zeitpunkt des Umzugs</li>
+  <li>Einen Link zum ursprünglichen GitHub-Issue, in dem die vollständige Diskussion weiterhin nachgelesen werden kann</li>
+</ul>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/roadmap_imported_post.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption"></figcaption>
+</figure>
+
+<p><strong>Was passiert mit den Stimmen?</strong> Stimmen lassen sich nicht von GitHub-Accounts auf die Accounts der neuen Plattform übertragen. Deshalb werden die übernommenen Stimmen als Stimmen vom „Importer” angezeigt. Technisch lässt sich das nicht anders lösen. Jede Stimme zählt weiterhin, ist aber nicht mehr der Person zugeordnet, die sie abgegeben hat. Ihr könnt auch für importierte Beiträge abstimmen. Wenn ihr einen Request bereits auf GitHub unterstützt habt und über seinen Fortschritt informiert werden möchtet, folgt ihm auf der Kimai Roadmap.</p>
+
+<h4 id="requests-die-wir-archivieren">Requests, die wir archivieren</h4>
+
+<p>Einige ältere Requests haben über die Jahre keine Unterstützung erhalten. Diese übernehmen wir nicht, sondern archivieren sie: Wir schließen die Issues auf GitHub, sie bleiben dort aber weiterhin lesbar. Wer eine solche Idee wieder aufgreifen möchte, kann sie auf der Kimai Roadmap neu einreichen und auf das ursprüngliche Issue verlinken.</p>
+
+<h4 id="requests-die-wir-nicht-umsetzen-können">Requests, die wir nicht umsetzen können</h4>
+
+<p>Einige wenige Vorschläge passen nicht zum Konzept von Kimai oder lassen sich technisch nicht umsetzen. Diese Requests schließen wir einzeln und begründen jeweils kurz, warum. So bekommt jede Idee eine klare Antwort.</p>
+
+<h4 id="was-auf-github-bleibt">Was auf GitHub bleibt</h4>
+
+<p><strong>Fehlermeldungen</strong>, Pull Requests und Diskussionen zum Code bleiben wie bisher auf GitHub. Nur die Feature-Requests ziehen um. Auch übertragene und archivierte Issues bleiben auf GitHub lesbar. Bestehende Links funktionieren also weiterhin.</p>
+
+<h4 id="was-wann-passiert">Was wann passiert</h4>
+
+<ol>
+  <li><strong>23. Okt.:</strong> Die Kimai Roadmap öffnet unter <a href="https://roadmap.kimai.org/">roadmap.kimai.org</a>. Schaut rein!</li>
+  <li><strong>26. Okt.:</strong> Ab diesem Tag gehen wir nach und nach alle Feature-Requests auf GitHub durch. Wir übertragen sie nach den oben beschriebenen Regeln, schließen die Issues und verlinken gegebenenfalls auf den zugehörigen Roadmap-Beitrag. Wenn ihr ein Issue abonniert habt, erhaltet ihr dazu eine Benachrichtigung.</li>
+  <li><strong>02. Nov.:</strong> Wir beginnen, die Feature-Requests zu sortieren, und tragen unsere Pläne für die kommenden Monate in die Roadmap ein. Bleibt dran!</li>
+</ol>
+
+<h3 id="wie-wir-entscheiden-was-wir-umsetzen">Wie wir entscheiden, was wir umsetzen</h3>
+
+<p>Wir würden gerne jede Idee umsetzen, können das aber nicht. Deshalb möchten wir offen erklären, wie wir unsere Prioritäten setzen.</p>
+
+<p>Die Zahl der Stimmen spielt dabei eine wichtige Rolle, ist aber nicht das einzige Kriterium. Wir berücksichtigen auch, wie vielen Nutzern eine Änderung hilft, wie aufwendig sie ist, ob sie zur Ausrichtung von Kimai passt und was unser Team mit den verfügbaren Kapazitäten leisten kann.</p>
+
+<p>Wir sehen uns die Requests jede Woche an und vergeben jeweils einen der folgenden Status:</p>
+
+<ul>
+  <li><strong>Open:</strong> Der Vorschlag ist neu, kann Stimmen sammeln und wird noch von uns geprüft.</li>
+  <li><strong>Planned:</strong> Wir planen, den Vorschlag umzusetzen.</li>
+  <li><strong>Started:</strong> Wir arbeiten an der Umsetzung.</li>
+  <li><strong>Completed:</strong> Die Funktion ist in Kimai verfügbar!</li>
+  <li><strong>Declined:</strong> Wir haben uns gegen die Umsetzung entschieden. Ein klares „Nein” hilft mehr als ein Request, der jahrelang unbeantwortet bleibt.</li>
+  <li><strong>Duplicate:</strong> Wir haben den Vorschlag mit einem bereits vorhandenen Request zusammengeführt.</li>
+</ul>
+
+<h3 id="uns-ist-bewusst-dass-der-umzug-eine-umstellung-ist">Uns ist bewusst, dass der Umzug eine Umstellung ist</h3>
+
+<p>Gerade für alle, die sich seit Jahren auf GitHub einbringen, ändern sich damit vertraute Abläufe. Das nehmen wir ernst. Eure Beiträge haben Kimai entscheidend geprägt. Deshalb haben wir viel Arbeit investiert, damit sie beim Umzug nicht verloren gehen.</p>
+
+<p>Falls in einem importierten Beitrag etwas fehlt oder die ursprüngliche Diskussion nicht richtig wiedergegeben wird, schreibt uns an <a href="mailto:%7B%7B%20site.support_email%20%7D%7D">support@kimai.org</a>. Wir korrigieren den Beitrag dann.</p>
+
+<h3 id="jetzt-seid-ihr-dran">Jetzt seid ihr dran!</h3>
+
+<p>Was sollte Kimai als Nächstes können? Schaut auf <a href="https://roadmap.kimai.org/">roadmap.kimai.org</a> vorbei, stimmt für die Vorschläge ab, die euch wichtig sind, und bringt eure eigenen Ideen ein. Wir freuen uns auf eure Vorschläge!</p>
+
+<p>Danke, dass ihr Kimai mitgestaltet.</p>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <h3 class="h4 fw-normal text-light opacity-75">Follow us for more news</h3>
+                <div class="pt-md-5 pt-4 pb-md-2">
+                    
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+</main>
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/de/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Glossar</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v4"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
