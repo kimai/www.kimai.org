@@ -123,15 +123,14 @@ form when you try to access them. This is a security feature to prevent abuse in
 
 Kimai supports 2FA (Two-Factor) authentication via TOTP tokens.
 
-The basic flows looks as this: 
-- You scan a QR code in your Kimai user preferences screen with a TOTP supporting app
-- Your app will show you a confirmation code, which then needs to be entered in Kimai
-- If the code was correct, Kimai will enable 2FA for your account 
-- The next time you log-in, you will have to open your app and enter the current confirmation code before entering Kimai 
+Two-factor authentication can be enabled per account by all users, including SAML accounts.
 
-The 2FA-mode can be enabled per account, settings can be accessed by the user himself or by any Super-Admin.
+The QR code is only shown to the user while setting up 2FA. 
+Scan it with every authenticator app you want to use before confirming. 
+Once 2FA is active, the code is no longer shown. 
+To add a device later, deactivate 2FA and set it up again: this creates a new code, and all previously added devices stop working.
 
-The two-factor authentication can be enabled by all users, even for SAML accounts. 
+Super-Admins cannot see or set up the code for other users, but they can deactivate 2FA for any account, for example when a user lost their device.
 
 ## Troubleshooting
 
