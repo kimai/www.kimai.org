@@ -40,7 +40,7 @@
 <link rel="alternate" hreflang="uk" href="https://www.kimai.org/uk/features.html">
 <link rel="alternate" hreflang="zh-hans" href="https://www.kimai.org/zh_Hans/features.html">
 <link rel="alternate" hreflang="zh-hant" href="https://www.kimai.tw/features.html">
-<link href="/assets/build/main.css?v16" rel="stylesheet" />
+<link href="/assets/build/main.css?v17" rel="stylesheet" />
 
 </head>
 <body class="">
@@ -1240,6 +1240,10 @@
     </div>
 </section>
 
+
+
+
+
 <section class="py-5">
     <div class="container py-md-3 py-lg-5">
         <div class="row justify-content-center pt-2">
@@ -1257,22 +1261,185 @@
                     </p>
                 </div>
 
-                <iframe width="100%" height="280"
-                        src="https://8e086265.sibforms.com/v2/serve/MUIFANVMpvlU20yQ0_dKY3sJpdyymE0MVz22Jx47WQD1oepB0BHHkCUj8EA1oWs7YijGym7fe_XIVoG66E0MFuIJ1xD9KE6nYOsS4MICDDldSomPC6K6lOHUKsMa7OKsIFM5ci1LhslNEN_B0GEwwHD8gOIcd7xiQuai0N2Y9hobLHqifKz2362vMz96pT-MCRnwKG5q_LMrHRrQ"
-                        frameborder="0" scrolling="auto" allowfullscreen
-                        style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+                <div id="sib-form-container" class="sib-form-container">
+                    <div id="error-message" class="sib-form-message-panel alert alert-danger align-items-center" role="alert">
+                        <i class="bx bx-error-circle fs-4 me-2 flex-shrink-0"></i>
+                        <span class="sib-form-message-panel__inner-text">Your subscription could not be saved. Please try again.</span>
+                    </div>
+                    <div id="success-message" class="sib-form-message-panel alert alert-success align-items-center" role="status">
+                        <i class="bx bx-check-circle fs-4 me-2 flex-shrink-0"></i>
+                        <span class="sib-form-message-panel__inner-text">Your subscription has been successful.</span>
+                    </div>
 
-                
+                    <div id="sib-container">
+                        <form class="mb-3" id="sib-form" method="POST" data-type="subscription"
+                              action="https://8e086265.sibforms.com/serve/MUIFANVMpvlU20yQ0_dKY3sJpdyymE0MVz22Jx47WQD1oepB0BHHkCUj8EA1oWs7YijGym7fe_XIVoG66E0MFuIJ1xD9KE6nYOsS4MICDDldSomPC6K6lOHUKsMa7OKsIFM5ci1LhslNEN_B0GEwwHD8gOIcd7xiQuai0N2Y9hobLHqifKz2362vMz96pT-MCRnwKG5q_LMrHRrQ">
+                            <div class="sib-input">
+                                <div class="form__entry entry_block">
+                                    <div class="d-flex flex-sm-row flex-column">
+                                        <div class="input-group me-sm-3 mb-3 mb-sm-0">
+                                            <input type="email" class="input form-control form-control-lg rounded-3 ps-5"
+                                                   placeholder="உங்கள் மின்னஞ்சல் முகவரி" required
+                                                   id="EMAIL" name="EMAIL" autocomplete="off" data-required="true"
+                                                   aria-describedby="newsletter-terms">
+                                            <i class="bx bx-envelope position-absolute start-0 top-50 translate-middle-y ms-3 zindex-5 fs-5 text-muted"></i>
+                                        </div>
+                                        <button type="submit" class="btn btn-lg btn-primary text-nowrap">
+                                            <svg class="progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                                                <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/>
+                                            </svg>
+                                            குழுசேர் *
+                                        </button>
+                                    </div>
+                                    <div class="entry__error entry__error--primary invalid-feedback"></div>
+                                </div>
+                            </div>
 
-                <div class="form-text fs-sm text-sm-start text-center">
+                            <div class="g-recaptcha-v3" data-sitekey="6Lfrb_stAAAAAC3d1xTflt56wOr9hS3HCTi_5zav" style="display: none"></div>
+
+                            
+                            <input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="locale" value="en">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="form-text fs-sm text-sm-start text-center" id="newsletter-terms">
                     
                     
-                    * எங்கள் சந்தைப்படுத்தல் தளமாக ப்ரெவோவைப் பயன்படுத்துகிறோம். இந்தப் படிவத்தைச் சமர்ப்பிக்க கீழே சொடுக்கு செய்வதன் மூலம், நீங்கள் வழங்கிய தகவல்கள் அவற்றின் <a target="_blank" class="clickable_link" href="https://www.brevo.com/legal/termsofuse/">பயன்பாட்டு விதிமுறைகள்</a> விதிமுறைகளுக்கு ஏற்பச் செயலாக்குவதற்காக ப்ரெவோவுக்கு மாற்றப்படும் என்பதை நீங்கள் ஒப்புக்கொள்கிறீர்கள்.
+                    
+                    எங்கள் சந்தைப்படுத்தல் தளமாக ப்ரெவோவைப் பயன்படுத்துகிறோம். இந்தப் படிவத்தைச் சமர்ப்பிக்க கீழே சொடுக்கு செய்வதன் மூலம், நீங்கள் வழங்கிய தகவல்கள் அவற்றின் <a target="_blank" class="clickable_link" href="https://www.brevo.com/legal/termsofuse/">பயன்பாட்டு விதிமுறைகள்</a> விதிமுறைகளுக்கு ஏற்பச் செயலாக்குவதற்காக ப்ரெவோவுக்கு மாற்றப்படும் என்பதை நீங்கள் ஒப்புக்கொள்கிறீர்கள்.
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+(function () {
+    var form = document.getElementById('sib-form');
+    if (form === null) {
+        return;
+    }
+
+    // Messages used by Brevo's main.js for client-side validation
+    window.LOCALE = 'en';
+    window.REQUIRED_ERROR_MESSAGE = "இந்தப் புலத்தைக் காலியாக விட முடியாது.";
+    window.REQUIRED_CODE_ERROR_MESSAGE = window.REQUIRED_MULTISELECT_MESSAGE = window.REQUIRED_ERROR_MESSAGE;
+    window.GENERIC_INVALID_MESSAGE = "வழங்கப்பட்ட தகவல்கள் தவறானவை. தயவுசெய்து வடிவமைப்பை மதிப்பாய்வு செய்து மீண்டும் முயற்சிக்கவும்.";
+    window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = window.INVALID_NUMBER = window.INVALID_DATE = window.GENERIC_INVALID_MESSAGE;
+    // hide the form after a successful subscription, only the success message stays visible
+    window.AUTOHIDE = true;
+
+    // Brevo's script and Google reCAPTCHA are heavy, so they are only loaded once the form is about
+    // to be used: when it scrolls near the viewport or receives focus. A submit that happens before
+    // both scripts finished loading is queued and re-triggered afterwards.
+    var started = false;
+    var ready = false;
+    var pending = false;
+
+    function addScript(src, onload) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = onload;
+        document.head.appendChild(script);
+    }
+
+    function submit() {
+        if (typeof form.requestSubmit === 'function') {
+            form.requestSubmit();
+        } else {
+            form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        }
+    }
+
+    function loadBrevo() {
+        if (started) {
+            return;
+        }
+        started = true;
+
+        var remaining = 2;
+        var onload = function () {
+            remaining--;
+            if (remaining > 0) {
+                return;
+            }
+            ready = true;
+            if (pending) {
+                pending = false;
+                submit();
+            }
+        };
+
+        addScript('https://www.google.com/recaptcha/api.js?render=6Lfrb_stAAAAAC3d1xTflt56wOr9hS3HCTi_5zav&hl=ta', onload);
+        addScript('https://sibforms.com/forms/end-form/build/main.js', onload);
+    }
+
+    // Brevo's main.js disables the native browser validation (novalidate) and does not check the
+    // format of email fields itself, that only happens on the server. This check runs before Brevo's
+    // submit handler and shows the error in the same place, so obvious typos never leave the browser.
+    var email = form.querySelector('input[name="EMAIL"]');
+    var entry = email.closest('.form__entry');
+    var entryError = entry.querySelector('.entry__error');
+
+    function showError(message) {
+        entryError.innerText = message;
+        entryError.style.display = 'block';
+        entry.classList.add('entry_errored');
+        email.focus();
+    }
+
+    function validateEmail() {
+        var value = email.value.trim();
+        if (value === '') {
+            showError(window.REQUIRED_ERROR_MESSAGE);
+            return false;
+        }
+        if (!email.validity.valid || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            showError(window.GENERIC_INVALID_MESSAGE);
+            return false;
+        }
+        return true;
+    }
+
+    email.addEventListener('input', function () {
+        entryError.innerText = '';
+        entryError.style.display = 'none';
+        entry.classList.remove('entry_errored');
+    });
+
+    form.addEventListener('submit', function (event) {
+        if (!validateEmail()) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return;
+        }
+        if (ready) {
+            return;
+        }
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        pending = true;
+        loadBrevo();
+    });
+
+    form.addEventListener('focusin', loadBrevo, { once: true });
+
+    if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries.some(function (entry) { return entry.isIntersecting; })) {
+                observer.disconnect();
+                loadBrevo();
+            }
+        }, { rootMargin: '400px 0px' });
+        observer.observe(form);
+    } else {
+        loadBrevo();
+    }
+})();
+</script>
 
 
 
