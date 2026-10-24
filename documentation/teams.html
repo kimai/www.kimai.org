@@ -742,6 +742,19 @@ please read the <a href="/documentation/permissions.html">permissions documentat
 
 <p>Team creation is limited to the user roles <code class="language-plaintext highlighter-rouge">System-Admin</code> and <code class="language-plaintext highlighter-rouge">Administrator</code>.</p>
 
+<h2 id="deactivated-users">Deactivated users</h2>
+
+<p>Deactivating a user does not change their team memberships:</p>
+
+<ul>
+  <li>The user can no longer log in, neither in the web interface nor via API, so they lose access to all team contents</li>
+  <li>The user stays a member of their teams, existing timesheets remain visible to the teamleads</li>
+  <li>When editing a team, deactivated members stay in the member list and are not silently removed on save</li>
+  <li>Deactivated users can not be added as new team members, they are not offered in the user selection</li>
+  <li>Everyone who can edit the team can remove deactivated members, e.g. to clean up after an employee left</li>
+  <li>Re-activating the user restores the access through all teams they are still a member of</li>
+</ul>
+
 <h2 id="filter-and-search">Filter and search</h2>
 
 <p>You can query for a free search term, which will be searched in the fields:</p>
@@ -798,7 +811,7 @@ please read the <a href="/documentation/permissions.html">permissions documentat
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#limit-access-with-teams" class="nav-link">Limit access with teams</a></li><li class="nav-item"><a href="#permission-details" class="nav-link">Permission details</a></li><li class="nav-item"><a href="#create-a-team" class="nav-link">Create a team</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#limit-access-with-teams" class="nav-link">Limit access with teams</a></li><li class="nav-item"><a href="#permission-details" class="nav-link">Permission details</a></li><li class="nav-item"><a href="#create-a-team" class="nav-link">Create a team</a></li><li class="nav-item"><a href="#deactivated-users" class="nav-link">Deactivated users</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             
