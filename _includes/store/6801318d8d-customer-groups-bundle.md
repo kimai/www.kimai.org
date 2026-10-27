@@ -8,6 +8,8 @@ CustomerGroupsBundle is for people with many customers and projects. In every pr
 
 Every select list (projects, activities, customers, users, tags...) also grows down to the bottom of the window, instead of the fixed height of about six rows.
 
+On a phone or tablet, tapping a select list opens it without the on-screen keyboard, so the list is not half covered; tap the select again while its list is open to search by typing. Mouse and pen work as before.
+
 ## Installation
 
 Clone or unzip the [latest release](https://github.com/6801318d8d/CustomerGroupsBundle/releases) into `var/plugins/CustomerGroupsBundle` and run `bin/console kimai:reload --env=prod`. Nothing to configure, nothing stored in the database. See the [README](https://github.com/6801318d8d/CustomerGroupsBundle#readme) for the Docker image.
