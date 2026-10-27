@@ -2,7 +2,7 @@ Additions to Kimai's **Reporting** section and dashboard.
 
 - **Quarterly views** for one user and for all users, in the style of Kimai's yearly views,
   with a quarter picker that steps a quarter back or forward.
-- The **weekly, monthly, quarterly and yearly report for one user** get a bar chart of the
+- The **weekly, monthly, quarterly and yearly reports for one user** get a bar chart of the
   hours per day (or month), stacked by project, and a doughnut chart with the total time in
   its centre. In the table, projects are indented under their customer, names link to their
   detail pages, and the table sorts by customer or total. Buttons next to the period picker
