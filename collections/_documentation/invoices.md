@@ -158,6 +158,7 @@ The search supports filtering by the fields:
 - `state`
 
 Besides these filters, you can query for a free search term, which will be searched in the fields:
+- `invoice number`
 - `comment`
 - `customer name`
 - `customer company`
