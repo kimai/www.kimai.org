@@ -1,6 +1,7 @@
-Kimai Timer shows your running Kimai timer in a notification, also on the lock screen: a clock ticking in HH:MM:SS, with project, activity, customer and description, and a Stop button. After a stop from the notification, the card offers Restart for a few minutes. Tapping it opens Kimai.
+Kimai Timer is an Android app for your own Kimai in two parts:
 
-It is a companion to Kimai's web interface, not a full client: it shows the running timer and stops or restarts it.
+- **Kimai itself**: the app opens your Kimai's web interface, with its login, your plugins and everything else, so it replaces Kimai's web app installed from the browser. Links to other sites open in the browser, exports go to Downloads, file fields open the file picker.
+- **The running timer in a notification, also on the lock screen**: a clock ticking in HH:MM:SS, with project, activity, customer and description, and a Stop button. After a stop from the notification, the card offers Restart for a few minutes. Tapping it opens Kimai in the app.
 
 ## Changes made elsewhere
 
