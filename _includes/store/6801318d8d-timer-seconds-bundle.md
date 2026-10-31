@@ -3,7 +3,7 @@ TimerSecondsBundle shows times and durations with seconds:
 - the running timer as `HH:MM:SS` (`00:05:23` instead of `0:05`), refreshed every second: the stop button in the toolbar, the browser title and the rows of running entries in the lists
 - the begin and end of entries as `17:13:27` instead of `17:13` (`5:13:27 PM` in 12-hour locales), in lists, reports and HTML/PDF exports
 - durations as `00:59:00` instead of `0:59` wherever Kimai renders them on the server: lists, totals, reports, dashboard widgets and exports (decimal durations are unchanged)
-- the seconds of a new entry that begins in the current minute, e.g. a timer started from the "Start" form
+- a timer started from the "Start" form begins when you click Save, to the second, as long as "From" is left as prefilled (Kimai takes the minute when the form opened, so the timer could start at `00:01:05`)
 
 Times are still typed as `HH:mm` in the forms.
 

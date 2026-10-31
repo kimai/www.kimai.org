@@ -10,6 +10,8 @@ Every select list (projects, activities, customers, users, tags...) also grows d
 
 On a phone or tablet, tapping a select list opens it without the on-screen keyboard, so the list is not half covered; tap the select again while its list is open to search by typing. Mouse and pen work as before.
 
+On phones the popups with the forms (start a timer, edit an entry...) take the whole width of the screen, without the margin around them and, on Android, without the strip of the popup's scrollbar on the right.
+
 ## Installation
 
 Clone or unzip the [latest release](https://github.com/6801318d8d/CustomerGroupsBundle/releases) into `var/plugins/CustomerGroupsBundle` and run `bin/console kimai:reload --env=prod`. Nothing to configure, nothing stored in the database. See the [README](https://github.com/6801318d8d/CustomerGroupsBundle#readme) for the Docker image.
