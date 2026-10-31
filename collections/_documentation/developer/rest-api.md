@@ -20,25 +20,11 @@ When calling the API you have to submit an additional `Authorization` header wit
 
 {% alert warning %}You MUST use secure HTTPS calls to protect both credentials and data.{% endalert %}
 
-### API tokens
+## API tokens
 
-Each user can generate multiple API tokens.
+Each user can generate multiple API tokens in the [user profile settings]({% link _documentation/users.md %}#api-tokens).
 
-Each token has the following fields: 
-
-- **name**, which is only for yourself for simpler identification.
-- **expiration date** which is optional - if set, this token won't work from the configured date on
-- **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
-
-A token is shown exactly once: directly after it was created. Afterwards it is no longer displayed, so it has to be 
-copied before leaving the page.
-
-### Token QR code
-
-Right after a token was created, Kimai renders a QR code together with it. It carries the server URL and the new token, 
-so an app can be configured by scanning it, instead of letting the user type a 25 character token on a phone keyboard.
-
-{% include docs-image.html src="/images/documentation/api-token-qr-code.webp" title="Example QR code for the payload below" width="320px" %}
+### Reading the QR code
 
 The QR code contains a JSON object:
 
@@ -59,20 +45,13 @@ The QR code contains a JSON object:
 | `token`   | string  | The API token, to be sent as `Authorization: Bearer <token>` header.                                  |
 {: .table}
 
-The `url` stays correct behind a reverse proxy and in subdirectory installations (e.g. `https://example.com/kimai`).
-
-{% alert %}The payload is plain JSON and not a URL: scanning it with a generic camera app shows text and does not 
-open anything. Apps have to use their own in-app scanner.{% endalert %}
-
-#### Reading the payload
-
 Implement it defensively, the format will grow over time:
 
 - Reject the payload if `type` is not `kimai`.
 - Reject the payload if `version` is higher than the version your app knows, and ask the user to update the app.
 - **Ignore unknown fields**, do not fail on them.
 
-#### Format stability
+### Format stability
 
 The payload is a public contract for apps and third-party integrations, therefor:
 

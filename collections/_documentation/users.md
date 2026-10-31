@@ -76,6 +76,29 @@ It is not possible for a `System account` (see above) to become supervisor.
 ## Staff number
 
 The staff/account number appears in Exports and can be used to link users from your HR software to Kimai. 
+ 
+## API tokens
+
+Each user can generate multiple API tokens.
+
+Each token has the following fields:
+
+- **name**, which is only for yourself for simpler identification.
+- **expiration date** which is optional - if set, this token won't work from the configured date on
+- **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
+
+A token is shown exactly once: directly after it was created. Afterwards it is no longer displayed, so it has to be
+copied before leaving the page.
+
+### Connect with QR code
+
+Right after a token was created, Kimai renders a QR code together with it. It carries the server URL and the new token,
+so an app can be configured by scanning it, instead of letting the user type a 25 character token on a phone keyboard.
+
+{% include docs-image.html src="/images/documentation/api-token-qr-code.webp" title="Example QR code for the payload below" width="320px" %}
+
+{% alert %}The payload is plain JSON and not a URL: scanning it with a generic camera app shows text and does not
+open anything. Apps have to use their own in-app scanner.{% endalert %}
 
 ## Filter and search
 
