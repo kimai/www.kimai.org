@@ -481,30 +481,11 @@
 <div class="alert alert-warning d-flex" role="alert"><i class="bx bx-alarm-exclamation lead me-3"></i><p>You MUST use secure HTTPS calls to protect both credentials and data.</p>
 </div>
 
-<h3 id="api-tokens">API tokens</h3>
+<h2 id="api-tokens">API tokens</h2>
 
-<p>Each user can generate multiple API tokens.</p>
+<p>Each user can generate multiple API tokens in the <a href="/documentation/users.html#api-tokens">user profile settings</a>.</p>
 
-<p>Each token has the following fields:</p>
-
-<ul>
-  <li><strong>name</strong>, which is only for yourself for simpler identification.</li>
-  <li><strong>expiration date</strong> which is optional - if set, this token won’t work from the configured date on</li>
-  <li><strong>last usage</strong> will be updated once a minute, when used - helps to identify obsolete tokens</li>
-</ul>
-
-<p>A token is shown exactly once: directly after it was created. Afterwards it is no longer displayed, so it has to be 
-copied before leaving the page.</p>
-
-<h3 id="token-qr-code">Token QR code</h3>
-
-<p>Right after a token was created, Kimai renders a QR code together with it. It carries the server URL and the new token, 
-so an app can be configured by scanning it, instead of letting the user type a 25 character token on a phone keyboard.</p>
-
-<figure class="d-block figure mb-3" style="max-width: 320px">
-    <img src="/images/documentation/api-token-qr-code.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
-    <figcaption class="figure-caption">Example QR code for the payload below</figcaption>
-</figure>
+<h3 id="reading-the-qr-code">Reading the QR code</h3>
 
 <p>The QR code contains a JSON object:</p>
 
@@ -548,14 +529,6 @@ so an app can be configured by scanning it, instead of letting the user type a 2
   </tbody>
 </table>
 
-<p>The <code class="language-plaintext highlighter-rouge">url</code> stays correct behind a reverse proxy and in subdirectory installations (e.g. <code class="language-plaintext highlighter-rouge">https://example.com/kimai</code>).</p>
-
-<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>The payload is plain JSON and not a URL: scanning it with a generic camera app shows text and does not 
-open anything. Apps have to use their own in-app scanner.</p>
-</div>
-
-<h4 id="reading-the-payload">Reading the payload</h4>
-
 <p>Implement it defensively, the format will grow over time:</p>
 
 <ul>
@@ -564,7 +537,7 @@ open anything. Apps have to use their own in-app scanner.</p>
   <li><strong>Ignore unknown fields</strong>, do not fail on them.</li>
 </ul>
 
-<h4 id="format-stability">Format stability</h4>
+<h3 id="format-stability">Format stability</h3>
 
 <p>The payload is a public contract for apps and third-party integrations, therefor:</p>
 
@@ -663,7 +636,7 @@ Providing any other value, including <code class="language-plaintext highlighter
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a><ul><li class="nav-item"><a href="#api-tokens" class="nav-link">API tokens</a></li><li class="nav-item"><a href="#token-qr-code" class="nav-link">Token QR code</a></li></ul></li><li class="nav-item"><a href="#open-api-definition" class="nav-link">Open API definition</a></li><li class="nav-item"><a href="#data-types" class="nav-link">Data types</a><ul><li class="nav-item"><a href="#order" class="nav-link">Order</a></li><li class="nav-item"><a href="#default-values" class="nav-link">Default values</a></li><li class="nav-item"><a href="#datetime-formats-iso-8601-and-html5" class="nav-link">DateTime formats (ISO 8601 and HTML5)</a></li><li class="nav-item"><a href="#boolean" class="nav-link">Boolean</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#authentication" class="nav-link">Authentication</a></li><li class="nav-item"><a href="#api-tokens" class="nav-link">API tokens</a><ul><li class="nav-item"><a href="#reading-the-qr-code" class="nav-link">Reading the QR code</a></li><li class="nav-item"><a href="#format-stability" class="nav-link">Format stability</a></li></ul></li><li class="nav-item"><a href="#open-api-definition" class="nav-link">Open API definition</a></li><li class="nav-item"><a href="#data-types" class="nav-link">Data types</a><ul><li class="nav-item"><a href="#order" class="nav-link">Order</a></li><li class="nav-item"><a href="#default-values" class="nav-link">Default values</a></li><li class="nav-item"><a href="#datetime-formats-iso-8601-and-html5" class="nav-link">DateTime formats (ISO 8601 and HTML5)</a></li><li class="nav-item"><a href="#boolean" class="nav-link">Boolean</a></li></ul></li></ul>
                     
                     <ul class="nav">
                         <li>

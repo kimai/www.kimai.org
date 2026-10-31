@@ -786,6 +786,49 @@ then a System-Administrator can do so by editing the user profile (editing your 
 
 <p>The staff/account number appears in Exports and can be used to link users from your HR software to Kimai.</p>
 
+<h2 id="api-tokens">API tokens</h2>
+
+<p>Each user can generate multiple API tokens.</p>
+
+<p>Each token has the following fields:</p>
+
+<ul>
+  <li><strong>name</strong>, which is only for yourself for simpler identification.</li>
+  <li><strong>expiration date</strong> which is optional - if set, this token won’t work from the configured date on</li>
+  <li><strong>last usage</strong> will be updated once a minute, when used - helps to identify obsolete tokens</li>
+</ul>
+
+<p>A token is shown exactly once: directly after it was created. Afterwards it is no longer displayed, so it has to be
+copied before leaving the page.</p>
+
+<h3 id="tokens-and-passwords">Tokens and passwords</h3>
+
+<p>API tokens are independent credentials and are not linked to the user’s password:</p>
+
+<ul>
+  <li>changing the password or <a href="#request-new-password">requesting a new one</a> does not revoke any token</li>
+  <li>a token stays valid until it expires or is deleted</li>
+  <li>deactivating the user blocks all tokens of this user, re-activating the user makes them work again</li>
+</ul>
+
+<p>To revoke access for a token, delete it in the user profile.
+Treat tokens like passwords: create one token per integration, set an expiration date where possible
+and delete tokens which are no longer used (see <code class="language-plaintext highlighter-rouge">last usage</code>).</p>
+
+<h3 id="connect-with-qr-code">Connect with QR code</h3>
+
+<p>Right after a token was created, Kimai renders a QR code together with it. It carries the server URL and the new token,
+so an app can be configured by scanning it, instead of letting the user type a 25 character token on a phone keyboard.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 320px">
+    <img src="/images/documentation/api-token-qr-code.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Example QR code for the payload below</figcaption>
+</figure>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i><p>The payload is plain JSON and not a URL: scanning it with a generic camera app shows text and does not
+open anything. Apps have to use their own in-app scanner.</p>
+</div>
+
 <h2 id="filter-and-search">Filter and search</h2>
 
 <p>The search supports filtering by the fields:</p>
@@ -830,12 +873,49 @@ This would find all entries with the custom field <code class="language-plaintex
   <li>The <code class="language-plaintext highlighter-rouge">*</code> search term (e.g. <code class="language-plaintext highlighter-rouge">location:*</code>) will find all entries that have any value in the <code class="language-plaintext highlighter-rouge">location</code> field (basically the opposite of <code class="language-plaintext highlighter-rouge">~</code>)</li>
 </ul>
 
-<h2 id="password-reset">Password reset</h2>
+<h2 id="password">Password</h2>
 
-<p>The reset password function is enabled by default, you can deactivate it through <a href="/documentation/configurations.html">System → Settings</a>.</p>
+<p>These functions only apply to accounts which log in with a Kimai password.
+LDAP and SAML users manage their password in the external system.</p>
 
-<p>A user can reach it via a link from the login screen. After entering username or email-address, an email with a confirmation link will be sent.
-This link needs to be clicked, afterward the user can enter a new password.</p>
+<h3 id="change-password">Change password</h3>
+
+<p>Users can change their own password in their profile, which requires to enter the current password.
+Administrators can set a new password for other users, without knowing the old one.</p>
+
+<p>After a password change:</p>
+
+<ul>
+  <li>the old password stops working immediately</li>
+  <li>all other logged-in browser sessions of this user are logged out, including <code class="language-plaintext highlighter-rouge">Remember me</code> logins</li>
+  <li>the session in which the password was changed stays logged in</li>
+  <li>password reset links which were sent before the change stop working</li>
+</ul>
+
+<p>A password change does <strong>not</strong> revoke <a href="#api-tokens">API tokens</a>: integrations and apps using one of the user’s tokens keep working.
+If you change a password because the account might be compromised, also review the API tokens of this user and delete the ones you don’t know or trust.</p>
+
+<h3 id="request-new-password">Request new password</h3>
+
+<p>Administrators can activate <code class="language-plaintext highlighter-rouge">Request new password</code> when editing a user (or creating a new one).
+The user then has to choose a new password before they can continue to work in Kimai: they are redirected to the password form
+on their next page view, even if they are already logged in or come back through <code class="language-plaintext highlighter-rouge">Remember me</code>.</p>
+
+<p>The old password keeps working until the user has set the new one.
+API calls are not affected by this setting, existing API tokens keep working.</p>
+
+<h3 id="forgot-password">Forgot password</h3>
+
+<p>The forgot password function is enabled by default, you can deactivate it through <a href="/documentation/configurations.html">System → Settings</a>.</p>
+
+<p>A user can reach it via a link from the login screen. After entering username or email-address, an email with a login link will be sent.
+Clicking this link logs the user in and they have to choose a new password, before they can continue to work in Kimai.</p>
+
+<p>For security reasons, the form always shows the same confirmation, even if the account does not exist or cannot use this function (e.g. LDAP and SAML users).
+In these cases no email is sent.</p>
+
+<p>The link expires after the configured lifetime and becomes invalid as soon as the password was changed.
+Like every other password change, this logs out all other sessions of the user, but does not revoke API tokens.</p>
 
 <p>You can configure two settings to influence the security:</p>
 
@@ -844,7 +924,9 @@ This link needs to be clicked, afterward the user can enter a new password.</p>
   <li>Retry pause (in seconds: 3600 = 1 hour) - the allowed time between multiple retries</li>
 </ul>
 
-<p>As this feature requires an email to work, you have to enable <a href="/documentation/emails.html">email support</a> to use it.</p>
+<p>As this feature requires an email to work, you have to enable <a href="/documentation/emails.html">email support</a> to use it.
+On-premise installations additionally need the <code class="language-plaintext highlighter-rouge">TRUSTED_HOSTS</code> environment variable, see the <a href="/documentation/installation.html">installation documentation</a>.
+Without it, the forgot password function is disabled.</p>
 
 <h2 id="login">Login</h2>
 
@@ -1052,7 +1134,7 @@ Don’t mix this up with the system specific configuration for new customers.</p
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-users" class="nav-link">Create users</a></li><li class="nav-item"><a href="#avatars" class="nav-link">Avatars</a></li><li class="nav-item"><a href="#deactivated-users" class="nav-link">Deactivated users</a><ul><li class="nav-item"><a href="#offboarding-users" class="nav-link">Offboarding users</a></li></ul></li><li class="nav-item"><a href="#system-accounts" class="nav-link">System accounts</a></li><li class="nav-item"><a href="#username--user-id" class="nav-link">Username / User-ID</a></li><li class="nav-item"><a href="#supervisor" class="nav-link">Supervisor</a></li><li class="nav-item"><a href="#staff-number" class="nav-link">Staff number</a></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#password-reset" class="nav-link">Password reset</a></li><li class="nav-item"><a href="#login" class="nav-link">Login</a></li><li class="nav-item"><a href="#two-factor-authentication" class="nav-link">Two-Factor authentication</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#cannot-create-user" class="nav-link">Cannot create user</a></li><li class="nav-item"><a href="#recorded-times-are-wrong" class="nav-link">Recorded times are wrong</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#create-users" class="nav-link">Create users</a></li><li class="nav-item"><a href="#avatars" class="nav-link">Avatars</a></li><li class="nav-item"><a href="#deactivated-users" class="nav-link">Deactivated users</a><ul><li class="nav-item"><a href="#offboarding-users" class="nav-link">Offboarding users</a></li></ul></li><li class="nav-item"><a href="#system-accounts" class="nav-link">System accounts</a></li><li class="nav-item"><a href="#username--user-id" class="nav-link">Username / User-ID</a></li><li class="nav-item"><a href="#supervisor" class="nav-link">Supervisor</a></li><li class="nav-item"><a href="#staff-number" class="nav-link">Staff number</a></li><li class="nav-item"><a href="#api-tokens" class="nav-link">API tokens</a><ul><li class="nav-item"><a href="#tokens-and-passwords" class="nav-link">Tokens and passwords</a></li><li class="nav-item"><a href="#connect-with-qr-code" class="nav-link">Connect with QR code</a></li></ul></li><li class="nav-item"><a href="#filter-and-search" class="nav-link">Filter and search</a></li><li class="nav-item"><a href="#password" class="nav-link">Password</a><ul><li class="nav-item"><a href="#change-password" class="nav-link">Change password</a></li><li class="nav-item"><a href="#request-new-password" class="nav-link">Request new password</a></li><li class="nav-item"><a href="#forgot-password" class="nav-link">Forgot password</a></li></ul></li><li class="nav-item"><a href="#login" class="nav-link">Login</a></li><li class="nav-item"><a href="#two-factor-authentication" class="nav-link">Two-Factor authentication</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#cannot-create-user" class="nav-link">Cannot create user</a></li><li class="nav-item"><a href="#recorded-times-are-wrong" class="nav-link">Recorded times are wrong</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                     <ul class="nav">
                         <li>
