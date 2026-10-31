@@ -12,6 +12,14 @@ With the [App push]({% link _store/{{ page.lang }}/6801318d8d-app-push-bundle.md
 
 Without the plugin, the app checks every 15 minutes.
 
+## Without the network, or with Kimai down
+
+The timer keeps working. Stop and Restart on the notification take effect at once and wait in a queue, and Kimai gets them when it is reachable again, **with the times of the taps**: a timer stopped at 18:00 ends at 18:00 even if Kimai hears of it at 19:30. The notification says how many changes are waiting.
+
+While Kimai cannot be reached, the app shows its own timer screen instead of Kimai's pages: the running timer, a form to start one (with the projects and activities saved at the last connection) and the latest entries.
+
+If another device changed things meanwhile, the timer started later wins and the earlier of two stops counts. A change Kimai refuses, for example for an activity hidden in the meantime, is shown in a notification with its times, to enter by hand.
+
 ## Setup Requirements
 
 - A Kimai 2 installation and a personal API token (your profile → API access)
