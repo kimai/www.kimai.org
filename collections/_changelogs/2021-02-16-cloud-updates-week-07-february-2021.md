@@ -25,12 +25,12 @@ Default setting is to match your rounding rules. So when you have a rounding rul
 If your rounding rule keep "From" and "To" as they are, you can still configure the minute selector to show ten minute 
 steps for "From" and "To" (see first screenshot) and you will get a shorter dropdown::
  
-![Minute selects support steps as well]({% link images/documentation/timesheet/minute_selector.webp^ %})
+![Minute selects support steps as well]({% link images/documentation/timesheet/minute_selector.webp %})
 
 As additional improvement, the duration field now accepts more formats and can interpret decimal as well.
 
 For entering 90 minutes you can now type `1:30`,  `01:30`,  `1,5`, `1.5`, `1h30m` or `90m` ... or you simply select it from the dropdown!
-
+ 
 ### Prevent modals from closing accidentally
 
 Previously clicking outside a modal always closed it and you could easily loose all your changes. 
