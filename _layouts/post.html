@@ -36,6 +36,7 @@ layout: default
         </div>
         <div class="col-lg-3 position-relative">
             <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+{% comment %}
                 <h6>{{ site.data[page.lang].translation.share-post }}:</h6>
                 <div class="mb-4 pb-lg-3">
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}&title={{ page.title }}" class="btn btn-icon btn-secondary btn-linkedin me-2 mb-2" aria-label="LinkedIn">
@@ -48,6 +49,7 @@ layout: default
                         <i class="bx bxl-twitter"></i>
                     </a>
                 </div>
+{% endcomment %}
             </div>
         </div>
     </div>

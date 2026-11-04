@@ -49,7 +49,7 @@ Subscriptions are also available for customers from the following countries:
 - US = United States of America
 - ZA = South Africa
 
-## Countries with B2B only
+### Countries with B2B only
 
 Customers from the following countries must provide a document proving they are a B2B customer (usually a Tax ID or company registration):
 
@@ -57,6 +57,7 @@ Customers from the following countries must provide a document proving they are 
 - CO = Colombia
 - TR = Turkey
 - UA = Ukraine
+- KR - South Korea
 
 ## Unsupported countries
 

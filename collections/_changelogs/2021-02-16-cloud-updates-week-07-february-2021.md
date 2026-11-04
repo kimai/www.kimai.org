@@ -16,21 +16,21 @@ Below are some of the highlights of the new version:
 
 New configurations available for the "duration selector" and "start and end date minute dropdown":
 
-![Configuration values to influence timesheet dropdowns]({% link images/documentation/timesheet/minute_configuration.png %})
+![Configuration values to influence timesheet dropdowns]({% link images/documentation/timesheet/minute_configuration.webp %})
 
 Default setting is to match your rounding rules. So when you have a rounding rule, that rounds the "duration" to 15 minutes you will see the new duration dropdown:
 
-![The new duration select dropdown]({% link images/documentation/timesheet/duration_selector.png %})
+![The new duration select dropdown]({% link images/documentation/timesheet/duration_selector.webp %})
 
 If your rounding rule keep "From" and "To" as they are, you can still configure the minute selector to show ten minute 
 steps for "From" and "To" (see first screenshot) and you will get a shorter dropdown::
  
-![Minute selects support steps as well]({% link images/documentation/timesheet/minute_selector.png %})
+![Minute selects support steps as well]({% link images/documentation/timesheet/minute_selector.webp %})
 
 As additional improvement, the duration field now accepts more formats and can interpret decimal as well.
 
 For entering 90 minutes you can now type `1:30`,  `01:30`,  `1,5`, `1.5`, `1h30m` or `90m` ... or you simply select it from the dropdown!
-
+ 
 ### Prevent modals from closing accidentally
 
 Previously clicking outside a modal always closed it and you could easily loose all your changes. 

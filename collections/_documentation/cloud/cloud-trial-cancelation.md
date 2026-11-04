@@ -18,6 +18,8 @@ Glad you asked. You can delete your account yourself — at any time, during the
 
 **[{{ site.cloud.delete_account }}]({{ site.cloud.delete_account }})**
 
+{% include docs-image.html src="/images/documentation/cloud/delete-kimai-cloud.webp" title="Delete your cloud and account" %}
+
 It's a button. You click it. The account disappears. No support ticket required.
 It does exactly what a erasure request would do, and it works immediately, without anyone having to file paperwork.
 

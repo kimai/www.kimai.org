@@ -35,15 +35,41 @@ If no color is applied, Kimai will fall back to the customers color and finally 
 
 ### Start date / end date 
 
-Having a project start and end date is optional, but it can help you to limit the project visibility in the "edit timesheet record" screen.
+Both dates are optional and define the time range in which times can be booked on this project.
 
-Setting a date for project start or end will place an implicit restriction for project selection when creating a timesheet record. 
-If the date of the record falls before the project start or after the project end the project will not be listed in the dropdown menu. 
+If a date is set, the project is only offered in the project dropdown when the date of the record falls inside that range. 
+Records outside the range are rejected when saving as well, so the restriction also applies to the API and to imports.
 
-This behavior is intended to avoid ghost bookings on not yet started or already finished projects. 
-If the booking of records is necessary, the team lead or admin can remove the date restriction in the project settings.
+Both dates are inclusive: a record on the start date or on the end date is still allowed.
 
-Start and end-date are inclusive, so both dates will be included when filtering any data.
+This avoids ghost bookings on projects that have not started yet or are already finished. 
+If a booking outside the range is necessary, a teamlead or admin can widen or remove the dates in the project settings.
+
+Existing records are not changed when you set these dates. 
+They stay visible in all listings, reports and invoices, but a record that now lies outside the range can only be saved 
+again after it was moved back into the range. Use `Times locked until` if you want to freeze records instead of restricting new ones.
+
+### Times locked until
+
+This optional date closes a project period: all times up to and including this date are frozen and can no longer be created, edited, deleted, copied or stopped (this applies to every user, including administrators).
+
+The project itself is not affected. It stays visible in listings, reports and invoices, and its settings (name, budget, rates, 
+end date, customer, ...) can still be changed - the lock only protects the timesheet records. Locking a period therefore does 
+not stop you from exporting or invoicing it, which is the main reason to use this field instead of hiding the project.
+
+To reopen a period, clear the date or move it further into the past.
+
+{% alert warning %}
+A timesheet that is still running and was started before the lock date cannot be stopped, because that would write into a closed period. 
+Such a record can still be edited, so you can move it to a date after the lock and stop it there. 
+{% endalert %}
+
+The `Time-clock` and `Duration` [time-tracking modes]({% link _documentation/configurations.md %}) do not offer the begin date
+in the users edit form - an administrator has to move the record or clear/move the lock date to release the record.
+
+This field locks one project at a time. To close a period for the whole installation, use the `Lockdown period` setting under 
+[System → Settings]({% link _documentation/configurations.md %}) instead - unlike this field, the lockdown period can be bypassed 
+by users with the according permissions.
 
 ### Billable
 
@@ -71,6 +97,10 @@ Please note:
   - You cannot create new activities for this project
   - You cannot create new timesheet records for this project 
 - You can still access invisible projects by changing the visibility filter on the listing view
+
+### Project number
+
+{% include snippets/number-format.md entity="project" entities="projects" Entity="Project" article="a" counter="{pc}" section="Project" setting="Project number format" length="10" creation_hint=" or when an existing project is copied" %}
 
 ### Access permissions
 
@@ -119,3 +149,11 @@ Right-click on a row (or open the action dropdown at the end of it) to see all a
 The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
 project is unused and can be safely deleted, or it will show you quick stats of the project and then ask you to re-assign
 the attached timesheets to another project.  
+
+You can only see the `Delete` entry in the context menu if you own the `delete_project` permission, see [System → Roles]({% link _documentation/permissions.md %}).
+
+## Permissions
+
+{% include documentation/permissions.md id="project_admin" title=true %}
+{% include documentation/permissions.md id="project_team_leader" title=true %}
+{% include documentation/permissions.md id="project_team_member" title=true howto=true %}

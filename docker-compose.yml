@@ -1,0 +1,16 @@
+services:
+  jekyll:
+    build:
+      context: .
+      target: jekyll-serve
+    image: kimai-jekyll-serve
+    environment:
+      JEKYLL_ENV: development
+    volumes:
+      - .:/site
+      - bundle:/usr/local/bundle
+    ports:
+      - "4000:4000"
+
+volumes:
+  bundle:

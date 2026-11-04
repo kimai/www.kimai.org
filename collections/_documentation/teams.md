@@ -47,6 +47,17 @@ Contents:
 
 Team creation is limited to the user roles `System-Admin` and `Administrator`.
 
+## Deactivated users
+
+Deactivating a user does not change their team memberships:
+
+- The user can no longer log in, neither in the web interface nor via API, so they lose access to all team contents
+- The user stays a member of their teams, existing timesheets remain visible to the teamleads
+- When editing a team, deactivated members stay in the member list and are not silently removed on save
+- Deactivated users can not be added as new team members, they are not offered in the user selection
+- Everyone who can edit the team can remove deactivated members, e.g. to clean up after an employee left
+- Re-activating the user restores the access through all teams they are still a member of
+
 ## Filter and search 
 
 You can query for a free search term, which will be searched in the fields:

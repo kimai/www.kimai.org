@@ -11,6 +11,8 @@ layout: base
         {% include cta-begin-journey.html %}
     {% elsif page.cta == 'support' %}
         {% include cta-support.html %}
+    {% elsif page.cta != nil %}
+        {% include cta-{{ page.cta}}.html %}
     {% endif %}
 </main>
 

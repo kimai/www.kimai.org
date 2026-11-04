@@ -24,6 +24,8 @@ The following extensions are currently available:
 
 These plugins cover all features we support for cloud use.
 
+Please read the [Pricing page]({% link _pages/{{ page.lang }}/pricing.md %}) to understand which subscription includes which plugin.
+
 ## Why additional plugins cannot be added to the Cloud
 
 A common question is whether plugins from the [Kimai Marketplace]({% link _pages/{{ page.lang }}/store.html %}) or third-party developers can be installed.

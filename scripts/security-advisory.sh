@@ -55,7 +55,7 @@ severity: "${severity}"
 affected_version: "${affected}"
 patched_version: "${patched}"
 author: "${author}"
-published: "${publisher}"
+developer: "${publisher}"
 ---
 
 <INTRO>

@@ -1,7 +1,7 @@
 
 .docsnavi {
     .list-group-item-action {
-        font-size: 15px;
+        font-size: $font-size-sm;
         width: 95%;
         padding-top: 2px;
         padding-bottom: 2px;
@@ -16,12 +16,12 @@
 .navbar-nav .nav-link.active {
     pointer-events: unset;
     background-color: $green-100;
-    border-radius: 10px;
+    border-radius: $border-radius-lg;
     color: $green-900;
 }
 
 .docs-container h2 {
-    border-bottom: 1px solid #0b0f19;
+    border-bottom: 1px solid var(--#{$prefix}heading-color);
     padding-bottom: 8px;
     margin-top: 10px;
 }

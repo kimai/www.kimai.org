@@ -1,6 +1,6 @@
 <section class="pt-md-1 pt-lg-4 pt-xl-5 mb-5">
     <div class="container">
-        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center title-header">
             <h2 class="h1 mb-4">{{ site.data[page.lang].translation.start-trial.title }}</h2>
             <p>{{ site.data[page.lang].translation.start-trial.subtitle }}</p>
         </div>
@@ -44,8 +44,7 @@
             </div>
             <div class="col-12 col-md-1 text-center"></div>
             <div class="col-12 col-md-6 text-center">
-                <iframe style="width: 600px;height: 350px;" data-src="https://www.youtube.com/embed/85BF8UMqi9s?autoplay=1" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/85BF8UMqi9s?autoplay=1"></iframe>
-                <br>
+                <div class="d-flex justify-content-center">{% include youtube-video.html id="cloud_introduction" %}</div>
                 <span class="text-muted">{{ site.data[page.lang].translation.start-trial.video_subtitle }}</span>
             </div>
         </div>

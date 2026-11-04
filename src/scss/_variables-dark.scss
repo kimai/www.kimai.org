@@ -36,7 +36,9 @@ $body-bg-dark:                      $gray-900 !default;
 $border-color-dark:                 $border-light-color !default;
 $headings-color-dark:               $white !default;
 $link-color-dark:                   $primary !default;
-$link-hover-color-dark:             darken($link-color, 8%) !default;
+// Lightens, and derives from the dark link colour rather than the light one.
+// It read `darken($link-color, 8%)`, which only worked while both were $primary.
+$link-hover-color-dark:             lighten($link-color-dark, 10%) !default;
 
 
 // Image thumbnails

@@ -19,9 +19,9 @@ There is another field under "Invoice settings" for the full company name.
 
 ## Manage customers
 
-The following attributes are available for every custom:
+The following attributes are available for every customer:
 
-- `Account number` - Internal number identifying the customer, also available in invoices and exports
+- `Account` - A number identifying the customer, also available in invoices and exports (see [Customer number](#customer-number))
 - `Vat-ID` - Will be used in invoicing
 - `Contact` - Name of the main contact for this customer 
 - `E-mail` - Contact address
@@ -96,6 +96,10 @@ The visibility filter in the toolbar has three state:
 - Visible: No (all customers that are invisible)
 - Visible "empty" (all customers, not filtering on their visibility)
 
+### Customer number
+
+{% include snippets/number-format.md entity="customer" entities="customers" Entity="Customer" article="a" counter="{cc}" section="Customer" setting="Customer number format" length="10" %}
+
 ### Access permissions
 
 - Accessible to all users if no teams are assigned
@@ -145,6 +149,8 @@ Right-click on a row (or open the action dropdown at the end of it) to see all a
 The last action in the list is `Delete` - once you click it you wil get a feedback screen which either tells you that the
 customer is unused and can be safely deleted, or it will show you quick stats of the customer and then ask you to re-assign
 the attached timesheets to another customer.
+
+You can only see the `Delete` entry in the context menu if you own the `delete_customer` permission, see [System → Roles]({% link _documentation/permissions.md %}).
 
 ## Permissions
 

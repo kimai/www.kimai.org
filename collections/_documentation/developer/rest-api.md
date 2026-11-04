@@ -20,15 +20,47 @@ When calling the API you have to submit an additional `Authorization` header wit
 
 {% alert warning %}You MUST use secure HTTPS calls to protect both credentials and data.{% endalert %}
 
-### API tokens
+## API tokens
 
-Each user can generate multiple API tokens.
+Each user can generate multiple API tokens in the [user profile settings]({% link _documentation/users.md %}#api-tokens).
 
-Each token has the following fields: 
+### Reading the QR code
 
-- **name**, which is only for yourself for simpler identification.
-- **expiration date** which is optional - if set, this token won't work from the configured date on
-- **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
+The QR code contains a JSON object:
+
+```json
+{
+    "type": "kimai", 
+    "version": 1, 
+    "url": "https://127.0.0.1:8000", 
+    "token": "6ccc2932be3a7e8fa1dd2c254"
+}
+```
+
+| Field     | Type    | Description                                                                                           |
+|-----------|---------|-------------------------------------------------------------------------------------------------------|
+| `type`    | string  | Always `kimai`. Use it to detect whether a scanned QR code belongs to Kimai at all.                   |
+| `version` | integer | Format version, currently `1`. See below.                                                             |
+| `url`     | string  | Absolute base URL of the Kimai installation, without a trailing slash. Append `/api` for API calls.   |
+| `token`   | string  | The API token, to be sent as `Authorization: Bearer <token>` header.                                  |
+{: .table}
+
+Implement it defensively, the format will grow over time:
+
+- Reject the payload if `type` is not `kimai`.
+- Reject the payload if `version` is higher than the version your app knows, and ask the user to update the app.
+- **Ignore unknown fields**, do not fail on them.
+
+### Format stability
+
+The payload is a public contract for apps and third-party integrations, therefor:
+
+- Existing fields are never renamed or removed.
+- New fields may be added at any time, without raising `version`.
+- `version` is only raised, if the meaning of an existing field changes.
+
+{% alert warning %}The QR code contains a valid credential. Treat a screenshot of it like the token itself and do not 
+store the decoded payload in logs or a scan history.{% endalert %}
 
 ## Open API definition
 
@@ -45,7 +77,15 @@ Always use the attribute name instead of querying them via index.
 
 ### Default values
 
-The API does not promise any BC on any default value. This is especially true for optional booleans (see below). 
+The API does not promise any BC on any default value.
+
+When you create objects via API, make sure to set all relevant fields explicit, as we might change them at some point 
+and then your integration could break. Some examples:
+
+- visible flag
+- auto generated numbers
+- settings with default values (like the customer default language/country/currency)
+- user preferences with default values
 
 ### DateTime formats (ISO 8601 and HTML5)
 

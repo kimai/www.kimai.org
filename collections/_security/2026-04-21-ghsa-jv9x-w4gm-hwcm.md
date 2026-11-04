@@ -7,7 +7,7 @@ severity: "low"
 affected_version: "< 2.54.0"
 patched_version: "2.54.0"
 author: "AzureADTrent"
-published: "kevinpapst"
+developer: "kevinpapst"
 ---
 
 The Team API endpoints use `#[IsGranted('edit_team')]` instead of `#[IsGranted('edit', 'team')]`, causing TeamVoter to abstain from voting. 

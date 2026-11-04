@@ -49,7 +49,7 @@ Neben dem PHP-Bump enthält dieses Release eine Reihe nützlicher Verbesserungen
 **Verbessertes `kimai.sh`-Verwaltungsskript.** Das CLI-Skript, mit dem du deine Kimai-Installation verwaltest, wurde verfeinert. Wir bitten ausdrücklich um Feedback dazu – wenn du es nutzt, probiere es aus und berichte uns.
 
 **Eine neue katalanische Übersetzung** sowie die übliche Runde von Übersetzungsaktualisierungen aus Hosted Weblate. Großen Dank an alle Beitragenden, die Kimai in Dutzenden von Sprachen zugänglich halten.
-Und die Website ist jetzt auch [auf Katalanisch verfügbar]({% include link-language-domain.html language="ca" url="/ca/" %}).
+Und die Website ist jetzt auch [auf Katalanisch verfügbar]({{ "ca" | language_domain_url: "/ca/" }}).
 
 ## So bereitest du dich auf das Upgrade vor
 

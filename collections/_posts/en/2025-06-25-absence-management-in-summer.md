@@ -54,7 +54,7 @@ Want to add some humor to your summer absence management?
 
 ## First steps to the better organised vacation season 
 
-[Start your free trial](https://www.kimai.cloud/auth/registration) of Kimai today and experience absence management without the drama.
+[Start your free trial]({{ page.lang | url_cloud_register }}) of Kimai today and experience absence management without the drama.
 
 If you want to learn more:
 - Video tutorial: [Absence approval workflow in Kimai](https://www.youtube.com/watch?v=7ZHRBY0pZKI&t=56s)
