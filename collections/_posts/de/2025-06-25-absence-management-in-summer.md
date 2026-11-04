@@ -54,7 +54,7 @@ Möchten Sie Ihrem Sommer-Abwesenheitsmanagement etwas Humor hinzufügen?
 
 ## Erste Schritte zur besser organisierten Urlaubssaison
 
-[Starten Sie Ihre kostenlose Testphase](https://www.kimai.cloud/auth/registration) von Kimai noch heute und erleben Sie Abwesenheitsmanagement ohne Drama.
+[Starten Sie Ihre kostenlose Testphase]({{ page.lang | url_cloud_register }}) von Kimai noch heute und erleben Sie Abwesenheitsmanagement ohne Drama.
 
 Wenn Sie mehr erfahren möchten:
 - Video-Tutorial: [Abwesenheitsgenehmigungsworkflow in Kimai](https://www.youtube.com/watch?v=7ZHRBY0pZKI&t=56s)

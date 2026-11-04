@@ -5,7 +5,7 @@
     {% if item.sitemap == nil or item.sitemap %}
     {%- if item.lang == page.lang -%}
     <url>
-        <loc>{% include link-language-domain.html language=item.lang url=item.url %}</loc>
+        <loc>{{ item.lang | language_domain_url: item.url }}</loc>
         <lastmod>{{ item.date | date_to_xmlschema }}</lastmod>
     </url>
     {% endif %}

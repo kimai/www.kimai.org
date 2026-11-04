@@ -1,55 +1,56 @@
 ---
 title: Weekly hours
-description: Manage your time records in quick and easy weekly spreadsheet-like view.
+description: Manage your time records in a quick and easy weekly spreadsheet-like view.
 related:
-  - timesheet
-  - calendar
+    - timesheet
+    - calendar
 ---
 
-The "weekly times" view shows one week in a simple table structure, which mimics a classical spreadsheet.
+The "Weekly hours" view displays a single week in a simple table layout that mimics a classical spreadsheet.
 
-Rows represent a customer/project and activity and a duration for each date.
-If you have multiple entries for the same day, there will be multiple rows for the same project/activity combination.
+Each row represents a combination of customer/project and activity, with a duration column for each day of the week.
+If you have multiple entries for the same project/activity on a given day, each entry appears as a separate row.
 
-The nature of this form is simple and fast "duration tracking". That means start and end time do not matter and therefor 
-all entries start at the same time. 
+This view is designed for simple and fast **duration tracking** — start and end times are not relevant, so all entries for a day share the same start time.
 
 {% include youtube-video.html id="timesheets" chapter="weekly_hours" %}
- 
-## Managing records 
 
-New users, without any previous timesheet, will see 3 empty rows. 
-Existing users will have up to 5 rows with the last recent activities pre-filled.
+## Managing records
 
-The amount of `recent activities` can be configured since 1.16.10 as a global configuration, see the `Weekly working hours` 
-section in [System → Settings]({% link _documentation/configurations.md %}).
+New users without any previous timesheet entries will see 3 empty rows.
+Existing users will see up to 5 rows, pre-filled with their most recent activities.
 
-### Create further rows
+The number of pre-filled `recent activities` can be configured as a global setting.
+See the `Weekly working hours` section in [System → Settings]({% link _documentation/configurations.md %}).
 
-If the existing rows are not sufficient, you can `+ Add` new ones at any time.
+### Adding rows
+
+If the existing rows are not sufficient, click `+ Add` to create new ones at any time.
 
 ### Creating records
 
-If you add multiple times for one day, they will start at the same time (configured through the above mentioned configuration). 
-There is no way to detect the correct order of times, so instead of guessing start times by sequencing one after another, 
-they all intentionally start at the same time.
+Enter a duration in any day column to create a record. If you add multiple durations for the same day, they will all share the same start time (configured via the setting mentioned above). There is no way to determine the correct chronological order, so rather than guessing start times by sequencing entries one after another, they all intentionally use the same start time.
 
 ### Deleting records
 
-You can delete records from the view, by emptying the duration field. The record will be removed after saving the week data.
+To delete a record, clear its duration field. The record will be removed when you save the week.
 
 ## Configuration
 
-The start time of each new record is configured by the `Default start-time` from [System → Settings]({% link _documentation/configurations.md %}).
+The start time assigned to each new record is determined by the `Default start-time` setting in [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Permissions
 
-The view is only available to users with the permission `weekly_own_timesheet`. 
-You can disable this feature by toggling the [System > Role permission]({% link _documentation/permissions.md %}) to `OFF`.
+To access the Weekly hours screen, a user needs all of the following:
 
-Users require additionally the permissions `view_own_timesheet` and `edit_own_timesheet`.
+- `view_own_timesheet` and `edit_own_timesheet`
+- `weekly_own_timesheet`
+- The current time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) must allow `editing the duration` or `editing the end` — this is **not** the case in punch mode.
 
-The last check is if the current time-tracking mode (see [System → Settings]({% link _documentation/configurations.md %})) 
-allows `editing the duration` or `editing the end` (which is not true for the punch-mode).
+If you have the `view_other_timesheet` permission, you can switch to view and edit another user's weekly hours.
 
-If you own the permission `view_other_timesheet` you can switch the user.
+## Disabling Weekly hours
+
+Companies that need to record exact start and end times may want to deactivate this screen, since it only tracks durations.
+
+You can disable it by setting the [System → Role permission]({% link _documentation/permissions.md %}) `weekly_own_timesheet` to `OFF`.

@@ -38,6 +38,8 @@ Click "Edit" and confirm that you want to edit all the selected records.
 
 You will see a new "Batch Update" page with various options to update all the selected timesheets.
 
+{% include youtube-video.html id="batch_update" %}
+
 ## Time input
 
 The `begin` and `end` time input fields accept various formats, to allow correct and also speed typing.
@@ -143,6 +145,7 @@ There are several possible reasons why a record cannot be edited:
 
 - The record has already been exported. In that case, editing is only possible if the required permissions for exported entries are granted.
 - The global lockdown mode is active. Check the "Lockdown period" setting under [System → Settings]({% link _documentation/configurations.md %}).
+- The period is locked for the project of that record. Check the ["Times locked until" date]({% link _documentation/project.md %}) in the project settings. This lock cannot be bypassed by any permission.
 - The user's first working day is set in the future. Please review the user's working contract and adjust the start date if necessary.
 - A future working month is locked. In that case, editing records would affect existing calculations, so all relevant future months must be unlocked first.
 
@@ -155,6 +158,7 @@ Kimai has a few rules in place, which could prevent to stop a running timesheet,
 
 When a user tries to stop such a timesheet, a warning like one of the following will be shown:
 
+- `This timesheet is already exported`
 - `End date must not be earlier then start date`
 - `An empty duration is not allowed`
 - `Maximum 08:00 hours allowed`
@@ -169,9 +173,15 @@ All of them involve that you switch to `My times` and find the record (usually t
 - Edit the record and set a shorter duration
 - Delete the record from the listing
 
-An administrator can fix the problem by opening the `All times` view and filtering the user.
+Certain cases can be fixed by an administrator account through the `All times` view.
+Administrators have a higher permission level and are allowed to perform certain actions (like updating an exported entry).
 
-Administrators can configure this max. duration by changing the setting `Timesheet → Maximum duration of a timesheet` at [System → Settings]({% link _documentation/configurations.md %}).
+Administrators can configure the max. duration by changing the setting `Timesheet → Maximum duration of a timesheet` at [System → Settings]({% link _documentation/configurations.md %}).
+
+A locked project period is another reason why a record cannot be stopped.
+If the record was started before the ["Times locked until" date]({% link _documentation/project.md %}) of its project, stopping it
+would write into a closed period, so the stop action is not offered at all - not even for administrators.
+Edit the record, move it to a date after the lock and stop it there, or clear the lock date in the project settings.
 
 ## Permissions
 

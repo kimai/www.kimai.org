@@ -44,26 +44,28 @@ Das Unternehmen ist Mitglied der Allianz für Cyber-Sicherheit Deutschland und h
 
 **Wenn Excel an seine Grenzen stößt**
 
-Für Jan Krempchen, Inhaber von TECH-SUPPORT.KOELN, war Zeiterfassung lange Zeit ein notwendiges Übel. "Vor Kimai haben wir die Arbeitszeit und verkaufte Hardware in Excel-Tabellen eingetragen", erinnert er sich. 
+Für Jan Krempchen, Inhaber von TECH-SUPPORT.KOELN, war Zeiterfassung lange Zeit ein notwendiges Übel. 
+*"Vor Kimai haben wir die Arbeitszeit und verkaufte Hardware in Excel-Tabellen eingetragen"*, erinnert er sich. 
 Das klingt erstmal nach einer praktikablen Lösung – doch die Realität sah anders aus.
 
-Alle vier Wochen stand die Buchhaltung vor einem Berg an Arbeit: "Die Buchhaltung hat einmal im Monat diese Listen, Posten für Posten, in die Buchhaltungssoftware manuell übertragen. 
-Dafür wurde ein Arbeitstag benötigt und es war fehleranfällig." Ein ganzer Arbeitstag – nur um Daten von einem System ins andere zu übertragen. Zeit, die weder in die Kundenbetreuung noch in die Weiterentwicklung des Unternehmens fließen konnte.
+Alle vier Wochen stand die Buchhaltung vor einem Berg an Arbeit: *"Die Buchhaltung hat einmal im Monat diese Listen, Posten für Posten, in die Buchhaltungssoftware manuell übertragen. 
+Dafür wurde ein Arbeitstag benötigt und es war fehleranfällig."* 
+Ein ganzer Arbeitstag – nur um Daten von einem System ins andere zu übertragen. Zeit, die weder in die Kundenbetreuung noch in die Weiterentwicklung des Unternehmens fließen konnte.
 
 **Die Suche nach der richtigen Lösung**
 
 Als IT-Dienstleister wusste Jan, dass es bessere Lösungen geben musste. Doch die Auswahl war überwältigend, und viele Anbieter lockten mit Features, die sich in der Praxis als wenig hilfreich erwiesen. 
-"Andere Lösungen sahen am Anfang vielversprechend aus, waren aber schlecht skalierbar oder richteten sich ausschließlich an große Unternehmen", beschreibt er seine Erfahrungen. 
+*"Andere Lösungen sahen am Anfang vielversprechend aus, waren aber schlecht skalierbar oder richteten sich ausschließlich an große Unternehmen"*, beschreibt er seine Erfahrungen. 
 Das System musste nicht nur zuverlässig sein, sondern auch flexibel genug, um sich in die bestehende Infrastruktur wie das Zammad Ticketsystem zu integrieren.
 
 **Der entscheidende Unterschied: Offenheit und Integration**
 
 Was Kimai von anderen Lösungen abhob, war nicht nur die Funktionalität, sondern die Philosophie dahinter. 
-"Man kann diese Offenheit von Kimai mit den Schnittstellen noch viel mehr nutzen, als ich das jetzt mache", erklärt Jan begeistert. 
-"Es gibt nicht nur Zammad, sondern ganz viele andere Systeme, mit denen man die Daten rein- und rausbekommt."
+*"Man kann diese Offenheit von Kimai mit den Schnittstellen noch viel mehr nutzen, als ich das jetzt mache"*, erklärt Jan begeistert. 
+*"Es gibt nicht nur Zammad, sondern ganz viele andere Systeme, mit denen man die Daten rein- und rausbekommt."*
 
 Jan implementierte eine clevere Integration zwischen Zammad und Kimai: 
-"In unserem Ticketsystem können die Kunden ihre IT-Probleme melden und Zammad erstellt automatisch je Ticket einen One-Klick Link für die Zeiterfassung in Kimai."
+*"In unserem Ticketsystem können die Kunden ihre IT-Probleme melden und Zammad erstellt automatisch je Ticket einen One-Klick Link für die Zeiterfassung in Kimai."*
 
 Dadurch werden Datum, Uhrzeit, Kunde und die Fehlerbeschreibung aus dem Zammad Ticket automatisch in die passenden Felder in Kimai eingetragen. 
 *"Das ist natürlich ein Riesenvorteil, das ich direkt die Zeiterfassung mit einem Klick starten kann."*
@@ -77,12 +79,13 @@ Zusätzlich zur bestehenden Funktionalität hat Jan Kimai-Plugins für Ausgaben 
 
 **Von der Last zur Routine: Wie Kimai zum täglichen Begleiter wurde**
 
-Heute ist Kimai so selbstverständlich wie der Morgenkaffee. "Kimai ist für uns ein Standard-Tool geworden", erzählt Jan. 
-"Wenn wir morgens unser Laptop starten, wird im Browser automatisch ein Tab mit Kimai gestartet, neben anderen Tabs wie unser Ticketsystem. 
-Und erst abends, wenn wir Feierabend machen, schließen wir den Browser mit Kimai und anderen Standard-Tools. Es begleitet uns also den ganzen Arbeitstag."
+Heute ist Kimai so selbstverständlich wie der Morgenkaffee. *"Kimai ist für uns ein Standard-Tool geworden"*, erzählt Jan. 
+*"Wenn wir morgens unser Laptop starten, wird im Browser automatisch ein Tab mit Kimai gestartet, neben anderen Tabs wie unser Ticketsystem. 
+Und erst abends, wenn wir Feierabend machen, schließen wir den Browser mit Kimai und anderen Standard-Tools. Es begleitet uns also den ganzen Arbeitstag."*
 
 Diese Integration in den täglichen Workflow war kein Zufall. Sie ist das Ergebnis eines Systems, das sich an die Bedürfnisse des Users anpasst – nicht umgekehrt. 
-"Die ganzen Updates laufen immer sehr gut durch", betont Jan. "Ein großer Vorteil gegenüber anderen Open-Source-Projekten, wo man teilweise nach jedem Update kämpfen muss: Warum ist dieser Fehler da? – und den muss man selbst herausfinden."
+*"Die ganzen Updates laufen immer sehr gut durch"*, betont Jan. 
+*"Ein großer Vorteil gegenüber anderen Open-Source-Projekten, wo man teilweise nach jedem Update kämpfen muss: Warum ist dieser Fehler da? – und den muss man selbst herausfinden."*
 
 <!-- PARTS -->
 
@@ -91,22 +94,22 @@ Diese Integration in den täglichen Workflow war kein Zufall. Sie ist das Ergebn
 Der Prozess ist simpel: Arbeitszeiten und verkaufte Hardware werden direkt in Kimai eingetragen. 
 Die Buchhaltung erstellt einmal im Monat daraus die Rechnungen.
 
-Aber es geht um mehr als nur Effizienz. Die Fehlerquote ist dramatisch gesunken, die Buchhaltung kann sich auf strategischere Aufgaben konzentrieren, und das Team muss sich keine Gedanken mehr über vergessene Zeiteinträge machen.
+Aber es geht um mehr als nur Effizienz. Die Fehlerquote ist dramatisch gesunken, die Buchhaltung kann sich auf strategische Aufgaben konzentrieren, und das Team muss sich keine Gedanken mehr über vergessene Zeiteinträge machen.
 
 **Support, der den Unterschied macht**
 
-Auch die beste Software ist nur so gut wie der Support dahinter. Jan erinnert sich an ein bestimmtes Moment: "Ich hatte auch mal einen kritischen Fehler, wo das System einfach nicht lief – durch einen Fehler von mir. 
-Und da hat mir Kevin (der Entwickler von Kimai) auch sehr schnell per Fernwartung helfen können."
+Auch die beste Software ist nur so gut wie der Support dahinter. Jan erinnert sich an ein bestimmtes Moment: *"Ich hatte auch mal einen kritischen Fehler, wo das System einfach nicht lief – durch einen Fehler von mir. 
+Und da hat mir Kevin (der Entwickler von Kimai) auch sehr schnell per Fernwartung helfen können."*
 
 Diese Erfahrung unterstreicht einen wichtigen Aspekt: Bei Kimai geht es nicht nur um Software, sondern um ein Gesamtpaket aus Technologie, Support und kontinuierlicher Weiterentwicklung. 
-"Man sieht über die Jahre die Entwicklung, dass es immer weitergeht. Man hat nie das Gefühl, es bleibt stehen. Man hat immer einen Support-Ansprechpartner."
+*"Man sieht über die Jahre die Entwicklung, dass es immer weitergeht. Man hat nie das Gefühl, es bleibt stehen. Man hat immer einen Support-Ansprechpartner."*
 
 **Der Blick nach vorn: Noch mehr Potenzial**
 
 Für Jan ist die Geschichte noch nicht zu Ende. 
-"Ich glaube, man kann diese Offenheit von Kimai mit den Schnittstellen noch viel mehr nutzen, als ich das jetzt mache", sagt er nachdenklich.
+*"Ich glaube, man kann diese Offenheit von Kimai mit den Schnittstellen noch viel mehr nutzen, als ich das jetzt mache"*, sagt er nachdenklich.
 
-Sein Rat an neue Kimai-Nutzer basiert auf dieser Erkenntnis: "Wenn jemand Kimai einsetzen will, sollte er sich wirklich von vorneherein damit auseinandersetzen und schauen, wie er automatisierte Systeme schaffen kann." 
+Sein Rat an neue Kimai-Nutzer basiert auf dieser Erkenntnis: *"Wenn jemand Kimai einsetzen will, sollte er sich wirklich von vorneherein damit auseinandersetzen und schauen, wie er automatisierte Systeme schaffen kann."* 
 Die Investition in die initiale Planung und Integration zahlt sich langfristig aus.
 
 Die Geschichte von TECH-SUPPORT.KOELN zeigt, dass Zeiterfassung weit mehr sein kann als eine bürokratische Pflicht. 

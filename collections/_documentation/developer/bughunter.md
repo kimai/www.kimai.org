@@ -50,18 +50,48 @@ Make a good-faith effort to avoid privacy violations, data loss, and service dis
 
 EU and German law may require service operators to report certain attacks to authorities, even without malicious intent. Prior written consent protects both parties.
 
-## Automated and low-quality reports
+## Automated reports
 
-We receive a high volume of automated or templated reports that show no familiarity with Kimai or its codebase. These reports are not reviewed.
+We regularly receive reports that don't meet the quality bar for a disclosure. Common issues include:
 
-To be considered, a report should:
+- Demonstrations against internal APIs in ways that aren't reachable through the Kimai UI
+- Exaggerated severity levels that don't reflect realistic attack scenarios (see [Severity levels]({% link _documentation/developer/security.md %}))
+- Multi-page write-ups padded with boilerplate code and filler text (AKA unvalidated, AI output)
+
+And our favorites:
+- Descriptions of Kimai features or behavior that don't exist (unvalidated AI-hallucinations)
+- Reports that ignore this documentation page
+
+### AI-assisted reports
+ 
+Using AI tools to find or write up a vulnerability is fine. Submitting their raw output is not.
+
+**If you use AI tools, you are responsible for verifying, editing and understanding every claim before submission.**
+A report is treated as unreviewed AI output when it shows signs like:
+
+- unfilled template placeholders, internal pipeline notes or file references we cannot see
+- claims that were not checked against the actual code or a running Kimai
+- severity ratings which ignore the preconditions of the attack
+- boilerplate and filler text instead of a focused description
+- nobody being able to answer follow-up questions about the report
+
+Such reports are closed. This is not a judgement about the underlying finding:
+the report can be re-opened once it was revised by a human who takes responsibility for its content and is available for questions.
+Reports which were revised this way are welcome and will be credited like any other.
+
+To be considered, a report must:
 
 - Clearly identify the affected component or endpoint
 - Describe the vulnerability and its potential impact
-- Include reproduction steps or a proof of concept
-- AI-generated reports must be reviewed and validated by a human before submission. Posting raw LLM output, even if technically accurate, will not be credited unless a human researcher is available to answer follow-up questions.
+- Include reproduction steps and/or a realistic proof of concept
+- Not include one of the points listed below 
 
-Reports that do not meet these criteria, or that demand payment before sharing details, will not receive a response.
+Every submitted report requires significant unplanned time to triage and evaluate, given the potential implications.
+That time comes directly at the expense of other development work.
+We appreciate every effort to help secure Kimai, but we can't afford to spend limited maintainer resources on reports 
+that don't meet these criteria.
+
+We might not answer in such cases and repeated low-quality submissions may result in your account being blocked.
 
 ## Not security issues
 
@@ -80,8 +110,8 @@ This attack requires that the `TRUSTED_HOSTS` environment variable is not config
 Kimai's installation documentation explicitly lists this variable as mandatory:
 
 - `APP_SECRET` — You **MUST** set this to a long and unique string
-- `TRUSTED_HOSTS` — You **MUST** set this to the domain name used to access Kimai (can be a regexp like `localhost|127.0.0.1|kimai.example.com`)
-- `TRUSTED_PROXIES` — Default: "nginx,localhost,127.0.0.1"
+- `TRUSTED_HOSTS` — You **MUST** set this to a regexp matching the domain name(s) used to access Kimai, e.g. `^demo\.kimai\.org$` or multiple via `^(localhost|127\.0\.0\.1|demo\.kimai\.org)$`
+- `TRUSTED_PROXIES` — Default: "127.0.0.1"
 
 The application cannot determine which hostnames are legitimate on its own — only the administrator of a given deployment knows how the instance is reachable. 
 Setting `TRUSTED_HOSTS` is a fundamental part of securing any Symfony-based application, and this class of attack has been publicly 
@@ -90,6 +120,21 @@ documented since [2013 (CVE-2013-4752)](https://symfony.com/blog/security-releas
 A missing or incorrect server configuration is the responsibility of the administrator, not a defect in the application.
 
 **Additional mitigation:** This attack does not work against accounts with two-factor authentication enabled.
+
+### SAML: Linking of existing local accounts
+
+If SAML is activated and a user logs in with an identifier (the `NameID` or the configured username attribute) 
+that matches the username of an existing local account, Kimai links that account on the first SAML login and migrates it to SAML authentication.
+No password of the local account is required, its roles and data are kept.
+
+This is an intended feature. It allows existing installations to move their users to single sign-on,
+without re-creating accounts and losing all their data (timesheets, invoices and so on). 
+Refusing to link existing accounts would make it impossible to ever switch the authentication method.
+
+The identity provider has to deliver an immutable identifier as `NameID` (or username attribute), 
+which cannot be changed by end users (e.g. a persistent ID or object GUID instead of a self-editable email or username).
+If end users can choose that value themselves, they can impersonate any other account - SAML or local.
+This would be a misconfiguration of the identity provider and the responsibility of the administrator, not a defect in Kimai.
 
 ### CSV Formula injection
 

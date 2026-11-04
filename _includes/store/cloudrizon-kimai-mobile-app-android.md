@@ -40,10 +40,3 @@ Through friendly notifications, the app encourages taking timely breaks, allowin
 
 The statistical analysis offers a comprehensive overview of your time usage across different projects. 
 Tailor your experience further by customizing reports to specific time frames, empowering you to make informed decisions based on detailed information. 
-
-### Additional information
-
-- How to [connect the app to your server](https://www.kimaimobile.com/kimai-mobile-guide/#1624276184721-4662a5b1-cf06)
-- Read more about the [company](https://www.kimaimobile.com/developer-of-kimai-mobile/) that develops the app
-- We have eve more [features](https://www.kimaimobile.com/features/) you might be interested in
-- You can [contact us](https://www.kimaimobile.com/kimai-mobile-contact-us/) for questions about the app

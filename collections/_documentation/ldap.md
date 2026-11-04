@@ -12,7 +12,7 @@ updated on each following login.
 
 In order to use the LDAP authentication module of Kimai, you have to install the LDAP library:
 ```bash
-composer require laminas/laminas-ldap --optimize-autoloader -n
+composer require laminas/laminas-ldap {{ site.kimai_composer_require_flags }}
 ```
  
 If you see an error message like this:
@@ -268,7 +268,7 @@ group names from the result-sets attribute `nameAttribute`.
 
 After finding a list of group names, they will be converted to Kimai roles:
 - first step is to lookup in `groups` mapping, if there is a match in `ldap_value` and uses the `role` value without further processing
-- if no mapping was found, the group name will be UPPERCASED and prefixed with `ROLE_` => e.g. `admin` will become `ROLE_ADMIN`
+- if no mapping was found, the group name will be UPPERCASED and prefixed with `ROLE_` ⇒ e.g. `admin` will become `ROLE_ADMIN`
 
 These converted names will be validated and [only existing roles]({% link _documentation/users.md %}) will pass to the user profile.
 

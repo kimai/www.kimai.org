@@ -91,6 +91,8 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 - `scripts/update-bundles.php`: fetches and updates bundle release/changelog data
 - `scripts/update-plans.php`: fetches and updates Kimai Cloud plan data
 - `scripts/update-version-number.sh`: updates `kimai_v2_version` in `_config.yml`
+- `scripts/generate-world-map.sh`: generates the world map SVGs `images/world-map-*.svg` from Natural Earth data
+- `scripts/update-customer-map.php`: writes `_data/customer-map.yml` from the raw customer numbers in `src/data/countries-*.csv` (git-ignored, never commit or publish them); do not edit the YAML manually
 
 - Before replacing script-based behavior with manual edits, check whether an existing script already owns that workflow.
 
@@ -135,9 +137,10 @@ Routing and domain rules matter:
 ## Frontend
 
 - Apply all styling changes in the top-level `src/*.scss` files
-- Use `src/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
-- If a change appears to require editing `src/scss/`, stop and find a solution through `src/*.scss` instead
-- If there is truly no other way, ask for approval before touching `src/scss/`
+- Use `src/scss/_variables.scss` for variable overrides and `src/bundle.scss` to control the import order of top-level frontend styles
+- If a change appears to require editing `src/scss/components/`, stop and find a solution through `src/scss/*.scss` instead
+- If there is truly no other way, ask for approval before touching `src/scss/components/`
+- Changing Javascript, CSS or SCSS files needs a new frontend rebuild via npm. A new frontend build needs an incremented cache-buster IDs in `_layouts/base.html`
 
 ## Safe Change Boundaries
 

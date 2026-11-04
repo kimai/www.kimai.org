@@ -55,11 +55,11 @@
 {%- assign langPages = site[page.collection] | where: "slug", page.slug -%}
 {%- if langPages and langPages.size > 1 %}
 {%- for langPage in langPages %}
-<link rel="alternate" hreflang="{{ langPage.lang | replace: '_', '-' | downcase }}" href="{% include link-language-domain.html language=langPage.lang url=langPage.url %}">
+<link rel="alternate" hreflang="{{ langPage.lang | replace: '_', '-' | downcase }}" href="{{ langPage.lang | language_domain_url: langPage.url }}">
 {%- endfor %}
 {%- endif %}
 {%- endif %}
-<link href="/assets/build/main{% if site.rtl contains page.lang %}.rtl{% endif %}.css?v11" rel="stylesheet" />
+<link href="/assets/build/main{% if site.rtl contains page.lang %}.rtl{% endif %}.css?v17" rel="stylesheet" />
 {% if layout.shopping != nil -%}
 {% include shopping/{{ layout.shopping }}.html %}
 {%- endif %}
@@ -73,7 +73,7 @@
     <i class="btn-scroll-top-icon {{ 'up' | icon }}"></i>
 </a>
 
-<script src="/assets/build/main.js?v3"></script>
+<script src="/assets/build/main.js?v5"></script>
 {% if jekyll.environment == "production" %}
 <script defer src="https://u.kimai.org/script.js" data-website-id="{{ site.website_id[page.lang] }}"></script>
 {% endif %}

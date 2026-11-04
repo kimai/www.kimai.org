@@ -43,7 +43,8 @@ Meet Dietmar Marggraff: a consultant at blueflare with top skills in web develop
 He is a full-time guardian against cyber threats. 
 From his base in South Africa – one of the world's most cyber-targeted countries – Dietmar runs [blueflare](https://blueflare.co.za/) Consulting, a specialized cybersecurity firm that protects the infrastructure we all depend on.
 
-“Criminals don’t discriminate,” Dietmar explains with the matter-of-fact tone of someone who’s seen digital chaos firsthand. “Here in South Africa, we are targeted daily. Whoever needs our help, we are willing to assist, whoever needs help.“
+*“Criminals don’t discriminate,”* Dietmar explains with the matter-of-fact tone of someone who’s seen digital chaos firsthand. 
+*“Here in South Africa, we are targeted daily. Whoever needs our help, we are willing to assist, whoever needs help.“*
 
 <!-- PARTS -->
 
@@ -52,7 +53,7 @@ From his base in South Africa – one of the world's most cyber-targeted countri
 For consulting agencies like blueflare, time isn't just money – it's the entire business model. Dietmar's team faces the classic consulting challenge: 
 jumping between multiple client projects daily while maintaining precision in billing and transparency.
 
-"We see ourselves as the right hand of whoever is driving cybersecurity in an organization. Cybersecurity is a journey, not a one-off, and we walk with our clients."
+*"We see ourselves as the right hand of whoever is driving cybersecurity in an organization. Cybersecurity is a journey, not a one-off, and we walk with our clients."*
 
 This journey-based approach creates a complex time management puzzle. One day might include: client check-ins, penetration testing scoping, meetings and workshops.
 
@@ -62,24 +63,24 @@ Without proper tracking, these fragments of billable time disappear into adminis
 
 Unlike many consultancies that start thinking about time tracking after scaling pain points emerge, Dietmar made a strategic choice: implement Kimai from the very first day of business.
 
-"It was important for me, coming from an organization that did use time tracking, that it was one of the first things I put in place when founding blueflare," he reflects.
+*"It was important for me, coming from an organization that did use time tracking, that it was one of the first things I put in place when founding blueflare,"* he reflects.
 
-The implementation itself showcased his technical expertise. Using DigitalOcean infrastructure with Docker Compose, Dietmar had the Kimai On-Premise version running in just "an hour or two". 
+The implementation itself showcased his technical expertise. Using DigitalOcean infrastructure with Docker Compose, Dietmar had the Kimai On-Premise version running in just *"an hour or two"*. 
 True to his cybersecurity roots, he added a VPN layer so Kimai isn't directly exposed to the internet.
 
 **Beyond basic time tracking: the transparency approach**
 
 What makes Dietmar's Kimai implementation compelling isn't just the time saved – it's how he transformed client relationships through radical transparency.
 
-"We're not just exporting the amount of time spent, but also what we did in that time," Dietmar explains. 
+*"We're not just exporting the amount of time spent, but also what we did in that time,"* Dietmar explains. 
 His custom invoice setup shows clients exactly how their money was invested: 15 minutes spent doing this, 30 minutes spent doing that, a workshop for 2 hours and so on…
 
 This detailed approach extends beyond external clients. blueflare tracks everything as a project – even internal activities like sales, marketing, and project management. 
 
-"Everything we do is a project, even this interview," Dietmar notes with a smile.
+*"Everything we do is a project, even this interview,"* Dietmar notes with a smile.
 
 The three-tier structure of Kimai (Client → Project → Activity) enables precise project scoping: 
-"When we scope a project, we can then have our project, and on a per-activity basis, we can say, 'we're going to spend X amount of time on workshops, X amount of time on reporting.'"
+*"When we scope a project, we can then have our project, and on a per-activity basis, we can say, 'we're going to spend X amount of time on workshops, X amount of time on reporting.'"*
 
 **The real numbers: quantified results**
 
@@ -91,8 +92,8 @@ The manual approach consumes two hours weekly just organizing time entries – t
 **The evolution: why cloud migration made sense**
 
 Dietmar executed a strategic shift to [Kimai Cloud]({{ page.lang | url_cloud_register }}).
-"At the beginning, there was more time to do updates and backups. 
-Being an engineer and being a hacker, we like to do things ourselves," he admits. "But I've gotten to a point where time is an issue. I don't want to have to spend time doing manual backups and updates."
+*"At the beginning, there was more time to do updates and backups. 
+Being an engineer and being a hacker, we like to do things ourselves,"* he admits. *"But I've gotten to a point where time is an issue. I don't want to have to spend time doing manual backups and updates."*
 
 This isn't about technical inability – it's about strategic time allocation. 
 Every hour spent on server maintenance is an hour not spent protecting clients or growing the business.
@@ -100,9 +101,9 @@ Every hour spent on server maintenance is an hour not spent protecting clients o
 **The true effects: recommendations and results**
 
 Dietmar's enthusiasm for Kimai extends beyond his own company. He's already recommended it to his Excel-struggling colleague and expressed amazement at consultancies operating without time tracking: 
-"There are a couple of organizations that I've encountered that also do consultancy-type work and they don't do time tracking, and I have no idea how they manage their organizations."
+*"There are a couple of organizations that I've encountered that also do consultancy-type work and they don't do time tracking, and I have no idea how they manage their organizations."*
 
-The granularity and expandability particularly impressed him: "The option to have additional plugins and to have that expandability is great and we are planning on making use of that in the future as well."
+The granularity and expandability particularly impressed him: *"The option to have additional plugins and to have that expandability is great and we are planning on making use of that in the future as well."*
 
 **Summary**
 

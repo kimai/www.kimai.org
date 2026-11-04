@@ -1,3 +1,15 @@
+**Version 2.11.0**
+
+Compatibility: requires minimum Kimai 2.57.0
+
+- Set the actual delivery date (BT-72) to the end of the service period
+
+**Version 2.10.0**
+
+Compatibility: requires minimum Kimai 2.57.0
+
+- Set `PDFA/3-B` as default version for E-Invoices (see [#349](https://github.com/kimai/Paid-plugins/issues/349))
+
 **Version 2.9.0**
 
 Compatibility: requires minimum Kimai 2.57.0

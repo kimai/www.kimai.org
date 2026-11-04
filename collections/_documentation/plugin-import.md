@@ -13,43 +13,43 @@ Examples are included within the plugin and can be downloaded from the importer 
 
 ## Customer
 
-Customers will not be updated, if you import the same file multiple-times, you will end up with several customers with the same name.
-You will have to delete the imported customers if you plan to re-import a file.
+Customers will be updated if a customer exists with the `Customer` / `Name` name, otherwise a new customer will be created.
 
-| Attribute   | Description                                                                     |
-|-------------|---------------------------------------------------------------------------------|
-| Customer ✅  | Customer name (alternative attribute name: `Name`)                              |
-| Account     | Account/Customer number  (alternative attribute name: `CustomerNumber`)         |
-| Company     | Company name                                                                    |
-| Description | Description                                                                     |
-| Country     | Country                                                                         |
-| Tax         | Vat-ID                                                                          |
-| Address     | Address                                                                         |
-| Email       | E-Mail                                                                          |
-| Contact     | Contact                                                                         |
-| Currency    | Currency                                                                        |
-| Timezone    | Timezone                                                                        |
-| Phone       | Phone                                                                           |
-| Mobile      | Mobile                                                                          |
-| Fax         | Fax                                                                             |
-| Homepage    | Homepage                                                                        |
-| Color       | Color                                                                           |
-| Budget      | Budget                                                                          |
-| TimeBudget  | Time budget                                                                     |
-| BudgetType  | Budget type                                                                     |
-| Visible     | Whether the customer is visible or not (supported values: `1` or `0`)           |
-| meta.xxx    | Custom fields, e.g. `meta.foo` for a custom field with the internal name `foo`  |
+| Attribute   | Description                                                                    |
+|-------------|--------------------------------------------------------------------------------|
+| Customer ✅ | Customer name (alternative attribute name: `Name`)                             |
+| Account     | Account/Customer number  (alternative attribute name: `CustomerNumber`)        |
+| Company     | Company name                                                                   |
+| Description | Description                                                                    |
+| Country     | Country                                                                        |
+| Tax         | Vat-ID                                                                         |
+| Address     | Address                                                                        |
+| Email       | E-Mail                                                                         |
+| Contact     | Contact                                                                        |
+| Currency    | Currency                                                                       |
+| Timezone    | Timezone                                                                       |
+| Phone       | Phone                                                                          |
+| Mobile      | Mobile                                                                         |
+| Fax         | Fax                                                                            |
+| Homepage    | Homepage                                                                       |
+| Color       | Color                                                                          |
+| Budget      | Budget                                                                         |
+| TimeBudget  | Time budget                                                                    |
+| BudgetType  | Budget type                                                                    |
+| Visible     | Whether the customer is visible or not (supported values: `1` or `0`)          |
+| Language    | The customers language                                                         |
+| meta.xxx    | Custom fields, e.g. `meta.foo` for a custom field with the internal name `foo` |
 {: .table }
 
 ## Projects
 
-Projects will not be updated, if you import the same file multiple-times, you will end up with several projects with the same name and customer.
-You will have to delete the imported projects if you plan to re-import a file.
+- Customers will be updated if a customer exists with the `Customer` name, otherwise a new customer will be created. 
+- Projects will be updated if a `Project` / `Name` exists for the `Customer`, otherwise a new project will be created.
 
 | Attribute     | Description                                                                    |
 |---------------|--------------------------------------------------------------------------------|
-| Project ✅     | Project name (alternative attribute name: `Name`)                              |
-| Customer ✅    | Customer name                                                                  |
+| Project ✅    | Project name (alternative attribute name: `Name`)                              |
+| Customer ✅   | Customer name                                                                  |
 | Description   | Description                                                                    |
 | EndDate       | End date                                                                       |
 | StartDate     | Start date                                                                     |
@@ -75,14 +75,14 @@ This will import timesheets and create these elements on the fly:
 
 | Attribute    | Description                                                                                                        |
 |--------------|--------------------------------------------------------------------------------------------------------------------|
-| Date ✅       | Date in the format: `YYYY-MM-DD` (e.g. `2020-05-04`)                                                               |
-| From ✅       | Start time in the format: `HH:MM:SS` (24 hour format, e.g. `15:50:00`)                                             |
-| To ✅         | End time in the format: `HH:MM:SS` (24 hour format, e.g. `17:21:44`)                                               |
-| Email ✅      | User email (Kimai will try to match by email first)                                                                |
-| User ✅       | User-Identifier (will be used if `Email` does not match                                                            |
-| Project ✅    | Name of the project as string                                                                                      |
-| Customer ✅   | Name of the customer as string                                                                                     |
-| Activity ✅   | Name of the activity as string                                                                                     |
+| Date ✅      | Date in the format: `YYYY-MM-DD` (e.g. `2020-05-04`)                                                               |
+| From ✅      | Start time in the format: `HH:MM:SS` (24 hour format, e.g. `15:50:00`)                                             |
+| To ✅        | End time in the format: `HH:MM:SS` (24 hour format, e.g. `17:21:44`)                                               |
+| Email ✅     | User email (Kimai will try to match by email first)                                                                |
+| User ✅      | User-Identifier (will be used if `Email` does not match                                                            |
+| Project ✅   | Name of the project as string                                                                                      |
+| Customer ✅  | Name of the customer as string                                                                                     |
+| Activity ✅  | Name of the activity as string                                                                                     |
 | Username     | Alias of the user                                                                                                  |
 | Duration     | Timesheet duration in seconds (will be calculated from start and end time if not given)                            |
 | Tags         | Comma separated list of tag-names                                                                                  |

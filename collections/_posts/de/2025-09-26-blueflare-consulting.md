@@ -43,7 +43,8 @@ Sie bieten operative und informative Sicherheitsdienstleistungen für Unternehme
 Lernen Sie Dietmar Marggraff kennen: ein Vollzeit-Wächter gegen Cyber-Bedrohungen. 
 Von seiner Basis in Südafrika – einem der weltweit am stärksten von Cyberangriffen betroffenen Länder – führt Dietmar [blueflare Consulting](https://blueflare.co.za/), eine spezialisierte Cybersecurity-Firma, die die Infrastruktur schützt, von der wir alle abhängen.
 
-“Kriminelle machen keine Unterschiede“, erklärt Dietmar mit dem nüchternen Tonfall von jemandem, der digitales Chaos hautnah erlebt hat. “Hier in Südafrika sind wir täglich Zielscheibe. Wer auch immer unsere Hilfe braucht – wir sind bereit zu unterstützen.“
+*“Kriminelle machen keine Unterschiede“*, erklärt Dietmar mit dem nüchternen Tonfall von jemandem, der digitales Chaos hautnah erlebt hat. 
+*“Hier in Südafrika sind wir täglich Zielscheibe. Wer auch immer unsere Hilfe braucht – wir sind bereit zu unterstützen.“*
 
 <!-- PARTS -->
 
@@ -52,7 +53,7 @@ Von seiner Basis in Südafrika – einem der weltweit am stärksten von Cyberang
 Für Beratungsfirmen wie blueflare ist Zeit nicht nur Geld – sie ist das gesamte Geschäftsmodell. 
 Dietmars Team steht vor der klassischen Beratungs-Herausforderung: täglich zwischen mehreren Kundenprojekten zu wechseln und dabei präzise Abrechnungen und Transparenz sicherzustellen.
 
-"Wir sehen uns als die rechte Hand jener, die in einer Organisation für Cybersecurity verantwortlich sind. Cybersecurity ist eine Reise, kein einmaliges Ereignis – und wir begleiten unsere Kunden."
+*"Wir sehen uns als die rechte Hand jener, die in einer Organisation für Cybersecurity verantwortlich sind. Cybersecurity ist eine Reise, kein einmaliges Ereignis – und wir begleiten unsere Kunden."*
 
 Dieser Reise-Ansatz erzeugt ein komplexes Zeitmanagement-Puzzle. Ein Arbeitstag kann bestehen aus: Kunden-Check-ins, der Abgrenzung von Penetration Tests, Meetings und Workshops.
 
@@ -62,24 +63,24 @@ Ohne saubere Zeiterfassung verschwinden diese abrechenbaren Zeitfragmente im adm
 
 Im Gegensatz zu vielen Beratungsfirmen, die erst bei Wachstumsschmerzen über Zeiterfassung nachdenken, traf Dietmar eine strategische Wahl: Kimai direkt ab dem ersten Geschäftstag einzusetzen.
 
-"Es war mir wichtig – aus einer Organisation kommend, die bereits Zeiterfassung nutzte –, dass dies eine der ersten Maßnahmen war, die ich bei der Gründung von blueflare umgesetzt habe", erinnert er sich.
+*"Es war mir wichtig – aus einer Organisation kommend, die bereits Zeiterfassung nutzte –, dass dies eine der ersten Maßnahmen war, die ich bei der Gründung von blueflare umgesetzt habe"*, erinnert er sich.
 
-Die Umsetzung selbst zeigte sein technisches Können. Mit DigitalOcean-Infrastruktur und Docker Compose brachte Dietmar ein Kimai-On-Premises-Modell innerhalb von „einer Stunde oder zwei“ zum Laufen. 
+Die Umsetzung selbst zeigte sein technisches Können. Mit DigitalOcean-Infrastruktur und Docker Compose brachte Dietmar ein Kimai-On-Premises-Modell innerhalb von *„einer Stunde oder zwei“* zum Laufen. 
 Seinen Cybersecurity-Wurzeln treu, baute er zusätzlich eine VPN-Ebene ein, sodass Kimai nicht direkt im Internet exponiert ist.
 
 **Über grundlegende Zeiterfassung hinaus: der Transparenz-Ansatz**
 
 Das wirklich Überzeugende an Dietmars Kimai-Einsatz ist nicht nur die eingesparte Zeit – sondern wie er durch radikale Transparenz die Kundenbeziehungen transformierte.
 
-"Wir exportieren nicht nur die aufgewendete Zeit, sondern auch, was wir getan haben," erklärt Dietmar. 
+*"Wir exportieren nicht nur die aufgewendete Zeit, sondern auch, was wir getan haben,"* erklärt Dietmar. 
 Sein individuelles Rechnungsformat zeigt den Kunden genau, wofür ihr Geld eingesetzt wurde: 15 Minuten hier, 30 Minuten dort, ein Workshop über 2 Stunden und so weiter.
 
 Dieser detailreiche Ansatz gilt nicht nur für externe Kunden. blueflare erfasst alles als Projekt – selbst interne Aktivitäten wie Vertrieb, Marketing oder Projektmanagement. 
 
-"Alles, was wir machen, ist ein Projekt, sogar dieses Interview", sagt Dietmar lächelnd.
+*"Alles, was wir machen, ist ein Projekt, sogar dieses Interview"*, sagt Dietmar lächelnd.
 
 Die dreistufige Struktur von Kimai (Kunde → Projekt → Aktivität) ermöglicht eine präzise Projektplanung: 
-"Wenn wir ein Projekt abgrenzen, können wir pro Aktivität festlegen: Wir verbringen X Stunden mit Workshops, X Stunden mit Reporting."
+*"Wenn wir ein Projekt abgrenzen, können wir pro Aktivität festlegen: Wir verbringen X Stunden mit Workshops, X Stunden mit Reporting."*
 
 **Die echten Zahlen: messbare Ergebnisse**
 
@@ -91,8 +92,8 @@ Doch der manuelle Excel-Ansatz eines Kollegen liefert einen deutlichen Kontrast:
 **Die Weiterentwicklung: Warum Cloud-Migration Sinn macht**
 
 Dietmar führte eine strategische Umstellung auf [Kimai Cloud]({{ page.lang | url_cloud_register }}) durch.
-"Am Anfang war noch mehr Zeit für Updates und Backups. Als Ingenieure und Hacker mögen wir es, Dinge selbst zu machen," gibt er zu. 
-"Aber inzwischen ist Zeit der limitierende Faktor. Ich will keine Zeit mehr mit manuellen Backups und Updates verbringen."
+*"Am Anfang war noch mehr Zeit für Updates und Backups. Als Ingenieure und Hacker mögen wir es, Dinge selbst zu machen,"* gibt er zu. 
+*"Aber inzwischen ist Zeit der limitierende Faktor. Ich will keine Zeit mehr mit manuellen Backups und Updates verbringen."*
 
 Es geht dabei nicht um fehlende Technikfähigkeiten, sondern um strategische Zeitverwendung. 
 Jede Stunde, die auf Serverpflege entfällt, ist eine Stunde, die fehlt, um Kunden zu schützen oder das Geschäft auszubauen.
@@ -100,9 +101,9 @@ Jede Stunde, die auf Serverpflege entfällt, ist eine Stunde, die fehlt, um Kund
 **Die wahren Effekte: Empfehlungen und Ergebnisse**
 
 Dietmars Begeisterung für Kimai geht über sein eigenes Unternehmen hinaus. Er hat es bereits seinem mit Excel kämpfenden Kollegen empfohlen und wundert sich über Beratungsfirmen, die ohne Zeiterfassung arbeiten: 
-"Es gibt ein paar Organisationen, die ebenfalls Beratungsarbeit leisten und keine Zeiterfassung nutzen – ich habe keine Ahnung, wie sie ihre Firmen organisieren."
+*"Es gibt ein paar Organisationen, die ebenfalls Beratungsarbeit leisten und keine Zeiterfassung nutzen – ich habe keine Ahnung, wie sie ihre Firmen organisieren."*
 
-Besonders beeindruckt hat ihn die Granularität und Erweiterbarkeit: "Die Möglichkeit, weitere Plugins zu nutzen und diese Erweiterbarkeit zu haben, ist großartig – und wir planen, das künftig ebenfalls zu nutzen."
+Besonders beeindruckt hat ihn die Granularität und Erweiterbarkeit: *"Die Möglichkeit, weitere Plugins zu nutzen und diese Erweiterbarkeit zu haben, ist großartig – und wir planen, das künftig ebenfalls zu nutzen."*
 
 **Fazit**
 

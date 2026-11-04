@@ -49,6 +49,25 @@ Kimai supports these export formats:
 - **CSV** for importing data into accounting, BI, or other business systems
 - **HTML** for a browser-friendly print view that you can review or save as PDF
 
+### CSV export
+
+The CSV export is meant as a plain data interchange format.
+Use it when another system reads the file: accounting software, a BI tool, a payroll system, or your own import script.
+
+The difference to the Excel export:
+
+- CSV is a pure text format without formatting, data types, formulas, or multiple sheets
+- XLSX keeps cell types (dates, numbers, durations), column formatting and summaries, and is meant to be opened and worked with in a spreadsheet application
+- CSV only contains the raw column values, separated by a comma or semicolon (see the `Separator` option of the export template)
+
+In short: choose CSV for machine-to-machine data transfer and XLSX whenever a human opens the file in Excel or a similar application.
+
+{% alert warning %}
+The CSV export does not apply the same validation and escaping as the Excel export: the values are written to the file as they were entered in Kimai.
+Spreadsheet applications like Excel, LibreOffice Calc, or Numbers interpret certain cell values as formulas and may execute them when the file is opened.
+Therefore, do not use the CSV export if the file is opened or edited in a spreadsheet application that executes formulas automatically - use the XLSX export instead.
+{% endalert %}
+
 ## Export state
 
 {% include youtube-video.html id="exports_invoices" chapter="export" %}
