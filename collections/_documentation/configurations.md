@@ -121,6 +121,21 @@ These are the existing rounding modes:
 - `Forgot password` - de-/activates the password reset function, that sends an email with a "reset my password" link 
 - `Forgotten password - seconds before a user can request the next e-mail` - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons) 
 - `Forgotten password - seconds before a reset link expires` - how long a user can use the password reset link, it is recommended to keep this value below 1 day
+- `Design` - the used `design` for anonymous screens (`Automatic`, `Bright`, `Dark`) 
+- `Password strength` - allows you to set the required password strength, see below for an explanation (default `No requirement`) 
+- `Change authentication of users with external login` - allows to switch the authentication method of a user account back from `LDAP`/`SAML` to `internal`
+
+**Password strength**
+
+This is not bound to the regular password rules you might know from other apps, this is calculated from the 
+length of the password and the difference in used characters/bumbers/signs. The rule of thumb is:
+normal is hard for average user, medium is almost imposs 
+
+- No requirements: minimum length of 8 character
+- Normal: perfect balance of security and friction
+- Medium: it gets tough, almost too complex for average users
+- Strong: you need a password safe
+- Very strong: you really need a password safe 
 
 ## Customer
 
