@@ -785,18 +785,32 @@ Using multi and single line has proven to work, but using a multi-line certifica
 
 <p>We don’t have documentation about it yet, but <a href="https://blog.vasi.li/setting-up-saml-for-kimai-time-tracker-using-zitadel-idp/">Vasili wrote a blog article about his journey</a>.</p>
 
-<h2 id="known-limitations">Known limitations</h2>
+<h2 id="change-existing-accounts">Change existing accounts</h2>
+
+<h3 id="migrate-internal-accounts-to-saml">Migrate internal accounts to SAML</h3>
 
 <p>A manually registered user can log in via SAML, but his account is then migrated to <strong>SAML only</strong>,
 so he can’t log in via password any longer.
-Additionally, all configured SAML attributes will be applied.
-To change such an account back to “password login”, you need to update the <code class="language-plaintext highlighter-rouge">auth</code> column in the <code class="language-plaintext highlighter-rouge">kimai2_users</code> table and set the value from <code class="language-plaintext highlighter-rouge">saml</code> to <code class="language-plaintext highlighter-rouge">kimai</code>.</p>
+Additionally, all configured SAML attributes will be applied.</p>
 
 <p>This is an intended feature and not a security issue, <a href="/documentation/bughunter.html#saml-linking-of-existing-local-accounts">read why</a>.</p>
 
+<h3 id="migrate-saml-accounts-to-internal">Migrate SAML accounts to internal</h3>
+
+<p>To change a <code class="language-plaintext highlighter-rouge">SAML</code> account to “password login” follow these steps:</p>
+
+<ul>
+  <li>Activate the toggle in <a href="/documentation/configurations.html">System → Settings</a> in <code class="language-plaintext highlighter-rouge">Authentication</code> called <code class="language-plaintext highlighter-rouge">Change authentication of users with external login</code></li>
+  <li>Edit the user profile, there is now a new dropdown below the <code class="language-plaintext highlighter-rouge">Request new password</code> checkbox</li>
+  <li>Update the <code class="language-plaintext highlighter-rouge">Authentication</code> dropdown and select <code class="language-plaintext highlighter-rouge">Internal</code></li>
+  <li>Set a password for the user account or better activate <code class="language-plaintext highlighter-rouge">Request new password</code></li>
+</ul>
+
+<p>Be aware that this will switch back to <code class="language-plaintext highlighter-rouge">SAML</code> if the user logs-in again using it.</p>
+
 <h2 id="using-saml-only">Using SAML only</h2>
 
-<p>If SAML is activated, you can turn off the login form entirely by unchecking the <code class="language-plaintext highlighter-rouge">Login form</code> configuration under <code class="language-plaintext highlighter-rouge">Authentication</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
+<p>If SAML is activated, you can hide the login form entirely by unchecking the <code class="language-plaintext highlighter-rouge">Login form</code> configuration under <code class="language-plaintext highlighter-rouge">Authentication</code> at <a href="/documentation/configurations.html">System → Settings</a>.</p>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -874,7 +888,7 @@ Your user account might be migrated to a new username, which is used during the 
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a></li><li class="nav-item"><a href="#configuration-details" class="nav-link">Configuration details</a><ul><li class="nav-item"><a href="#multiline-certificate---x509cert" class="nav-link">Multiline Certificate - x509cert</a></li></ul></li><li class="nav-item"><a href="#identity-provider" class="nav-link">Identity provider</a><ul><li class="nav-item"><a href="#google-workspace" class="nav-link">Google Workspace</a></li><li class="nav-item"><a href="#azure" class="nav-link">Azure</a></li><li class="nav-item"><a href="#keycloak" class="nav-link">Keycloak</a></li><li class="nav-item"><a href="#authentik" class="nav-link">Authentik</a></li><li class="nav-item"><a href="#zitadel" class="nav-link">Zitadel</a></li></ul></li><li class="nav-item"><a href="#known-limitations" class="nav-link">Known limitations</a></li><li class="nav-item"><a href="#using-saml-only" class="nav-link">Using SAML only</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#api-access-does-not-work-after-changing-to-saml" class="nav-link">API access does not work after changing to SAML</a></li><li class="nav-item"><a href="#proxy-and-url-mismatch" class="nav-link">Proxy and URL mismatch</a></li></ul></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#installation" class="nav-link">Installation</a></li><li class="nav-item"><a href="#configuration-details" class="nav-link">Configuration details</a><ul><li class="nav-item"><a href="#multiline-certificate---x509cert" class="nav-link">Multiline Certificate - x509cert</a></li></ul></li><li class="nav-item"><a href="#identity-provider" class="nav-link">Identity provider</a><ul><li class="nav-item"><a href="#google-workspace" class="nav-link">Google Workspace</a></li><li class="nav-item"><a href="#azure" class="nav-link">Azure</a></li><li class="nav-item"><a href="#keycloak" class="nav-link">Keycloak</a></li><li class="nav-item"><a href="#authentik" class="nav-link">Authentik</a></li><li class="nav-item"><a href="#zitadel" class="nav-link">Zitadel</a></li></ul></li><li class="nav-item"><a href="#change-existing-accounts" class="nav-link">Change existing accounts</a><ul><li class="nav-item"><a href="#migrate-internal-accounts-to-saml" class="nav-link">Migrate internal accounts to SAML</a></li><li class="nav-item"><a href="#migrate-saml-accounts-to-internal" class="nav-link">Migrate SAML accounts to internal</a></li></ul></li><li class="nav-item"><a href="#using-saml-only" class="nav-link">Using SAML only</a></li><li class="nav-item"><a href="#troubleshooting" class="nav-link">Troubleshooting</a><ul><li class="nav-item"><a href="#api-access-does-not-work-after-changing-to-saml" class="nav-link">API access does not work after changing to SAML</a></li><li class="nav-item"><a href="#proxy-and-url-mismatch" class="nav-link">Proxy and URL mismatch</a></li></ul></li></ul>
                     
                     <ul class="nav">
                         <li>

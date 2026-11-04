@@ -825,6 +825,23 @@ users can edit their records until the fifth day of the month (because invoices 
   <li><code class="language-plaintext highlighter-rouge">Forgot password</code> - de-/activates the password reset function, that sends an email with a “reset my password” link</li>
   <li><code class="language-plaintext highlighter-rouge">Forgotten password - seconds before a user can request the next e-mail</code> - if a password-reset email was sent, you should not allow to request another one too soon (for security reasons)</li>
   <li><code class="language-plaintext highlighter-rouge">Forgotten password - seconds before a reset link expires</code> - how long a user can use the password reset link, it is recommended to keep this value below 1 day</li>
+  <li><code class="language-plaintext highlighter-rouge">Design</code> - the used <code class="language-plaintext highlighter-rouge">design</code> for anonymous screens (<code class="language-plaintext highlighter-rouge">Automatic</code>, <code class="language-plaintext highlighter-rouge">Bright</code>, <code class="language-plaintext highlighter-rouge">Dark</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Password strength</code> - allows you to set the required password strength, see below for an explanation (default <code class="language-plaintext highlighter-rouge">No requirement</code>)</li>
+  <li><code class="language-plaintext highlighter-rouge">Change authentication of users with external login</code> - allows to switch the authentication method of a user account back from <code class="language-plaintext highlighter-rouge">LDAP</code>/<code class="language-plaintext highlighter-rouge">SAML</code> to <code class="language-plaintext highlighter-rouge">internal</code></li>
+</ul>
+
+<p><strong>Password strength</strong></p>
+
+<p>This is not bound to the regular password rules you might know from other apps, this is calculated from the 
+length of the password and the difference in used characters/bumbers/signs. The rule of thumb is:
+normal is hard for average user, medium is almost imposs</p>
+
+<ul>
+  <li>No requirements: minimum length of 8 character</li>
+  <li>Normal: perfect balance of security and friction</li>
+  <li>Medium: it gets tough, almost too complex for average users</li>
+  <li>Strong: you need a password safe</li>
+  <li>Very strong: you really need a password safe</li>
 </ul>
 
 <h2 id="customer">Customer</h2>
