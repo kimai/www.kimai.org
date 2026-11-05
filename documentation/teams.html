@@ -695,6 +695,14 @@
 The teamleads have access to all contents and timesheets of the team. 
 Every content object can be linked to an arbitrary amount of teams.</p>
 
+<div class="youtube-wrapper" style="max-width: 560px;">
+    <a class="youtube-consent" href="https://www.youtube.com/watch?v=0NWSYR3JvxM&amp;t=139s" target="_blank" rel="noopener" data-youtube-id="0NWSYR3JvxM" data-youtube-start="139" data-youtube-title="Add Users, Teams &amp; Roles" aria-label="Play video: Add Users, Teams &amp; Roles">
+        <img class="youtube-consent-thumbnail" src="/images/video-thumbnails/create_users.webp" alt="" loading="lazy" width="1280" height="720" />
+        <span class="youtube-consent-play" aria-hidden="true"><i class="bx bx-play"></i></span>
+        <span class="youtube-consent-notice">Click to load the video from YouTube. Data will be transferred to Google.</span>
+    </a>
+</div>
+
 <h2 id="limit-access-with-teams">Limit access with teams</h2>
 
 <p>If you want to limit the access to Kimai functionality instead of content, 
@@ -740,7 +748,22 @@ please read the <a href="/documentation/permissions.html">permissions documentat
 
 <h2 id="create-a-team">Create a team</h2>
 
-<p>Team creation is limited to the user roles <code class="language-plaintext highlighter-rouge">System-Admin</code> and <code class="language-plaintext highlighter-rouge">Administrator</code>.</p>
+<p>Team creation is by default limited to the user roles <code class="language-plaintext highlighter-rouge">System-Admin</code> and <code class="language-plaintext highlighter-rouge">Administrator</code>.</p>
+
+<p>Open <code class="language-plaintext highlighter-rouge">System → Teams</code> and click <a class="btn btn-secondary px-3" href="#"><i class="bx bx-plus pe-2"></i>Create</a>. Give your team a name and select the users you want to include. Each team must contain at least one user.</p>
+
+<p>After adding your team members, select who will act as team lead by ticking the box next to their name. You can assign multiple team leads by selecting multiple boxes.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 800px">
+    <img src="/images/documentation/team-create.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Create team and assign team lead</figcaption>
+</figure>
+
+<div class="alert alert-info d-flex" role="alert"><i class="bx bx-message-rounded-detail lead me-3"></i>
+<p>Users without the <code class="language-plaintext highlighter-rouge">Teamlead</code> role can be chosen as well, those are different.
+In this context, <strong>team lead</strong> refers to a user’s position within the team hierarchy. 
+This is not the same as the Kimai <code class="language-plaintext highlighter-rouge">Teamlead</code> user role, which carries feature permissions.</p>
+</div>
 
 <h2 id="deactivated-users">Deactivated users</h2>
 
