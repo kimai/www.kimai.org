@@ -9,8 +9,6 @@ canonical: /documentation/shared-hosting.html
 
 ### Uberspace
 
-{% include docs-image.html src="/images/documentation/uberspace-logo.webp" title="Uberspace Logo" width="144px" %}
-
 [Uberspace](https://uberspace.de) is run by about a dozen people like you that strive to make technology accessible, understandable and manageable.
 
 You can find a detailed how-to guide for installing Kimai in their [Uberlab](https://lab.uberspace.de/guide_kimai/).
