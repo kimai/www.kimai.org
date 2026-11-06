@@ -76,6 +76,41 @@ It is not possible for a `System account` (see above) to become supervisor.
 ## Staff number
 
 The staff/account number appears in Exports and can be used to link users from your HR software to Kimai. 
+ 
+## API tokens
+
+Each user can generate multiple API tokens.
+
+Each token has the following fields:
+
+- **name**, which is only for yourself for simpler identification.
+- **expiration date** which is optional - if set, this token won't work from the configured date on
+- **last usage** will be updated once a minute, when used - helps to identify obsolete tokens
+
+A token is shown exactly once: directly after it was created. Afterwards it is no longer displayed, so it has to be
+copied before leaving the page.
+
+### Tokens and passwords
+
+API tokens are independent credentials and are not linked to the user's password:
+
+- changing the password or [requesting a new one](#request-new-password) does not revoke any token
+- a token stays valid until it expires or is deleted
+- deactivating the user blocks all tokens of this user, re-activating the user makes them work again
+
+To revoke access for a token, delete it in the user profile.
+Treat tokens like passwords: create one token per integration, set an expiration date where possible
+and delete tokens which are no longer used (see `last usage`).
+
+### Connect with QR code
+
+Right after a token was created, Kimai renders a QR code together with it. It carries the server URL and the new token,
+so an app can be configured by scanning it, instead of letting the user type a 25 character token on a phone keyboard.
+
+{% include docs-image.html src="/images/documentation/api-token-qr-code.webp" title="Example QR code for the payload below" width="320px" %}
+
+{% alert %}The payload is plain JSON and not a URL: scanning it with a generic camera app shows text and does not
+open anything. Apps have to use their own in-app scanner.{% endalert %}
 
 ## Filter and search
 
@@ -91,12 +126,47 @@ Besides these filters, you can query for a free search term, which will be searc
 
 {% include snippets/search-custom-field.md %}
 
-## Password reset
+## Password
 
-The reset password function is enabled by default, you can deactivate it through [System → Settings]({% link _documentation/configurations.md %}).
+These functions only apply to accounts which log in with a Kimai password.
+LDAP and SAML users manage their password in the external system.
 
-A user can reach it via a link from the login screen. After entering username or email-address, an email with a confirmation link will be sent.
-This link needs to be clicked, afterward the user can enter a new password.
+### Change password
+
+Users can change their own password in their profile, which requires to enter the current password.
+Administrators can set a new password for other users, without knowing the old one.
+
+After a password change:
+
+- the old password stops working immediately
+- all other logged-in browser sessions of this user are logged out, including `Remember me` logins
+- the session in which the password was changed stays logged in
+- password reset links which were sent before the change stop working
+
+A password change does **not** revoke [API tokens](#api-tokens): integrations and apps using one of the user's tokens keep working.
+If you change a password because the account might be compromised, also review the API tokens of this user and delete the ones you don't know or trust.
+
+### Request new password
+
+Administrators can activate `Request new password` when editing a user (or creating a new one).
+The user then has to choose a new password before they can continue to work in Kimai: they are redirected to the password form
+on their next page view, even if they are already logged in or come back through `Remember me`.
+
+The old password keeps working until the user has set the new one.
+API calls are not affected by this setting, existing API tokens keep working.
+
+### Forgot password
+
+The forgot password function is enabled by default, you can deactivate it through [System → Settings]({% link _documentation/configurations.md %}).
+
+A user can reach it via a link from the login screen. After entering username or email-address, an email with a login link will be sent.
+Clicking this link logs the user in and they have to choose a new password, before they can continue to work in Kimai.
+
+For security reasons, the form always shows the same confirmation, even if the account does not exist or cannot use this function (e.g. LDAP and SAML users).
+In these cases no email is sent.
+
+The link expires after the configured lifetime and becomes invalid as soon as the password was changed.
+Like every other password change, this logs out all other sessions of the user, but does not revoke API tokens.
 
 You can configure two settings to influence the security:
 
@@ -104,6 +174,8 @@ You can configure two settings to influence the security:
 - Retry pause (in seconds: 3600 = 1 hour) - the allowed time between multiple retries
 
 As this feature requires an email to work, you have to enable [email support]({% link _documentation/emails.md %}) to use it.
+On-premise installations additionally need the `TRUSTED_HOSTS` environment variable, see the [installation documentation]({% link _documentation/installation.md %}).
+Without it, the forgot password function is disabled.
 
 ## Login
 
@@ -123,15 +195,14 @@ form when you try to access them. This is a security feature to prevent abuse in
 
 Kimai supports 2FA (Two-Factor) authentication via TOTP tokens.
 
-The basic flows looks as this: 
-- You scan a QR code in your Kimai user preferences screen with a TOTP supporting app
-- Your app will show you a confirmation code, which then needs to be entered in Kimai
-- If the code was correct, Kimai will enable 2FA for your account 
-- The next time you log-in, you will have to open your app and enter the current confirmation code before entering Kimai 
+Two-factor authentication can be enabled per account by all users, including SAML accounts.
 
-The 2FA-mode can be enabled per account, settings can be accessed by the user himself or by any Super-Admin.
+The QR code is only shown to the user while setting up 2FA. 
+Scan it with every authenticator app you want to use before confirming. 
+Once 2FA is active, the code is no longer shown. 
+To add a device later, deactivate 2FA and set it up again: this creates a new code, and all previously added devices stop working.
 
-The two-factor authentication can be enabled by all users, even for SAML accounts. 
+Super-Admins cannot see or set up the code for other users, but they can deactivate 2FA for any account, for example when a user lost their device.
 
 ## Troubleshooting
 

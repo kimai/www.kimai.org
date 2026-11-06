@@ -91,6 +91,8 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 - `scripts/update-bundles.php`: fetches and updates bundle release/changelog data
 - `scripts/update-plans.php`: fetches and updates Kimai Cloud plan data
 - `scripts/update-version-number.sh`: updates `kimai_v2_version` in `_config.yml`
+- `scripts/generate-world-map.sh`: generates the world map SVGs `images/world-map-*.svg` from Natural Earth data
+- `scripts/update-customer-map.php`: writes `_data/customer-map.yml` from the raw customer numbers in `src/data/countries-*.csv` (git-ignored, never commit or publish them); do not edit the YAML manually
 
 - Before replacing script-based behavior with manual edits, check whether an existing script already owns that workflow.
 

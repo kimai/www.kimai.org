@@ -57,9 +57,11 @@ layout: page
     <li>Patched by: {{ page.developer }}</li>
 </ul>
 
+{% if page.cve_id != "pending" %}
 <p>
     First reported in GitHub advisory: <a href="https://github.com/kimai/kimai/security/advisories/{{ page.ghsa_id }}" target="_blank">{{ page.ghsa_id }}</a>
 </p>
+{% endif %}
 
         </div>
     </div>

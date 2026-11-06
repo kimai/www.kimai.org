@@ -14,7 +14,7 @@ layout: default
 <section class="container mt-4 mt-lg-5 mb-5 pb-2">
 
     {% comment %} ---- Back to the partner directory ---- {% endcomment %}
-    <a href="{% link _pages/{{ english_german }}/find-a-partner.html %}" class="d-inline-flex align-items-center text-muted text-decoration-none mb-4">
+    <a href="{% link _pages/{{ page.lang }}/find-a-partner.html %}" class="d-inline-flex align-items-center text-muted text-decoration-none mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2 flex-shrink-0"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
         {{ t.back }}
     </a>
@@ -44,7 +44,7 @@ layout: default
         <div class="col-lg-8">
 
             {% comment %} About {% endcomment %}
-            {% assign about = developer.introduction[english_german] | default: page.description | default: developer.description %}
+            {% assign about = developer.introduction[english_german] | default: developer.description %}
             {% assign body = content | strip %}
             <div class="card mb-4">
                 <div class="card-body p-4 p-lg-5">
@@ -129,6 +129,7 @@ layout: default
                                 {% when 'nl' %}🇳🇱
                                 {% when 'fr' %}🇫🇷
                                 {% when 'be' %}🇧🇪
+                                {% when 'cz' %}🇨🇿
                                 {% when 'europe' %}🇪🇺
                                 {% when 'usa' %}🇺🇸
                                 {% else %}🌐
@@ -143,6 +144,7 @@ layout: default
                                     {% when 'nl' %}Niederlande
                                     {% when 'fr' %}Frankreich
                                     {% when 'be' %}Belgien
+                                    {% when 'cz' %}Tschechien
                                     {% when 'europe' %}Europa
                                     {% when 'usa' %}USA
                                     {% else %}Weltweit
@@ -155,6 +157,7 @@ layout: default
                                     {% when 'nl' %}Netherlands
                                     {% when 'fr' %}France
                                     {% when 'be' %}Belgium
+                                    {% when 'cz' %}Czechia
                                     {% when 'europe' %}Europe
                                     {% when 'usa' %}USA
                                     {% else %}World-wide

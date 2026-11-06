@@ -36,7 +36,7 @@
 
 ## Roadmap
 
-Please have a look at [this GitHub list of feature requests for the plugin](https://github.com/kimai/Paid-plugins/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22working%20times%22).
+Please have a look at [this GitHub list of feature requests for the plugin](https://roadmap.kimai.org/?tags=working-times).
 
 Please share your votes and input in these existing issues. The features will be added in the future, but there is no guarantee when or in which order.
 
@@ -64,7 +64,7 @@ If I decide to add one of these feature, it will be moved to the "Roadmap" secti
 
 ```
 - Allow export of absences in ical format (or similar format) for use in external calendars (e.g. Outlook)
-- Configurable amount of allowed negative hours for time-off: https://github.com/kimai/Paid-plugins/issues/159
+- Configurable amount of allowed negative hours for time-off: https://roadmap.kimai.org/posts/115/contracts-feature-allow-negative-hours-for-time-off
 - Prevent that certain days can be booked for vacation
 - Add first start- and last end-time as begin and end times to the PDF
 - Configure a dedicated project that will be ignored when calculating the attendance time

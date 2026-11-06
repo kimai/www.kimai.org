@@ -128,7 +128,6 @@ bundle:
 - `demo` - set to `true` to show the demo tab
 - `changelog` - set to `true` to show a changelog tab
 - `screenshots` - screenshot IDs from `_data/screenshots.yml`
-- `screenshot` - direct image URLs, usually only used for simple cases
 - `new` - legacy field that may be used for temporary highlighting
 
 ### Plugin-specific `bundle` block
@@ -238,6 +237,8 @@ Current repository reality:
 If you want your item to appear in additional locales immediately, create the matching wrapper pages and add the translated `title` and `intro` to the corresponding `_data/<locale>/store.yml` files.
 
 ## Step 6: Add screenshots
+
+Only use WEBP format.
 
 If your item has screenshots, there are two parts:
 

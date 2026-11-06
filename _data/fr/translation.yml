@@ -87,7 +87,7 @@ index:
 download:
     name: Installation
     title: Installation de Kimai
-    subtitle: Téléchargement et installation avec SSH, Docker et Kubernetes - Suivi du temps Kimai
+    subtitle: Exécutez Kimai sur votre propre infrastructure, avec Docker ou via une configuration manuelle du serveur. Choisissez la solution la mieux adaptée à votre environnement.
     eyebrow: Self-Host Kimai
 hosted:
     name: Cloud
@@ -285,6 +285,8 @@ newsletter:
     archive: Archive
     name: Nouveautés
     subtitle: Si vous auto-hébergez Kimai (ou que vous l'envisagez), ne manquez pas notre newsletter. Nous partageons des nouvelles et des idées avec une communauté de personnes qui préfèrent contrôler pleinement leurs données.
+    success: Your subscription has been successful.
+    error: Your subscription could not be saved. Please try again.
 developer:
     kevinpapst:
         intro: "J'ai toujours rêvé de gagner ma vie grâce à un produit open source. Avec Kimai, j'ai pu développer un logiciel qui apporte une grande valeur ajoutée à mes clients et dont le développement me motive chaque jour.\n\nJe tiens à remercier tout particulièrement la formidable communauté pour sa fidélité au fil des ans. Je me réjouis à l'idée des 10 prochaines années de Kimai 🚀"
@@ -495,7 +497,7 @@ pricing:
     annual: Annuellement
     included: 'Qu''est-ce qui est inclus ?'
     not_available: Non disponible
-    subtitle: Ces abonnements sont disponibles pour les clients hébergés
+    subtitle: Toutes les fonctionnalités disponibles dès le premier jour. Commencez gratuitement, payez par utilisateur et résiliez à tout moment.
     cancellation: Vous pouvez résilier votre abonnement à tout moment jusqu'à un jour avant la fin de la période d'abonnement.
     tax_exclusive: Tous les prix s'entendent hors taxes.
     favorite: Most popular
@@ -735,18 +737,18 @@ industries:
                 In return, we ask for a testimonial with your logo and name, or an interview so we can feature you as a user.
             title: Our affordable non-profit plan for you
         introduction: |
-            Today we say thank you to the many NGOs and NPOs:
+            Aujourd’hui, nous tenons à remercier les nombreuses ONG et associations à but non lucratif :
 
-            - Charitable and philanthropic organizations
-            - Public and independent schools, universities, community colleges
-            - Public safety agencies, emergency services, disaster relief, fire departments, civil protection
-            - Conservation, sports, and all other clubs that foster community and teach skills
-            - Social services, elderly care, and youth facilities
-            - … and the many, many others we forgot to mention
+            - Les organisations caritatives et philanthropiques
+            - Les écoles publiques et privées, les universités et les établissements d’enseignement supérieur communautaires
+            - Les organismes de sécurité publique, les services d’urgence, les services de secours en cas de catastrophe, les pompiers et la protection civile
+            - Les associations de protection de la nature, les clubs sportifs et tous les autres clubs qui favorisent la vie communautaire et transmettent des compétences
+            - Les services sociaux, les structures d’accueil pour personnes âgées et les centres pour la jeunesse
+            - … et les très nombreuses autres que nous avons oublié de mentionner
 
-            You give your time, create small and great wonders, and enrich the lives of so many: **Thank you for being there ❤️**
+            Vous donnez de votre temps, vous accomplissez des merveilles, petites ou grandes, et vous enrichissez la vie de tant de personnes : **Merci d’être là ❤️**
 
-            As an organization grows, donations increase, and the first employees come on board, the need for structured time tracking becomes clear. Documenting workflows transparently helps identify opportunities for improvement early on – freeing up resources for your actual mission while laying the groundwork for transparent accountability reports.
+            À mesure qu’une organisation se développe, que les dons augmentent et que les premiers employés rejoignent l’équipe, la nécessité d’un suivi structuré du temps de travail devient évidente. Documenter les flux de travail de manière transparente permet d’identifier très tôt les possibilités d’amélioration, ce qui libère des ressources pour votre mission proprement dite tout en jetant les bases de rapports de responsabilité transparents.
         subtitle: Less administrative burden, so your mission stays in focus
         cta:
             title: |
@@ -832,105 +834,147 @@ general:
     name: General
     subtitle: Instructions, product updates, and other news from the Kimai team.
 become-a-partner:
-    name: Put your work forward for recognition
+    name: Faites reconnaître votre travail
     express_interest:
         items:
             languages:
-                title: Languages
-                description: The languages you can support clients in.
+                title: Langues
+                description: Les langues dans lesquelles vous pouvez accompagner vos clients.
             category:
-                title: Partner category
-                description: Whether you apply as a Service Partner, Development Partner, or both.
+                title: Catégorie de partenaire
+                description: Si vous postulez en tant que partenaire de services, partenaire de développement, ou les deux.
             regions:
-                title: Regions & availability
-                description: Which regions you serve and whether you offer remote, on-site, or both.
+                title: Régions et disponibilité
+                description: Les régions que vous couvrez et si vous proposez des prestations à distance, sur site, ou les deux.
             name:
-                title: Company or individual name
-                description: The official name of your company, or your full name if you apply as an individual.
+                title: Nom de l'entreprise ou de la personne
+                description: Le nom officiel de votre entreprise, ou votre nom complet si vous postulez en tant que particulier.
             experience:
-                description: Implemented projects, published extensions, or both. Links to repositories, case studies or client references help us assess your qualification.
-                title: Relevant work & experience
+                description: Projets réalisés, extensions publiées, ou les deux. Des liens vers des dépôts, des études de cas ou des références clients nous aident à évaluer votre qualification.
+                title: Travaux et expérience pertinents
             website:
-                description: A link to your company or personal website.
-                title: Website
-        label: Express interest
-        description: Share the essentials as in the list below. We will review your submission.
-        heading: Tell us about your work
+                description: Un lien vers le site web de votre entreprise ou votre site personnel.
+                title: Site web
+        label: Manifester son intérêt
+        description: Communiquez-nous les informations de la liste ci-dessous et nous vous recontacterons après examen.
+        heading: Présentez-nous votre travail
     benefits:
         listing:
-            title: Directory listing
-            description: A profile in the public partner directory, surfaced to organisations actively looking for trusted help with Kimai.
+            title: Référencement dans l'annuaire
+            description: Un profil dans l'annuaire public des partenaires, mis en avant auprès des organisations qui recherchent activement une aide fiable pour Kimai.
         roadmap:
-            description: Briefings on what's coming next, so that partners can plan, prepare and advise their clients ahead of release.
-            title: Early roadmap access
+            description: Des informations sur les nouveautés à venir, afin que les partenaires puissent planifier, se préparer et conseiller leurs clients avant la sortie.
+            title: Accès anticipé à la feuille de route
         leads:
-            description: Introductions to organisations whose needs match your track, region and expertise.
-            title: Qualified lead referrals
+            description: Des mises en relation avec des organisations dont les besoins correspondent à votre catégorie, votre région et votre expertise.
+            title: Recommandation de prospects qualifiés
         badge:
-            description: The right to display the Official Kimai Partner mark on your site and proposals — a clear, verifiable signal of your standing.
-            title: Official badge & logo usage
-    eyebrow: Become a Partner
+            description: Le droit d'afficher la marque Partenaire officiel Kimai sur votre site et dans vos propositions — un signal clair et vérifiable de votre statut.
+            title: Badge officiel et utilisation du logo
+    eyebrow: Devenir partenaire
     recognition:
-        description: Every element below follows from being recognised — it reflects demonstrated competence and continued good standing.
-        heading: Earned standing for Kimai partners
-        eyebrow: What recognition includes
-    cta_button: Express interest
-    subtitle: Recognition is granted to organisations and developers who have demonstrated their competence with Kimai. Tell us about your work and we will put you in front of the clients looking for exactly your skills.
+        description: Chacun des éléments ci-dessous découle de la reconnaissance — il reflète une compétence démontrée et une bonne réputation durable.
+        heading: Un statut mérité pour les partenaires Kimai
+        eyebrow: Ce que comprend la reconnaissance
+    cta_button: Manifester son intérêt
+    subtitle: Cette reconnaissance est accordée aux organisations et aux développeurs qui ont démontré leur compétence avec Kimai. Présentez-nous votre travail et nous vous mettrons en avant auprès des clients qui recherchent précisément vos compétences.
 partner-detail:
     contact: Contact
-    since_label: Partner since
-    about: About us
-    extensions: Published extensions
-    verified: Verified partner
-    back: Back to the partner directory
-    contact_button: Get in touch
-    languages: Languages
-    regions: Regions
+    since_label: Partenaire depuis
+    about: À propos de nous
+    extensions: Extensions publiées
+    verified: Partenaire vérifié
+    back: Retour à l'annuaire des partenaires
+    contact_button: Prendre contact
+    languages: Langues
+    regions: Régions
     services: Services
 partner-services:
-    other: Other
-    development: Development
+    other: Autre
+    development: Développement
     installation: Installation
-    training: Training
-    slas: SLAs (support & maintenance)
-    hosting: Hosting
+    training: Formation
+    slas: SLA (support et maintenance)
+    hosting: Hébergement
 partner:
     how:
         steps:
             three:
-                description: Recognized partners receive the official designation, partner badge, client leads and a place in the partner directory.
-                title: Recognition & listing
+                description: Les partenaires reconnus reçoivent le statut officiel, le badge partenaire, des demandes de clients et une place dans l'annuaire des partenaires.
+                title: Reconnaissance et référencement
             two:
-                title: Alignment review
-                description: 'We review the work and how the partner operates: company values, data protection and conduct towards customers.'
+                title: Examen de compatibilité
+                description: 'Nous examinons les activités et le mode de fonctionnement du partenaire : ses valeurs d''entreprise, sa politique de protection des données et son comportement envers les clients.'
             four:
-                description: Recognition is revisited on a yearly basis and reflects current standing.
-                title: Periodic review
+                description: La reconnaissance est réévaluée chaque année et reflète la situation actuelle.
+                title: Réévaluation périodique
             one:
-                title: Demonstrate competence
-                description: Show real implementation work, published extensions, or both — alongside a clear understanding of the platform.
-        title: A standard we maintain
-        description: Recognition follows a deliberate path. There is no instant sign-up — the designation is granted, held, and revisited over time.
-        eyebrow: HOW IT WORKS
-    name: Find the Kimai expert your project needs
+                title: Démontrer sa compétence
+                description: Présentez des projets de mise en œuvre réels, des extensions publiées, ou les deux — avec une bonne compréhension de la plateforme.
+        title: Un standard que nous entretenons
+        description: La reconnaissance suit un processus réfléchi. Il n'y a pas d'inscription instantanée — le statut est accordé, conservé et réévalué au fil du temps.
+        eyebrow: COMMENT ÇA MARCHE
+    name: Trouvez l'expert Kimai dont votre projet a besoin
     what:
-        description: The Partner Program identifies trusted experts around Kimai so clients can find help with confidence — and so the partners who have demonstrated their competence are properly acknowledged for it.
-        title: Recognition for the people who make Kimai work in the real world
-        eyebrow: What it is
+        description: Le Programme de partenaires identifie des experts Kimai de confiance afin que les clients trouvent de l'aide en toute sérénité — et que les partenaires ayant démontré leur compétence soient reconnus à leur juste valeur.
+        title: Une reconnaissance pour celles et ceux qui font fonctionner Kimai dans le monde réel
+        eyebrow: De quoi s'agit-il
     partner_types:
         service:
-            title: Service partners
-            description: Agencies, consultancies and integrators who install, host, support, train and tailor Kimai for organisations. Recognised for hands-on implementation experience and a track record of well-run deployments.
+            title: Partenaires de services
+            description: Agences, cabinets de conseil et intégrateurs qui installent, hébergent, assistent, forment et adaptent Kimai pour des organisations. Reconnus pour leur expérience concrète de mise en œuvre et leurs déploiements réussis.
         developer:
-            description: Teams and individuals who build plugins, extensions and integrations on top of Kimai. Recognised for published, maintained work that extends the platform for the wider community.
-            title: Development partners
-    subtitle: Recognition is granted to organisations and developers who have demonstrated their competence with Kimai. Tell us about your expertise — we will connect you to the client waiting for your help.
-    eyebrow: Official Kimai Partner Program
-    menu: Partner
+            description: Équipes et personnes qui développent des plugins, extensions et intégrations pour Kimai. Reconnus pour des travaux publiés et maintenus qui enrichissent la plateforme pour toute la communauté.
+            title: Partenaires de développement
+    subtitle: Cette reconnaissance est accordée aux organisations et aux développeurs qui ont démontré leur compétence avec Kimai. Parlez-nous de votre expertise — nous vous mettrons en relation avec le client qui attend votre aide.
+    eyebrow: Programme officiel de partenaires Kimai
+    menu: Partenaires
 find-a-partner:
-    view_profile: View profile
-    name: Official Kimai Partners, ready to help
-    subtitle: Every partner listed here has been recognised by Kimai for demonstrated competence.
-    eyebrow: Find a Partner
+    view_profile: Voir le profil
+    name: Partenaires officiels Kimai, prêts à vous aider
+    subtitle: Chaque partenaire présenté ici a été reconnu par Kimai pour sa compétence démontrée.
+    eyebrow: Trouver un partenaire
 video-play: Play video
 video-consent: Click to load the video from YouTube. Data will be transferred to Google.
+map:
+    title: Kimai à travers le monde
+    level_many: Plus de %count% clients
+    subtitle: Plus de %teams% équipes dans plus de %count% pays à travers le monde utilisent Kimai pour suivre leur temps de travail — nous leur sommes reconnaissants pour leur immense confiance.
+    level_one: Plus d'un client
+faqs:
+    partner_program:
+        question_1:
+            question: "Que signifie la reconnaissance en tant que Partenaire officiel Kimai ?"
+            answer: "**Partenaire officiel Kimai** est un statut attribué par Kimai aux entreprises et aux développeurs qui ont démontré une solide expertise de la plateforme et agissent en accord avec les valeurs de Kimai. Les partenaires travaillent de manière indépendante ; Kimai facilite la mise en relation si nécessaire, mais n'intervient pas dans les missions que les partenaires réalisent pour leurs clients."
+        question_2:
+            question: "Que signifie le badge partenaire et comment l'utiliser ?"
+            answer: "Le badge partenaire montre aux clients que l'expérience d'un partenaire a été examinée et reconnue par Kimai. La reconnaissance est valable un an et est renouvelée après un réexamen. Tant que la reconnaissance est active, le partenaire peut se présenter comme **Partenaire officiel Kimai** et afficher le badge partenaire sur son propre site web, dans ses supports marketing et dans sa communication avec ses clients."
+        question_3:
+            question: "Qui peut participer au Programme de partenaires Kimai ?"
+            answer: |
+                Les entreprises et les particuliers qui souhaitent devenir Partenaires officiels Kimai doivent remplir certaines exigences minimales :
+                - une présence professionnelle crédible
+                - une expérience documentée de Kimai
+                - une attitude respectueuse envers l'open source et la communauté
+                - des connaissances à jour sur les versions de Kimai prises en charge
+                - au moins 3 projets clients ou 12 mois d'expérience avec Kimai
+                - au moins un interlocuteur technique désigné
+                - des références clients ou des études de cas existantes.
+        question_4:
+            question: "Comment se déroule le processus de reconnaissance des partenaires ?"
+            answer: "Dans un premier temps, l'entreprise ou la personne souhaitant devenir Partenaire officiel Kimai doit envoyer une demande comme décrit sur la page **Devenir partenaire**. Si les exigences minimales sont remplies, un entretien en ligne est organisé. Après un entretien concluant et l'acceptation des conditions du programme, le candidat est reconnu comme **Partenaire officiel Kimai**."
+        question_5:
+            question: "Kimai prélève-t-il une commission pour la mise en relation entre partenaires et clients ?"
+            answer: "Oui — une commission d'apport de 10 % s'applique à la première mission conclue via l'annuaire des partenaires Kimai ou suite à une recommandation directe de Kimai. Cette commission finance le fonctionnement et le développement continu du Programme de partenaires, de l'annuaire des partenaires et de la boutique de plugins, grâce auxquels les partenaires sont trouvés et leurs services rendus visibles."
+        question_6:
+            question: "Existe-t-il un classement des partenaires ?"
+            answer: "Il n'existe actuellement aucun système de classement. La reconnaissance en tant que **Partenaire officiel Kimai** confère à tous les partenaires les mêmes avantages et les mêmes obligations."
+        question_7:
+            question: "Un partenaire peut-il perdre sa reconnaissance ?"
+            answer: "Oui. La reconnaissance peut être retirée — par exemple en cas de fausses déclarations, de baisse durable de la qualité ou d'un comportement contraire aux attentes du programme. La reconnaissance n'est valable que tant que le partenaire conserve une bonne réputation ; elle ne constitue pas un droit acquis de manière permanente."
+        question_8:
+            question: "Comment trouver le bon partenaire ?"
+            answer: |
+                Il existe deux possibilités :
+                1. Rendez-vous sur la page **Trouver un partenaire**, choisissez un partenaire adapté et contactez-le via les coordonnées indiquées.
+                2. Si vous ne savez pas quel partenaire vous convient le mieux, envoyez une demande avec une brève description de votre projet à <partner@kimai.org>. Votre demande sera transmise aux partenaires concernés afin que les Partenaires officiels Kimai intéressés puissent vous contacter.

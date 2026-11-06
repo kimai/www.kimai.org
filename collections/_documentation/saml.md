@@ -174,18 +174,30 @@ For Authentik, please check the [Authentik SAML documentation]({% link _document
 
 We don't have documentation about it yet, but [Vasili wrote a blog article about his journey](https://blog.vasi.li/setting-up-saml-for-kimai-time-tracker-using-zitadel-idp/). 
 
-## Known limitations
+## Change existing accounts
+
+### Migrate internal accounts to SAML
 
 A manually registered user can log in via SAML, but his account is then migrated to **SAML only**,
 so he can't log in via password any longer.
 Additionally, all configured SAML attributes will be applied.
-To change such an account back to "password login", you need to update the `auth` column in the `kimai2_users` table and set the value from `saml` to `kimai`.
 
 This is an intended feature and not a security issue, [read why]({% link _documentation/developer/bughunter.md %}#saml-linking-of-existing-local-accounts).
 
+### Migrate SAML accounts to internal
+
+To change a `SAML` account to "password login" follow these steps:
+
+- Activate the toggle in [System → Settings]({% link _documentation/configurations.md %}) in `Authentication` called `Change authentication of users with external login` 
+- Edit the user profile, there is now a new dropdown below the `Request new password` checkbox
+- Update the `Authentication` dropdown and select `Internal`
+- Set a password for the user account or better activate `Request new password`
+
+Be aware that this will switch back to `SAML` if the user logs-in again using it. 
+
 ## Using SAML only
 
-If SAML is activated, you can turn off the login form entirely by unchecking the `Login form` configuration under `Authentication` at [System → Settings]({% link _documentation/configurations.md %}).
+If SAML is activated, you can hide the login form entirely by unchecking the `Login form` configuration under `Authentication` at [System → Settings]({% link _documentation/configurations.md %}).
 
 ## Troubleshooting
 

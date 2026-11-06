@@ -115,6 +115,8 @@ The following screenshot shows an example of the attribute mapping including gro
 **Configure "Attributes & Claims":**
 {% include docs-image.html src="/images/documentation/cloud/saml-azure-attributes.webp" title="Azure - Attributes & Claims" %}
 
+The role mapping is expected in the `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` claim.
+
 **Configure "Groups":**
 - In the **Microsoft Entra ID** section, choose **Groups** from the navigation.
 - Click **New group** (group type: Security) and create one group for each Kimai role:
@@ -138,12 +140,14 @@ There is one difference for the Cloud: `authnRequestsSigned` is not enabled, so 
 Define the user attribute mapping as follows (**case is important; configure all attributes, even the ones you don't use**):
 
 - `Basic Information > Primary email` → `Email`
-- `Basic Information > First name` → `FirstName`
-- `Basic Information > Last name` → `LastName`
-- `Employee Details > Employee ID` → `AccountNumber`
-- `Employee Details > Title` → `Title`
+- `Basic Information > First name` → `FirstName`: optional, will be used in `Alias`
+- `Basic Information > Last name` → `LastName`: optional, will be used in `Alias`
+- `Employee Details > Employee ID` → `AccountNumber`: optional, will be used in `Staff number`
+- `Employee Details > Title` → `Title`: optional, will be used in `Title`
 
-Also edit the SAML capabilities and set the **Name ID format** to `email`.
+Edit the SAML capabilities and set the **Name ID format** to `email`.
+
+The role mapping is expected in the `Roles` attribute.
 
 ## Auth0
 
@@ -160,15 +164,34 @@ Customers report successful use of `Auth0` as Identity Provider with the followi
 }
 ```
 
+The attributes that Kimai expects are:
+
+- `Email`
+- `FirstName`: optional, will be used in `Alias`
+- `LastName`: optional, will be used in `Alias`
+- `AccountNumber`: optional, will be used as `Staff number`
+- `Title`: optional, will be used in `Title`
+
+The role mapping is expected in the `http://schemas.xmlsoap.org/claims/groups` attribute.
+
 ## Authentik
 
 Customers reported successful use of `Authentik` as Identity Provider.
 
-Unfortunately we cannot provide examples at this point, but we look forward to hear back from you, if your company uses it!
+Our Authentik connector expects these attributes:
+
+- `$http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`: `Email`
+- `$http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`: `Alias` (optional)
+
+The role mapping is expected in the `http://schemas.xmlsoap.org/claims/Group` attribute.
+
+We look forward to hear back from you, if your company uses it, so we can improve the docs.
 
 ## Okta
 
-Customers report successful use of `Okta` as Identity Provider with the following settings:
+Customers report successful use of `Okta` as Identity Provider using the following settings:
 
 - Single Sign-On URL: https://bnpnl.oktapreview.com/app/xxxxxxxxxxxxx/xxxxxxxxxxxxxxxxxxx/sso/saml
 - Entity ID: http://www.okta.com/xxxxxxxxxxxxxxxxxxx
+
+The role mapping is expected in the `Roles` attribute.

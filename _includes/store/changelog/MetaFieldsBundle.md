@@ -1,3 +1,9 @@
+**Version 2.15.0**
+
+Compatibility: requires minimum Kimai 2.69.0
+
+- Rely on core translations
+
 **Version 2.14.0**
 
 Compatibility: requires minimum Kimai 2.62.0

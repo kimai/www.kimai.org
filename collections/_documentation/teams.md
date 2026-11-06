@@ -9,6 +9,8 @@ A team consists of teamleads and regular team members.
 The teamleads have access to all contents and timesheets of the team. 
 Every content object can be linked to an arbitrary amount of teams.
 
+{% include youtube-video.html id="create_users" chapter="teams" %}
+ 
 ## Limit access with teams
 
 If you want to limit the access to Kimai functionality instead of content, 
@@ -45,7 +47,30 @@ Contents:
 
 ## Create a team
 
-Team creation is limited to the user roles `System-Admin` and `Administrator`.
+Team creation is by default limited to the user roles `System-Admin` and `Administrator`.
+
+Open `System → Teams` and click {% include demo-action-button.html icon="create" title="Create" %}. Give your team a name and select the users you want to include. Each team must contain at least one user.
+
+After adding your team members, select who will act as team lead by ticking the box next to their name. You can assign multiple team leads by selecting multiple boxes.
+
+{% include docs-image.html src="/images/documentation/team-create.webp" title="Create team and assign team lead" %}
+
+{% alert info %}
+Users without the `Teamlead` role can be chosen as well, those are different.
+In this context, **team lead** refers to a user's position within the team hierarchy. 
+This is not the same as the Kimai `Teamlead` user role, which carries feature permissions.
+{% endalert %}
+ 
+## Deactivated users
+
+Deactivating a user does not change their team memberships:
+
+- The user can no longer log in, neither in the web interface nor via API, so they lose access to all team contents
+- The user stays a member of their teams, existing timesheets remain visible to the teamleads
+- When editing a team, deactivated members stay in the member list and are not silently removed on save
+- Deactivated users can not be added as new team members, they are not offered in the user selection
+- Everyone who can edit the team can remove deactivated members, e.g. to clean up after an employee left
+- Re-activating the user restores the access through all teams they are still a member of
 
 ## Filter and search 
 

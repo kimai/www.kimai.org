@@ -1,3 +1,13 @@
+**Version 2.8.0**
+
+Compatibility: requires minimum Kimai 2.56.0
+
+- Show newlines in listing page
+- Support cache warmup
+- Fix locale leaking in multi-language requests (like invoice creation in different language)
+
+This version requires PHP >= 8.2.
+
 **Version 2.7.0**
 
 Compatibility: requires minimum Kimai 2.25.0

@@ -5,8 +5,26 @@
         <div class="row justify-content-center pb-lg-4 pb-xl-5">
             <div class="col-xl-8 col-lg-9 col-md-10 pb-md-2">
 
-                {% include faq.html type=include.type %}
-
+                {% if site.data[page.lang].translation.faqs[include.type] != nil %}
+                    <div class="accordion" id="faq_{{ include.type }}">
+                        {% for entry in site.data[page.lang].translation.faqs[include.type] %}
+                        {% assign faq = entry[1] %}
+                        <div class="accordion-item border-0 rounded-3 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button shadow-none rounded-3 {% if forloop.first == false %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#faq_{{ include.type }}_q{{ forloop.index }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="q-1">{{ faq.question }}</button>
+                            </h2>
+                            <div class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" id="faq_{{ include.type }}_q{{ forloop.index }}" data-bs-parent="#faq_{{ include.type }}">
+                                <div class="accordion-body fs-sm pt-0">
+                                    {% capture answer %}{{ faq.answer }}{% endcapture %}
+                                    <p>{{ answer | markdownify }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {% include faq.html type=include.type %}
+                {% endif %}
             </div>
         </div>
     </div>

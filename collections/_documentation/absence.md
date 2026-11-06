@@ -37,7 +37,7 @@ There are 2 phases that each absence has to go through:
 - New absence: moves the absence to the `Requested` list and sends an email to the supervisor to ask for confirmation
   - Approval by the supervisor: the absence will be moved to the `Approved` list and an email is sent to the user to confirm the approval 
   - Rejection by the supervisor: the absence will be moved back to the `New` list and an email is sent to the user to inform about the rejection 
-- Approved absences: can still be deleted, until they are locked 
+- Approved absences: can be deleted by Admins, until they are locked (see `delete_other_absence` permission)
 
 ## How absences affect expected working time
 
@@ -125,7 +125,7 @@ Unpaid holidays cover a date-range of full days.
 The absence calendar is a monthly report at [Report → Absence calendar]({% link _documentation/reporting.md %}).
 It shows one row per user and one column per day of the selected month, so you can see at a glance who is absent and when.
 
-{% include docs-image.html src="/images/documentation/absence-calendar.webp" title="Absence calendar" %}
+{% include youtube-video.html id="absence_calendar" %}
 
 Typical use cases are planning team capacity, checking whether a requested vacation collides with another team member, or getting an overview of the current month before approving new requests.
 

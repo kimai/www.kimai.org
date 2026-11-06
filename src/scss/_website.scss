@@ -296,9 +296,57 @@ pre {
 }
 
 /* ====================================================== */
-/* Newsletter input */
+/* Newsletter form (see _includes/section-newsletter.html) */
+/* The markup is Brevo's HTML form embed styled with Bootstrap. Brevo's stylesheet is not loaded, */
+/* these are the hooks that Brevo's main.js toggles while validating and submitting the form. */
 input:user-invalid {
     border-color: $form-feedback-invalid-color;
+}
+
+.sib-form-container {
+    .sib-form-message-panel {
+        display: none;
+    }
+
+    .sib-form-message-panel--active {
+        display: flex;
+    }
+
+    .form__entry.entry_errored .form-control {
+        border-color: $form-feedback-invalid-color;
+    }
+
+    .input--hidden {
+        display: none !important;
+    }
+
+    .sib-hide-loader-icon {
+        display: none;
+    }
+
+    // spinner inside the submit button, shown while the subscription is sent
+    .progress-indicator__icon {
+        width: 1em;
+        height: 1em;
+        margin-right: .5rem;
+        vertical-align: -.125em;
+        fill: currentColor;
+        animation: newsletter-spin 1.3s cubic-bezier(.46, .35, .39, .85) infinite;
+    }
+}
+
+@keyframes newsletter-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+// The floating reCAPTCHA badge is hidden, the form shows the required Google notice instead
+.grecaptcha-badge {
+    visibility: hidden;
 }
 
 /* Pricing page and maybe others, a success check to indicate "this is included" */

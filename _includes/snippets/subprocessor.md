@@ -8,7 +8,7 @@
     {% assign t_optional_usage = "Optionale Nutzung" %}
     {% assign t_optional_usage_text = "nur, wenn die Anmeldung am Kundenkonto über den jeweiligen Anbieter gewählt wird." %}
     {% assign t_website_visitors = "Webseiten Besucher" %}
-    {% assign t_google_website = "YouTube Videos (erst nach Start des Videos), reCAPTCHA bei der manuellen Registrierung, Webfonts" %}
+    {% assign t_google_website = "YouTube Videos (erst nach Start des Videos), reCAPTCHA für Spam Schutz, Webfonts" %}
     {% assign t_onpremise_customers = "OnPremise Kunden" %}
     {% assign t_onpremise_intro = "Beide Anbieter verkaufen die Plugins im eigenen Namen und sind dabei eigenständig verantwortlich." %}
 {% else %}
@@ -21,7 +21,7 @@
     {% assign t_optional_usage = "Optional usage" %}
     {% assign t_optional_usage_text = "only if the respective provider is chosen to sign in to the customer account." %}
     {% assign t_website_visitors = "Website visitors" %}
-    {% assign t_google_website = "YouTube videos (only after starting a video), reCAPTCHA during manual registration, webfonts" %}
+    {% assign t_google_website = "YouTube videos (only after starting a video), reCAPTCHA for spam protection, webfonts" %}
     {% assign t_onpremise_customers = "OnPremise customers" %}
     {% assign t_onpremise_intro = "Both providers sell the plugins in their own name and act as independent controllers." %}
 {% endif %}
@@ -53,7 +53,7 @@ Stripe Payments Europe Limited, The One Building, 1 Grand Canal Street Lower, Du
 **GitHub**: Cloud OAuth login, [Link](https://github.com), [Privacy policy](https://github.com/site/privacy)  
 GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA
 
-**Google**: Cloud OAuth login, [Link](https://www.google.com), [Privacy policy](https://policies.google.com/privacy)  
+**Google**: Cloud OAuth login, [Link](https://www.google.com), [Privacy policy](https://policies.google.com/privacy), [Terms](https://policies.google.com/terms)  
 Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland
 
 ##### {{ t_website_visitors }}

@@ -41,7 +41,7 @@
                         </div>
 
                         {% comment %} Description {% endcomment %}
-                        <p class="text-muted">{{ developer.introduction[english_german] | default: partner.description | default: developer.description }}</p>
+                        <p class="text-muted">{{ developer.introduction[english_german] | default: developer.description }}</p>
 
                         {% comment %} Bottom cluster: services + languages, pinned directly above the CTA {% endcomment %}
                         <div class="mt-auto">
