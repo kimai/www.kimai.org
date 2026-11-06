@@ -555,6 +555,8 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
     <figcaption class="figure-caption">Azure - Attributes &amp; Claims</figcaption>
 </figure>
 
+<p>The role mapping is expected in the <code class="language-plaintext highlighter-rouge">http://schemas.microsoft.com/ws/2008/06/identity/claims/groups</code> claim.</p>
+
 <p><strong>Configure “Groups”:</strong></p>
 <ul>
   <li>In the <strong>Microsoft Entra ID</strong> section, choose <strong>Groups</strong> from the navigation.</li>
@@ -591,13 +593,15 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Primary email</code> → <code class="language-plaintext highlighter-rouge">Email</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; First name</code> → <code class="language-plaintext highlighter-rouge">FirstName</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Last name</code> → <code class="language-plaintext highlighter-rouge">LastName</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Employee ID</code> → <code class="language-plaintext highlighter-rouge">AccountNumber</code></li>
-  <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Title</code> → <code class="language-plaintext highlighter-rouge">Title</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; First name</code> → <code class="language-plaintext highlighter-rouge">FirstName</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Alias</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Basic Information &gt; Last name</code> → <code class="language-plaintext highlighter-rouge">LastName</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Alias</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Employee ID</code> → <code class="language-plaintext highlighter-rouge">AccountNumber</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Staff number</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Employee Details &gt; Title</code> → <code class="language-plaintext highlighter-rouge">Title</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Title</code></li>
 </ul>
 
-<p>Also edit the SAML capabilities and set the <strong>Name ID format</strong> to <code class="language-plaintext highlighter-rouge">email</code>.</p>
+<p>Edit the SAML capabilities and set the <strong>Name ID format</strong> to <code class="language-plaintext highlighter-rouge">email</code>.</p>
+
+<p>The role mapping is expected in the <code class="language-plaintext highlighter-rouge">Roles</code> attribute.</p>
 
 <h2 id="auth0">Auth0</h2>
 
@@ -613,20 +617,43 @@ You’ll find the configuration after logging in at: <strong><a href="https://ww
 }
 </span></code></pre></div></div>
 
+<p>The attributes that Kimai expects are:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Email</code></li>
+  <li><code class="language-plaintext highlighter-rouge">FirstName</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Alias</code></li>
+  <li><code class="language-plaintext highlighter-rouge">LastName</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Alias</code></li>
+  <li><code class="language-plaintext highlighter-rouge">AccountNumber</code>: optional, will be used as <code class="language-plaintext highlighter-rouge">Staff number</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Title</code>: optional, will be used in <code class="language-plaintext highlighter-rouge">Title</code></li>
+</ul>
+
+<p>The role mapping is expected in the <code class="language-plaintext highlighter-rouge">http://schemas.xmlsoap.org/claims/groups</code> attribute.</p>
+
 <h2 id="authentik">Authentik</h2>
 
 <p>Customers reported successful use of <code class="language-plaintext highlighter-rouge">Authentik</code> as Identity Provider.</p>
 
-<p>Unfortunately we cannot provide examples at this point, but we look forward to hear back from you, if your company uses it!</p>
+<p>Our Authentik connector expects these attributes:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">$http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>: <code class="language-plaintext highlighter-rouge">Email</code></li>
+  <li><code class="language-plaintext highlighter-rouge">$http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name</code>: <code class="language-plaintext highlighter-rouge">Alias</code> (optional)</li>
+</ul>
+
+<p>The role mapping is expected in the <code class="language-plaintext highlighter-rouge">http://schemas.xmlsoap.org/claims/Group</code> attribute.</p>
+
+<p>We look forward to hear back from you, if your company uses it, so we can improve the docs.</p>
 
 <h2 id="okta">Okta</h2>
 
-<p>Customers report successful use of <code class="language-plaintext highlighter-rouge">Okta</code> as Identity Provider with the following settings:</p>
+<p>Customers report successful use of <code class="language-plaintext highlighter-rouge">Okta</code> as Identity Provider using the following settings:</p>
 
 <ul>
   <li>Single Sign-On URL: https://bnpnl.oktapreview.com/app/xxxxxxxxxxxxx/xxxxxxxxxxxxxxxxxxx/sso/saml</li>
   <li>Entity ID: http://www.okta.com/xxxxxxxxxxxxxxxxxxx</li>
 </ul>
+
+<p>The role mapping is expected in the <code class="language-plaintext highlighter-rouge">Roles</code> attribute.</p>
 
                         </div>
                         
