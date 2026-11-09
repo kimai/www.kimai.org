@@ -338,3 +338,29 @@ document.addEventListener('show.bs.modal', (e) => {
     }
 });
 ```
+
+**Deactivate dropdowns in Weekly hours**
+
+Afraid your users might batch update existing timesheets? 
+You can deactivate all `<select>` that have a project or activity set on page load:
+
+```javascript
+document.addEventListener('kimai.initialized', function (event) {
+    const form = document.querySelector('form#quick-entries-form');
+    if (form !== null) {
+        form.addEventListener('submit', () => {
+            [].slice.call(form.querySelectorAll('select')).map((node) => {
+                if (node.value !== '' && node.tomselect && node.disabled) {
+                    node.tomselect.enable();
+                }
+            });
+        });
+
+        [].slice.call(form.querySelectorAll('select')).map((node) => {
+            if (node.value !== '' && node.tomselect && !node.disabled) {
+                node.tomselect.disable();
+            }
+        });
+    }
+});
+```
