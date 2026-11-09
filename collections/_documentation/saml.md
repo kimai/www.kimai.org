@@ -100,6 +100,8 @@ kimai:
         provider: google
         activate: true
         title: Login with SAML
+        # usernameAttribute: NameID
+        cleanupLongRelayState: false
         mapping:
             - { saml: $Email, kimai: email }
             - { saml: $FirstName $LastName, kimai: alias }
@@ -130,6 +132,8 @@ A brief description of the available fields:
     - `attribute` (string) the SAML attribute whose values are used for syncing the groups
     - `mapping` (array) an array of role name mappings. The `saml` key is your SAML role name (here `Admin` and `Manager`) and the key `kimai` (here `ROLE_ADMIN` and `ROLE_TEAMLEAD`) is the role name in Kimai. Unmapped roles from the SAML message will be IGNORED even if they are existing in Kimai.
     - `resetOnLogin` (bool) if `true` all user roles will be reset upon login and synced with the SAML roles. Otherwise (`false`) you configure user roles in Kimai and only the mapped ones will be forced upon login.  
+- `cleanupLongRelayState` - the protocol defines max 80 byte for RelayState, even if most IdP support more (if activated, cuts the URL to be 80 character, but only after the `?`)
+- `usernameAttribute` - Kimai uses the SAML `NameID` be default to identify the user, which can lead to problems if `transient` mode is active, this allows you to configure a different SAML attribute for the login
 
 {% alert danger %}The role reset via `kimai.saml.roles.resetOnLogin` only works if a `kimai.saml.roles.attribute` is configured and exists in the SAML response. If it is missing from the config or the configured role attribute is absent, roles will not be reset.{% endalert %}
 {% alert %}User data and roles are synchronized during each login.{% endalert %}
