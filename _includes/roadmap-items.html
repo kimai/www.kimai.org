@@ -1,0 +1,51 @@
+{%- comment -%}
+Renders the roadmap items (Fider posts) of one category, see scripts/update-roadmap.php
+Usage: {% include roadmap-items.html roadmap_category="working-times" %}
+Optional: limit=10 (maximum amount of items to show)
+{%- endcomment -%}
+{%- if include.roadmap_category -%}
+<p>
+    We have many ideas and the community even more! We are excited to share these
+    <a href="https://roadmap.kimai.org/?tags={{include.roadmap_category}}" target="_blank">feature requests for the plugin</a> on our roadmap.
+    You can share your votes and input in the existing issues.
+</p>
+{%- assign roadmap = site.data.roadmap[include.roadmap_category] -%}
+{%- assign roadmap_lang = page.lang | default: 'en' -%}
+{%- assign roadmap_t = site.data[roadmap_lang].translation.roadmap-items | default: site.data.en.translation.roadmap-items -%}
+{%- assign roadmap_t_en = site.data.en.translation.roadmap-items -%}
+{%- assign roadmap_url = roadmap.url -%}
+{%- unless roadmap.url -%}{%- assign roadmap_url = 'https://roadmap.kimai.org/?tags=' | append: include.roadmap_category -%}{%- endunless -%}
+{%- assign roadmap_limit = include.limit | default: 10 -%}
+<div class="roadmap-items my-4">
+{%- if roadmap and roadmap.items.size > 0 -%}
+{%- for item in roadmap.items limit: roadmap_limit -%}
+{%- assign status_label = roadmap_t[item.status] | default: roadmap_t_en[item.status] | default: item.status -%}
+{%- case item.status -%}
+{%- when 'started' -%}{%- assign status_class = 'bg-success' -%}
+{%- when 'planned' -%}{%- assign status_class = 'bg-info' -%}
+{%- else -%}{%- assign status_class = 'bg-secondary text-body' -%}
+{%- endcase -%}
+<a href="https://roadmap.kimai.org/posts/{{ item.number }}/{{ item.slug }}" class="card card-hover shadow-sm mb-3 text-decoration-none" target="_blank" rel="noopener">
+<div class="card-body d-flex align-items-start p-3">
+<div class="d-flex flex-column align-items-center justify-content-center flex-shrink-0 border rounded-3 me-3 px-2 py-1" style="min-width: 4rem;" title="{{ roadmap_t.votes | default: roadmap_t_en.votes }}">
+<i class="bx bx-chevron-up fs-4 lh-1 text-primary"></i>
+<span class="fw-bold text-body">{{ item.votesCount }}</span>
+</div>
+<div class="flex-grow-1">
+<div class="d-flex flex-wrap align-items-center mb-1">
+<h3 class="h6 mb-0 me-2">{{ item.title | escape }}</h3>
+<span class="badge {{ status_class }} fs-xs">{{ status_label }}</span>
+</div>
+{%- if item.description and item.description != '' -%}
+<p class="fs-sm text-muted mb-0">{{ item.description | markdownify | strip_html | normalize_whitespace | truncatewords: 35 }}</p>
+{%- endif -%}
+</div>
+</div>
+</a>
+{%- endfor -%}
+{%- else -%}
+<p class="text-muted">{{ roadmap_t.empty | default: roadmap_t_en.empty }}</p>
+{%- endif -%}
+<a href="{{ roadmap_url }}" class="btn btn-outline-primary mt-2" target="_blank" rel="noopener"><i class="bx bx-bulb me-2"></i>{{ roadmap_t.all | default: roadmap_t_en.all }}</a>
+</div>
+{%- endif -%}
