@@ -22,12 +22,12 @@ If another device changed things meanwhile, the timer started later wins and the
 
 ## Setup Requirements
 
-- A Kimai 2 installation and a personal API token (your profile → API access)
+- A Kimai 2 installation, with a user allowed to create API tokens (Kimai's default roles are)
 - An Android phone with Android 12 or newer
 
 ## Installation
 
-Download the APK from the [GitHub releases](https://github.com/6801318d8d/kimai-timer/releases), enter your Kimai address and the API token, and allow notifications. Free and open source (MIT), no tracking: the app only talks to your Kimai.
+Download the APK from the [GitHub releases](https://github.com/6801318d8d/kimai-timer/releases), enter your Kimai address, log in and allow notifications. After the login the app creates its own API token in Kimai (your profile → API access); a token made by hand works too. Free and open source (MIT), no tracking: the app only talks to your Kimai.
 
 ## Support
 
