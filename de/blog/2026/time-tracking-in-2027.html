@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Ist Zeiterfassung 2027 Pflicht? Antworten für 10 Länder – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ist Zeiterfassung 2027 Pflicht? Antworten für 10 Länder">
+<meta property="og:image" content="https://www.kimai.org/images/blog/de/time-tracking-2027.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/blog/2026/time-tracking-in-2027">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/2026/time-tracking-in-2027">
+<link href="/assets/build/main.css?v17" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                            <li><a href="/de/partner/" class="dropdown-item">Partner</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Updates</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="hero container mt-4 py-5">
+    <h1 class="page-title pb-3" style="max-width: 970px;">Ist Zeiterfassung 2027 Pflicht? Antworten für 10 Länder</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">
+                        Allgemein
+                    </span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">12 Nov 2026</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/valentina.webp" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Valentina</h6>
+                
+                <a href="https://www.linkedin.com/in/ivalentina/" target="_blank" rel="author" class="fw-semibold stretched-link">@ivalentina</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p>Wenn Sie in Europa ein Unternehmen führen oder ein Team leiten und die Arbeitszeiten immer noch nicht erfassen, sollten Sie vorsichtig sein und die Entwicklungen regelmäßig verfolgen.</p>
+
+<p>Mit unserem Leitfaden versuchen wir Klarheit zu schaffen: was die EU überall vorschreibt und was zehn wichtige Märkte im Jahr 2026 / 2027 konkret von Ihnen erwarten (mit Antworten auf die Fragen, die Arbeitgeber am häufigsten suchen).</p>
+
+<p><em>Wichtig! Dieser Artikel gibt einen allgemeinen Überblick mit Stand November 2026 und ist keine Rechtsberatung. Regeln ändern sich, und Tarifverträge fügen oft eigene hinzu. Sprechen Sie mit einer Anwältin, einem Anwalt oder HR-Fachleuten in Ihrem Land.</em></p>
+
+<h2 id="die-eu-arbeitszeitrichtlinie-ihre-neue-realität">Die EU-Arbeitszeitrichtlinie: Ihre neue Realität</h2>
+
+<p>Sprechen wir zunächst über den Elefanten im Besprechungsraum. Im Mai 2019 entschied der Gerichtshof der EU im Fall <em>CCOO gegen Deutsche Bank</em> (C-55/18), dass der lockere Umgang der Bank mit der Arbeitszeiterfassung schlicht nicht ausreicht. Seitdem muss jeder EU-Mitgliedstaat Arbeitgeber verpflichten, ein <em>„objektives, verlässliches und zugängliches System”</em> zu betreiben, das die tägliche Arbeitszeit jedes Beschäftigten misst. Übersetzt heißt das: „Wir vertrauen unseren Leuten” klingt gut, ist aber keine Zeitaufzeichnung.</p>
+
+<h3 id="wie-kam-es-dazu-und-ist-die-deutsche-bank-schuld">Wie kam es dazu? (Und ist die Deutsche Bank schuld?)</h3>
+
+<p>Alles begann damit, dass die spanische Gewerkschaft CCOO von der spanischen Niederlassung der Bank verlangte, die täglichen Arbeitszeiten ihrer Belegschaft zu erfassen. Das spanische Recht schrieb damals nur Aufzeichnungen über Überstunden vor, und genau da liegt der Haken: Überstunden lassen sich kaum zählen, wenn niemand vorher die regulären Stunden zählt. Das Gericht gab der Gewerkschaft recht.</p>
+
+<p>Einige Länder waren dem Rest der Klasse schon voraus. Österreich verlangt seit Jahrzehnten Aufzeichnungen zu Beginn, Ende und Pausen, und Spaniens eigene Pflicht zur täglichen Erfassung trat am 12. Mai 2019 in Kraft, nur zwei Tage vor dem Urteil. Andere holen noch auf: In Deutschland musste 2022 das Bundesarbeitsgericht eingreifen, und in Belgien ist eine allgemeine Pflicht zur Arbeitszeiterfassung in Vorbereitung.</p>
+
+<h3 id="was-nicht-verhandelbar-ist-und-ja-es-wird-kontrolliert">Was nicht verhandelbar ist (und ja, es wird kontrolliert)</h3>
+
+<p>Das Urteil hat keine neuen Grenzen erfunden. Es hat die bestehenden nur durchsetzbar gemacht, denn ohne Aufzeichnung der Arbeitszeit kann niemand belegen, dass die Arbeitszeitrichtlinie (2003/88/EG) eingehalten wird. Das müssen Sie Ihrem Team garantieren:</p>
+
+<ul>
+  <li><strong>48 Stunden</strong> durchschnittliche Wochenarbeitszeit als Obergrenze, Überstunden eingeschlossen (gemittelt über bis zu 4 Monate)</li>
+  <li><strong>11 zusammenhängende Stunden</strong> tägliche Ruhezeit (kein Kommentar)</li>
+  <li><strong>Eine Pause</strong>, sobald der Arbeitstag 6 Stunden überschreitet (eine echte, nicht ein zwischen zwei Calls hinuntergestürzter Kaffee)</li>
+  <li><strong>24 Stunden</strong> ununterbrochene wöchentliche Ruhezeit zusätzlich zur täglichen Ruhezeit (Wochenenden gibt es aus gutem Grund)</li>
+  <li><strong>4 Wochen</strong> bezahlter Jahresurlaub (jeder hat es verdient, ab und zu sein Passwort zu vergessen)</li>
+</ul>
+
+<h3 id="weitere-eu-regeln-die-in-dieselbe-richtung-zielen">Weitere EU-Regeln, die in dieselbe Richtung zielen</h3>
+
+<p>Die Arbeitszeitrichtlinie steht nicht allein, diese EU-Regeln wirken in die gleiche Richtung.</p>
+
+<ul>
+  <li><strong>Charta der Grundrechte, Artikel 31 Absatz 2:</strong> Jede Arbeitnehmerin und jeder Arbeitnehmer hat das Recht auf eine Begrenzung der Höchstarbeitszeit und auf Ruhezeiten. Deshalb hat das Gericht die Zeiterfassung als Grundrechtsfrage behandelt und nicht als Papierkram.</li>
+  <li><strong>DSGVO:</strong> Arbeitszeitaufzeichnungen sind personenbezogene Daten. Das bedeutet einen klaren Zweck, möglichst wenige Daten, festgelegte Aufbewahrungs- und Zugriffsregeln und in vielen Ländern einen Betriebsrat, der bei Ihrem System mitreden möchte. Erfassen Sie Stunden, nicht Tastenanschläge.</li>
+  <li><strong>Entgelttransparenzrichtlinie (EU) 2023/970:</strong> Die Frist zur Umsetzung in nationales Recht ist am 7. Juni 2026 abgelaufen, und Mitte Juni hatten nur Italien, die Slowakei, Litauen und Malta sie vollständig umgesetzt. Die ersten Berichte zum Gender Pay Gap sind ab Juni 2027 für Unternehmen mit 150 oder mehr Beschäftigten fällig. Die Richtlinie zwingt Sie nicht zur Zeiterfassung, aber versuchen Sie einmal, einen Entgeltvergleich ohne belastbare Daten zu geleisteten Stunden und bezahlten Überstunden zu verteidigen.</li>
+</ul>
+
+<h2 id="vergessen-sie-die-bußgelder-für-einen-moment">Vergessen Sie die Bußgelder für einen Moment</h2>
+
+<p>Unternehmen, die Arbeitszeiten nur erfassen, „weil das Gesetz es verlangt”, bekommen nur eine Tabelle. Unternehmen, die Arbeitszeiten richtig erfassen, bekommen Antworten und einige Vorteile.</p>
+
+<ul>
+  <li><em>Sie kalkulieren nicht mehr auf Hoffnung.</em> Echte Stunden pro Projekt, Kunde und Aufgabe machen aus Ihrem nächsten Angebot statt einer optimistischen Schätzung eine Zahl mit Erfahrungswerten dahinter.</li>
+  <li><em>Sie erkennen Burnout, bevor jemand kündigt.</em> Wenn die Überstunden in einem Team langsam steigen, sehen Sie das in der zweiten Woche und nicht erst im Austrittsgespräch.</li>
+  <li><em>Sie gewinnen die Streitfälle, von denen Sie noch nichts wussten.</em> Bei Überstundenklagen gewinnt meist die Seite mit Aufzeichnungen. In einem belgischen Fall verurteilte das Gericht einen Arbeitgeber ohne Zeiterfassungssystem zur Zahlung von Überstunden, die ein Fahrer mit seinen Fahrtenbüchern belegt hatte. Das österreichische Recht geht noch weiter: Führen Sie keine Aufzeichnungen, läuft die Frist der Beschäftigten zur Geltendmachung ihrer Ansprüche schlicht nicht ab.</li>
+  <li><em>Die Lohnabrechnung wird langweilig (im besten Sinne).</em> Stunden, Überstunden, Urlaub und Abwesenheiten fließen in die Lohnabrechnung, ohne dass jemand Stundenzettel aus Papier abtippen muss.</li>
+  <li><em>Vertrauen wirkt in beide Richtungen.</em> Transparente Aufzeichnungen schützen Beschäftigte vor unbezahlten Überstunden und Sie vor Behauptungen wie „Ich habe jedes Wochenende gearbeitet”, die niemand überprüfen kann.</li>
+  <li><em>Sie wissen endlich, wohin die Zeit geht.</em> Spoiler: Wahrscheinlich nicht dorthin, wo Sie dachten.</li>
+</ul>
+
+<p>Die eigentliche Frage ist nicht, <em>ob</em> Sie Zeiten erfassen. Sondern ob Ihr System Daten liefert, die Sie guten Gewissens einer Arbeitsinspektion, einem Gericht oder Ihrer eigenen Finanzabteilung vorlegen würden.</p>
+
+<h2 id="was-arbeitgeber-fragen-10-länder">Was Arbeitgeber fragen: 10 Länder</h2>
+
+<h3 id="deutschland-pflicht-seit-2022-elektronisch-kommt"><em>Deutschland: Pflicht seit 2022, elektronisch kommt</em></h3>
+
+<p><strong>Ist Zeiterfassung in Deutschland Pflicht?</strong> Ja, für jeden Arbeitgeber, unabhängig von Größe oder Branche. Das Bundesarbeitsgericht entschied am 13. September 2022 (1 ABR 22/21), dass sich die Pflicht bereits aus dem Arbeitsschutzgesetz ergibt; ein neues Gesetz war nicht nötig. Beginn, Ende und Dauer jedes Arbeitstags müssen aufgezeichnet werden. <em>Vertrauensarbeitszeit</em> ist weiterhin erlaubt, sie regelt aber, <em>wann</em> gearbeitet wird, nicht <em>ob</em> die Stunden erfasst werden. Die Erfassung kann an die Beschäftigten delegiert werden, solange Sie sie kontrollieren.</p>
+
+<p><strong>Muss es elektronisch sein? Ist Excel noch in Ordnung?</strong> Derzeit ist die Form frei: Papier, Excel oder Software, solange die Aufzeichnung objektiv, verlässlich und zugänglich ist. Das wird sich bald ändern. Ein im Juni 2026 bekannt gewordener Entwurf des Arbeitsministeriums sieht vor, dass Beginn, Ende und Dauer <em>elektronisch und am selben Tag</em> erfasst werden. Arbeitgeber mit bis zu 10 Beschäftigten wären dauerhaft von der <em>elektronischen</em> Form ausgenommen, nicht aber von der Erfassung selbst. Alle anderen bekämen gestaffelte Übergangsfristen von einem, zwei oder fünf Jahren. Derselbe Entwurf ersetzt die tägliche Höchstarbeitszeit durch eine wöchentliche, allerdings nur für tarifgebundene Unternehmen, und die Koalitionspartner haben Widerstand angemeldet. Zum Zeitpunkt der Veröffentlichung ist es noch ein Entwurf und kein Gesetz.</p>
+
+<p><strong>Welche Bußgelder drohen?</strong> Ein Verstoß gegen die Aufzeichnungspflicht für Arbeitszeit über den 8-Stunden-Tag hinaus (§ 16 Abs. 2 Arbeitszeitgesetz) kann nach § 22 bis zu <strong>30.000 € pro Verstoß</strong> kosten. Die Aufzeichnungen müssen zwei Jahre aufbewahrt werden, und ein Hamburger Gericht bestätigte 2024, dass Behörden die allgemeine Aufzeichnungspflicht bereits durchsetzen können. Für Minijobs und Branchen, die unter das Mindestlohngesetz fallen, gilt eine eigene Aufzeichnungspflicht mit derselben Obergrenze.</p>
+
+<p>Mehr dazu in unserem Blogbeitrag zur <a href="https://www.kimai.org/de/blog/2026/ist-zeiterfassung-in-deutschland-pflicht">Zeiterfassungspflicht in Deutschland</a>. Verfügbar auf Deutsch und Englisch.</p>
+
+<h3 id="österreich-der-strengste-lehrer-der-schule"><em>Österreich: der strengste Lehrer der Schule</em></h3>
+
+<p><strong>Ist Zeiterfassung in Österreich Pflicht?</strong> Ja, und das schon seit Jahrzehnten. § 26 des Arbeitszeitgesetzes (AZG) verpflichtet nahezu jeden Arbeitgeber, unabhängig von der Größe, Beginn, Ende und Pausen der Arbeitszeit jedes Beschäftigten aufzuzeichnen. Die österreichischen Regeln gingen schon über das EU-Urteil von 2019 hinaus, es musste sich also nichts ändern.</p>
+
+<p><strong>Was gilt für Homeoffice, Gleitzeit und All-in-Verträge?</strong> Bei Beschäftigten, die ihre Arbeitszeit weitgehend selbst bestimmen oder überwiegend von zu Hause arbeiten, genügt die Aufzeichnung der täglichen Arbeitsdauer (<em>Saldoaufzeichnung</em>). Ein All-in-Gehalt hebt die Aufzeichnungspflicht nicht auf und lässt auch Überstundenansprüche nicht entfallen. Gleitzeit funktioniert ebenfalls, solange das System zeigt, wann die Stunden tatsächlich geleistet wurden.</p>
+
+<p><strong>Welche Strafen drohen?</strong> Nach § 28 AZG kostet das Fehlen von Aufzeichnungen <strong>72 € bis 1.815 €</strong> pro Übertretung (145 € bis 1.815 € im Wiederholungsfall); mangelhaft geführte Aufzeichnungen kosten 20 € bis 436 €. Der Haken: Wenn sich wegen fehlender Aufzeichnungen die tatsächlich geleistete Arbeitszeit nicht feststellen lässt, wird die Strafe für jeden betroffenen Beschäftigten gesondert verhängt.</p>
+
+<h3 id="italien-stunden-im-register-noch-keine-tägliche-pflicht"><em>Italien: Stunden im Register, (noch) keine tägliche Pflicht</em></h3>
+
+<p><strong>Ist Zeiterfassung in Italien Pflicht?</strong> Teilweise. Noch schreibt kein italienisches Gesetz ein tägliches Stempelsystem vor, wie es der EuGH beschrieben hat. Jeder Arbeitgeber muss aber die geleisteten Stunden jedes Beschäftigten einschließlich Überstunden und Abwesenheiten im <em>Libro Unico del Lavoro</em> (LUL) erfassen, dem verpflichtenden Lohn- und Anwesenheitsregister, und es <strong>fünf Jahre</strong> aufbewahren. Die Arbeitszeitgrenzen selbst (48-Stunden-Woche im Durchschnitt, 11 Stunden tägliche Ruhezeit) stammen aus dem Gesetzesdekret 66/2003. Italienische Fachleute bezeichnen die fehlende tägliche Erfassungspflicht offen als Lücke, und ein Gesetzentwurf im Senat sieht nun verpflichtende elektronische Zeiterfassungssysteme in privaten Betrieben vor.</p>
+
+<p><strong>Brauche ich einen Badge oder eine Stempeluhr? Und wie passt Smart Working dazu?</strong> Ein bestimmtes Werkzeug ist nicht vorgeschrieben: Badge-Leser, App oder unterschriebene Anwesenheitsliste funktionieren alle. Anwesenheitssysteme benötigen nach dem Arbeitnehmerstatut keine Vereinbarung mit der Gewerkschaft, die Beschäftigten müssen aber informiert werden, und der Datenschutz gilt. Die Datenschutzbehörde akzeptiert das Einstempeln per App nur zur Erfassung der Anwesenheit, niemals zur Verfolgung von Personen im Tagesverlauf. Beim Smart Working (Gesetz 81/2017) legt die individuelle Vereinbarung Arbeitszeiten, Ruhezeiten und das Recht auf Nichterreichbarkeit fest; die Stunden landen trotzdem im LUL.</p>
+
+<p><strong>Welche Bußgelder drohen?</strong> Fehlende oder falsche Einträge im LUL, die Lohn, Beiträge oder Steuern verändern, kosten <strong>150 € bis 1.500 €</strong>, bei mehr als 5 Beschäftigten oder 6 Monaten 500 € bis 3.000 € und bei mehr als 10 Beschäftigten oder 12 Monaten 1.000 € bis 6.000 €. Wer das LUL nicht fünf Jahre aufbewahrt, zahlt 100 € bis 600 €. Überstunden „schwarz” zu bezahlen hilft nicht: Das Berufungsgericht Genua bestätigte ein Bußgeld von rund 4.000 € für Überstunden, die als Bonus ausgezahlt, aber nie erfasst wurden.</p>
+
+<h3 id="frankreich-es-kommt-auf-den-arbeitszeitplan-an"><em>Frankreich: Es kommt auf den Arbeitszeitplan an</em></h3>
+
+<p><strong>Ist Zeiterfassung in Frankreich Pflicht?</strong> Ja, aber die Form hängt davon ab, wie Ihre Teams eingeteilt sind. Wenn alle in einem Team nach demselben kollektiven Arbeitszeitplan (<em>horaire collectif</em>) arbeiten, hängen Sie ihn aus und übermitteln ihn der Arbeitsinspektion. Wer nicht nach einem kollektiven Plan arbeitet (individuelle Arbeitszeiten, flexible Pläne, viele Teilzeitkräfte), braucht pro Person eine <strong>tägliche Aufzeichnung der Stunden und eine wöchentliche Summe</strong>. Überstunden müssen immer erfasst werden.</p>
+
+<p><strong>Brauche ich eine Stempeluhr (<em>pointeuse</em>)? Und was ist mit Forfait-jours?</strong> Ein bestimmtes Werkzeug ist nicht vorgeschrieben: Stempeluhr, Software oder eine unterschriebene Aufzeichnung funktionieren alle, solange sie verlässlich ist und der Arbeitsinspektion zur Verfügung steht. Führungskräfte mit <em>Forfait-jours</em>-Vertrag werden in Tagen statt in Stunden erfasst, der Arbeitgeber muss ihre Arbeitsbelastung aber nach dem anwendbaren Tarifvertrag regelmäßig überwachen. Tut er das nicht, können Gerichte die Vereinbarung für unwirksam erklären.</p>
+
+<p><strong>Welche Bußgelder drohen?</strong> Die Arbeitsverwaltung kann ein Bußgeld von bis zu <strong>4.000 € pro betroffenem Beschäftigten</strong> verhängen (Art. L8115-3 Code du travail), das sich bei einem Wiederholungsverstoß innerhalb von zwei Jahren verdoppelt. In einem aktuellen Fall wurde ein Unternehmen wegen fehlender Zeitaufzeichnungen für 15 Beschäftigte mit 27.000 € belegt.</p>
+
+<h3 id="niederlande-deugdelijk-oder-gar-nicht"><em>Niederlande: ‚deugdelijk’ oder gar nicht</em></h3>
+
+<p><strong>Ist Zeiterfassung in den Niederlanden Pflicht?</strong> Ja. Artikel 4:3 des Arbeitszeitgesetzes (<em>Arbeidstijdenwet</em>) verlangt für jeden Beschäftigten eine <strong>ordnungsgemäße Aufzeichnung</strong> (<em>deugdelijke registratie</em>) der Arbeits- und Ruhezeiten. Das Format ist frei, der Inhalt nicht: Feste Dienstpläne allein reichen nicht, wenn sie nicht den tatsächlichen Beginn, das Ende und die Pausen jeder Person zeigen.</p>
+
+<p><strong>Was muss aufgezeichnet werden, und wie lange?</strong> Beginn, Ende und Pausen pro Beschäftigten, damit die Arbeitsinspektion tägliche und wöchentliche Grenzen sowie Ruhezeiten prüfen kann. Bewahren Sie die Aufzeichnungen <strong>52 Wochen</strong> auf. Einige Gutverdienende (mindestens das Dreifache des gesetzlichen Mindestlohns) fallen aus Teilen des Gesetzes heraus, prüfen Sie also, wer betroffen ist.</p>
+
+<p><strong>Welche Bußgelder drohen?</strong> Das Standardbußgeld für eine fehlende oder mangelhafte Aufzeichnung beträgt <strong>10.000 € pro Verstoß</strong> (reduziert für Arbeitgeber mit weniger als 10 Beschäftigten). Das Gericht in Amsterdam bestätigte im März 2026 ein Bußgeld von 7.500 €. Für Verstöße gegen die Mindestlohnregeln gibt es ein gesondertes Bußgeld: Ein Arbeitgeber zahlte zusätzlich zu seinem Arbeitszeitbußgeld 22.500 €, weil er die Stunden von vier Köchen nicht erfasst hatte.</p>
+
+<h2 id="5-weitere-länder-im-überblick">5 weitere Länder im Überblick</h2>
+
+<p>Spanien und Portugal setzen die tägliche Erfassung bereits durch, Polen hat die Strafen gerade verschärft, Tschechien verlangt seit 2012 Aufzeichnungen pro Schicht, und Belgien führt als Letztes eine allgemeine Pflicht ein. Weitere Details finden Sie in dieser Tabelle.</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Land</th>
+      <th>Ist Zeiterfassung Pflicht?</th>
+      <th>Rechtsgrundlage</th>
+      <th>Was sich ändert</th>
+      <th>Bußgelder</th>
+      <th>Aufbewahrungsfrist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Spanien</td>
+      <td>Ja. Täglicher Beginn und tägliches Ende für alle Beschäftigten seit dem 12. Mai 2019</td>
+      <td>Art. 34.9 Arbeitnehmerstatut (RDL 8/2019)</td>
+      <td>Ein Königliches Dekret würde ausschließlich digitale Erfassung vorschreiben und Papier und Excel verbieten. Der Staatsrat kritisierte es im März 2026; Ende September 2026 war es noch nicht veröffentlicht</td>
+      <td>751 € bis 7.500 € pro schwerem Verstoß</td>
+      <td>4 Jahre</td>
+    </tr>
+    <tr>
+      <td>Polen</td>
+      <td>Ja. Eine individuelle Arbeitszeitkarte (<em>karta ewidencji</em>) pro Beschäftigten, auch bei nur einem Beschäftigten</td>
+      <td>Art. 149 Arbeitsgesetzbuch</td>
+      <td>Reform der Arbeitsinspektion seit 8. Juli 2026 in Kraft: Bußgelder verdoppelt, Inspektoren können zivilrechtliche Verträge in Arbeitsverhältnisse umqualifizieren</td>
+      <td>2.000 bis 60.000 PLN; bis zu 90.000 PLN im Wiederholungsfall</td>
+      <td>10-Jahres-Regel, mit Einschränkungen für ältere Arbeitsverhältnisse und Übergangsbestimmungen</td>
+    </tr>
+    <tr>
+      <td>Tschechien</td>
+      <td>Ja. Beginn und Ende jeder Schicht, Überstunden, Nachtarbeit und Bereitschaft pro Beschäftigten. Pausen müssen nicht erfasst, aber nachweisbar sein</td>
+      <td>§ 96 Arbeitsgesetzbuch</td>
+      <td>Keine Reform geplant. Gerichte bestätigen, dass Homeoffice nicht von der Pflicht befreit und diese nicht auf die Beschäftigten abgewälzt werden kann</td>
+      <td>Bis zu 400.000 CZK (§ 28 Arbeitsinspektionsgesetz)</td>
+      <td>Im Arbeitsgesetzbuch nicht festgelegt; aufbewahren, bis Lohnansprüche verjährt sind</td>
+    </tr>
+    <tr>
+      <td>Portugal</td>
+      <td>Ja. Beginn, Ende und Pausen, auch für Beschäftigte ohne feste Arbeitszeiten, aufbewahrt an einem Ort, an dem sie sofort geprüft werden können</td>
+      <td>Art. 202 Arbeitsgesetzbuch</td>
+      <td>Keine größeren Änderungen; die Arbeitsinspektion ACT kontrolliert aktiv</td>
+      <td>Schwerer Verstoß (<em>contraordenação grave</em>), gestaffelt nach Unternehmensumsatz</td>
+      <td>5 Jahre</td>
+    </tr>
+    <tr>
+      <td>Belgien</td>
+      <td>Noch nicht allgemein. Derzeit Pflicht bei flexiblen Arbeitszeiten, variablen Teilzeitplänen und in einigen Branchen (z. B. Bau, Reinigung)</td>
+      <td>Branchen- und Teilzeitregeln; allgemeines Gesetz in Vorbereitung</td>
+      <td>Allgemeine Pflicht für alle Arbeitgeber ab 1. Januar 2027 geplant; eine bestimmte Methode oder Stempeluhr wird nicht vorgeschrieben; der Gesetzestext wurde im Oktober 2026 noch finalisiert</td>
+      <td>Derzeit Sanktionen nach dem Sozialstrafgesetzbuch bei Verstößen gegen flexible Arbeitszeiten; Strafen ab 2027 noch offen</td>
+      <td>Wird durch das neue Gesetz festgelegt</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="so-klappt-es-ohne-den-verstand-zu-verlieren">So klappt es, ohne den Verstand zu verlieren</h2>
+
+<p>Eine Beratung in Paris und eine Agentur in München haben dieselbe Aufgabe: eine objektive, verlässliche und zugängliche Aufzeichnung der Arbeitszeit. An digitalen Werkzeugen dafür mangelt es nicht, aber eine spezialisierte Zeiterfassungs-App wie Kimai ist einer der einfachsten Wege dorthin, ganz gleich, wie groß Ihr Team ist.</p>
+
+<p>So deckt Kimai das ab:</p>
+
+<ul>
+  <li><strong>Objektiv:</strong> Die Beschäftigten stempeln ein und aus oder erfassen ihre Zeit während der Arbeit, im Web oder mobil, statt sie am Freitagnachmittag zu rekonstruieren.</li>
+  <li><strong>Verlässlich:</strong> eine zentrale Datenquelle statt Tabellen, die jeder unbemerkt ändern kann, mit Exporten für die Lohnabrechnung oder eine Prüfung.</li>
+  <li><strong>Zugänglich:</strong> Beschäftigte sehen ihre eigenen Stunden, Führungskräfte die ihres Teams, und Sie entscheiden, wo die Daten liegen: in der Kimai Cloud oder auf Ihren eigenen Servern, was DSGVO-Gespräche kurz hält.</li>
+  <li><strong>Nützlich über die Compliance hinaus:</strong> Dieselben Zeiteinträge zeigen Projektkosten, Budgets und abrechenbare Stunden.</li>
+</ul>
+
+<p>Bereit für die Umsetzung? <a href="https://www.kimai.cloud/auth/registration">Starten Sie kostenlos</a> oder <a href="https://www.kimai.org/de/demo.html">testen Sie die Demo</a>.</p>
+
+<h3 id="quellen">Quellen</h3>
+
+<ul>
+  <li><strong>Deutschland:</strong> <a href="https://www.zeitfabrik.de/ratgeber/arbeitszeitgesetz-2026/">zeitfabrik: BMAS-Entwurf vom 18. Juni 2026</a> · <a href="https://www.energieundrecht.com/blog-arbeitsrecht-zivilrecht/arbeitszeitgesetz-reform-2026-referentenentwurf">Energie und Recht: Analyse des Entwurfs</a> · <a href="https://knowledge.dlapiper.com/dlapiperknowledge/globalemploymentlatestdevelopments/2026/germany-prepares-shift-to-weekly-working-time-limits">DLA Piper: Stand der Reform</a> · <a href="https://www.ulmato.de/arbeitsrecht/zeiterfassung-fuer-mitarbeiter/">ulmato: Bußgelder und BAG-Urteil</a></li>
+  <li><strong>Österreich:</strong> <a href="https://www.forum-media.at/personalverrechnung/Vorschriften/Arbeitszeitgesetz/ABSCHNITT-8/28.-Strafbestimmungen">forum-media: § 28 AZG im Volltext</a> · <a href="https://www.derstandard.at/story/2000104119160/arbeitszeiterfassung-hilfe-was-ist-zu-tun">Der Standard: AZG und das EU-Urteil</a></li>
+  <li><strong>Tschechien:</strong> <a href="https://ppropo.mpsv.cz/viii9evidencepracovnidoby">MPSV-Leitfaden zu § 96</a> · <a href="https://www.podnikatel.cz/zakony/zakon-c-251-2005-sb-o-inspekci-prace/zneni-20251101/f6836601/">Bußgelder nach § 28 Arbeitsinspektionsgesetz</a> · <a href="https://www.praceamzda.cz/clanky/3631/evidence-pracovni-doby">Práce a mzda: Homeoffice und Aufzeichnungen</a> · <a href="https://portal.pohoda.cz/dane-ucetnictvi-mzdy/mzdy-a-prace/zamestnavatele-musi-u-jednotlivych-zamestnancu-evidovat-pocatky-a-konce-pracovnich-smen/">Pohoda: Schichtaufzeichnung seit 2012</a></li>
+  <li><strong>Italien (Smart Working, Datenschutz):</strong> <a href="https://www.lexced.com/?p=44756">Lexced: Urteil des Berufungsgerichts Genua</a> · <a href="https://www.investireoggi.it/?p=85231">Investire Oggi: Einstempeln per App und Datenschutz</a></li>
+  <li><strong>Frankreich:</strong> <a href="https://code.travail.gouv.fr/code-du-travail/l8115-3">code.travail.gouv.fr L8115-3</a> · <a href="https://www.labase-lextenso.fr/gazette-du-palais/2023-n8/meconnaissance-du-principe-de-legalite-des-delits-et-des-peines-en-cas-d-infliction-a-l-employeur-d-une-sanction-pour-manquement-a-l-obligation-d-etablir-un-decompte-individuel-de-la-duree-de-travail-GPL446n5">La base Lextenso: kollektive vs. individuelle Arbeitszeitpläne</a> · <a href="https://www.doctrine.fr/d/CAA/Marseille/2026/CAAE697B94EE04A79DCF124">Doctrine: Fall mit 27.000 € Bußgeld</a></li>
+  <li><strong>Niederlande:</strong> <a href="https://www.rendement.nl/arbeidstijden/verdiepingsartikel/registratie-van-arbeidstijden-is-wettelijk-verplicht.html">Rendement: Aufzeichnungspflicht</a> · <a href="https://www.rendement.nl/arbeidstijden/nieuws/-30000-boete-door-ontbreken-arbeidstijdenregistratie.html">Rendement: Fall mit 30.000 € Bußgeld</a> · <a href="https://omgevingsweb.nl/jurisprudentie/eclinlrbams20262535-rechtbank-amsterdam-03-03-2026-awb-24-7618/">Rechtbank Amsterdam, März 2026</a></li>
+  <li><strong>Spanien:</strong> <a href="https://www.inwout.com/post/registro-horario-digital-obligatorio-2026">inwout: Stand des Dekrets, September 2026</a> · <a href="https://fichme.com/noticias/registro-horario-digital-ultima-hora">FichMe: Stellungnahme des Staatsrats</a></li>
+  <li><strong>Polen:</strong> <a href="https://www.gazetaprawna.pl/praca/prawo-pracy/artykuly/11273499,nowe-kompetencje-pip-i-zmienione-zasady-kontroli-od-8-lipca-2026-r-nie-tylko-weryfikacja-umow-b2b-jak-uniknac-kary-nawet-do-90-tys-zl.html">Gazeta Prawna: Bußgelder nach der PIP-Reform</a> · <a href="https://kadry.infor.pl/kadry/indywidualne_prawo_pracy/czas_pracy/383248,Przez-jaki-okres-nalezy-przechowywac-ewidencje-czasu-pracy.html">Infor: Aufbewahrung der Aufzeichnungen</a></li>
+  <li><strong>Italien:</strong> <a href="https://edotto.com/articolo/le-sanzioni-nel-decreto-semplificazione">edotto: LUL-Sanktionen</a> · <a href="https://www.agendadigitale.eu/documenti/registrazione-dellorario-di-lavoro-in-azienda-tutte-le-regole-in-italia-e-ue/">Agenda Digitale: Italiens Lücke</a> · <a href="https://www.senato.it/leg/19/BGT/Schede/FascicoloSchedeDDL/ebook/58874.pdf">Gesetzentwurf im Senat</a></li>
+  <li><strong>Portugal:</strong> <a href="https://rfm.pt/atualidade/23712/quantas-horas-podes-trabalhar-por-dia-em-portugal-conhece-os-limites-e-as-regras-do-horario-de-trabalho">RFM: Art. 202 und 5-jährige Aufbewahrung</a> · <a href="https://factorialhr.pt/blog/assiduidade-e-pontualidade-no-trabalho/">Factorial PT: schwerer Verstoß</a></li>
+  <li><strong>Belgien:</strong> <a href="https://www.partena-professional.be/nl/node/22640">Partena Professional FAQ, September 2026</a> · <a href="https://www.deloittelegal.be/lg/en/blogs/compulsory-time-registration-a-step-back-or-an-opportunity-for-better-workforce-management.html">Deloitte Legal</a></li>
+  <li><strong>EU-Entgelttransparenz:</strong> <a href="https://www.kslaw.com/insights/articles/the-eu-pay-transparency-directive-where-do-we-stand">King &amp; Spalding: Stand Juli 2026</a></li>
+</ul>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <h3 class="h4 fw-normal text-light opacity-75">Follow us for more news</h3>
+                <div class="pt-md-5 pt-4 pb-md-2">
+                    
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+</main>
+
+
+
+<footer class="footer bg-dark pt-5 pb-4">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/de/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Glossar</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v5"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
