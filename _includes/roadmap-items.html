@@ -2,12 +2,17 @@
 Renders the roadmap items (Fider posts) of one category, see scripts/update-roadmap.php
 Usage: {% include roadmap-items.html roadmap_category="working-times" %}
 Optional: limit=10 (maximum amount of items to show)
+
+
+FIXME add translation for intro sentence
+
 {%- endcomment -%}
 {%- if include.roadmap_category -%}
+
 <p>
     We have many ideas and the community even more! We are excited to share these
     <a href="https://roadmap.kimai.org/?tags={{include.roadmap_category}}" target="_blank">feature requests for the plugin</a> on our roadmap.
-    You can share your votes and input in the existing issues.
+    Please share your votes and input in the existing issues or create new ones.
 </p>
 {%- assign roadmap = site.data.roadmap[include.roadmap_category] -%}
 {%- assign roadmap_lang = page.lang | default: 'en' -%}
