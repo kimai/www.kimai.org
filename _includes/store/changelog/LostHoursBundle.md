@@ -1,3 +1,7 @@
+## 1.1.1
+
+- New slogan in the user guide. No change to the plugin code.
+
 ## 1.1.0
 
 First public release of Lost Hours for Kimai.

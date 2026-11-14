@@ -1,5 +1,5 @@
 {% if page.lang == 'de' %}
-**Kimai spart Zeit, Verlorene Stunden sparen Geld.**
+**Keine Stunde mehr verschenken.**
 
 „Verlorene Stunden“ (englisch *Lost Hours*) zeigt auf dem Kimai-Dashboard Ihre Woche als Zeitleiste. Jeder Wochentag ist eine Zeile: Arbeitsblöcke in der Farbe Ihres Kimai, Lücken dazwischen orange, lange Lücken rot. Kimais eigenes Widget „Arbeitszeit“ zeigt Summen je Tag – „Verlorene Stunden“ zeigt, **wann** gearbeitet wurde und **wo Zeiten fehlen**. So fällt eine vergessene Buchung sofort auf.
 
@@ -27,7 +27,7 @@ Abo je Kimai-Installation (5 € im Monat oder 49 € im Jahr, zzgl. MwSt., die 
 
 Dokumentation: https://www.creatronics.de
 {% else %}
-**Kimai saves time, Lost Hours saves money.**
+**Stop losing billable hours.**
 
 Lost Hours shows your week as a timeline on the Kimai dashboard. Each weekday is one row: work blocks in your Kimai's color, gaps in orange, long gaps in red. Kimai's built-in "Working hours" widget shows totals per day – Lost Hours shows **when** you worked and **where time is missing**, so a forgotten entry stands out at once.
 
