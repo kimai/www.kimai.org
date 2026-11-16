@@ -378,7 +378,7 @@
                             
 
                             <div class="row align-items-center mb-3">
-                                <a class="btn btn-success btn-lg w-100 btn-buy" href="https://github.com/alexandreptj/kemai/releases" target="_blank"><i class="bx bxl-github me-2"></i> Stiahnuť</a>
+                                <a class="btn btn-success btn-lg w-100 btn-buy" href="https://github.com/AlexandrePTJ/kemai/releases" target="_blank"><i class="bx bxl-github me-2"></i> Stiahnuť</a>
                             </div>
 
                             
@@ -408,17 +408,42 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="store-info" role="tabpanel">
 
-                    <p>Kemai is a cross-platform (Windows, OSX, Linux) desktop client for Kimai.</p>
+                    <p>Kemai is a cross-platform desktop client for Kimai, for Windows, macOS and Linux.
+You can start and stop your timer, correct your recent entries and see what’s running from the system tray, without opening a browser.</p>
+
+<p>Kemai is free software under the MIT license. It’s developed independently of the Kimai project.</p>
 
 <h2 id="features">Features</h2>
 
-<p>Kemai aims to ease regular task on Kimai :</p>
+<ul>
+  <li><strong>Timer</strong>: start a timer on a project and activity, or restart a recent entry. Stop it from the window or from the system tray.</li>
+  <li><strong>History</strong>: see your entries of this week, this month or the last 30 days. Edit or delete any of them.</li>
+  <li><strong>Quick creation</strong>: create a customer, project or activity from the search.</li>
+  <li><strong>Tasks</strong>: start and close tasks from the <a href="/sk/store/task-management-bundle.html">Task Management</a> plugin.</li>
+  <li><strong>Custom fields</strong>: fill in required <a href="/sk/store/custom-fields-bundle.html">custom fields</a> for your time entries.</li>
+  <li><strong>Sync</strong>: changes stay in sync with the web interface and other clients.</li>
+  <li><strong>Away detection</strong> (optional): Kemai stops the timer when you’re idle or lock your session, at the time you left.</li>
+  <li><strong>Several servers</strong>: save profiles for different Kimai servers. API tokens are stored in the system keychain. You can trust self-signed certificates per server.</li>
+</ul>
+
+<h2 id="requirements">Requirements</h2>
 
 <ul>
-  <li>Start / Stop activity</li>
-  <li>Create customer, project and activity</li>
-  <li>Start / Close task from <a href="/sk/store/task-management-bundle.html">Task Management</a> plugin</li>
+  <li>Kimai 2.14 or later</li>
+  <li>An API token (in Kimai, open your profile and go to <em>API access</em>). Login with username and API password isn’t supported anymore.</li>
 </ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>Version 26.11.1 is the first stable release of the new Kemai, completely rewritten with Qt 6 and QML. It replaces version 0.11.1, which doesn’t receive updates anymore.</p>
+
+<p>For now, there are no prebuilt packages: build Kemai from source with the instructions in the <a href="https://github.com/AlexandrePTJ/kemai/releases/latest">latest release</a>. Signed Windows packages and a Flathub package are planned.</p>
+
+<p>Kemai 26.11.1 runs next to Kemai 0.11 without changing its settings. At the first start, it offers to import your existing profiles.</p>
+
+<h2 id="privacy">Privacy</h2>
+
+<p>Kemai connects only to your Kimai server and, for the optional update check, to the public GitHub API. There’s no telemetry.</p>
 
 
 
@@ -468,15 +493,15 @@
 
                 
                 <div class="swiper-slide store-screenshot-slide pb-3">
-                    <img src="/images/marketplace/kemai-running.webp" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
+                    <img src="/images/marketplace/kemai-main-view.webp" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
                 </div>
                 
                 <div class="swiper-slide store-screenshot-slide pb-3">
-                    <img src="/images/marketplace/kemai-settings.webp" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
+                    <img src="/images/marketplace/kemai-edit-entry.webp" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
                 </div>
                 
                 <div class="swiper-slide store-screenshot-slide pb-3">
-                    <img src="/images/marketplace/kemai-add-project.webp" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
+                    <img src="/images/marketplace/kemai-login.webp" alt="Screenshot" class="img-fluid rounded-3 store-screenshot-image">
                 </div>
                 
             </div>
