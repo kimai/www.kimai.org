@@ -121,7 +121,6 @@ Der Provider der Seiten erhebt und speichert keine personenbezogenen Information
 Lediglich in Fehlerfällen wird die Uhrzeit der Anfrage und der Fehlergrund aufgezeichnet.
 Diese Daten werden spätestens nach 7 Tagen automatisch gelöscht.
 Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
-Diese Angaben betreffen unsere Webseite. Protokolldaten, die innerhalb der Kimai Cloud eines Kunden anfallen, verarbeiten wir als Auftragsverarbeiter im Auftrag des jeweiligen Kunden (siehe Abschnitt „Auftragsverarbeitung für Kimai Cloud“).
 Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen gestattet.
 
 **Registrierung**
@@ -131,7 +130,6 @@ Die erforderlichen Angaben für eine Registrierung sind aus der Eingabemaske zur
 Die Bereitstellung der Daten, welche als Pflichtangaben gekennzeichnet sind, ist zwingend erforderlich, damit die Registrierung abgeschlossen werden kann.
 Sollten Sie eine Registrierung über einen Authentifizierungsanbieter (wie Google oder GitHub) durchführen, so werden die Daten durch diesen Anbieter automatisch an uns, mittels eine Prozesses der OAuth gennant wird, übertragen.
 Sollten Sie eine manuelle Registrierung via Email durchführen, muss eine Recaptcha Bestätigung gelöst werden, welche von Google ausgeliefert wird.
-Der Einsatz von reCAPTCHA schützt vor automatisierten Registrierungen und missbräuchlicher Nutzung; Rechtsgrundlage hierfür ist unser berechtigtes Interesse an der Abwehr von Missbrauch (Art. 6 Abs. 1 lit. f DSGVO).
 Der genutzte Authentifizierungsanbieter erfährt von jedem Anmeldevorgang auf unserer Webseite, welchen sie mit dessen Hilfe durchführen.
 Die bereitgestellten Daten werden zum Zweck der Leistungserbringung verarbeitet.
 Die Verarbeitung beruht auf der Rechtsgrundlage des Art. 6 Abs. 1 Satz. 1 b DSGVO.
@@ -154,7 +152,6 @@ Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.
 
 Wenn Sie sich für unseren Newsletter anmelden, verarbeitet Brevo in unserem Auftrag Ihre E-Mail-Adresse sowie IP-Adresse, Datum und Uhrzeit der Anmeldung.
 Bei der Anmeldung holen wir Ihre Einwilligung zum Versand des Newsletters und zur nachfolgend beschriebenen Auswertung ein, beschreiben den Inhalt konkret und verweisen auf diese Datenschutzerklärung.
-Der Newsletter informiert über Kimai, neue Versionen und Funktionen, eigene Erweiterungen und Plugins sowie über Erweiterungen von Partnern.
 
 Unsere Newsletter enthalten Technologien, mit denen wir auswerten können, ob und wann ein Newsletter geöffnet wurde und welche darin enthaltenen Links angeklickt wurden.
 Diese Daten speichern wir zusammen mit technischen Daten (Systemdaten und IP-Adresse), um die Qualität unserer Newsletter zu verbessern und sie besser auf Ihre Interessen abzustimmen.
@@ -165,18 +162,15 @@ Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung bleibt davon un
 
 **YouTube**
 
-Auf einzelnen Seiten binden wir Videos der Plattform YouTube ein.
-Anbieter für Nutzer im Europäischen Wirtschaftsraum ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; Betreiberin der Plattform ist die YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.
-
-Die Einbindung erfolgt über eine Klick-Lösung. Beim Aufruf der Seite sehen Sie zunächst nur eine Vorschau. Es wird keine Verbindung zu YouTube hergestellt und es werden keine Cookies gesetzt.
-
-Erst wenn Sie das Video durch Anklicken starten, wird eine Verbindung zu den Servern von YouTube aufgebaut. Dabei werden Ihre IP-Adresse und Angaben dazu übertragen, welche unserer Seiten Sie besucht haben. Sind Sie in Ihrem YouTube-Konto angemeldet, kann YouTube den Abruf Ihrem Konto zuordnen; das können Sie verhindern, indem Sie sich vorher abmelden.
-Wir verwenden die Domain youtube-nocookie.com, über die YouTube nach eigenen Angaben keine Cookies für personalisierte Werbung setzt.
-Eine Übermittlung von Daten in die USA lässt sich dabei nicht ausschließen.
-
-Rechtsgrundlage ist Ihre Einwilligung, die Sie mit dem Start des Videos erteilen (Art. 6 Abs. 1 lit. a DSGVO).
-Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie keine weiteren Videos starten; die Rechtmäßigkeit der bis dahin erfolgten Verarbeitung bleibt unberührt.
-Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der [Datenschutzerklärung von Google](https://policies.google.com/privacy).
+Unsere Website nutzt Plugins der von Google betriebenen Seite YouTube.
+Betreiber der Seiten ist die YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.
+Wenn Sie eine unserer mit einem YouTube-Plugin ausgestatteten Seiten besuchen, wird eine Verbindung zu den Servern von YouTube hergestellt.
+Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten Sie besucht haben.
+Wenn Sie in Ihrem YouTube-Account eingeloggt sind, ermöglichen Sie YouTube, Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen.
+Dies können Sie verhindern, indem Sie sich aus Ihrem YouTube-Account ausloggen.
+Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote.
+Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der [Datenschutzerklärung von YouTube](https://www.google.de/intl/de/policies/privacy).
+Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
 
 **Webseiten Analyse**
 
@@ -204,26 +198,16 @@ Der Dienst läuft auf der Cloud der Hetzner Online GmbH (Deutschland). Serversta
 Sofern sich aus vorherigen Hinweisen nichts anderes ergibt, werden ihre Daten nur solange gespeichert, wie es zur Erreichung des Verarbeitungszwecks oder für die Erfüllung unserer vertraglichen oder gesetzlichen Pflichten erforderlich ist.
 Solche gesetzlichen Aufbewahrungspflichten können sich aus handels- oder steuerrechtlichen Vorschriften ergeben.
 
-## Auftragsverarbeitung für Kimai Cloud
+## Subprozessor
 
-Für die Daten, die Kunden und deren Mitarbeiter in ihrer Kimai Cloud erfassen, ist der jeweilige Kunde Verantwortlicher im Sinne der DSGVO.
-Wir verarbeiten diese Daten ausschließlich weisungsgebunden auf Grundlage eines Auftragsverarbeitungsvertrags nach Art. 28 DSGVO.
-Die Verarbeitung findet ausschließlich in der EU bzw. im EWR statt; eine Verlagerung in ein Drittland erfolgt nur mit vorheriger Zustimmung des Kunden.
-Aktiviert ein Kunde für seine Kimai Cloud die Anmeldung über SAML, werden Daten mit dem von ihm gewählten Identitätsanbieter ausgetauscht. Dieser Anbieter ist Dienstleister des Kunden und kein Unterauftragsverarbeiter von uns.
-
-## Unterauftragsverarbeiter und weitere Empfänger
-
-Wir setzen zwei Gruppen von Dienstleistern ein:
-
-1. **Unterauftragsverarbeiter für Kimai Cloud.** Sie verarbeiten Daten, die Kunden in ihrer Kimai Cloud erfassen, in unserem Auftrag und auf Grundlage eines Vertrags nach Art. 28 DSGVO.
-2. **Empfänger im Rahmen unserer eigenen Verarbeitung.** Sie sind an der Registrierung, der Zahlungsabwicklung, dem Betrieb unserer Webseite oder am Verkauf von Plugins für selbst gehostete Installationen beteiligt. Sie verarbeiten keine Daten aus den Kimai Clouds unserer Kunden; ein Teil dieser Anbieter ist datenschutzrechtlich eigenständig verantwortlich.
+Um die Bereitstellung der Dienste zu ermöglichen, werden Drittanbieter beauftragt, um bei der Datenverarbeitung zu unterstützen.
+Bei den eingesetzten Dienstleistern, welche Subprozessor bzw. Unterauftragsverarbeiter genannt werden, handelt es sich um:
 
 {% include snippets/subprocessor.md %}
  
 ### Änderungsverlauf
 
-- **[Datum vor Veröffentlichung eintragen]**: Abschnitt „Auftragsverarbeitung für Kimai Cloud“ ergänzt, Unterauftragsverarbeiter und weitere Empfänger getrennt dargestellt, Klarstellung zu Server-Log-Dateien, Rechtsgrundlage für reCAPTCHA ergänzt, YouTube auf Klick-Lösung und youtube-nocookie.com umgestellt, Inhalte des Newsletters beschrieben
-- **21.09.2026**: Zuständige Aufsichtsbehörde korrigiert (Österreichische Datenschutzbehörde), Rechtsgrundlage für den Newsletter auf Einwilligung korrigiert, „Sperrung“ durch „Einschränkung der Verarbeitung“ ersetzt
+- **21.09.2026**: Zuständige Aufsichtsbehörde korrigiert (Österreichische Datenschutzbehörde)
 - **07.05.2026**: Google Fonts entfernt
 - **20.03.2026**: Simple Analytics entfernt (anonyme Webseiten Analyse) - durch selbst-gehostete Lösung ersetzt
 - **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
