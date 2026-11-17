@@ -1,6 +1,6 @@
 ## § 1. Definition
 
-(1) Anbieter der unter der Internetadresse www.kimai.org und www.kimai.cloud (im folgenden "Webseite") angebotenen Leistungen (im folgenden "Dienst", "Kimai") ist Kevin Papst mit Sitz in Österreich (im folgenden "Anbieter"). Die vollständige Anschrift ist dem Impressum zu entnehmen.
+(1) Anbieter der unter der Internetadresse www.kimai.org und www.kimai.cloud (im folgenden "Webseite") angebotenen Leistungen (im folgenden "Dienst", "Kimai") ist die Kimai GmbH mit Sitz in Österreich (im folgenden "Anbieter"). Die vollständige Anschrift ist dem Impressum zu entnehmen.
 
 (2) Der Anbieter bietet seinen Dienst ausschließlich unternehmerischen Kunden an. Der Anbieter schließt keine Verträge mit Verbrauchern.
 Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden kann.
@@ -328,6 +328,7 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 ### Änderungsverlauf
 
 **Version 1.7 (01. Januar 2027)**
+- § 1 (1): Ersetzung `Kevin Papst mit Sitz in Österreich` durch `Kimai GmbH mit Sitz in Österreich`
 - § 2 (6): Klarstellung zu Datensicherungen als technische Maßnahme
 - § 3 (2): Der Auftragsverarbeitungsvertrag ist Teil des Angebots bei der Registrierung
 - § 7 (2): Verweis auf Ziffer 6 des Auftragsverarbeitungsvertrags (Frist und Widerspruchsrecht bei Unterauftragsverarbeitern)

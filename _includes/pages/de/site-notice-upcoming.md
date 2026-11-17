@@ -46,6 +46,7 @@ derartige Inhalte umgehend entfernt.
 
 **Änderungsverlauf**
 
+- **01.01.2027**: Eigentümerwechsel von "Kevin Papst" zu "Kimai GmbH".
 - **28.10.2024**: Umzug des Inhalts von `www.kimai.cloud` nach `www.kimai.org` ohne Änderung des Inhalts
 - **21.09.2023**: Änderung der Anschrift `Kevin Papst, Engerthstraße 171/13, 1020 Wien, Österreich` in `Kevin Papst, Schweidlgasse 46/1/13, 1020 Wien, Österreich`
 - **26.03.2021**: Verdeutlichung das österreichisches Recht gilt (Hinweise auf deutsche Paragraphen entfernt)

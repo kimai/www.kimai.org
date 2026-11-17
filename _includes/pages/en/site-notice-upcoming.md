@@ -1,6 +1,6 @@
 **Responsible for contents**
 
-{% include snippets/site-owner.md %}
+{% include snippets/site-owner-upcoming.md %}
 
 **Dispute resolution**
 

@@ -222,7 +222,7 @@ Wir setzen zwei Gruppen von Dienstleistern ein:
 
 ### Änderungsverlauf
 
-- **01.01.2027**: Abschnitt „Auftragsverarbeitung für Kimai Cloud“ ergänzt, Unterauftragsverarbeiter und weitere Empfänger getrennt dargestellt, Klarstellung zu Server-Log-Dateien, Rechtsgrundlage für reCAPTCHA ergänzt, YouTube auf Klick-Lösung und youtube-nocookie.com umgestellt, Inhalte des Newsletters beschrieben
+- **01.01.2027**: Eigentümerwechsel von "Kevin Papst" zu "Kimai GmbH". Abschnitt „Auftragsverarbeitung für Kimai Cloud“ ergänzt, Unterauftragsverarbeiter und weitere Empfänger getrennt dargestellt, Klarstellung zu Server-Log-Dateien, Rechtsgrundlage für reCAPTCHA ergänzt, YouTube auf Klick-Lösung und youtube-nocookie.com umgestellt, Inhalte des Newsletters beschrieben
 - **21.09.2026**: Zuständige Aufsichtsbehörde korrigiert (Österreichische Datenschutzbehörde), Rechtsgrundlage für den Newsletter auf Einwilligung korrigiert, „Sperrung“ durch „Einschränkung der Verarbeitung“ ersetzt
 - **07.05.2026**: Google Fonts entfernt
 - **20.03.2026**: Simple Analytics entfernt (anonyme Webseiten Analyse) - durch selbst-gehostete Lösung ersetzt
