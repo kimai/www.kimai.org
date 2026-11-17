@@ -51,7 +51,7 @@ It also explains how and for what purpose this happens.
 Data transmitted via the internet (e.g. via email communication) may be subject to security breaches. 
 Complete protection of your data from third-party access is not possible.
 
-## Responsible for this website 
+### Responsible for this website 
 
 The party responsible for processing data on this website is:
 
@@ -59,14 +59,14 @@ The party responsible for processing data on this website is:
 
 The responsible party is the natural or legal person who alone or jointly with others decides on the purposes and means of processing personal data (names, email addresses, etc.).
 
-## Revocation of your consent to the processing of your data
+### Revocation of your consent to the processing of your data
 
 Many data processing operations are only possible with your express consent. 
 You may revoke your consent at any time with future effect. 
 An informal email making this request is sufficient. 
 The data processed before we receive your request may still be legally processed.
 
-## Right to lodge a complaint with a supervisory authority
+### Right to lodge a complaint with a supervisory authority
 
 If you believe that the processing of your personal data infringes the GDPR or the Austrian Data Protection Act (DSG), you have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR).
 In particular, you may contact the supervisory authority in the Member State of your habitual residence, your place of work or the place of the alleged infringement.
@@ -76,12 +76,12 @@ The supervisory authority competent for us is:
 Austrian Data Protection Authority (Österreichische Datenschutzbehörde), Barichgasse 40–42, 1030 Vienna, Austria  
 Phone: +43 1 52 152-0, Email: dsb@dsb.gv.at, Web: https://dsb.gv.at/
 
-## Right to data portability
+### Right to data portability
 
 You have the right to have data which we process based on your consent or in fulfillment of a contract automatically delivered to yourself or to a third party in a standard, machine-readable format. 
 If you require the direct transfer of data to another responsible party, this will only be done to the extent technically feasible.
 
-## SSL or TLS encryption
+### SSL or TLS encryption
 
 This site uses SSL or TLS encryption for security reasons and for the protection of the transmission of confidential content, such as the inquiries you send to us as the site operator. 
 
