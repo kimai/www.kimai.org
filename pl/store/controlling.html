@@ -813,7 +813,34 @@ then either the directory has a wrong name (must be <strong>var/plugins/WorkCont
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Lista zmian</h2>
                     
-                    <p><strong>Version 1.37.1</strong></p>
+                    <p><strong>Version 2.0.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.72.0</p>
+
+<ul>
+  <li>Added configurable absence types
+    <ul>
+      <li>New permission <code class="language-plaintext highlighter-rouge">edit_absence_types</code> (by default granted to <code class="language-plaintext highlighter-rouge">ROLE_ADMIN</code> and <code class="language-plaintext highlighter-rouge">ROLE_SUPER_ADMIN</code>)</li>
+      <li>The existing types (vacation, time off, sickness, other) can be adjusted, further types can be added to each of them</li>
+      <li>“Parental leave”, “Unpaid vacation” and “Sickness of a relative” were converted to configurable types</li>
+      <li>Types which are not needed any longer can be hidden (existing absences are kept) or deleted, as long as they were not used</li>
+      <li>Overbooking: vacation types can allow booking more days than available and time off types can allow a negative working time account (configured in days / hours, default 0 = not allowed)</li>
+    </ul>
+  </li>
+  <li>Removed the setting “Allow half days for holidays”: the value is migrated and can now be changed per absence type</li>
+  <li>New API endpoints to manage absence types:
+    <ul>
+      <li>Fetch <code class="language-plaintext highlighter-rouge">GET /api/absence-types</code></li>
+      <li>Delete <code class="language-plaintext highlighter-rouge">DELETE /api/absence-types/{id}</code></li>
+      <li>Disable <code class="language-plaintext highlighter-rouge">PATCH /api/absence-types/{id}/disable</code></li>
+      <li>Enable <code class="language-plaintext highlighter-rouge">PATCH /api/absence-types/{id}/enable</code></li>
+    </ul>
+  </li>
+  <li>Highlight “today” in Absence calendar</li>
+  <li>Added HTML ID for simple Absence UI management</li>
+</ul>
+
+<p><strong>Version 1.37.1</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.69.0</p>
 
