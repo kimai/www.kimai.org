@@ -40,18 +40,18 @@ layout: page
 <div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 w-100">
     <div class="flex-grow-1">
     {%- if page.lang == 'de' -%}
-        <a class="fw-bold" href="{{ announcement_url }}">Ab 1. Januar 2027 übernimmt die Kimai GmbH</a>.
+        <a href="{{ announcement_url }}">Ab 1. Januar 2027 übernimmt die Kimai GmbH</a>.
         {% if is_upcoming %}
-            Sie lesen die Vorschau der neuen Fassung, die ab diesem Tag gilt.
+            Sie lesen <strong>die Vorschau der neuen Fassung</strong>, die ab diesem Tag gilt.
         {% elsif upcoming_doc %}
             Die neue Fassung dieses Dokuments können Sie schon jetzt lesen.
         {% else %}
             Dieses Dokument bleibt unverändert.
         {% endif %}
     {%- else -%}
-        <a class="fw-bold" href="{{ announcement_url }}">Effective January 1, 2027, Kimai GmbH will take over</a>.
+        <a href="{{ announcement_url }}">Effective January 1, 2027, Kimai GmbH will take over</a>.
         {% if is_upcoming %}
-            You are reading a preview of the new version, which is valid from that day.
+            You are reading <strong>a preview of the new version</strong>, which is valid from that day.
         {% elsif upcoming_doc %}
             You can already read the new version of this document.
         {% else %}
