@@ -1,6 +1,6 @@
 ### Lizenz- und Nutzungsbedingungen für kommerzielle Kimai-Plugins
 
-*Gilt für alle Plugins von Kevin Papst, sofern nicht anders angegeben.*
+*Gilt für alle Plugins von {% include snippets/site-owner-upcoming.md type="name" %}, sofern nicht anders angegeben.*
 
 **1. Lizenzgegenstand und Geltungsbereich**
 
@@ -55,9 +55,9 @@ Als SaaS gilt jedes Modell, bei dem die Preisgestaltung von der Anzahl der Endnu
 
 Vom SaaS-Verbot ausgenommen ist das Hosting von Kimai-Installationen für einzelne Kunden, sofern je Kundeninstallation eine eigene Lizenz vorliegt und die Abrechnung nicht nutzerzahlabhängig erfolgt.
 
-*Beispiel: Ein Anbieter betreibt Kimai-Instanzen für fünf verschiedene Unternehmen. Jede Instanz benötigt eine eigene Lizenz. Wird hingegen eine einzelne Instanz mehreren zahlenden Nutzern angeboten (z. B. als Monatsabo pro Nutzer), gilt dies als SaaS und erfordert eine erweiterte Lizenz.*
+*Beispiel: Ein Anbieter betreibt Kimai-Instanzen für fünf verschiedene Unternehmen und erwirbt jeweils eine eigene Lizenz, also 5 Lizenzen. Wird hingegen eine einzelne Instanz mit nur einer Lizenz mehreren zahlenden Nutzern angeboten (z. B. als Monatsabo pro Nutzer), gilt dies als SaaS und erfordert eine erweiterte Lizenz.*
 
-Für SaaS-Nutzung kontaktieren Sie uns bitte vorab.
+Für SaaS-Nutzung müssen Sie uns kontaktieren.
 
 **9. Veränderung des Plugins**
 
@@ -66,7 +66,7 @@ Sie dürfen das Plugin anpassen, mit anderen Werken kombinieren oder daraus abge
 Nicht erlaubt ist:
 
 - Das Deaktivieren oder Umgehen integrierter Lizenzprüfungen oder Erkennungsmechanismen des Plugins.
-- Das Extrahieren einzelner Komponenten (z. B. Icons, Module) zur eigenständigen Nutzung außerhalb des Plugins.
+- Das Extrahieren einzelner Komponenten zur eigenständigen Nutzung außerhalb des Plugins.
 
 **10. Verbot der Weiterverbreitung**
 

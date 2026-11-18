@@ -49,7 +49,7 @@ Der Kunde darf die Registrierung nur durch eine vertretungsberechtigte Person, b
 (2) Zur Einrichtung des Kundenkontos (im folgenden "Registrierung") erhebt der Anbieter den Namen, die E-Mail-Adresse und ein Passwort.
 Mit diesen Daten (E-Mail-Adresse und Passwort) kann sich der Kunde nach erfolgreicher Registrierung in sein Kundenkonto einloggen. Alternativ kann ein Login über die Dienstanbieter "Google" oder "GitHub" durchgeführt werden. Hierbei werden personenbezogene Daten wie "Benutzername", "vollständiger Name" und "Benutzerbild" von dem jeweiligen Dienstanbieter an den Dienst übertragen.
 
-Mit dem Klicken auf den Registrierungs-Button gibt der Kunde ein Angebot auf den Nutzungsvertrag gemäß den Bestimmungen dieser AGB ab. Bestandteil dieses Angebots ist auch der Auftragsverarbeitungsvertrag gemäß § 8 (7).
+Mit dem Klicken auf den Registrierungs-Button gibt der Kunde ein Angebot auf den Nutzungsvertrag gemäß den Bestimmungen dieser AGB ab.
 Ein Anspruch seitens des Kunden auf Abschluss des Nutzungsvertrages besteht nicht.
 
 Um Missbrauch zu vermeiden, verschickt der Anbieter einen Bestätigungslink an die bei der Registrierung angegebene E-Mail-Adresse, sofern die Registrierung nicht über einen der genannten Dienstanbieter erfolgt ist.
@@ -180,7 +180,7 @@ Für Subunternehmer, die personenbezogene Daten des Kunden verarbeiten (Unterauf
 
 (6) Der Anbieter informiert den Kunden über die registrierte E-Mail-Adresse, nachdem er von einer Verletzung des Schutzes personenbezogener Daten Kenntnis erlangt hat. Frist und Inhalt der Meldung richten sich nach Ziffer 8 des Auftragsverarbeitungsvertrags gemäß § 8 (7).
 
-(7) Der Auftragsverarbeitungsvertrag in der jeweils gültigen Fassung ist Bestandteil dieser AGB. Die allgemeine Fassung ist ohne Anmeldung unter <https://www.kimai.cloud/de/auftragsverarbeitung> abrufbar. Die auf den Kunden ausgefertigte Fassung steht im Kundenkonto unter <https://www.kimai.cloud/go/my-dpa> bereit und wird auf Wunsch als PDF zur Verfügung gestellt.
+(7) Der Auftragsverarbeitungsvertrag in der jeweils gültigen Fassung ist ohne Anmeldung unter <https://www.kimai.cloud/de/auftragsverarbeitung> abrufbar. Die auf den Kunden ausgefertigte Fassung steht im Kundenkonto unter <https://www.kimai.cloud/go/my-dpa> bereit und wird auf Wunsch als PDF zur Verfügung gestellt.
 
 Weitere Informationen zum Datenschutz sind der gesonderten Datenschutzerklärung zu entnehmen.
 
@@ -227,7 +227,7 @@ Im Falle dauerhafter Einschränkung der Zugriffsmöglichkeiten besteht ein Anspr
 
 (5) Der Kunde verpflichtet sich, den Anbieter von sämtlichen Schadensersatzforderungen freizustellen, die von Dritten aufgrund einer Schädigung durch einen Mandanten in Verbindung mit der Nutzung des Dienstes gegen den Anbieter erhoben werden.
 
-(6) Der Anbieter ist berechtigt, auf der Webseite, im Kundenkonto und in seinen eigenen Mitteilungen an den Kunden auf eigene Produkte, Dienste und Erweiterungen sowie auf Erweiterungen von Partnern hinzuweisen. Werbung sonstiger Dritter schaltet der Anbieter nicht.
+(6) Der Anbieter ist berechtigt, auf der Webseite, im Kundenkonto und in seinen eigenen Mitteilungen an den Kunden auf eigene Produkte, Dienste und Erweiterungen sowie auf Entwicklungen von Partnern und der Community hinzuweisen. Werbung sonstiger Dritter schaltet der Anbieter nicht.
 Nachrichten, die der Dienst im Auftrag des Kunden an dessen Mitarbeiter oder an Dritte versendet, enthalten keine Werbung.
 Werbliche E-Mails versendet der Anbieter nur im Rahmen der gesetzlichen Vorgaben, insbesondere auf Grundlage einer Einwilligung; der Empfang kann jederzeit abbestellt werden.
 
@@ -328,14 +328,13 @@ Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regel
 ### Änderungsverlauf
 
 **Version 1.7 (01. Januar 2027)**
-- § 1 (1): Ersetzung `Kevin Papst mit Sitz in Österreich` durch `Kimai GmbH mit Sitz in Österreich`
+- § 1 (1): Ersetzung `Kevin Papst` durch `Kimai GmbH`
 - § 2 (6): Klarstellung zu Datensicherungen als technische Maßnahme
-- § 3 (2): Der Auftragsverarbeitungsvertrag ist Teil des Angebots bei der Registrierung
 - § 7 (2): Verweis auf Ziffer 6 des Auftragsverarbeitungsvertrags (Frist und Widerspruchsrecht bei Unterauftragsverarbeitern)
 - § 8 (6): Verweis auf Ziffer 8 des Auftragsverarbeitungsvertrags (Frist und Inhalt der Meldung)
-- § 8 (7): Der Auftragsverarbeitungsvertrag ist Bestandteil dieser AGB
+- § 8 (7): Hinweis auf die aktuelle Version des Auftragsverarbeitungsvertrag
 - § 9 (3): Angleichung der Löschung an die Vorhaltezeit nach § 12 (7)
-- § 11 (6): Hinweise auf eigene Produkte und Partner-Erweiterungen erlaubt, Werbung sonstiger Dritter und Werbung in Nachrichten an Mitarbeiter des Kunden ausgeschlossen
+- § 11 (6): Hinweise auf eigene Produkte und Entwicklungen von Partner und der Community sind erlaubt, Werbung sonstiger Dritter und Werbung in Nachrichten an Mitarbeiter des Kunden ausgeschlossen
 - § 16 (5): Klarstellung zu Übersetzungen
 
 **Version 1.6 (03. Mai 2026)**

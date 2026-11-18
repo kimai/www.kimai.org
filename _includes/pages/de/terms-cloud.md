@@ -35,7 +35,6 @@ Der Anbieter leistet keine Gewähr für Richtigkeit oder Vollständigkeit der Vo
 Der Kunde bleibt für die Sicherung von Daten und Inhalten, die er, seine Mitarbeiter oder sonst für ihn handelnde Dritte auf die Internetplattform hochladen oder dort erstellen (nachfolgend "Kundendaten"), zu jeder Zeit selbst verantwortlich und wird diese selbst und regelmäßig mit der Sorgfalt eines ordentlichen Kaufmanns herunterladen und sichern.
 Der Anbieter stellt dem Kunden die hierfür, abhängig von den gebuchten Leistungen, Werkzeuge zum gesammelten Herunterladen von Daten über den Kunden-Account zur Verfügung. Der Kunde wird die Datensicherungen so verwahren, dass ihm ein jederzeitiger Zugriff auf diese möglich ist und er auf diese unabhängig von der Internetplattform zugreifen kann.
 Für den Verlust von Daten des Kunden haftet der Anbieter nur dann, wenn ein solcher Verlust durch angemessene Datensicherungsmaßnahmen seitens des Kunden nicht vermeidbar gewesen wäre.
-Datensicherungen, die der Anbieter im Rahmen seiner technischen und organisatorischen Maßnahmen nach Art. 32 DSGVO erstellt, dienen der Ausfallsicherheit des Gesamtsystems und begründen keinen Anspruch des Kunden auf Wiederherstellung einzelner Daten.
 
 (7) Der Dienst wird dem Kunden ausschließlich über das Internet zur Verfügung gestellt.
 Zur Nutzung sind daher ein internetfähiges Endgerät und eine Internetverbindung erforderlich.
@@ -49,7 +48,7 @@ Der Kunde darf die Registrierung nur durch eine vertretungsberechtigte Person, b
 (2) Zur Einrichtung des Kundenkontos (im folgenden "Registrierung") erhebt der Anbieter den Namen, die E-Mail-Adresse und ein Passwort.
 Mit diesen Daten (E-Mail-Adresse und Passwort) kann sich der Kunde nach erfolgreicher Registrierung in sein Kundenkonto einloggen. Alternativ kann ein Login über die Dienstanbieter "Google" oder "GitHub" durchgeführt werden. Hierbei werden personenbezogene Daten wie "Benutzername", "vollständiger Name" und "Benutzerbild" von dem jeweiligen Dienstanbieter an den Dienst übertragen.
 
-Mit dem Klicken auf den Registrierungs-Button gibt der Kunde ein Angebot auf den Nutzungsvertrag gemäß den Bestimmungen dieser AGB ab. Bestandteil dieses Angebots ist auch der Auftragsverarbeitungsvertrag gemäß § 8 (7).
+Mit dem Klicken auf den Registrierungs-Button gibt der Kunde ein Angebot auf den Nutzungsvertrag gemäß den Bestimmungen dieser AGB ab.
 Ein Anspruch seitens des Kunden auf Abschluss des Nutzungsvertrages besteht nicht.
 
 Um Missbrauch zu vermeiden, verschickt der Anbieter einen Bestätigungslink an die bei der Registrierung angegebene E-Mail-Adresse, sofern die Registrierung nicht über einen der genannten Dienstanbieter erfolgt ist.
@@ -160,7 +159,7 @@ Maßgeblich für die Verzugsberechnung ist die Gutschrift des Rechnungsbetrages 
 Der Anbieter wird dem Kunden eine solche Änderung in Textform (E-Mail reicht) bekanntgeben. Der Kunde stimmt einer Übertragung des Vertrages bereits jetzt vorab zu.
 
 (2) Der Anbieter ist berechtigt, seine Leistungsverpflichtungen aus dem Nutzungsvertrag auf Dritte zu übertragen oder Subunternehmer einzuschalten und Forderungen gegenüber dem Kunden an Dritte zu übertragen. Gegenüber dem Kunden bleibt der Anbieter dabei für die vertragsgemäße Leistungserbringung verantwortlich.
-Für Subunternehmer, die personenbezogene Daten des Kunden verarbeiten (Unterauftragsverarbeiter), gilt ergänzend Ziffer 6 des Auftragsverarbeitungsvertrags gemäß § 8 (7). Dort sind die Informationspflicht, die Frist und das Widerspruchsrecht des Kunden geregelt.
+Der Anbieter informiert den Kunden über jede beabsichtigte Änderung in Bezug auf die Hinzuziehung oder die Ersetzung von Subunternehmern, einschließlich Datenübermittlungen in Drittländer.
 
 (3) Eine Übertragung von Rechten und Pflichten aus diesem Vertrag durch den Kunden auf Dritte ist nur mit vorheriger ausdrücklicher Zustimmung des Anbieters zulässig.
 
@@ -178,9 +177,7 @@ Für Subunternehmer, die personenbezogene Daten des Kunden verarbeiten (Unterauf
 
 (5) Der Kunde stellt den Anbieter frei von sämtlichen Ansprüchen, die Dritte gegenüber dem Anbieter erheben im Zusammenhang mit der Verarbeitung ihrer personenenbezogenen Daten durch den Kunden, es sei denn, dass der Kunde eine solche Geltendmachung nicht zu vertreten hat. Der Freistellungsanspruch umfasst auch die erforderlichen Kosten für eine angemessene Anspruchsprüfung und Rechtsverteidigung.
 
-(6) Der Anbieter informiert den Kunden über die registrierte E-Mail-Adresse, nachdem er von einer Verletzung des Schutzes personenbezogener Daten Kenntnis erlangt hat. Frist und Inhalt der Meldung richten sich nach Ziffer 8 des Auftragsverarbeitungsvertrags gemäß § 8 (7).
-
-(7) Der Auftragsverarbeitungsvertrag in der jeweils gültigen Fassung ist Bestandteil dieser AGB. Die allgemeine Fassung ist ohne Anmeldung unter <https://www.kimai.cloud/de/auftragsverarbeitung> abrufbar. Die auf den Kunden ausgefertigte Fassung steht im Kundenkonto unter <https://www.kimai.cloud/go/my-dpa> bereit und wird auf Wunsch als PDF zur Verfügung gestellt.
+(6) Der Anbieter informiert den Kunden unverzüglich über die registrierte E-Mail-Adresse, nachdem er von einer Verletzung des Schutzes personenbezogener Daten Kenntnis erlangt hat.
 
 Weitere Informationen zum Datenschutz sind der gesonderten Datenschutzerklärung zu entnehmen.
 
@@ -192,7 +189,7 @@ Weitere Informationen zum Datenschutz sind der gesonderten Datenschutzerklärung
 Der Anbieter ist außerdem berechtigt, dem Kunden eine begrenzte Anzahl von („Onboarding“) E-Mails mit Anleitungen und Erläuterungen zur Nutzung der Plattform zu senden, was hauptsächlich während der Testphase geschieht.
 Der Kunde kann dem Erhalt dieser Onboarding-E-Mails jederzeit widersprechen bzw. sich von diesen Mitteilungen abmelden.
 
-(3) Wenn ein Konto durch den Kunden oder durch den Anbieter gekündigt wird, werden die Daten des Kontos nach Ablauf der Vorhaltezeit gemäß § 12 (7) unwiderruflich gelöscht. Eine Wiederherstellung ist danach nicht möglich. Ausnahmen von der Löschung bestehen für Daten, die gesetzlichen Aufbewahrungsfristen unterliegen (§ 12 (8)).
+(3) Wenn ein Konto durch den Kunden oder durch den Anbieter gekündigt wird, werden die Daten des Kontos unwiderruflich gelöscht. Eine Wiederherstellung ist nicht möglich. Ausnahmen von der Löschung bestehen für Daten, die gesetzlichen Aufbewahrungsfristen unterliegen.
 
 ## § 10. Verfügbarkeit
 
@@ -227,9 +224,7 @@ Im Falle dauerhafter Einschränkung der Zugriffsmöglichkeiten besteht ein Anspr
 
 (5) Der Kunde verpflichtet sich, den Anbieter von sämtlichen Schadensersatzforderungen freizustellen, die von Dritten aufgrund einer Schädigung durch einen Mandanten in Verbindung mit der Nutzung des Dienstes gegen den Anbieter erhoben werden.
 
-(6) Der Anbieter ist berechtigt, auf der Webseite, im Kundenkonto und in seinen eigenen Mitteilungen an den Kunden auf eigene Produkte, Dienste und Erweiterungen sowie auf Erweiterungen von Partnern hinzuweisen. Werbung sonstiger Dritter schaltet der Anbieter nicht.
-Nachrichten, die der Dienst im Auftrag des Kunden an dessen Mitarbeiter oder an Dritte versendet, enthalten keine Werbung.
-Werbliche E-Mails versendet der Anbieter nur im Rahmen der gesetzlichen Vorgaben, insbesondere auf Grundlage einer Einwilligung; der Empfang kann jederzeit abbestellt werden.
+(6) Dem Anbieter ist es erlaubt, an beliebiger Stelle innerhalb der zur Verfügung gestellten Dienste und Kapazitäten einschließlich über den Dienst versandte E-Mails, SMS oder sonstiger elektronischer Nachrichten Werbebanner, Sponsorbeiträge oder sonstiges eigenes und fremdes Werbematerial zu schalten.
 
 (7) Dem Kunden ist es untersagt das System des Anbieters missbräuchlich in Anspruch zu nehmen. Der Kunde sichert zu, dass er keine Geräte und Einrichtungen, Software oder sonstige Daten in einer Weise nutzt, die zu Veränderungen des Systems führen können und/oder die Verfügbarkeit des Systems beeinträchtigen können.
 
@@ -301,7 +296,7 @@ Sollte der Anbieter bei der Ausführung dieser Vereinbarung Anpassungen oder Erw
 
 ### § 15. Änderungen der AGB
 
-Der Anbieter behält sich vor, die AGB anzupassen oder zu ändern. Der Kunde wird über Änderungen in Textform informiert. Hierzu werden die geänderten Dokumente an seine bei der Registrierung angegebene Mailadresse gesendet.
+Der Anbieter behält sich vor, die AGB anzupassen oder zu ändern. Der Kunde wird über Änderungen der AGB in Textform informiert. Hierzu werden die geänderten AGB an seine bei der Registrierung angegebene Mailadresse gesendet.
 
 Widerspricht der Kunde den geänderten Geschäftsbedingungen nicht innerhalb von zwei Wochen nach Empfang der Benachrichtigung gelten die geänderten AGB als angenommen.
 
@@ -317,7 +312,7 @@ Sofern der Kunde sein Widerspruchsrecht ausübt, ist der Anbieter berechtigt, di
 
 (4) Der Kunde erklärt sich bereit, dass die Kommunikation – auch in Vertragsangelegenheiten – per E-Mail erfolgen kann. Der Kunde verpflichtet sich, in seinem Konto stets eine aktuelle E-Mail Adresse zu hinterlegen. Die E-Mail Adresse des Anbieters ist dem Impressum zu entnehmen.
 
-(5) Vertragssprache ist Deutsch, alle Erklärungen und die Kommunikation erfolgen in deutscher Sprache. Die Parteien stellen sicher, dass ihre Ansprechpartner jeweils die deutsche Sprache beherrschen. Übersetzungen dieser AGB und der mitgeltenden Dokumente dienen ausschließlich der Information; maßgeblich ist die deutsche Fassung.
+(5) Vertragssprache ist Deutsch, alle Erklärungen und die Kommunikation erfolgen in deutscher Sprache. Die Parteien stellen sicher, dass ihre Ansprechpartner jeweils die deutsche Sprache beherrschen.
 
 (6) Der Kunde gewährleistet, dass seine Verwendung des Systems und alle eingegebenen oder hochgeladenen Daten mit allen anwendbaren Gesetzen und Regulationen übereinstimmen und Rechte Dritter nicht verletzen.
 
@@ -326,16 +321,6 @@ Die Parteien werden stattdessen auf die Vereinbarung einer Ersatzregelung, welch
 Die vorstehenden Bestimmungen gelten entsprechend für den Fall, dass sich Regelungen als lückenhaft erweisen.
 
 ### Änderungsverlauf
-
-**Version 1.7 (Datum vor Veröffentlichung eintragen)**
-- § 2 (6): Klarstellung zu Datensicherungen als technische Maßnahme
-- § 3 (2): Der Auftragsverarbeitungsvertrag ist Teil des Angebots bei der Registrierung
-- § 7 (2): Verweis auf Ziffer 6 des Auftragsverarbeitungsvertrags (Frist und Widerspruchsrecht bei Unterauftragsverarbeitern)
-- § 8 (6): Verweis auf Ziffer 8 des Auftragsverarbeitungsvertrags (Frist und Inhalt der Meldung)
-- § 8 (7): Der Auftragsverarbeitungsvertrag ist Bestandteil dieser AGB
-- § 9 (3): Angleichung der Löschung an die Vorhaltezeit nach § 12 (7)
-- § 11 (6): Hinweise auf eigene Produkte und Partner-Erweiterungen erlaubt, Werbung sonstiger Dritter und Werbung in Nachrichten an Mitarbeiter des Kunden ausgeschlossen
-- § 16 (5): Klarstellung zu Übersetzungen
 
 **Version 1.6 (03. Mai 2026)**
 - § 3 (6): Vorzeitige Löschung ungenutzter Testaccounts

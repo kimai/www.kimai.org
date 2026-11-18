@@ -154,7 +154,7 @@ Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.
 
 Wenn Sie sich für unseren Newsletter anmelden, verarbeitet Brevo in unserem Auftrag Ihre E-Mail-Adresse sowie IP-Adresse, Datum und Uhrzeit der Anmeldung.
 Bei der Anmeldung holen wir Ihre Einwilligung zum Versand des Newsletters und zur nachfolgend beschriebenen Auswertung ein, beschreiben den Inhalt konkret und verweisen auf diese Datenschutzerklärung.
-Der Newsletter informiert über Kimai, neue Versionen und Funktionen, eigene Erweiterungen und Plugins sowie über Erweiterungen von Partnern.
+Der Newsletter informiert über Kimai, neue Versionen und Funktionen, eigene Erweiterungen und Plugins sowie über Erweiterungen von Partnern und der Community.
 
 Unsere Newsletter enthalten Technologien, mit denen wir auswerten können, ob und wann ein Newsletter geöffnet wurde und welche darin enthaltenen Links angeklickt wurden.
 Diese Daten speichern wir zusammen mit technischen Daten (Systemdaten und IP-Adresse), um die Qualität unserer Newsletter zu verbessern und sie besser auf Ihre Interessen abzustimmen.
@@ -222,11 +222,11 @@ Wir setzen zwei Gruppen von Dienstleistern ein:
 
 ### Änderungsverlauf
 
-- **01.01.2027**: Eigentümerwechsel von "Kevin Papst" zu "Kimai GmbH". Abschnitt „Auftragsverarbeitung für Kimai Cloud“ ergänzt, Unterauftragsverarbeiter und weitere Empfänger getrennt dargestellt, Klarstellung zu Server-Log-Dateien, Rechtsgrundlage für reCAPTCHA ergänzt, YouTube auf Klick-Lösung und youtube-nocookie.com umgestellt, Inhalte des Newsletters beschrieben
+- **01.01.2027**: Eigentümerwechsel von `Kevin Papst` zu `Kimai GmbH`. Abschnitt „Auftragsverarbeitung für Kimai Cloud“ ergänzt, Unterauftragsverarbeiter und weitere Empfänger getrennt dargestellt, Klarstellung zu Server-Log-Dateien, Rechtsgrundlage für reCAPTCHA ergänzt, YouTube auf Klick-Lösung und youtube-nocookie.com umgestellt, Inhalte des Newsletters beschrieben
 - **21.09.2026**: Zuständige Aufsichtsbehörde korrigiert (Österreichische Datenschutzbehörde), Rechtsgrundlage für den Newsletter auf Einwilligung korrigiert, „Sperrung“ durch „Einschränkung der Verarbeitung“ ersetzt
 - **07.05.2026**: Google Fonts entfernt
 - **20.03.2026**: Simple Analytics entfernt (anonyme Webseiten Analyse) - durch selbst-gehostete Lösung ersetzt
-- **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren
+- **21.02.2026**: Neuer Provider "Mailbox" für Support-Emails (vorher: Google), Korrektur Stripe Kontakt (vorher: USA, jetzt: EU), Kategorisierung Subprozessoren 
 - **06.01.2026**: Nennung der 8 Rechte gemäß DSGVO
 - **23.06.2025**: Entfernung der URL zur Liste deutscher Datenschutzbehörden
 - **18.03.2024**: Änderung "Sendinblue Frankreich" zu "Brevo Deutschland", Simple Analytics aufgenommen

@@ -1,7 +1,7 @@
 
 ### License and Terms of Use for Commercial Kimai Plugins
 
-Applies to all plugins by Kevin Papst, unless otherwise stated.
+Applies to all plugins by {% include snippets/site-owner-upcoming.md type="name" %}, unless otherwise stated.
 
 **1. Subject Matter and Scope**
 

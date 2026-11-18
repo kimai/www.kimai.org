@@ -44,6 +44,7 @@ However, if you notice any violations of copyright law, please inform us. Such c
 
 **Changelog**
 
+- **01 Jan 2027**: Change of Ownership from `Kevin Papst` to `Kimai GmbH`
 - **28 Okt 2024**: Moving the content from `www.kimai.cloud` to `www.kimai.org` without changing the content
 - **21 Sep 2023**: Change address `Kevin Papst, Engerthstraße 171/13, 1020 Wien, Österreich` to `Kevin Papst, Schweidlgasse 46/1/13, 1020 Wien, Österreich`
 - **26 Mar 2021**: Clarification that Austrian law applies (references to German paragraphs removed)
