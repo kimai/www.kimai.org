@@ -1,10 +1,10 @@
 {% alert warning %}
-This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-cloud.md %}), is legally valid.
+This is a translation for information purposes only. Only the original declaration, [which is available in German]({% link _pages/de/terms-cloud-upcoming.md %}), is legally valid.
 {% endalert %}
 
 ## § 1. Definition
 
-(1) Provider of the services (hereinafter "service", "Kimai") offered at the Internet address www.kimai.org and www.kimai.cloud (hereinafter "website") is Kevin Papst with registered office in Austria (hereinafter "Provider"). The complete address can be found in the imprint.
+(1) Provider of the services (hereinafter "service", "Kimai") offered at the Internet address www.kimai.org and www.kimai.cloud (hereinafter "website") is Kimai GmbH with registered office in Austria (hereinafter "Provider"). The complete address can be found in the imprint.
 
 (2) The Provider offers its service exclusively to entrepreneurial customers. The Provider does not conclude any contracts with consumers.
 A consumer is any natural person who enters into a legal transaction for purposes that are predominantly neither commercial nor self-employed.
@@ -39,6 +39,7 @@ The Provider does not warrant the accuracy or completeness of the templates. Ins
 The Customer shall remain responsible at all times for backing up data and content that it, its employees or third parties otherwise acting on its behalf upload to or create on the Internet platform (hereinafter "Customer Data") and shall download and back up such data itself and regularly with the due care of a prudent businessman.
 The Provider shall provide the Customer with the tools for this purpose, depending on the services booked, for the collected downloading of data via the Customer's account. The customer shall store the data backups in such a way that he can access them at any time and independently of the Internet platform.
 The Provider shall only be liable for the loss of the Customer's data if such loss could not have been avoided by reasonable data backup measures on the part of the Customer.
+Data backups that the Provider creates as part of its technical and organizational measures according to Art. 32 GDPR serve the reliability of the overall system and do not give the Customer a right to the restoration of individual data.
 
 (7) The Service shall be made available to the Customer exclusively via the Internet.
 An Internet-capable end device and an Internet connection are therefore required for use.
@@ -163,7 +164,7 @@ The crediting of the invoice amount to the Provider's bank account shall be deci
 The Provider shall notify the Customer of such a change in text form (e-mail is sufficient). The customer already agrees in advance to a transfer of the contract.
 
 (2) The Provider is entitled to transfer its service obligations under the User Agreement to third parties or to engage subcontractors and to transfer claims against the Customer to third parties. In doing so, the Provider shall remain responsible to the Customer for the performance of services in accordance with the contract.
-The Provider informs the customer about any intended changes regarding the involvement or replacement of subcontractors, including data transfers to third countries.
+For subcontractors that process personal data of the Customer (sub-processors), section 6 of the data processing agreement according to § 8 (7) also applies. It regulates the duty to inform, the deadline and the Customer's right to object.
 
 (3) A transfer of rights and obligations from this contract by the Customer to third parties is only permitted with the prior express consent of the Provider.
 
@@ -181,7 +182,9 @@ The Provider informs the customer about any intended changes regarding the invol
 
 (5) The Customer shall indemnify the Provider against all claims asserted by third parties against the Provider in connection with the processing of their personal data by the Customer, unless the Customer is not responsible for such assertion. The claim for indemnification shall also include the necessary costs for an appropriate examination of the claim and legal defense.
 
-(6) The Provider shall inform the customer via the registered e-mail address without undue delay after becoming aware of a personal data breach.
+(6) The Provider shall inform the customer via the registered e-mail address after becoming aware of a personal data breach. The deadline and content of the notification are governed by section 8 of the data processing agreement according to § 8 (7).
+
+(7) The current version of the data processing agreement is available without registration at <https://www.kimai.cloud/data-processing>. The version issued to the Customer is available in the customer account at <https://www.kimai.cloud/go/my-dpa> and can be provided as a PDF upon request.
 
 Further information on data protection can be found in the separate data protection declaration.
 
@@ -193,7 +196,7 @@ Further information on data protection can be found in the separate data protect
 The Provider is also entitled to send the Customer a limited number of ("onboarding") emails containing guidance and explanations on the use of the platform, which will mainly happen during the trial period.
 The Customer may object to receiving these onboarding emails or unsubscribe from such communications at any time.
 
-(3) If an account is terminated by the customer or by the provider, the account data will be irrevocably deleted. A recovery is not possible. Exceptions to the deletion exist for data that is subject to statutory retention periods.
+(3) If an account is terminated by the customer or by the provider, the account data will be irrevocably deleted after the retention period according to § 12 (7) has expired. A recovery is not possible after that. Exceptions to the deletion exist for data that is subject to statutory retention periods (§ 12 (8)).
 
 ## § 10. Availability
 
@@ -228,7 +231,9 @@ In the event of permanent restriction of access, a claim for reduction or a righ
 
 (5) The Customer undertakes to indemnify the Provider against all claims for damages brought against the Provider by third parties due to damage caused by a Client in connection with the use of the Service.
 
-(6) The Provider is allowed to place advertising banners, sponsor contributions or other own and third party advertising material at any place within the provided services and capacities including e-mails, SMS or other electronic messages sent via the Service.
+(6) The Provider is entitled to refer to its own products, services and extensions as well as to developments from partners and the community on the website, in the customer account and in its own messages to the Customer. The Provider does not place advertising from other third parties.
+Messages that the Service sends on behalf of the Customer to its employees or to third parties do not contain advertising.
+The Provider only sends promotional e-mails within the legal requirements, in particular based on consent; the Customer can unsubscribe at any time.
 
 (7) The Customer is prohibited from misusing the Provider's system. The customer assures that he does not use any devices and equipment, software or other data in a way that could lead to changes of the system and/or could affect the availability of the system.
 
@@ -300,7 +305,7 @@ Should the Provider make adjustments or enhancements to the Software for the Cus
 
 ### § 15. Changes to the TOS
 
-The Provider reserves the right to adapt or change the TOS. The customer will be informed about changes to the TOS in text form. For this purpose, the amended TOS will be sent to the e-mail address provided by the customer during registration.
+The Provider reserves the right to adapt or change the TOS. The customer will be informed about changes in text form. For this purpose, the amended documents will be sent to the e-mail address provided by the customer during registration.
 
 If the customer does not object to the amended TOS within two weeks after receipt of the notification, the amended TOS shall be deemed accepted.
 
@@ -317,7 +322,7 @@ international private law and the UN Convention on Contracts for the Internation
 
 (4) The Customer agrees that communication - also in contractual matters - can be made by e-mail. The Customer undertakes to always store a current e-mail address in his account. The e-mail address of the provider can be found in the imprint.
 
-(5) Contractual language is German, all declarations and communication are made in German. The parties shall ensure that their contact persons are each proficient in the German language.
+(5) Contractual language is German, all declarations and communication are made in German. The parties shall ensure that their contact persons are each proficient in the German language. Translations of these TOS and the related documents are for information purposes only; the German version is authoritative.
 
 (6) The Customer warrants that its use of the system and all data entered or uploaded comply with all applicable laws and regulations and do not violate the rights of third parties.
 
@@ -326,6 +331,16 @@ Instead, the parties shall work towards agreeing on a substitute provision which
 The above provisions shall apply mutatis mutandis in the event that provisions prove to be incomplete.
 
 ### Change history
+
+**Version 1.7 (01. January 2027)**
+- § 1 (1): Replaced `Kevin Papst` with `Kimai GmbH`
+- § 2 (6): Clarification on data backups as a technical measure
+- § 7 (2): Reference to section 6 of the data processing agreement (deadline and right to object for sub-processors)
+- § 8 (6): Reference to section 8 of the data processing agreement (deadline and content of the notification)
+- § 8 (7): Reference to the current version of the data processing agreement
+- § 9 (3): Aligned deletion with the retention period according to § 12 (7)
+- § 11 (6): References to own products and to developments from partners and the community are allowed, advertising from other third parties and advertising in messages to the Customer's employees are excluded
+- § 16 (5): Clarification on translations
 
 **Version 1.6 (03. May 2026)**
 - § 3 (6): Early deletion of unused trial accounts

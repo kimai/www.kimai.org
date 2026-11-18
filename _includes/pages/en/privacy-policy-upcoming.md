@@ -123,6 +123,7 @@ The website provider does not collects or store any personal information in "ser
 Only in cases of errors the request time and error reason is stored.
 This data will be automatically deleted after 7 days.
 This data will not be combined with data from other sources.
+This information applies to our website. We process log data that is created within a customer's Kimai Cloud as a processor on behalf of that customer (see section "Data processing for Kimai Cloud").
 The basis for data processing is Art. 6 (1) (b) DSGVO, which allows the processing of data to fulfill a contract or for measures preliminary to a contract.
 
 **Registration**
@@ -132,6 +133,7 @@ The information required for registration can be found in the registration form.
 The provision of the data, which is marked as mandatory, is mandatory for the registration to be completed.
 If you register via an authentication provider (such as Google or GitHub), the data will be automatically transferred to me by this provider, through a process called OAuth.
 If you register manually via email, a Recaptcha verification needs to be solved which is served by Google.
+We use reCAPTCHA to protect against automated registrations and abuse; the legal basis is our legitimate interest in preventing abuse (Art. 6(1)(f) GDPR).
 The authentication provider used will be notified of each login process on the website that you perform using this provider.
 The data provided will be processed for the purpose of providing the service.
 The processing is based on the legal basis of Art. 6 para. 1 sentence. 1 b DSGVO.
@@ -154,6 +156,7 @@ The legal basis is Art. 6(1)(b) GDPR.
 
 If you subscribe to our newsletter, Brevo processes your email address as well as your IP address and the date and time of subscription on our behalf.
 During subscription, we obtain your consent to receive the newsletter and to the analysis described below, describe its content specifically and refer to this privacy policy.
+The newsletter informs you about Kimai, new versions and features, our own extensions and plugins, and extensions from partners and the community.
 
 Our newsletters contain technologies that allow us to analyse whether and when a newsletter was opened and which links in it were clicked.
 We store this data together with technical data (system data and IP address) in order to improve the quality of our newsletters and to better tailor them to your interests.
@@ -164,15 +167,18 @@ The lawfulness of processing carried out before the withdrawal remains unaffecte
 
 **YouTube**
 
-The website uses plugins from YouTube, which is operated by Google.
-The operator of the pages is YouTube LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.
-If you visit one of the pages featuring a YouTube plugin, a connection to the YouTube servers is established.
-Here the YouTube server is informed about which of the pages you have visited.
-If you're logged in to your YouTube account, YouTube allows you to associate your browsing behavior directly with your personal profile.
-You can prevent this by logging out of your YouTube account.
-YouTube is used to help make the website appealing and transfer knowledge about Kimai.
-Further information about handling user data, can be found in the data protection declaration of YouTube under [https://policies.google.com/privacy](https://policies.google.com/privacy).
-This constitutes a justified interest pursuant to Art. 6 (1) (f) DSGVO.
+We embed videos from the YouTube platform on some pages.
+For users in the European Economic Area, the provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland; the platform is operated by YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.
+
+The videos are embedded with a click solution. When you open the page, you first see only a preview. No connection to YouTube is established and no cookies are set.
+
+Only when you start the video with a click, a connection to the YouTube servers is established. Your IP address and information about which of our pages you visited are transferred. If you are logged in to your YouTube account, YouTube can link the request to your account; you can prevent this by logging out first.
+We use the domain youtube-nocookie.com, which according to YouTube does not set cookies for personalized advertising.
+A transfer of data to the USA cannot be ruled out.
+
+The legal basis is your consent, which you give by starting the video (Art. 6(1)(a) GDPR).
+You can withdraw your consent at any time with effect for the future by not starting any further videos; the lawfulness of processing carried out before the withdrawal remains unaffected.
+Further information about how user data is handled can be found in the [Google privacy policy](https://policies.google.com/privacy).
 
 **Website Analytics**
 
@@ -200,15 +206,26 @@ The service runs on the Cloud of the Hetzner Online GmbH (Germany). Server locat
 Unless otherwise stated in the previous information, your data will only be stored for as long as is necessary to achieve the purpose of processing or to fulfil our contractual or legal obligations. 
 Such statutory retention obligations may arise from commercial or tax law regulations.
 
-## Subprocessor
+## Data processing for Kimai Cloud
 
-We are using the following service providers (also called sub-processors) to assist with data processing:
+For the data that customers and their employees record in their Kimai Cloud, the respective customer is the controller under the GDPR.
+We process this data only on documented instructions, based on a data processing agreement according to Art. 28 GDPR.
+Processing takes place exclusively in the EU or EEA; a transfer to a third country only happens with the customer's prior consent.
+If a customer activates SAML login for their Kimai Cloud, data is exchanged with the identity provider chosen by the customer. This provider is a service provider of the customer and not a sub-processor of ours.
+
+## Sub-processors and other recipients
+
+We use two groups of service providers:
+
+1. **Sub-processors for Kimai Cloud.** They process data that customers record in their Kimai Cloud on our behalf, based on a contract according to Art. 28 GDPR.
+2. **Recipients as part of our own processing.** They are involved in registration, payment processing, the operation of our website, or the sale of plugins for self-hosted installations. They do not process any data from our customers' Kimai Clouds; some of these providers are independent controllers under data protection law.
 
 {% include snippets/subprocessor.md %}
 
 ### Change history
 
-- **21.09.2026**: Corrected competent supervisory authority (Austrian Data Protection Authority)
+- **01.01.2027**: Change of ownership from `Kevin Papst` to `Kimai GmbH`. Added section "Data processing for Kimai Cloud", separated sub-processors and other recipients, clarified server log files, added legal basis for reCAPTCHA, switched YouTube to a click solution and youtube-nocookie.com, described newsletter content
+- **21.09.2026**: Corrected competent supervisory authority (Austrian Data Protection Authority), corrected legal basis for the newsletter to consent, replaced "blocking" with "restriction of processing"
 - **07.05.2026**: Removed Google Fonts
 - **20.03.2026**: Removed Simple Analytics (anonymous EU website tracking) - replaced by a self-hosted solution
 - **21.02.2026**: New provider “Mailbox” for support emails (previously: Google), correction Stripe contact (previously: USA, now: EU)
