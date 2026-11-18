@@ -1,3 +1,12 @@
+**Version 2.12.0**
+
+Compatibility: requires minimum Kimai 2.63.0
+
+- Prefer the customers `invoice email` over the `contact email` attribute for setting the fields:
+    - `DocumentSellerContact`
+    - `DocumentSellerCommunication`
+    - `DocumentBuyerContact`
+
 **Version 2.11.0**
 
 Compatibility: requires minimum Kimai 2.57.0
