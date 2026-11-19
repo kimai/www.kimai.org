@@ -1,3 +1,7 @@
+## 1.1.1
+
+- User manual extended: step-by-step setup and connection of the app
+
 ## 1.1.0
 
 - Sign in without a password: connect the app with a one-time code from Kimai (scan or type it in) – works with every sign-in method (local, LDAP, SAML, two-factor)
