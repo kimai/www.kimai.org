@@ -20,6 +20,7 @@
 
 - Kimai 2.70.0 oder neuer
 - Recht `view_own_timesheet` für die Benutzer (Standard in Kimai)
+- Internetzugang für die Lizenzprüfung: Der Kimai-Server (oder ersatzweise der Browser eines Administrators) muss einmal täglich per HTTPS `api.gumroad.com` erreichen. Im Inselbetrieb ohne Internetzugang („air-gapped“) kann die Lizenz nicht bestätigt werden.
 
 ## Lizenz
 
@@ -48,6 +49,7 @@ Lost Hours shows your week as a timeline on the Kimai dashboard. Each weekday is
 
 - Kimai 2.70.0 or newer
 - Users need the permission `view_own_timesheet` (Kimai default)
+- Internet access for the license check: your Kimai server (or, as a fallback, an administrator's browser) must reach `api.gumroad.com` via HTTPS once a day. In air-gapped networks without internet access the license cannot be confirmed.
 
 ## License
 

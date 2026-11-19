@@ -1,3 +1,7 @@
+## 1.1.2
+
+- Note that the license check needs online access to api.gumroad.com (air-gapped installations cannot confirm the license). No other changes.
+
 ## 1.1.1
 
 - New slogan in the user guide. No change to the plugin code.
