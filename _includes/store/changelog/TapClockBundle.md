@@ -1,3 +1,12 @@
+## 1.1.0
+
+- Sign in without a password: connect the app with a one-time code from Kimai (scan or type it in) – works with every sign-in method (local, LDAP, SAML, two-factor)
+- Step-by-step setup page in Kimai under Time tracking › TapClock; alternatively connect via Kimai sign-in or your own API token
+
+## 1.0.11
+
+- The "+" in the floating button is now centered
+
 ## 1.0.10
 
 - License terms (EULA, English & German) added to the package

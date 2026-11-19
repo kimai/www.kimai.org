@@ -1,5 +1,5 @@
 {% if page.lang == 'de' %}
-TapClock bringt eine Handy-App in Ihr eigenes Kimai. Das Plugin liefert eine schlanke Web-App (PWA) direkt von Ihrem Kimai-Server aus: auf dem Handy öffnen, mit dem Kimai-Benutzer anmelden, auf den Startbildschirm legen – fertig. Kein App-Store, kein zusätzlicher Server, kein Cloud-Konto. In Kimai finden Benutzer unter **Zeiterfassung › Mobile App** einen QR-Code zum Öffnen auf dem Handy.
+TapClock bringt eine Handy-App in Ihr eigenes Kimai. Das Plugin liefert eine schlanke Web-App (PWA) direkt von Ihrem Kimai-Server aus: auf dem Handy öffnen, mit dem Kimai-Benutzer anmelden, auf den Startbildschirm legen – fertig. Kein App-Store, kein zusätzlicher Server, kein Cloud-Konto. In Kimai finden Benutzer unter **Zeiterfassung › TapClock** eine Schritt-für-Schritt-Anleitung und einen Anmeldecode für die App – ein Passwort gibt man in der App nie ein.
 
 ## Funktionen
 
@@ -16,7 +16,7 @@ TapClock bringt eine Handy-App in Ihr eigenes Kimai. Das Plugin liefert eine sch
 
 - Kimai 2.70.0 oder neuer, HTTPS
 - Rechte `api_access` und `api-token_own_profile` für die Benutzer
-- Benutzer mit lokalem Kimai-Passwort (LDAP- und SAML-Anmeldung werden in der App nicht unterstützt)
+- Anmeldung über Kimai selbst: lokales Passwort, LDAP, SAML und Zwei-Faktor; die App fragt nie nach einem Passwort (alternativ eigenes API-Token)
 
 ## Lizenz
 
@@ -24,7 +24,7 @@ Abo je Kimai-Installation (monatlich bis jährlich) mit kostenloser 7-Tage-Testp
 
 Produktseite und Handbuch (PDF): [www.creatronics.de/tapclock](https://www.creatronics.de/tapclock/)
 {% else %}
-TapClock adds a mobile app to your own Kimai. The plugin delivers a lightweight web app (PWA) directly from your Kimai server – open it on your phone, sign in with your Kimai user and add it to the home screen. No app store, no extra server, no cloud account. In Kimai, users find a QR code under **Time tracking › Mobile app** to open it on their phone.
+TapClock adds a mobile app to your own Kimai. The plugin delivers a lightweight web app (PWA) directly from your Kimai server – open it on your phone, sign in with your Kimai user and add it to the home screen. No app store, no extra server, no cloud account. In Kimai, users find a step-by-step guide and a sign-in code for the app under **Time tracking › TapClock** – no password is ever entered in the app.
 
 ## Features
 
@@ -41,7 +41,7 @@ TapClock adds a mobile app to your own Kimai. The plugin delivers a lightweight 
 
 - Kimai 2.70.0 or newer, HTTPS
 - Users need the permissions `api_access` and `api-token_own_profile`
-- Users with a local Kimai password (LDAP and SAML sign-in are not supported in the app)
+- Sign-in through Kimai itself: local password, LDAP, SAML and two-factor; the app never asks for a password (or use your own API token)
 
 ## License
 
