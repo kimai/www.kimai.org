@@ -26,7 +26,7 @@
 
 Abo je Kimai-Installation (5 € im Monat oder 49 € im Jahr, zzgl. MwSt., die Gumroad an der Kasse berechnet; Geschäftskunden können ihre USt-IdNr. angeben) mit kostenloser 7-Tage-Testphase über Gumroad – abgerechnet wird erst nach 7 Tagen, vorher jederzeit kündbar. Ohne gültige Lizenz zeigt das Widget einen Hinweis statt der Zeitleiste; Kimai selbst bleibt unberührt. Der Lizenzschlüssel wird unter System › Einstellungen eingetragen und einmal täglich bei Gumroad geprüft (übertragen werden nur Lizenzschlüssel und Produkt-ID).
 
-Dokumentation: https://www.creatronics.de
+Produktseite und Handbuch (PDF): [www.creatronics.de/losthours](https://www.creatronics.de/losthours/)
 {% else %}
 **Stop losing billable hours.**
 
@@ -55,5 +55,5 @@ Lost Hours shows your week as a timeline on the Kimai dashboard. Each weekday is
 
 Subscription per Kimai installation (€5 per month or €49 per year, plus VAT where applicable, calculated by Gumroad at checkout; business customers can enter their VAT ID) with a free 7-day trial via Gumroad – you are only charged after 7 days and can cancel any time before. Without a valid license the widget shows a notice instead of the timeline; Kimai itself is not affected. The license key is entered under System › Settings and checked once a day with Gumroad (only license key and product ID are transmitted).
 
-Documentation: https://www.creatronics.de
+Product page and manual (PDF): [www.creatronics.de/losthours](https://www.creatronics.de/losthours/)
 {% endif %}
