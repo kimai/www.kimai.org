@@ -11,8 +11,6 @@ Migration is supported from the following systems:
 - Kimai 2 (MySQL / MariaDB)
 - Kimai 2 (SQLite)
 
-Please note that we do not offer migration into a free account.
-
 ## Costs
 
 A standard migration takes approximately 1 hour. The following circumstances can increase migration time:

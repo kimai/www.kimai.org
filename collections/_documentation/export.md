@@ -87,6 +87,8 @@ For more details, read the [timesheet documentation]({% link _documentation/time
 
 ## Reusable export templates
 
+{% include youtube-video.html id="export_templates" %}
+
 Kimai includes ready-to-use export buttons and also supports reusable templates for recurring exports.
 This is useful if you often need the same columns, language, or file format.
 The template editor is meant for reusable PDF, XLSX and CSV exports.

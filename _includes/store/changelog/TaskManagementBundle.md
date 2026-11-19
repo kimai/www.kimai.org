@@ -1,3 +1,11 @@
+**Version 2.18.3**
+
+Compatibility: requires minimum Kimai 2.59.0
+
+- Added permission checks for `task_view` in detail embeds 
+- Added permission checks for `task_view` in export route 
+- Added validation when updating custom-fields via API
+
 **Version 2.18.2**
 
 Compatibility: requires minimum Kimai 2.59.0

@@ -90,6 +90,7 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 - `scripts/translate-post.php`: translates English blog posts into another locale using an external translation provider
 - `scripts/update-bundles.php`: fetches and updates bundle release/changelog data
 - `scripts/update-plans.php`: fetches and updates Kimai Cloud plan data
+- `scripts/update-roadmap.php`: fetches feature requests from Fider (roadmap.kimai.org) for every store item with a `roadmap_category` and writes `_data/roadmap/<category>.yml`; needs the env variable `FIDER_API_TOKEN`; rendered via `_includes/roadmap-items.html`; do not edit the YAML manually
 - `scripts/update-version-number.sh`: updates `kimai_v2_version` in `_config.yml`
 - `scripts/generate-world-map.sh`: generates the world map SVGs `images/world-map-*.svg` from Natural Earth data
 - `scripts/update-customer-map.php`: writes `_data/customer-map.yml` from the raw customer numbers in `src/data/countries-*.csv` (git-ignored, never commit or publish them); do not edit the YAML manually

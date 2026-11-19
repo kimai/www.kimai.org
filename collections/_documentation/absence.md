@@ -72,6 +72,10 @@ Example: if a working day has **8 expected hours**, a full vacation day reduces 
 
 Please read the chapter ["How calculations work"]({% link _documentation/contract.md %}) to understand how your `Working times` are calculated.
 
+{% include youtube-video.html id="absence_types" %}
+
+The configuration below applies to a default installation, your administrator can change which `Absence types` are available and how they are set-up.
+
 ### Holiday / Vacation
 
 When you are eligible for holidays, meaning that your contract settings have a value for `Holidays per year`, you can schedule your vacations here.
@@ -100,7 +104,7 @@ Use the drop-down next to the "Report sickness" button and select the `Sickness 
 
 ### Time-Off
 
-PTO (personal time-off) entries are for informational purpose, they do NOT influence your actual workimg time by themselves.
+PTO (personal time-off) entries are for informational purpose, they do NOT influence your actual working time by themselves.
 
 - Time-Off needs to be approved
 - Kimai reduces your working time account for that period, because you do not record working-time during your PTO
