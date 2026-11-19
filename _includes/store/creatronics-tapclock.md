@@ -22,7 +22,7 @@ TapClock bringt eine Handy-App in Ihr eigenes Kimai. Das Plugin liefert eine sch
 
 Abo je Kimai-Installation (monatlich bis jährlich) mit kostenloser 7-Tage-Testphase über Gumroad – abgerechnet wird erst nach 7 Tagen, vorher jederzeit kündbar. Preise zzgl. MwSt., die Gumroad an der Kasse berechnet; Geschäftskunden können ihre USt-IdNr. angeben. Ohne gültige Lizenz ist die App nur noch lesbar; Kimai selbst bleibt unberührt. Der Lizenzschlüssel wird unter System › Einstellungen eingetragen und einmal täglich bei Gumroad geprüft (übertragen werden nur Lizenzschlüssel und Produkt-ID).
 
-Dokumentation: https://www.creatronics.de
+Produktseite und Handbuch (PDF): [www.creatronics.de/tapclock](https://www.creatronics.de/tapclock/)
 {% else %}
 TapClock adds a mobile app to your own Kimai. The plugin delivers a lightweight web app (PWA) directly from your Kimai server – open it on your phone, sign in with your Kimai user and add it to the home screen. No app store, no extra server, no cloud account. In Kimai, users find a QR code under **Time tracking › Mobile app** to open it on their phone.
 
@@ -47,5 +47,5 @@ TapClock adds a mobile app to your own Kimai. The plugin delivers a lightweight 
 
 Subscription per Kimai installation (monthly to yearly) with a free 7-day trial via Gumroad – you are only charged after 7 days and can cancel any time before. Prices plus VAT where applicable, calculated by Gumroad at checkout; business customers can enter their VAT ID. Without a valid license the app switches to read-only; Kimai itself is not affected. The license key is entered under System › Settings and checked once a day with Gumroad (only license key and product ID are transmitted).
 
-Documentation: https://www.creatronics.de
+Product page and manual (PDF): [www.creatronics.de/tapclock](https://www.creatronics.de/tapclock/)
 {% endif %}
