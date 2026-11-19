@@ -1,3 +1,7 @@
+## 1.2.0
+
+- New: grey bar from the end of your last entry until now (today); click it to log exactly that time. Can be switched off in the settings.
+
 ## 1.1.2
 
 - Note that the license check needs online access to api.gumroad.com (air-gapped installations cannot confirm the license). No other changes.

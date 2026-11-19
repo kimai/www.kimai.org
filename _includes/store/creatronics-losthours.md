@@ -9,6 +9,7 @@
 - **Lange Lücken rot** – der Schwellwert (Standard 60 Minuten) ist einstellbar
 - **Überlappungen sichtbar** – parallel laufende Einträge erscheinen parallel wie im Kalender, die Überlappung ist rot markiert
 - **Lücken mit einem Klick füllen** – Klick auf eine Lücke öffnet Kimais Dialog „Zeit erfassen“ mit Beginn und Ende der Lücke
+- **Letzte Stunde schnell nachtragen** – heute zeigt ein grauer Balken die Zeit vom Ende der letzten Erfassung bis jetzt; ein Klick erfasst genau diesen Zeitraum (abschaltbar)
 - **Details per Maus** – Beginn, Ende und Dauer, dazu Kunde, Projekt und Tätigkeit
 - **Korrekt gerechnet** – Einträge über Mitternacht aufgeteilt, eine laufende Uhr zählt bis jetzt; Zeitzone und Sommerzeit des Benutzers werden beachtet
 - **Wochenweise blättern** – auf Wunsch gemeinsam mit Kimais Widget „Arbeitszeit“
@@ -38,6 +39,7 @@ Lost Hours shows your week as a timeline on the Kimai dashboard. Each weekday is
 - **Long gaps in red** – the threshold (default 60 minutes) is configurable
 - **Overlaps made visible** – entries that run in parallel are shown in parallel like a calendar, the overlap is marked in red
 - **Fill gaps with one click** – clicking a gap opens Kimai's "Create time entry" dialog with begin and end prefilled
+- **Catch up on the last hour** – today, a grey bar shows the time from the end of your last entry until now; one click logs exactly that period (can be switched off)
 - **Details on hover** – begin, end and duration, plus customer, project and activity
 - **Calculated correctly** – entries across midnight are split, a running timer counts until now; the user's time zone and daylight saving time are respected
 - **Page through weeks** – optionally together with Kimai's "Working hours" widget
