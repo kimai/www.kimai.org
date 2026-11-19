@@ -1,3 +1,11 @@
+**Version 2.28.0**
+
+Compatibility: requires minimum Kimai 2.72.0
+
+- Export repository now calculates statistics without loading all items
+- Validate custom-fields when set via API
+- Added `view_expense` permission checks to customer/project/activity detail pages
+
 **Version 2.27.0**
 
 Compatibility: requires minimum Kimai 2.48.0

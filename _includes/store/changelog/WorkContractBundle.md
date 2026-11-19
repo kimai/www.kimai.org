@@ -1,3 +1,22 @@
+**Version 2.0.0**
+
+Compatibility: requires minimum Kimai 2.72.0
+
+- Added configurable absence types
+  - New permission `edit_absence_types` (by default granted to `ROLE_ADMIN` and `ROLE_SUPER_ADMIN`)
+  - The existing types (vacation, time off, sickness, other) can be adjusted, further types can be added to each of them
+  - "Parental leave", "Unpaid vacation" and "Sickness of a relative" were converted to configurable types
+  - Types which are not needed any longer can be hidden (existing absences are kept) or deleted, as long as they were not used
+  - Overbooking: vacation types can allow booking more days than available and time off types can allow a negative working time account (configured in days / hours, default 0 = not allowed)
+- Removed the setting "Allow half days for holidays": the value is migrated and can now be changed per absence type
+- New API endpoints to manage absence types:
+  - Fetch `GET /api/absence-types`
+  - Delete `DELETE /api/absence-types/{id}`
+  - Disable `PATCH /api/absence-types/{id}/disable`
+  - Enable `PATCH /api/absence-types/{id}/enable`
+- Highlight "today" in Absence calendar
+- Added HTML ID for simple Absence UI management
+
 **Version 1.37.1**
 
 Compatibility: requires minimum Kimai 2.69.0
