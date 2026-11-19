@@ -4,62 +4,63 @@ date: "2026-11-17 12:00:00 +0100"
 image: /images/blog/kimai-gmbh.webp
 author: kevinpapst
 tags: [general, cloud]
-excerpt: "Same people, same product, same prices - from January 1, 2027, Kimai GmbH takes over the operation of Kimai Cloud."
+excerpt: "Same people, same product, same prices: on January 1, 2027, Kimai GmbH takes over the operation of Kimai Cloud."
 ---
 
-**Kimai GmbH – Same people, same product, same prices**
+**Kimai GmbH: same people, same product, same prices**
 
-What started as a sole proprietorship has grown over the years. Now the company structure is growing with it. With the GmbH, we are building a long-term foundation to keep developing the Kimai time-tracking software and to keep supporting our users and customers reliably in the future.
+What started as a sole proprietorship has grown a lot over the years. Now our company structure is growing with it. With the GmbH, we're laying a solid, long-term foundation so we can keep building Kimai and keep supporting our users and customers for years to come.
 
 **The news in brief**
 
-- From January 1, 2027, Kimai GmbH will operate Kimai Cloud. Its founder and managing director is Kevin Papst.
-- It stays the same product, with the same prices and the same contact person.
-- Kimai remains open source. Nothing changes for self-hosting.
+- On January 1, 2027, Kimai GmbH takes over the operation of Kimai Cloud. Its founder and managing director is Kevin Papst.
+- It's the same product, with the same prices and the same contact person.
+- Kimai stays open source. Nothing changes if you host Kimai yourself.
 
 ### How it all began
 
-*Before I tell you what improves for customers, a quick look back. Because a few years ago, this step would have sounded like a dream to me.* (TODO)
+*Before I tell you how this helps our customers, let me take a quick look back. A few years ago, I would have called this step a dream.* (TODO)
 
-Kimai is software with a very long history. Ever since I started maintaining and developing Kimai, it was my evening project for years. In 2018 I rewrote Kimai from scratch, and the community adopted the new version surprisingly fast.
+Kimai has a long history. For years, I worked on it in my spare time, as an evening project. In 2018, I rewrote Kimai from scratch, and the community picked up the new version surprisingly fast.
 
-From there it went step by step: the first contracts from companies that believed in the project, the first plugins in 2019, and Kimai Cloud in 2020. In 2023 I said goodbye to my last freelance client. Since then, Kimai has been my full-time job.
+From there, it went one step at a time: the first contracts with companies that believed in the project, the first plugins in 2019, and Kimai Cloud in 2020. In 2023, I said goodbye to my last freelance client. Since then, Kimai has been my full-time job.
 
 ### Where Kimai stands today
 
-Today, thousands of companies in more than 100 countries use Kimai. For many of them, it's an indispensable tool that accompanies their work every day and makes sure *not a single cent gets lost* (TODO).
+Today, thousands of companies in more than 100 countries use Kimai. For many of them, it's a tool they rely on every day, one that makes sure *not a single cent gets lost* (TODO).
 
-As Kimai grew, so did the work: more requests, more customers, more responsibility. In 2024 I hired my first part-time employee, and in 2025 another colleague joined. Today I work with a team of three people who put their effort into product development, marketing and customer support every day. All these changes call for a structure that can keep up with the growth: Kimai GmbH.
+As Kimai grew, so did the workload: more requests, more customers, more responsibility. I hired my first part-time employee in 2024, and another colleague joined in 2025. Today, I work with a team of three who put their energy into product development, marketing, and customer support every day. All of this growth calls for a structure that can keep up: Kimai GmbH.
 
 ### What gets better with the GmbH
 
-- **Kimai rests on more shoulders, and I'm staying.** Development, support and operations are shared across a team. As managing director, I remain personally there for you and take care of Kimai with the same dedication as before.
-- **A company as your contractual partner.** Your contracts, invoices and data processing are backed by a registered Austrian company instead of a private individual. That brings clarity for everyone, from one-person offices to large organizations.
-- **As independent as ever.** 100% self-funded, 100% owned by the team
-- **Long-term stability.** The GmbH gives Kimai a stable foundation, so the product, infrastructure and security keep evolving reliably in the years to come.
+- **Kimai rests on more shoulders, and I'm staying.** Development, support, and operations are shared across a team. As managing director, I'll still be here for you personally, and I'll care for Kimai with the same dedication as before.
+- **A company as your contract partner.** Your contracts, invoices, and data processing are backed by a registered Austrian company instead of a private individual. That gives everyone more clarity, from one-person offices to large organizations.
+- **As independent as ever.** 100% self-funded, 100% owned by the team.
+- **Long-term stability.** The GmbH gives Kimai a stable foundation, so the product, infrastructure, and security can keep improving reliably in the years ahead.
 
 ### What changes?
 
-**For Kimai Cloud customers:** From January 1, 2027, Kimai GmbH is the operator of Kimai Cloud and your contractual partner. 
-This means the existing contracts need to be updated. 
-You can preview the contracts that apply from that date at these links: 
+**For Kimai Cloud customers:** On January 1, 2027, Kimai GmbH becomes the operator of Kimai Cloud and your contract partner.
+That means your existing contracts need to be updated.
+You can preview the contracts that take effect on that date here:
 
 - [Terms of service]({% link _pages/en/terms-cloud-upcoming.md %})
 - [Privacy policy]({% link _pages/en/privacy-policy-upcoming.md %})
 - [Data processing agreement]({% link _pages/en/terms-gdpr-upcoming.md %})
 
-**For Kimai On-Premise:** From January 1, 2027, Kimai GmbH is the operator of the website and your contractual partner for plugin purchases.
-Here, too, you can preview the upcoming changes:
+**For Kimai On-Premise:** On January 1, 2027, Kimai GmbH becomes the operator of the website and your contract partner for plugin purchases.
+You can preview these changes, too:
 
 - [Site notice]({% link _pages/en/site-notice-upcoming.md %})
 - [Plugin license]({% link _pages/en/terms-plugins-upcoming.md %})
 
 ### What stays the same?
 
-The people behind Kimai, your familiar contacts and the direct line to us. As managing director of Kimai GmbH, I remain personally there for you and take care of Kimai with the same dedication.
+The people behind Kimai, the contacts you already know, and your direct line to us. As managing director of Kimai GmbH, I'll still be here for you personally, and I'll care for Kimai with the same dedication.
 
-Our values don't change either. Kimai remains open source, and Kimai Cloud remains a privacy-compliant product, hosted in Germany, with reliable prices.
+Our values stay the same, too. Kimai remains open source, and Kimai Cloud remains a privacy-compliant product, hosted in Germany, with fair and reliable pricing.
 
-Thank you to all of you who have joined me on this journey: our customers, the supporters of Kimai, and everyone who uses Kimai, reports bugs, translates, builds plugins and recommends it to others. Without you, there would be no new chapter.
+I would like to thank everyone who has joined me on this journey, including our customers, contributors, and all those who use Kimai, report bugs, translate, build plugins, and recommend it to others. Without you, there would be no new chapter.
 
-*Kevin Papst* *Managing Director, Kimai GmbH*
+*Kevin Papst*  
+*Managing Director, Kimai GmbH*
