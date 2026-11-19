@@ -51,7 +51,7 @@ Sie erläutert auch, wie und zu welchem Zweck das geschieht.
 Die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) kann Sicherheitslücken aufweisen.
 Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
 
-## Verantwortliche Stelle
+### Verantwortliche Stelle
 
 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 
@@ -59,14 +59,14 @@ Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 
 Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o. Ä.) entscheidet.
 
-## Widerruf Ihrer Einwilligung zur Datenverarbeitung
+### Widerruf Ihrer Einwilligung zur Datenverarbeitung
 
 Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich.
 Sie können eine bereits erteilte Einwilligung jederzeit widerrufen.
 Dazu reicht eine formlose Mitteilung per E-Mail an uns.
 Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
 
-## Beschwerderecht bei der zuständigen Aufsichtsbehörde
+### Beschwerderecht bei der zuständigen Aufsichtsbehörde
 
 Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO oder das österreichische Datenschutzgesetz (DSG) verstößt, haben Sie das Recht, Beschwerde bei einer Aufsichtsbehörde einzulegen (Art. 77 DSGVO).
 Sie können sich insbesondere an die Aufsichtsbehörde in dem Mitgliedstaat Ihres gewöhnlichen Aufenthalts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes wenden.
@@ -76,12 +76,12 @@ Die für uns zuständige Aufsichtsbehörde ist:
 Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien  
 Telefon: +43 1 52 152-0, E-Mail: dsb@dsb.gv.at, Web: https://dsb.gv.at/
 
-## Recht auf Datenübertragbarkeit
+### Recht auf Datenübertragbarkeit
 
 Sie haben das Recht, Daten, die auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeitet werden, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.
 Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.
 
-## SSL- bzw. TLS-Verschlüsselung
+### SSL- bzw. TLS-Verschlüsselung
 
 Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-bzw. TLS-Verschlüsselung.
 

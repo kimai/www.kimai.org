@@ -1,7 +1,7 @@
 
 ### License and Terms of Use for Commercial Kimai Plugins
 
-Applies to all plugins by Kevin Papst, unless otherwise stated.
+Applies to all plugins by {% include snippets/site-owner.md type="name" %}, unless otherwise stated.
 
 **1. Subject Matter and Scope**
 
@@ -56,9 +56,9 @@ SaaS is defined as any model where pricing depends on the number of end users â€
 
 Exempt from the SaaS prohibition is hosting Kimai installations for individual clients, provided each client installation has its own license and billing is not dependent on user count.
 
-*Example: A provider operates Kimai instances for five different companies. Each instance requires its own license. However, if a single instance is offered to multiple paying users (e.g. as a monthly per-user subscription), this qualifies as SaaS and requires an extended license.*
+*Example: A provider operates Kimai instances for five different companies and buys a separate license for each of them, so 5 licenses. However, if a single instance with only one license is offered to multiple paying users (e.g. as a monthly per-user subscription), this qualifies as SaaS and requires an extended license.*
 
-For SaaS use cases, please contact us in advance.
+For SaaS use cases, you must contact us.
 
 **9. Modification of the Plugin**
 
@@ -67,7 +67,7 @@ You may adapt the Plugin, combine it with other works, or create derivative work
 The following is not permitted:
 
 - Disabling or circumventing built-in license checks or detection mechanisms of the Plugin.
-- Extracting individual components (e.g. icons, modules) for standalone use outside the Plugin.
+- Extracting individual components for standalone use outside the Plugin.
 
 **10. Prohibition of Redistribution**
 

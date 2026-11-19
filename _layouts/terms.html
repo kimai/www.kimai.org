@@ -1,6 +1,78 @@
 ---
 layout: page
 ---
+{% comment %}
+    Legal pages: current version + optional preview of the upcoming version.
+ 
+    An upcoming version is a separate page with the slug "<slug>-upcoming" (e.g. privacy-policy-upcoming),
+    using this same layout. If such a page exists (in the current language or in English as fallback),
+    a switch between both versions is shown and the tabs link to the matching version of each document.
+
+    When the new versions become valid: replace the content in _includes/pages/<lang>/<slug>.md with the
+    *-upcoming.md version, delete the *-upcoming pages and add their URLs as redirect_from to the current pages
+    and remove the file snippets/site-owner-upcoming.md
+{% endcomment %}
+{%- assign upcoming_suffix = '-upcoming' -%}
+{%- assign base_slug = page.slug | remove: upcoming_suffix -%}
+{%- assign is_upcoming = false -%}
+{%- if page.slug != base_slug -%}
+    {%- assign is_upcoming = true -%}
+{%- endif -%}
+{%- assign upcoming_slug = base_slug | append: upcoming_suffix -%}
+{%- assign current_doc = site.pages | filter_slug_lang: base_slug -%}
+{%- assign upcoming_doc = site.pages | filter_slug_lang: upcoming_slug -%}
+{%- comment -%} Blog post announcing the takeover: German pages link the German post, all other languages the English one {%- endcomment -%}
+{%- assign announcement_lang = 'en' -%}
+{%- if page.lang == 'de' -%}
+    {%- assign announcement_lang = 'de' -%}
+{%- endif -%}
+{%- assign announcement = site.posts | where: 'slug', 'kimai-gmbh' | where: 'lang', announcement_lang | first -%}
+{%- if announcement -%}
+    {%- assign announcement_url = announcement.url -%}
+{%- else -%}
+    {%- comment -%} post is not yet published: use its future URL {%- endcomment -%}
+    {%- assign announcement_url = '/' | append: announcement_lang | append: '/blog/2026/kimai-gmbh.html' -%}
+{%- endif -%}
+
+<section class="container position-relative zindex-2 pb-lg-4 pb-xxl-5 pb-3">
+<div class="alert alert-warning d-flex" role="alert">
+<i class="bx bx-alarm-exclamation lead me-3"></i>
+<div class="d-flex flex-column flex-lg-row align-items-lg-center gap-3 w-100">
+    <div class="flex-grow-1">
+    {%- if page.lang == 'de' -%}
+        <a href="{{ announcement_url }}">Ab 1. Januar 2027 übernimmt die Kimai GmbH</a>.
+        {% if is_upcoming %}
+            Sie lesen <strong>die Vorschau der neuen Fassung</strong>, die ab diesem Tag gilt.
+        {% elsif upcoming_doc %}
+            Die neue Fassung dieses Dokuments können Sie schon jetzt lesen.
+        {% else %}
+            Dieses Dokument bleibt unverändert.
+        {% endif %}
+    {%- else -%}
+        <a href="{{ announcement_url }}">Effective January 1, 2027, Kimai GmbH will take over</a>.
+        {% if is_upcoming %}
+            You are reading <strong>a preview of the new version</strong>, which is valid from that day.
+        {% elsif upcoming_doc %}
+            You can already read the new version of this document.
+        {% else %}
+            This document stays unchanged.
+        {% endif %}
+    {%- endif -%}
+    </div>
+    {% if upcoming_doc and current_doc %}
+    <div class="btn-group flex-shrink-0" role="group" aria-label="{% if page.lang == 'de' %}Fassung{% else %}Version{% endif %}">
+        <a href="{{ current_doc.url }}" class="btn btn-sm {% if is_upcoming %}btn-outline-dark{% else %}btn-dark{% endif %}"{% unless is_upcoming %} aria-current="page"{% endunless %}>
+            {% if page.lang == 'de' %}Aktuell gültig{% else %}Currently valid{% endif %}
+        </a>
+        <a href="{{ upcoming_doc.url }}" class="btn btn-sm {% if is_upcoming %}btn-dark{% else %}btn-outline-dark{% endif %}"{% if is_upcoming %} aria-current="page"{% endif %}>
+            {% if page.lang == 'de' %}Ab 1. Januar 2027{% else %}From January 1, 2027{% endif %}
+        </a>
+    </div>
+    {% endif %}
+</div>
+</div>
+</section>
+
 {% assign pages = ''  %}
 {% assign pages = pages | append: '|site-notice,' | append: site.data[page.lang].translation.site-notice.name  %}
 {% assign pages = pages | append: '|privacy-policy,' | append: site.data[page.lang].translation.privacy-policy.name  %}
@@ -13,8 +85,16 @@ layout: page
     {% for menuEntry in pages %}
         {% unless menuEntry == '' %}
         {% assign tmp = menuEntry | split: ',' %}
+        {% assign menuItem = tmp.first %}
+        {% if is_upcoming %}
+            {% assign menuUpcomingSlug = menuItem | append: upcoming_suffix %}
+            {% assign menuUpcomingDoc = site.pages | filter_slug_lang: menuUpcomingSlug %}
+            {% if menuUpcomingDoc %}
+                {% assign menuItem = menuUpcomingSlug %}
+            {% endif %}
+        {% endif %}
         <li class="nav-item" role="presentation">
-            {% include link-translated-menu.html language=page.lang item=tmp.first class="nav-link" title=tmp.last active=true %}
+            {% include link-translated-menu.html language=page.lang item=menuItem class="nav-link" title=tmp.last active=true %}
         </li>
     {% endunless %}
     {% endfor %}

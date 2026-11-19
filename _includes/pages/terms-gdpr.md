@@ -2,11 +2,11 @@
 
 **Der Vertrag zur Auftragsverarbeitung für Cloud-Kunden gemäss (EU) 2016/679 steht Ihnen in ihrem Account zur Verfügung**
 
-Der Vertragsabschluss kann nach der DSGVO in elektronischer Form erfolgen. 
+Der Vertragsabschluss kann nach der DSGVO in elektronischer Form erfolgen.
 
-Bitte melden Sie sich zunächst in Ihrem Kundenaccount an. 
+Die jeweils gültige Fassung ist ohne Anmeldung unter <https://www.kimai.cloud/de/auftragsverarbeitung> abrufbar. 
 
-Den Vertrag finden Sie unter dem Menüpunkt "Auftragsverarbeitung".
+Die auf den Kunden ausgefertigte Fassung steht im Kundenkonto unter <https://www.kimai.cloud/go/my-dpa> bereit und wird auf Wunsch als PDF zur Verfügung gestellt.
 
 {% else %}
 
@@ -14,8 +14,8 @@ Den Vertrag finden Sie unter dem Menüpunkt "Auftragsverarbeitung".
 
 According to the GDPR, the agreement can be concluded in electronic form. 
 
-Please first log in to your user account. 
+The current version is available without registration at <https://www.kimai.cloud/data-processing>.
 
-You will find the contract under the menu item "Data Processing".
+The version issued to the customer is available in the customer account at <https://www.kimai.cloud/go/my-dpa> and can be provided as a PDF upon request.
 
 {% endif %}

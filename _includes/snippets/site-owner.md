@@ -1,3 +1,6 @@
+{%- if include.type == 'name' -%}
+Kevin Papst
+{%- else -%}
 {% if page.lang == 'de' %}
 
 Kevin Papst, Schweidlgasse 46/1/13, 1020 Wien (Österreich)  
@@ -10,4 +13,5 @@ Kevin Papst, Schweidlgasse 46/1/13, 1020 Vienna (Austria)
 Email: <{{ site.support_email }}>  
 EU-VAT Id: ATU75657727
 
-{% endif %}
+{%- endif -%}
+{%- endif -%}
