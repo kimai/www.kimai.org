@@ -19,15 +19,13 @@ Was als Einzelunternehmen begonnen hat, ist über die Jahre gewachsen. Jetzt wä
 
 ### Wie alles begann
 
-*Bevor ich erzähle, was sich für die Kunden verbessert, ein kurzer Blick zurück. Denn vor ein paar Jahren hätte dieser Schritt für mich noch wie ein Traum geklungen.* (TODO)
-
-Kimai ist eine Software mit sehr langer Geschichte. Seit ich angefangen habe, Kimai zu pflegen und weiterzuentwickeln, war es jahrelang mein Projekt für die Abende. 2018 habe ich Kimai von Grund auf neu geschrieben, und die Community hat die neue Version erstaunlich schnell angenommen.
+Kimai ist eine Software mit langer Geschichte. Als ich angefangen habe, Kimai zu pflegen und weiterzuentwickeln, lief es jahrelang nebenbei als mein Projekt für die Abende. 2018 habe ich Kimai von Grund auf neu geschrieben, und die Community hat die neue Version positiv angenommen.
 
 Danach ging es Schritt für Schritt weiter: erste Aufträge von Unternehmen, die an das Projekt geglaubt haben, 2019 die ersten Plugins, 2020 dann die Kimai Cloud. 2023 habe ich mich von meinem letzten Freelance-Kunden verabschiedet. Seitdem ist Kimai mein Vollzeitjob.
 
 ### Wo Kimai heute steht
 
-Heute nutzen Tausende Unternehmen in über 100 Ländern Kimai. Für viele ist es ein unersetzliches Tool, das sie jeden Tag bei der Arbeit begleitet und dafür sorgt, *dass kein Cent verloren geht* (TODO).
+Heute nutzen Tausende Unternehmen in über 100 Ländern Kimai. Für viele ist es ein unersetzliches Tool, das sie jeden Tag bei der Arbeit begleitet und dafür sorgt, dass sie Geld und Zeit im Blick haben.
 
 Mit dem Wachstum sind auch die Aufgaben gewachsen: mehr Anfragen, mehr Kunden, mehr Verantwortung. 2024 habe ich zum ersten Mal eine Mitarbeiterin in Teilzeit eingestellt, 2025 kam ein Kollege hinzu. Heute arbeite ich mit einem Team aus drei Personen zusammen, die sich täglich für die Bereiche Produktentwicklung, Marketing und Kundensupport einsetzen. All diese Änderungen verlangen nach einer Struktur, die mit dem Wachstum mithalten kann: der Kimai GmbH.
 
@@ -62,4 +60,5 @@ Auch an unseren Werten ändert sich nichts. Kimai bleibt Open Source und die Kim
 
 Danke an euch alle, die mich auf diesem Weg begleiten: an unsere Kundinnen und Kunden, an die Unterstützer von Kimai und an alle, die Kimai nutzen, Fehler melden, übersetzen, Plugins umsetzen und weiterempfehlen. Ohne euch gäbe es dieses neue Kapitel nicht.
 
-*Kevin Papst* *Geschäftsführer, Kimai GmbH*
+*Kevin Papst*  
+*Geschäftsführer, Kimai GmbH*

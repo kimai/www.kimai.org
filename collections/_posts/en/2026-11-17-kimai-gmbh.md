@@ -19,15 +19,13 @@ What started as a sole proprietorship has grown a lot over the years. Now our co
 
 ### How it all began
 
-*Before I tell you how this helps our customers, let me take a quick look back. A few years ago, I would have called this step a dream.* (TODO)
-
-Kimai has a long history. For years, I worked on it in my spare time, as an evening project. In 2018, I rewrote Kimai from scratch, and the community picked up the new version surprisingly fast.
+Kimai has a long history. When I started maintaining and developing Kimai, I worked on it in my spare time for years as my evening project. In 2018, I rewrote Kimai from scratch, and the community responded positively to the new version.
 
 From there, it went one step at a time: the first contracts with companies that believed in the project, the first plugins in 2019, and Kimai Cloud in 2020. In 2023, I said goodbye to my last freelance client. Since then, Kimai has been my full-time job.
 
 ### Where Kimai stands today
 
-Today, thousands of companies in more than 100 countries use Kimai. For many of them, it's a tool they rely on every day, one that makes sure *not a single cent gets lost* (TODO).
+Today, thousands of companies in more than 100 countries use Kimai. For many of them, it's a tool they rely on every day, one that ensures they keep track of their money and time.
 
 As Kimai grew, so did the workload: more requests, more customers, more responsibility. I hired my first part-time employee in 2024, and another colleague joined in 2025. Today, I work with a team of three who put their energy into product development, marketing, and customer support every day. All of this growth calls for a structure that can keep up: Kimai GmbH.
 
