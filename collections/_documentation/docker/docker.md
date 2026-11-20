@@ -15,7 +15,7 @@ The official **Docker Hub repository** with auto-built production and developmen
 
 - `kimai/kimai2:<major>` – recommended: pin a specific major release, e.g `kimai/kimai2:2` (will upgrade between `2.0.0` up to `2.99.99`) 
 - `kimai/kimai2:stable` – always the latest stable Kimai release (might bump to a new major release, so be careful)
-- `kimai/kimai2:<version>` – one specific release of Kimai, e.g `kimai/kimai2:2.58.0` (not recommended, as you will not receive updates)
+- `kimai/kimai2:<version>` – one specific release of Kimai, e.g `kimai/kimai2:{{ site.kimai_v2_version }}` (not recommended, as you will not receive updates)
 - `kimai/kimai2:dev` – development image intended for local use only, with debug mode enabled
  
 ## Environment variables
