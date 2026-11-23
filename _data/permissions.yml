@@ -144,17 +144,17 @@ user_own_profile:
         teams_own_profile: Edit team assignments in own user profile
         view_own_profile: View own user profile and statistics
 user_other_profile:
-    name: Permissions for profiles of other user accounts
+    name: "Permissions to manage the profiles of other users. By default, they are only granted to Super-Admins. Several of them are security relevant, as explained below: only assign them to roles you fully trust. Roles, password, API tokens and profile of a user can only be changed by users who hold an equal or higher role."
     permissions:
-        api-token_other_profile: "**SECURITY ALERT** - Add API tokens for other users"
-        edit_other_profile: "**SECURITY ALERT** - edit the profile for another user"
-        hourly-rate_other_profile: Edit other (users specific) hourly rate
-        password_other_profile: "**SECURITY ALERT** - Change the password for another user"
-        preferences_other_profile: Change the preferences for another user
-        roles_other_profile: "**SECURITY ALERT** - change roles for other users, set the 'system account' and 'password reset' flag"
-        supervisor_other_profile: Change the supervisor for the selected profile
-        teams_other_profile: "**SECURITY ALERT** - Edit team assignments in other user profile"
-        view_other_profile: View other user profiles
+        api-token_other_profile: "**SECURITY ALERT** - Create API tokens for other users. Risk: the token can be used to act as that user via the API, without knowing their password."
+        edit_other_profile: "**SECURITY ALERT** - Edit the profile of other users. Risk: changing the email address and then using 'password forgotten' allows to take over the account."
+        password_other_profile: "**SECURITY ALERT** - Change the password of other users. Risk: allows to take over the account."
+        roles_other_profile: "**SECURITY ALERT** - Change the roles of other users and set the 'system account' and 'password reset' flags. Risk: users can be promoted to higher roles, up to the role of the editing user."
+        teams_other_profile: "**SECURITY ALERT** - Change the team assignments of other users. Risk: users gain access to customers, projects, activities and timesheets of other teams."
+        hourly-rate_other_profile: "Change the hourly and internal rate of other users"
+        preferences_other_profile: "Change the preferences of other users"
+        supervisor_other_profile: "Change the supervisor of other users"
+        view_other_profile: "View the profiles of other users"
 teams:
     name: Teams
     permissions:
