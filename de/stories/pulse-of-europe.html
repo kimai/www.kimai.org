@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Pulse of Europe – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pulse of Europe">
+<meta property="og:image" content="https://www.kimai.org/images/stories/pulse-of-europe-header.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/stories/pulse-of-europe">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/stories/pulse-of-europe">
+<link href="/assets/build/main.css?v17" rel="stylesheet" />
+
+</head>
+<body class="">
+
+
+
+
+
+
+<main class="page-wrapper">
+    
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                            <li><a href="/de/partner/" class="dropdown-item">Partner</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Updates</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    <section class="hero container pt-5 pb-2 mb-lg-5">
+        <nav class="d-md-none pb-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                
+<li class="breadcrumb-item">
+    <a href="/de/"><i class="bx bx-home-alt fs-lg me-1"></i>Startseite</a>
+</li>
+<li class="breadcrumb-item">
+    <a href="/de/stories/">Erfolgsgeschichten</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">Pulse of Europe</li>
+
+            </ol>
+        </nav>
+
+        <div class="row row-cols-1 row-cols-md-2 g-0 pb-2">
+            <div class="col order-md-2 position-relative bg-position-center bg-size-cover bg-repeat-0 zindex-2" style="background-image: url(/images/stories/pulse-of-europe-header.webp); border-radius: .5rem .5rem .5rem 0;">
+                <div style="height: 250px;"></div>
+            </div>
+
+            <div class="col order-md-1">
+                <nav class="d-none d-md-block py-3 mb-2 mb-lg-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        
+<li class="breadcrumb-item">
+    <a href="/de/"><i class="bx bx-home-alt fs-lg me-1"></i>Startseite</a>
+</li>
+<li class="breadcrumb-item">
+    <a href="/de/stories/">Erfolgsgeschichten</a>
+</li>
+<li class="breadcrumb-item active" aria-current="page">Pulse of Europe</li>
+
+                    </ol>
+                </nav>
+
+                <div class="bg-hero rounded-3 p-4 p-lg-5 mt-n2 mt-md-0 me-md-n2">
+                    <div class="px-sm-3 px-xl-4 pt-4 py-md-3 py-lg-4 py-xl-5">
+                        <h1 class="page-title pb-2 pb-xxl-3">Pulse of Europe</h1>
+                        <div class="pb-2 mb-4 mb-xxl-5">
+                            Geschäftsstellenleiter: <strong>Hendrik Michel</strong>
+                            <br>
+                            Branche: <strong>Bürgerbewegung</strong>
+                            <br>
+                            Mitarbeiter: <strong>3+</strong>
+                            <br>
+                            Nutzt Kimai seit: <strong>2026</strong>
+                            <br>
+                            Homepage: <strong><a href="https://www.pulseofeurope.eu" target="_blank">www.pulseofeurope.eu</a></strong>
+                            
+                            <br>
+                            Standort: <strong>Frankfurt, Deutschland</strong>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col-md-9 pe-lg-5">
+                <h2 class="h2 pb-4 mb-1 mb-lg-3">Wie ein europäisches NPO mit Kimai seine Arbeit sichtbar macht</h2>
+                <p><strong>TL;DR</strong></p>
+
+<p>Pulse of Europe ist eine überparteiliche Bürgerbewegung, deren Geschäftsstelle in Frankfurt ein Netzwerk ehrenamtlicher Teams in ganz Europa koordiniert. Neun Jahre lang erfasste das Team seine Arbeitszeit in Excel – für eine projektbezogene Auswertung reichte das nicht mehr aus. Heute bucht die Geschäftsstelle ihre Zeiten in Kimai auf eine gemeinsame Projektstruktur und kann genau zeigen, wie viel Arbeit in den Vereinszweck und wie viel in die Verwaltung fließt.</p>
+
+<p><strong>Über das Unternehmen</strong></p>
+
+<p>Pulse of Europe ist eine überparteiliche, unabhängige Bürgerbewegung, die 2016 in Frankfurt am Main gegründet wurde. Sie setzt sich für die europäische Integration und demokratische Grundwerte ein. Die Bewegung organisiert sich als Netzwerk ehrenamtlich engagierter Bürgerinnen und Bürger in ganz Europa.</p>
+
+
+            </div>
+            <div class="col-md-3 pb-2 pb-md-0 mb-4 mb-md-0">
+                <div class="card card-body border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></span>
+                    <div class="position-relative zindex-2">
+                        <h3 class="h5">Einsparungen mit Kimai</h3>
+                        <ul class="ps-4 mb-0">
+                            
+                            <li class="pb-3 mb-1">Schnellere Zeiterfassung als zuvor in Excel</li>
+                            
+                            <li class="pb-3 mb-1">Einfachere Auswertungen der Projekt- und Verwaltungszeiten mit Exportfunktion</li>
+                            
+                            <li class="pb-3 mb-1">Eine gemeinsame Struktur mit gleichen Projektbezeichnungen sorgt für weniger Pflegeaufwand</li>
+                            
+                            <li class="pb-3 mb-1">Bessere Planung mit dem Dashboard hilft, Überstunden und ruhigere Phasen zu erkennen und die Arbeit entsprechend zu planen</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary py-5">
+    <div class="container py-2 py-md-4 py-lg-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="position-relative d-flex h-100">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-top-center" style="background-image: url(/images/stories/pulse-of-europe-photo.webp);"></div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <figure class="card position-relative border-0 shadow-sm py-3 p-0 p-lg-4 mb-0 ms-xl-5">
+                    <div class="card-body mt-2 mb-0">
+                        <p class="fs-lg">Hendrik Michel ist Geschäftsstellenleiter von Pulse of Europe. Er ist zuständig für Projektmanagement, Strategieentwicklung, Kommunikation und die Koordination des internationalen Netzwerks des Vereins.</p>
+                    </div>
+                    <figcaption class="card-footer border-0 d-sm-flex pt-0 mt-n3 mt-lg-0">
+                        <div class="d-flex align-items-center border-end-sm pe-sm-4 me-sm-4">
+                            <img src="/images/stories/pulse-of-europe-photo.webp" width="48" class="d-md-none rounded-circle" alt="Hendrik Michel">
+                            <div class="ps-3 ps-md-0">
+                                <h5 class="fw-semibold lh-base mb-0">Hendrik Michel</h5>
+                                <span class="fs-sm text-muted">Geschäftsstellenleiter</span>
+                            </div>
+                        </div>
+                        <img src="/images/stories/pulse-of-europe-logo.webp" style="max-height:50px;" class="d-block mt-2 ms-5 mt-sm-0 ms-sm-0" alt="">
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                
+<p>Wer an Projektzeiterfassung denkt, denkt oft an abrechenbare Stunden, Budgets und Unternehmensgewinne. Doch auch dort, wo nicht der Profit, sondern ein gemeinnütziger Zweck im Mittelpunkt steht, ist Zeit eine begrenzte Ressource.</p>
+
+<p>Für Hendrik Michel, den Geschäftsstellenleiter von Pulse of Europe, ist deshalb klar, dass Zeiterfassung mehr leisten muss, als Arbeitsbeginn und -ende zu dokumentieren. Die Bürgerbewegung will nachvollziehen können, wie viel Arbeit in ihre Projekte fließt und wie viel in die Verwaltung. Dafür hat die Geschäftsstelle dieses Jahr begonnen, die projektbasierte Kimai Zeiterfassung zu nutzen.</p>
+
+<p><em>„Bei uns hat das mit Überwachung nichts zu tun“</em>, erklärt Hendrik. Entscheidend sei vielmehr, <em>„wie viel Zeit in unsere Projekte – also in den eigentlichen Vereinszweck – und wie viel in die Verwaltung fließt“</em>. Ob Non-Profit oder For-Profit: Alle brauchen einen Überblick darüber, wofür sie ihre Zeit einsetzen.</p>
+
+<p><strong>Von Excel zu einer gemeinsamen Projektstruktur</strong></p>
+
+<p>Neun Jahre lang erfasste Pulse of Europe die Arbeitszeit mit Spreadsheets. Die Tabelle berechnete Überstunden und berücksichtigte Urlaub, Feiertage und Krankheitstage. Für diese Aufgaben funktionierte sie gut. Schwieriger wurde es, als das Team auch die Zeit für einzelne Projekte erfassen und auswerten wollte.</p>
+
+<p><em>„Es war ein gutes Excel-Tool, aber eben begrenzt“</em>, erinnert sich Hendrik. Für die projektbasierte Erfassung brauchte es einheitliche Bezeichnungen und eine Struktur, mit der alle arbeiten konnten. Genau hier stieß das bisherige System an seine Grenzen: Die Pflege wurde aufwendiger, und die Daten ließen sich nicht immer einheitlich auswerten.</p>
+
+<p>Vor allem bei starkem internationalem Wachstum ist es schwierig, den Überblick zu behalten: <em>„Wir arbeiten sehr dezentral. Unsere Geschäftsstelle sitzt in Frankfurt. Ansonsten sind wir in lokalen Teams organisiert, die in Deutschland und vielen anderen europäischen Ländern aktiv sind und sich ehrenamtlich für Europa einsetzen.“</em></p>
+
+<p>Mit Kimai konnte die Geschäftsstelle von Pulse of Europe übergeordnete Bereiche wie Verwaltung und gemeinnützige Arbeit abbilden und darunter die jeweiligen Projekte anlegen. Ob Bürgerbeteiligung oder Kampagnen, die Zeiten werden innerhalb derselben Struktur gespeichert. <em>„Wir arbeiten alle mit denselben Projekten und Werkzeugen. Auch das war uns sehr wichtig“</em>, sagt Hendrik. Der Vorteil lag nicht allein in der digitalen Erfassung, sondern darin, dass die Einträge anschließend vergleichbar und auswertbar sind.</p>
+
+<p><strong>Wie schwer war der Umstieg auf Kimai?</strong></p>
+
+<p>Für den Umstieg nahm sich das Team bewusst Zeit. <em>„Wir haben Kimai drei Monate parallel zum alten System genutzt“</em>, erzählt Hendrik. <em>„So konnten wir alles vorbereiten und später auch die Daten importieren.“</em> In dieser Phase konnten die Mitarbeitenden Projekte anlegen, Bezeichnungen abstimmen und ausprobieren, ob sie lieber mit der Stoppuhr oder in Viertelstunden arbeiten wollten.</p>
+
+<p>Auch der Wechsel mitten im Jahr war möglich – die bisherigen Daten ließen sich laut Hendrik problemlos importieren. Als das Team endgültig umstellte, waren die wichtigsten Fragen bereits geklärt und alle mit dem System vertraut – <em>„Kimai wurde sofort in den Arbeitsalltag integriert.“</em></p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row w-lg-50 w-md-75 w-100 m-auto pb-xl-3">
+            <div class="col">
+                <div class="card position-relative border-0 shadow-sm pt-4">
+                    <span class="btn btn-icon btn-primary shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4">
+                      <i class="bx bxs-quote-left"></i>
+                    </span>
+                    <div class="card-body pb-3 mb-0">
+                        <p class="mb-0"><p>Mit Kimai ist es viel angenehmer und einfacher, geht schneller und macht mehr Spaß</p>
+</p>
+                        <div class="d-flex align-items-center pt-4">
+                            <img src="/images/stories/pulse-of-europe-photo.webp" width="58" class="rounded-circle" alt="Hendrik Michel">
+                            <div class="ps-3">
+                                <h6 class="fs-sm fw-semibold mb-0">Hendrik Michel</h6>
+                                <span class="fs-xs text-muted">Geschäftsstellenleiter &ndash; Pulse of Europe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-5 mb-1 mb-md-4 mb-lg-5">
+        <div class="row pb-xl-3">
+            <div class="col">
+                
+
+<p><strong>Sichtbar machen, was hinter Verwaltungskosten steckt</strong></p>
+
+<p>Bei der Mitgliederversammlung muss der Verein erklären können, wofür er seine Ressourcen eingesetzt hat. Hendrik beschreibt den Nutzen der Berichte-Funktion in Kimai so: <em>„Mit den Berichten können wir sehr detailliert aufschlüsseln, wie viel Zeit wir für ein bestimmtes Projekt aufgewendet haben.“</em> Die Auswertungen zeigen, wie viel Arbeitszeit in Bürgerbeteiligung, Kampagnen und andere Projekte geflossen ist und welcher Anteil auf die Verwaltung entfällt.</p>
+
+<p>Dabei geht es nicht darum, Misstrauen auszuräumen. <em>„Das Vertrauen ist grundsätzlich da und wird auch nicht infrage gestellt. Jetzt können wir unsere Arbeit aber zusätzlich darstellen“</em>, betont Hendrik. Die Zeiterfassung hilft dem Verein außerdem, dem Finanzamt die Aufzeichnungen als Nachweis für gemeinnützige Arbeit vorzulegen.</p>
+
+<p><strong>Zeiterfassung brauchen alle – NPOs genauso wie For-Profits</strong></p>
+
+<p>Ein gewinnorientiertes Unternehmen möchte wissen, ob Projekte wirtschaftlich laufen. Ein gemeinnütziger Verein möchte zeigen, wie seine Ressourcen dem Vereinszweck zugutekommen. Die Ziele unterscheiden sich, die grundlegende Frage bleibt dieselbe: Wie viel Zeit fließt in welche Aufgaben?</p>
+
+<p>Zeiterfassung ist deshalb nicht nur ein Thema für Unternehmen, die Stunden abrechnen. Sie ist für alle relevant, die Verantwortung für Zeit, Geld und Ergebnisse tragen. Damit professionelle Zeiterfassung auch für Non-Profit-Organisationen mit begrenztem Budget erschwinglich bleibt, bietet Kimai einen vergünstigten NPO-Tarif für seine Cloud-Lösung an.</p>
+
+<p>Mit Kimai konnte Pulse of Europe die gemeinsame Grundlage schaffen: unkomplizierte Erfassung, einheitliche Projekte und Auswertungen, mit denen sich die geleistete Arbeit nachvollziehbar darstellen lässt.</p>
+
+<p>Wir danken Hendrik Michel für das inspirierende Gespräch und wünschen alles Gute für die Zukunft von Pulse of Europe!</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container py-5 my-1 my-md-4 my-lg-5">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-lg-0">
+                <div class="pe-lg-4 me-lg-3 pe-xl-0 me-xl-0">
+                    <div class="mb-0">
+                        
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+                <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer bg-dark pt-5 pb-4" xmlns="http://www.w3.org/1999/html">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai®
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/de/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Glossar</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v5"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
