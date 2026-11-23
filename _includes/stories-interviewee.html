@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="position-relative d-flex h-100">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-center" style="background-image: url({{ page.photo }});"></div>
+                    <div class="position-absolute top-0 start-0 w-100 h-100 rounded-3 bg-size-cover bg-repeat-0 bg-position-{{ page.photo_position | default: 'center' }}" style="background-image: url({{ page.photo }});"></div>
                 </div>
             </div>
             <div class="col-md-8">
