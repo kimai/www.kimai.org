@@ -102,6 +102,10 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 - Run `./scripts/security-advisory.sh GHSA-xxxx-yyyy-zzzz`: this creates a new `.md` file in `collections/_security/`, e.g. `collections/_security/2026-05-05-ghsa-xxxx-yyyy-zzzz.md`
 - Run the skill `/kimai-security-advisory` with the GHSA ID as input, e.g. `/kimai-security-advisory GHSA-xxxx-yyyy-zzzz`
 
+### Publish success stories
+
+- Run the skill `/kimai-publish-story` with the finished story text (German or English) and the header, person and logo images: it creates the English and German posts in `collections/_posts/`, copies the images to `images/stories/`, previews both pages locally, and after approval opens a pull request on GitHub
+
 ## Multilingual Rules
 
 - English is the main website language and should be treated as the default source language unless the existing workflow for a section says otherwise
