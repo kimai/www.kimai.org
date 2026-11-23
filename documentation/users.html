@@ -1052,7 +1052,7 @@ Don’t mix this up with the system specific configuration for new customers.</p
   </tbody>
 </table>
 
-<p><strong>Permissions for profiles of other user accounts</strong></p>
+<p><strong>Permissions to manage the profiles of other users. By default, they are only granted to Super-Admins. Several of them are security relevant, as explained below: only assign them to roles you fully trust. Roles, password, API tokens and profile of a user can only be changed by users who hold an equal or higher role.</strong></p>
 
 <table class="table permissions">
   <thead>
@@ -1064,39 +1064,39 @@ Don’t mix this up with the system specific configuration for new customers.</p
   <tbody>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">api-token_other_profile</code></td>
-      <td><strong>SECURITY ALERT</strong> - Add API tokens for other users</td>
+      <td><strong>SECURITY ALERT</strong> - Create API tokens for other users. Risk: the token can be used to act as that user via the API, without knowing their password.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">edit_other_profile</code></td>
-      <td><strong>SECURITY ALERT</strong> - edit the profile for another user</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">hourly-rate_other_profile</code></td>
-      <td>Edit other (users specific) hourly rate</td>
+      <td><strong>SECURITY ALERT</strong> - Edit the profile of other users. Risk: changing the email address and then using ‘password forgotten’ allows to take over the account.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">password_other_profile</code></td>
-      <td><strong>SECURITY ALERT</strong> - Change the password for another user</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">preferences_other_profile</code></td>
-      <td>Change the preferences for another user</td>
+      <td><strong>SECURITY ALERT</strong> - Change the password of other users. Risk: allows to take over the account.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">roles_other_profile</code></td>
-      <td><strong>SECURITY ALERT</strong> - change roles for other users, set the ‘system account’ and ‘password reset’ flag</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">supervisor_other_profile</code></td>
-      <td>Change the supervisor for the selected profile</td>
+      <td><strong>SECURITY ALERT</strong> - Change the roles of other users and set the ‘system account’ and ‘password reset’ flags. Risk: users can be promoted to higher roles, up to the role of the editing user.</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">teams_other_profile</code></td>
-      <td><strong>SECURITY ALERT</strong> - Edit team assignments in other user profile</td>
+      <td><strong>SECURITY ALERT</strong> - Change the team assignments of other users. Risk: users gain access to customers, projects, activities and timesheets of other teams.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hourly-rate_other_profile</code></td>
+      <td>Change the hourly and internal rate of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">preferences_other_profile</code></td>
+      <td>Change the preferences of other users</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">supervisor_other_profile</code></td>
+      <td>Change the supervisor of other users</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">view_other_profile</code></td>
-      <td>View other user profiles</td>
+      <td>View the profiles of other users</td>
     </tr>
   </tbody>
 </table>
