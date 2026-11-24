@@ -76,7 +76,6 @@ Do you still have questions about managing working hours and absences in your te
 
 There are two ways:
 
-- **Kimai Cloud:** [subscribe](https://www.kimai.cloud/auth/registration) to the **Professional** plan. It includes working hour accounts, public holidays, vacation and sick leave tracking.
 - **Kimai Cloud:** [subscribe]({{ page.lang | url_cloud_register }}) to the **Professional** plan. It includes working hour accounts, public holidays, vacation and sick leave tracking.
 - **Self-hosted Kimai:** the plugin **[Working hours, vacation, sickness, public holidays]({% link _store/{{page.lang}}/controlling.md %})** in the Kimai store
 
@@ -116,5 +115,5 @@ Yes! Explore the Kimai demo, or start a free 30-day Kimai Cloud trial.
 
 1. [Kimai Demo]({% link _pages/{{page.lang}}/demo.md %})
 2. [Start a free 30-day Kimai Cloud trial]({{ page.lang | url_cloud_register }})
-3. [Kimai pricing: Standard vs. Professional]({% link _pages/{{page.lang}}/prcing.md %})
+3. [Kimai pricing: Standard vs. Professional]({% link _pages/{{page.lang}}/pricing.md %})
 4. [Working hours, vacation, sickness plugin for self-hosters]({% link _store/{{page.lang}}/controlling.md %})

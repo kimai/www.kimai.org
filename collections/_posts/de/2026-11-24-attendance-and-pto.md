@@ -1,10 +1,10 @@
 ---
-title: "Anwesenheit und Abwesenheit in Kimai verwalten: Urlaub, Krankheit und Arbeitszeit"
+title: "Abwesenheit in Kimai verwalten: Urlaub, Krankheit und Arbeitszeit"
 date: "2026-11-24 12:00:00 +0100"
 image: /images/blog/de/attendance-and-pto.webp
 author: valentina
 tags: [general, cloud]
-excerpt: "Arbeitszeiten erfassen, Urlaub genehmigen, Krankheitstage eintragen, sehen, wer fehlt … Anwesenheits- und Abwesenheitsmanagement in Kimai, erklärt."
+excerpt: "Arbeitszeiten erfassen, Urlaub genehmigen, Krankheitstage eintragen, sehen wer fehlt … Anwesenheits- und Abwesenheitsmanagement in Kimai"
 ---
 
 Zeitmanagement im Team hat zwei Seiten: die Zeit erfassen, die Mitarbeitende arbeiten, und die Zeit verwalten, in der sie abwesend sind: Urlaub, Krankheitstage, gesetzliche Feiertage, Elternzeit, Sabbaticals und Freizeitausgleich für Überstunden. Wenn Abwesenheiten in Tabellen, gemeinsamen Postfächern und im Gedächtnis einzelner Personen leben, sind Zeiterfassungen seltener auf dem aktuellen Stand.
