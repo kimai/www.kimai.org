@@ -1,7 +1,7 @@
 ---
 title: "How to manage attendance and PTO in Kimai"
 date: "2026-11-24 12:00:00 +0100"
-image: /images/blog/eng-attendance-and-pto.webp
+image: /images/blog/attendance-and-pto.webp
 author: valentina
 tags: [general, cloud]
 excerpt: "Track working hours, approve vacation, log sick days, see who’s out… PTO and attendance management in Kimai, explained."

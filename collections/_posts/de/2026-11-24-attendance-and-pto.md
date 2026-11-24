@@ -1,7 +1,7 @@
 ---
 title: "Anwesenheit und Abwesenheit in Kimai verwalten: Urlaub, Krankheit und Arbeitszeit"
 date: "2026-11-24 12:00:00 +0100"
-image: /images/blog/de-attendance-and-pto.webp
+image: /images/blog/de/attendance-and-pto.webp
 author: valentina
 tags: [general, cloud]
 excerpt: "Arbeitszeiten erfassen, Urlaub genehmigen, Krankheitstage eintragen, sehen, wer fehlt … Anwesenheits- und Abwesenheitsmanagement in Kimai, erklärt."
