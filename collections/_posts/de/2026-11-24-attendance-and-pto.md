@@ -76,8 +76,8 @@ Haben Sie noch Fragen zur Verwaltung von Arbeitszeiten und Abwesenheiten in Ihre
 
 Es gibt zwei Möglichkeiten:
 
-- **Kimai Cloud:** [Abonnieren](https://www.kimai.cloud/auth/registration) Sie den **Professional**-Tarif. Er enthält Arbeitszeitkonten, gesetzliche Feiertage sowie die Erfassung von Urlaub und Krankheit.
-- **Selbst gehostetes Kimai:** Das [Plugin](https://www.kimai.org/store/controlling.html) **Arbeitszeiten, Urlaub, Krankheit, Feiertage** im Kimai Store
+- **Kimai Cloud:** [Abonnieren]({{ page.lang | url_cloud_register }}) Sie den **Professional**-Tarif. Er enthält Arbeitszeitkonten, gesetzliche Feiertage sowie die Erfassung von Urlaub und Krankheit.
+- **Selbst gehostetes Kimai:** Das Plugin **[Arbeitszeiten, Urlaub, Krankheit, Feiertage]({% link _store/{{page.lang}}/controlling.md %})** im Kimai Store
 
 **Was ist eine PTO-Verwaltungssoftware?**
 
