@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>How to manage attendance and PTO in Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/en/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="en">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How to manage attendance and PTO in Kimai">
+<meta property="og:image" content="https://www.kimai.org/images/blog/attendance-and-pto.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/blog/2026/attendance-and-pto">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/2026/attendance-and-pto">
+<link href="/assets/build/main.css?v17" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/en/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai - Open Source time-tracker"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Product</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/integrations" class="dropdown-item">Apps & Integrations</a></li>
+                            <li><a href="/en/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/en/support.html" class="dropdown-item">Support</a></li>
+                            <li><a href="/en/partner/" class="dropdown-item">Partner</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/en/about.html" class="dropdown-item">About Kimai</a></li>
+                            <li><a href="/en/open-source-community" class="dropdown-item">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/pricing" class="dropdown-item">Pricing</a></li>
+                            <li><a href="/en/changelog" class="dropdown-item">Updates</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Self hosting</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/en/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/en/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Documentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                User manual
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Self hosting
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Developer
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            English
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item active" aria-current="true" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/auth/registration" class="btn btn-success btn-sm fs-sm d-inline-flex">Start for free</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="hero container mt-4 py-5">
+    <h1 class="page-title pb-3" style="max-width: 970px;">How to manage attendance and PTO in Kimai</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">
+                        General
+                    </span>
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">
+                        Cloud
+                    </span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">24 Nov 2026</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/valentina.webp" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Valentina</h6>
+                
+                <a href="https://www.linkedin.com/in/ivalentina/" target="_blank" rel="author" class="fw-semibold stretched-link">@ivalentina</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p>Time management in a team has two sides: tracking the time people work, and managing the time they’re away: vacation, sick days, public holidays, parental leave, sabbaticals, and time off for overtime. When absences live in spreadsheets, shared mailboxes and someone’s memory, timesheets have less chances to be up to date.</p>
+
+<p>That’s why Working hours, vacation, sickness &amp; public holidays is one of Kimai’s most important features for teams. It turns Kimai from a time tracker into a complete attendance and absence management solution, with working time contracts, overtime balances, PTO requests, sickness tracking, and more.</p>
+
+<p>The feature is available with a Kimai Cloud Professional subscription and as a plugin for self-hosted Kimai. It has received several major updates in recent months, many of them based on your feedback and feature requests. Here’s an overview considering the last improvements.</p>
+
+<h3 id="1-working-hours-management-contracts-and-time-accounts">1. Working hours management: contracts and time accounts</h3>
+
+<p>Every employee in Kimai can have a working contract that defines their expected working hours. Kimai then compares expected and actual working time and keeps a running time account, so overtime and minus hours are always visible, without a single formula.</p>
+
+<p>What you can set up per employee:</p>
+
+<ul>
+  <li>Expected hours per weekday</li>
+  <li>Vacation entitlement per calendar year</li>
+  <li>Start and last working day</li>
+  <li>Public holiday group per region or country</li>
+  <li>Attendance project mode</li>
+</ul>
+
+<p>Watch how it works.</p>
+
+<div class="youtube-wrapper" style="max-width: 560px;">
+    <a class="youtube-consent" href="https://www.youtube.com/watch?v=BYkgplGTz4Q" target="_blank" rel="noopener" data-youtube-id="BYkgplGTz4Q" data-youtube-title="Working Times introduction" aria-label="Play video: Working Times introduction">
+        <img class="youtube-consent-thumbnail" src="/images/video-thumbnails/working_contract_overview.webp" alt="" loading="lazy" width="1280" height="720" />
+        <span class="youtube-consent-play" aria-hidden="true"><i class="bx bx-play"></i></span>
+        <span class="youtube-consent-notice">Click to load the video from YouTube. Data will be transferred to Google.</span>
+    </a>
+</div>
+
+<h3 id="2-absence-management-pto-vacation-and-sick-leave-with-an-approval-workflow">2. Absence management: PTO, vacation, and sick leave with an approval workflow</h3>
+
+<p>The rules in this game are simple. Employees request time off in Kimai, supervisors approve it in Kimai - less email requests and double checking.</p>
+
+<p>What employees can book as absence:</p>
+
+<ul>
+  <li>Vacation as full or half days, also as date ranges. Days without expected working hours are skipped automatically.</li>
+  <li>Sickness, including sickness of a relative (e.g. a sick child), as a date range</li>
+  <li>Time off (PTO) to use up overtime</li>
+  <li>Other absences such as sabbatical</li>
+</ul>
+
+<p>Watch our video tutorial to learn the basics of absence management.</p>
+
+<div class="youtube-wrapper" style="max-width: 560px;">
+    <a class="youtube-consent" href="https://www.youtube.com/watch?v=Ed11R3d4Eng" target="_blank" rel="noopener" data-youtube-id="Ed11R3d4Eng" data-youtube-title="Set Up Working Time &amp; Absences" aria-label="Play video: Set Up Working Time &amp; Absences">
+        <img class="youtube-consent-thumbnail" src="/images/video-thumbnails/working_contracts_setup_and_absences.webp" alt="" loading="lazy" width="1280" height="720" />
+        <span class="youtube-consent-play" aria-hidden="true"><i class="bx bx-play"></i></span>
+        <span class="youtube-consent-notice">Click to load the video from YouTube. Data will be transferred to Google.</span>
+    </a>
+</div>
+
+<h3 id="3-customisable-absence-types">3. Customisable absence types</h3>
+
+<p>No two companies handle leave the same way. Kimai lets you set up the absence types your business actually uses: annual leave, doctor appointments, sickness of a relative, sabbatical, and your own custom types. As a result your reports, PDFs, and time accounts follow your leave policy instead of the other way round.</p>
+
+<p>Watch how it works.</p>
+
+<div class="youtube-wrapper" style="max-width: 560px;">
+    <a class="youtube-consent" href="https://www.youtube.com/watch?v=WorSyqKa3D0" target="_blank" rel="noopener" data-youtube-id="WorSyqKa3D0" data-youtube-title="Configurable absence types" aria-label="Play video: Configurable absence types">
+        <img class="youtube-consent-thumbnail" src="/images/video-thumbnails/absence-types.webp" alt="" loading="lazy" width="1280" height="720" />
+        <span class="youtube-consent-play" aria-hidden="true"><i class="bx bx-play"></i></span>
+        <span class="youtube-consent-notice">Click to load the video from YouTube. Data will be transferred to Google.</span>
+    </a>
+</div>
+
+<h3 id="4-absence-calendar">4. Absence calendar</h3>
+
+<p>This feature answers the question every team lead asks on Monday morning: <em>who is actually in this week?</em> You’ll find the answer under Reports → Absence calendar. It shows one row per person and one column per day of the month, so vacations, sick days and public holidays line up at a glance.</p>
+
+<p>Use it to plan your team’s capacity, plan meetings and releases around the holidays, and also make sure two key people aren’t off in the same week.</p>
+
+<p>Our video tutorial walks you through these steps.</p>
+
+<div class="youtube-wrapper" style="max-width: 560px;">
+    <a class="youtube-consent" href="https://www.youtube.com/watch?v=4igDlv6O3Ro" target="_blank" rel="noopener" data-youtube-id="4igDlv6O3Ro" data-youtube-title="Team absence calendar" aria-label="Play video: Team absence calendar">
+        <img class="youtube-consent-thumbnail" src="/images/video-thumbnails/absence_calendar.webp" alt="" loading="lazy" width="1280" height="720" />
+        <span class="youtube-consent-play" aria-hidden="true"><i class="bx bx-play"></i></span>
+        <span class="youtube-consent-notice">Click to load the video from YouTube. Data will be transferred to Google.</span>
+    </a>
+</div>
+
+<h3 id="final-thoughts-stay-organised-through-the-busy-season">Final thoughts: stay organised through the busy season</h3>
+
+<p>Even when holidays, flu season and busy weeks pile up, the right setup for attendance and PTO management helps your team stay organised. Your team members get their holidays, HR gets their numbers, and team leaders can stay focused on business results.</p>
+
+<p>Do you still have questions about managing working hours and absences in your team?</p>
+
+<h3 id="faq">FAQ</h3>
+
+<p><strong>How do I make the Kimai working hours feature available?</strong></p>
+
+<p>There are two ways:</p>
+
+<ul>
+  <li><strong>Kimai Cloud:</strong> <a href="https://www.kimai.cloud/auth/registration">subscribe</a> to the <strong>Professional</strong> plan. It includes working hour accounts, public holidays, vacation and sick leave tracking.</li>
+  <li><strong>Self-hosted Kimai:</strong> the plugin <strong><a href="/en/store/controlling.html">Working hours, vacation, sickness, public holidays</a></strong> in the Kimai store</li>
+</ul>
+
+<p><strong>What is PTO management software?</strong></p>
+
+<p>PTO (paid time off) management software lets employees request vacation and time off, lets managers approve it, and keeps leave balances up to date automatically. In Kimai, it sits right next to your time tracking, so leave and working hours share one time account.</p>
+
+<p><strong>Can Kimai be used as an attendance management system?</strong></p>
+
+<p>Yes. Kimai compares each employee’s expected working hours from their contract with the hours they actually tracked, and shows overtime or minus hours per day, month and year. You can also count only one attendance project as working time.</p>
+
+<p><strong>How do I track employee sick days in Kimai?</strong></p>
+
+<p>Employees enter sickness on the Absence screen, as a single day or a date range. Sick days are approved automatically, appear in the absence calendar and are included in absence reports and exports.</p>
+
+<p><strong>How does the absence approval workflow work?</strong></p>
+
+<p>A new vacation or PTO request goes to Requested and the supervisor gets an email. The supervisor approves or rejects it, alone or in bulk, and the employee is notified. Only approved absences count in the time account.</p>
+
+<p><strong>Can I see a team vacation calendar in Kimai?</strong></p>
+
+<p>Yes. Go to <strong>Reports → Absence calendar</strong> for a monthly view with one row per person. Show all users to turn it into an availability calendar for capacity planning.</p>
+
+<p><strong>Can vacation days and overtime be carried over to the next year?</strong></p>
+
+<p>Yes. Use a manual booking in the employee’s working times to move the final balance of hours or vacation days into the next year. You can also book next year’s vacation in advance.</p>
+
+<p><strong>Are public holidays supported?</strong></p>
+
+<p>Yes. You define public holiday groups per country or region and assign each employee to one. Holidays are factored into expected hours and shown in the absence calendar.</p>
+
+<p><strong>Can I try it before buying?</strong></p>
+
+<p>Yes! Explore the Kimai demo, or start a free 30-day Kimai Cloud trial.</p>
+
+<h3 id="useful-links-and-first-steps-to-easy-pto-attendance-and-absence-management">Useful links and first steps to easy PTO, attendance and absence management:</h3>
+
+<ol>
+  <li><a href="/en/demo.html">Kimai Demo</a></li>
+  <li><a href="https://www.kimai.cloud/auth/registration">Start a free 30-day Kimai Cloud trial</a></li>
+  <li><a href="/en/pricing">Kimai pricing: Standard vs. Professional</a></li>
+  <li><a href="/en/store/controlling.html">Working hours, vacation, sickness plugin for self-hosters</a></li>
+</ol>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <h3 class="h4 fw-normal text-light opacity-75">Follow us for more news</h3>
+                <div class="pt-md-5 pt-4 pb-md-2">
+                    
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+</main>
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" xmlns="http://www.w3.org/1999/html">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai®
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Time-Tracking</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Time tracking made easy. An open-source solution for teams of all sizes - self-hosted or SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            English
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item active" aria-current="true" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Features</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Success Stories</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Reviews</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Press & Media</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Discount codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/en/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agencies</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Consultants</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freelancer</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/en/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Software Developers</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/en/industry" class="nav-link fs-sm fw-medium px-0 py-1">More industries</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/en/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Compare time tracker</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockify">Clockify alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Clockodo">Clockodo alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with Harvest">Harvest alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Compare Kimai with toggl track">toggl track alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/en/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Glossary</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/en/site-notice.html" class="nav-link fs-sm fw-medium">Site notice</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/privacy-policy.html" class="nav-link fs-sm fw-medium">Privacy policy</a>
+        </li>
+        <li class="nav-item">
+            <a href="/en/terms-cloud.html" class="nav-link fs-sm fw-medium">Terms</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v5"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
