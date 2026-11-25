@@ -106,6 +106,10 @@ Committed scripts in `scripts/` should be considered part of the supported workf
 
 - Run the skill `/kimai-publish-story` with the finished story text (German or English) and the header, person and logo images: it creates the English and German posts in `collections/_posts/`, copies the images to `images/stories/`, previews both pages locally, and after approval opens a pull request on GitHub
 
+### Add partner profiles
+
+- Run the skill `/kimai-add-partner` with the details the partner sent (email, form or text, optionally a logo): it merges them with the partner's existing `_data/developer.yml` entry, writes `collections/_partner/<slug>.md` in German and English, previews the profile and `/partner/find` locally, and after approval opens a pull request on GitHub
+
 ## Multilingual Rules
 
 - English is the main website language and should be treated as the default source language unless the existing workflow for a section says otherwise
