@@ -1,5 +1,5 @@
 activity_admin:
-    name: Admin
+    name: Permissions apply to every user with a matching role
     permissions:
         budget_activity: Allows to see the budget (monetary) reports for activities of assigned projects/customers
         time_activity: Allows to see the budget (time) reports for activities of assigned projects/customers
@@ -9,7 +9,7 @@ activity_admin:
         permissions_activity: Allows to edit the teams for assigned activities
         view_activity: Allows access to the activity administration
 activity_team_leader:
-    name: If you are a Teamleader, whose team is assigned to this activity
+    name: "Activity (team leader): Permissions only apply if you are the leader of a team, which is assigned to this activity."
     permissions:
         budget_teamlead_activity: Allow team leaders to see the budget (money) reports for activities of assigned projects/customers
         time_teamlead_activity: Allow team leaders to see the budget (time) reports for activities of assigned projects/customers
@@ -17,14 +17,14 @@ activity_team_leader:
         permissions_teamlead_activity: Allow team leaders to edit the teams for assigned activities
         view_teamlead_activity: Allow team leaders to access activity administration
 activity_team_member:
-    name: If you are a member of a team, that is assigned to this activity
+    name: "Activity (team member): Permissions only apply if you are the member of a team, which is assigned to this activity."
     permissions:
         budget_team_activity: Allows team-members to see the budget (money) reports for activities of assigned projects/customers
         time_team_activity: Allows team-members to see the budget (time) reports for activities of assigned projects/customers
         edit_team_activity: Allows team-members to edit activities of assigned projects/customers
         view_team_activity: Allows team-members to access activity administration
 customer_admin:
-    name: Admin
+    name: Permissions apply to every user with a matching role
     permissions:
         budget_customer: Allows to see the budget (money) reports for the customer
         time_customer: Allows to see the budget (time) reports for the customer
@@ -36,7 +36,7 @@ customer_admin:
         permissions_customer: Allows to edit the teams for assigned customers
         view_customer: Allows access to the customer administration
 customer_team_leader:
-    name: If you are a Teamleader, whose team is assigned to this customer
+    name: "Customer (team leader): Permissions only apply if you are the leader of a team, which is assigned to this customer."
     permissions:
         budget_teamlead_customer: Allow team leaders to see the budget (money) reports for assigned customers
         time_teamlead_customer: Allow team leaders to see the budget (time) reports for assigned customers
@@ -46,7 +46,7 @@ customer_team_leader:
         permissions_teamlead_customer: Allow team leaders to edit the teams for assigned customers
         view_teamlead_customer: Allow team leaders to access project administration
 customer_team_member:
-    name: If you are a member of a team, that is assigned to this customer
+    name: "Customer (team member): Permissions only apply if you are the member of a team, which is assigned to this customer."
     permissions:
         budget_team_customer: Allows team-members to see the budget (money) reports for assigned customers
         time_team_customer: Allows team-members to see the budget (time) reports for assigned customers
@@ -55,7 +55,7 @@ customer_team_member:
         edit_team_customer: Allows team-members to edit assigned customers
         view_team_customer: Allows team-members to access project administration
 project_admin:
-    name: Admin
+    name: Permissions apply to every user with a matching role
     permissions:
         budget_project: Allows to see the budget (money) reports for projects
         time_project: Allows to see the budget (time) reports for projects
@@ -67,7 +67,7 @@ project_admin:
         permissions_project: Allows to edit the teams for assigned projects
         view_project: Allows access to the project administration
 project_team_leader:
-    name: If you are a Teamleader, whose team is assigned to this project
+    name: "Project (team leader): Permissions only apply if you are the leader of a team, which is assigned to this project."
     permissions:
         budget_teamlead_project: Allow team leaders to see the budget (money) reports for assigned projects or projects of assigned customers
         time_teamlead_project: Allow team leaders to see the budget (time) reports for assigned projects or projects of assigned customers
@@ -77,7 +77,7 @@ project_team_leader:
         permissions_teamlead_project: Allow team leaders to edit the teams for assigned projects or projects of assigned customers
         view_teamlead_project: Allow team leaders to access projects administration
 project_team_member:
-    name: If you are a member of a team, that is assigned to this project
+    name: "Project (team member): Permissions only apply if you are the member of a team, which is assigned to this project."
     permissions:
         budget_team_project: Allows team-members to see the budget (money) reports for assigned projects or projects of assigned customers
         time_team_project: Allows team-members to see the budget (time) reports for assigned projects or projects of assigned customers
