@@ -14,7 +14,7 @@ Receivables for Kimai begleitet Ihre Rechnungen von der Erstellung in Kimai bis 
 ## Voraussetzungen
 
 - Kimai ab Version 2.69, selbst betrieben, PHP ab 8.2
-- ein Hintergrunddienst, der jede Minute läuft (Cron, systemd oder Container)
+- ein Hintergrunddienst, am besten jede Minute (Cron, systemd oder Container)
 - für E-Rechnungen: das [InvoiceBundle]({% link _store/invoice-bundle.md %}) und der KoSIT-Validator als Container
 - für Rechnungsvorlagen im Format DOCX, ODT oder XLSX: Gotenberg oder LibreOffice
 
@@ -39,7 +39,7 @@ Receivables for Kimai follows your invoices from their creation in Kimai to the 
 ## Requirements
 
 - Kimai 2.69 or later, self-hosted, PHP 8.2 or later
-- a background service that runs every minute (cron, systemd or container)
+- a background service, ideally every minute (cron, systemd or container)
 - for e-invoices: the [InvoiceBundle]({% link _store/invoice-bundle.md %}) and the KoSIT validator as a container
 - for invoice templates in DOCX, ODT or XLSX format: Gotenberg or LibreOffice
 
