@@ -116,6 +116,11 @@ The recent activities drag & drop is also switched to the account currently disp
 If you cannot see the dropdown despite having the `view_other_timesheet` permission, it is likely that you cannot see any other users.
 Whether or not you can see another user depends on your team assignments: you need to be the [team lead to see your team members]({% link _documentation/teams.md %}).
 
+## Extending the calendar
+
+Plugin developers can hook into the rendering of timesheet entries, e.g. to add badges or extend the popover, 
+see [extending the calendar]({% link _documentation/developer/extending-kimai.md %}#extending-the-calendar).
+
 ## Configurations
 
 {% include documentation/configurations.md id="calendar" howto=true %}
