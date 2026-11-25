@@ -31,7 +31,11 @@ layout: default
                 <h1 class="mb-1">{{ name }}</h1>
                 {% if page.contact_url or email %}
                 <div class="d-flex flex-wrap gap-2 mt-3">
-                    <a href="{{ page.contact_url | default: 'mailto:' | append: email }}"{% if page.contact_url %} target="_blank" rel="noopener"{% endif %} class="btn btn-primary">{{ t.contact_button }}</a>
+                    {% if page.contact_url %}
+                        <a href="{{ page.contact_url }}?utm_source=kimai.org&utm_medium=partner" target="_blank" rel="noopener" class="btn btn-primary">{{ t.contact_button }}</a>
+                    {% else %}
+                        <a href="mailto:{{ email }}" class="btn btn-primary">{{ t.contact_button }}</a>
+                    {% endif %}
                 </div>
                 {% endif %}
             </div>
@@ -192,7 +196,7 @@ layout: default
                         {% if developer.contact %}<li>{{ developer.contact }}</li>{% endif %}
                         {% if email %}<li><a href="mailto:{{ email }}" class="text-primary text-decoration-none">{{ email }}</a></li>{% endif %}
                         {% if developer.phone %}<li>{{ developer.phone }}</li>{% endif %}
-                        {% if website %}<li><a href="{{ website }}" target="_blank" rel="noopener" class="text-primary text-decoration-none">{{ website_label }}</a></li>{% endif %}
+                        {% if website %}<li><a href="{{ website }}?utm_source=kimai.org&utm_medium=partner" target="_blank" rel="noopener" class="text-primary text-decoration-none">{{ website_label }}</a></li>{% endif %}
                         {% if developer.location %}<li class="text-muted">{{ developer.location }}</li>{% endif %}
                     </ul>
                 </div>
