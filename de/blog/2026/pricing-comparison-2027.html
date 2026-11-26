@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#4188c9">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="index,follow">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.kimai.org/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.kimai.org/images/icon_32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.kimai.org/images/icon_16x16.png">
+<title>Zeiterfassung im Preisvergleich 2027 – Kimai</title>
+<link type="application/atom+xml" rel="alternate" href="/de/feed.xml" title="Kimai Time-Tracking" />
+<meta property="og:locale" content="de">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zeiterfassung im Preisvergleich 2027">
+<meta property="og:image" content="https://www.kimai.org/images/blog/de/pricing-comparison-2027.webp">
+<meta property="og:description" content="">
+<link rel="alternate" hreflang="en" href="https://www.kimai.org/en/blog/2026/pricing-comparison-2027">
+<link rel="alternate" hreflang="de" href="https://www.kimai.org/de/blog/2026/pricing-comparison-2027">
+<link href="/assets/build/main.css?v17" rel="stylesheet" />
+
+</head>
+<body class="">
+
+<main class="page-wrapper">
+    
+<header class="header navbar navbar-expand-lg border-bottom bg-light navbar-sticky">
+    <div class="container px-3">
+        <a href="/de/" class="navbar-brand pe-3">
+        <img src="/images/kimai_logo_48.webp" style="height:36px;width:36px;" alt="Kimai – Open-Source Zeiterfassung"> Kimai
+        </a>
+        <div id="navbarNav" class="offcanvas offcanvas-end">
+            <div class="offcanvas-header border-bottom">
+                <h5 class="offcanvas-title">Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Produkt</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/integrations" class="dropdown-item">Apps und Integrationen</a></li>
+                            <li><a href="/de/demo.html" class="dropdown-item">Demo</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/blog/" class="dropdown-item">Blog</a></li>
+                            <li><a href="/de/support.html" class="dropdown-item">Support</a></li>
+                            <li><a href="/de/partner/" class="dropdown-item">Partner</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="/de/about.html" class="dropdown-item">Über Kimai</a></li>
+                            <li><a href="/de/open-source-community" class="dropdown-item">Open Source</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Cloud</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/pricing" class="dropdown-item">Preise</a></li>
+                            <li><a href="/de/changelog" class="dropdown-item">Updates</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Selber hosten</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/de/download.html" class="dropdown-item">Installation</a></li>
+                            <li><a href="/de/store/" class="dropdown-item">Plugins</a></li>
+                            <li><a href="https://github.com/kimai/kimai/discussions" target="_blank" class="dropdown-item">Forum <i class="bx bx-link-external me-2"></i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">Dokumentation</a>
+                        <ul class="dropdown-menu">
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-manual.html" class="dropdown-item">
+                                
+                                Benutzerhandbuch
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/cloud.html" class="dropdown-item">
+                                
+                                Cloud
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-on-premise.html" class="dropdown-item">
+                                
+                                Selber hosten
+                            </a></li>
+                        
+                            
+                            
+                            <li><a href="https://www.kimai.org/documentation/chapter-developer.html" class="dropdown-item">
+                                
+                                Entwickler
+                            </a></li>
+                        
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="pe-lg-1 ms-auto me-2">
+            <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm d-none d-md-inline-flex me-2 btn-outline-secondary px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+            <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-sm fs-sm d-inline-flex">Kostenlos starten</a>
+
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</header>
+
+
+    
+
+<section class="hero container mt-4 py-5">
+    <h1 class="page-title pb-3" style="max-width: 970px;">Zeiterfassung im Preisvergleich 2027</h1>
+    <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3">
+        <div class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4">
+            <div class="fs-xs border-end pe-3 me-3 mb-2">
+                
+                    
+                    <span class="badge bg-faded-primary text-primary fs-base">
+                        Allgemein
+                    </span>
+                
+            </div>
+            <div class="fs-sm pe-3 me-3 mb-2">26 Nov 2026</div>
+        </div>
+        <div class="d-flex align-items-center position-relative ps-md-3 pe-lg-5 mb-2">
+            <img src="/images/valentina.webp" class="rounded-circle" width="60" alt="Avatar">
+            <div class="ps-3">
+                <h6 class="mb-1">Valentina</h6>
+                
+                <a href="https://www.linkedin.com/in/ivalentina/" target="_blank" rel="author" class="fw-semibold stretched-link">@ivalentina</a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5 pb-2 py-mg-4">
+    <div class="row gy-4">
+        <div class="col-lg-9">
+            <p>Sind Sie Solo-Selbstständige, Unternehmer oder leiten Sie ein großes, verteiltes Team und suchen einen klaren, aktuellen Preisvergleich für Zeiterfassungstools? Das richtige Tool kann viel für Ihre Produktivität und Ihr Budget bewirken. Im Folgenden finden Sie zehn beliebte Zeiterfassungs-Apps mit ihren aktuellen Preisen, Funktionen und wichtigsten Unterschieden, damit Sie schnell entscheiden können, welche zu Ihren Abläufen passt. Wir beginnen mit Harvest, der App, deren Preise sich 2026 am stärksten verändert haben.</p>
+
+<h2 id="die-top-10-zeiterfassungs-apps-für-2027">Die Top 10 Zeiterfassungs-Apps für 2027</h2>
+
+<h3 id="harvest-jetzt-wird-es-kompliziert">Harvest: Jetzt wird es kompliziert</h3>
+
+<p>Harvest gehört zu den bekannten Zeiterfassungs-Apps und ist vor allem für die integrierte Rechnungsstellung und Ausgabenerfassung beliebt, zum Beispiel bei Auftragnehmern und Agenturen, die ihren Kunden erfasste Zeit in Rechnung stellen. 2026 wollen die meisten, die nach Harvest suchen, allerdings etwas anderes wissen: Wie stark sind die Preise gestiegen, und was kostet Harvest jetzt wirklich?</p>
+
+<p>Was hat sich bei den Preisen von Harvest geändert? Nachdem Bending Spoons Harvest 2025 übernommen hat, wurden die festen Preise pro Platz durch zwei kostenpflichtige Pläne ersetzt: Teams und Enterprise. Bei beiden zahlen Sie entweder einen Preis pro Platz plus Nutzungsgebühren, sobald Sie ein bestimmtes Kontingent überschreiten (Flex-Abrechnung), oder einen höheren Festpreis pro Platz (Unlimited-Abrechnung). Laut BBC sind die Kosten bei Vertragsverlängerungen um bis zu 1.500 % gestiegen.</p>
+
+<figure class="d-block figure mb-3" style="max-width: 100%">
+    <img src="/images/blog/pricing-comparison-2027-harvest-reddit.webp" class="figure-img img-fluid rounded border border-primary border-3 p-2" />
+    <figcaption class="figure-caption">Reddit-Diskussion</figcaption>
+</figure>
+
+<p>Was kostet Harvest also heute? Der Teams-Plan beginnt bei 8,20 € pro Platz und Monat bei jährlicher Abrechnung, Enterprise bei 12,80 €, jeweils zuzüglich Nutzungsgebühren.</p>
+
+<p>Der kostenlose Plan enthält: 1 Platz und 2 Projekte.</p>
+
+<h3 id="clockify-der-kostenlose-plan-endet-jetzt-bei-fünf-nutzern">Clockify: Der kostenlose Plan endet jetzt bei fünf Nutzern</h3>
+
+<p>Clockify ist vor allem für seinen kostenlosen Plan bekannt. Seit 2026 gilt dieser aber nur noch für bis zu fünf Nutzer, und mehrere Funktionen, die früher kostenlos waren, gibt es jetzt nur noch in den kostenpflichtigen Stufen. Die Preise pro Platz sind gleich geblieben: Basic beginnt bei 3,99 €, Standard bei 5,49 € pro Platz und Monat bei jährlicher Abrechnung. Die kostenpflichtigen Stufen schalten Funktionen wie Stundenzettel-Genehmigungen, abrechenbare Sätze, erweiterte Berichte und Projektvorlagen frei. Clockify passt gut zu Freelancern und Unternehmen, die eine schlanke Zeiterfassung suchen, die mitwächst.</p>
+
+<p>Günstigster bezahlter Plan enthält: Stundenzettel, Berichte, abrechenbare Sätze, Projektverwaltung.</p>
+
+<h3 id="toggl-track-jetzt-pro-lizenz-abgerechnet">Toggl Track: Jetzt pro Lizenz abgerechnet</h3>
+
+<p>Toggl Track setzt auf Einfachheit und attraktive, gut gestaltete Dashboards. Der kostenlose Plan macht das Tool beliebt, Sie sollten aber auch an die versteckten Kosten kostenloser Software denken. Was passiert zum Beispiel mit Ihren Daten und Ihrer Privatsphäre? 2026 hat Toggl die Abrechnung von Nutzern auf Lizenzen umgestellt und die monatlichen Preise erhöht. Starter kostet weiterhin 9 € pro Lizenz und Monat bei jährlicher Abrechnung.</p>
+
+<p>Günstigster bezahlter Plan enthält: unbegrenzte Zeiterfassung, abrechenbare Sätze, Projektvorlagen, einfache Berichte.</p>
+
+<h3 id="hubstaff-zeiterfassung-mit-überwachungsfunktionen">Hubstaff: Zeiterfassung mit Überwachungsfunktionen</h3>
+
+<p>Hubstaff bietet Aktivitätsüberwachung, Screenshots, automatische Lohnabrechnung und GPS-Tracking. Damit eignet es sich gut für Außendienstteams und Unternehmen, die mehr Nachvollziehbarkeit brauchen. Der Starter-Plan kostet weiterhin 4,99 € pro Nutzer und Monat bei jährlicher Abrechnung.</p>
+
+<p>Günstigster bezahlter Plan enthält: Zeiterfassung, Aktivitätsüberwachung, Screenshots, einfache Berichte.</p>
+
+<h3 id="timetrack-zeit--und-anwesenheitserfassung">TimeTrack: Zeit- und Anwesenheitserfassung</h3>
+
+<p>TimeTrack konzentriert sich auf digitale Stempeluhren, Anwesenheit, Pausen und Urlaubsverwaltung. Im DACH-Raum wird es häufig für die gesetzlich vorgeschriebene Arbeitszeiterfassung genutzt. Der günstigste Plan kostet 5 € pro Nutzer und Monat bei jährlicher Abrechnung.</p>
+
+<p>Günstigster bezahlter Plan enthält: Anwesenheitserfassung, Pausen, Abwesenheiten, Stundenzettel.</p>
+
+<h3 id="clockin-einfache-zeiterfassung-für-teams-vor-ort">clockin: Einfache Zeiterfassung für Teams vor Ort</h3>
+
+<p>clockin ist für Handwerksbetriebe, Mitarbeitende vor Ort und Außendienstteams gemacht, die ein unkompliziertes Ein- und Ausstempeln brauchen. 2026 hat clockin auf drei Pläne umgestellt: Starter für 3,90 €, Pro für 6,70 € und Expert für 13,50 € pro Nutzer und Monat bei jährlicher Abrechnung. Projektzeiterfassung gibt es erst ab Pro. Die Schichtplanung ist jetzt ein kostenpflichtiges Add-on ab 27 € pro Monat.</p>
+
+<p>Günstigster bezahlter Plan enthält: Stempeluhr, mobile Zeiterfassung, Abwesenheitsverwaltung, digitale Personalakte, DATEV-Schnittstelle.</p>
+
+<h3 id="clockodo-zeiterfassung-made-in-germany-jetzt-günstiger-zum-einstieg">Clockodo: Zeiterfassung made in Germany, jetzt günstiger zum Einstieg</h3>
+
+<p>Clockodo bietet präzise Zeiterfassung, Exporte für die Rechnungsstellung und starke Auswertungen. Besonders beliebt ist es bei kleinen und mittleren Unternehmen im deutschsprachigen Raum. 2026 hat Clockodo seinen Einstiegspreis gesenkt: Basic kostet 3,80 € pro Nutzer und Monat bei jährlicher Abrechnung und deckt Arbeitszeit und Abwesenheiten ab. Projektzeiterfassung gibt es in Pro für 9,50 € pro Nutzer und Monat (bei jährlicher Abrechnung).</p>
+
+<p>Günstigster bezahlter Plan enthält: Arbeitszeiterfassung, Abwesenheitsverwaltung, mobile Apps, Berichte.</p>
+
+<h3 id="factorial-hr-suite-mit-integrierter-zeiterfassung">Factorial: HR-Suite mit integrierter Zeiterfassung</h3>
+
+<p>Factorial ist mehr als ein Zeiterfassungstool. Es ist eine vollständige HR-Plattform, in der die Zeiterfassung eines von vielen Modulen ist. Die Preise beginnen bei 8 € pro Nutzer und Monat.</p>
+
+<p>Günstigster bezahlter Plan enthält: zentrale HR-Funktionen, grundlegende Zeit- und Anwesenheitserfassung.</p>
+
+<h3 id="zeitguru-günstige-zeiterfassung-mit-exporten-für-die-lohnabrechnung">Zeitguru: Günstige Zeiterfassung mit Exporten für die Lohnabrechnung</h3>
+
+<p>Zeitguru bietet mit 3,50 € pro Nutzer und Monat einen der niedrigsten Preise pro Nutzer und umfasst Schichtplanung, Anwesenheitserfassung und Exporte für die Lohnabrechnung. Es gibt allerdings eine Mindestgebühr von 49 € pro Monat, was dem Preis für 14 Nutzer entspricht.</p>
+
+<p>Günstigster bezahlter Plan enthält: Stempeluhr, Schichtplanung, Urlaubsverwaltung, Exporte für die Lohnabrechnung.</p>
+
+<h3 id="kimai-open-source-datenschutzfreundlich-keine-versteckten-kosten">Kimai: Open Source, datenschutzfreundlich, keine versteckten Kosten</h3>
+
+<p>Kimai ist eine voll ausgestattete Zeiterfassung auf Open-Source-Basis. Es gibt eine leistungsstarke Cloud-Version und eine kostenlose Version zum Selbsthosten, die weltweit im Einsatz ist. Die Preise bleiben transparent und fest: ab 2,99 € pro Nutzer und Monat bei jährlicher Abrechnung, ohne Nutzungsgebühren. Für gemeinnützige Organisationen bietet Kimai zudem ein Angebot für 0,99 € pro Nutzer und Monat.</p>
+
+<p>Günstigster bezahlter Plan enthält: Projektzeiterfassung, abrechenbare und nicht abrechenbare Stunden, Rechnungen, Berichte, Exporte und mehr.</p>
+
+<h2 id="vergleichstabelle-preise-testphasen-und-günstigste-pläne">Vergleichstabelle: Preise, Testphasen und günstigste Pläne</h2>
+
+<p>Diese Tabelle vergleicht die Jahreskosten für einen Nutzer und für ein Team mit 50 Nutzern, zusammen mit der Testphase und dem, was der günstigste bezahlte Plan enthält.</p>
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>Tool</th>
+      <th>Pro Nutzer/Monat</th>
+      <th>1 Nutzer/Jahr</th>
+      <th>50 Nutzer/Jahr</th>
+      <th>Testphase</th>
+      <th>Günstigster bezahlter Plan enthält</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Harvest</td>
+      <td>ab 8,20 € + Nutzungsgebühren</td>
+      <td>ab 98,40 €</td>
+      <td>ab 4.920 €</td>
+      <td>30 Tage</td>
+      <td>Zeit, Ausgaben, Rechnungen</td>
+    </tr>
+    <tr>
+      <td>Clockify</td>
+      <td>5,49 € (Standard)</td>
+      <td>65,88 €</td>
+      <td>3.294 €</td>
+      <td>Kostenloser Plan (≤ 5 Nutzer)</td>
+      <td>Stundenzettel, Berichte, Sätze</td>
+    </tr>
+    <tr>
+      <td>Toggl Track</td>
+      <td>9,00 €</td>
+      <td>108,00 €</td>
+      <td>5.400 €</td>
+      <td>30 Tage</td>
+      <td>Einfache Berichte, abrechenbare Sätze</td>
+    </tr>
+    <tr>
+      <td>Hubstaff</td>
+      <td>4,99 €</td>
+      <td>59,88 €</td>
+      <td>2.994 €</td>
+      <td>14 Tage</td>
+      <td>Aktivitätsüberwachung, Screenshots</td>
+    </tr>
+    <tr>
+      <td>TimeTrack</td>
+      <td>5,00 €</td>
+      <td>60,00 €</td>
+      <td>3.000 €</td>
+      <td>14 Tage</td>
+      <td>Anwesenheit, Stundenzettel</td>
+    </tr>
+    <tr>
+      <td>clockin</td>
+      <td>3,90 € + Plattformgebühr¹</td>
+      <td>166,80 €¹</td>
+      <td>2.340 €</td>
+      <td>14 Tage</td>
+      <td>Stempeluhr, mobile Erfassung, Abwesenheiten</td>
+    </tr>
+    <tr>
+      <td>Clockodo</td>
+      <td>3,80 €</td>
+      <td>45,60 €</td>
+      <td>2.280 €</td>
+      <td>14 Tage</td>
+      <td>Arbeitszeit, Abwesenheiten</td>
+    </tr>
+    <tr>
+      <td>Factorial</td>
+      <td>8,00 €</td>
+      <td>96,00 €</td>
+      <td>4.800 €</td>
+      <td>Test oder Demo</td>
+      <td>HR-Basis, Zeiterfassung</td>
+    </tr>
+    <tr>
+      <td>Zeitguru</td>
+      <td>3,50 € (mind. 49 €/Monat)</td>
+      <td>588,00 €²</td>
+      <td>2.100 €</td>
+      <td>14 Tage</td>
+      <td>Stempeluhr, Lohnexporte</td>
+    </tr>
+    <tr>
+      <td><strong>Kimai</strong></td>
+      <td><strong>2,99 €</strong></td>
+      <td><strong>35,88 €</strong></td>
+      <td><strong>1.794 €</strong></td>
+      <td><strong>30 Tage</strong></td>
+      <td><strong>Volle Zeiterfassung, Rechnungen, Berichte</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Alle Preise gelten pro Monat bei jährlicher Abrechnung und wurden im November 2026 geprüft. Preise in US-Dollar wurden in Euro umgerechnet.</li>
+  <li>¹ clockin berechnet Teams mit weniger als 5 Nutzern eine Plattformgebühr von 10 € pro Monat.</li>
+  <li>² Zeitguru verlangt eine Mindestgebühr von 49 € pro Monat.</li>
+</ul>
+
+<h2 id="fazit">Fazit</h2>
+
+<p>Ein niedriger Preis pro Nutzer ist nur dann wirklich etwas wert, wenn die Preisgestaltung transparent ist und die Rabatte leicht zu verstehen sind. Sonst ist die Preisseite nur ein Ausgangspunkt.</p>
+
+<p>Wenn Sie ernsthaft über eine neue Zeiterfassungssoftware für Ihr Team nachdenken, lesen Sie das Kleingedruckte genau. Achten Sie auf Mindestgebühren, vorgeschriebene Lizenzzahlen, lange Vertragslaufzeiten, nutzungsabhängige Gebühren und Einführungspreise, die nach dem ersten Jahr steigen. Prüfen Sie, was Sie im zweiten Jahr zahlen, nicht nur im ersten Monat.</p>
+
+<p>Je einfacher das Preismodell, desto leichter können Sie Ihr Budget planen und Ihr Team ohne böse Überraschungen wachsen lassen. Übrigens: Bei Kimai <a href="/de/blog/2026/fair-pricing">bleiben unsere Preise fair</a>, und wir verstecken nie einen höheren Preis im Kleingedruckten.</p>
+
+<h2 id="das-könnte-sie-auch-interessieren">Das könnte Sie auch interessieren</h2>
+
+<ul>
+  <li><a href="/de/pricing">Kimai Preise</a></li>
+  <li><a href="/de/alternatives/">Kimai-Alternativen: Zeiterfassungs-Apps im Vergleich</a></li>
+  <li><a href="/de/blog/2026/kimai-vs-harvest">Kimai vs. Harvest</a></li>
+  <li><a href="/en/alternatives/harvest">Kimai als Harvest-Alternative (Englisch)</a></li>
+</ul>
+
+        </div>
+        <div class="col-lg-3 position-relative">
+            <div class="sticky-top ms-xl-5 ms-lg-4 ps-xxl-4" style="top: 105px !important;">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+    
+        
+<section class="container pt-3 pb-4 pb-md-5">
+    <div class="card border-0 bg-dark">
+        <div class="card-body p-md-5 p-4 bg-size-cover" style="background-image: url(/images/layout/contact-bg.webp);">
+            <div class="py-md-5 py-4 text-center">
+                <p class="lead text-light opacity-70 mb-3">Bereit loszulegen?</p>
+                <h2 class="text-light pb-3 pb-lg-0 mb-lg-5">Starte jetzt damit Zeiten zu erfassen</h2>
+                <a href="https://www.kimai.cloud/de/auth/registrierung" class="btn btn-success btn-lg">Kostenlos starten</a>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+</main>
+
+
+
+<footer class="footer bg-dark pt-5 pb-4" xmlns="http://www.w3.org/1999/html">
+    <div class="container pt-1 pt-md-3 pt-lg-4 pt-xl-5">
+        <div class="row">
+            <div class="col-md-5 col-xl-4 mb-4 mb-md-5 mb-lg-0">
+                <div class="d-flex align-items-center pb-3 mb-1">
+                    <div class="navbar-brand text-white p-0 pe-1 me-0">
+                        Kimai®
+                    </div>
+                    <hr class="vr mt-2 mx-3" style="height: 26px;">
+                    <div class="text-white fw-semibold ps-1">#1 Open-Source Zeiterfassung</div>
+                </div>
+                <p class="text-body fs-sm pb-1 pb-md-2 pb-lg-2 mb-2">
+                    Zeiterfassung leicht gemacht. Eine Open-Source-Lösung für Teams jeder Größe - selbst gehostet oder als SaaS.
+                </p>
+                <div class="d-flex flex-column flex-sm-row flex-lg-column align-items-sm-center align-items-lg-start justify-content-between pb-1 pb-md-2 pb-lg-3 mb-3">
+                    <div class="position-relative">
+                        <div class="dropdown language-dropdown d-inline-block">
+    <button type="button" class="btn btn-sm fs-sm btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bx bx-globe fs-lg top-50 start-0 text-body me-2"></i>
+            Deutsch
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ca/" class="dropdown-item" title="Kimai - Seguidor de temps de codi obert">Català</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/cs/" class="dropdown-item" title="Kimai - Open Source sledování času">Čeština</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/de/" class="dropdown-item active" aria-current="true" title="Kimai – Open-Source Zeiterfassung">Deutsch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/en/" class="dropdown-item" title="Kimai - Open Source time-tracker">English</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/es/" class="dropdown-item" title="Kimai - Tracker de tiempo abierto">Español</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/fr/" class="dropdown-item" title="Kimai - Suivi du temps à code ouvert">Français</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="rtl" href="https://www.kimai.co.il" class="dropdown-item" title="Kimai - מעקב שעות בקוד פתוח">עברית</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/hr/" class="dropdown-item" title="Kimai – Program otvorenog koda za evidentiranje vremena">Hrvatski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/it/" class="dropdown-item" title="Kimai: time-tracker open source">Italiano</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/nl/" class="dropdown-item" title="Kimai - Open Source tijdsregistratietool">Dutch</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pl/" class="dropdown-item" title="Kimai - Otwarte oprogramowanie do śledzenia czasu">Polski</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/pt_BR/" class="dropdown-item" title="Kimai - Rastreador de tempo de código aberto">Português (Brasil)</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sk/" class="dropdown-item" title="Kimai - Open Source sledovanie času">Slovenčina</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sr/" class="dropdown-item" title="Kimai – програм отвореног кода за евидентирање времена">Srpski</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/sv/" class="dropdown-item" title="Kimai - öppen källkod tidsspårare">Svenska</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/ta/" class="dropdown-item" title="கிமாய் - திறந்த மூல நேர -கண்காணிப்பு">தமிழ்</a>
+            </li>
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.org/uk/" class="dropdown-item" title="Kimai — реєстратор часу з відкритим сирцевим кодом">Українська</a>
+            </li>
+            
+        
+            
+        
+            
+            <li>
+                <a dir="ltr" href="https://www.kimai.tw" class="dropdown-item" title="Kimai —— 開放源始碼的工時追蹤工具">中文（繁體）</a>
+            </li>
+            
+        
+    </ul>
+</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 offset-xl-1">
+                <div id="footer-links" class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="tools" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/features.html" class="nav-link fs-sm fw-medium px-0 py-1">Funktionen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/stories/" class="nav-link fs-sm fw-medium px-0 py-1">Erfolgsgeschichten</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/reviews" class="nav-link fs-sm fw-medium px-0 py-1">Bewertungen</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/press-media" class="nav-link fs-sm fw-medium px-0 py-1">Presse & Medien</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/discount-codes" class="nav-link fs-sm fw-medium px-0 py-1">Rabatt-Codes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/de/newsletter" class="nav-link fs-sm fw-medium px-0 py-1">Newsletter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="landing-kimai-for" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/agency-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Agency">Agenturen</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/consultants-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Consultants">Berater</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/freelancers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Freelancers">Freiberufler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/non-profit" class="nav-link fs-sm fw-medium px-0 py-1" title="Non Profit">Non-Profits</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a href="/de/software-developers-time-tracking" class="nav-link fs-sm fw-medium px-0 py-1" title="Software Developers">Softwareentwickler</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    
+                                    <a href="/de/industry" class="nav-link fs-sm fw-medium px-0 py-1">Weitere Branchen</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div id="footer-cmp" class="collapse d-md-block" data-bs-parent="#footer-links">
+                            <ul class="nav flex-column">
+                                <li class="nav-item">
+                                    <a href="/de/alternatives/" class="nav-link fs-sm fw-medium px-0 py-1">Vergleiche Zeiterfassungen</a>
+                                </li>
+                                
+                                
+                                
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockify" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockify">Clockify Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/clockodo" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Clockodo">Clockodo Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/harvest" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit Harvest">Harvest Alternative</a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/en/alternatives/toggl" class="nav-link fs-sm fw-medium px-0 py-1" title="Vergleiche Kimai mit toggl track">toggl track Alternative</a>
+                                    </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="/de/time-tracking-terms" class="nav-link fs-sm fw-medium px-0 py-1">Glossar</a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center justify-content-between pt-sm-2 pt-md-4 pt-lg-5 pb-2 mt-4 ">
+    <ul class="nav order-md-1 ms-md-0 mb-3 mb-md-0">
+        <li class="nav-item">
+            <a href="/de/site-notice.html" class="nav-link fs-sm fw-medium">Impressum</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/privacy-policy.html" class="nav-link fs-sm fw-medium">Datenschutz</a>
+        </li>
+        <li class="nav-item">
+            <a href="/de/terms-cloud.html" class="nav-link fs-sm fw-medium">AGB</a>
+        </li>
+        <li class="nav-item">
+            <a href="https://status.kimai.org/" target="_blank" class="nav-link fs-sm fw-medium">System-Status</a>
+        </li>
+    </ul>
+    <div class="nav order-md-2 mb-3 mb-md-0">
+        
+    
+    <a target="_blank" href="https://github.com/kimai/kimai" class="btn btn-icon btn-secondary btn-github rounded-circle me-3" aria-label="GitHub">
+        <i class="bx bxl-github"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.youtube.com/@kimai_org" class="btn btn-icon btn-secondary btn-youtube rounded-circle me-3" aria-label="YouTube">
+        <i class="bx bxl-youtube"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.linkedin.com/company/kimai-org/" class="btn btn-icon btn-secondary btn-linkedin rounded-circle me-3" aria-label="LinkedIn">
+        <i class="bx bxl-linkedin"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://www.reddit.com/r/kimai/" class="btn btn-icon btn-secondary btn-reddit rounded-circle me-3" aria-label="reddit">
+        <i class="bx bxl-reddit"></i>
+    </a>
+
+    
+    <a target="_blank" href="https://phpc.social/@kimai" class="btn btn-icon btn-secondary btn-messenger rounded-circle me-3" aria-label="Mastodon">
+        <i class="bx bxl-mastodon"></i>
+    </a>
+
+
+    </div>
+</div>
+
+    </div>
+</footer>
+
+
+
+
+<a href="#top" class="btn-scroll-top" data-scroll>
+    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+</a>
+
+<script src="/assets/build/main.js?v5"></script>
+
+<script defer src="https://u.kimai.org/script.js" data-website-id="e26bef12-9527-43bc-83fd-660e237f3526"></script>
+
+</body>
+</html>
