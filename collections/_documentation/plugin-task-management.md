@@ -55,11 +55,48 @@ This widget has the following UI elements (if permissions are set for the user):
 
 Visible for all user with `task_start` and either one of `task_assign` or `task_team_view` permission.
 
-## Close a task
+## Task status
+
+A task is always in one of the following states:
+
+- `pending`
+- `work in progress`
+- `done`
+ 
+## Task actions
+
+### Start a task
+
+- Starts a timesheet for the assigned user (or the current user if no user is assigned)
+- Sets the status to `work in progress`
+
+### Stop a task
+
+- Stop a timesheet for the assigned user (or the current user if no user is assigned)
+- Sets the status to `work in progress`
+
+### Close a task
 
 Closing a task means the work is finished.
 
-The task will be removed from the `My tasks` widget only after it is reloaded (until then it can be reopened).
+- Closing switches the status to `done`
+- Closing will stop all running timesheets of the task  
+- The task will be removed from the `My tasks` widget after the widget was reloaded (until then it can be reopened)
+
+### Reopen a task
+
+- Switches the status from `done` to `work in progress`
+
+### Assign a task
+
+- Assigns the currently logged-in user to the task
+- Sets the status to `work in progress` if not yet `done`
+
+### Unassign a task
+
+- Stops all timesheets for previously assigned user
+- Removes the previously assigned user
+- Switches the status to `pending` if not yet `done`
 
 ## Permissions
 
