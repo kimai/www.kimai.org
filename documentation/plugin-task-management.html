@@ -800,11 +800,62 @@
 
 <p>Visible for all user with <code class="language-plaintext highlighter-rouge">task_start</code> and either one of <code class="language-plaintext highlighter-rouge">task_assign</code> or <code class="language-plaintext highlighter-rouge">task_team_view</code> permission.</p>
 
-<h2 id="close-a-task">Close a task</h2>
+<h2 id="task-status">Task status</h2>
+
+<p>A task is always in one of the following states:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">pending</code></li>
+  <li><code class="language-plaintext highlighter-rouge">work in progress</code></li>
+  <li><code class="language-plaintext highlighter-rouge">done</code></li>
+</ul>
+
+<h2 id="task-actions">Task actions</h2>
+
+<h3 id="start-a-task">Start a task</h3>
+
+<ul>
+  <li>Starts a timesheet for the assigned user (or the current user if no user is assigned)</li>
+  <li>Sets the status to <code class="language-plaintext highlighter-rouge">work in progress</code></li>
+</ul>
+
+<h3 id="stop-a-task">Stop a task</h3>
+
+<ul>
+  <li>Stop a timesheet for the assigned user (or the current user if no user is assigned)</li>
+  <li>Sets the status to <code class="language-plaintext highlighter-rouge">work in progress</code></li>
+</ul>
+
+<h3 id="close-a-task">Close a task</h3>
 
 <p>Closing a task means the work is finished.</p>
 
-<p>The task will be removed from the <code class="language-plaintext highlighter-rouge">My tasks</code> widget only after it is reloaded (until then it can be reopened).</p>
+<ul>
+  <li>Closing switches the status to <code class="language-plaintext highlighter-rouge">done</code></li>
+  <li>Closing will stop all running timesheets of the task</li>
+  <li>The task will be removed from the <code class="language-plaintext highlighter-rouge">My tasks</code> widget after the widget was reloaded (until then it can be reopened)</li>
+</ul>
+
+<h3 id="reopen-a-task">Reopen a task</h3>
+
+<ul>
+  <li>Switches the status from <code class="language-plaintext highlighter-rouge">done</code> to <code class="language-plaintext highlighter-rouge">work in progress</code></li>
+</ul>
+
+<h3 id="assign-a-task">Assign a task</h3>
+
+<ul>
+  <li>Assigns the currently logged-in user to the task</li>
+  <li>Sets the status to <code class="language-plaintext highlighter-rouge">work in progress</code> if not yet <code class="language-plaintext highlighter-rouge">done</code></li>
+</ul>
+
+<h3 id="unassign-a-task">Unassign a task</h3>
+
+<ul>
+  <li>Stops all timesheets for previously assigned user</li>
+  <li>Removes the previously assigned user</li>
+  <li>Switches the status to <code class="language-plaintext highlighter-rouge">pending</code> if not yet <code class="language-plaintext highlighter-rouge">done</code></li>
+</ul>
 
 <h2 id="permissions">Permissions</h2>
 
@@ -833,7 +884,7 @@
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_assign</code></td>
-      <td>Self-assign a pending task by the currently logged-in user, required to see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> widget on the dashboard</td>
+      <td>See unassigned tasks, see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> dashboard widget, self-assign pending tasks to the current user</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_start</code></td>
@@ -884,7 +935,7 @@
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#detail-pages" class="nav-link">Detail pages</a></li><li class="nav-item"><a href="#dashboard-widgets" class="nav-link">Dashboard widgets</a><ul><li class="nav-item"><a href="#my-tasks-widget" class="nav-link">My tasks widget</a></li><li class="nav-item"><a href="#pending-tasks-widget" class="nav-link">Pending tasks widget</a></li></ul></li><li class="nav-item"><a href="#close-a-task" class="nav-link">Close a task</a></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#detail-pages" class="nav-link">Detail pages</a></li><li class="nav-item"><a href="#dashboard-widgets" class="nav-link">Dashboard widgets</a><ul><li class="nav-item"><a href="#my-tasks-widget" class="nav-link">My tasks widget</a></li><li class="nav-item"><a href="#pending-tasks-widget" class="nav-link">Pending tasks widget</a></li></ul></li><li class="nav-item"><a href="#task-status" class="nav-link">Task status</a></li><li class="nav-item"><a href="#task-actions" class="nav-link">Task actions</a><ul><li class="nav-item"><a href="#start-a-task" class="nav-link">Start a task</a></li><li class="nav-item"><a href="#stop-a-task" class="nav-link">Stop a task</a></li><li class="nav-item"><a href="#close-a-task" class="nav-link">Close a task</a></li><li class="nav-item"><a href="#reopen-a-task" class="nav-link">Reopen a task</a></li><li class="nav-item"><a href="#assign-a-task" class="nav-link">Assign a task</a></li><li class="nav-item"><a href="#unassign-a-task" class="nav-link">Unassign a task</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             
