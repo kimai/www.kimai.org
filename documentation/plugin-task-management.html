@@ -751,7 +751,7 @@
 
 <p>The amount of rows in the dashboard widgets can be configured in the user-preferences.</p>
 
-<h3 id="my-tasks-widget">My tasks widget</h3>
+<h3 id="my-tasks">My tasks</h3>
 
 <p>Displays all tasks which:</p>
 <ul>
@@ -773,7 +773,7 @@
 
 <p>Visible for all user with <code class="language-plaintext highlighter-rouge">task_start</code> permission.</p>
 
-<h3 id="pending-tasks-widget">Pending tasks widget</h3>
+<h3 id="pending-tasks">Pending tasks</h3>
 
 <p>Displays all tasks which:</p>
 <ul>
@@ -812,49 +812,301 @@
 
 <h2 id="task-actions">Task actions</h2>
 
-<h3 id="start-a-task">Start a task</h3>
+<p><strong>Start task</strong></p>
 
 <ul>
-  <li>Starts a timesheet for the assigned user (or the current user if no user is assigned)</li>
+  <li>Starts a timesheet for the current user</li>
   <li>Sets the status to <code class="language-plaintext highlighter-rouge">work in progress</code></li>
 </ul>
 
-<h3 id="stop-a-task">Stop a task</h3>
+<p><strong>Stop task</strong></p>
 
 <ul>
-  <li>Stop a timesheet for the assigned user (or the current user if no user is assigned)</li>
-  <li>Sets the status to <code class="language-plaintext highlighter-rouge">work in progress</code></li>
+  <li>Stops the task related timesheet for the current user</li>
+  <li>If no timesheet for the current user is running, nothing will happen</li>
 </ul>
 
-<h3 id="close-a-task">Close a task</h3>
+<p><strong>Complete</strong></p>
 
-<p>Closing a task means the work is finished.</p>
+<p>Completing a task signals that the work is finished.</p>
 
 <ul>
-  <li>Closing switches the status to <code class="language-plaintext highlighter-rouge">done</code></li>
-  <li>Closing will stop all running timesheets of the task</li>
+  <li>Completing switches the status to <code class="language-plaintext highlighter-rouge">done</code></li>
+  <li>It will stop all running timesheets of the task</li>
   <li>The task will be removed from the <code class="language-plaintext highlighter-rouge">My tasks</code> widget after the widget was reloaded (until then it can be reopened)</li>
+  <li>Completing a task will not remove it from any board</li>
 </ul>
 
-<h3 id="reopen-a-task">Reopen a task</h3>
+<p><strong>Reopen task</strong></p>
 
 <ul>
   <li>Switches the status from <code class="language-plaintext highlighter-rouge">done</code> to <code class="language-plaintext highlighter-rouge">work in progress</code></li>
 </ul>
 
-<h3 id="assign-a-task">Assign a task</h3>
+<p><strong>Assign to me</strong></p>
 
 <ul>
   <li>Assigns the currently logged-in user to the task</li>
   <li>Sets the status to <code class="language-plaintext highlighter-rouge">work in progress</code> if not yet <code class="language-plaintext highlighter-rouge">done</code></li>
 </ul>
 
-<h3 id="unassign-a-task">Unassign a task</h3>
+<p><strong>Release</strong></p>
 
 <ul>
-  <li>Stops all timesheets for previously assigned user</li>
-  <li>Removes the previously assigned user</li>
+  <li>Stops all timesheets for the assigned user</li>
+  <li>Removes the assigned user</li>
   <li>Switches the status to <code class="language-plaintext highlighter-rouge">pending</code> if not yet <code class="language-plaintext highlighter-rouge">done</code></li>
+</ul>
+
+<h2 id="kanban-boards">Kanban Boards</h2>
+
+<p>The Task management plugin includes Kanban boards, which help you and your team to prioritize and work on tasks in a visual way.</p>
+
+<p>A board displays tasks as cards in columns (by default <em>To Do</em>, <em>Waiting</em>, <em>In progress</em> and <em>Done</em>).
+You move a card between columns as its state changes — either by drag &amp; drop or via the card menu.</p>
+
+<p>Boards do not change which tasks exist or who may see them: a board only shows tasks that you are
+allowed to see anyway. Two people looking at the same board might therefore see different cards.</p>
+
+<h3 id="quick-start">Quick start</h3>
+
+<ol>
+  <li>Open <strong>Tasks &gt; Boards</strong> from the main menu.</li>
+  <li>Your personal board is created automatically the first time you open the page.</li>
+  <li>Click the <strong>+</strong> button of a column to put one of your tasks onto the board.</li>
+  <li>Drag cards between columns as you work — a placeholder shows you exactly where the card will land.</li>
+</ol>
+
+<h3 id="your-personal-board">Your personal board</h3>
+
+<p>Every user gets a personal board, created automatically when you first open <strong>Tasks &gt; Boards</strong>.
+It is private: only you can see and use it — this includes teamleads and administrators,
+who cannot access the private boards of other users. You can rename it, change its columns or delete it.
+If you delete your last private board, a fresh one is created the next time you open the page.</p>
+
+<p>You can create up to <strong>3 private boards</strong> (for example one per project or customer).</p>
+
+<h3 id="boards-overview">Boards overview</h3>
+
+<p>All boards you have access to are shown as tabs at the top of the page.
+Your private boards are listed first, followed by the global boards, each group sorted by name:</p>
+
+<ul>
+  <li>A <strong>person icon</strong> marks your private boards.</li>
+  <li>A <strong>group icon</strong> marks global boards that are limited to one or more of your teams.</li>
+  <li>Global boards without an icon are visible to every user.</li>
+</ul>
+
+<p>The last board you opened is remembered and shown again on your next visit.</p>
+
+<h3 id="managing-boards">Managing boards</h3>
+
+<p>All board management happens in the <strong>Boards</strong> dropdown at the top of the page:</p>
+
+<ul>
+  <li><strong>My boards</strong> lists your private boards.</li>
+  <li><strong>Boards</strong> lists all other boards you may edit.</li>
+  <li>Click a board name to open its settings, where you can also <strong>delete</strong> the board (if you are allowed to).</li>
+  <li><strong>Create</strong> at the end of the dropdown adds a new board. It is hidden once you have reached the limit
+of private boards, unless you are allowed to create global boards.</li>
+</ul>
+
+<p>The board settings contain:</p>
+
+<ul>
+  <li><strong>Name</strong> — between 2 and 100 characters.</li>
+  <li><strong>Private board</strong> — only shown if you may create global boards (see below), otherwise every new board is private.</li>
+  <li><strong>Team</strong> — only for global boards, limits the visibility to the selected teams.</li>
+  <li><strong>Columns</strong> — see <a href="#customizing-columns">Customizing columns</a>.</li>
+</ul>
+
+<p>Deleting a board never deletes tasks — only the board and its card positions are removed.</p>
+
+<h3 id="working-with-cards">Working with cards</h3>
+
+<p>Each card shows:</p>
+
+<ul>
+  <li>the task title (struck through if the task is completed)</li>
+  <li>the due date badge, if the task has an end date: grey while the task is on time,
+red when it is overdue, orange when it is completed but was overdue</li>
+  <li>the first characters of the task text</li>
+  <li>the avatar of the assigned user (unassigned tasks show no avatar)</li>
+  <li>a row of actions</li>
+</ul>
+
+<p>A card of an open task that is overdue — its end date has passed or the tracked time exceeds
+its estimation — is additionally highlighted with a red background.</p>
+
+<p>The action row offers:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Start / Stop</td>
+      <td>Start or stop time-tracking for this task, see <a href="#time-tracking-from-cards">Time-tracking from cards</a>.</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Opens the task detail page at the comment section, the number shows existing comments.</td>
+    </tr>
+    <tr>
+      <td>Complete / Reopen</td>
+      <td>Complete an open task, or reopen a completed one. Completed tasks stay on the board, see <a href="#completed-tasks">Completed tasks</a>.</td>
+    </tr>
+    <tr>
+      <td><strong>…</strong> (menu)</td>
+      <td>Opens the card menu with further actions, see below.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The card menu (<strong>…</strong>) contains, depending on your permissions:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Entry</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Edit</td>
+      <td>Edit the task.</td>
+    </tr>
+    <tr>
+      <td>Assign to me</td>
+      <td>Assign an unassigned task to yourself.</td>
+    </tr>
+    <tr>
+      <td>Release</td>
+      <td>Remove the assigned user from the task. A running time-tracking of that user for this task is stopped.</td>
+    </tr>
+    <tr>
+      <td>Remove from board</td>
+      <td>Remove the card from this board. The task itself is <strong>not</strong> deleted or changed.</td>
+    </tr>
+    <tr>
+      <td>Move to</td>
+      <td>Move the card to the end of another column — useful on touch devices, where drag &amp; drop is not available.</td>
+    </tr>
+    <tr>
+      <td>Delete</td>
+      <td>Permanently delete the task (not only the card).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="time-tracking-from-cards">Time-tracking from cards</h3>
+
+<ul>
+  <li><strong>Start</strong> always tracks the time for <strong>you</strong>, even if the task is assigned to someone else.</li>
+  <li>Starting a task that is unassigned or assigned to another user requires the permission <code class="language-plaintext highlighter-rouge">task_start_all</code>
+(by default only administrators). Without it, use <strong>Assign to me</strong> first.</li>
+  <li>Completed tasks cannot be started, and you need access to the task’s project and activity.</li>
+  <li><strong>Stop</strong> is always available while you have a running time-tracking for the task and only stops your own record.</li>
+</ul>
+
+<h3 id="completed-tasks">Completed tasks</h3>
+
+<p>Completing a task (from the board or the task list) does not remove it from any board:
+the card stays in its column with a struck-through title, so you can still see what was done.
+Use <strong>Reopen</strong> on the card to continue working on it, or <strong>Remove from board</strong> to clean up the column.</p>
+
+<p>Completed tasks cannot be added to a board.</p>
+
+<h3 id="drag--drop">Drag &amp; drop</h3>
+
+<p>Grab any card and drag it to a new position — within its column to re-prioritize,
+or into another column to change its state. While dragging, a dashed placeholder
+shows the exact position where the card will land. The whole column area below the
+cards is a valid drop target, even when the column is empty.</p>
+
+<p>Cards you cannot see (or that are hidden by a filter) keep their place: the moved card is
+always inserted directly in front of the card that follows the placeholder.</p>
+
+<p>On touch devices use the <strong>Move to</strong> entry of the card menu instead.</p>
+
+<h3 id="filtering-the-board">Filtering the board</h3>
+
+<p>Above the board you find two quick filters (they only hide cards on screen, nothing is changed):</p>
+
+<ul>
+  <li><strong>Search</strong> — type any text to only show cards whose content matches.</li>
+  <li><strong>Only my tasks</strong> — toggle to only show cards that are assigned to you.</li>
+</ul>
+
+<p>The filters are kept while you work on the board, e.g. after moving or completing a card.</p>
+
+<h3 id="adding-tasks-to-a-board">Adding tasks to a board</h3>
+
+<p>Use <strong>Create</strong> at the top of the page to create a new task, it is added to the end of the first column
+of the current board. This requires the permission to create tasks.</p>
+
+<p>To put an existing task on the board, click the <strong>+</strong> button of the column you want to add to and pick a task.
+The list only offers open (not completed) tasks that you are allowed to see and that are not yet on the board.
+New cards are added to the end of that column. The <strong>+</strong> button is hidden when there is no task left that could be added.</p>
+
+<h3 id="customizing-columns">Customizing columns</h3>
+
+<p>If you may edit a board (own boards, or global boards if you have the permission),
+open it from the <strong>Boards</strong> dropdown and adjust the columns:</p>
+
+<ul>
+  <li><strong>Rename</strong> a column (up to 30 characters) — cards stay where they are.
+The default columns are translated into your language as long as they are not renamed.</li>
+  <li><strong>Add</strong> columns (up to 8 per board) and <strong>reorder</strong> them with the arrow buttons or by dragging the grip icon.</li>
+  <li><strong>Color</strong> — optionally pick a color, which is shown at the top of every card in that column.</li>
+  <li><strong>Delete</strong> a column — its cards are moved to the end of the first remaining column, nothing is lost.
+A board needs at least one column.</li>
+  <li><strong>WIP limit</strong> — optionally define how many cards (1 to 99) a column should hold at most.
+The limit is a soft limit: the column counter turns red when it is exceeded,
+but moving more cards into the column is still possible.
+The counter only includes the cards you can see.</li>
+</ul>
+
+<h3 id="global--team-boards">Global &amp; Team boards</h3>
+
+<p>Besides private boards there are <strong>global boards</strong>, which are shared work surfaces.
+Creating and editing them requires the permission <code class="language-plaintext highlighter-rouge">task_board_create</code> (by default granted
+to teamleads and administrators). When creating a board, untick <strong>Private board</strong>:</p>
+
+<ul>
+  <li><strong>Without teams:</strong> the board is visible to every user.</li>
+  <li><strong>With teams:</strong> the board is only visible to members of the selected teams.
+This applies to administrators as well: you only see team boards of teams you are a member of.</li>
+</ul>
+
+<p>Regardless of who can <em>see</em> a global board, every viewer only sees the <em>cards of tasks they may see</em>
+based on the regular task permissions (assignee, team, project access). Every viewer of a global
+board may add, move and remove cards — a board is a shared planning tool, not a permission system.</p>
+
+<p>Global boards have no owner. Deleting one requires the permission <code class="language-plaintext highlighter-rouge">task_board_delete</code>.
+Ticking <strong>Private board</strong> on an existing global board turns it into your own private board
+(the team assignment is removed), which counts towards your limit of private boards.</p>
+
+<p><strong>Suggested workflow</strong></p>
+
+<ol>
+  <li>Create a (global) board per team, assigned to that team.</li>
+  <li>Define columns matching your process (e.g. <em>Backlog</em>, <em>Ready</em>, <em>Doing</em>, <em>Review</em>, <em>Done</em>) and set WIP limits on the active columns.</li>
+  <li>Team members pull tasks onto the board and move them as they work, tracking time directly from the cards.</li>
+  <li>Complete tasks in the <em>Done</em> column and remove them from the board once they are no longer needed.</li>
+</ol>
+
+<h3 id="for-administrators">For administrators</h3>
+
+<ul>
+  <li>Deleting a user deletes their private boards. Deleting a task or a team cleans up all related board entries automatically.</li>
+  <li>Completing a task does not change any board, completed tasks stay where they are.</li>
+  <li>Boards never grant access to tasks: all task visibility rules (assignee, team, project permissions) apply unchanged when a board is rendered.</li>
 </ul>
 
 <h2 id="permissions">Permissions</h2>
@@ -875,6 +1127,14 @@
   </thead>
   <tbody>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_view</code></td>
+      <td>Required to see the Tasks menu including boards and task reports</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_team_view</code></td>
+      <td>See the tasks assigned to your teams</td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">task_edit_own</code></td>
       <td>Create and edit tasks that are assigned to the currently logged-in user</td>
     </tr>
@@ -884,35 +1144,35 @@
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_assign</code></td>
-      <td>See unassigned tasks, see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> dashboard widget, self-assign pending tasks to the current user</td>
+      <td>Shows unassigned tasks and offers <strong>Assign to me</strong> / <strong>Release</strong> (for tasks of other users, or of teams you are not a member of, <code class="language-plaintext highlighter-rouge">task_edit_other</code> is required as well), see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> dashboard widget</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_start</code></td>
-      <td>Start a task - only possible if task is assigned to the current user</td>
+      <td>Start working (by creating timesheets) on tasks assigned to you</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_start_all</code></td>
-      <td>Start any task</td>
+      <td>Start working (by creating timesheets) on unassigned tasks and tasks assigned to other users</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_close</code></td>
-      <td>Close a task, only possible if task is assigned to the current user or the user owns the <code class="language-plaintext highlighter-rouge">task_edit_other</code> permission</td>
+      <td>Complete / Reopen a task, for unassigned tasks and tasks of other users <code class="language-plaintext highlighter-rouge">task_edit_other</code> is required as well</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_delete</code></td>
       <td>Delete any existing task</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">task_view</code></td>
-      <td>Gives access to the task administration and task reports</td>
-    </tr>
-    <tr>
       <td><code class="language-plaintext highlighter-rouge">task_details</code></td>
       <td>See Task details</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">task_team_view</code></td>
-      <td>See the tasks of all team members</td>
+      <td><code class="language-plaintext highlighter-rouge">task_board_create</code></td>
+      <td>Create and edit <strong>global</strong> boards (incl. team assignment)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_board_delete</code></td>
+      <td>Delete <strong>global</strong> boards</td>
     </tr>
   </tbody>
 </table>
@@ -935,7 +1195,7 @@
             
                 <aside class="side-nav side-nav-end d-none d-xxl-block docs-toc pe-0">
                     <h3 class="fs-lg mt-2">Jump to</h3>
-                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#detail-pages" class="nav-link">Detail pages</a></li><li class="nav-item"><a href="#dashboard-widgets" class="nav-link">Dashboard widgets</a><ul><li class="nav-item"><a href="#my-tasks-widget" class="nav-link">My tasks widget</a></li><li class="nav-item"><a href="#pending-tasks-widget" class="nav-link">Pending tasks widget</a></li></ul></li><li class="nav-item"><a href="#task-status" class="nav-link">Task status</a></li><li class="nav-item"><a href="#task-actions" class="nav-link">Task actions</a><ul><li class="nav-item"><a href="#start-a-task" class="nav-link">Start a task</a></li><li class="nav-item"><a href="#stop-a-task" class="nav-link">Stop a task</a></li><li class="nav-item"><a href="#close-a-task" class="nav-link">Close a task</a></li><li class="nav-item"><a href="#reopen-a-task" class="nav-link">Reopen a task</a></li><li class="nav-item"><a href="#assign-a-task" class="nav-link">Assign a task</a></li><li class="nav-item"><a href="#unassign-a-task" class="nav-link">Unassign a task</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
+                    <ul class="nav" id="jumpToNav"><li class="nav-item"><a href="#detail-pages" class="nav-link">Detail pages</a></li><li class="nav-item"><a href="#dashboard-widgets" class="nav-link">Dashboard widgets</a><ul><li class="nav-item"><a href="#my-tasks" class="nav-link">My tasks</a></li><li class="nav-item"><a href="#pending-tasks" class="nav-link">Pending tasks</a></li></ul></li><li class="nav-item"><a href="#task-status" class="nav-link">Task status</a></li><li class="nav-item"><a href="#task-actions" class="nav-link">Task actions</a></li><li class="nav-item"><a href="#kanban-boards" class="nav-link">Kanban Boards</a><ul><li class="nav-item"><a href="#quick-start" class="nav-link">Quick start</a></li><li class="nav-item"><a href="#your-personal-board" class="nav-link">Your personal board</a></li><li class="nav-item"><a href="#boards-overview" class="nav-link">Boards overview</a></li><li class="nav-item"><a href="#managing-boards" class="nav-link">Managing boards</a></li><li class="nav-item"><a href="#working-with-cards" class="nav-link">Working with cards</a></li><li class="nav-item"><a href="#time-tracking-from-cards" class="nav-link">Time-tracking from cards</a></li><li class="nav-item"><a href="#completed-tasks" class="nav-link">Completed tasks</a></li><li class="nav-item"><a href="#drag--drop" class="nav-link">Drag &amp; drop</a></li><li class="nav-item"><a href="#filtering-the-board" class="nav-link">Filtering the board</a></li><li class="nav-item"><a href="#adding-tasks-to-a-board" class="nav-link">Adding tasks to a board</a></li><li class="nav-item"><a href="#customizing-columns" class="nav-link">Customizing columns</a></li><li class="nav-item"><a href="#global--team-boards" class="nav-link">Global &amp; Team boards</a></li><li class="nav-item"><a href="#for-administrators" class="nav-link">For administrators</a></li></ul></li><li class="nav-item"><a href="#permissions" class="nav-link">Permissions</a></li></ul>
                     
                 </aside>
             

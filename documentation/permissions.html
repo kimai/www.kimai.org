@@ -1668,6 +1668,14 @@ For example, exported timesheet records cannot be edited, even if a user owns th
   </thead>
   <tbody>
     <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_view</code></td>
+      <td>Required to see the Tasks menu including boards and task reports</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_team_view</code></td>
+      <td>See the tasks assigned to your teams</td>
+    </tr>
+    <tr>
       <td><code class="language-plaintext highlighter-rouge">task_edit_own</code></td>
       <td>Create and edit tasks that are assigned to the currently logged-in user</td>
     </tr>
@@ -1677,35 +1685,35 @@ For example, exported timesheet records cannot be edited, even if a user owns th
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_assign</code></td>
-      <td>See unassigned tasks, see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> dashboard widget, self-assign pending tasks to the current user</td>
+      <td>Shows unassigned tasks and offers <strong>Assign to me</strong> / <strong>Release</strong> (for tasks of other users, or of teams you are not a member of, <code class="language-plaintext highlighter-rouge">task_edit_other</code> is required as well), see the <code class="language-plaintext highlighter-rouge">Pending tasks</code> dashboard widget</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_start</code></td>
-      <td>Start a task - only possible if task is assigned to the current user</td>
+      <td>Start working (by creating timesheets) on tasks assigned to you</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_start_all</code></td>
-      <td>Start any task</td>
+      <td>Start working (by creating timesheets) on unassigned tasks and tasks assigned to other users</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_close</code></td>
-      <td>Close a task, only possible if task is assigned to the current user or the user owns the <code class="language-plaintext highlighter-rouge">task_edit_other</code> permission</td>
+      <td>Complete / Reopen a task, for unassigned tasks and tasks of other users <code class="language-plaintext highlighter-rouge">task_edit_other</code> is required as well</td>
     </tr>
     <tr>
       <td><code class="language-plaintext highlighter-rouge">task_delete</code></td>
       <td>Delete any existing task</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">task_view</code></td>
-      <td>Gives access to the task administration and task reports</td>
-    </tr>
-    <tr>
       <td><code class="language-plaintext highlighter-rouge">task_details</code></td>
       <td>See Task details</td>
     </tr>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">task_team_view</code></td>
-      <td>See the tasks of all team members</td>
+      <td><code class="language-plaintext highlighter-rouge">task_board_create</code></td>
+      <td>Create and edit <strong>global</strong> boards (incl. team assignment)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">task_board_delete</code></td>
+      <td>Delete <strong>global</strong> boards</td>
     </tr>
   </tbody>
 </table>

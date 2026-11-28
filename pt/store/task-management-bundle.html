@@ -661,7 +661,23 @@ then either the directory has a wrong name (must be <strong>var/plugins/TaskMana
                 <div class="tab-pane fade" id="store-changelog" role="tabpanel">
                     <h2 id="compatibility">Histórico de alterações</h2>
                     
-                    <p><strong>Version 2.18.3</strong></p>
+                    <p><strong>Version 3.0.0</strong></p>
+
+<p>Compatibility: requires minimum Kimai 2.74.0</p>
+
+<ul>
+  <li>Added Kanban boards for tasks
+    <ul>
+      <li>Private board for every user plus global boards with optional team based visibility</li>
+      <li>Configurable columns per board: rename, add (up to 8), delete and reorder columns, optional color and WIP limit per column</li>
+      <li>Board cards support drag &amp; drop with insertion placeholder and a “move to column” menu (touch/keyboard friendly)</li>
+      <li>Start/stop time-tracking, complete/reopen and assign/release tasks directly from board cards</li>
+    </ul>
+  </li>
+  <li>Starting a task will always start it for the current user. If the task is not assigned to the current user, the permission <code class="language-plaintext highlighter-rouge">task_start_all</code> is required.</li>
+</ul>
+
+<p><strong>Version 2.18.3</strong></p>
 
 <p>Compatibility: requires minimum Kimai 2.59.0</p>
 
