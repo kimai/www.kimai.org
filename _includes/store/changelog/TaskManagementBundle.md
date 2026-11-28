@@ -1,3 +1,14 @@
+**Version 3.0.0**
+
+Compatibility: requires minimum Kimai 2.74.0
+
+- Added Kanban boards for tasks
+  - Private board for every user plus global boards with optional team based visibility
+  - Configurable columns per board: rename, add (up to 8), delete and reorder columns, optional color and WIP limit per column
+  - Board cards support drag & drop with insertion placeholder and a "move to column" menu (touch/keyboard friendly)
+  - Start/stop time-tracking, complete/reopen and assign/release tasks directly from board cards
+- Starting a task will always start it for the current user. If the task is not assigned to the current user, the permission `task_start_all` is required.
+
 **Version 2.18.3**
 
 Compatibility: requires minimum Kimai 2.59.0

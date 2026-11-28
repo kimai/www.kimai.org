@@ -217,16 +217,18 @@ public_holidays:
 tasks:
     name: Tasks
     permissions:
+        task_view: Required to see the Tasks menu including boards and task reports
+        task_team_view: See the tasks assigned to your teams
         task_edit_own: Create and edit tasks that are assigned to the currently logged-in user
         task_edit_other: Allows to edit all tasks that are visible to the user, create new unassigned tasks, assign team and user, remove assignment and close tasks which are assigned to another user
-        task_assign: See unassigned tasks, see the `Pending tasks` dashboard widget, self-assign pending tasks to the current user
-        task_start: Start a task - only possible if task is assigned to the current user
-        task_start_all: Start any task
-        task_close: Close a task, only possible if task is assigned to the current user or the user owns the `task_edit_other` permission
+        task_assign: Shows unassigned tasks and offers **Assign to me** / **Release** (for tasks of other users, or of teams you are not a member of, `task_edit_other` is required as well), see the `Pending tasks` dashboard widget
+        task_start: "Start working (by creating timesheets) on tasks assigned to you"
+        task_start_all: "Start working (by creating timesheets) on unassigned tasks and tasks assigned to other users"
+        task_close: Complete / Reopen a task, for unassigned tasks and tasks of other users `task_edit_other` is required as well
         task_delete: Delete any existing task
-        task_view: Gives access to the task administration and task reports
         task_details: See Task details
-        task_team_view: See the tasks of all team members
+        task_board_create: "Create and edit **global** boards (incl. team assignment)"
+        task_board_delete: "Delete **global** boards"
 translations:
     name: Translations
     permissions:
