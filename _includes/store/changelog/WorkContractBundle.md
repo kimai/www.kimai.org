@@ -1,3 +1,9 @@
+**Version 2.0.1**
+
+Compatibility: requires minimum Kimai 2.72.0
+
+- Fix default name for 3 absence subtypes: parental, sickness_child, unpaid_vacation
+
 **Version 2.0.0**
 
 Compatibility: requires minimum Kimai 2.72.0
